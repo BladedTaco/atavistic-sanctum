@@ -1,0 +1,45 @@
+Balloony
+	Super light Character
+	Uses string for all attacks
+	Literally a balloon
+	uses string to grab onto ledge
+	floaty
+	faster in air than ground
+	super good recovery
+	many jumps
+	fast attacks
+	weak attacks
+	low attack range
+	short-acting hitboxes
+	
+Machination 
+	steam and gunpowder based
+	Has a ness like recovery, but uses a rocket
+	machine based
+	heavy character
+	slow character
+	high attack
+	slow attacks
+	bad instant attack range
+	good propogating attack range
+	long lasting hitboxes
+	
+Geos
+	wind, lightning, water, earth, fire based
+	fast movement
+	medium speed attacks
+	multi-hit attacks
+	uses elements for specials
+	uses wind and earth for neutrals
+	medium instant attack range
+	windboxes
+	medium-length hitboxes
+
+Ethereal Spirit
+	magic, gravity, time, space based
+	super fast
+	medium attack
+	medium speed attacks
+	good instant attack range
+	long lasting hitboxes
+	

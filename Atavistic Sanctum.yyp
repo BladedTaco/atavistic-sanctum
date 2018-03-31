@@ -79,6 +79,14 @@
             }
         },
         {
+            "Key": "406538b0-947e-44a1-b128-fcc0c101600d",
+            "Value": {
+                "id": "9e9e45d7-d8e2-47bc-a733-245ffc762df0",
+                "resourcePath": "views\\406538b0-947e-44a1-b128-fcc0c101600d.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "4199caf4-2517-4c5e-aaa1-f2cb4aa692b6",
             "Value": {
                 "id": "db100f91-409c-495b-bc12-d21976dcc05a",
@@ -95,11 +103,51 @@
             }
         },
         {
+            "Key": "740d7710-2efc-47b3-ab47-886de5c1df31",
+            "Value": {
+                "id": "38039150-a1a9-4756-9619-da3493c638ed",
+                "resourcePath": "sprites\\spr_mac_idle\\spr_mac_idle.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "7b184479-4f09-4bc3-a017-c4682e8aa31f",
+            "Value": {
+                "id": "d16f2157-b4e7-4238-a143-ab2894994adf",
+                "resourcePath": "views\\7b184479-4f09-4bc3-a017-c4682e8aa31f.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "939cc1fc-e170-492b-8c1e-79ea76155bc6",
+            "Value": {
+                "id": "178a19c6-328e-404e-9a6c-cc3744ec72dd",
+                "resourcePath": "views\\939cc1fc-e170-492b-8c1e-79ea76155bc6.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "9888aced-da42-4845-ae1e-17fb1fc0272c",
+            "Value": {
+                "id": "43ad7e29-2010-44ce-95d1-a1a9d7a4f1c9",
+                "resourcePath": "views\\9888aced-da42-4845-ae1e-17fb1fc0272c.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "9d43b697-963b-4544-904b-4aff848569f5",
             "Value": {
                 "id": "81b8a93c-3dc9-4092-9884-d57f2ced80e5",
                 "resourcePath": "views\\9d43b697-963b-4544-904b-4aff848569f5.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "a6896817-0152-405f-87b6-312346082721",
+            "Value": {
+                "id": "48ad6aba-0427-44d7-a66b-d67c26b2ef82",
+                "resourcePath": "sprites\\spr_geo_idle\\spr_geo_idle.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -111,19 +159,19 @@
             }
         },
         {
+            "Key": "b4645ba9-bdf8-4090-a0da-4a3366c1743a",
+            "Value": {
+                "id": "eaa40479-63d3-4e9a-833b-78ab3c62b07f",
+                "resourcePath": "notes\\characters.yy",
+                "resourceType": "GMNotes"
+            }
+        },
+        {
             "Key": "bc23b46b-6524-4d02-b5a9-ce506eb80a9d",
             "Value": {
                 "id": "3e3c6c7c-32bb-4d43-9e93-0537a83b38bd",
                 "resourcePath": "views\\bc23b46b-6524-4d02-b5a9-ce506eb80a9d.yy",
                 "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "c41fdb33-5e25-4ae3-a88e-97f6b476d15b",
-            "Value": {
-                "id": "709c5281-78d5-4af2-b23d-0bdfd78e2d82",
-                "resourcePath": "sprites\\spr_first\\spr_first.yy",
-                "resourceType": "GMSprite"
             }
         },
         {
@@ -159,6 +207,14 @@
             }
         },
         {
+            "Key": "d7449f41-a816-42b7-a695-392295499a26",
+            "Value": {
+                "id": "9ca5b553-cc95-411b-94cc-b0121069f543",
+                "resourcePath": "sprites\\spr_eth_idle\\spr_eth_idle.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "d9265da9-efe8-45b6-a209-54366b2b2e4a",
             "Value": {
                 "id": "c7ae07f1-ccb5-452e-b760-faf59e33a1c7",
@@ -172,6 +228,14 @@
                 "id": "f993a5a3-17a4-4b99-9542-1e4a413c99a5",
                 "resourcePath": "views\\d9e06161-f075-4c4e-b830-dd120093b7ca.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "dd87aeda-e95d-49fe-a9f6-cc6f9e1e0556",
+            "Value": {
+                "id": "a27e1473-7b5c-4e64-85e7-cc3a0472ed32",
+                "resourcePath": "sprites\\spr_bal_idle\\spr_bal_idle.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
