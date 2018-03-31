@@ -4,7 +4,8 @@
     "mvc": "1.1",
     "name": "9888aced-da42-4845-ae1e-17fb1fc0272c",
     "children": [
-        "a6896817-0152-405f-87b6-312346082721"
+        "a6896817-0152-405f-87b6-312346082721",
+        "88a06ea2-d515-4fa7-8717-6d702f5ae76d"
     ],
     "filterType": "GMSprite",
     "folderName": "geos",
