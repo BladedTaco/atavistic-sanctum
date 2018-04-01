@@ -143,6 +143,14 @@
             }
         },
         {
+            "Key": "66e6c8da-bf29-446f-b68c-b39b6343844c",
+            "Value": {
+                "id": "58313683-a07c-4520-8b8d-443dc3207f23",
+                "resourcePath": "sprites\\spr_character_idle_lineup\\spr_character_idle_lineup.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "740d7710-2efc-47b3-ab47-886de5c1df31",
             "Value": {
                 "id": "38039150-a1a9-4756-9619-da3493c638ed",
