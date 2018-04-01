@@ -306,7 +306,7 @@
             "Key": "dd87aeda-e95d-49fe-a9f6-cc6f9e1e0556",
             "Value": {
                 "id": "a27e1473-7b5c-4e64-85e7-cc3a0472ed32",
-                "resourcePath": "sprites\\spr_bal_base\\spr_bal_base.yy",
+                "resourcePath": "sprites\\spr_bal_default\\spr_bal_default.yy",
                 "resourceType": "GMSprite"
             }
         },

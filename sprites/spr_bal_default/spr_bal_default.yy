@@ -2,7 +2,7 @@
     "id": "dd87aeda-e95d-49fe-a9f6-cc6f9e1e0556",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "spr_bal_base",
+    "name": "spr_bal_default",
     "For3D": false,
     "HTile": false,
     "VTile": false,
