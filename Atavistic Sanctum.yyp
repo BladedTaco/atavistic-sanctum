@@ -341,6 +341,14 @@
                 "resourcePath": "sprites\\spr_eth_idle1\\spr_eth_idle1.yy",
                 "resourceType": "GMSprite"
             }
+        },
+        {
+            "Key": "fc3ab24f-2abf-449c-9803-4a97ce9c22e4",
+            "Value": {
+                "id": "fa3a9d54-e9ff-44d1-a70c-20804926b56d",
+                "resourcePath": "objects\\obj_test\\obj_test.yy",
+                "resourceType": "GMObject"
+            }
         }
     ],
     "script_order": [
