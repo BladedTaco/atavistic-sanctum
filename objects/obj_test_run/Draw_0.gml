@@ -7,5 +7,8 @@ if (sprite_index = spr_eth_walk or sprite_index = spr_eth_run) {
 	draw_sprite_ext(sprite_index, image_index - 1, last_x, last_y, image_xscale, image_yscale, 0, c_ltgray, 0.5)
 }
 
-draw_self()
-
+if (sprite_exists(sprite_index)) {
+	draw_self()
+} else {
+	draw_text(x, 100, string(sprite_index))	
+}

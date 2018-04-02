@@ -14,6 +14,14 @@ if (sprite_index = sprite_run or sprite_index = sprite_walk) {
 	}
 }
 
+if (dashes) {
+	if (sprite_index = sprite_speed_up or sprite_index = sprite_dash or sprite_index = sprite_speed_down or sprite_index = sprite_dash_slow) {
+		if (sprite_index = sprite_dash or sprite_index = sprite_dash_slow) {
+			x += image_xscale
+		}
+		x += image_xscale
+	}
+}
 
 
 

@@ -9,56 +9,12 @@
     "bbox_bottom": 37,
     "bbox_left": 0,
     "bbox_right": 28,
-    "bbox_top": 0,
+    "bbox_top": 1,
     "bboxmode": 0,
     "colkind": 1,
     "coltolerance": 0,
     "edgeFiltering": false,
     "frames": [
-        {
-            "id": "1e51cd21-7d73-4aa8-a6bf-9dde8351dc43",
-            "modelName": "GMSpriteFrame",
-            "mvc": "1.0",
-            "SpriteId": "91e49855-ccfa-4328-9413-7ab4e6b5c55f",
-            "compositeImage": {
-                "id": "e01992df-f745-4645-9fbe-e786414be88b",
-                "modelName": "GMSpriteImage",
-                "mvc": "1.0",
-                "FrameId": "1e51cd21-7d73-4aa8-a6bf-9dde8351dc43",
-                "LayerId": "00000000-0000-0000-0000-000000000000"
-            },
-            "images": [
-                {
-                    "id": "d5d3a836-a1e6-4636-8ea1-45ec79ae5eb5",
-                    "modelName": "GMSpriteImage",
-                    "mvc": "1.0",
-                    "FrameId": "1e51cd21-7d73-4aa8-a6bf-9dde8351dc43",
-                    "LayerId": "5d9eb936-960e-4a20-b334-9a5d1acf7391"
-                }
-            ]
-        },
-        {
-            "id": "afbde062-9bed-4429-a558-25bca529ce39",
-            "modelName": "GMSpriteFrame",
-            "mvc": "1.0",
-            "SpriteId": "91e49855-ccfa-4328-9413-7ab4e6b5c55f",
-            "compositeImage": {
-                "id": "dc3648bc-3167-4f5d-9bbc-7bce658063e6",
-                "modelName": "GMSpriteImage",
-                "mvc": "1.0",
-                "FrameId": "afbde062-9bed-4429-a558-25bca529ce39",
-                "LayerId": "00000000-0000-0000-0000-000000000000"
-            },
-            "images": [
-                {
-                    "id": "6eb27a35-16e0-4805-bdc6-44382f0e4290",
-                    "modelName": "GMSpriteImage",
-                    "mvc": "1.0",
-                    "FrameId": "afbde062-9bed-4429-a558-25bca529ce39",
-                    "LayerId": "5d9eb936-960e-4a20-b334-9a5d1acf7391"
-                }
-            ]
-        },
         {
             "id": "ecfbdf8c-d33f-477b-ae2e-492327709d89",
             "modelName": "GMSpriteFrame",

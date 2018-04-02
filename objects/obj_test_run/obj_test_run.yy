@@ -73,7 +73,7 @@
     "physicsStartAwake": true,
     "properties": [
         {
-            "id": "81b6b97f-b652-4649-8536-218e841ba2a1",
+            "id": "ab4662a9-2935-407c-a4f7-3ad8d565ef08",
             "modelName": "GMObjectProperty",
             "mvc": "1.0",
             "listItems": null,
@@ -82,51 +82,9 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "spr_bal_walk",
-            "varName": "sprite_index",
-            "varType": 5
-        },
-        {
-            "id": "256d9ede-afd2-4cb0-975d-0d3db5c0e7c4",
-            "modelName": "GMObjectProperty",
-            "mvc": "1.0",
-            "listItems": null,
-            "multiselect": false,
-            "rangeEnabled": false,
-            "rangeMax": 10,
-            "rangeMin": 0,
-            "resourceFilter": 1023,
-            "value": "spr_bal_idle",
-            "varName": "sprite_idle",
-            "varType": 5
-        },
-        {
-            "id": "4a559ea6-08ff-44ad-b814-7f1d942de00e",
-            "modelName": "GMObjectProperty",
-            "mvc": "1.0",
-            "listItems": null,
-            "multiselect": false,
-            "rangeEnabled": false,
-            "rangeMax": 10,
-            "rangeMin": 0,
-            "resourceFilter": 1023,
-            "value": "spr_bal_run",
-            "varName": "sprite_run",
-            "varType": 5
-        },
-        {
-            "id": "b59994ea-8e1c-4202-9f8e-5ac674b51497",
-            "modelName": "GMObjectProperty",
-            "mvc": "1.0",
-            "listItems": null,
-            "multiselect": false,
-            "rangeEnabled": false,
-            "rangeMax": 10,
-            "rangeMin": 0,
-            "resourceFilter": 1023,
-            "value": "spr_bal_walk",
-            "varName": "sprite_walk",
-            "varType": 5
+            "value": "bal",
+            "varName": "character",
+            "varType": 2
         }
     ],
     "solid": false,
