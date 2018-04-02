@@ -7,9 +7,9 @@
     "HTile": false,
     "VTile": false,
     "bbox_bottom": 50,
-    "bbox_left": 5,
+    "bbox_left": 17,
     "bbox_right": 46,
-    "bbox_top": 3,
+    "bbox_top": 12,
     "bboxmode": 0,
     "colkind": 1,
     "coltolerance": 0,
@@ -261,7 +261,7 @@
             "isLocked": false,
             "name": "colour pallete",
             "opacity": 100,
-            "visible": true
+            "visible": false
         },
         {
             "id": "c5d9ab0f-fe7d-4be8-acad-fd01a6169c7f",
