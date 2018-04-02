@@ -199,6 +199,14 @@
             }
         },
         {
+            "Key": "61191183-4c9e-40b1-8062-349c361e946c",
+            "Value": {
+                "id": "da853d98-499d-4484-9a1f-82e3ee1521a0",
+                "resourcePath": "views\\61191183-4c9e-40b1-8062-349c361e946c.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "6156a7d8-e13c-4a2d-9ebe-7af8b16c126c",
             "Value": {
                 "id": "fcb690c4-7816-41bc-a5f9-b72c755f4142",
@@ -235,6 +243,14 @@
             "Value": {
                 "id": "d16f2157-b4e7-4238-a143-ab2894994adf",
                 "resourcePath": "views\\7b184479-4f09-4bc3-a017-c4682e8aa31f.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "7e3f57c7-c616-4c3c-ac9d-b2dcd541178a",
+            "Value": {
+                "id": "aa069854-e8fa-471e-bbce-e71907c28221",
+                "resourcePath": "views\\7e3f57c7-c616-4c3c-ac9d-b2dcd541178a.yy",
                 "resourceType": "GMFolder"
             }
         },
@@ -284,6 +300,14 @@
                 "id": "7eb8e504-b4db-41af-95be-55ab406107d0",
                 "resourcePath": "sprites\\spr_mac_run\\spr_mac_run.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "986310da-1d52-4be5-a322-ff3642c6a1b7",
+            "Value": {
+                "id": "5fc0ec48-ecd1-437b-9c3f-fe7ec289b2c2",
+                "resourcePath": "views\\986310da-1d52-4be5-a322-ff3642c6a1b7.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -348,6 +372,14 @@
                 "id": "eaa40479-63d3-4e9a-833b-78ab3c62b07f",
                 "resourcePath": "notes\\characters.yy",
                 "resourceType": "GMNotes"
+            }
+        },
+        {
+            "Key": "b7a09368-e295-43eb-8164-73d2a5b58d6d",
+            "Value": {
+                "id": "2e8bdb58-b0ac-4595-b71e-94c9d65abc69",
+                "resourcePath": "views\\b7a09368-e295-43eb-8164-73d2a5b58d6d.yy",
+                "resourceType": "GMFolder"
             }
         },
         {

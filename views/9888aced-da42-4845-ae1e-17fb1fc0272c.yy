@@ -6,8 +6,7 @@
     "children": [
         "a6896817-0152-405f-87b6-312346082721",
         "55c2a568-bcea-493f-992a-b95c5aa77024",
-        "2bd16c86-2f63-4dce-bd53-f07a77db7ea7",
-        "052ad95b-6fc4-42b7-bc25-b1dbfd07f5a1"
+        "986310da-1d52-4be5-a322-ff3642c6a1b7"
     ],
     "filterType": "GMSprite",
     "folderName": "geos",

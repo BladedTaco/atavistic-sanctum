@@ -6,8 +6,7 @@
     "children": [
         "d7449f41-a816-42b7-a695-392295499a26",
         "8bb40dbc-9d6f-45ac-b5f7-7ae31afbc9a9",
-        "296a120b-b309-4652-b7b8-3eeaac846273",
-        "4742760f-f253-4175-bfe7-089b9511f885"
+        "b7a09368-e295-43eb-8164-73d2a5b58d6d"
     ],
     "filterType": "GMSprite",
     "folderName": "etheral_sprirt",
