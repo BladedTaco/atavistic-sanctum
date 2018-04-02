@@ -231,10 +231,26 @@
             }
         },
         {
+            "Key": "8b9e92cd-9e0a-489c-86f8-684889baddaa",
+            "Value": {
+                "id": "59cb34b6-21fb-4357-9726-29e1368a4e4b",
+                "resourcePath": "sprites\\spr_mac_base_old\\spr_mac_base_old.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "8bb40dbc-9d6f-45ac-b5f7-7ae31afbc9a9",
             "Value": {
                 "id": "46cdb717-0d5a-4d7c-8d8d-b4b28fd22d66",
                 "resourcePath": "sprites\\spr_eth_idle\\spr_eth_idle.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "91e49855-ccfa-4328-9413-7ab4e6b5c55f",
+            "Value": {
+                "id": "b624617c-ea76-4a63-931f-9b27473dc980",
+                "resourcePath": "sprites\\spr_mac_walk1\\spr_mac_walk1.yy",
                 "resourceType": "GMSprite"
             }
         },
