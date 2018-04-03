@@ -6,7 +6,12 @@ if (sprite_index != sprite_idle) {
 	} else if (sprite_index = sprite_speed_up) {
 		sprite_index = sprite_walk
 	} else if (sprite_index = sprite_dash_slow) {
-		sprite_index = sprite_idle
+		if (irandom(100) < 80) {
+			sprite_index = sprite_dash
+			image_xscale *= -1
+		} else {
+			sprite_index = sprite_idle
+		}
 	} else if (sprite_index = sprite_speed_down) {
 		sprite_index = sprite_idle
 	} else {
