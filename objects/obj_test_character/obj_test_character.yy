@@ -82,7 +82,7 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "bal",
+            "value": "mac",
             "varName": "character",
             "varType": 2
         }

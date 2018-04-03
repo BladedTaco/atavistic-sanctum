@@ -5,44 +5,44 @@
 
 
 Move		
-	Walk				->  directional stick hold								./ walk
-	Speed Up			->  directional stick move								*/ speed up
-	Dash				->  directional stick smash								*/ dash
-	Run					->  directional stick hold								./ run
-	Slow down			->  directional stick move release						*/ speed down
-	Stop				->  directional stick release							*/ speed down
-	Pivot				->  directional stick full smash						*/ dash slow into dash
-	Jump				->  X, Y, directional stick smash up					.
-	Freefall			->  N/A													./ idle animation
+	Walk				->  directional stick hold								.		/ walk
+	Speed Up			->  directional stick move								*		/ speed up
+	Dash				->  directional stick smash								*		/ dash
+	Run					->  directional stick hold								.		/ run
+	Slow down			->  directional stick move release						*		/ speed down
+	Stop				->  directional stick release							*		/ speed down
+	Pivot				->  directional stick full smash						*		/ dash slow into dash
+	Jump				->  X, Y, directional stick smash up					.		/ jump
+	Freefall			->  N/A													.		/ air move
 																				
 Attack																			
-	tilt				->  directional stick move + A							V>^
-	smash attack		->  directional stick smash + A							V>^
-	jab					->  A, A, A												@
-	flurry				->  hold A												@
-	launch jab			->  A													@
-	special				->  B + directional stick position						V>^@
-	grab				->  Z													>^
-	throw				->  directional stick smash								<V>^
-	grab jab			->  A													@
-																				
-Defence					 														
-	Shield				->  L, R												.
-	Hold shield			->  hold L, hold R										.
-	un-shield			->  release L, release R								.
-	roll				->  L, R; + directional stick smash						<>
-	spotdodge			->  L, R; + directional stick smash down				V
-					 															
-Aerial																			
-	aerial				->  directional stick move + A							<V>^@
-	aerial grab			->  Z													<V>^
-	aerial throw		->  directional stick smash								<V>^
-	aerial dodge		->  L, R; + directional stick smash						.
-					 															
-Ledge					 														
-	grab ledge			->  N/A													.
-	hold ledge			->  N/A													.
-	ledge attack		->  A													.
-	ledge roll			->  L, R												.
-	ledge grab			->  Z													.
-	ledge jump			->  X, Y, directional stick smash up					.
+	tilt				->  directional stick move + A							V>^		.
+	smash attack		->  directional stick smash + A							V>^		.
+	jab					->  A, A, A												@		.
+	flurry				->  hold A												@		.
+	launch jab			->  A													@		.
+	special				->  B + directional stick position						V>^@	.
+	grab				->  Z													>^		.
+	throw				->  directional stick smash								<V>^	.
+	grab jab			->  A													@		.
+																						
+Defence					 																
+	Shield				->  L, R												.		.
+	Hold shield			->  hold L, hold R										.		.
+	un-shield			->  release L, release R								.		.
+	roll				->  L, R; + directional stick smash						<>		.
+	spotdodge			->  L, R; + directional stick smash down				V		.
+					 																	
+Aerial																					
+	aerial				->  directional stick move + A							<V>^@	.
+	aerial grab			->  Z													<V>^	.
+	aerial throw		->  directional stick smash								<V>^	.
+	aerial dodge		->  L, R; + directional stick smash						.		.
+					 																	
+Ledge					 																
+	grab ledge			->  N/A													.		.
+	hold ledge			->  N/A													.		.
+	ledge attack		->  A													.		.
+	ledge roll			->  L, R												.		.
+	ledge grab			->  Z													.		.
+	ledge jump			->  X, Y, directional stick smash up					.		.

@@ -23,6 +23,10 @@ sprite_air_jump =	asset_get_index(string("spr_" + character + "_air_jump"))
 
 if (sprite_dash = -1) {
 	dashes = false
+	sprite_dash = sprite_run
+	sprite_dash_slow = sprite_run
+	sprite_speed_up = sprite_walk
+	sprite_speed_down = sprite_walk
 } else {
 	dashes = true
 }

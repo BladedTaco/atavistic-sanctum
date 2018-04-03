@@ -127,6 +127,14 @@
             }
         },
         {
+            "Key": "32aaa1c6-c062-464f-936f-1ea091918909",
+            "Value": {
+                "id": "b3ef9f4d-aa5c-4fc5-a32a-40ec12a491d1",
+                "resourcePath": "sprites\\spr_eth_air_move\\spr_eth_air_move.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "37450aa2-cea4-4f83-b246-9a7eb5263c4b",
             "Value": {
                 "id": "7e8296c6-a413-4d3c-a8ef-16edf8c85baf",
@@ -319,6 +327,22 @@
             }
         },
         {
+            "Key": "8bd0fd16-261e-432e-a591-9f1d3f4e13d7",
+            "Value": {
+                "id": "b1b0d645-f72c-43e4-a6bf-8962f38a3af4",
+                "resourcePath": "sprites\\spr_geo_air_jump\\spr_geo_air_jump.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "8ef56089-0933-4d6a-8828-59d23bf990dd",
+            "Value": {
+                "id": "90025cdf-cb5f-4d19-abb2-2cad0c0a6651",
+                "resourcePath": "sprites\\spr_mac_jump\\spr_mac_jump.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "91e49855-ccfa-4328-9413-7ab4e6b5c55f",
             "Value": {
                 "id": "b624617c-ea76-4a63-931f-9b27473dc980",
@@ -439,6 +463,14 @@
             }
         },
         {
+            "Key": "c157561f-35e0-4b15-98c5-d0606e8251eb",
+            "Value": {
+                "id": "472693d0-42e1-48b2-9e05-a69c6edc06e6",
+                "resourcePath": "sprites\\spr_geo_jump\\spr_geo_jump.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "c4abca80-e811-450c-9cd0-391d916aad64",
             "Value": {
                 "id": "c335f5af-6e13-47c4-9245-5a8dbdd4b4dc",
@@ -452,6 +484,14 @@
                 "id": "e61da3a2-6a3f-4fe4-8286-ecc63f6d8e98",
                 "resourcePath": "views\\c4de9930-cb9a-413c-8a53-73b7c115cba9.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "ca08a339-e421-4552-a3ba-4ee68a95e2c6",
+            "Value": {
+                "id": "15fb6121-5bed-42c1-8c2d-0e34bffda36f",
+                "resourcePath": "sprites\\spr_eth_jump\\spr_eth_jump.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -532,6 +572,30 @@
                 "id": "217e9edd-5468-47bb-a3b3-816386adf7c7",
                 "resourcePath": "views\\e63325b3-5be0-4946-b92b-5a6b70928af8.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "e9fb2db1-ea83-496a-9043-776cbb7605ac",
+            "Value": {
+                "id": "9345b417-7188-4f7d-99e2-9495ff50feda",
+                "resourcePath": "sprites\\spr_geo_air_move\\spr_geo_air_move.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "eac7b083-a35c-4001-b65a-58c77bb46e30",
+            "Value": {
+                "id": "ce9c1aad-3688-4217-b5e8-9cab5d979c11",
+                "resourcePath": "sprites\\spr_mac_air_move\\spr_mac_air_move.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "f3976219-c2c3-44e1-ba04-f47b8d97f607",
+            "Value": {
+                "id": "6e6e54d8-fbf6-41d4-b8ad-8fe04ba044fa",
+                "resourcePath": "sprites\\spr_eth_air_jump\\spr_eth_air_jump.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

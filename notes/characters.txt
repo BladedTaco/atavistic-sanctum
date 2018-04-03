@@ -13,6 +13,7 @@ Balloony
 	short-acting hitboxes
 	
 Machination 
+	No air jump, but has a very good jump
 	steam and gunpowder based
 	Has a ness like recovery, but uses a rocket
 	machine based
