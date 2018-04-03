@@ -9,7 +9,10 @@
         "0e85e3f4-6c61-4fd0-bd3b-ea83304efec1",
         "cf6de457-e31e-4191-9f69-9fe42ab6a4aa",
         "2d75d269-515b-428e-b9f1-c4dad8a5e0a9",
-        "bd003507-0420-42b4-a5da-8a627e7f6d41"
+        "bd003507-0420-42b4-a5da-8a627e7f6d41",
+        "153d0ab8-fbf6-4f57-bbf5-c53797adfeba",
+        "4d355199-7fdb-4b0c-a095-b4c64e7a9466",
+        "562b1cab-e29b-48e7-9978-d6d71fe4c46f"
     ],
     "filterType": "GMSprite",
     "folderName": "move",
