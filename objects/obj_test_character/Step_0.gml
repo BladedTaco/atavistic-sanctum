@@ -1,5 +1,6 @@
 /// @description 
 
+draw_count++
 var _update = false
 
 if (y != 575) {
@@ -95,6 +96,7 @@ if (sprite_shield != -1) {
 		}
 	}
 }
+
 
 last_x2 = last_x
 last_x = xprevious

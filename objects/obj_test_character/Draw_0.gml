@@ -9,3 +9,11 @@ if (sprite_exists(sprite_index)) {
 	draw_self()
 	draw_text(x, 100, sprite_get_name(sprite_index))	
 }
+
+
+
+if (character = "geo") {
+	if(keyboard_check(ord("S"))) {
+		draw_sprite_ext(sprite_shield_ball, draw_count, x, y - (sprite_height/2), image_xscale, image_yscale, draw_count, c_white, 0.5)
+	}
+}

@@ -35,6 +35,7 @@ Geos
 	medium instant attack range
 	windboxes
 	medium-length hitboxes
+	moving shield, useable anywhere, no dodge or roll, large shield that fades by alpha fast with fast recovery
 
 Ethereal Spirit
 	magic, gravity, time, space based
@@ -44,3 +45,5 @@ Ethereal Spirit
 	good instant attack range
 	long lasting hitboxes
 	
+	attack ideas:
+		leave a marker when smash attacking an enemy, a special can be used to instantly teleport the hit enemy to its position

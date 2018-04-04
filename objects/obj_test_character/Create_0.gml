@@ -25,6 +25,7 @@ sprite_hold_shield =asset_get_index(string("spr_" + character + "_hold_shield"	)
 sprite_un_shield =	asset_get_index(string("spr_" + character + "_un_shield"	))
 sprite_roll =		asset_get_index(string("spr_" + character + "_roll"			))
 sprite_dodge =		asset_get_index(string("spr_" + character + "_dodge"		))
+sprite_shield_ball =asset_get_index(string("spr_" + character + "_shield_ball"	))
 
 if (sprite_dash = -1) {
 	dashes = false
@@ -38,3 +39,5 @@ if (sprite_dash = -1) {
 
 
 sprite_index = sprite_idle
+
+draw_count = 0

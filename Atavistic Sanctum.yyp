@@ -175,6 +175,14 @@
             }
         },
         {
+            "Key": "3da921fe-fee8-496d-8525-58d59e60d2d2",
+            "Value": {
+                "id": "8e141f7d-9ce7-44e2-a08b-e6afeb448857",
+                "resourcePath": "sprites\\spr_geo_shield_ball\\spr_geo_shield_ball.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "406538b0-947e-44a1-b128-fcc0c101600d",
             "Value": {
                 "id": "9e9e45d7-d8e2-47bc-a733-245ffc762df0",
