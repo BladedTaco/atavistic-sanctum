@@ -223,14 +223,6 @@
             }
         },
         {
-            "Key": "4b4845db-9fea-4676-9776-39a9c8916b96",
-            "Value": {
-                "id": "c9c890b9-34a2-44f8-91c7-8a8b6f1a432a",
-                "resourcePath": "sprites\\spr_eth_dodge\\spr_eth_dodge.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "4d0b441e-f6fa-4675-b6e9-db5af1b73d3f",
             "Value": {
                 "id": "1b344644-6047-4612-834b-6bd4af9c7174",
@@ -363,6 +355,14 @@
             "Value": {
                 "id": "f21b1f29-b760-46f7-ba31-2e03d35c8b8d",
                 "resourcePath": "sprites\\spr_bal_run\\spr_bal_run.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "826cd0d7-f22e-4c60-b31b-4c4cca3a4bbb",
+            "Value": {
+                "id": "e8b8ef3b-7f6f-4b33-b1fd-2c3d5bb4a1d6",
+                "resourcePath": "sprites\\spr_eth_dodge\\spr_eth_dodge.yy",
                 "resourceType": "GMSprite"
             }
         },
