@@ -47,6 +47,7 @@ Ethereal Spirit
 	medium speed attacks
 	good instant attack range
 	long lasting hitboxes
+	teleports up ledge
 	
 	attack ideas:
 		leave a marker when smash attacking an enemy, a special can be used to instantly teleport the hit enemy to its position

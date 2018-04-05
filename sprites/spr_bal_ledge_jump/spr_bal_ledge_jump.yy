@@ -232,7 +232,7 @@
             "isLocked": false,
             "name": "ledge",
             "opacity": 100,
-            "visible": false
+            "visible": true
         },
         {
             "id": "03aaac8f-a3ff-4456-b8c2-5476da9c4991",
