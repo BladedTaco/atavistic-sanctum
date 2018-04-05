@@ -1,6 +1,7 @@
 . means nothing special
 / means animation is completed
 * means optional animation, not all characters will have this
+# means animation is a string of other animations
 <V>^@ mean appropriate directions and neutral > is assumed to be forward and right, etc
 
 
@@ -11,9 +12,9 @@ Move
 	Run					->  directional stick hold								.		/ run
 	Slow down			->  directional stick move release						*		/ speed down
 	Stop				->  directional stick release							*		/ speed down
-	Pivot				->  directional stick full smash						*		/ dash slow into dash
+	Pivot				->  directional stick full smash						#*		/ dash_slow into dash
 	Jump				->  X, Y, directional stick smash up					.		/ jump
-	Freefall			->  N/A													.		/ air move
+	Freefall			->  N/A													.		/ air_move
 																				
 Attack																			
 	tilt				->  directional stick move + A							V>^		.
@@ -27,14 +28,15 @@ Attack
 	grab jab			->  A													@		.
 																						
 Defence					 																
-	Shield				->  L, R												.		.
-	Hold shield			->  hold L, hold R										.		.
-	un-shield			->  release L, release R								.		.
-	roll				->  L, R; + directional stick smash						<>		.
-	spotdodge			->  L, R; + directional stick smash down				V		.
+	Shield				->  L, R												*		/ shield
+	Hold shield			->  hold L, hold R										*		/ hold_shield
+	un-shield			->  release L, release R								*		/ un_shield
+	roll				->  L, R; + directional stick smash						*<>		/ roll
+	spotdodge			->  L, R; + directional stick smash down				*V		/ dodge
 					 																	
 Aerial																					
-	aerial				->  directional stick move + A							<V>^@	.
+	aerial jump			->	X, Y, directional stick smash up					*		/ air_jump
+	aerial attack		->  directional stick move + A							<V>^@	.
 	aerial grab			->  Z													<V>^	.
 	aerial throw		->  directional stick smash								<V>^	.
 	aerial dodge		->  L, R; + directional stick smash						.		.
