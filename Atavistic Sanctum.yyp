@@ -343,6 +343,14 @@
             }
         },
         {
+            "Key": "77ba51cd-791b-425d-a279-7e4cb2456b91",
+            "Value": {
+                "id": "ba720f5d-2cca-438f-9958-f76e9c851d25",
+                "resourcePath": "sprites\\spr_bal_shield_ball\\spr_bal_shield_ball.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "78455744-289d-44f4-9eff-63f1336772f2",
             "Value": {
                 "id": "d538b4ee-3189-4cb1-9416-374dfb95c270",
@@ -559,6 +567,14 @@
             }
         },
         {
+            "Key": "bca2a2fb-b32c-4d3f-bff8-50f71465af5c",
+            "Value": {
+                "id": "9d3fc684-0541-43f8-89c7-df6e5f5e9be9",
+                "resourcePath": "sprites\\spr_mac_shield_ball\\spr_mac_shield_ball.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "bd003507-0420-42b4-a5da-8a627e7f6d41",
             "Value": {
                 "id": "6f50eeb6-c4c2-43c7-976c-2b1b23e0d595",
@@ -731,6 +747,14 @@
             "Value": {
                 "id": "6e6e54d8-fbf6-41d4-b8ad-8fe04ba044fa",
                 "resourcePath": "sprites\\spr_eth_air_jump\\spr_eth_air_jump.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "f3c86bd3-05b5-4e58-a037-cbf66ae1cf40",
+            "Value": {
+                "id": "13e241d2-c15a-4bee-97ac-d26b7f03e524",
+                "resourcePath": "sprites\\spr_eth_shield_ball\\spr_eth_shield_ball.yy",
                 "resourceType": "GMSprite"
             }
         },
