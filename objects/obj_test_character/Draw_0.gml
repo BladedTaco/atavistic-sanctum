@@ -11,7 +11,7 @@ if (sprite_exists(sprite_index)) {
 }
 
 
-if(keyboard_check(ord("S"))) {
+if(keyboard_check(ord("A"))) {
 	var _y = (sprite_height/2)
 	if (character = "eth") { _y -= sprite_height/5 }
 	draw_sprite_ext(sprite_shield_ball, draw_count, x, y - _y, image_xscale, image_yscale, draw_count, c_white, 0.5)

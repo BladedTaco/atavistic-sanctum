@@ -375,6 +375,14 @@
             }
         },
         {
+            "Key": "7fb43df9-9e62-493c-95d4-768ae0bd0b14",
+            "Value": {
+                "id": "53712787-c4c9-489b-bb80-5ba553b9553a",
+                "resourcePath": "sprites\\spr_bal_ledge_jump\\spr_bal_ledge_jump.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "80171a15-8d35-47eb-8cd5-254efe018fc0",
             "Value": {
                 "id": "8b970146-e5ed-45c4-8354-86856ab67ebc",
@@ -395,6 +403,14 @@
             "Value": {
                 "id": "e8b8ef3b-7f6f-4b33-b1fd-2c3d5bb4a1d6",
                 "resourcePath": "sprites\\spr_eth_dodge\\spr_eth_dodge.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "85658709-1aa7-4b5c-bb43-2963e94db71e",
+            "Value": {
+                "id": "a15b1f27-b0ea-4ff7-9f1a-4c3bdac683f9",
+                "resourcePath": "sprites\\spr_bal_ledge\\spr_bal_ledge.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -503,6 +519,14 @@
             }
         },
         {
+            "Key": "a678b360-7871-4bcc-be1d-73e5f5fac3a7",
+            "Value": {
+                "id": "27930536-8449-48f9-9ac0-d8604bef76de",
+                "resourcePath": "sprites\\spr_bal_ledge_roll\\spr_bal_ledge_roll.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "a6896817-0152-405f-87b6-312346082721",
             "Value": {
                 "id": "48ad6aba-0427-44d7-a66b-d67c26b2ef82",
@@ -551,6 +575,14 @@
             }
         },
         {
+            "Key": "b5df047f-6517-4120-8350-09e0e8b8b0ef",
+            "Value": {
+                "id": "f6ddd00b-8831-469c-aa42-32d81170c604",
+                "resourcePath": "sprites\\spr_bal_ledge_attack\\spr_bal_ledge_attack.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "b7a09368-e295-43eb-8164-73d2a5b58d6d",
             "Value": {
                 "id": "2e8bdb58-b0ac-4595-b71e-94c9d65abc69",
@@ -563,6 +595,14 @@
             "Value": {
                 "id": "3e3c6c7c-32bb-4d43-9e93-0537a83b38bd",
                 "resourcePath": "views\\bc23b46b-6524-4d02-b5a9-ce506eb80a9d.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "bc6f20e1-fec7-445a-87d7-4cd8cdc10178",
+            "Value": {
+                "id": "e0dabc23-ec48-4bb2-81fe-29f97fed2469",
+                "resourcePath": "views\\bc6f20e1-fec7-445a-87d7-4cd8cdc10178.yy",
                 "resourceType": "GMFolder"
             }
         },
@@ -703,6 +743,14 @@
             }
         },
         {
+            "Key": "df596bff-82f0-4c49-9018-cae3933508b6",
+            "Value": {
+                "id": "b62470fe-0d5a-4d36-9905-0fbbe66b4654",
+                "resourcePath": "sprites\\spr_bal_ledge_hold\\spr_bal_ledge_hold.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "e5ac492a-eba9-462c-8ccc-f900a89458d0",
             "Value": {
                 "id": "9d4daca2-0eff-4b19-8821-b33e14787c3d",
@@ -740,6 +788,14 @@
                 "id": "9edc11d2-5fdc-4756-b8b3-a76119567660",
                 "resourcePath": "views\\ee6c2bb1-618c-447b-b360-0a58d516e4d1.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "f02bb541-b15e-458c-a015-021de99b48c6",
+            "Value": {
+                "id": "f713bd94-1be5-4bff-8fab-56a1ffae228a",
+                "resourcePath": "sprites\\spr_bal_ledge_grab\\spr_bal_ledge_grab.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
