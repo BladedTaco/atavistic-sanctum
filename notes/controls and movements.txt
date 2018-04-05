@@ -42,7 +42,7 @@ Aerial
 	aerial dodge		->  L, R; + directional stick smash						.		.
 					 																	
 Ledge					 																
-	grab ledge			->  N/A													.		.
+	grab ledge			->  N/A		(snap to ledge on frame 3)					.		.
 	hold ledge			->  N/A													.		.
 	ledge attack		->  A													.		.
 	ledge roll			->  L, R												.		.
