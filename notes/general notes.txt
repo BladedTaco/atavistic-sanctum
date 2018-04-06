@@ -1,4 +1,11 @@
 if someone is on a ledge, other people can't grab it. (ledge guarding)
+if someone is on a ledge, they can be grabbed off and air-thrown in any direction
+a downward air-throw is like a footstool, and takes a jump from the thrown
+air-throws have mostly fixed knockback, only scaling with rage
 breaking shields increases the damage and knockback of the move used to break it.
 Damage taken decreases as percentage goes up, while damage dealt increases
 Knockback taken increases as percentage goes up, while knocback dealt stays constant
+air dodges give momentum and are refreshed by an air-jump
+mac gets his air dodge back from using his recovery
+no wall jumps
+mac's up b can hit a wall to give it back once
