@@ -39,6 +39,7 @@ Geos
 	windboxes
 	medium-length hitboxes
 	moving shield, useable anywhere, no dodge or roll, large shield that fades by alpha fast with fast recovery
+	no ledge roll, but can shield while on ledge
 
 Ethereal Spirit
 	magic, gravity, time, space based
@@ -47,7 +48,7 @@ Ethereal Spirit
 	medium speed attacks
 	good instant attack range
 	long lasting hitboxes
-	teleports up ledge
+	low animation, hard to react to, have to read
 	
 	attack ideas:
 		leave a marker when smash attacking an enemy, a special can be used to instantly teleport the hit enemy to its position

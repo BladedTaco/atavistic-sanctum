@@ -71,6 +71,14 @@
             }
         },
         {
+            "Key": "09db4624-0f17-4fe2-a7ab-bd21000ce885",
+            "Value": {
+                "id": "4ab888d9-7d93-4b6e-8e40-1ce884e22c7d",
+                "resourcePath": "sprites\\spr_geo_ledge_hold\\spr_geo_ledge_hold.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "0e85e3f4-6c61-4fd0-bd3b-ea83304efec1",
             "Value": {
                 "id": "f3dc6a0b-ad32-443f-9d87-1ffeafae1236",
@@ -223,6 +231,14 @@
             }
         },
         {
+            "Key": "438f24c7-9244-4485-82f7-36cb11e98b3e",
+            "Value": {
+                "id": "6e48a6ab-8be2-4370-ad5b-d787424cbf6c",
+                "resourcePath": "sprites\\spr_geo_ledge_grab\\spr_geo_ledge_grab.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "4439e8cb-d667-40db-8a31-ab366012dfff",
             "Value": {
                 "id": "faed470d-f0de-4cb5-a6a8-cbc346e7e022",
@@ -303,6 +319,14 @@
             }
         },
         {
+            "Key": "5d9635b7-3f20-4569-a5c0-340df6a9147b",
+            "Value": {
+                "id": "8e566e64-3336-490f-84b1-8a4db1282bc6",
+                "resourcePath": "sprites\\spr_mac_ledge_attack\\spr_mac_ledge_attack.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "5e02ec21-6f85-4387-8b1c-1b5f9a786450",
             "Value": {
                 "id": "8428c0ee-7f52-47c7-b138-cf6b768fa407",
@@ -335,6 +359,22 @@
             }
         },
         {
+            "Key": "66779d83-f6e3-40cb-a90a-b028b240027f",
+            "Value": {
+                "id": "dbfeba89-e6ea-4bb6-b6e4-d3f01c23878b",
+                "resourcePath": "sprites\\spr_mac_ledge_roll\\spr_mac_ledge_roll.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "67b9cc6f-9709-4d2a-bfaf-b7faa5a129ee",
+            "Value": {
+                "id": "e97afae1-263c-4930-a1a2-5ccf1795b273",
+                "resourcePath": "sprites\\spr_geo_ledge_attack\\spr_geo_ledge_attack.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "68067471-f507-4b48-a607-60c1d369dca4",
             "Value": {
                 "id": "4b16fe24-e2ab-44eb-bb85-01654e672927",
@@ -355,6 +395,14 @@
             "Value": {
                 "id": "38039150-a1a9-4756-9619-da3493c638ed",
                 "resourcePath": "sprites\\spr_mac_base\\spr_mac_base.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "76b5cf3a-f443-4b4c-be60-b1aafb01cae6",
+            "Value": {
+                "id": "a0c411c3-d242-45a1-be38-1ee25018e275",
+                "resourcePath": "sprites\\spr_mac_ledge_hold\\spr_mac_ledge_hold.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -420,6 +468,14 @@
                 "id": "e8b8ef3b-7f6f-4b33-b1fd-2c3d5bb4a1d6",
                 "resourcePath": "sprites\\spr_eth_dodge\\spr_eth_dodge.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "83e6be70-907c-4fa6-ae32-c04a058a9505",
+            "Value": {
+                "id": "26e3f6b5-58c3-4c0a-b564-9979031278ca",
+                "resourcePath": "views\\83e6be70-907c-4fa6-ae32-c04a058a9505.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -503,6 +559,14 @@
             }
         },
         {
+            "Key": "94347281-39f0-4b33-b4c1-c2f060469f22",
+            "Value": {
+                "id": "ca084e91-3ee3-465f-aa79-ef6a0cf205f7",
+                "resourcePath": "notes\\general notes.yy",
+                "resourceType": "GMNotes"
+            }
+        },
+        {
             "Key": "97a3dd8e-a6e8-4b14-b1fc-32684e204a4e",
             "Value": {
                 "id": "7eb8e504-b4db-41af-95be-55ab406107d0",
@@ -559,6 +623,14 @@
             }
         },
         {
+            "Key": "a5e2aafd-4418-47cc-b3ca-0051438ffe89",
+            "Value": {
+                "id": "1029f5a5-5a15-466a-aa02-b5ed96382cb1",
+                "resourcePath": "sprites\\spr_geo_ledge_jump\\spr_geo_ledge_jump.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "a678b360-7871-4bcc-be1d-73e5f5fac3a7",
             "Value": {
                 "id": "27930536-8449-48f9-9ac0-d8604bef76de",
@@ -587,6 +659,14 @@
             "Value": {
                 "id": "1f0b74fa-5747-4074-8283-9998522c1adf",
                 "resourcePath": "sprites\\spr_eth_hold_shield\\spr_eth_hold_shield.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "ac75ed60-b5c1-4a2b-a482-d41a8daac9cc",
+            "Value": {
+                "id": "67e97ecb-872b-49d0-ac26-e3b0f77f3eee",
+                "resourcePath": "sprites\\spr_mac_ledge\\spr_mac_ledge.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -639,6 +719,14 @@
             }
         },
         {
+            "Key": "ba9bb50e-2400-40df-8546-32200dcf16e5",
+            "Value": {
+                "id": "cfbf55de-34b2-4707-9a7a-00c86914c813",
+                "resourcePath": "views\\ba9bb50e-2400-40df-8546-32200dcf16e5.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "bc23b46b-6524-4d02-b5a9-ce506eb80a9d",
             "Value": {
                 "id": "3e3c6c7c-32bb-4d43-9e93-0537a83b38bd",
@@ -667,6 +755,14 @@
             "Value": {
                 "id": "6f50eeb6-c4c2-43c7-976c-2b1b23e0d595",
                 "resourcePath": "sprites\\spr_bal_speed_down\\spr_bal_speed_down.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "be5353f7-453b-4237-b21a-ab2fa288ce2b",
+            "Value": {
+                "id": "267b2c05-5801-4c7d-9f4b-dd8865270d37",
+                "resourcePath": "sprites\\spr_mac_ledge_grab\\spr_mac_ledge_grab.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -711,6 +807,14 @@
             }
         },
         {
+            "Key": "c7402ec2-f3e3-404e-9262-60f5a016a090",
+            "Value": {
+                "id": "f10e4d98-a3fd-4fc4-ac02-3b5df806ada1",
+                "resourcePath": "sprites\\spr_geo_ledge\\spr_geo_ledge.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "ca08a339-e421-4552-a3ba-4ee68a95e2c6",
             "Value": {
                 "id": "15fb6121-5bed-42c1-8c2d-0e34bffda36f",
@@ -740,6 +844,14 @@
                 "id": "8306f34d-be5c-4118-9845-74de03879e34",
                 "resourcePath": "views\\d0a63039-d2f6-4e84-9fb0-2d572a898d35.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "d1ccb007-9221-4151-b3fd-985fffef1c1d",
+            "Value": {
+                "id": "a4b7018e-4de1-4703-b8a6-53fad752e654",
+                "resourcePath": "sprites\\spr_mac_ledge_jump\\spr_mac_ledge_jump.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

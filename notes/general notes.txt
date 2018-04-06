@@ -1,0 +1,4 @@
+if someone is on a ledge, other people can't grab it. (ledge guarding)
+breaking shields increases the damage and knockback of the move used to break it.
+Damage taken decreases as percentage goes up, while damage dealt increases
+Knockback taken increases as percentage goes up, while knocback dealt stays constant
