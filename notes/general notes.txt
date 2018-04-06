@@ -13,4 +13,4 @@ mac's up b can hit a wall to give it back once
 each character has a small sweet-hurtbox and some attacks have a small sweetspot,
 a "sweetspot attack" is done whenever the hitbox and hurtbox collide. All other cases is a sourspot
 
-maybe speed up all attacks
+maybe speed up all attacks.
