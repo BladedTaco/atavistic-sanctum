@@ -24,7 +24,6 @@ Machination
 	bad instant attack range
 	good propogating attack range
 	long lasting hitboxes
-	cant dodge or roll
 	completely invulnerable during shield, but has long start up and lag
 	shield does not fade, but doesn't cover entire body
 	

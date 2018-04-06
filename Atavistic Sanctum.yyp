@@ -719,6 +719,14 @@
             }
         },
         {
+            "Key": "b8204652-7aba-4949-a293-0ca7b9c9c9d6",
+            "Value": {
+                "id": "23ba9101-bb1b-4815-81ad-a90d5bcd90ef",
+                "resourcePath": "sprites\\spr_mac_roll\\spr_mac_roll.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "ba9bb50e-2400-40df-8546-32200dcf16e5",
             "Value": {
                 "id": "cfbf55de-34b2-4707-9a7a-00c86914c813",
@@ -932,6 +940,14 @@
                 "id": "217e9edd-5468-47bb-a3b3-816386adf7c7",
                 "resourcePath": "views\\e63325b3-5be0-4946-b92b-5a6b70928af8.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "e9989a78-8d33-4b0a-9ced-d44da13f1070",
+            "Value": {
+                "id": "80be34c2-e68e-4e9d-bc2a-ffa923dd9282",
+                "resourcePath": "sprites\\spr_mac_dodge\\spr_mac_dodge.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
