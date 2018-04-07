@@ -8,7 +8,8 @@
         "9a2cba30-bc76-4a26-8236-15404652cd9e",
         "7e3f57c7-c616-4c3c-ac9d-b2dcd541178a",
         "486804fe-ac2a-4add-af37-f4d4618c4482",
-        "83e6be70-907c-4fa6-ae32-c04a058a9505"
+        "83e6be70-907c-4fa6-ae32-c04a058a9505",
+        "15633637-455c-454b-af46-f4f25d374a94"
     ],
     "filterType": "GMSprite",
     "folderName": "machination",

@@ -8,7 +8,8 @@
         "8bb40dbc-9d6f-45ac-b5f7-7ae31afbc9a9",
         "b7a09368-e295-43eb-8164-73d2a5b58d6d",
         "1515ce67-d91e-4bd0-8c69-d1bf2913eb93",
-        "92363c16-717e-4466-9a2c-55451f2ea59f"
+        "92363c16-717e-4466-9a2c-55451f2ea59f",
+        "28c3c919-bf68-4207-838b-a2582f74760b"
     ],
     "filterType": "GMSprite",
     "folderName": "etheral_sprirt",

@@ -14,3 +14,7 @@ each character has a small sweet-hurtbox and some attacks have a small sweetspot
 a "sweetspot attack" is done whenever the hitbox and hurtbox collide. All other cases is a sourspot
 
 maybe speed up all attacks.
+
+Add a small input buffer, maybe 6-frames. Nothing can be buffered other than what is in this buffer
+
+hit animations are done for up, backwards, and downwards; the up animation is also a weak hit animation
