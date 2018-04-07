@@ -199,6 +199,14 @@
             }
         },
         {
+            "Key": "374ed60b-a477-4941-b854-95f0b27b842c",
+            "Value": {
+                "id": "52878868-1faf-47e4-ad06-4ba06ef2355a",
+                "resourcePath": "sprites\\spr_mac_ledge_grab\\spr_mac_ledge_grab.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "3da921fe-fee8-496d-8525-58d59e60d2d2",
             "Value": {
                 "id": "8e141f7d-9ce7-44e2-a08b-e6afeb448857",
@@ -763,14 +771,6 @@
             "Value": {
                 "id": "6f50eeb6-c4c2-43c7-976c-2b1b23e0d595",
                 "resourcePath": "sprites\\spr_bal_speed_down\\spr_bal_speed_down.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "be5353f7-453b-4237-b21a-ab2fa288ce2b",
-            "Value": {
-                "id": "267b2c05-5801-4c7d-9f4b-dd8865270d37",
-                "resourcePath": "sprites\\spr_mac_ledge_grab\\spr_mac_ledge_grab.yy",
                 "resourceType": "GMSprite"
             }
         },
