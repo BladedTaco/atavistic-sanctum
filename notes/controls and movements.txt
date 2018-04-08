@@ -50,5 +50,7 @@ Ledge
 	ledge jump			->  X, Y, directional stick smash up					.		/ ledge_jump
 	
 misc
-	grabbed				-> N/A													>		.
-	hurt				-> N/A													<V^		.
+	grabbed				-> N/A													>		/ grabbed
+	hurt				-> N/A													<V^		/ hurt_ (up, side, down)
+	
+do grabs next and throws after

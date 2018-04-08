@@ -95,6 +95,14 @@
             }
         },
         {
+            "Key": "0cee7d11-97fd-467a-ac6d-0e14f3615a7e",
+            "Value": {
+                "id": "001fe336-e1bf-44fe-875c-9e9fcea6b431",
+                "resourcePath": "sprites\\spr_geo_grabbed\\spr_geo_grabbed.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "0e85e3f4-6c61-4fd0-bd3b-ea83304efec1",
             "Value": {
                 "id": "f3dc6a0b-ad32-443f-9d87-1ffeafae1236",
@@ -235,6 +243,14 @@
             "Value": {
                 "id": "52878868-1faf-47e4-ad06-4ba06ef2355a",
                 "resourcePath": "sprites\\spr_mac_ledge_grab\\spr_mac_ledge_grab.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "3851591e-7f22-4f70-87ad-254481315fff",
+            "Value": {
+                "id": "44e34552-11ea-4d47-97b8-0cbea7f59168",
+                "resourcePath": "sprites\\spr_eth_grabbed\\spr_eth_grabbed.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -427,6 +443,14 @@
             "Value": {
                 "id": "4b16fe24-e2ab-44eb-bb85-01654e672927",
                 "resourcePath": "sprites\\spr_mac_speed_up\\spr_mac_speed_up.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "6d1d2b13-3e39-4111-8dd4-6f02d4f66ec1",
+            "Value": {
+                "id": "d3e3fee8-6da8-4a2a-84e0-af1854a71bdf",
+                "resourcePath": "sprites\\spr_mac_grabbed\\spr_mac_grabbed.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1044,6 +1068,14 @@
                 "id": "217e9edd-5468-47bb-a3b3-816386adf7c7",
                 "resourcePath": "views\\e63325b3-5be0-4946-b92b-5a6b70928af8.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "e964a484-b184-4d4b-8406-de1002aa7ca7",
+            "Value": {
+                "id": "64a3b836-00ef-4913-a13a-7f0794b8bd1d",
+                "resourcePath": "sprites\\spr_bal_grabbed\\spr_bal_grabbed.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
