@@ -47,6 +47,14 @@
             }
         },
         {
+            "Key": "02f89cf2-b8c3-4cb6-8750-1d56fedb357a",
+            "Value": {
+                "id": "5dee2952-9fe9-436c-b58b-5015c11e87f4",
+                "resourcePath": "sprites\\spr_geo_hurt_side\\spr_geo_hurt_side.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "04a20edc-00a6-447d-bd3a-a338e310181e",
             "Value": {
                 "id": "76643fb4-6ac7-45ab-bfe0-27ab5275aa63",
@@ -479,6 +487,14 @@
             }
         },
         {
+            "Key": "7f958a94-5442-40ba-8fcd-58ed185d2096",
+            "Value": {
+                "id": "3b523d45-bfc9-4449-a8de-6c7f19a96c66",
+                "resourcePath": "sprites\\spr_eth_hurt_down\\spr_eth_hurt_down.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "7fb43df9-9e62-493c-95d4-768ae0bd0b14",
             "Value": {
                 "id": "53712787-c4c9-489b-bb80-5ba553b9553a",
@@ -571,6 +587,22 @@
             "Value": {
                 "id": "90025cdf-cb5f-4d19-abb2-2cad0c0a6651",
                 "resourcePath": "sprites\\spr_mac_jump\\spr_mac_jump.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "8f28d527-7d1e-4686-98e3-b2133da438c3",
+            "Value": {
+                "id": "4187257e-3095-4e86-bf02-afc7d99b562c",
+                "resourcePath": "sprites\\spr_eth_hurt_up\\spr_eth_hurt_up.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "905206eb-bb0b-4c38-9d5a-3891efd62ed2",
+            "Value": {
+                "id": "e4a7cb7a-48e6-4485-80ba-e43fa71cac46",
+                "resourcePath": "sprites\\spr_eth_hurt_side\\spr_eth_hurt_side.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -983,6 +1015,14 @@
             }
         },
         {
+            "Key": "df8b1d48-b6b4-418a-93cf-76480606632f",
+            "Value": {
+                "id": "d7ed3b48-dbc6-4aaa-9a86-93be0bc1793a",
+                "resourcePath": "sprites\\spr_geo_hurt_down\\spr_geo_hurt_down.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "e36ca280-ef52-4460-bacb-eb13e3c6073f",
             "Value": {
                 "id": "91d29220-6458-408c-bb0b-f5ea15719bbb",
@@ -1051,6 +1091,14 @@
             "Value": {
                 "id": "f713bd94-1be5-4bff-8fab-56a1ffae228a",
                 "resourcePath": "sprites\\spr_bal_ledge_grab\\spr_bal_ledge_grab.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "f2527fb4-3e08-446b-8d23-faac38f93cc1",
+            "Value": {
+                "id": "3961f6c2-81a4-4d8b-8f7e-d9f41898fe2e",
+                "resourcePath": "sprites\\spr_geo_hurt_up\\spr_geo_hurt_up.yy",
                 "resourceType": "GMSprite"
             }
         },
