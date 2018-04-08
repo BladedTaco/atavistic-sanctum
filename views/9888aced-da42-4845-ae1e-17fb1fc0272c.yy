@@ -9,7 +9,8 @@
         "986310da-1d52-4be5-a322-ff3642c6a1b7",
         "3da921fe-fee8-496d-8525-58d59e60d2d2",
         "ba9bb50e-2400-40df-8546-32200dcf16e5",
-        "f89f845d-c3c9-4017-91f3-7f7ce8d35e52"
+        "f89f845d-c3c9-4017-91f3-7f7ce8d35e52",
+        "cd86c0d3-ebc8-4176-8993-bf63ef72c8fc"
     ],
     "filterType": "GMSprite",
     "folderName": "geos",

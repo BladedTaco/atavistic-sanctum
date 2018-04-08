@@ -16,7 +16,7 @@ Move
 	Jump				->  X, Y, directional stick smash up					.		/ jump
 	Freefall			->  N/A													.		/ air_move
 																				
-Attack																			
+Attack																		
 	tilt				->  directional stick move + A							V>^		.
 	smash attack		->  directional stick smash + A							V>^		.
 	jab					->  A, A, A												@		.

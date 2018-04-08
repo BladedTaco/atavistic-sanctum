@@ -18,3 +18,6 @@ maybe speed up all attacks.
 Add a small input buffer, maybe 6-frames. Nothing can be buffered other than what is in this buffer
 
 hit animations are done for up, backwards, and downwards; the up animation is also a weak hit animation
+
+add a staling queue, taunts empty the queue
+taunts can be used to increase damage taken and knockback given, it runs out after a stock either side
