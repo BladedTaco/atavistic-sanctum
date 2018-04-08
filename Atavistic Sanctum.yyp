@@ -231,6 +231,14 @@
             }
         },
         {
+            "Key": "31cff7d5-5e59-424d-a7aa-7c01445bc8d7",
+            "Value": {
+                "id": "9d9648da-730a-4168-b313-263c69ba86d6",
+                "resourcePath": "views\\31cff7d5-5e59-424d-a7aa-7c01445bc8d7.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "32aaa1c6-c062-464f-936f-1ea091918909",
             "Value": {
                 "id": "b3ef9f4d-aa5c-4fc5-a32a-40ec12a491d1",
@@ -643,6 +651,14 @@
             "Value": {
                 "id": "ecda5f6f-1e9e-4593-8273-6a94e47d7014",
                 "resourcePath": "sprites\\spr_eth_ledge_attack\\spr_eth_ledge_attack.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "8dfa9e1c-7984-4e94-97c0-a1664b48de59",
+            "Value": {
+                "id": "05dcf30d-7676-4d24-a414-9a4365fe2c46",
+                "resourcePath": "sprites\\spr_bal_throw_forward\\spr_bal_throw_forward.yy",
                 "resourceType": "GMSprite"
             }
         },
