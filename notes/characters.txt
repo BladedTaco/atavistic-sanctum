@@ -11,6 +11,7 @@ Balloony
 	weak attacks
 	low attack range
 	short-acting hitboxes
+	can't charge smash attacks
 	
 Machination 
 	No air jump, but has a very good jump
@@ -48,6 +49,8 @@ Ethereal Spirit
 	good instant attack range
 	long lasting hitboxes
 	low animation, hard to react to, have to read
+	tilts are just uncharged smash attacks
+	grabs do not have endlag or slow down, but have a cooldown
 	
 	attack ideas:
 		leave a marker when smash attacking an enemy, a special can be used to instantly teleport the hit enemy to its position
