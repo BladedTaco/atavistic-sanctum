@@ -1,4 +1,4 @@
-Balloony
+Balloony					lacks smash attacks				gains long combos and aerial mobility
 	Super light Character
 	Uses string for all attacks
 	Literally a balloon
@@ -13,7 +13,7 @@ Balloony
 	short-acting hitboxes
 	can't charge smash attacks
 	
-Machination 
+Machination					lacks a double jump				gains a good jump and recovery
 	No air jump, but has a very good jump
 	steam and gunpowder based
 	Has a ness like recovery, but uses a rocket
@@ -28,7 +28,7 @@ Machination
 	completely invulnerable during shield, but has long start up and lag
 	shield does not fade, but doesn't cover entire body
 	
-Geos
+Geos						lack a dodge and roll			gains a shield usable anywhere, long range grabs
 	wind, lightning, water, earth, fire based
 	fast movement
 	medium speed attacks
@@ -40,8 +40,9 @@ Geos
 	medium-length hitboxes
 	moving shield, useable anywhere, no dodge or roll, large shield that fades by alpha fast with fast recovery
 	no ledge roll, but can shield while on ledge
+	side and up grab are the same and have a large hitbox
 
-Ethereal Spirit
+Ethereal Spirit				lacks unique tilt attacks		gains instant smash attacks
 	magic, gravity, time, space based
 	super fast
 	medium attack

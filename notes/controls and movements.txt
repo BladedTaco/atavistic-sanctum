@@ -15,7 +15,10 @@ Move
 	Pivot				->  directional stick full smash						#*		/ dash_slow into dash
 	Jump				->  X, Y, directional stick smash up					.		/ jump
 	Freefall			->  N/A													.		/ air_move
-																				
+	aerial jump			->	X, Y, directional stick smash up					*		/ air_jump
+	aerial attack		->  directional stick move + A							<V>^@	.
+	aerial dodge		->  L, R; + directional stick smash						.		.
+
 Attack																		
 	tilt				->  directional stick move + A							V>^		.
 	smash attack		->  directional stick smash + A							V>^		.
@@ -33,13 +36,7 @@ Defence
 	un-shield			->  release L, release R								*		/ un_shield
 	roll				->  L, R; + directional stick smash						*<>		/ roll
 	spotdodge			->  L, R; + directional stick smash down				*V		/ dodge
-					 																	
-Aerial																					
-	aerial jump			->	X, Y, directional stick smash up					*		/ air_jump
-	aerial attack		->  directional stick move + A							<V>^@	.
-	aerial grab			->  Z													<V>^	.
-	aerial throw		->  directional stick smash								<V>^	.
-	aerial dodge		->  L, R; + directional stick smash						.		.
+
 					 																	
 Ledge					 																
 	grab ledge			->  N/A		(snap to ledge on frame 3)					.		/ ledge
