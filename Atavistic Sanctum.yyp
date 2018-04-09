@@ -103,6 +103,14 @@
             }
         },
         {
+            "Key": "07dfaa1f-94cb-420c-920c-793c2a1f6b4b",
+            "Value": {
+                "id": "7508fe54-0f25-4fb2-835a-98444591d31b",
+                "resourcePath": "sprites\\spr_geo_throw_forward11\\spr_geo_throw_forward11.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "09db4624-0f17-4fe2-a7ab-bd21000ce885",
             "Value": {
                 "id": "4ab888d9-7d93-4b6e-8e40-1ce884e22c7d",
@@ -279,6 +287,22 @@
             }
         },
         {
+            "Key": "33364b9b-3c29-4976-8828-4abb266540d5",
+            "Value": {
+                "id": "76ab6156-4836-4f6a-ac18-e4ea9a805752",
+                "resourcePath": "sprites\\spr_geo_throw_forward1\\spr_geo_throw_forward1.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "33d8af07-a0f7-41e1-9968-bca6560f7356",
+            "Value": {
+                "id": "2c96069e-7d58-4fee-9b53-fe15e3484db1",
+                "resourcePath": "sprites\\spr_geo_throw_forward\\spr_geo_throw_forward.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "37450aa2-cea4-4f83-b246-9a7eb5263c4b",
             "Value": {
                 "id": "7e8296c6-a413-4d3c-a8ef-16edf8c85baf",
@@ -388,6 +412,14 @@
                 "id": "22b3acc9-7c9b-4f38-b462-f7ec904342ad",
                 "resourcePath": "views\\486804fe-ac2a-4add-af37-f4d4618c4482.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "4c66e817-8e1c-4ba6-8cbf-6d42a2693da5",
+            "Value": {
+                "id": "e0b4c5df-c395-43c2-a531-1ef674d87841",
+                "resourcePath": "sprites\\spr_geo_throw_forward2\\spr_geo_throw_forward2.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -588,6 +620,14 @@
                 "id": "d538b4ee-3189-4cb1-9416-374dfb95c270",
                 "resourcePath": "objects\\obj_test_run\\obj_test_run.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "7985885d-4c92-4a5a-9a4a-f376def5367a",
+            "Value": {
+                "id": "a178dd07-fad6-48c7-8a7b-4a36e39d3f06",
+                "resourcePath": "sprites\\spr_geo_grab_jab\\spr_geo_grab_jab.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
