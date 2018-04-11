@@ -13,7 +13,7 @@ Balloony					lacks smash attacks				gains long combos and aerial mobility
 	short-acting hitboxes
 	can't charge smash attacks
 	
-Machination					lacks a double jump				gains a good jump and recovery
+Machination					lacks a double jump				gains a good jump and recovery, air grab when air move
 	No air jump, but has a very good jump
 	steam and gunpowder based
 	Has a ness like recovery, but uses a rocket
@@ -27,6 +27,10 @@ Machination					lacks a double jump				gains a good jump and recovery
 	long lasting hitboxes
 	completely invulnerable during shield, but has long start up and lag
 	shield does not fade, but doesn't cover entire body
+	grab jab happens automatically
+	grab releases automatically when hitting the ground
+	back throw causes a jump
+	grab jab happens when he is grabbed
 	
 Geos						lack a dodge and roll			gains a shield usable anywhere, long range grabs
 	wind, lightning, water, earth, fire based
