@@ -871,6 +871,14 @@
             }
         },
         {
+            "Key": "9169ce49-8108-40ab-bf48-75a42bb357f7",
+            "Value": {
+                "id": "25aa2c97-a98d-4607-bd6b-6c0f3d565159",
+                "resourcePath": "sprites\\spr_eth_taunt\\spr_eth_taunt.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "91e49855-ccfa-4328-9413-7ab4e6b5c55f",
             "Value": {
                 "id": "b624617c-ea76-4a63-931f-9b27473dc980",

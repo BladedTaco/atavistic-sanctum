@@ -8,7 +8,8 @@
         "abf7f945-bca3-4c90-b8f6-d244689872dd",
         "5e02ec21-6f85-4387-8b1c-1b5f9a786450",
         "c7173ff6-f21d-4f61-8db0-8b12aa3feefa",
-        "826cd0d7-f22e-4c60-b31b-4c4cca3a4bbb"
+        "826cd0d7-f22e-4c60-b31b-4c4cca3a4bbb",
+        "f3c86bd3-05b5-4e58-a037-cbf66ae1cf40"
     ],
     "filterType": "GMSprite",
     "folderName": "defend",
