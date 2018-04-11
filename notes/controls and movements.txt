@@ -26,9 +26,9 @@ Attack
 	flurry				->  hold A												@		.
 	launch jab			->  A													@		.
 	special				->  B + directional stick position						V>^@	.
-	grab				->  Z													>^		. grab_ (side, up, hold)
-	throw				->  directional stick smash								<V>^	. throw_ (forward, up, down, back)			Eth Throws need the grab ball animated in code
-	grab jab			->  A													@		. grab_jab
+	grab				->  Z													>^		/ grab_ (side, up, hold)
+	throw				->  directional stick smash								<V>^	/ throw_ (forward, up, down, back)			Eth Throws need the grab ball animated in code
+	grab jab			->  A													@		/ grab_jab
 																						
 Defence					 																
 	Shield				->  L, R												*		/ shield
@@ -49,5 +49,5 @@ Ledge
 misc
 	grabbed				-> N/A													>		/ grabbed
 	hurt				-> N/A													<V^		/ hurt_ (up, side, down)
+	taunt				-> D-Pad + any direction								.		.
 	
-do grabs next and throws after

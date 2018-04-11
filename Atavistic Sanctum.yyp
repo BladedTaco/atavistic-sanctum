@@ -471,6 +471,14 @@
             }
         },
         {
+            "Key": "4aa5d277-297b-4023-b76e-d0a553f5c696",
+            "Value": {
+                "id": "1400099d-3d00-4b15-8037-90aba3dc0a2f",
+                "resourcePath": "sprites\\spr_mac_taunt\\spr_mac_taunt.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "4cda9417-a063-4bf8-a82f-decda331e15e",
             "Value": {
                 "id": "42e5b2f2-8b92-4090-8563-892892d6062b",
@@ -515,6 +523,14 @@
             "Value": {
                 "id": "23d2ecff-2c2d-4fe7-bd2d-05521ea2ff41",
                 "resourcePath": "sprites\\spr_bal_air_jump\\spr_bal_air_jump.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "59991f6e-5a74-43b6-94ed-64fb17e749db",
+            "Value": {
+                "id": "02dfd375-53b3-4b21-b39a-c3b59705a480",
+                "resourcePath": "sprites\\spr_geo_taunt\\spr_geo_taunt.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1131,6 +1147,14 @@
             "Value": {
                 "id": "6f50eeb6-c4c2-43c7-976c-2b1b23e0d595",
                 "resourcePath": "sprites\\spr_bal_speed_down\\spr_bal_speed_down.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "bf33f697-ee16-43f4-b2e0-e914820fa0e1",
+            "Value": {
+                "id": "a9d16423-a312-4709-bae2-10f2ba96291c",
+                "resourcePath": "sprites\\spr_bal_taunt\\spr_bal_taunt.yy",
                 "resourceType": "GMSprite"
             }
         },
