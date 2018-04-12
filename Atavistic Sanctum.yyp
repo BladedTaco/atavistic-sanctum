@@ -47,10 +47,26 @@
             }
         },
         {
+            "Key": "01fd7add-43f4-41c0-b0e2-8e41906e1345",
+            "Value": {
+                "id": "1c5cfec7-886b-4bde-9b13-1c23fd833e21",
+                "resourcePath": "sprites\\spr_bal_air_dodge\\spr_bal_air_dodge.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "0268bf65-a5f6-4b8d-a954-ddc00a9a6657",
             "Value": {
                 "id": "91b89c65-2363-45da-ae58-472b86720eba",
                 "resourcePath": "sprites\\spr_eth_throw_back\\spr_eth_throw_back.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "0295544e-5918-44d1-b288-02b0d9ec97ef",
+            "Value": {
+                "id": "f447667c-748f-40d0-87b1-490e32538fde",
+                "resourcePath": "sprites\\spr_geo_land\\spr_geo_land.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -271,6 +287,14 @@
             }
         },
         {
+            "Key": "24861b70-319b-4e6b-a123-aa40b0e840cf",
+            "Value": {
+                "id": "259442c2-f659-4dc8-8ed9-de3b284709b5",
+                "resourcePath": "sprites\\spr_bal_land\\spr_bal_land.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "2842a6b5-5a70-40cb-a868-36a692e71c2e",
             "Value": {
                 "id": "ec1b0421-fad6-4d49-980b-f700b1108dc2",
@@ -355,6 +379,14 @@
             "Value": {
                 "id": "2c96069e-7d58-4fee-9b53-fe15e3484db1",
                 "resourcePath": "sprites\\spr_geo_throw_forward\\spr_geo_throw_forward.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "3437320c-53e6-4d1a-972f-8c0d29cd981a",
+            "Value": {
+                "id": "2319003c-a476-4e90-996e-4e2b50e06a76",
+                "resourcePath": "sprites\\spr_eth_air_dodge\\spr_eth_air_dodge.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -647,6 +679,14 @@
             }
         },
         {
+            "Key": "6e81aaa6-00cd-4672-a36f-02e260a68802",
+            "Value": {
+                "id": "d74a27e9-ca39-4b72-bff0-81c127378022",
+                "resourcePath": "sprites\\spr_mac_land\\spr_mac_land.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "6fa172a0-da53-478a-92e7-2d9e3d463db0",
             "Value": {
                 "id": "0039bcf1-bf0f-4e2b-89ce-5321423ff1d3",
@@ -867,6 +907,14 @@
             "Value": {
                 "id": "e4a7cb7a-48e6-4485-80ba-e43fa71cac46",
                 "resourcePath": "sprites\\spr_eth_hurt_side\\spr_eth_hurt_side.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "9084fe99-3dbf-4765-9b91-873d43f94102",
+            "Value": {
+                "id": "1f7a0929-aa23-485e-a9b0-cfc2bb720a2a",
+                "resourcePath": "sprites\\spr_eth_land\\spr_eth_land.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1191,6 +1239,14 @@
             }
         },
         {
+            "Key": "c38af51d-7193-402f-8540-275f5cb3a1e2",
+            "Value": {
+                "id": "d7a2d03a-3822-4b9e-b1c3-7e4aeb04c92c",
+                "resourcePath": "notes\\attacks.yy",
+                "resourceType": "GMNotes"
+            }
+        },
+        {
             "Key": "c499e2fe-3e9c-41d8-a72f-647775bba5ad",
             "Value": {
                 "id": "cff27e91-c850-49a0-a45d-a142209a8bdb",
@@ -1428,6 +1484,14 @@
                 "id": "9edc11d2-5fdc-4756-b8b3-a76119567660",
                 "resourcePath": "views\\ee6c2bb1-618c-447b-b360-0a58d516e4d1.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "ef710891-1931-4f83-9593-ab34ce15fe6b",
+            "Value": {
+                "id": "59edea9b-cd99-4c9c-8b81-b7c924198315",
+                "resourcePath": "sprites\\spr_mac_air_dodge\\spr_mac_air_dodge.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

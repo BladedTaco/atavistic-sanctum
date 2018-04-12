@@ -17,7 +17,8 @@ Move
 	Freefall			->  N/A													.		/ air_move
 	aerial jump			->	X, Y, directional stick smash up					*		/ air_jump
 	aerial attack		->  directional stick move + A							<V>^@	.
-	aerial dodge		->  L, R; + directional stick smash						.		.
+	aerial dodge		->  L, R; + directional stick smash						.		/ air_dodge
+	land				->	N/A													.		/ land
 
 Attack																		
 	tilt				->  directional stick move + A							V>^		.
@@ -49,5 +50,5 @@ Ledge
 misc
 	grabbed				-> N/A													>		/ grabbed
 	hurt				-> N/A													<V^		/ hurt_ (up, side, down)
-	taunt				-> D-Pad + any direction								.		.
+	taunt				-> D-Pad + any direction								.		/ taunt
 	

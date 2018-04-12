@@ -21,3 +21,5 @@ hit animations are done for up, backwards, and downwards; the up animation is al
 
 add a staling queue, taunts empty the queue
 taunts can be used to increase damage taken and knockback given, it runs out after a stock either side
+
+air dodges pause on the last frame of animation until they are done

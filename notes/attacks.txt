@@ -1,0 +1,93 @@
+Bal
+	Tilt
+		F- does a flying drop kick
+		D- does a headspin
+		U- villager style up-tilt
+		N- pokes with string
+	
+	Aerial
+		F- swings string up and down in front of him
+		D- falcon down air
+		U- ejects air downwards and goes up
+		B- does a lucas back-air
+		N- does air-jump but faster
+	
+	Smash
+		F- does a reverse flying drop kick
+		D- smashes head forwards then backwards
+		U- crouches down then jumps up
+	
+	Special
+		F- string thrown forward like a lassoo, its a grab
+		D- wario waft but with air
+		U- helicopters string above head
+		N- uses wind blast to reverse enemy's direction and is a windbox
+
+Mac
+	Tilt
+		F- swings arm forward and down, moves forward and turns
+		D- slides like cloud
+		U- head pops off and does a jump
+		N- jabs forward
+	
+	Aerial
+		F- smoke blast in front of him, multihit
+		D- smoke blast downwards, spike
+		U- smoke blasts upwards, has recoil
+		B- smoke blasts behind him, has recoil
+		N- smoke envelops him, like lucas nair
+	
+	Smash
+		F- does a kamehameameha
+		D- smashes the ground and smoke comes out, like megaman
+		U- like palutena up tilt, but wiht smoke and gains range with charge
+	
+	Special
+		F- ganon side b, but the multihit custom
+		D- smoke rushes down from above stage, huge downwards windbox
+		U- ness recovery but with smoke
+		N- explodes suit, suit reappears under smoke
+	
+Geo
+	Tilt
+		F- swings arm out wide
+		D- shrinks down and spreads arms out
+		U- attacks overhead with arm
+		N- jabs
+	
+	Aerial
+		F- forwards windbox
+		D- downwards windbox
+		U- upwards windbox
+		B- backwards windbox
+		N- gravity windbox
+	
+	Smash
+		F- throws arm forward
+		D- spins in place
+		U- flame head quickly rises upwards
+	
+	Special
+		F- water rushes forwards, powerful windbox
+		D- ganon custom down b, goes straight down using wind
+		U- peach parasol type thing
+		N- powers up next normal attack with lightning for a hitstun
+	
+Eth
+	Aerial
+		F- explosion in front of him, moves back
+		D- explosion below him, moves up
+		U- explosion above him, moves down
+		B- explosion behind him, moves forward
+		N- explosion on him, pauses movement
+	
+	Smash
+		F- Energy pulse forwards (ledge attack)
+		D- crouches and fires f-smash both ways, but lower
+		U- raises a platform out of the ground
+	
+	Special
+		F- teleports forwards, if it hits someone they switch places
+		D- everyone instantly is grounded, unless they are above a void or dodge it, propogating move
+		U- jumps up while spiking anyone touching
+		N- fox laser
