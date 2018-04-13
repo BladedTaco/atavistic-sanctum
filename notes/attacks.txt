@@ -23,9 +23,11 @@ Bal
 		U- helicopters string above head
 		N- uses wind blast to reverse enemy's direction and is a windbox
 
+-------------------------------------------------------------------------------------
+
 Mac
 	Tilt
-		F- swings arm forward and down, moves forward and turns
+		F- dashes forwards, stops after one dash, 
 		D- slides like cloud
 		U- head pops off and does a jump
 		N- jabs forward
@@ -47,6 +49,8 @@ Mac
 		D- smoke rushes down from above stage, huge downwards windbox
 		U- ness recovery but with smoke
 		N- explodes suit, suit reappears under smoke
+	
+-------------------------------------------------------------------------------------
 	
 Geo
 	Tilt
@@ -72,6 +76,8 @@ Geo
 		D- ganon custom down b, goes straight down using wind
 		U- peach parasol type thing
 		N- powers up next normal attack with lightning for a hitstun
+	
+-------------------------------------------------------------------------------------
 	
 Eth
 	Tilts
