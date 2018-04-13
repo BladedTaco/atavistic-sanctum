@@ -74,6 +74,9 @@ Geo
 		N- powers up next normal attack with lightning for a hitstun
 	
 Eth
+	Tilts
+		Same as smash attacks, but uncharged. No jab
+		
 	Aerial
 		F- explosion in front of him, moves back
 		D- explosion below him, moves up
