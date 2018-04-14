@@ -167,6 +167,14 @@
             }
         },
         {
+            "Key": "0a65e099-cf02-4e4c-8a6a-8483e0ce2f9c",
+            "Value": {
+                "id": "b0424b55-a545-46a0-93dd-748296702506",
+                "resourcePath": "sprites\\spr_mac_smash_up\\spr_mac_smash_up.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "0cee7d11-97fd-467a-ac6d-0e14f3615a7e",
             "Value": {
                 "id": "001fe336-e1bf-44fe-875c-9e9fcea6b431",
@@ -219,6 +227,14 @@
             "Value": {
                 "id": "55916b68-cc87-4bc2-ac05-9096d47ecab0",
                 "resourcePath": "sprites\\spr_bal_roll\\spr_bal_roll.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "12e2571b-09f1-4610-a6ce-ac51a7785038",
+            "Value": {
+                "id": "537c1219-b666-4575-a3dd-b3418f14679b",
+                "resourcePath": "sprites\\spr_mac_special_up\\spr_mac_special_up.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -583,6 +599,14 @@
             }
         },
         {
+            "Key": "4b975960-0f02-4b21-9d30-f3bf1de1c431",
+            "Value": {
+                "id": "999ae20c-8c98-4ebd-849c-c1a8d927ab63",
+                "resourcePath": "sprites\\spr_mac_smash_down\\spr_mac_smash_down.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "4cda9417-a063-4bf8-a82f-decda331e15e",
             "Value": {
                 "id": "42e5b2f2-8b92-4090-8563-892892d6062b",
@@ -627,6 +651,14 @@
             "Value": {
                 "id": "f31e9d8e-cac2-4571-b989-a39eaa8c0509",
                 "resourcePath": "sprites\\spr_mac_tilt_forward\\spr_mac_tilt_forward.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "5531b545-8b2d-453f-a8b8-be70fb48b736",
+            "Value": {
+                "id": "416d3394-9a66-420d-98b7-92ef4aca035d",
+                "resourcePath": "sprites\\spr_mac_smash_forward\\spr_mac_smash_forward.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -991,6 +1023,14 @@
             }
         },
         {
+            "Key": "8727ed65-143d-471a-8075-4a0969f1166e",
+            "Value": {
+                "id": "31ae8888-1b98-4389-a3ad-6ed6dc87f185",
+                "resourcePath": "sprites\\spr_mac_special_forward\\spr_mac_special_forward.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "88a06ea2-d515-4fa7-8717-6d702f5ae76d",
             "Value": {
                 "id": "20d024b1-6d57-471d-abc5-aaccffa47f0e",
@@ -1195,6 +1235,14 @@
             "Value": {
                 "id": "ef04a962-35f6-4c91-8dc6-0dcb52f778fe",
                 "resourcePath": "sprites\\spr_bal_grab_up\\spr_bal_grab_up.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "a5b78aa2-1df7-42db-927b-d3f46ee22fec",
+            "Value": {
+                "id": "bf2af8d5-dba8-4413-a727-5f735b0c83d4",
+                "resourcePath": "sprites\\spr_mac_special_neutral\\spr_mac_special_neutral.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1639,6 +1687,14 @@
             }
         },
         {
+            "Key": "de40f772-e886-40b6-86de-90f25f9a6d7c",
+            "Value": {
+                "id": "8e896ade-7859-4523-aeae-6f98cddc91f3",
+                "resourcePath": "sprites\\spr_mac_special_up_effect\\spr_mac_special_up_effect.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "decc4516-0955-4ee2-ba8c-a6c762634c49",
             "Value": {
                 "id": "4b8fc1c6-18e4-47aa-b678-cb8a041a1475",
@@ -1763,6 +1819,14 @@
             "Value": {
                 "id": "59edea9b-cd99-4c9c-8b81-b7c924198315",
                 "resourcePath": "sprites\\spr_mac_air_dodge\\spr_mac_air_dodge.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "efdb3f1e-3386-42a1-9c11-05c728248812",
+            "Value": {
+                "id": "45d93484-bec7-4a7c-bc21-e908c9ff5745",
+                "resourcePath": "sprites\\spr_mac_special_down\\spr_mac_special_down.yy",
                 "resourceType": "GMSprite"
             }
         },
