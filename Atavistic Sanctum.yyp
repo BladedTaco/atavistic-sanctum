@@ -239,6 +239,14 @@
             }
         },
         {
+            "Key": "14170293-f079-4b94-b189-eca7071edf00",
+            "Value": {
+                "id": "cad5f1af-ead6-4813-9e6a-3df18c8e5bdb",
+                "resourcePath": "sprites\\spr_geo_tilt11\\spr_geo_tilt11.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "1434547f-ebab-4419-a4c8-3a51dba1c63b",
             "Value": {
                 "id": "2fdab0a4-660b-49a0-8d32-e70f7c046f72",
@@ -308,6 +316,14 @@
                 "id": "b0e5fa0f-5550-431e-accc-1946c2b86275",
                 "resourcePath": "views\\1b96afd8-eccf-441f-95f8-31a3588c8be1.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "1fca7927-9825-41f3-bdf3-67e5cefff460",
+            "Value": {
+                "id": "9c040bcb-87a9-404e-a0ae-b99cb25c81a4",
+                "resourcePath": "sprites\\spr_bal_dash_attack\\spr_bal_dash_attack.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -415,6 +431,14 @@
             }
         },
         {
+            "Key": "3217d6df-9063-4c89-93ec-c593818a0192",
+            "Value": {
+                "id": "a04b41d1-8a04-40c7-8c78-b45d407b91fa",
+                "resourcePath": "views\\3217d6df-9063-4c89-93ec-c593818a0192.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "32aaa1c6-c062-464f-936f-1ea091918909",
             "Value": {
                 "id": "b3ef9f4d-aa5c-4fc5-a32a-40ec12a491d1",
@@ -467,6 +491,14 @@
             "Value": {
                 "id": "db7d82eb-377f-44df-9f51-8d629b4127b1",
                 "resourcePath": "sprites\\spr_mac_aerial_neutral\\spr_mac_aerial_neutral.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "37a012fd-b26f-46fc-b9c5-81b025cbe40d",
+            "Value": {
+                "id": "deca94f8-f664-45ad-925a-79be835c3850",
+                "resourcePath": "sprites\\spr_geo_tilt2\\spr_geo_tilt2.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -540,6 +572,14 @@
                 "id": "6e48a6ab-8be2-4370-ad5b-d787424cbf6c",
                 "resourcePath": "sprites\\spr_geo_ledge_grab\\spr_geo_ledge_grab.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "441776da-65fb-4935-b3c1-ed9dbbab7670",
+            "Value": {
+                "id": "7431af04-d0da-4710-9970-f086e5957d71",
+                "resourcePath": "views\\441776da-65fb-4935-b3c1-ed9dbbab7670.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -1079,6 +1119,14 @@
             }
         },
         {
+            "Key": "8d0b78ed-250b-4989-a860-27c557a41001",
+            "Value": {
+                "id": "2723f70a-5c06-48dc-bc53-ae1ecd8e2c0b",
+                "resourcePath": "sprites\\spr_mac_dash_attack\\spr_mac_dash_attack.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "8dfa9e1c-7984-4e94-97c0-a1664b48de59",
             "Value": {
                 "id": "05dcf30d-7676-4d24-a414-9a4365fe2c46",
@@ -1172,6 +1220,14 @@
                 "id": "a7858e73-eee1-4263-a33b-52abd891ffb9",
                 "resourcePath": "views\\9587fbe5-b8fe-44ff-afcf-58bd32eaf1fa.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "97291f89-3860-4185-ad8f-75bf251401d4",
+            "Value": {
+                "id": "c1f4e74b-86a2-4189-a9ac-d56b092e7604",
+                "resourcePath": "sprites\\spr_geo_tilt1\\spr_geo_tilt1.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1331,6 +1387,22 @@
             "Value": {
                 "id": "67e97ecb-872b-49d0-ac26-e3b0f77f3eee",
                 "resourcePath": "sprites\\spr_mac_ledge\\spr_mac_ledge.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "aedf682c-5d12-4239-a0ca-491bac286cd1",
+            "Value": {
+                "id": "44ae033c-6d6f-4022-b3aa-2efc5a7e6dfd",
+                "resourcePath": "sprites\\spr_geo_ledge_grab1\\spr_geo_ledge_grab1.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "b06c9c51-6cab-4dd1-a4de-0cd95f5e07dd",
+            "Value": {
+                "id": "f6fbbe8d-8fe1-45a9-b4fa-acc183b74819",
+                "resourcePath": "sprites\\spr_geo_tilt_forward\\spr_geo_tilt_forward.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1583,6 +1655,14 @@
             }
         },
         {
+            "Key": "cd88f912-740e-446b-a846-c857bbdd98b0",
+            "Value": {
+                "id": "13b08ded-091c-4ca8-9c61-e36463ba3e2b",
+                "resourcePath": "views\\cd88f912-740e-446b-a846-c857bbdd98b0.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "cf6de457-e31e-4191-9f69-9fe42ab6a4aa",
             "Value": {
                 "id": "54c224e1-79b0-483d-bc21-76e6ba8cbab1",
@@ -1684,6 +1764,14 @@
                 "id": "a27e1473-7b5c-4e64-85e7-cc3a0472ed32",
                 "resourcePath": "sprites\\spr_bal_default\\spr_bal_default.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "de02482c-fb29-457b-acec-c48a000e9f9b",
+            "Value": {
+                "id": "67b2f64d-adc0-41f2-b5d7-5fa58a09479b",
+                "resourcePath": "views\\de02482c-fb29-457b-acec-c48a000e9f9b.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
