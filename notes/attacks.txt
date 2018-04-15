@@ -57,7 +57,7 @@ Geo
 		F- swings arm out wide
 		D- shrinks down and spreads arms out
 		U- attacks overhead with arm
-		N- jabs
+		N- flurry
 	
 	Aerial
 		F- forwards windbox
