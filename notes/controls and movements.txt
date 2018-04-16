@@ -16,17 +16,16 @@ Move
 	Jump				->  X, Y, directional stick smash up					.		/ jump
 	Freefall			->  N/A													.		/ air_move
 	aerial jump			->	X, Y, directional stick smash up					*		/ air_jump
-	aerial attack		->  directional stick move + A							<V>^@	.
+	aerial attack		->  directional stick move + A							<V>^@	/ aerial_ (forward, back, up, down, neutral)
 	aerial dodge		->  L, R; + directional stick smash						.		/ air_dodge
 	land				->	N/A													.		/ land
 
 Attack																		
-	tilt				->  directional stick move + A							V>^		.
-	smash attack		->  directional stick smash + A							V>^		.
-	jab					->  A, A, A												@		.
-	flurry				->  hold A												@		.
-	launch jab			->  A													@		.
-	special				->  B + directional stick position						V>^@	.
+	tilt				->  directional stick move + A							V>^		/ tilt_ (up, forward, down)
+	smash attack		->  directional stick smash + A							V>^		/ smash_ (up, forward, down)
+	jab					->  A, A, A												@		/ jab_ (1, 2, 3)
+	flurry				->  hold A												*@		/ flurry
+	special				->  B + directional stick position						V>^@	/ special_ (up, forward, down, neutral)
 	grab				->  Z													>^		/ grab_ (side, up, hold)
 	throw				->  directional stick smash								<V>^	/ throw_ (forward, up, down, back)			Eth Throws need the grab ball animated in code
 	grab jab			->  A													@		/ grab_jab

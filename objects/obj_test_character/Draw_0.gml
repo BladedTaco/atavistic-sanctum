@@ -1,5 +1,4 @@
 /// @description 
-
 draw_set_font(fnt_Pixel)
 
 if (character = "eth") {
@@ -9,7 +8,7 @@ if (character = "eth") {
 
 if (sprite_exists(sprite_index)) {
 	draw_self()
-	draw_text_outlined(x, 100, c_black, c_white, sprite_get_name(sprite_index))	
+	draw_text_normal(x, 100, sprite_get_name(sprite_index))	
 }
 
 

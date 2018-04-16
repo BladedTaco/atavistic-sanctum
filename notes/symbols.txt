@@ -1,0 +1,19 @@
+FIGHT - fist
+
+ONLINE - Globe with lines
+
+STORY - book
+
+VAULT - treasure chest
+
+EXIT - no fun symbol
+
+SETTINGS - cog
+
+REPLAYS - Double back arrow (replay symbol)
+
+ALBUM - standard missing image icon
+
+STATS - Coloured pie chart
+
+TRAIN - training dummy

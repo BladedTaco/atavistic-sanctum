@@ -1,4 +1,5 @@
-///@desc draw_text_outlined(x, y, outline_colour, string_colour, string)  
+///@func draw_text_outlined(x, y, outline_colour, string_colour, string)  
+///@desc Draws a string as text with an outline
 ///@param x - the x position to draw the text
 ///@param y - the y position to draw the text
 ///@param outline_colour - the colour of the outline
