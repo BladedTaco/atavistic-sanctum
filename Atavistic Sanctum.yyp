@@ -954,7 +954,7 @@
             "Key": "6c33cfbf-ba69-40f2-af34-756f7dd17560",
             "Value": {
                 "id": "5dc36099-474c-4f8d-a6ba-d325548ee5ad",
-                "resourcePath": "fonts\\font0\\font0.yy",
+                "resourcePath": "fonts\\fnt_Pixel\\fnt_Pixel.yy",
                 "resourceType": "GMFont"
             }
         },
@@ -1119,6 +1119,14 @@
             }
         },
         {
+            "Key": "7c3f4262-9332-4786-b438-68eb589fac2a",
+            "Value": {
+                "id": "bb34e4f1-6ee6-490e-a9a7-64de156d4008",
+                "resourcePath": "scripts\\draw_text_outlined\\draw_text_outlined.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "7cabb7a1-6126-4292-842e-aba391ea50b3",
             "Value": {
                 "id": "f5374c21-43a5-4b7a-bab1-0a38a93bae21",
@@ -1227,14 +1235,6 @@
             "Value": {
                 "id": "20d024b1-6d57-471d-abc5-aaccffa47f0e",
                 "resourcePath": "sprites\\spr_geo_idle1\\spr_geo_idle1.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "891a6caa-7e2d-4b87-9e30-22bf056a92e7",
-            "Value": {
-                "id": "f57baf70-21ce-44e5-bae3-56a3af524f44",
-                "resourcePath": "sprites\\spr_fonts\\spr_fonts.yy",
                 "resourceType": "GMSprite"
             }
         },
