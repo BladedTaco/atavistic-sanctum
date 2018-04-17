@@ -96,7 +96,7 @@ Eth
 		U- raises a platform out of the ground
 	
 	Special
-		F- teleports forwards, if it hits someone they switch places
+		F- teleports forwards, if it hits someone they switch places, or if a marker is placed, they teleport to it.
 		D- everyone instantly is grounded, unless they are above a void or dodge it, propogating move
 		U- jumps up while spiking anyone touching
 		N- fox laser

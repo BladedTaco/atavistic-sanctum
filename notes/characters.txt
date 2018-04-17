@@ -46,7 +46,7 @@ Geos						lack a dodge and roll			gains a shield usable anywhere, long range gra
 	no ledge roll, but can shield while on ledge
 	side and up grab are the same and have a large hitbox
 
-Ethereal Spirit				lacks unique tilt attacks		gains instant smash attacks
+Ethereal Spirit				lacks unique tilt attacks, crouching		gains instant smash attacks
 	magic, gravity, time, space based
 	super fast
 	medium attack
