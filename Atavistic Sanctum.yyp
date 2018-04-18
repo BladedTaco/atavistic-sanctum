@@ -1058,7 +1058,7 @@
             "Key": "6c33cfbf-ba69-40f2-af34-756f7dd17560",
             "Value": {
                 "id": "5dc36099-474c-4f8d-a6ba-d325548ee5ad",
-                "resourcePath": "fonts\\fnt_Pixel\\fnt_Pixel.yy",
+                "resourcePath": "fonts\\fnt_pixel\\fnt_pixel.yy",
                 "resourceType": "GMFont"
             }
         },
@@ -2244,6 +2244,14 @@
                 "id": "cd1274bb-1416-4eec-84af-c1e95fa4127b",
                 "resourcePath": "views\\e50c03b8-c643-49ea-90bf-07e1b4f15d39.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "e5271b10-a952-402e-b59a-103535ca38a4",
+            "Value": {
+                "id": "c5a1f077-b045-4223-9273-f374e7e21a5b",
+                "resourcePath": "fonts\\fnt_pixel_large\\fnt_pixel_large.yy",
+                "resourceType": "GMFont"
             }
         },
         {
