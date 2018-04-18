@@ -1914,7 +1914,7 @@
             "Key": "c09287d4-a452-49cd-acb8-44acd87c4287",
             "Value": {
                 "id": "3a5f846b-f7e5-4df3-989e-1b7577e77af4",
-                "resourcePath": "sprites\\spr_eth_smash_side\\spr_eth_smash_side.yy",
+                "resourcePath": "sprites\\spr_eth_smash_forward\\spr_eth_smash_forward.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -2322,7 +2322,7 @@
             "Key": "eda442ca-6292-4c3c-9db4-a59e27ac3c4d",
             "Value": {
                 "id": "1a65d6b0-3d34-4151-94d3-087189b3e0b9",
-                "resourcePath": "sprites\\spr_eth_special_side\\spr_eth_special_side.yy",
+                "resourcePath": "sprites\\spr_eth_special_forward\\spr_eth_special_forward.yy",
                 "resourceType": "GMSprite"
             }
         },
