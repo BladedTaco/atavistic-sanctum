@@ -1055,14 +1055,6 @@
             }
         },
         {
-            "Key": "6c33cfbf-ba69-40f2-af34-756f7dd17560",
-            "Value": {
-                "id": "5dc36099-474c-4f8d-a6ba-d325548ee5ad",
-                "resourcePath": "fonts\\fnt_Pixel\\fnt_Pixel.yy",
-                "resourceType": "GMFont"
-            }
-        },
-        {
             "Key": "6d1d2b13-3e39-4111-8dd4-6f02d4f66ec1",
             "Value": {
                 "id": "d3e3fee8-6da8-4a2a-84e0-af1854a71bdf",
