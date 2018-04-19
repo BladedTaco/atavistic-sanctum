@@ -40,8 +40,10 @@ if (sprite_index = sprite_roll) {
 	x += image_xscale*dash*2
 } else {	
 	if (keyboard_check(vk_left)) {
-		image_xscale = -scale	
-		x += image_xscale*dash
+		if (grounded) {
+			image_xscale = -scale	
+		}
+		x += -scale*dash
 		alarm[1] += 1
 		if (sprite_index = sprite_hold_shield) {
 			sprite_index = sprite_roll	
@@ -49,8 +51,10 @@ if (sprite_index = sprite_roll) {
 		}
 	}
 	if (keyboard_check(vk_right)) {
-		image_xscale = scale	
-		x += image_xscale*dash
+		if (grounded) {
+			image_xscale = scale	
+		}
+		x += scale*dash
 		alarm[1] += 1
 		if (sprite_index = sprite_hold_shield) {
 			sprite_index = sprite_roll	

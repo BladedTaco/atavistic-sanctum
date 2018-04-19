@@ -143,14 +143,6 @@
             }
         },
         {
-            "Key": "065ca9c2-35fb-458d-9f29-c6a147235af1",
-            "Value": {
-                "id": "2ec30843-48e0-4774-b543-dad44c1f336d",
-                "resourcePath": "views\\065ca9c2-35fb-458d-9f29-c6a147235af1.yy",
-                "resourceType": "GMFolder"
-            }
-        },
-        {
             "Key": "0682eb58-fc98-46ae-bf03-1e8748f28b4d",
             "Value": {
                 "id": "24f59141-27f9-45f6-836b-2ebe3d2c9aea",
@@ -1055,6 +1047,14 @@
             }
         },
         {
+            "Key": "6c33cfbf-ba69-40f2-af34-756f7dd17560",
+            "Value": {
+                "id": "5dc36099-474c-4f8d-a6ba-d325548ee5ad",
+                "resourcePath": "fonts\\fnt_pixel\\fnt_pixel.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
             "Key": "6d1d2b13-3e39-4111-8dd4-6f02d4f66ec1",
             "Value": {
                 "id": "d3e3fee8-6da8-4a2a-84e0-af1854a71bdf",
@@ -1116,6 +1116,14 @@
                 "id": "e7df4305-9bb9-4899-9a61-b0d40f7e1676",
                 "resourcePath": "sprites\\spr_eth_special_neutral\\spr_eth_special_neutral.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "738b52b8-93f2-4530-9fad-214a908030e0",
+            "Value": {
+                "id": "65e70ee5-1540-479a-bda5-bd437af955f3",
+                "resourcePath": "views\\738b52b8-93f2-4530-9fad-214a908030e0.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -2236,6 +2244,14 @@
                 "id": "cd1274bb-1416-4eec-84af-c1e95fa4127b",
                 "resourcePath": "views\\e50c03b8-c643-49ea-90bf-07e1b4f15d39.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "e5271b10-a952-402e-b59a-103535ca38a4",
+            "Value": {
+                "id": "c5a1f077-b045-4223-9273-f374e7e21a5b",
+                "resourcePath": "fonts\\fnt_pixel_large\\fnt_pixel_large.yy",
+                "resourceType": "GMFont"
             }
         },
         {
