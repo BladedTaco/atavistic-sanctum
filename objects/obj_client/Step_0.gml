@@ -1,0 +1,13 @@
+/// @description send data to the server
+
+buffer_seek(buff, buffer_seek_start, 0); //seek the start of the buffer
+
+buffer_write(buff, buffer_s16, INPUT_CMD); //write the input identifer into the buffer
+buffer_write(buff, buffer_s16, 0); //write data into buffer
+//...
+//...
+//...
+//...
+
+
+network_send_packet(client, buff, buffer_tell(buff)); //send data to the server

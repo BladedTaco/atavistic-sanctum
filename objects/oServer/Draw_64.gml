@@ -6,3 +6,9 @@ draw_set_color(c_red);
 draw_text(10, 10,"players: " + string(global.PlayerTotal));
 draw_text(10, 30,"enemies: " + string(global.BaddieCount));
 
+
+
+
+//summary
+//set draw stuff
+//draw playertotal and enemy total

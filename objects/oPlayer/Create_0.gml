@@ -21,3 +21,7 @@ global.PlayerTotal++;
 
 
 
+//summary
+//create collisions
+//set stuff
+//increase player total

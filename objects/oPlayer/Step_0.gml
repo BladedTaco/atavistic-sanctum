@@ -133,3 +133,5 @@ image_index = 0;
 
 
 
+//summary
+//non netweoking stuff

@@ -9,3 +9,8 @@ network_send_broadcast(server, 6511, broadcast_buffer, buffer_tell(broadcast_buf
 alarm[0] = room_speed;
 
 
+//summary
+//seek the start of the buffer
+//write the server name to the buffer
+//send a broadcast of the servername
+//broadcast again every second

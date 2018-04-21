@@ -20,3 +20,11 @@ ServerReceivedData();
 
 
 
+//summary
+//get socket id
+//if socket id is the server id
+//	ConnectDisconnectClient()
+//if local client
+//	do nothing
+//else
+//	ServerReceivedData
