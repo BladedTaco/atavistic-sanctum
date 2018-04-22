@@ -2247,6 +2247,14 @@
             }
         },
         {
+            "Key": "d81b1851-63d9-4937-a806-8e8a27de330d",
+            "Value": {
+                "id": "bb83a618-8088-43e8-90be-a1d5e52fd50e",
+                "resourcePath": "objects\\obj_test_code\\obj_test_code.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "d82c43df-8bc0-49b2-aa6a-b1d0150406a7",
             "Value": {
                 "id": "783c1907-5461-4024-a62d-0fd2a2df0d9a",
@@ -2340,14 +2348,6 @@
                 "id": "d7ed3b48-dbc6-4aaa-9a86-93be0bc1793a",
                 "resourcePath": "sprites\\spr_geo_hurt_down\\spr_geo_hurt_down.yy",
                 "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "e294002b-5eac-405a-8b11-a112fad1c4b4",
-            "Value": {
-                "id": "641416c6-1c59-4010-b9ba-7ecf13a9d30d",
-                "resourcePath": "objects\\oPlayer\\oPlayer.yy",
-                "resourceType": "GMObject"
             }
         },
         {

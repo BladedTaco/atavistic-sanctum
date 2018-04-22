@@ -11,17 +11,17 @@ _input[0] = 0
 if (argument[1]) { //controller inputs
 	if (gamepad_is_connected(argument[2])) {
 		var j = 0;
-		for (var i = 0; i <= array_length_2d(button_array, argument0); i++) {
+		for (var i = 0; i <= array_length_2d(button_array, argument[0]); i++) {
 			if (button_array[argument[0], i] = 0) { //seperator
 				j ++
 				_input[j] = 0
 			}
 			if (j < 4) { //stick
-				_input[j] = gamepad_axis_value(argument2, button_array[argument[0], i])	
+				_input[j] = gamepad_axis_value(argument[2], button_array[argument[0], i])	
 			} else if (j < 6) { //analogue trigger
-				_input[j] += gamepad_button_value(argument2, button_array[argument[0], i])	
+				_input[j] += gamepad_button_value(argument[2], button_array[argument[0], i])	
 			} else { //digital button
-				_input[j] += gamepad_button_check(argument2, button_array[argument[0], i])	
+				_input[j] += gamepad_button_check(argument[2], button_array[argument[0], i])	
 			}
 		}
 	}
