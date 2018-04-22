@@ -1,0 +1,27 @@
+walkthrough of control get input for general case
+
+
+loop through all inputs and get their values
+ds_map[| input_val] = action_no
+input[x] = input_val
+
+
+
+
+
+
+A button contains a value
+
+
+
+
+
+
+Attack
+
+
+Z is pressed
+
+look up what Z means
+
+set what z means to true
