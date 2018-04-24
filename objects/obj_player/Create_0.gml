@@ -1,5 +1,10 @@
 /// @description 
 
+
+player_number = 0
+controller = false
+controller_number = 4
+
 for (var i = 0; i <= 7; i++) { //player number
 	for (var o = 0; o <= 9; o++) { //field number
 		data_array[i, o] = "" //player data
@@ -8,60 +13,13 @@ for (var i = 0; i <= 7; i++) { //player number
 	for (var o = 10; o <= 15; o++) { //field number
 		input_array[i, o] = 0 //player inputs
 	}
-	
-	/*
-	//keyboard
-	button_array[i, 0]  = 0		//gp_face1		A					.Q
-	button_array[i, 1]  = 0		//gp_face2		B					.W
-	button_array[i, 2]  = 1		//gp_face3		X					.E
-	button_array[i, 3]  = 1		//gp_face4		Y					.R
-	button_array[i, 4]  = 2		//gp_shoulderl	-					.T
-	button_array[i, 5]  = 2		//gp_shoulderr	Z					.Y
-	button_array[i, 6]  = 3		//gp_select		-					.U
-	button_array[i, 7]  = 3		//gp_start		START				.I
-	button_array[i, 8]  = 4		//gp_stickl		-					.O
-	button_array[i, 9]  = 5	    //gp_stickr		-					.P
-	button_array[i, 10] = 6	    //gp_padu		D-Pad UP			.A
-	button_array[i, 11] = 7		//gp_padd		D-Pad DOWN			.S
-	button_array[i, 12] = 8		//gp_padl		D-Pad LEFT			.D
-	button_array[i, 13] = 9		//gp_padr		D-Pad RIGHT			.F
-	button_array[i, 14] = 10		//gp_shoulderrb	RIGHT TRIGGER		.G
-	button_array[i, 15] = 11		//gp_shoulderlb	LEFT TRIGGER		.H
-	button_array[i, 16] = 12		//gp_axislh		L STICK Hori		.J
-	button_array[i, 17] = 13		//gp_axislv		L STICK Vert		.K
-	button_array[i, 18] = 14		//gp_axisrh		C STICK Hori		.L
-	button_array[i, 19] = 15	//gp_axisrv		C STICK Vert		.Z
-	
-//keyboard
-	button_const_array[i, 0]  = ord("Q")
-	button_const_array[i, 1]  = ord("W")
-	button_const_array[i, 2]  = ord("E")
-	button_const_array[i, 3]  = ord("R")
-	button_const_array[i, 4]  = ord("T")
-	button_const_array[i, 5]  = ord("Y")
-	button_const_array[i, 6]  = ord("U")
-	button_const_array[i, 7]  = ord("I")
-	button_const_array[i, 8]  = ord("O")
-	button_const_array[i, 9]  = ord("P")
-	button_const_array[i, 10] = ord("A")
-	button_const_array[i, 11] = ord("S")
-	button_const_array[i, 12] = ord("D")
-	button_const_array[i, 13] = ord("F")
-	button_const_array[i, 14] = ord("G")
-	button_const_array[i, 15] = ord("H")
-	button_const_array[i, 16] = ord("J")
-	button_const_array[i, 17] = ord("K")
-	button_const_array[i, 18] = ord("L")
-	button_const_array[i, 19] = ord("Z")
-	
-	*/
 }
 
-scr_initialise_controller_inputs()
-
-
-
-
+if (controller) {
+	scr_initialise_controller_inputs(player_number)
+} else {
+	scr_initialise_keyboard_inputs(player_number)
+}
 
 
 /*

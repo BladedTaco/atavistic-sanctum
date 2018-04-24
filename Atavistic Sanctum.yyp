@@ -215,6 +215,14 @@
             }
         },
         {
+            "Key": "0d958cf9-3ae5-4201-9367-27ac32ebd957",
+            "Value": {
+                "id": "459e2721-0749-4ebd-80ae-07e90d51db0e",
+                "resourcePath": "datafiles_yy\\default_keyboard_controls.txt.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "0e647dfb-c044-4136-bba6-34c0910609b8",
             "Value": {
                 "id": "5c7812bd-6e33-48f6-b207-97827dd9f2ef",
