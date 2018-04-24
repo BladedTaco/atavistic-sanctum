@@ -4,41 +4,43 @@
 ///@param {integer} controller_number* the number of the controller slot to check
 ///@desc takes the input from the controller or keyboard and stores it in a general array (input_array)
 
-var _input; //a local variable that will later be an array
+var _input; //a local variable that will later be an array used to hold input values temporarily
 
-_input[0] = 0
+for (var i = 0; i <= 100; i++) {
+	_input[i] = 0
+}
+
 
 if (argument[1]) { //controller inputs
 	if (gamepad_is_connected(argument[2])) {
-		var j = 0;
-		for (var i = 0; i <= array_length_2d(button_array, argument[0]); i++) {
-			if (button_array[argument[0], i] = 0) { //seperator
-				j ++
-				_input[j] = 0
-			}
-			if (j < 4) { //stick
-				_input[j] = gamepad_axis_value(argument[2], button_array[argument[0], i])	
-			} else if (j < 6) { //analogue trigger
-				_input[j] += gamepad_button_value(argument[2], button_array[argument[0], i])	
-			} else { //digital button
-				_input[j] += gamepad_button_check(argument[2], button_array[argument[0], i])	
+		for (var i = 0; i < 20; i++) {
+			if (i < 14) { //button
+				_input[button_array[argument[0], i]] += gamepad_button_check(argument[2], button_const_array[argument[0], i])
+			} else if (i < 16) { //analogue button
+				if (gamepad_button_value(argument[2], button_const_array[argument[0], i]) > trigger_threshold[argument[0]]) { //if being pressed
+					_input[button_array[argument[0], i]] += 1 
+				}
+				_input[i] = gamepad_button_value(argument[2], button_const_array[argument[0], i])
+			} else { //directional stick
+				_input[button_array[argument[0], i]] = gamepad_axis_value(argument[2], button_const_array[argument[0], i])	
 			}
 		}
 	}
 } else { //keyboard inputs
-	
+	for (var i = 0; i < array_length_2d(button_array, argument[0]); i++) {
+		if (i > 8) { //single button
+			_input[button_array[argument[0], i]] += keyboard_check(button_const_array[argument[0], i])	
+		} else { //button pair (axis)
+			_input[button_array[argument[0], i]] = keyboard_check(button_const_array[argument[0], i]) - keyboard_check(button_const_array[argument[0], i+1])
+			i++
+		}
+	}
 }
 
 
+for (var i = 0; i < array_length_1d(_input); i++) {
+	input_array[argument[0], i] = _input[i]
+}
 
 
-input_array[argument[0], 0] = 0 // xaxis
-input_array[argument[0], 1] = 0 // yaxis
-input_array[argument[0], 2] = 0 // attack_key
-input_array[argument[0], 3] = 0 // special_key
-input_array[argument[0], 4] = 0 // jump_key
-input_array[argument[0], 5] = 0 // pause_key
-input_array[argument[0], 6] = 0 // shield_key
-input_array[argument[0], 7] = 0 // grab_key
-input_array[argument[0], 8] = 0 // taunt_key
-input_array[argument[0], 9] = 0 // n/a, tilt, smash (old xaxis and old yaxis substitutes)
+scr_handle_c_stick(argument[0], _input[10], _input[11])

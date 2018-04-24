@@ -919,6 +919,14 @@
             }
         },
         {
+            "Key": "5a5c4b43-e287-4bf4-a66a-4454542c2075",
+            "Value": {
+                "id": "c4d6d128-e98f-464e-80b0-6b889251fdf6",
+                "resourcePath": "scripts\\scr_handle_c_stick\\scr_handle_c_stick.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "5ab90811-65a3-4397-8a21-32e32aafdded",
             "Value": {
                 "id": "33a4eb51-2a20-4ffa-9a66-5613916b314e",
@@ -1260,6 +1268,14 @@
                 "id": "eb6ffff2-a64c-43f3-be58-f507f670fa37",
                 "resourcePath": "sprites\\spr_bal_tilt_forward\\spr_bal_tilt_forward.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "796286cb-00b2-4c2a-9bc3-390b4fb1886b",
+            "Value": {
+                "id": "2f6b7f6a-d765-4ac8-8171-a942b2d4f9a7",
+                "resourcePath": "scripts\\scr_initialise_keyboard_inputs\\scr_initialise_keyboard_inputs.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -2551,6 +2567,14 @@
             }
         },
         {
+            "Key": "f5751f3a-c52d-4848-b57e-895d38165dfc",
+            "Value": {
+                "id": "74d672b0-a362-4ddc-a4ae-7c99dc8b76f7",
+                "resourcePath": "scripts\\scr_initialise_controller_inputs\\scr_initialise_controller_inputs.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "f726924a-6654-4c0c-bed8-5948b6fe6594",
             "Value": {
                 "id": "4f98a265-783d-4ce9-bff6-98b6a50dee10",
@@ -2632,7 +2656,10 @@
         "743a8517-a359-4e1c-b5d8-122731d36715",
         "a82b0bab-8d3d-43be-9115-db7f4917ead2",
         "120bcb7b-10a9-4207-ba84-2d76a73b6b17",
-        "81b6a9df-798e-44f1-b5e5-49880ca65d01"
+        "81b6a9df-798e-44f1-b5e5-49880ca65d01",
+        "5a5c4b43-e287-4bf4-a66a-4454542c2075",
+        "f5751f3a-c52d-4848-b57e-895d38165dfc",
+        "796286cb-00b2-4c2a-9bc3-390b4fb1886b"
     ],
     "tutorial": ""
 }
