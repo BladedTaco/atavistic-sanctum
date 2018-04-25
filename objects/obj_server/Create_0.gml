@@ -10,7 +10,7 @@ player_buffer = buffer_create(16384, buffer_fixed, 1); //buffer to send data wit
 socket_array[0] = -1 //array to hold socket ids
 data_array[0, 0] = -1 //array for holding player data to be sent
 
-server = network_create_server(global.network_protocol, 6510, 8) //create the server
+server = network_create_server(global.network_protocol, 6510, global.max_players) //create the server
 if (server < 0) { //if there is already a server running
 	//clear buffers from RAM, destroy instance
 	buffer_delete(broadcast_buffer)

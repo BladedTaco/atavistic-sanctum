@@ -31,3 +31,6 @@ global.network_protocol = network_socket_udp //**note, if UDP is found to be too
 global.network_ip = "127.0.0.1"
 global.player_name = "PLAYER"
 global.network_state = NETWORK_LOGIN
+global.match_frame = 0
+global.input_buffer_length = 6
+global.max_players = 8

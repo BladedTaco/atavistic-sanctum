@@ -38,12 +38,7 @@ if (argument[1]) { //controller inputs
 }
 
 
+scr_handle_c_stick(argument[0], _input)
 
+scr_input_buffer(argument[0], _input)
 
-
-for (var i = 0; i < array_length_1d(_input); i++) {
-	input_array[argument[0], i] = _input[i]
-}
-
-
-scr_handle_c_stick(argument[0], _input[10], _input[11])

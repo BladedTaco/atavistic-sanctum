@@ -1,15 +1,22 @@
-///@func scr_handle_c_stick(player_number, c_stick_hori, c_stick_vert)
+///@func scr_handle_c_stick(player_number, _input)
 ///@desc change c stick inputs into their outputs
 ///@param player_number - the player slot number of the player
-///@param c_stick_hori - the horizontal value of the c stick
-///@param c_stick_vert - the vertical value of the c stick
+///@param _input - the temporary input array used to store current inputs
 
-argument[0] = argument[0]
-argument[1] = argument[1]
-argument[2] = argument[2]
+var _input;
+_input = argument[1]
 
 
 var j = 9
-var k = 1
+var k = 0
 
-input_array[argument[0], j] = clamp(input_array[argument[0], j] + k, -1, 1)
+
+if (abs(_input[11]) + abs(_input[10]) > 0.5) {
+	k = 1	
+	
+	_input[@ argument[0], j] = k
+	_input[@ argument[0], 10] = 0
+	_input[@ argument[0], 11] = 0
+}
+
+

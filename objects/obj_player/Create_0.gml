@@ -49,26 +49,3 @@ input_array[i, 10] = 0 // xaxis
 input_array[i, 11] = 0 // yaxis
 input_array[i, 12] = 0 // left stick press
 input_array[i, 13] = 0 // right stick press
-
-
-
-//gp_face1			Top button 1 
-//gp_face2			Top button 2 
-//gp_face3			Top button 3 
-//gp_face4			Top button 4 
-//gp_shoulderl		Left shoulder button
-//gp_shoulderr		Right shoulder button
-//gp_select			The select button 
-//gp_start			The start button 
-//gp_stickl			The left stick pressed (as a button)
-//gp_stickr			The right stick pressed (as a button)
-//gp_padu			D-pad up
-//gp_padd			D-pad down
-//gp_padl			D-pad left
-//gp_padr			D-pad right
-//gp_shoulderrb		Right shoulder trigger
-//gp_shoulderlb		Left shoulder trigger
-//gp_axislh			Left stick horizontal axis (analogue)
-//gp_axislv			Left stick vertical axis (analogue)
-//gp_axisrh			Right stick horizontal axis (analogue)
-//gp_axisrv			Right stick vertical axis (analogue)
