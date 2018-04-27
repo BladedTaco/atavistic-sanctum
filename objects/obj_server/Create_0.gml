@@ -2,6 +2,8 @@
 //set global variables to base states
 global.player_number = 0
 
+macros()
+
 server_name = "SERVER" //set base server name
 
 //create buffers and arrays for later use
@@ -20,7 +22,7 @@ if (server < 0) { //if there is already a server running
 }
 
 alarm[0] = room_speed //create an alarm for sending a broadcast signal
-
+alarm[1] = room_speed
 
 
 

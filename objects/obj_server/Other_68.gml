@@ -44,10 +44,11 @@ if (server = event_id) { //client connecting or disconnecting
 		break;
 		
 		case DATA_CMD: //read the player data sent by the client
-			var num = buffer_read(buff, buffer_s16) //read player slot
+			var num = buffer_read(buff, buffer_string) //read player slot
 			for (var o = 0; o < 10; o++) {
 				data_array[array_height_2d(data_array), o] = buffer_read(buff, buffer_string) //read data
 			}
+			
 			
 		break;
 		

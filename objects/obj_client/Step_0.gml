@@ -1,5 +1,8 @@
 /// @description send data to the server
 
+input_array = obj_player.input_array
+input_buffer_array = obj_player.input_buffer_array
+
 switch (global.network_state) {
 	case (NETWORK_PLAY):
 		buffer_seek(buff, buffer_seek_start, 0); //seek the start of the buffer

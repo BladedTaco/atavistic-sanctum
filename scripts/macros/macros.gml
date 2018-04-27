@@ -45,11 +45,11 @@
 #macro C_NEUTRAL_SPECIAL 7
 
 //globals
-global.network_protocol = network_socket_udp //**note, if UDP is found to be too unreliable, switch to the more reliable, but slower TCP
+global.network_protocol = network_socket_tcp //**note, if UDP is found to be too unreliable, switch to the more reliable, but slower TCP
 global.network_ip = "127.0.0.1"
 global.player_name = "PLAYER"
-global.network_state = NETWORK_LOGIN
+global.network_state = NETWORK_PLAY
 global.match_frame = 0
-global.input_buffer_length = 6
+global.input_buffer_length = 35
 global.max_players = 8
 global.game_version = "1.0.0"
