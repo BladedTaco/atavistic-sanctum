@@ -1,10 +1,12 @@
-///@func scr_record_inputs(player_number)
-///@desc saves inputs to the input buffer and the replay queue
-///@param player_number - the slot of the player
+///@func scr_record_inputs()
+///@desc records inputs to the replay file
 
-with (obj_player) {
-	var _index = global.current_frame*100 + player_number
-	for (var i = 0; i < 10; i++) {
-		other.replay_array[_index, i] = input_array[player_number, i]
+
+for (var i = 0; i < global.player_number; i++) { //for each player
+	file_text_write_real(replay_file, global.match_frame) //write current frame
+	file_text_write_real(replay_file, i) //write player number
+	for (var o = 0; o < 10; o++) { //for each input
+		file_text_write_real(replay_file, input_array[i, o]) //write the input
 	}
+	file_text_writeln(replay_file) //go to next line for next player
 }

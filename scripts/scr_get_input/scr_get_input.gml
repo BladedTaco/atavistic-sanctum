@@ -25,6 +25,10 @@ if (argument[1]) { //controller inputs
 				_input[button_array[argument[0], i]] = gamepad_axis_value(argument[2], button_const_array[i])	
 			}
 		}
+		if (power(_input[0], 2) + power(_input[1], 2) < power(l_stick_deadzone, 2)) { //if left stick input is inside deadzone
+			_input[0] = 0 //set xaxis to 0
+			_input[1] = 0 //set yaxis to 0
+		}
 	}
 } else { //keyboard inputs
 	for (var i = 0; i < array_length_2d(button_array, argument[0]); i++) {

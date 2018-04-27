@@ -34,17 +34,21 @@ if (server = event_id) { //client connecting or disconnecting
 	}
 	switch (cmd) {
 		case INPUT_CMD: //read the input buffer sent by the client
-			buffer_read(buff, buffer_s16)
-			//...
-			//...
-			//...
+			var num = buffer_read(buff, buffer_s16) //read player number
+			var _frame = buffer_read(buff, buffer_s16) //read frame data was sent
+			for (var j = global.match_frame - _frame; j <= global.input_buffer_length; j++) {
+				for (var o = 0; o < 10; o++) {
+					input_buffer_array[j*100 + num, o] = buffer_read(buff, buffer_s16) //read data
+				}
+			}
 		break;
 		
 		case DATA_CMD: //read the player data sent by the client
-			buffer_read(buff, buffer_s16)
-			//...
-			//...
-			//...
+			var num = buffer_read(buff, buffer_s16) //read player slot
+			for (var o = 0; o < 10; o++) {
+				data_array[array_height_2d(data_array), o] = buffer_read(buff, buffer_string) //read data
+			}
+			
 		break;
 		
 		case PING_CMD: //ignore the data, it is used to keep the connection alive
