@@ -38,14 +38,8 @@ if (count > 0) { //if there are sockets to send data to
 			buffer_seek(buff, buffer_seek_start, 0) //seek the start of the buffer
 			buffer_write(buff, buffer_s16, i) //write the player number to it
 		}
-		network_send_packet(socket_array[i], player_buffer, buffer_tell(player_buffer)); //send the data
+		network_send(socket_array[i], player_buffer) //send the data
 	}	
 }
 
-scr_input_buffer_server()
-/*
-var _input;
-for (var i = 0; i < 10; i++) {
-	_input[i] = 0
-}
-scr_input_buffer(0, _input)
+scr_input_buffer_server() //handle the input buffer on the server side

@@ -1,8 +1,11 @@
 /// @description receive data from clients
+
+
+
 var event_id = async_load[? "id"]; //get event id
 var count = global.player_number //get the number of players
 
-if (server = event_id) { //client connecting or disconnecting
+if ((server = event_id) and (global.network_protocol = network_socket_tcp)) { //client connecting or disconnecting
 	var type = async_load[? "type"]; //disconnecting or connecting
 	var sock = async_load[? "socket"]; //get the ID of the socket
 	var ip = async_load[? "ip"]; //get the IP of the socket
@@ -26,6 +29,7 @@ if (server = event_id) { //client connecting or disconnecting
 	var buff = async_load[? "buffer"] //store incoming buffer data
 	var cmd = buffer_read(buff, buffer_s16); //store type of incoming data
 	var sock = async_load[? "id"]; //get the socket id of the client
+	var ip = async_load[? "ip"]; //get the IP of the socket (for UDP usage)
 	for (var i = 0; i < count; i++) { //for each socket
 		if (socket_array[i] = sock) { //if the socket id mathces the one in the array
 			sock = i //sock is set to the player number of the client

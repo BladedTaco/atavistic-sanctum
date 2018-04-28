@@ -14,7 +14,7 @@ data_array[0, 0] = -1 //array for holding player data to be sent
 for (var i = 0; i <= global.input_buffer_length; i++) {
 	for (var o = 0; o < 10; o++) {
 		for (var j = 0; j < 10; j++) {
-			input_buffer_array[i*100 + o, j] = irandom(9) //array for holding inputs to be distributed
+			input_buffer_array[i*100 + o, j] = 0 //array for holding inputs to be distributed
 		}
 	}
 }
