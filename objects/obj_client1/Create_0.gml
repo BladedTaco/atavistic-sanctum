@@ -16,8 +16,8 @@ if (network_connect(client, global.network_ip, 6510) != 0) { //try to connect to
 
 //send 
 buffer_seek(buff, buffer_seek_start, 0); //seek the start of the buffer
-buffer_write(buff, buffer_s16, PING_CMD); //write the data identifer to the buffer
-//buffer_write(buff, buffer_string, player_name); //write the player name into the buffer
+buffer_write(buff, buffer_s16, DATA_CMD); //write the data identifer to the buffer
+buffer_write(buff, buffer_string, player_name); //write the player name into the buffer
 //...
 //...
 //...

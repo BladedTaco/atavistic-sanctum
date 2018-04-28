@@ -9,7 +9,7 @@ switch (global.network_state) {
 		buffer_write(buff, buffer_s16, INPUT_CMD); //write the input identifer into the buffer
 		buffer_write(buff, buffer_s16, player_number) //write player number
 		buffer_write(buff, buffer_s16, global.match_frame) //write current frame
-		for (var j = 0; j <= 0; j++) {
+		for (var j = 0; j <= global.input_buffer_length; j++) {
 			for (var o = 0; o < 10; o++) {
 				buffer_write(buff, buffer_s16, input_buffer_array[j*100 + player_number, o]) //write data
 			}

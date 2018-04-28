@@ -455,6 +455,14 @@
             }
         },
         {
+            "Key": "277b73aa-d790-4757-a2d3-b5ebc4185712",
+            "Value": {
+                "id": "749c054c-5d80-4727-bebf-e325ec896903",
+                "resourcePath": "objects\\obj_server1\\obj_server1.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "2842a6b5-5a70-40cb-a868-36a692e71c2e",
             "Value": {
                 "id": "ec1b0421-fad6-4d49-980b-f700b1108dc2",
@@ -531,6 +539,14 @@
             "Value": {
                 "id": "9d9648da-730a-4168-b313-263c69ba86d6",
                 "resourcePath": "views\\31cff7d5-5e59-424d-a7aa-7c01445bc8d7.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "31e98066-633b-40aa-a047-a1f7cf15b0d1",
+            "Value": {
+                "id": "50c829ec-a079-4d22-bac1-b2fe1a9ddad9",
+                "resourcePath": "views\\31e98066-633b-40aa-a047-a1f7cf15b0d1.yy",
                 "resourceType": "GMFolder"
             }
         },
@@ -1975,6 +1991,14 @@
             }
         },
         {
+            "Key": "b86f974d-7628-4948-816a-83283bbd3d88",
+            "Value": {
+                "id": "9e48fcfd-9979-4c9c-bb68-04cd989dd033",
+                "resourcePath": "scripts\\scr_input_buffer_server\\scr_input_buffer_server.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "b8f826de-c8c9-40cd-aec7-ddeb202910c3",
             "Value": {
                 "id": "08199a19-fe0b-48de-9903-59ac81267db0",
@@ -2052,6 +2076,14 @@
                 "id": "6f50eeb6-c4c2-43c7-976c-2b1b23e0d595",
                 "resourcePath": "sprites\\spr_bal_speed_down\\spr_bal_speed_down.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "bdfc6810-6195-4a34-b28e-14ca6b1b7005",
+            "Value": {
+                "id": "7919e971-7f7f-48e2-b814-5a7c1729e1c3",
+                "resourcePath": "objects\\obj_client1\\obj_client1.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -2702,7 +2734,8 @@
         "796286cb-00b2-4c2a-9bc3-390b4fb1886b",
         "66fdaf2a-b73f-4ad7-b03a-0e8ae53c8e5e",
         "f1a2e991-e654-40cc-8f9d-d9ec8af0803b",
-        "83698b68-0036-4487-871c-76139122a432"
+        "83698b68-0036-4487-871c-76139122a432",
+        "b86f974d-7628-4948-816a-83283bbd3d88"
     ],
     "tutorial": ""
 }

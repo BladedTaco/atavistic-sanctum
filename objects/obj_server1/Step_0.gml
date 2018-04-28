@@ -41,11 +41,3 @@ if (count > 0) { //if there are sockets to send data to
 		network_send_packet(socket_array[i], player_buffer, buffer_tell(player_buffer)); //send the data
 	}	
 }
-
-scr_input_buffer_server()
-/*
-var _input;
-for (var i = 0; i < 10; i++) {
-	_input[i] = 0
-}
-scr_input_buffer(0, _input)

@@ -11,13 +11,7 @@ broadcast_buffer = buffer_create(32, buffer_fixed, 1); //buffer to broadcast ser
 player_buffer = buffer_create(16384, buffer_fixed, 1); //buffer to send data with
 socket_array[0] = -1 //array to hold socket ids
 data_array[0, 0] = -1 //array for holding player data to be sent
-for (var i = 0; i <= global.input_buffer_length; i++) {
-	for (var o = 0; o < 10; o++) {
-		for (var j = 0; j < 10; j++) {
-			input_buffer_array[i*100 + o, j] = irandom(9) //array for holding inputs to be distributed
-		}
-	}
-}
+input_buffer_array[0, 0] = -1 //array for holding inputs to be distributed
 
 server = network_create_server(global.network_protocol, 6510, global.max_players) //create the server
 if (server < 0) { //if there is already a server running

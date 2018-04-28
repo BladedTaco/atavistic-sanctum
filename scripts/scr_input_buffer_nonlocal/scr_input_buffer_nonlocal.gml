@@ -12,8 +12,9 @@ for (var i = 0; i < array_length_2d(input_buffer_array, _index); i++) {
 
 //move all buffer entries down
 repeat (global.input_buffer_length) {
-	for (var i = 0; i < array_length_1d(_input); i++) {
+	for (var i = 0; i < array_length_2d(input_buffer_array, _index); i++) {
 		input_buffer_array[_index, i] = input_buffer_array[_index-100, i]
 	}
 	_index -= 100
 }
+

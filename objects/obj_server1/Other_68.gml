@@ -36,11 +36,11 @@ if (server = event_id) { //client connecting or disconnecting
 		case INPUT_CMD: //read the input buffer sent by the client
 			var num = buffer_read(buff, buffer_s16) //read player number
 			var _frame = buffer_read(buff, buffer_s16) //read frame data was sent
-			var j = _frame - global.match_frame
-			for (var o = 0; o < 10; o++) {
-				input_buffer_array[j*100 + num, o] = buffer_read(buff, buffer_s16) //read data
+			for (var j = global.match_frame - _frame; j <= global.input_buffer_length; j++) {
+				for (var o = 0; o < 10; o++) {
+					input_buffer_array[j*100 + num, o] = buffer_read(buff, buffer_s16) //read data
+				}
 			}
-
 		break;
 		
 		case DATA_CMD: //read the player data sent by the client
