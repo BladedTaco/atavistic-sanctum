@@ -45,8 +45,8 @@
 #macro C_NEUTRAL_SPECIAL 7
 
 //globals
-global.network_protocol = network_socket_tcp //**note, if UDP is found to be too unreliable, switch to the more reliable, but slower TCP
-global.network_ip = "127.0.0.1"
+global.network_protocol = network_socket_udp //**note, if UDP is found to be too unreliable, switch to the more reliable, but slower TCP
+global.network_ip = "192.168.1.116"
 global.player_name = "PLAYER"
 global.network_state = NETWORK_PLAY
 global.match_frame = 0

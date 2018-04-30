@@ -28,3 +28,4 @@ switch (global.network_state) {
 
 
 network_send_packet(client, buff, buffer_tell(buff)); //send data to the server
+network_send_udp(client, global.network_ip, 6510, buff, buffer_tell(buff))
