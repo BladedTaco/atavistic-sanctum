@@ -1,4 +1,7 @@
 /// @description 
+
+//if (global.wait) { exit }
+
 if (player_is_local) {
 	scr_get_input(player_number, controller, controller_number)
 } else {

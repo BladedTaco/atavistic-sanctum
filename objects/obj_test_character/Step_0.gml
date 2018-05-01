@@ -16,7 +16,7 @@ if (y != 575) {
 
 if (((keyboard_check_pressed(vk_left) or keyboard_check_pressed(vk_right)) and (grounded) and (sprite_index != sprite_hold_shield)) or (_update)) {
 	if (alarm[1] <= 0) {
-		alarm[1] = room_speed/2	
+		alarm[1] = GAME_SPEED/2	
 		if (grounded) {
 			sprite_index = sprite_speed_up
 			image_index = 0
@@ -70,11 +70,11 @@ if (sprite_index = sprite_roll) {
 			sprite_index = sprite_air_jump
 			image_index = 0
 		}
-		alarm[0] = room_speed*3
+		alarm[0] = GAME_SPEED*3
 	}
 }
 if (alarm[0] > 0) {
-	y -= image_yscale * 3 * (alarm[0] / (room_speed*3))
+	y -= image_yscale * 3 * (alarm[0] / (GAME_SPEED*3))
 }
 
 if (keyboard_check(vk_down) and keyboard_check(ord("M"))) {

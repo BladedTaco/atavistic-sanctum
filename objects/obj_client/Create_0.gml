@@ -6,14 +6,19 @@ global.client = client //used to ignore messages sent to self if this client is 
 player_number = 0
 input_buffer_array[0,0] = 0
 input_array[0, 0] = 0
+alarm[1] = GAME_SPEED*2
+for (var i = 0; i < 32000; i++) {
+	for (var o = 0; o < 10; o++) {
+input_buffer_array[i, o] = -9
+	}}
 
-/*
-
-if (network_connect(client, global.network_ip, 6510) != 0) { //try to connect to server
-	//could not connect to network
-	show_message("Failed to connect to server.") //display message
-	instance_destroy(); //destroy self
-	exit; //exit code execution
+if (global.network_protocol = network_socket_tcp) { //if using tcp
+	if (network_connect(client, global.network_ip, 6510) != 0) { //try to connect to server
+		//could not connect to network
+		show_message("Failed to connect to server.") //display message
+		instance_destroy(); //destroy self
+		exit; //exit code execution
+	}
 }
 
 //send 
@@ -24,9 +29,15 @@ buffer_write(buff, buffer_s16, PING_CMD); //write the data identifer to the buff
 //...
 //...
 
-*/
+network_send(client, buff); //send the buffer to the server
 
-network_send_packet(client, buff, buffer_tell(buff)); //send the buffer to the server
+alarm[0] = GAME_SPEED*2 //create an alarm for sending 'keep alive' pings
 
 
-alarm[0] = room_speed*2 //create an alarm for sending 'keep alive' pings
+
+
+
+for (var i = 0; i < 200; i++) {
+
+	sprite_set_speed(spr_bal_default + i, sprite_get_speed(spr_bal_default + i)/60, spritespeed_framespergameframe)
+}

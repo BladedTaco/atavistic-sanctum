@@ -6,17 +6,19 @@
 var _input = argument[1]
 var _index = global.input_buffer_length*100 + argument[0]
 
-//push last position in input_buffer into usable input array
-for (var i = 0; i < array_length_1d(_input); i++) {
-	input_array[argument[0], i] = input_buffer_array[_index, i]
-}
-
-//move all buffer entries down
-repeat (global.input_buffer_length) {
+if (!global.wait) {
+	//push last position in input_buffer into usable input array
 	for (var i = 0; i < array_length_1d(_input); i++) {
-		input_buffer_array[_index, i] = input_buffer_array[_index-100, i]
+		input_array[argument[0], i] = input_buffer_array[_index, i]
 	}
-	_index -= 100
+
+	//move all buffer entries down
+	repeat (global.input_buffer_length) {
+		for (var i = 0; i < array_length_1d(_input); i++) {
+			input_buffer_array[_index, i] = input_buffer_array[_index-100, i]
+		}
+		_index -= 100
+	}
 }
 
 //fill the first position in the buffer with this frames inputs

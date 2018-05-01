@@ -1,7 +1,14 @@
 /// @description send data to the server
 
-input_array = obj_player.input_array
-input_buffer_array = obj_player.input_buffer_array
+
+
+for (var i = 0; i < 10; i++) {
+	for (var o = 0; o < global.input_buffer_length; o++) {
+	input_buffer_array[o*100 + 0, i] = obj_player.input_buffer_array[o*100 + 0, i]
+	//input_array = obj_player.input_array
+	//input_buffer_array = obj_player.input_buffer_array
+	}
+}
 
 switch (global.network_state) {
 	case (NETWORK_PLAY):
@@ -9,10 +16,8 @@ switch (global.network_state) {
 		buffer_write(buff, buffer_s16, INPUT_CMD); //write the input identifer into the buffer
 		buffer_write(buff, buffer_s16, player_number) //write player number
 		buffer_write(buff, buffer_s16, global.match_frame) //write current frame
-		for (var j = 0; j <= 0; j++) {
-			for (var o = 0; o < 10; o++) {
-				buffer_write(buff, buffer_s16, input_buffer_array[j*100 + player_number, o]) //write data
-			}
+		for (var o = 0; o < 10; o++) {
+			buffer_write(buff, buffer_s16, input_buffer_array[player_number, o]) //write data
 		}
 	break;
 	
@@ -27,5 +32,12 @@ switch (global.network_state) {
 }
 
 
-network_send_packet(client, buff, buffer_tell(buff)); //send data to the server
-network_send_udp(client, global.network_ip, 6510, buff, buffer_tell(buff))
+network_send(client, buff); //send data to the server
+
+
+
+var _input
+for (var i = 0; i < 10; i++) {
+_input[i] = 9
+}
+scr_input_buffer(1, _input)
