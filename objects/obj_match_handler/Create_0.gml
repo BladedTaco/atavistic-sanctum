@@ -1,5 +1,11 @@
 /// @description initialise the match handler
 
+
+//input variables intialisation (copied from obj_input at the start of each step)
+old_axis[0, 0] = 0
+input_array[0, 0] = 0
+state[0] = GROUNDED
+
 //get data from server for the match
 
 

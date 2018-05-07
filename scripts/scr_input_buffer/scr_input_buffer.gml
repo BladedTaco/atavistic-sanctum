@@ -6,15 +6,18 @@
 var _input = argument[1]
 var _index = global.input_buffer_length*100 + argument[0]
 
+
 if (!global.wait) {
 	//push last position in input_buffer into usable input array
-	for (var i = 0; i < array_length_1d(_input); i++) {
+	old_axis[argument[0], 0] = input_array[argument[0], 0] //store old xaxis
+	old_axis[argument[0], 1] = input_array[argument[0], 1] //store old yaxis
+	for (var i = 0; i < 10; i++) {
 		input_array[argument[0], i] = input_buffer_array[_index, i]
 	}
 
 	//move all buffer entries down
 	repeat (global.input_buffer_length) {
-		for (var i = 0; i < array_length_1d(_input); i++) {
+		for (var i = 0; i < 10; i++) {
 			input_buffer_array[_index, i] = input_buffer_array[_index-100, i]
 		}
 		_index -= 100

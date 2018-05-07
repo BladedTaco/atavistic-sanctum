@@ -11,7 +11,7 @@ repeat(global.player_number) {
 	//move all buffer entries down
 	repeat (global.input_buffer_length) {
 		for (var i = 0; i < 10; i++) {
-			input_buffer_array[_index, i] = input_buffer_array[_index-100, i]
+			obj_input.input_buffer_array[_index, i] = obj_input.input_buffer_array[_index-100, i]
 		}
 		_index -= 100
 	}

@@ -41,9 +41,12 @@ if ((server = event_id) and (global.network_protocol = network_socket_tcp)) { //
 		case INPUT_CMD: //read the input buffer sent by the client
 			var _index = array_length_1d(network_array) //get current position to fill array
 			network_array[_index] = buffer_read(buff, buffer_s16) + 1//read player number
-			network_array[_index + 1] = buffer_read(buff, buffer_s16) + 1 //read frame data was sent
-			_index += 2
-			for (var o = 0; o < 10; o++) {
+			network_array[++_index] = buffer_read(buff, buffer_s16) //read frame data was sent
+			if (!global.advance) { global.advance = true; global.match_frame = network_array[_index]; }
+			show_debug_message(string(network_array[_index]) + "  " + string(global.match_frame))
+			network_array[++_index] = buffer_read(buff, buffer_f32) //read axis data
+			network_array[++_index] = buffer_read(buff, buffer_f32) //read axis data
+			for (var o = 2; o < 10; o++) {
 				network_array[_index + o] = buffer_read(buff, buffer_s16) //read data
 			}
 		break;

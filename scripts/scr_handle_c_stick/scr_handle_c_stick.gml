@@ -11,8 +11,8 @@ var j = 0 //the entry of the input array to change
 var k = 1 //the value to change it to
 
 
-if (power(_input[10], 2) + power(_input[11], 2) > power(c_stick_deadzone, 2)) { //if input is outside deadzone
-	switch(c_stick_action) {
+if (power(_input[10], 2) + power(_input[11], 2) > power(c_stick_deadzone[argument[0]], 2)) { //if input is outside deadzone
+	switch(c_stick_action[argument[0]]) {
 		case C_SMASH_ATTACK: 
 			_input[@ argument[0], 9] = SMASH_MOVE //set attack type to smash attack
 			j = ATTACK

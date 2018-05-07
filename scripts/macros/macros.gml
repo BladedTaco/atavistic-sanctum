@@ -33,7 +33,7 @@
 #macro	LEFT_STICK 12	
 #macro	RIGHT_STICK	13	
 
-// types of entries for input_array[x, 9]
+// types of entries for obj_input.input_array[x, 9]
 #macro NEUTRAL_MOVE 0 
 #macro TILT_MOVE 1
 #macro SMASH_MOVE 2
@@ -48,9 +48,34 @@
 #macro C_NEUTRAL_ATTACK 6
 #macro C_NEUTRAL_SPECIAL 7
 
+// types of states the characters can be in
+#macro GROUNDED 0
+#macro SPEED_UP 1
+#macro WALKING 2
+#macro DASHING 3
+#macro RUNNING 4
+#macro JUMPING 5 //only describes jumpsquat, once in air, state is airborne
+#macro AIRBORNE 6
+#macro FREEFALL 7
+#macro TILT_ATTACK 8
+#macro SMASH_ATTACK 9
+#macro SPECIAL_ATTACK 10
+#macro LEDGE 11
+#macro LEDGE_ALT 12 //describes any type of action performed on the ledge
+#macro LANDING 13 //only describes landing lag
+#macro DODGING 14
+#macro AIR_DODGING 15
+#macro SHIELDING 16
+#macro HIT_STUN 17
+#macro TECHING 18
+
+
 //globals
 global.network_protocol = network_socket_tcp //**note, if UDP is found to be too unreliable, switch to the more reliable, but slower TCP
-global.network_ip = "127.0.0.1"
+global.network_ip = get_string("enter ip", "127.0.0.1")//"127.0.0.1"
+
+global.advance = false
+
 global.network_port = 6510
 global.player_name = "PLAYER"
 global.network_state = NETWORK_PLAY
@@ -59,5 +84,6 @@ global.input_buffer_length = 6
 global.max_players = 8
 global.game_version = "1.0.0"
 global.client = -1
-global.player_number = 1
+global.player_number = 0
+global.local_players = 1
 global.wait = false

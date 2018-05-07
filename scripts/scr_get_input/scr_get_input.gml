@@ -2,7 +2,7 @@
 ///@param {integer} player_number the number of the player in terms of local players
 ///@param {boolean} controller true if the input device is a controller, false if it is a keyboard
 ///@param {integer} controller_number* the number of the controller slot to check
-///@desc takes the input from the controller or keyboard and stores it in a general array (input_array)
+///@desc takes the input from the controller or keyboard and stores it in a general array (obj_input.input_array)
 
 var _input; //a local variable that will later be an array used to hold input values temporarily
 
@@ -25,22 +25,18 @@ if (argument[1]) { //controller inputs
 				_input[button_array[argument[0], i]] = gamepad_axis_value(argument[2], button_const_array[i])	
 			}
 		}
-		if (power(_input[0], 2) + power(_input[1], 2) < power(l_stick_deadzone, 2)) { //if left stick input is inside deadzone
-			_input[0] = 0 //set xaxis to 0
-			_input[1] = 0 //set yaxis to 0
-		}
+	scr_handle_directional_stick(argument[0], _input)
 	}
 } else { //keyboard inputs
-	for (var i = 0; i < array_length_2d(button_array, argument[0]); i++) {
+	for (var i = 0; i < array_length_2d(button_const_array, argument[0]) - 20; i++) {
 		if (i >= 8) { //single button
-			_input[button_array[argument[0], i]] += keyboard_check(button_const_array[i])	
+			_input[button_array[argument[0], i]] += keyboard_check(button_const_array[i + 20])	
 		} else { //button pair (axis)
-			_input[button_array[argument[0], i]] = keyboard_check(button_const_array[i]) - keyboard_check(button_const_array[i+1])
+			_input[button_array[argument[0], i]] = keyboard_check(button_const_array[i + 20]) - keyboard_check(button_const_array[i+1 + 20])
 			i++
 		}
 	}
 }
-
 
 scr_handle_c_stick(argument[0], _input)
 

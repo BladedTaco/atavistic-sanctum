@@ -1,6 +1,4 @@
 /// @description Initialise Server
-//set global variables to base states
-macros()
 
 server_name = "SERVER" //set base server name
 

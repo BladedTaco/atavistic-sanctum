@@ -4,13 +4,7 @@ buff = buffer_create(256, buffer_grow, 1); //create a buffer for networking
 client = network_create_socket(global.network_protocol) //create socket
 global.client = client //used to ignore messages sent to self if this client is also a server
 player_number = 0
-input_buffer_array[0,0] = 0
-input_array[0, 0] = 0
 alarm[1] = GAME_SPEED*2
-for (var i = 0; i < 32000; i++) {
-	for (var o = 0; o < 10; o++) {
-input_buffer_array[i, o] = -9
-	}}
 
 if (global.network_protocol = network_socket_tcp) { //if using tcp
 	if (network_connect(client, global.network_ip, 6510) != 0) { //try to connect to server
