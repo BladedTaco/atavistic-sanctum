@@ -55,7 +55,7 @@
 #macro DASHING 3
 #macro RUNNING 4
 #macro JUMPING 5 //only describes jumpsquat, once in air, state is airborne
-#macro AIRBORNE 6
+#macro AIRBORNE 6 //describes being in the air, including moving hitstun
 #macro FREEFALL 7
 #macro TILT_ATTACK 8
 #macro SMASH_ATTACK 9
@@ -66,8 +66,17 @@
 #macro DODGING 14
 #macro AIR_DODGING 15
 #macro SHIELDING 16
-#macro HIT_STUN 17
+#macro HIT_STUN 17 //describes static hitstun
 #macro TECHING 18
+#macro JUMP_RISE 19 //describes holding jump after pressing it
+#macro AIR_ATTACK 20
+
+
+//character identiiers
+#macro BAL 0
+#macro GEO 1
+#macro MAC 2
+#macro ETH 3
 
 
 //globals
@@ -87,3 +96,4 @@ global.client = -1
 global.player_number = 0
 global.local_players = 1
 global.wait = false
+

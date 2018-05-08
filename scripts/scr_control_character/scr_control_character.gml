@@ -2,121 +2,136 @@
 ///@desc controls the characters based on movements and states
 
 var i = 0 //initialise the loop counter to 0
-var _check_state, _move_character; //initialise some local variables in memory
+var _check_state, _move_character, _dir, _inst; //initialise some local variables in memory
 do {
+	_dir = point_direction(0, 0, input_array[i, XAXIS], input_array[i, YAXIS]) //get direction
 	_check_state = true //set base state of variable
-	_move_character = true //set base state of variable
+	_move_character = 0 //set base state of variable
+	_inst = player[i] //get the player object corresponding to the player number
+	if (!instance_exists(_inst)) { exit }
 	if (input_array[i, PAUSE]) { //pause or unpause
 		global.paused = !global.paused	
 	}
 	
+	switch (state[i]) { //perform actions based on state
+		case GROUNDED: case WALKING: 
+			if (input_array[i, SHIELD]) { //shield
+				scr_perform_shield(_inst, i, 0)	
+			}
+			if (input_array[i, ATTACK]) { //attack
+				scr_perform_attack(_inst, i, input_array[i, TILT], _dir)
+			}
+			if (input_array[i, SPECIAL]) { //special attacck
+				scr_perform_attack(_inst, i, 3, _dir)
+			}
+			if (input_array[i, GRAB]) { //grab
+				scr_perform_grab(_inst, i, 0, _dir)
+			}
+			if (input_array[i, JUMP]) { //jump
+				scr_perform_jump(_inst, i, 0)
+			}
+			if (input_array[i, TAUNT]) { //taunt
+				scr_perform_taunt(_inst, i)
+			}
+		break;
+		
+		
+		case TILT_ATTACK: case SMASH_ATTACK: case SPECIAL_ATTACK: case LANDING: case DODGING: case AIR_DODGING: case SHIELDING: 
+			_move_character = 2 //drift
+		break;
+		
+		case LEDGE_ALT: 
+			_move_character = 1 //stop
+		break;
+		
+		case HIT_STUN:
+			_move_character = 3 //DI
+		break;
+		
+		case FREEFALL: case SPEED_UP: case DASHING: case JUMP_RISE: case AIR_ATTACK:
+			_move_character = 0 //move normally
+		break;
+		
+		case RUNNING: 
+			if (input_array[i, SHIELD]) { //shield
+				scr_perform_shield(_inst, i, 0)	
+			}
+			if (input_array[i, ATTACK]) { //attack
+				scr_perform_attack(_inst, i, 4, _dir)
+			}
+			if (input_array[i, SPECIAL]) { //special attacck
+				scr_perform_attack(_inst, i, 3, _dir)
+			}
+			if (input_array[i, GRAB]) { //grab
+				scr_perform_grab(_inst, i, 0, _dir)
+			}
+			if (input_array[i, JUMP]) { //jump
+				scr_perform_jump(_inst, i, 0)
+			}
+		break;
+		
+		case JUMPING: 
+			_move_character = 2 //drift
+			if (input_array[i, ATTACK]) { //attack
+				scr_perform_attack(_inst, i, input_array[i, TILT], _dir)
+			}
+			if (input_array[i, SPECIAL]) { //special attacck
+				scr_perform_attack(_inst, i, 3, _dir)
+			}
+			if (input_array[i, GRAB]) { //grab
+				scr_perform_grab(_inst, i, 0, _dir)
+			}
+		break;
+		
+		case AIRBORNE: 
+			if (input_array[i, SHIELD] and (character = "geos")) { //shield
+				scr_perform_shield(_inst, i, 1)	
+			}
+			if (input_array[i, ATTACK]) { //attack
+				scr_perform_attack(_inst, i, 5, _dir)
+			}
+			if (input_array[i, SPECIAL]) { //special attacck
+				scr_perform_attack(_inst, i, 3, _dir)
+			}
+			if (input_array[i, GRAB]) { //grab
+				scr_perform_grab(_inst, i, 1, _dir)
+			}
+			if (input_array[i, JUMP]) { //jump
+				scr_perform_jump(_inst, i, 1)
+			}
+		break;
+		
+		case LEDGE: 
+			_move_character = 1 //stop
+			if (input_array[i, SHIELD]) { //roll
+				scr_perform_ledge(_inst, i, 2)	
+			}
+			if (input_array[i, ATTACK] or input_array[i, SPECIAL]) { //attack
+				scr_perform_ledge(_inst, i, 1, _dir)
+			}
+			if (input_array[i, GRAB]) { //grab
+				scr_perform_ledge(_inst, i, 3, _dir)
+			}
+			if (input_array[i, JUMP]) { //jump
+				scr_perform_ledge(_inst, i, 4)
+			}
+		break;
+		
+
+		case TECHING: 
+			_move_character = 1 //stop
+			if (input_array[i, JUMP]) { //jump
+				scr_perform_jump(_inst, i, 0)	
+			}
+		break;
+		
+	}
+	
+	if (_move_character = 0) { //default move character
+		scr_move_character(_inst, i)
+	} else { //handle special movement cases
+		scr_handle_movement(_inst, i, _move_character)
+	}
+	
 	i++
 }  until(i = global.player_number)
-
-
-
-
-/*
-ControlCharacter()
-	Begin
-		i <--- 0
-		_smash_attack <--- false
-		_check_state <--- true
-		Do
-			_move_character <--- true
-			if pause_key[i]
-				paused <--- not paused
-			End if
-			
-			if Absolute(Absolute(old_xaxis[i]) - Absolute(xaxis[i]) + Absolute(Absolute(old_yaxis[i]) - Absolute(yaxis[i])) > 0.2
-				_smash_attack <--- true
-			End if
-			
-			if freefall[i] is equal to false
-				if jump_key[i]
-					if jumps[i] > 0
-						PerformJump(i)
-					End if
-				End if
-			
-				if state[i] is not equal to "Ledge"
-					if special_key[i]
-						PerformSpecial(i, point_direction(0, 0, xaxis[i], yaxis[i]))
-						_check_state <--- false
-						_move_character <--- false
-					End if
-			
-					if grab_key[i]
-						PerformGrab(i, sign(xaxis[i]))
-						_check_state <--- false
-						_move_character <--- false
-					End if
-				End if
-			End if
-			
-			If _check_state
-				Switch state[i]
-					Case "Airborne":
-						if attack_key[i]
-							PerformAerialAttack(i, point_direction(0, 0, xaxis[i], yaxis[i]))
-						End if
-					
-						if shield_key[i]
-							if _smash_attack
-								PerformAerialDodge(i, point_direction(0, 0, xaxis[i], yaxis[i]))
-								_move_character <--- false
-							Else
-								PerformAerialDodge(i, -10)
-								_move_character <--- false
-							End if
-						End if				
-					End Case
-				
-					Case "Grounded":
-						if attack_key[i]
-							if _smash_attack
-								PerformAttack(i, point_direction(0, 0, xaxis[i], yaxis[i]))
-								_move_character <--- false
-							Else
-								PerformTiltAttack(i, point_direction(0, 0, xaxis[i], yaxis[i]))
-								_move_character <--- false
-							End if
-						End if
-						
-						if shield_key[i]
-							if _smash_attack
-								PerformDodge(i, point_direction(0, 0, xaxis[i], yaxis[i]))
-								_move_character <--- false
-							Else
-								PerformShield(i)
-								_move_character <--- false
-							End if
-						End if
-					End Case
-					
-					Case "Ledge":
-						_move_character <--- false
-						if attack_key[i] or special_key[i]
-							PerformLedgeAttack(i)
-						Else if shield_key[i] 
-							PerformLedgeRoll(i)
-						Else if grab_key[i]
-							PerformLedgeGrab(i)
-						End if
-					break;
-				
-				End Switch
-			End If
-			If _move_character
-				MoveCharacter(i, point_distance(0, 0, xaxis[i], yaxis[i]), point_direction(0, 0, xaxis[i], yaxis[i]))
-			End if
-			i <--- i + 1
-		Until i is equal to player_number
-	End
-	
-Notes on ControlCharacter()
-	There are several functions called in this subroutine, these functions are minor functions
-		therefore, they have no written pseudocode for them, rather they only have a description
-		of their purpose as listed in the Minor Functions section.
-	_move_character, _smash_attack and _check_state are local variables
-

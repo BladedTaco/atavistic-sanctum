@@ -1,10 +1,15 @@
 /// @description initialise the match handler
 
 
-//input variables intialisation (copied from obj_input at the start of each step)
+//input variables and control variables initialisation
 old_axis[0, 0] = 0
 input_array[0, 0] = 0
 state[0] = GROUNDED
+jumps[0] = 1
+momentum_x[0] = 0
+momentum_y[0] = 0
+player[0] = -1 //create the players here and populate the array with their instance ids
+
 
 //get data from server for the match
 

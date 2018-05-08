@@ -1,5 +1,9 @@
 /// @description initialise player
 
 player_number = 0 //number of the player (maps to obj_input.input_array's first dimension
-character = 0
-colour_pallet = ""
+character = BAL //character as a macro
+colour_pallet = "" //colour pallet as a string
+percentage = 0 //damage
+max_jumps = 1 //maximum amount of aerial jumps
+weight = 1 //weight multiplier (initial knockback resistance)
+inertia = 1 //inertia multiplier (sliding resistance)
