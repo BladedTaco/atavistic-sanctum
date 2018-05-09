@@ -16,7 +16,7 @@ do {
 	switch (state[i]) { //perform actions based on state
 		case GROUNDED: case WALKING: 
 			if (input_array[i, SHIELD]) { //shield
-				scr_perform_shield(_inst, i, 0)	
+				scr_perform_shield(_inst, i)	
 			}
 			if (input_array[i, ATTACK]) { //attack
 				scr_perform_attack(_inst, i, input_array[i, TILT], _dir)
@@ -36,8 +36,16 @@ do {
 		break;
 		
 		
-		case TILT_ATTACK: case SMASH_ATTACK: case SPECIAL_ATTACK: case LANDING: case DODGING: case AIR_DODGING: case SHIELDING: 
+		case TILT_ATTACK: case SMASH_ATTACK: case SPECIAL_ATTACK: case LANDING: case DODGING: case AIR_DODGING:
 			_move_character = 2 //drift
+		break;
+		
+		case SHIELDING: 
+			if (_inst.character = GEO) {
+				_move_character = 0
+			} else {
+				_move_character = 2
+			}
 		break;
 		
 		case LEDGE_ALT: 
@@ -48,13 +56,17 @@ do {
 			_move_character = 3 //DI
 		break;
 		
-		case FREEFALL: case SPEED_UP: case DASHING: case JUMP_RISE: case AIR_ATTACK:
+		case FREEFALL: case SPEED_UP: case DASHING: case JUMP_RISE:
+			if (input_array[i, SHIELD] and (character = GEO)) {
+				scr_perform_shield(_inst, i)	
+			}
+		case AIR_ATTACK:
 			_move_character = 0 //move normally
 		break;
 		
 		case RUNNING: 
 			if (input_array[i, SHIELD]) { //shield
-				scr_perform_shield(_inst, i, 0)	
+				scr_perform_shield(_inst, i)	
 			}
 			if (input_array[i, ATTACK]) { //attack
 				scr_perform_attack(_inst, i, 4, _dir)
@@ -84,8 +96,8 @@ do {
 		break;
 		
 		case AIRBORNE: 
-			if (input_array[i, SHIELD] and (character = "geos")) { //shield
-				scr_perform_shield(_inst, i, 1)	
+			if (input_array[i, SHIELD]) { //shield
+				scr_perform_shield(_inst, i)	
 			}
 			if (input_array[i, ATTACK]) { //attack
 				scr_perform_attack(_inst, i, 5, _dir)

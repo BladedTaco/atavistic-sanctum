@@ -7,7 +7,7 @@
     "HTile": false,
     "VTile": false,
     "bbox_bottom": 1770,
-    "bbox_left": 416,
+    "bbox_left": 320,
     "bbox_right": 7919,
     "bbox_top": 135,
     "bboxmode": 0,
@@ -62,10 +62,10 @@
             "mvc": "1.0",
             "SpriteId": "5236597e-30c5-4285-85ac-9952263b2ad5",
             "blendMode": 0,
-            "isLocked": false,
+            "isLocked": true,
             "name": "transparency",
-            "opacity": 45,
-            "visible": false
+            "opacity": 55,
+            "visible": true
         },
         {
             "id": "77858a9c-035e-44d1-b8a1-6d0f9406a629",

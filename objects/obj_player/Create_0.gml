@@ -7,3 +7,4 @@ percentage = 0 //damage
 max_jumps = 1 //maximum amount of aerial jumps
 weight = 1 //weight multiplier (initial knockback resistance)
 inertia = 1 //inertia multiplier (sliding resistance)
+jab = 1 //current jab number
