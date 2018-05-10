@@ -7,7 +7,7 @@
     "HTile": false,
     "VTile": false,
     "bbox_bottom": 1770,
-    "bbox_left": 350,
+    "bbox_left": 323,
     "bbox_right": 7919,
     "bbox_top": 135,
     "bboxmode": 0,
@@ -55,6 +55,20 @@
                     "mvc": "1.0",
                     "FrameId": "d942b046-bbad-4194-b89a-bb9b4cf93ad6",
                     "LayerId": "b8771adc-fe4d-4611-b262-fa7aca85c6cb"
+                },
+                {
+                    "id": "401cea7c-60b0-4908-bd8d-bb67bfc0112c",
+                    "modelName": "GMSpriteImage",
+                    "mvc": "1.0",
+                    "FrameId": "d942b046-bbad-4194-b89a-bb9b4cf93ad6",
+                    "LayerId": "c260e697-a632-403d-af68-6f99f4579d27"
+                },
+                {
+                    "id": "d14c9af4-e7d7-494d-a0f5-81ac4549db98",
+                    "modelName": "GMSpriteImage",
+                    "mvc": "1.0",
+                    "FrameId": "d942b046-bbad-4194-b89a-bb9b4cf93ad6",
+                    "LayerId": "76f35422-203e-41a8-89d2-2846ace397b1"
                 }
             ]
         }
@@ -70,9 +84,20 @@
             "SpriteId": "5236597e-30c5-4285-85ac-9952263b2ad5",
             "blendMode": 0,
             "isLocked": true,
-            "name": "transparency",
+            "name": "transparency backup",
             "opacity": 55,
             "visible": false
+        },
+        {
+            "id": "c260e697-a632-403d-af68-6f99f4579d27",
+            "modelName": "GMImageLayer",
+            "mvc": "1.0",
+            "SpriteId": "5236597e-30c5-4285-85ac-9952263b2ad5",
+            "blendMode": 0,
+            "isLocked": true,
+            "name": "transparency edit",
+            "opacity": 75,
+            "visible": true
         },
         {
             "id": "77858a9c-035e-44d1-b8a1-6d0f9406a629",
@@ -93,6 +118,17 @@
             "blendMode": 0,
             "isLocked": true,
             "name": "portrait chest",
+            "opacity": 100,
+            "visible": true
+        },
+        {
+            "id": "76f35422-203e-41a8-89d2-2846ace397b1",
+            "modelName": "GMImageLayer",
+            "mvc": "1.0",
+            "SpriteId": "5236597e-30c5-4285-85ac-9952263b2ad5",
+            "blendMode": 0,
+            "isLocked": true,
+            "name": "portrait shirt",
             "opacity": 100,
             "visible": true
         },
