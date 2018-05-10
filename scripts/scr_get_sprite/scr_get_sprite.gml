@@ -17,7 +17,7 @@ ret = asset_get_index(i + argument[1])
 if (ret = -1) { //if nonexistant sprite
 	//check for special cases
 	if (string_copy(argument[1], 1, 3) = "jab") { //jab attack
-		ret = asset_get_index(i + "jab_" + string(argument[0].jab))
+		ret = asset_get_index(i + "jab_" + string(argument[0].jab))	
 	}
 	switch (argument[0].character) { //check for character specific special cases
 		case ETH:

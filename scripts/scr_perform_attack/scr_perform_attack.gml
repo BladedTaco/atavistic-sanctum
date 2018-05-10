@@ -4,40 +4,13 @@
 ///@param attack_type - whether the attack is neutral, tilt, smash, special, dash, or aerial (0 1 2 3 4 5 respectively)
 ///@param direction - the direction of movement
 ///@desc causes the given character to perform an attack
-var _type, _direction, _sprite
+var _type, _direction, _sprite //define local variables
 
-if (input_array[argument[1], TILT] = NEUTRAL_MOVE) { //neutral attack
-	_direction = "neutral"
-} else {
-	switch (round(argument[3]/90)) { //get direction
-		case 0: //right
-		case 4: //right
-			if (sign(argument[0].image_xscale) = 1) { //facing right
-				_direction = "forward"
-			} else { //facing left
-				_direction = "back"
-			}
-		break;
-		
-		case 1: //up
-			_direction = "up"
-		break;
-		
-		case 2: //left
-			if (sign(argument[0].image_xscale) = -1) { //facing left
-				_direction = "forward"
-			} else { //facing right
-				_direction = "back"
-			}
-		break;
-		
-		case 3: //down
-			_direction = "down"
-		break;
-	}
-}
+_direction = scr_get_direction(argument[0], argument[1], argument[3]) //get the directon
+
+
 switch (argument[2]) { //get attack type as string
-	case 0: //neutral
+	case 0: //jab
 		_type = "jab"
 	break;
 	case 1: //tilt
@@ -57,4 +30,9 @@ switch (argument[2]) { //get attack type as string
 	break;
 }
 
-_sprite = scr_get_sprite(argument[0], _type + "_" + _direction)
+_sprite = scr_get_sprite(argument[0], _type + "_" + _direction) //get sprite
+
+if (sprite_exists(_sprite)) { //if the sprite exists
+	argument[0].sprite_index = _sprite //set sprite to the attack sprite
+	argument[0].image_index = 0 //set animation frame to the first one
+}
