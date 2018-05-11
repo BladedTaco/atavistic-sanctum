@@ -1887,6 +1887,14 @@
             }
         },
         {
+            "Key": "a938ddb5-9d4d-4be7-8a75-17e4d2336770",
+            "Value": {
+                "id": "d5c0c90d-c740-4429-afc6-a6a0b019baec",
+                "resourcePath": "sprites\\spr_portrait_cropped\\spr_portrait_cropped.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "abd2a99b-21a0-4c5c-9085-37634facdd6d",
             "Value": {
                 "id": "890d77c7-a1f3-4f59-87a0-f640054da56d",
