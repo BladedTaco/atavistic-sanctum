@@ -2,7 +2,7 @@
 ///@param object - the instance id of the character object
 ///@param player_number - the number of the player to perform the shield with
 ///@param GEO - if the character is GEO or another moving shield character (booleanic)
-///@desc causes the given character to perform a shield
+///@desc causes the given character to perform a shield and returns state
 
 if (argument[0].character = GEO) { //moving shield
 	with (instance_create(argument[0].x, argument[0].y, obj_shield)) { //with the shield object
@@ -17,3 +17,5 @@ if (argument[0].character = GEO) { //moving shield
 		creator = argument[0] //get the assigned object to protecc
 	}	
 }
+
+return SHIELDING //return the state

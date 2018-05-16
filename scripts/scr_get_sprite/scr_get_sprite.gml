@@ -19,6 +19,9 @@ if (ret = -1) { //if nonexistant sprite
 	if (string_copy(argument[1], 1, 3) = "jab") { //jab attack
 		ret = asset_get_index(i + "jab_" + string(argument[0].jab))	
 	}
+	if (string_copy(argument[1], 1, 8) = "grab_jab") { //grab jab
+		ret = asset_get_index(i + "grab_jab")	
+	}
 	switch (argument[0].character) { //check for character specific special cases
 		case ETH:
 			if (string_copy(argument[1], 1, 4) = "tilt") { //smash attack

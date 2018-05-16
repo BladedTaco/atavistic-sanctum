@@ -16,22 +16,22 @@ do {
 	switch (state[i]) { //perform actions based on state
 		case GROUNDED: case WALKING: 
 			if (input_array[i, SHIELD]) { //shield
-				scr_perform_shield(_inst, i)	
+				state[i] = scr_perform_shield(_inst, i)	
 			}
 			if (input_array[i, ATTACK]) { //attack
-				scr_perform_attack(_inst, i, input_array[i, TILT], _dir)
+				state[i] = scr_perform_attack(_inst, i, input_array[i, TILT], _dir)
 			}
 			if (input_array[i, SPECIAL]) { //special attacck
-				scr_perform_attack(_inst, i, 3, _dir)
+				state[i] = scr_perform_attack(_inst, i, 3, _dir)
 			}
 			if (input_array[i, GRAB]) { //grab
-				scr_perform_grab(_inst, i, 0, _dir)
+				state[i] = scr_perform_grab(_inst, i, 0, _dir)
 			}
 			if (input_array[i, JUMP]) { //jump
-				scr_perform_jump(_inst, i, 0)
+				state[i] = scr_perform_jump(_inst, i, 0)
 			}
 			if (input_array[i, TAUNT]) { //taunt
-				scr_perform_taunt(_inst, i)
+				state[i] = scr_perform_taunt(_inst, i)
 			}
 		break;
 		
@@ -58,7 +58,7 @@ do {
 		
 		case FREEFALL: case SPEED_UP: case DASHING: case JUMP_RISE:
 			if (input_array[i, SHIELD] and (character = GEO)) {
-				scr_perform_shield(_inst, i)	
+				state[i] = scr_perform_shield(_inst, i)	
 			}
 		case AIR_ATTACK:
 			_move_character = 0 //move normally
@@ -66,66 +66,66 @@ do {
 		
 		case RUNNING: 
 			if (input_array[i, SHIELD]) { //shield
-				scr_perform_shield(_inst, i)	
+				state[i] = scr_perform_shield(_inst, i)	
 			}
 			if (input_array[i, ATTACK]) { //attack
-				scr_perform_attack(_inst, i, 4, _dir)
+				state[i] = scr_perform_attack(_inst, i, 4, _dir)
 			}
 			if (input_array[i, SPECIAL]) { //special attacck
-				scr_perform_attack(_inst, i, 3, _dir)
+				state[i] = scr_perform_attack(_inst, i, 3, _dir)
 			}
 			if (input_array[i, GRAB]) { //grab
-				scr_perform_grab(_inst, i, 0, _dir)
+				state[i] = scr_perform_grab(_inst, i, 0, _dir)
 			}
 			if (input_array[i, JUMP]) { //jump
-				scr_perform_jump(_inst, i, 0)
+				state[i] = scr_perform_jump(_inst, i, 0)
 			}
 		break;
 		
 		case JUMPING: 
 			_move_character = 2 //drift
 			if (input_array[i, ATTACK]) { //attack
-				scr_perform_attack(_inst, i, input_array[i, TILT], _dir)
+				state[i] = scr_perform_attack(_inst, i, input_array[i, TILT], _dir)
 			}
 			if (input_array[i, SPECIAL]) { //special attacck
-				scr_perform_attack(_inst, i, 3, _dir)
+				state[i] = scr_perform_attack(_inst, i, 3, _dir)
 			}
 			if (input_array[i, GRAB]) { //grab
-				scr_perform_grab(_inst, i, 0, _dir)
+				state[i] = scr_perform_grab(_inst, i, 0, _dir)
 			}
 		break;
 		
 		case AIRBORNE: 
 			if (input_array[i, SHIELD]) { //shield
-				scr_perform_shield(_inst, i)	
+				state[i] = scr_perform_shield(_inst, i)	
 			}
 			if (input_array[i, ATTACK]) { //attack
-				scr_perform_attack(_inst, i, 5, _dir)
+				state[i] = scr_perform_attack(_inst, i, 5, _dir)
 			}
 			if (input_array[i, SPECIAL]) { //special attacck
-				scr_perform_attack(_inst, i, 3, _dir)
+				state[i] = scr_perform_attack(_inst, i, 3, _dir)
 			}
 			if (input_array[i, GRAB]) { //grab
-				scr_perform_grab(_inst, i, 1, _dir)
+				state[i] = scr_perform_grab(_inst, i, 1, _dir)
 			}
 			if (input_array[i, JUMP]) { //jump
-				scr_perform_jump(_inst, i, 1)
+				state[i] = scr_perform_jump(_inst, i, 1)
 			}
 		break;
 		
 		case LEDGE: 
 			_move_character = 1 //stop
 			if (input_array[i, SHIELD]) { //roll
-				scr_perform_ledge(_inst, i, 2)	
+				state[i] = scr_perform_ledge(_inst, i, 2)	
 			}
 			if (input_array[i, ATTACK] or input_array[i, SPECIAL]) { //attack
-				scr_perform_ledge(_inst, i, 1, _dir)
+				state[i] = scr_perform_ledge(_inst, i, 1, _dir)
 			}
 			if (input_array[i, GRAB]) { //grab
-				scr_perform_ledge(_inst, i, 3, _dir)
+				state[i] = scr_perform_ledge(_inst, i, 3, _dir)
 			}
 			if (input_array[i, JUMP]) { //jump
-				scr_perform_ledge(_inst, i, 4)
+				state[i] = scr_perform_ledge(_inst, i, 4)
 			}
 		break;
 		
@@ -133,8 +133,15 @@ do {
 		case TECHING: 
 			_move_character = 1 //stop
 			if (input_array[i, JUMP]) { //jump
-				scr_perform_jump(_inst, i, 0)	
+				state[i] = scr_perform_jump(_inst, i, 0)	
 			}
+		break;
+		
+		case GRABBING:
+			if (input_array[i, ATTACK]) { //grab jab
+				scr_perform_attack(_inst, i, 6, 0)
+			}
+			_move_character = 2 //drift
 		break;
 		
 	}

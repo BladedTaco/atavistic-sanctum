@@ -70,6 +70,8 @@
 #macro TECHING 18
 #macro JUMP_RISE 19 //describes holding jump after pressing it
 #macro AIR_ATTACK 20
+#macro GRABBING 21 //describes performing a grab
+#macro HOLDING 22 //describes holding a grab with a character held
 
 
 //character identiiers
@@ -77,6 +79,13 @@
 #macro GEO 1
 #macro MAC 2
 #macro ETH 3
+
+
+//hitbox shapes
+#macro NULL 0
+#macro RECTANGLE 1
+#macro CIRCLE 2
+
 
 
 //globals
@@ -97,3 +106,16 @@ global.player_number = 0
 global.local_players = 1
 global.wait = false
 
+
+//enums
+enum _IMPULSE { //define an impulse enumeration field
+	_AIR_DODGE = 5, //air dodge impulse (instant)
+	_ROLL = 10, //roll impulse (instant)
+	_WALK = 0.5, //walking impulse (ongoing)
+	_RUN = 1, //running impulse (ongoing)
+	_DASH = 5, //dashing impulse (instant)
+	_JUMP = 20, //jumping impulse (instant)
+}
+
+
+add_moves() //add all of the attacks of the characters into memory (very very intensive)

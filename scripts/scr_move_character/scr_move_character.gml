@@ -1,7 +1,7 @@
 ///@func scr_move_character(object, player_number)
 ///@param object - the instance id of the character object
-///@param player_number - the number of the player to perform the shield with
-///@desc causes the given character to perform a taunt
+///@param player_number - the number of the player to handle the movement of
+///@desc handles the given characters movement using a base move case.
 argument[0] = 0
 
 var _x1 = input_array[argument[0], XAXIS]

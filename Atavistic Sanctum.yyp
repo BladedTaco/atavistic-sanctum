@@ -959,6 +959,14 @@
             }
         },
         {
+            "Key": "56f9258c-cfcd-407c-b92c-a66875a8004b",
+            "Value": {
+                "id": "0026645a-3431-483b-b99b-57cc081d7e7f",
+                "resourcePath": "scripts\\scr_apply_impulse\\scr_apply_impulse.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "582f6f2d-b617-469b-9521-d384bd09f81e",
             "Value": {
                 "id": "363c7330-3e06-4efb-94d1-ed25132938ad",
@@ -1084,6 +1092,14 @@
                 "id": "9296be24-46a3-485f-b53e-aea167435e45",
                 "resourcePath": "sprites\\spr_geo_throw_back\\spr_geo_throw_back.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "65131081-a43b-4f41-83e1-c549c13007b3",
+            "Value": {
+                "id": "531a8399-cb87-4149-9378-7371c05af6b4",
+                "resourcePath": "scripts\\add_moves\\add_moves.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -1267,6 +1283,22 @@
             "Value": {
                 "id": "38039150-a1a9-4756-9619-da3493c638ed",
                 "resourcePath": "sprites\\spr_mac_base\\spr_mac_base.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "7492d33a-15cf-4a45-adf1-c2db28187ab9",
+            "Value": {
+                "id": "fc172dde-6f51-4f31-a5bb-c479d566c98d",
+                "resourcePath": "scripts\\scr_get_knockback\\scr_get_knockback.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "75363245-8743-40dc-a593-e108c8ec4314",
+            "Value": {
+                "id": "8d3ab776-2752-4ec3-ae2b-0d5c1bdfa284",
+                "resourcePath": "sprites\\spr_portrait_2\\spr_portrait_2.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -2295,6 +2327,14 @@
             }
         },
         {
+            "Key": "c786f13f-7553-4055-bb66-57779440e85c",
+            "Value": {
+                "id": "77c3f423-e49b-48cf-8026-00df91e215c8",
+                "resourcePath": "scripts\\scr_add_hurtbox\\scr_add_hurtbox.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "ca08a339-e421-4552-a3ba-4ee68a95e2c6",
             "Value": {
                 "id": "15fb6121-5bed-42c1-8c2d-0e34bffda36f",
@@ -2439,6 +2479,14 @@
             }
         },
         {
+            "Key": "d978f643-6bc3-472b-ab48-37416c6437ec",
+            "Value": {
+                "id": "407db764-2e44-45fb-9f71-00e50952a524",
+                "resourcePath": "scripts\\scr_add_move\\scr_add_move.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "d9e06161-f075-4c4e-b830-dd120093b7ca",
             "Value": {
                 "id": "f993a5a3-17a4-4b99-9542-1e4a413c99a5",
@@ -2563,6 +2611,14 @@
             "Value": {
                 "id": "217e9edd-5468-47bb-a3b3-816386adf7c7",
                 "resourcePath": "views\\e63325b3-5be0-4946-b92b-5a6b70928af8.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "e77de5cb-1923-4b37-8dde-60bc672dcaa7",
+            "Value": {
+                "id": "ab5540d8-6f32-4635-931b-d6bc17ce050d",
+                "resourcePath": "views\\e77de5cb-1923-4b37-8dde-60bc672dcaa7.yy",
                 "resourceType": "GMFolder"
             }
         },
@@ -2841,7 +2897,12 @@
         "5465a2bb-7a1c-435e-a490-b02f442073f4",
         "4391d1df-ff3e-4089-8a8c-058fee2e9c87",
         "84e513ce-32d5-4bb4-b826-3dde13584791",
-        "5e5ac3dc-7fa6-4cf6-9358-2d6f0f27afa1"
+        "5e5ac3dc-7fa6-4cf6-9358-2d6f0f27afa1",
+        "56f9258c-cfcd-407c-b92c-a66875a8004b",
+        "7492d33a-15cf-4a45-adf1-c2db28187ab9",
+        "d978f643-6bc3-472b-ab48-37416c6437ec",
+        "c786f13f-7553-4055-bb66-57779440e85c",
+        "65131081-a43b-4f41-83e1-c549c13007b3"
     ],
     "tutorial": ""
 }

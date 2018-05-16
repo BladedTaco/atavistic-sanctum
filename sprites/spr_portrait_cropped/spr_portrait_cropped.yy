@@ -6,9 +6,9 @@
     "For3D": false,
     "HTile": false,
     "VTile": false,
-    "bbox_bottom": 426,
+    "bbox_bottom": 399,
     "bbox_left": 0,
-    "bbox_right": 502,
+    "bbox_right": 399,
     "bbox_top": 0,
     "bboxmode": 0,
     "colkind": 1,
@@ -28,13 +28,6 @@
                 "LayerId": "00000000-0000-0000-0000-000000000000"
             },
             "images": [
-                {
-                    "id": "40e4d2c6-3317-4e3c-8484-372d8f003094",
-                    "modelName": "GMSpriteImage",
-                    "mvc": "1.0",
-                    "FrameId": "30ed3e93-3ef3-43a5-b1a5-b324c3f4a3d4",
-                    "LayerId": "b0cab6a5-bcf0-4108-80e4-d31e686d120f"
-                },
                 {
                     "id": "f2f4f7df-24eb-4289-90e8-04fc85520b23",
                     "modelName": "GMSpriteImage",
@@ -61,7 +54,7 @@
     ],
     "gridX": 0,
     "gridY": 0,
-    "height": 427,
+    "height": 400,
     "layers": [
         {
             "id": "76a90ea8-32f0-4185-9a09-f6ec0f44d039",
@@ -69,21 +62,10 @@
             "mvc": "1.0",
             "SpriteId": "a938ddb5-9d4d-4be7-8a75-17e4d2336770",
             "blendMode": 0,
-            "isLocked": false,
+            "isLocked": true,
             "name": "transparency chainless",
             "opacity": 55,
             "visible": true
-        },
-        {
-            "id": "b0cab6a5-bcf0-4108-80e4-d31e686d120f",
-            "modelName": "GMImageLayer",
-            "mvc": "1.0",
-            "SpriteId": "a938ddb5-9d4d-4be7-8a75-17e4d2336770",
-            "blendMode": 0,
-            "isLocked": true,
-            "name": "transparency",
-            "opacity": 55,
-            "visible": false
         },
         {
             "id": "5f0b7dc6-2932-4db6-a9d9-39cb99388d12",
@@ -91,7 +73,7 @@
             "mvc": "1.0",
             "SpriteId": "a938ddb5-9d4d-4be7-8a75-17e4d2336770",
             "blendMode": 0,
-            "isLocked": false,
+            "isLocked": true,
             "name": "portrait",
             "opacity": 100,
             "visible": true
@@ -102,7 +84,7 @@
             "mvc": "1.0",
             "SpriteId": "a938ddb5-9d4d-4be7-8a75-17e4d2336770",
             "blendMode": 0,
-            "isLocked": false,
+            "isLocked": true,
             "name": "background",
             "opacity": 100,
             "visible": true
@@ -197,7 +179,7 @@
     "swfPrecision": 2.525,
     "textureGroupId": "1225f6b0-ac20-43bd-a82e-be73fa0b6f4f",
     "type": 0,
-    "width": 503,
+    "width": 400,
     "xorig": 10000,
     "yorig": 78579
 }
