@@ -6,7 +6,8 @@
     "children": [
         "5236597e-30c5-4285-85ac-9952263b2ad5",
         "a938ddb5-9d4d-4be7-8a75-17e4d2336770",
-        "75363245-8743-40dc-a593-e108c8ec4314"
+        "75363245-8743-40dc-a593-e108c8ec4314",
+        "c3b4fa2b-ab84-4ff3-abab-dd27457c44bf"
     ],
     "filterType": "GMSprite",
     "folderName": "portrait",

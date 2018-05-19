@@ -2255,6 +2255,14 @@
             }
         },
         {
+            "Key": "c3b4fa2b-ab84-4ff3-abab-dd27457c44bf",
+            "Value": {
+                "id": "16c8dfc6-de30-45fd-a6c8-5550e9c07b78",
+                "resourcePath": "sprites\\spr_portrait_2_cropped\\spr_portrait_2_cropped.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "c499e2fe-3e9c-41d8-a72f-647775bba5ad",
             "Value": {
                 "id": "cff27e91-c850-49a0-a45d-a142209a8bdb",

@@ -1,17 +1,17 @@
-///@func scr_add_move(sprite_index, image_index, hitbox_index, shape, major_axis, minor_axis, x, y, rotation, damage, direction, base knockback, scaling knockback)
+///@func scr_add_move(sprite_index, image_index, hitbox_index, shape, width, height, x, y, rotation, damage, direction, base, scaling)
 ///@param sprite_index - the sprite_index for the associated data
 ///@param image_index - the image_index for the associated data
 ///@param hitbox_index - the number of the hitbox of the move (moves can have up to 10 hitboxes)
 ///@param shape - the shape of the hitbox
-///@param major_axis - the major axis of the hitbox
-///@param minor_axis - the minor axis of the hitbox
+///@param width - the width of the hitbox / major axis
+///@param height - the height of the hitbox / minor axis
 ///@param x - the x position of the centre of the hitbox relative to sprite origin
 ///@param y - the y position of the centre of the hitbox relative to sprite origin
 ///@param rotation - the rotation of the hitbox (default is major axis is x, minor is y)
 ///@param damage - the damage of the move
-///@param direction - the direction of the knockback of the move
-///@param base_knockback - the base knockback of the move
-///@param scaling_knockback - the scaling knockback of the move
+///@param direction - the direction of the knockback of the move (-1 for grab)
+///@param base - the base knockback of the move
+///@param scaling - the scaling knockback of the move
 ///@desc creates a move and its hitboxes with the given information based on a sprite index and image index
 
 if (argument[3] = NULL) { exit } //if there is no hitbox, exit script

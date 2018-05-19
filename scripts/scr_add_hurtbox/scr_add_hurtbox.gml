@@ -1,10 +1,10 @@
-///@func scr_add_hurtbox(sprite_index, image_index, hurtbox_index, shape, major_axis, minor_axis, x, y, rotation, damage, direction, base knockback, scaling knockback)
+///@func scr_add_hurtbox(sprite_index, image_index, hurtbox_index, shape, width, height, x, y, rotation)
 ///@param sprite_index - the sprite_index for the associated data
 ///@param image_index - the image_index for the associated data
 ///@param hurtbox_index - the number of the hurtbox of the move (characters can have up to 10 hurtboxes)
 ///@param shape - the shape of the hitbox
-///@param major_axis - the major axis of the hurtbox
-///@param minor_axis - the minor axis of the hurtbox
+///@param width - the x width/major axis of the hurtbox
+///@param height - the y height/minor axis of the hurtbox
 ///@param x - the x position of the centre of the hurtbox relative to sprite origin
 ///@param y - the y position of the centre of the hurtbox relative to sprite origin
 ///@param rotation - the rotation of the hurtbox (default is major axis is x, minor is y)
