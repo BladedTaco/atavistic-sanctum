@@ -82,7 +82,7 @@
 
 
 //hitbox shapes
-#macro NULL 0
+#macro NULL -10
 #macro RECTANGLE 1
 #macro CIRCLE 2
 

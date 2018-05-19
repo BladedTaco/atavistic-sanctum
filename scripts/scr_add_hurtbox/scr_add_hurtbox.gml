@@ -15,9 +15,9 @@ if (argument[3] = NULL) { exit } //if there is no hurtbox, exit script
 var i = argument[0]							//first element of array
 var o = argument[1]*100	+ argument[2]*10	//second element of array (mostly)
 
-global.hitbox[i, o + 0] = argument[3]		//shape
-global.hitbox[i, o + 1] = argument[4]		//major axis
-global.hitbox[i, o + 2] = argument[5]		//minor axis
-global.hitbox[i, o + 3] = argument[6]		//x
-global.hitbox[i, o + 4] = argument[7]		//y
-global.hitbox[i, o + 5] = argument[8]		//rotation
+global.hurtbox[i, o + 0] = argument[3]		//shape
+global.hurtbox[i, o + 1] = argument[4]		//major axis
+global.hurtbox[i, o + 2] = argument[5]		//minor axis
+global.hurtbox[i, o + 3] = argument[6]		//x
+global.hurtbox[i, o + 4] = argument[7]		//y
+global.hurtbox[i, o + 5] = argument[8]		//rotation
