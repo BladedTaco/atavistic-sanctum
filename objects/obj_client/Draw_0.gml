@@ -1,4 +1,7 @@
 /// @description 
+
+/*
+
 if (alarm[1] < 0) {
 draw_set_halign(fa_right)
 for (var i = 0; i < global.input_buffer_length; i++) {

@@ -29,3 +29,9 @@ characters are fully invulnerable on the ledge, but drop off very quickly
 a 1x1 rectangular hitbox is used to show a throw or grab jab hitbox
 
 all smash attack damage and knockback values are the max (ie a fully charged smash)
+
+add collision line width functions for rotated rectangle collisions
+
+find a way to create rotated ellipses
+
+hurtboxes are only the main component of the character, eg, chest, ballonys head, no legs, no arms
