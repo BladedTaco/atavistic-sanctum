@@ -794,8 +794,47 @@ scr_add_hurtbox(spr_mac_crouch, 2, 0, RECTANGLE, 12, 16, 1, -15, 0)
 scr_add_hurtbox(spr_mac_crouch, 3, 0, RECTANGLE, 12, 16, 1, -19, 0)	
 
 //mac grab (discontinuous hitboxes)
+scr_add_hurtbox(spr_mac_grab, 0, 0, RECTANGLE, 12, 16, 2, -17, 0)
+scr_add_hurtbox(spr_mac_grab, 1, 0, RECTANGLE, 12, 16, 1, -19, 0)
+scr_add_hurtbox(spr_mac_grab, 2, 0, RECTANGLE, 12, 16, -2, -20, 0)
+scr_add_hurtbox(spr_mac_grab, 3, 0, RECTANGLE, 12, 16, -7, -20, 0)
+scr_add_hurtbox(spr_mac_grab, 4, 0, RECTANGLE, 12, 16, -11, -19, 0)
+scr_add_hurtbox(spr_mac_grab, 5, 0, RECTANGLE, 12, 16, -9, -21, 0)
+scr_add_hurtbox(spr_mac_grab, 6, 0, RECTANGLE, 11, 16, -9, -24, 0)
+scr_add_hurtbox(spr_mac_grab, 7, 0, RECTANGLE, 11, 16, -9, -25, 0)
+scr_add_hurtbox(spr_mac_grab, 8, 0, RECTANGLE, 11, 16, -9, -24, 0)
+scr_add_hurtbox(spr_mac_grab, 9, 0, RECTANGLE, 12, 16, -9, -21, 0)
+scr_add_hurtbox(spr_mac_grab, 10, 0, RECTANGLE, 12, 16, -11, -19, 0)
+scr_add_hurtbox(spr_mac_grab, 11, 0, RECTANGLE, 12, 16, -7, -20, 0)
+scr_add_hurtbox(spr_mac_grab, 12, 0, RECTANGLE, 12, 16, -2, -20, 0)
+scr_add_hurtbox(spr_mac_grab, 13, 0, RECTANGLE, 12, 16, 1, -19, 0)
+scr_add_move(spr_mac_grab, 7, 0, CIRCLE, 15, 15, 5, -39, 0, 10, -1, -1, -1)
 
+//mac grab hold (discontinuous hitbox)
+scr_add_hurtbox(spr_mac_grab_hold, 0, 0, RECTANGLE, 12, 16, -9, -24, 0)
+scr_add_hurtbox(spr_mac_grab_hold, 1, 0, RECTANGLE, 12, 16, -9, -24, 0)
+scr_add_move(spr_mac_grab_hold, 1, 0, RECTANGLE, 1, 1, 5, -39, 0, 1, 0, 0, 0)
 
+//mac throw forward (discontinuous hitbox)
+scr_add_hurtbox(spr_mac_throw_forward, 0, 0, RECTANGLE, 12, 16, -9, -24, 0)
+scr_add_hurtbox(spr_mac_throw_forward, 1, 0, RECTANGLE, 12, 16, -9, -24, 0)
+scr_add_move(spr_mac_throw_forward, 0, 0, RECTANGLE, 1, 1, 5, -39, 0, 7, 45, 4, 2)
+
+//mac throw up (no hitbox)
+for (i = 0; i < 17; i++) {
+	scr_add_hurtbox(spr_mac_throw_up, i, 0, RECTANGLE, 12, 16, -9, -24, 0)
+}
+
+//mac throw down (discontinuous hitbox, no hurtbox)
+scr_add_move(spr_mac_throw_down, 5, 0, RECTANGLE, 1, 1, -5, 0, 0, 14, 135, 8, 1)
+
+//mac throw back (discontinuous hitbox)
+for (i = 0; i < 14; i++) {
+	scr_add_hurtbox(spr_mac_throw_back, i, 0, RECTANGLE, 12, 16, -9, -24, 0)
+}
+scr_add_move(spr_mac_throw_down, 5, 0, RECTANGLE, 1, 1, -9, -24, 0, 13, 215, 4, 6)
+
+//tilts
 
 #endregion MACHINATION
 
