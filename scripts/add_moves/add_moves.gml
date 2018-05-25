@@ -20,7 +20,7 @@ for (var i = 0; i <= _i_max; i++) {
 
 var i = 0 //variable created now for use in loops below if hurtboxes or hitboxes are constant over a large number of frames
 
-#region BALLOONY
+#region BALLOONY 619 lines
 	//bal idle (no hitbox)
 	scr_add_hurtbox(spr_bal_idle, 0, 0, CIRCLE, 16, 18, 0, -27, 0)
 	scr_add_hurtbox(spr_bal_idle, 1, 0, CIRCLE, 16, 18, 0, -28, 0)
@@ -140,10 +140,10 @@ var i = 0 //variable created now for use in loops below if hurtboxes or hitboxes
 	//bal ledge jump (no hitboxes, no hurtboxes)
 
 	//bal ledge grab (discontinuous hitboxes, no hurtboxes)
-	scr_add_move(spr_bal_ledge_grab, 3, 0, RECTANGLE, 7, 3, 26, -14, 0, 5, -1, -1, -1)
-	scr_add_move(spr_bal_ledge_grab, 4, 0, RECTANGLE, 8, 4, 36, -15, 0, 5, -1, -1, -1)
-	scr_add_move(spr_bal_ledge_grab, 5, 0, RECTANGLE, 9, 5, 48, -15, 0, 5, -1, -1, -1)
-	scr_add_move(spr_bal_ledge_grab, 6, 0, RECTANGLE, 7, 3, 55, -11, 0, 5, -1, -1, -1)
+	scr_add_move(spr_bal_ledge_grab, 3, 0, RECTANGLE, 7, 3, 26, -14, 0, 5, HOLD)
+	scr_add_move(spr_bal_ledge_grab, 4, 0, RECTANGLE, 8, 4, 36, -15, 0, 5, HOLD)
+	scr_add_move(spr_bal_ledge_grab, 5, 0, RECTANGLE, 9, 5, 48, -15, 0, 5, HOLD)
+	scr_add_move(spr_bal_ledge_grab, 6, 0, RECTANGLE, 7, 3, 55, -11, 0, 5, HOLD)
 
 	//bal ledge attack (discontinious hitboxes, no hurtboxes)
 	scr_add_move(spr_bal_ledge_attack, 7, 0, CIRCLE, 27, 19, -9, -18, 0, 5, 320, 2, 3)
@@ -219,11 +219,11 @@ var i = 0 //variable created now for use in loops below if hurtboxes or hitboxes
 	scr_add_hurtbox(spr_bal_grab_side, 12, 0, CIRCLE, 15, 19, 7, -24, 0)
 	scr_add_hurtbox(spr_bal_grab_side, 13, 0, CIRCLE, 15, 19, 7, -24, 0)
 	scr_add_hurtbox(spr_bal_grab_side, 14, 0, CIRCLE, 15, 19, 7, -24, 0)
-	scr_add_move(spr_bal_grab_side, 7, 0, CIRCLE, 5, 5, 23, -5, 0, 5, -1, -1, -1)
-	scr_add_move(spr_bal_grab_side, 8, 0, CIRCLE, 5, 5, 23, -5, 0, 5, -1, -1, -1)
-	scr_add_move(spr_bal_grab_side, 9, 0, CIRCLE, 5, 5, 23, -5, 0, 5, -1, -1, -1)
-	scr_add_move(spr_bal_grab_side, 10, 0, CIRCLE, 5, 5, 23, -5, 0, 5, -1, -1, -1)
-	scr_add_move(spr_bal_grab_side, 11, 0, CIRCLE, 5, 5, 23, -5, 0, 5, -1, -1, -1)
+	scr_add_move(spr_bal_grab_side, 7, 0, CIRCLE, 5, 5, 23, -5, 0, 5, HOLD)
+	scr_add_move(spr_bal_grab_side, 8, 0, CIRCLE, 5, 5, 23, -5, 0, 5, HOLD)
+	scr_add_move(spr_bal_grab_side, 9, 0, CIRCLE, 5, 5, 23, -5, 0, 5, HOLD)
+	scr_add_move(spr_bal_grab_side, 10, 0, CIRCLE, 5, 5, 23, -5, 0, 5, HOLD)
+	scr_add_move(spr_bal_grab_side, 11, 0, CIRCLE, 5, 5, 23, -5, 0, 5, HOLD)
 
 	//bal grab up (discontinuous hitboxes)
 	scr_add_hurtbox(spr_bal_grab_up, 0, 0, CIRCLE, 15, 19, 2, -31, 0)
@@ -235,10 +235,10 @@ var i = 0 //variable created now for use in loops below if hurtboxes or hitboxes
 	scr_add_hurtbox(spr_bal_grab_up, 6, 0, CIRCLE, 15, 19, -10, -18, 0)
 	scr_add_hurtbox(spr_bal_grab_up, 7, 0, CIRCLE, 16, 20, -6, -25, -45)
 	scr_add_hurtbox(spr_bal_grab_up, 8, 0, CIRCLE, 15, 19, 2, -31, 0)
-	scr_add_move(spr_bal_grab_up, 4, 0, CIRCLE, 18, 5, -6, -25, -15, 7, -1, -1, -1)
-	scr_add_move(spr_bal_grab_up, 5, 0, CIRCLE, 17, 17, -5, -27, 0, 7, -1, -1, -1)
-	scr_add_move(spr_bal_grab_up, 6, 0, CIRCLE, 12, 19, 3, -28, 0, 7, -1, -1, -1)
-	scr_add_move(spr_bal_grab_up, 7, 0, CIRCLE, 18, 5, 12, -18, 15, 7, -1, -1, -1)
+	scr_add_move(spr_bal_grab_up, 4, 0, CIRCLE, 18, 5, -6, -25, -15, 7, HOLD)
+	scr_add_move(spr_bal_grab_up, 5, 0, CIRCLE, 17, 17, -5, -27, 0, 7, HOLD)
+	scr_add_move(spr_bal_grab_up, 6, 0, CIRCLE, 12, 19, 3, -28, 0, 7, HOLD)
+	scr_add_move(spr_bal_grab_up, 7, 0, CIRCLE, 18, 5, 12, -18, 15, 7, HOLD)
 
 	//bal grab hold (no hitboxes)
 	scr_add_hurtbox(spr_bal_grab_hold, 0, 0, CIRCLE, 15, 19, 7, -23, 0)
@@ -573,16 +573,16 @@ var i = 0 //variable created now for use in loops below if hurtboxes or hitboxes
 	for (i = 0; i < 22; i++) { //loop through all bar 2 sub-images
 		scr_add_hurtbox(spr_bal_special_forward, i + 1, 0, CIRCLE, 16, 20, -15, -24, 45)
 	}
-	scr_add_move(spr_bal_special_forward, 3, 0, CIRCLE, 10, 10, 18, -10, 0, 0, -1, -1, -1)
-	scr_add_move(spr_bal_special_forward, 4, 0, CIRCLE, 10, 10, 28, -10, 0, 0, -1, -1, -1)
-	scr_add_move(spr_bal_special_forward, 5, 0, CIRCLE, 10, 10, 39, -10, 0, 0, -1, -1, -1)
-	scr_add_move(spr_bal_special_forward, 6, 0, CIRCLE, 10, 10, 53, -10, 0, 0, -1, -1, -1)
-	scr_add_move(spr_bal_special_forward, 7, 0, CIRCLE, 10, 10, 67, -10, 0, 0, -1, -1, -1)
-	scr_add_move(spr_bal_special_forward, 8, 0, CIRCLE, 10, 10, 82, -10, 0, 0, -1, -1, -1)
-	scr_add_move(spr_bal_special_forward, 9, 0, CIRCLE, 10, 10, 95, -10, 0, 0, -1, -1, -1)
-	scr_add_move(spr_bal_special_forward, 10, 0, CIRCLE, 10, 10, 110, -10, 0, 0, -1, -1, -1)
-	scr_add_move(spr_bal_special_forward, 11, 0, CIRCLE, 10, 10, 122, -10, 0, 0, -1, -1, -1)
-	scr_add_move(spr_bal_special_forward, 12, 0, CIRCLE, 10, 10, 132, -10, 0, 0, -1, -1, -1)
+	scr_add_move(spr_bal_special_forward, 3, 0, CIRCLE, 10, 10, 18, -10, 0, 0, HOLD)
+	scr_add_move(spr_bal_special_forward, 4, 0, CIRCLE, 10, 10, 28, -10, 0, 0, HOLD)
+	scr_add_move(spr_bal_special_forward, 5, 0, CIRCLE, 10, 10, 39, -10, 0, 0, HOLD)
+	scr_add_move(spr_bal_special_forward, 6, 0, CIRCLE, 10, 10, 53, -10, 0, 0, HOLD)
+	scr_add_move(spr_bal_special_forward, 7, 0, CIRCLE, 10, 10, 67, -10, 0, 0, HOLD)
+	scr_add_move(spr_bal_special_forward, 8, 0, CIRCLE, 10, 10, 82, -10, 0, 0, HOLD)
+	scr_add_move(spr_bal_special_forward, 9, 0, CIRCLE, 10, 10, 95, -10, 0, 0, HOLD)
+	scr_add_move(spr_bal_special_forward, 10, 0, CIRCLE, 10, 10, 110, -10, 0, 0, HOLD)
+	scr_add_move(spr_bal_special_forward, 11, 0, CIRCLE, 10, 10, 122, -10, 0, 0, HOLD)
+	scr_add_move(spr_bal_special_forward, 12, 0, CIRCLE, 10, 10, 132, -10, 0, 0, HOLD)
 
 	//bal special down (discontinuous hitbox)
 	scr_add_hurtbox(spr_bal_special_down, 0, 0, CIRCLE, 15, 19, 0, -27, 0)
@@ -638,205 +638,957 @@ var i = 0 //variable created now for use in loops below if hurtboxes or hitboxes
 	scr_add_move(spr_bal_special_neutral, 5, 0, RECTANGLE, 30, 10, 13, -15, 0, 0, 0, 10, 6)
 	scr_add_move(spr_bal_special_neutral, 6, 0, RECTANGLE, 46, 17, 21, -15, 0, 0, 0, 10, 6)
 	scr_add_move(spr_bal_special_neutral, 7, 0, RECTANGLE, 35, 10, 17, -15, 0, 0, 0, 10, 6)
-
 #endregion BALLOONY
 
-#region MACHINATION
+#region MACHINATION 451 lines
+	//mac idle (no hitboxes)
+	scr_add_hurtbox(spr_mac_idle, 0, 0, RECTANGLE, 12, 16, 1, -19, 0)
+	scr_add_hurtbox(spr_mac_idle, 1, 0, RECTANGLE, 12, 16, 0, -20, 0)
+	scr_add_hurtbox(spr_mac_idle, 2, 0, RECTANGLE, 12, 16, -1, -21, 0)
+	scr_add_hurtbox(spr_mac_idle, 3, 0, RECTANGLE, 12, 16, -2, -20, 0)
+	scr_add_hurtbox(spr_mac_idle, 4, 0, RECTANGLE, 12, 16, -3, -19, 0)
+	scr_add_hurtbox(spr_mac_idle, 5, 0, RECTANGLE, 12, 16, -2, -20, 0)
+	scr_add_hurtbox(spr_mac_idle, 6, 0, RECTANGLE, 12, 16, 0, -20, 0)
+	scr_add_hurtbox(spr_mac_idle, 7, 0, RECTANGLE, 12, 16, 1, -19, 0)
 
-//mac idle (no hitboxes)
-scr_add_hurtbox(spr_mac_idle, 0, 0, RECTANGLE, 12, 16, 1, -19, 0)
-scr_add_hurtbox(spr_mac_idle, 1, 0, RECTANGLE, 12, 16, 0, -20, 0)
-scr_add_hurtbox(spr_mac_idle, 2, 0, RECTANGLE, 12, 16, -1, -21, 0)
-scr_add_hurtbox(spr_mac_idle, 3, 0, RECTANGLE, 12, 16, -2, -20, 0)
-scr_add_hurtbox(spr_mac_idle, 4, 0, RECTANGLE, 12, 16, -3, -19, 0)
-scr_add_hurtbox(spr_mac_idle, 5, 0, RECTANGLE, 12, 16, -2, -20, 0)
-scr_add_hurtbox(spr_mac_idle, 6, 0, RECTANGLE, 12, 16, 0, -20, 0)
-scr_add_hurtbox(spr_mac_idle, 7, 0, RECTANGLE, 12, 16, 1, -19, 0)
+	//mac walk, mac run (same hurtboxes, no hitboxes)
+	for (i = 0; i < 12; i ++) {
+		scr_add_hurtbox(spr_mac_walk, i, 0, RECTANGLE, 12, 16, 2, -18, 0)
+		scr_add_hurtbox(spr_mac_run, i, 0, RECTANGLE, 12, 16, 2, -18, 0)
+	}
 
-//mac walk, mac run (same hurtboxes, no hitboxes)
-for (i = 0; i < 12; i ++) {
-	scr_add_hurtbox(spr_mac_walk, i, 0, RECTANGLE, 12, 16, 2, -18, 0)
-	scr_add_hurtbox(spr_mac_run, i, 0, RECTANGLE, 12, 16, 2, -18, 0)
-}
+	//mac speed up (no hitboxes)
+	scr_add_hurtbox(spr_mac_speed_up, 0, 0, RECTANGLE, 12, 16, 1, -19, 0)
+	scr_add_hurtbox(spr_mac_speed_up, 1, 0, RECTANGLE, 12, 16, 2, -18, 0)
 
-//mac speed up (no hitboxes)
-scr_add_hurtbox(spr_mac_speed_up, 0, 0, RECTANGLE, 12, 16, 1, -19, 0)
-scr_add_hurtbox(spr_mac_speed_up, 1, 0, RECTANGLE, 12, 16, 2, -18, 0)
+	//mac speed down (no hitboxes)
+	scr_add_hurtbox(spr_mac_speed_down, 0, 0, RECTANGLE, 12, 16, 1, -19, 0)
+	scr_add_hurtbox(spr_mac_speed_down, 1, 0, RECTANGLE, 12, 16, 2, -18, 0)
 
-//mac speed down (no hitboxes)
-scr_add_hurtbox(spr_mac_speed_down, 0, 0, RECTANGLE, 12, 16, 1, -19, 0)
-scr_add_hurtbox(spr_mac_speed_down, 1, 0, RECTANGLE, 12, 16, 2, -18, 0)
+	//mac dash (no hitboxes)
+	scr_add_hurtbox(spr_mac_dash, 0, 0, RECTANGLE, 12, 16, 1, -19, 0)
+	scr_add_hurtbox(spr_mac_dash, 1, 0, RECTANGLE, 12, 16, 2, -18, 0)
 
-//mac dash (no hitboxes)
-scr_add_hurtbox(spr_mac_dash, 0, 0, RECTANGLE, 12, 16, 1, -19, 0)
-scr_add_hurtbox(spr_mac_dash, 1, 0, RECTANGLE, 12, 16, 2, -18, 0)
+	//mac dash slow (no hitboxes)
+	scr_add_hurtbox(spr_mac_dash_slow, 0, 0, RECTANGLE, 12, 16, 1, -19, 0)
+	scr_add_hurtbox(spr_mac_dash_slow, 1, 0, RECTANGLE, 12, 16, 2, -18, 0)
 
-//mac dash slow (no hitboxes)
-scr_add_hurtbox(spr_mac_dash_slow, 0, 0, RECTANGLE, 12, 16, 1, -19, 0)
-scr_add_hurtbox(spr_mac_dash_slow, 1, 0, RECTANGLE, 12, 16, 2, -18, 0)
+	//mac jump (no hitboxes)
+	scr_add_hurtbox(spr_mac_jump, 0, 0, RECTANGLE, 12, 16, 1, -19, 0)
+	scr_add_hurtbox(spr_mac_jump, 1, 0, RECTANGLE, 12, 16, 2, -19, 0)
+	scr_add_hurtbox(spr_mac_jump, 2, 0, RECTANGLE, 12, 16, 2, -19, 0)
+	scr_add_hurtbox(spr_mac_jump, 3, 0, RECTANGLE, 12, 16, 2, -19, 0)
+	scr_add_hurtbox(spr_mac_jump, 4, 0, RECTANGLE, 12, 16, 2, -20, 0)
+	scr_add_hurtbox(spr_mac_jump, 5, 0, RECTANGLE, 12, 16, 2, -20, 0)
+	scr_add_hurtbox(spr_mac_jump, 6, 0, RECTANGLE, 11, 16, 0, -20, 0)
+	scr_add_hurtbox(spr_mac_jump, 7, 0, RECTANGLE, 11, 16, 0, -20, 0)
 
-//mac jump (no hitboxes)
-scr_add_hurtbox(spr_mac_jump, 0, 0, RECTANGLE, 12, 16, 1, -19, 0)
-scr_add_hurtbox(spr_mac_jump, 1, 0, RECTANGLE, 12, 16, 2, -19, 0)
-scr_add_hurtbox(spr_mac_jump, 2, 0, RECTANGLE, 12, 16, 2, -19, 0)
-scr_add_hurtbox(spr_mac_jump, 3, 0, RECTANGLE, 12, 16, 2, -19, 0)
-scr_add_hurtbox(spr_mac_jump, 4, 0, RECTANGLE, 12, 16, 2, -20, 0)
-scr_add_hurtbox(spr_mac_jump, 5, 0, RECTANGLE, 12, 16, 2, -20, 0)
-scr_add_hurtbox(spr_mac_jump, 6, 0, RECTANGLE, 11, 16, 2, -20, 0)
-scr_add_hurtbox(spr_mac_jump, 7, 0, RECTANGLE, 11, 16, 2, -20, 0)
+	//mac air move (no hitboxes)
+	scr_add_hurtbox(spr_mac_air_move, 0, 0, RECTANGLE, 11, 16, 0, -20, 0)
 
-//mac air move (no hitboxes)
-scr_add_hurtbox(spr_mac_air_move, 0, 0, RECTANGLE, 11, 16, 2, -20, 0)
+	//mac air dodge (no hitboxes, no hurtboxes)
 
-//mac air dodge (no hitboxes, no hurtboxes)
+	//mac land (no hitboxes)
+	scr_add_hurtbox(spr_mac_land, 0, 0, RECTANGLE, 11, 16, 0, -20, 0)
+	scr_add_hurtbox(spr_mac_land, 1, 0, RECTANGLE, 11, 16, 0, -20, 0)
+	scr_add_hurtbox(spr_mac_land, 2, 0, RECTANGLE, 12, 16, 2, -20, 0)
+	scr_add_hurtbox(spr_mac_land, 3, 0, RECTANGLE, 12, 16, 2, -20, 0)
+	scr_add_hurtbox(spr_mac_land, 4, 0, RECTANGLE, 12, 16, 2, -19, 0)
+	scr_add_hurtbox(spr_mac_land, 5, 0, RECTANGLE, 12, 16, 2, -19, 0)
+	scr_add_hurtbox(spr_mac_land, 6, 0, RECTANGLE, 12, 16, 2, -19, 0)
+	scr_add_hurtbox(spr_mac_land, 7, 0, RECTANGLE, 12, 16, 1, -19, 0)
 
-//mac land (no hitboxes)
-scr_add_hurtbox(spr_mac_land, 0, 0, RECTANGLE, 11, 16, 2, -20, 0)
-scr_add_hurtbox(spr_mac_land, 1, 0, RECTANGLE, 11, 16, 2, -20, 0)
-scr_add_hurtbox(spr_mac_land, 2, 0, RECTANGLE, 12, 16, 2, -20, 0)
-scr_add_hurtbox(spr_mac_land, 3, 0, RECTANGLE, 12, 16, 2, -20, 0)
-scr_add_hurtbox(spr_mac_land, 4, 0, RECTANGLE, 12, 16, 2, -19, 0)
-scr_add_hurtbox(spr_mac_land, 5, 0, RECTANGLE, 12, 16, 2, -19, 0)
-scr_add_hurtbox(spr_mac_land, 6, 0, RECTANGLE, 12, 16, 2, -19, 0)
-scr_add_hurtbox(spr_mac_land, 7, 0, RECTANGLE, 12, 16, 1, -19, 0)
+	//mac shield (no hitboxes)
+	scr_add_hurtbox(spr_mac_shield, 0, 0, RECTANGLE, 12, 16, 1, -17, 0)
+	scr_add_hurtbox(spr_mac_shield, 1, 0, RECTANGLE, 12, 16, 1, -17, 0)
+	scr_add_hurtbox(spr_mac_shield, 2, 0, RECTANGLE, 12, 16, 1, -18, 0)
+	scr_add_hurtbox(spr_mac_shield, 3, 0, RECTANGLE, 12, 16, 1, -19, 0)
 
-//mac shield (no hitboxes)
-scr_add_hurtbox(spr_mac_shield, 0, 0, RECTANGLE, 12, 16, 1, -17, 0)
-scr_add_hurtbox(spr_mac_shield, 1, 0, RECTANGLE, 12, 16, 1, -17, 0)
-scr_add_hurtbox(spr_mac_shield, 2, 0, RECTANGLE, 12, 16, 1, -18, 0)
-scr_add_hurtbox(spr_mac_shield, 3, 0, RECTANGLE, 12, 16, 1, -19, 0)
+	//mac hold shield (no hitboxes)
+	scr_add_hurtbox(spr_mac_hold_shield, 0, 0, RECTANGLE, 12, 16, 1, -19, 0)
+	scr_add_hurtbox(spr_mac_hold_shield, 1, 0, RECTANGLE, 12, 16, 1, -19, 0)
 
-//mac hold shield (no hitboxes)
-scr_add_hurtbox(spr_mac_shield, 0, 0, RECTANGLE, 12, 16, 1, -19, 0)
-scr_add_hurtbox(spr_mac_shield, 1, 0, RECTANGLE, 12, 16, 1, -19, 0)
+	//mac un shield (no hitboxes)
+	scr_add_hurtbox(spr_mac_un_shield, 0, 0, RECTANGLE, 12, 16, 1, -19, 0)
+	scr_add_hurtbox(spr_mac_un_shield, 1, 0, RECTANGLE, 12, 16, 1, -18, 0)
+	scr_add_hurtbox(spr_mac_un_shield, 2, 0, RECTANGLE, 12, 16, 1, -17, 0)
+	scr_add_hurtbox(spr_mac_un_shield, 3, 0, RECTANGLE, 12, 16, 1, -17, 0)
 
-//mac un shield (no hitboxes)
-scr_add_hurtbox(spr_mac_shield, 0, 0, RECTANGLE, 12, 16, 1, -19, 0)
-scr_add_hurtbox(spr_mac_shield, 1, 0, RECTANGLE, 12, 16, 1, -18, 0)
-scr_add_hurtbox(spr_mac_shield, 2, 0, RECTANGLE, 12, 16, 1, -17, 0)
-scr_add_hurtbox(spr_mac_shield, 3, 0, RECTANGLE, 12, 16, 1, -17, 0)
+	//mac roll (no hitboxes, discontinuous hurtboxes)
+	scr_add_hurtbox(spr_mac_roll, 0, 0, RECTANGLE, 12, 16, 1, -19, 0)
+	scr_add_hurtbox(spr_mac_roll, 1, 0, RECTANGLE, 12, 16, 1, -19, 0)
+	scr_add_hurtbox(spr_mac_roll, 8, 0, RECTANGLE, 12, 16, 1, -19, 0)
+	scr_add_hurtbox(spr_mac_roll, 9, 0, RECTANGLE, 12, 16, 1, -19, 0)
 
-//mac roll (no hitboxes, discontinuous hurtboxes)
-scr_add_hurtbox(spr_mac_roll, 0, 0, RECTANGLE, 12, 16, 1, -19, 0)
-scr_add_hurtbox(spr_mac_roll, 1, 0, RECTANGLE, 12, 16, 1, -19, 0)
-scr_add_hurtbox(spr_mac_roll, 8, 0, RECTANGLE, 12, 16, 1, -19, 0)
-scr_add_hurtbox(spr_mac_roll, 9, 0, RECTANGLE, 12, 16, 1, -19, 0)
+	//mac dodge (no hitboxes, discontinuous hurtboxes)
+	scr_add_hurtbox(spr_mac_dodge, 0, 0, RECTANGLE, 12, 16, 1, -19, 0)
+	scr_add_hurtbox(spr_mac_dodge, 1, 0, RECTANGLE, 12, 16, 1, -19, 0)
+	scr_add_hurtbox(spr_mac_dodge, 8, 0, RECTANGLE, 12, 16, 1, -19, 0)
+	scr_add_hurtbox(spr_mac_dodge, 9, 0, RECTANGLE, 12, 16, 1, -19, 0)
 
-//mac dodge (no hitboxes, discontinuous hurtboxes)
-scr_add_hurtbox(spr_mac_dodge, 0, 0, RECTANGLE, 12, 16, 1, -19, 0)
-scr_add_hurtbox(spr_mac_dodge, 1, 0, RECTANGLE, 12, 16, 1, -19, 0)
-scr_add_hurtbox(spr_mac_dodge, 8, 0, RECTANGLE, 12, 16, 1, -19, 0)
-scr_add_hurtbox(spr_mac_dodge, 9, 0, RECTANGLE, 12, 16, 1, -19, 0)
+	//mac ledge (no hitboxes)
+	scr_add_hurtbox(spr_mac_ledge, 0, 0, RECTANGLE, 12, 15, -17, 16, 0)
+	scr_add_hurtbox(spr_mac_ledge, 1, 0, RECTANGLE, 12, 15, -17, 16, 0)
 
-//mac ledge (no hitboxes)
-scr_add_hurtbox(spr_mac_ledge, 0, 0, RECTANGLE, 12, 15, -17, 16, 0)
-scr_add_hurtbox(spr_mac_ledge, 1, 0, RECTANGLE, 12, 15, -17, 16, 0)
+	//mac ledge hold (no hitboxes, no hurtboxes)
 
-//mac ledge hold (no hitboxes, no hurtboxes)
+	//mac ledge roll (no hitboxes, no hurtboxes)
 
-//mac ledge roll (no hitboxes, no hurtboxes)
+	//mac ledge jump (no hitboxes, no hurtboxes)
 
-//mac ledge jump (no hitboxes, no hurtboxes)
+	//mac ledge grab (discontinuous hitboxes, no hurtboxes)
+	scr_add_move(spr_mac_ledge_grab, 0, 0, CIRCLE, 10, 10, 3, -7, 0, 0, HOLD)
+	scr_add_move(spr_mac_ledge_grab, 1, 0, CIRCLE, 10, 10, 9, -12, 0, 0, HOLD)
+	scr_add_move(spr_mac_ledge_grab, 2, 0, CIRCLE, 10, 10, 15, -16, 0, 0, HOLD)
+	scr_add_move(spr_mac_ledge_grab, 3, 0, CIRCLE, 10, 10, 20, -20, 0, 0, HOLD)
+	scr_add_move(spr_mac_ledge_grab, 4, 0, CIRCLE, 10, 10, 24, -20, 0, 0, HOLD)
 
-//mac ledge grab (discontinuous hitboxes, no hurtboxes)
-scr_add_move(spr_mac_ledge_grab, 0, 0, CIRCLE, 10, 10, 3, -7, 0, 0, -1, -1, -1)
-scr_add_move(spr_mac_ledge_grab, 1, 0, CIRCLE, 10, 10, 9, -12, 0, 0, -1, -1, -1)
-scr_add_move(spr_mac_ledge_grab, 2, 0, CIRCLE, 10, 10, 15, -16, 0, 0, -1, -1, -1)
-scr_add_move(spr_mac_ledge_grab, 3, 0, CIRCLE, 10, 10, 20, -20, 0, 0, -1, -1, -1)
-scr_add_move(spr_mac_ledge_grab, 4, 0, CIRCLE, 10, 10, 24, -20, 0, 0, -1, -1, -1)
+	//mac ledge attack (discontinuous hitboxes, no hurtboxes)
+	scr_add_move(spr_mac_ledge_attack, 4, 0, RECTANGLE, 25, 16, -14, 21, 0, 16, 90, 8, 3)
+	scr_add_move(spr_mac_ledge_attack, 5, 0, RECTANGLE, 25, 19, -14, 18, 0, 16, 90, 8, 3)
+	scr_add_move(spr_mac_ledge_attack, 6, 0, RECTANGLE, 25, 23, -14, 15, 0, 16, 90, 8, 3)
+	scr_add_move(spr_mac_ledge_attack, 7, 0, RECTANGLE, 25, 24, -14, 14, 0, 16, 90, 8, 3)
+	scr_add_move(spr_mac_ledge_attack, 8, 0, RECTANGLE, 20, 22, -12, 11, 0, 16, 90, 8, 3)
+	scr_add_move(spr_mac_ledge_attack, 9, 0, RECTANGLE, 12, 19, -11, 4, 0, 16, 90, 8, 3)
+	scr_add_move(spr_mac_ledge_attack, 13, 0, CIRCLE, 6, 6, 27, -22, 0, 12, 0, 4, 2)
+	scr_add_move(spr_mac_ledge_attack, 14, 0, CIRCLE, 15, 15, 27, -22, 0, 12, 0, 4, 2)
+	scr_add_move(spr_mac_ledge_attack, 15, 0, CIRCLE, 23, 12, 34, -21, 0, 12, 0, 4, 2)
+	scr_add_move(spr_mac_ledge_attack, 16, 0, CIRCLE, 18, 26, 34, -21, 0, 12, 0, 4, 2)
+	scr_add_move(spr_mac_ledge_attack, 17, 0, CIRCLE, 18, 26, 34, -21, 0, 12, 0, 4, 2)
+	scr_add_move(spr_mac_ledge_attack, 18, 0, CIRCLE, 12, 26, 34, -21, 0, 12, 0, 4, 2)
 
-//mac ledge attack (discontinuous hitboxes, no hurtboxes)
-scr_add_move(spr_mac_ledge_attack, 4, 0, RECTANGLE, 25, 16, -14, 21, 0, 16, 90, 8, 3)
-scr_add_move(spr_mac_ledge_attack, 5, 0, RECTANGLE, 25, 19, -14, 18, 0, 16, 90, 8, 3)
-scr_add_move(spr_mac_ledge_attack, 6, 0, RECTANGLE, 25, 23, -14, 15, 0, 16, 90, 8, 3)
-scr_add_move(spr_mac_ledge_attack, 7, 0, RECTANGLE, 25, 24, -14, 14, 0, 16, 90, 8, 3)
-scr_add_move(spr_mac_ledge_attack, 8, 0, RECTANGLE, 20, 22, -12, 11, 0, 16, 90, 8, 3)
-scr_add_move(spr_mac_ledge_attack, 9, 0, RECTANGLE, 12, 19, -11, 4, 0, 16, 90, 8, 3)
-scr_add_move(spr_mac_ledge_attack, 13, 0, CIRCLE, 6, 6, 27, -22, 0, 12, 0, 4, 2)
-scr_add_move(spr_mac_ledge_attack, 14, 0, CIRCLE, 15, 15, 27, -22, 0, 12, 0, 4, 2)
-scr_add_move(spr_mac_ledge_attack, 15, 0, CIRCLE, 23, 12, 34, -21, 0, 12, 0, 4, 2)
-scr_add_move(spr_mac_ledge_attack, 16, 0, CIRCLE, 18, 26, 34, -21, 0, 12, 0, 4, 2)
-scr_add_move(spr_mac_ledge_attack, 17, 0, CIRCLE, 18, 26, 34, -21, 0, 12, 0, 4, 2)
-scr_add_move(spr_mac_ledge_attack, 18, 0, CIRCLE, 12, 26, 34, -21, 0, 12, 0, 4, 2)
+	//mac hurt up (no hitboxes)
+	scr_add_hurtbox(spr_mac_hurt_up, 0, 0, RECTANGLE, 12, 16, 1, -19, 0)
 
-//mac hurt up (no hitboxes)
-scr_add_hurtbox(spr_mac_hurt_up, 0, 0, RECTANGLE, 12, 16, 1, -19, 0)
+	//mac hurt side (no hitboxes)
+	scr_add_hurtbox(spr_mac_hurt_side, 0, 0, RECTANGLE, 12, 16, 1, -19, 0)
 
-//mac hurt side (no hitboxes)
-scr_add_hurtbox(spr_mac_hurt_side, 0, 0, RECTANGLE, 12, 16, 1, -19, 0)
+	//mac hurt down (no hitboxes)
+	scr_add_hurtbox(spr_mac_hurt_down, 0, 0, RECTANGLE, 16, 12, 0, -5, 0)
 
-//mac hurt down (no hitboxes)
-scr_add_hurtbox(spr_mac_hurt_down, 0, 0, RECTANGLE, 16, 12, 0, -5, 0)
+	//mac grabbed (no hitboxes)
+	scr_add_hurtbox(spr_mac_grabbed, 0, 0, RECTANGLE, 12, 16, -4, -1, 0)
 
-//mac grabbed (no hitboxes)
-scr_add_hurtbox(spr_mac_grabbed, 0, 0, RECTANGLE, 12, 16, -4, -1, 0)
+	//mac taunt (no hitboxes)
+	for (i = 0; i < 19; i++) {
+		scr_add_hurtbox(spr_mac_taunt, i, 0, RECTANGLE, 12, 16, 1, -19, 0)	
+	}
 
-//mac taunt (no hitboxes)
-for (i = 0; i < 19; i++) {
-	scr_add_hurtbox(spr_mac_taunt, i, 0, RECTANGLE, 12, 16, 1, -19, 0)	
-}
+	//mac crouch (no hitboxes)
+	scr_add_hurtbox(spr_mac_crouch, 0, 0, RECTANGLE, 12, 16, 1, -19, 0)	
+	scr_add_hurtbox(spr_mac_crouch, 1, 0, RECTANGLE, 12, 16, 1, -15, 0)	
+	scr_add_hurtbox(spr_mac_crouch, 2, 0, RECTANGLE, 12, 16, 1, -8, 0)	
+	scr_add_hurtbox(spr_mac_crouch, 3, 0, RECTANGLE, 12, 12, 1, -6, 0)	
 
-//mac crouch (no hitboxes)
-scr_add_hurtbox(spr_mac_crouch, 0, 0, RECTANGLE, 12, 16, 1, -19, 0)	
-scr_add_hurtbox(spr_mac_crouch, 1, 0, RECTANGLE, 12, 16, 1, -15, 0)	
-scr_add_hurtbox(spr_mac_crouch, 2, 0, RECTANGLE, 12, 16, 1, -8, 0)	
-scr_add_hurtbox(spr_mac_crouch, 3, 0, RECTANGLE, 12, 12, 1, -6, 0)	
+	//mac crouch hold (no hitboxes)
+	scr_add_hurtbox(spr_mac_crouch_hold, 0, 0, RECTANGLE, 12, 12, 1, -6, 0)	
+	scr_add_hurtbox(spr_mac_crouch_hold, 1, 0, RECTANGLE, 12, 12, 1, -6, 0)	
+	scr_add_hurtbox(spr_mac_crouch_hold, 2, 0, RECTANGLE, 12, 12, 1, -6, 0)
 
-//mac crouch hold (no hitboxes)
-scr_add_hurtbox(spr_mac_crouch_hold, 0, 0, RECTANGLE, 12, 12, 1, -6, 0)	
-scr_add_hurtbox(spr_mac_crouch_hold, 1, 0, RECTANGLE, 12, 12, 1, -6, 0)	
-scr_add_hurtbox(spr_mac_crouch_hold, 2, 0, RECTANGLE, 12, 12, 1, -6, 0)
+	//mac crouch end (no hitboxes)
+	scr_add_hurtbox(spr_mac_crouch, 0, 0, RECTANGLE, 12, 12, 1, -6, 0)	
+	scr_add_hurtbox(spr_mac_crouch, 1, 0, RECTANGLE, 12, 16, 1, -8, 0)	
+	scr_add_hurtbox(spr_mac_crouch, 2, 0, RECTANGLE, 12, 16, 1, -15, 0)	
+	scr_add_hurtbox(spr_mac_crouch, 3, 0, RECTANGLE, 12, 16, 1, -19, 0)	
 
-//mac crouch end (no hitboxes)
-scr_add_hurtbox(spr_mac_crouch, 0, 0, RECTANGLE, 12, 12, 1, -6, 0)	
-scr_add_hurtbox(spr_mac_crouch, 1, 0, RECTANGLE, 12, 16, 1, -8, 0)	
-scr_add_hurtbox(spr_mac_crouch, 2, 0, RECTANGLE, 12, 16, 1, -15, 0)	
-scr_add_hurtbox(spr_mac_crouch, 3, 0, RECTANGLE, 12, 16, 1, -19, 0)	
+	//mac grab (discontinuous hitboxes)
+	scr_add_hurtbox(spr_mac_grab, 0, 0, RECTANGLE, 12, 16, 2, -17, 0)
+	scr_add_hurtbox(spr_mac_grab, 1, 0, RECTANGLE, 12, 16, 1, -19, 0)
+	scr_add_hurtbox(spr_mac_grab, 2, 0, RECTANGLE, 12, 16, -2, -20, 0)
+	scr_add_hurtbox(spr_mac_grab, 3, 0, RECTANGLE, 12, 16, -7, -20, 0)
+	scr_add_hurtbox(spr_mac_grab, 4, 0, RECTANGLE, 12, 16, -11, -19, 0)
+	scr_add_hurtbox(spr_mac_grab, 5, 0, RECTANGLE, 12, 16, -9, -21, 0)
+	scr_add_hurtbox(spr_mac_grab, 6, 0, RECTANGLE, 11, 16, -9, -24, 0)
+	scr_add_hurtbox(spr_mac_grab, 7, 0, RECTANGLE, 11, 16, -9, -25, 0)
+	scr_add_hurtbox(spr_mac_grab, 8, 0, RECTANGLE, 11, 16, -9, -24, 0)
+	scr_add_hurtbox(spr_mac_grab, 9, 0, RECTANGLE, 12, 16, -9, -21, 0)
+	scr_add_hurtbox(spr_mac_grab, 10, 0, RECTANGLE, 12, 16, -11, -19, 0)
+	scr_add_hurtbox(spr_mac_grab, 11, 0, RECTANGLE, 12, 16, -7, -20, 0)
+	scr_add_hurtbox(spr_mac_grab, 12, 0, RECTANGLE, 12, 16, -2, -20, 0)
+	scr_add_hurtbox(spr_mac_grab, 13, 0, RECTANGLE, 12, 16, 1, -19, 0)
+	scr_add_move(spr_mac_grab, 7, 0, CIRCLE, 15, 15, 5, -39, 0, 10, HOLD)
 
-//mac grab (discontinuous hitboxes)
-scr_add_hurtbox(spr_mac_grab, 0, 0, RECTANGLE, 12, 16, 2, -17, 0)
-scr_add_hurtbox(spr_mac_grab, 1, 0, RECTANGLE, 12, 16, 1, -19, 0)
-scr_add_hurtbox(spr_mac_grab, 2, 0, RECTANGLE, 12, 16, -2, -20, 0)
-scr_add_hurtbox(spr_mac_grab, 3, 0, RECTANGLE, 12, 16, -7, -20, 0)
-scr_add_hurtbox(spr_mac_grab, 4, 0, RECTANGLE, 12, 16, -11, -19, 0)
-scr_add_hurtbox(spr_mac_grab, 5, 0, RECTANGLE, 12, 16, -9, -21, 0)
-scr_add_hurtbox(spr_mac_grab, 6, 0, RECTANGLE, 11, 16, -9, -24, 0)
-scr_add_hurtbox(spr_mac_grab, 7, 0, RECTANGLE, 11, 16, -9, -25, 0)
-scr_add_hurtbox(spr_mac_grab, 8, 0, RECTANGLE, 11, 16, -9, -24, 0)
-scr_add_hurtbox(spr_mac_grab, 9, 0, RECTANGLE, 12, 16, -9, -21, 0)
-scr_add_hurtbox(spr_mac_grab, 10, 0, RECTANGLE, 12, 16, -11, -19, 0)
-scr_add_hurtbox(spr_mac_grab, 11, 0, RECTANGLE, 12, 16, -7, -20, 0)
-scr_add_hurtbox(spr_mac_grab, 12, 0, RECTANGLE, 12, 16, -2, -20, 0)
-scr_add_hurtbox(spr_mac_grab, 13, 0, RECTANGLE, 12, 16, 1, -19, 0)
-scr_add_move(spr_mac_grab, 7, 0, CIRCLE, 15, 15, 5, -39, 0, 10, -1, -1, -1)
+	//mac grab hold (discontinuous hitbox)
+	scr_add_hurtbox(spr_mac_grab_hold, 0, 0, RECTANGLE, 12, 16, -9, -24, 0)
+	scr_add_hurtbox(spr_mac_grab_hold, 1, 0, RECTANGLE, 12, 16, -9, -24, 0)
+	scr_add_move(spr_mac_grab_hold, 1, 0, RECTANGLE, 1, 1, 5, -39, 0, 1, 0, 0, 0)
 
-//mac grab hold (discontinuous hitbox)
-scr_add_hurtbox(spr_mac_grab_hold, 0, 0, RECTANGLE, 12, 16, -9, -24, 0)
-scr_add_hurtbox(spr_mac_grab_hold, 1, 0, RECTANGLE, 12, 16, -9, -24, 0)
-scr_add_move(spr_mac_grab_hold, 1, 0, RECTANGLE, 1, 1, 5, -39, 0, 1, 0, 0, 0)
+	//mac throw forward (discontinuous hitbox)
+	scr_add_hurtbox(spr_mac_throw_forward, 0, 0, RECTANGLE, 12, 16, -9, -24, 0)
+	scr_add_hurtbox(spr_mac_throw_forward, 1, 0, RECTANGLE, 12, 16, -9, -24, 0)
+	scr_add_move(spr_mac_throw_forward, 0, 0, RECTANGLE, 1, 1, 5, -39, 0, 7, 45, 4, 2)
 
-//mac throw forward (discontinuous hitbox)
-scr_add_hurtbox(spr_mac_throw_forward, 0, 0, RECTANGLE, 12, 16, -9, -24, 0)
-scr_add_hurtbox(spr_mac_throw_forward, 1, 0, RECTANGLE, 12, 16, -9, -24, 0)
-scr_add_move(spr_mac_throw_forward, 0, 0, RECTANGLE, 1, 1, 5, -39, 0, 7, 45, 4, 2)
+	//mac throw up (no hitbox)
+	for (i = 0; i < 17; i++) {
+		scr_add_hurtbox(spr_mac_throw_up, i, 0, RECTANGLE, 12, 16, -9, -24, 0)
+	}
 
-//mac throw up (no hitbox)
-for (i = 0; i < 17; i++) {
-	scr_add_hurtbox(spr_mac_throw_up, i, 0, RECTANGLE, 12, 16, -9, -24, 0)
-}
+	//mac throw down (discontinuous hitbox, no hurtbox)
+	scr_add_move(spr_mac_throw_down, 5, 0, RECTANGLE, 1, 1, -5, 0, 0, 14, 135, 8, 1)
 
-//mac throw down (discontinuous hitbox, no hurtbox)
-scr_add_move(spr_mac_throw_down, 5, 0, RECTANGLE, 1, 1, -5, 0, 0, 14, 135, 8, 1)
+	//mac throw back (discontinuous hitbox)
+	for (i = 0; i < 14; i++) {
+		scr_add_hurtbox(spr_mac_throw_back, i, 0, RECTANGLE, 12, 16, -9, -24, 0)
+	}
+	scr_add_move(spr_mac_throw_down, 5, 0, RECTANGLE, 1, 1, -9, -24, 0, 13, 215, 4, 6)
 
-//mac throw back (discontinuous hitbox)
-for (i = 0; i < 14; i++) {
-	scr_add_hurtbox(spr_mac_throw_back, i, 0, RECTANGLE, 12, 16, -9, -24, 0)
-}
-scr_add_move(spr_mac_throw_down, 5, 0, RECTANGLE, 1, 1, -9, -24, 0, 13, 215, 4, 6)
+	//mac tilt forward (discontinuous hitboxes)
+	scr_add_hurtbox(spr_mac_tilt_forward, 0, 0, RECTANGLE, 12, 16, 1, -19, 0)
+	for (i = 1; i < 13; i ++) {
+		scr_add_hurtbox(spr_mac_tilt_forward, i, 0, RECTANGLE, 12, 16, 2, -18, 0)
+		scr_add_move(spr_mac_tilt_forward, i, 0, RECTANGLE, 15, 30, 2, -18, 0, 5, 300, 2, 4) 
+	}
 
-//tilts
+	//mac tilt down (discontinuous hitboxes)
+	for (i = 0; i < 24; i++) { //do a loop for all the similair frames
+		if ((i >= 6) and (i < 18)) {
+			scr_add_hurtbox(spr_mac_tilt_down, i, 0, RECTANGLE, 16, 12, 0, -5, 0)
+			scr_add_move(spr_mac_tilt_down, i, 0, RECTANGLE, 38, 13, 0, -6, 0, 8, 30, 1, 3)
+		} else {
+			scr_add_hurtbox(spr_mac_tilt_down, i, 0, RECTANGLE, 12, 16, 1, -19, 0)
+		}
+	}
+	scr_add_hurtbox(spr_mac_tilt_down, 5, 0, RECTANGLE, 12, 16, -9, -17, 45) //overrride hurtbox 
+	scr_add_hurtbox(spr_mac_tilt_down, 18, 0, RECTANGLE, 12, 16, -9, -17, 45) //override hurtbox
 
+	//mac tilt up (discontinuous hitboxes)
+	for (i = 0; i < 24; i++) { //do a loop for all the similar frames
+		scr_add_hurtbox(spr_mac_tilt_up, i, 0, RECTANGLE, 12, 16, 1, -19, 0)
+	}
+	scr_add_move(spr_mac_tilt_up, 4, 0, CIRCLE, 9, 9, 0, -36, 0, 6, 90, 3, 4)
+	scr_add_move(spr_mac_tilt_up, 5, 0, CIRCLE, 9, 9, 0, -43, 0, 6, 90, 3, 4)
+	scr_add_move(spr_mac_tilt_up, 6, 0, CIRCLE, 9, 9, 0, -50, 0, 6, 90, 3, 4)
+	scr_add_move(spr_mac_tilt_up, 7, 0, CIRCLE, 9, 9, 0, -57, 0, 6, 90, 3, 4)
+	scr_add_move(spr_mac_tilt_up, 8, 0, CIRCLE, 9, 9, 0, -64, 0, 6, 90, 3, 4)
+	scr_add_move(spr_mac_tilt_up, 9, 0, CIRCLE, 9, 9, 0, -71, 0, 6, 90, 3, 4)
+	scr_add_move(spr_mac_tilt_up, 10, 0, CIRCLE, 9, 9, 0, -78, 0, 6, 90, 3, 4)
+	scr_add_move(spr_mac_tilt_up, 11, 0, CIRCLE, 9, 9, 0, -83, 0, 6, 90, 3, 4)
+	scr_add_move(spr_mac_tilt_up, 12, 0, CIRCLE, 9, 9, 0, -86, 0, 6, 90, 3, 4)
+	scr_add_move(spr_mac_tilt_up, 13, 0, CIRCLE, 9, 9, 0, -87, 0, 6, 90, 3, 4)
+	scr_add_move(spr_mac_tilt_up, 14, 0, CIRCLE, 9, 9, 0, -87, 0, 6, 90, 3, 4)
+	scr_add_move(spr_mac_tilt_up, 15, 0, CIRCLE, 9, 9, 0, -86, 0, 6, 270, 3, 4)
+	scr_add_move(spr_mac_tilt_up, 16, 0, CIRCLE, 9, 9, 0, -84, 0, 6, 270, 3, 4)
+	scr_add_move(spr_mac_tilt_up, 17, 0, CIRCLE, 9, 9, 0, -80, 0, 6, 270, 3, 4)
+	scr_add_move(spr_mac_tilt_up, 18, 0, CIRCLE, 9, 9, 0, -74, 0, 6, 270, 3, 4)
+	scr_add_move(spr_mac_tilt_up, 19, 0, CIRCLE, 9, 9, 0, -67, 0, 6, 270, 3, 4)
+	scr_add_move(spr_mac_tilt_up, 20, 0, CIRCLE, 9, 9, 0, -59, 0, 6, 270, 3, 4)
+	scr_add_move(spr_mac_tilt_up, 21, 0, CIRCLE, 9, 9, 0, -50, 0, 6, 270, 3, 4)
+	scr_add_move(spr_mac_tilt_up, 22, 0, CIRCLE, 9, 9, 0, -40, 0, 6, 270, 3, 4)
+
+	//mac jabs (discontinuous hitboxes)
+	for (i = 0; i < 4; i++) {
+		scr_add_hurtbox(spr_mac_jab_1, i, 0, RECTANGLE, 12, 16, 1, -19, 0)
+		scr_add_hurtbox(spr_mac_jab_2, i, 0, RECTANGLE, 12, 16, 1, -19, 0)
+		scr_add_hurtbox(spr_mac_jab_3, i, 0, RECTANGLE, 12, 16, 1, -19, 0)
+	}
+	scr_add_move(spr_mac_jab_1, 2, 0, CIRCLE, 8, 6, 13, -21, 0, 3, 0, 1, 5)
+	scr_add_move(spr_mac_jab_2, 2, 0, CIRCLE, 8, 6, 13, -21, 0, 3, 0, 1, 5)
+	scr_add_move(spr_mac_jab_3, 2, 0, CIRCLE, 8, 6, 13, -21, 0, 3, 0, 1, 5)
+
+	//mac dash attack (discontinous hitboxes)
+	scr_add_hurtbox(spr_mac_speed_up, 0, 0, RECTANGLE, 12, 16, 2, -18, 0)
+	scr_add_hurtbox(spr_mac_speed_up, 1, 0, RECTANGLE, 12, 16, 2, -18, 0)
+	scr_add_hurtbox(spr_mac_speed_up, 2, 0, RECTANGLE, 12, 16, 2, -18, 0)
+	scr_add_hurtbox(spr_mac_speed_up, 3, 0, RECTANGLE, 12, 16, 1, -19, 0)
+	scr_add_move(spr_mac_speed_up, 0, 0, RECTANGLE, 12, 16, 2, -18, 0, 8, 0, 2, 3)
+	scr_add_move(spr_mac_speed_up, 1, 0, RECTANGLE, 12, 16, 2, -18, 0, 8, 0, 2, 3)
+	scr_add_move(spr_mac_speed_up, 2, 0, RECTANGLE, 12, 16, 2, -18, 0, 8, 0, 2, 3)
+
+	//mac aerials hurtboxes (all constant and the same)
+	for (i = 0; i < 32; i++) {
+		scr_add_hurtbox(spr_mac_aerial_up, i, 0, RECTANGLE, 11, 16, 0, -20, 0)
+		scr_add_hurtbox(spr_mac_aerial_forward, i, 0, RECTANGLE, 11, 16, 0, -20, 0)
+		scr_add_hurtbox(spr_mac_aerial_down, i, 0, RECTANGLE, 11, 16, 0, -20, 0)
+		scr_add_hurtbox(spr_mac_aerial_back, i, 0, RECTANGLE, 11, 16, 0, -20, 0)
+		scr_add_hurtbox(spr_mac_aerial_neutral, i, 0, RECTANGLE, 11, 16, 0, -20, 0)
+	}
+
+	//mac aerial forward (discontinuous hitboxes)
+	scr_add_move(spr_mac_aerial_forward, 14, 0, CIRCLE, 2, 2, 24, -19, 0, 2, IN, 1, 1) 
+	scr_add_move(spr_mac_aerial_forward, 15, 0, CIRCLE, 4, 4, 24, -19, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_forward, 16, 0, CIRCLE, 6, 6, 24, -19, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_forward, 17, 0, CIRCLE, 10, 10, 24, -19, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_forward, 18, 0, CIRCLE, 14, 14, 24, -19, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_forward, 19, 0, CIRCLE, 20, 20, 24, -19, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_forward, 20, 0, CIRCLE, 24, 24, 24, -19, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_forward, 21, 0, CIRCLE, 24, 24, 24, -19, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_forward, 22, 0, CIRCLE, 24, 24, 24, -19, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_forward, 23, 0, CIRCLE, 24, 24, 24, -19, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_forward, 24, 0, CIRCLE, 24, 24, 24, -19, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_forward, 25, 0, CIRCLE, 24, 24, 24, -19, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_forward, 26, 0, CIRCLE, 24, 24, 24, -19, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_forward, 27, 0, CIRCLE, 24, 24, 24, -19, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_forward, 28, 0, CIRCLE, 24, 24, 24, -19, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_forward, 29, 0, CIRCLE, 24, 24, 24, -19, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_forward, 30, 0, CIRCLE, 24, 24, 24, -19, 0, 2, IN, 1, 1)
+
+	//mac aerial up (discontinuous hitboxes)
+	scr_add_move(spr_mac_aerial_up, 14, 0, CIRCLE, 2, 2, -2, -53, 0, 2, IN, 1, 1) 
+	scr_add_move(spr_mac_aerial_up, 15, 0, CIRCLE, 4, 4, -2, -53, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_up, 16, 0, CIRCLE, 6, 6, -2, -53, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_up, 17, 0, CIRCLE, 10, 10, -2, -53, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_up, 18, 0, CIRCLE, 14, 14, -2, -53, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_up, 19, 0, CIRCLE, 20, 20, -2, -53, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_up, 20, 0, CIRCLE, 24, 24, -2, -53, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_up, 21, 0, CIRCLE, 24, 24, -2, -53, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_up, 22, 0, CIRCLE, 24, 24, -2, -53, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_up, 23, 0, CIRCLE, 24, 24, -2, -53, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_up, 24, 0, CIRCLE, 24, 24, -2, -53, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_up, 25, 0, CIRCLE, 24, 24, -2, -53, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_up, 26, 0, CIRCLE, 24, 24, -2, -53, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_up, 27, 0, CIRCLE, 24, 24, -2, -53, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_up, 28, 0, CIRCLE, 24, 24, -2, -53, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_up, 29, 0, CIRCLE, 24, 24, -2, -53, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_up, 30, 0, CIRCLE, 24, 24, -2, -53, 0, 2, IN, 1, 1)
+
+	//mac aerial down (discontinuous hitboxes)
+	scr_add_move(spr_mac_aerial_down, 14, 0, CIRCLE, 2, 2, 0, 10, 0, 2, IN, 1, 1) 
+	scr_add_move(spr_mac_aerial_down, 15, 0, CIRCLE, 4, 4, 0, 10, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_down, 16, 0, CIRCLE, 6, 6, 0, 10, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_down, 17, 0, CIRCLE, 10, 10, 0, 10, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_down, 18, 0, CIRCLE, 14, 14, 0, 10, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_down, 19, 0, CIRCLE, 20, 20, 0, 10, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_down, 20, 0, CIRCLE, 24, 24, 0, 10, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_down, 21, 0, CIRCLE, 24, 24, 0, 10, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_down, 22, 0, CIRCLE, 24, 24, 0, 10, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_down, 23, 0, CIRCLE, 24, 24, 0, 10, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_down, 24, 0, CIRCLE, 24, 24, 0, 10, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_down, 25, 0, CIRCLE, 24, 24, 0, 10, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_down, 26, 0, CIRCLE, 24, 24, 0, 10, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_down, 27, 0, CIRCLE, 24, 24, 0, 10, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_down, 28, 0, CIRCLE, 24, 24, 0, 10, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_down, 29, 0, CIRCLE, 24, 24, 0, 10, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_down, 30, 0, CIRCLE, 24, 24, 0, 10, 0, 2, IN, 1, 1)
+
+	//mac aerial back (discontinuous hitboxes)
+	scr_add_move(spr_mac_aerial_back, 14, 0, CIRCLE, 2, 2, -23, -19, 0, 2, IN, 1, 1) 
+	scr_add_move(spr_mac_aerial_back, 15, 0, CIRCLE, 4, 4, -23, -19, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_back, 16, 0, CIRCLE, 6, 6, -23, -19, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_back, 17, 0, CIRCLE, 10, 10, -23, -19, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_back, 18, 0, CIRCLE, 14, 14, -23, -19, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_back, 19, 0, CIRCLE, 20, 20, -23, -19, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_back, 20, 0, CIRCLE, 24, 24, -23, -19, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_back, 21, 0, CIRCLE, 24, 24, -23, -19, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_back, 22, 0, CIRCLE, 24, 24, -23, -19, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_back, 23, 0, CIRCLE, 24, 24, -23, -19, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_back, 24, 0, CIRCLE, 24, 24, -23, -19, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_back, 25, 0, CIRCLE, 24, 24, -23, -19, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_back, 26, 0, CIRCLE, 24, 24, -23, -19, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_back, 27, 0, CIRCLE, 24, 24, -23, -19, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_back, 28, 0, CIRCLE, 24, 24, -23, -19, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_back, 29, 0, CIRCLE, 24, 24, -23, -19, 0, 2, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_back, 30, 0, CIRCLE, 24, 24, -23, -19, 0, 2, IN, 1, 1)
+
+	//mac aerial neutral (discontinuous hitboxes)
+	scr_add_move(spr_mac_aerial_neutral, 5, 0, CIRCLE, 35, 53, -1, -17, 0, 1, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_neutral, 6, 0, CIRCLE, 35, 53, -1, -17, 0, 1, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_neutral, 7, 0, CIRCLE, 35, 53, -1, -17, 0, 1, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_neutral, 8, 0, CIRCLE, 35, 53, -1, -17, 0, 1, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_neutral, 9, 0, CIRCLE, 35, 53, -1, -17, 0, 1, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_neutral, 10, 0, CIRCLE, 35, 53, -1, -17, 0, 1, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_neutral, 11, 0, CIRCLE, 35, 53, -1, -17, 0, 1, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_neutral, 12, 0, CIRCLE, 35, 53, -1, -17, 0, 1, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_neutral, 13, 0, CIRCLE, 35, 53, -1, -17, 0, 1, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_neutral, 14, 0, CIRCLE, 35, 53, -1, -17, 0, 1, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_neutral, 15, 0, CIRCLE, 35, 53, -1, -17, 0, 1, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_neutral, 16, 0, CIRCLE, 35, 53, -1, -17, 0, 1, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_neutral, 17, 0, CIRCLE, 35, 53, -1, -17, 0, 1, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_neutral, 18, 0, CIRCLE, 35, 53, -1, -17, 0, 1, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_neutral, 19, 0, CIRCLE, 35, 53, -1, -17, 0, 1, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_neutral, 20, 0, CIRCLE, 35, 53, -1, -17, 0, 1, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_neutral, 21, 0, CIRCLE, 35, 53, -1, -17, 0, 1, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_neutral, 22, 0, CIRCLE, 35, 53, -1, -17, 0, 1, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_neutral, 23, 0, CIRCLE, 35, 53, -1, -17, 0, 1, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_neutral, 24, 0, CIRCLE, 35, 53, -1, -17, 0, 1, IN, 1, 1)
+	scr_add_move(spr_mac_aerial_neutral, 25, 0, CIRCLE, 35, 53, -1, -17, 0, 1, IN, 1, 1)
+
+	//mac smash forward (discontinuous hitbox)
+	scr_add_hurtbox(spr_mac_smash_forward, 0, 0, RECTANGLE, 12, 16, 1, -19, 0)
+	scr_add_hurtbox(spr_mac_smash_forward, 1, 0, RECTANGLE, 12, 16, 0, -20, 0)
+	scr_add_hurtbox(spr_mac_smash_forward, 2, 0, RECTANGLE, 12, 16, -1, -21, 0)
+	scr_add_hurtbox(spr_mac_smash_forward, 3, 0, RECTANGLE, 12, 16, -2, -20, 0)
+	for (i = 4; i < 16; i++) {
+		scr_add_hurtbox(spr_mac_smash_forward, i, 0, RECTANGLE, 12, 16, -3, -19, 0)
+	}
+	scr_add_hurtbox(spr_mac_smash_forward, 16, 0, RECTANGLE, 12, 16, -2, -20, 0)
+	scr_add_hurtbox(spr_mac_smash_forward, 17, 0, RECTANGLE, 12, 16, 0, -20, 0)
+	scr_add_hurtbox(spr_mac_smash_forward, 18, 0, RECTANGLE, 12, 16, 0, -20, 0)
+	scr_add_hurtbox(spr_mac_smash_forward, 19, 0, RECTANGLE, 12, 16, 0, -20, 0)
+	scr_add_hurtbox(spr_mac_smash_forward, 20, 0, RECTANGLE, 12, 16, 1, -19, 0)
+	scr_add_move(spr_mac_smash_forward, 17, 0, CIRCLE, 28, 16, 24, -21, 0, 29, 30, 1, 11)
+	scr_add_move(spr_mac_smash_forward, 18, 0, RECTANGLE, 86, 24, 54, -22, 0, 29, 30, 1, 11)
+	scr_add_move(spr_mac_smash_forward, 19, 0, CIRCLE, 18, 22, 88, -21, 0, 29, 30, 1, 11)
+
+
+	//mac smash down (discontinuous hitbox, discontinuous hurtbox)
+	scr_add_hurtbox(spr_mac_smash_down, 0, 0, RECTANGLE, 12, 16, 1, -19, 0)
+	scr_add_hurtbox(spr_mac_smash_down, 1, 0, RECTANGLE, 12, 16, 1, -19, 0)
+	scr_add_hurtbox(spr_mac_smash_down, 2, 0, RECTANGLE, 12, 16, 1, -20, 0)
+	scr_add_hurtbox(spr_mac_smash_down, 3, 0, RECTANGLE, 12, 16, 1, -21, 0)
+	scr_add_hurtbox(spr_mac_smash_down, 4, 0, RECTANGLE, 12, 16, 1, -15, 0)
+	scr_add_hurtbox(spr_mac_smash_down, 5, 0, RECTANGLE, 12, 16, 1, -10, 0)
+	scr_add_hurtbox(spr_mac_smash_down, 6, 0, RECTANGLE, 12, 14, 1, -6, 0)
+	scr_add_hurtbox(spr_mac_smash_down, 7, 0, RECTANGLE, 12, 7, 1, -4, 0)
+	scr_add_hurtbox(spr_mac_smash_down, 8, 0, RECTANGLE, 8, 4, 1, -2, 0)
+	scr_add_hurtbox(spr_mac_smash_down, 9, 0, RECTANGLE, 2, 2, 1, -1, 0)
+	scr_add_hurtbox(spr_mac_smash_down, 17, 0, RECTANGLE, 12, 16, 1, -19, 0)
+	scr_add_hurtbox(spr_mac_smash_down, 18, 0, RECTANGLE, 12, 16, 1, -19, 0)
+	scr_add_hurtbox(spr_mac_smash_down, 19, 0, RECTANGLE, 12, 16, 1, -19, 0)
+	scr_add_move(spr_mac_smash_down, 14, 0, CIRCLE, 39, 32, 0, 0, 0, 30, 90, 5, 7)
+	scr_add_move(spr_mac_smash_down, 15, 0, CIRCLE, 39, 60, 0, 0, 0, 30, 90, 5, 7)
+	scr_add_move(spr_mac_smash_down, 16, 0, CIRCLE, 39, 100, 0, 0, 0, 30, 90, 5, 7)
+
+	//mac smash up (discontinuos hitboxes)
+	for (i = 0; i < 11; i++) {
+		scr_add_hurtbox(spr_mac_smash_up, i, 0, RECTANGLE, 12, 16, 1, -19, 0)	
+	}
+	scr_add_move(spr_mac_smash_up, 3, 0, CIRCLE, 26, 30, 28, 0, 0, 31, 90, 9, 2)
+	scr_add_move(spr_mac_smash_up, 4, 0, CIRCLE, 26, 30, 28, 0, 0, 31, 90, 9, 2)
+	scr_add_move(spr_mac_smash_up, 5, 0, CIRCLE, 26, 100, 28, 0, 0, 31, 90, 9, 2)
+	scr_add_move(spr_mac_smash_up, 6, 0, CIRCLE, 14, 96, 28, 0, 0, 31, 90, 9, 2)
+
+	//mac special forward (no comment)
+	for (i = 0; i < 13; i ++) {
+		scr_add_hurtbox(spr_mac_special_forward, i, 0, RECTANGLE, 12, 16, 2, -18, 0)
+		scr_add_move(spr_mac_special_forward, i, 0, RECTANGLE, 30, 20, 2, -18, 0, 2, 180, 20, 1)
+	}
+
+	//mac special down (discontinuous hitboxes)
+	for (i = 0; i < 40; i++) {
+		scr_add_hurtbox(spr_mac_special_down, i, 0, RECTANGLE, 12, 16, 1, -19, 0)
+	}
+	scr_add_move(spr_mac_special_down, 29, 0, RECTANGLE, 28, 200, 0, -100, 0, 0, 270, 5, 2)
+	scr_add_move(spr_mac_special_down, 30, 0, RECTANGLE, 28, 200, 0, -100, 0, 0, 270, 5, 2)
+	scr_add_move(spr_mac_special_down, 31, 0, RECTANGLE, 28, 200, 0, -100, 0, 0, 270, 5, 2)
+	scr_add_move(spr_mac_special_down, 32, 0, RECTANGLE, 28, 200, 0, -100, 0, 0, 270, 5, 2)
+	scr_add_move(spr_mac_special_down, 33, 0, RECTANGLE, 28, 200, 0, -100, 0, 0, 270, 5, 2)
+	scr_add_move(spr_mac_special_down, 34, 0, RECTANGLE, 28, 200, 0, -100, 0, 17, 270, 5, 2)
+	scr_add_move(spr_mac_special_down, 35, 0, RECTANGLE, 28, 140, 0, -70, 0, 0, 270, 5, 2)
+	scr_add_move(spr_mac_special_down, 36, 0, RECTANGLE, 28, 100, 0, -50, 0, 0, 270, 5, 2)
+	scr_add_move(spr_mac_special_down, 37, 0, RECTANGLE, 28, 70, 0, -35, 0, 0, 270, 5, 2)
+
+	//mac special up (discontinuous hitboxes)
+	for (i = 0; i < 16; i++) {
+		scr_add_hurtbox(spr_mac_special_up, i, 0, RECTANGLE, 12, 16, 1, -21, 0)	
+		scr_add_move(spr_mac_special_up, i, 0, CIRCLE, 24, 32, 1, -21, 0, 2, DIR, 2, 1)
+	}
+	scr_add_move(spr_mac_special_up, 15, 0, CIRCLE, 28, 36, 1, -21, 0, 6, DIR, 5, 9) //overwrite
+	scr_add_hurtbox(spr_mac_special_up, 16, 0, RECTANGLE, 12, 16, 1, -21, 0)	
+	scr_add_hurtbox(spr_mac_special_up, 17, 0, RECTANGLE, 12, 16, 1, -21, 0)	
+	scr_add_hurtbox(spr_mac_special_up, 18, 0, RECTANGLE, 12, 16, 1, -21, 0)	
+	scr_add_hurtbox(spr_mac_special_up, 19, 0, RECTANGLE, 12, 16, 1, -21, 0)	
+
+	//mac special neutral
+	for (i = 0; i < 19; i++) {
+		scr_add_hurtbox(spr_mac_special_neutral, i, 0, RECTANGLE, 11, 16, 0, -20, 0)
+	}
+	scr_add_move(spr_mac_special_neutral, 5, 0, CIRCLE, 35, 53, -1, -17, 0, 3, IN, 1, 1)
+	scr_add_move(spr_mac_special_neutral, 6, 0, CIRCLE, 35, 53, -1, -17, 0, 3, IN, 1, 1)
+	scr_add_move(spr_mac_special_neutral, 7, 0, CIRCLE, 35, 53, -1, -17, 0, 3, IN, 1, 1)
+	scr_add_move(spr_mac_special_neutral, 8, 0, CIRCLE, 35, 53, -1, -17, 0, 3, IN, 1, 1)
+	scr_add_move(spr_mac_special_neutral, 9, 0, CIRCLE, 35, 53, -1, -17, 0, 3, IN, 1, 1)
+	scr_add_move(spr_mac_special_neutral, 10, 0, CIRCLE, 35, 53, -1, -17, 0, 3, IN, 1, 1)
+	scr_add_move(spr_mac_special_neutral, 11, 0, CIRCLE, 35, 53, -1, -17, 0, 3, IN, 1, 1)
+	scr_add_move(spr_mac_special_neutral, 12, 0, CIRCLE, 35, 53, -1, -17, 0, 3, IN, 1, 1)
 #endregion MACHINATION
 
+#region GEOS 302 lines
+	//smash down, tilt down, ledge moves, hurt trio, crouch trio, grabbed have special case hurtboxes
+	//general hurtbox, this is overwritten when necessary
+	for (i = spr_geo_idle; i <= spr_geo_special_neutral; i++) { //for the range of geo sprites
+		if (i = spr_geo_ledge) { i = spr_geo_taunt } //avoid this range of sprites [min, max)
+		for (o = 0; o < sprite_get_number(i); o++) { //for every frame
+			scr_add_hurtbox(i, o, 0, CIRCLE, 17, 11, 1, -17, 0) //add the top hurtbox
+			if ((o mod 5 = 2) or (o mod 5 = 3)) { //if 3rd or 4th frame of loop
+				scr_add_hurtbox(i, o, 1, CIRCLE, 9, 12, 2, -8, 0) //add lower hurtbox
+			} else { //1st, 2nd, 5th frame of loop
+				scr_add_hurtbox(i, o, 1, CIRCLE, 9, 12, 1, -8, 0) //add lower hurtbox shifted left
+			}
+		}
+	}
 
-#endregion that took forever
+	//special case hurtboxes and all hitboxes
+
+	//geo ledge (no hitboxes)
+	scr_add_hurtbox(spr_geo_ledge, 0, 0, CIRCLE, 17, 11, -31, 31, 0) //add the top hurtbox
+	scr_add_hurtbox(spr_geo_ledge, 1, 0, CIRCLE, 17, 11, -31, 31, 0) //add the top hurtbox
+	scr_add_hurtbox(spr_geo_ledge, 2, 0, CIRCLE, 17, 11, -31, 31, 0) //add the top hurtbox
+	scr_add_hurtbox(spr_geo_ledge, 3, 0, CIRCLE, 17, 11, -31, 31, 0) //add the top hurtbox
+	scr_add_hurtbox(spr_geo_ledge, 4, 0, CIRCLE, 17, 11, -31, 31, 0) //add the top hurtbox
+	scr_add_hurtbox(spr_geo_ledge, 0, 1, CIRCLE, 9, 12, -31, 40, 0) //add lower hurtbox shifted left
+	scr_add_hurtbox(spr_geo_ledge, 1, 1, CIRCLE, 9, 12, -31, 40, 0) //add lower hurtbox shifted left
+	scr_add_hurtbox(spr_geo_ledge, 2, 1, CIRCLE, 9, 12, -30, 40, 0) //add lower hurtbox
+	scr_add_hurtbox(spr_geo_ledge, 3, 1, CIRCLE, 9, 12, -30, 40, 0) //add lower hurtbox
+	scr_add_hurtbox(spr_geo_ledge, 4, 1, CIRCLE, 9, 12, -31, 40, 0) //add lower hurtbox shifted left
+
+	//geo ledge hold (no hitboxes)
+	scr_add_hurtbox(spr_geo_ledge, 0, 0, CIRCLE, 17, 11, -31, 31, 0) //add the top hurtbox
+	scr_add_hurtbox(spr_geo_ledge, 1, 0, CIRCLE, 17, 11, -31, 31, 0) //add the top hurtbox
+	scr_add_hurtbox(spr_geo_ledge, 2, 0, CIRCLE, 17, 11, -31, 31, 0) //add the top hurtbox
+	scr_add_hurtbox(spr_geo_ledge, 3, 0, CIRCLE, 17, 11, -31, 31, 0) //add the top hurtbox
+	scr_add_hurtbox(spr_geo_ledge, 4, 0, CIRCLE, 17, 11, -31, 31, 0) //add the top hurtbox
+	scr_add_hurtbox(spr_geo_ledge, 5, 0, CIRCLE, 17, 11, -31, 31, 0) //add the top hurtbox
+	scr_add_hurtbox(spr_geo_ledge, 6, 0, CIRCLE, 17, 11, -31, 31, 0) //add the top hurtbox
+	scr_add_hurtbox(spr_geo_ledge, 7, 0, CIRCLE, 17, 11, -31, 31, 0) //add the top hurtbox
+	scr_add_hurtbox(spr_geo_ledge, 8, 0, CIRCLE, 17, 11, -31, 31, 0) //add the top hurtbox
+	scr_add_hurtbox(spr_geo_ledge, 9, 0, CIRCLE, 17, 11, -31, 31, 0) //add the top hurtbox
+	scr_add_hurtbox(spr_geo_ledge, 0, 1, CIRCLE, 9, 12, -31, 40, 0) //add lower hurtbox shifted left
+	scr_add_hurtbox(spr_geo_ledge, 1, 1, CIRCLE, 9, 12, -31, 40, 0) //add lower hurtbox shifted left
+	scr_add_hurtbox(spr_geo_ledge, 2, 1, CIRCLE, 9, 12, -30, 40, 0) //add lower hurtbox
+	scr_add_hurtbox(spr_geo_ledge, 3, 1, CIRCLE, 9, 12, -30, 40, 0) //add lower hurtbox
+	scr_add_hurtbox(spr_geo_ledge, 4, 1, CIRCLE, 9, 12, -31, 40, 0) //add lower hurtbox shifted left
+	scr_add_hurtbox(spr_geo_ledge, 5, 1, CIRCLE, 9, 12, -31, 40, 0) //add lower hurtbox shifted left
+	scr_add_hurtbox(spr_geo_ledge, 6, 1, CIRCLE, 9, 12, -31, 40, 0) //add lower hurtbox shifted left
+	scr_add_hurtbox(spr_geo_ledge, 7, 1, CIRCLE, 9, 12, -30, 40, 0) //add lower hurtbox
+	scr_add_hurtbox(spr_geo_ledge, 8, 1, CIRCLE, 9, 12, -30, 40, 0) //add lower hurtbox
+	scr_add_hurtbox(spr_geo_ledge, 9, 1, CIRCLE, 9, 12, -31, 40, 0) //add lower hurtbox shifted left
+
+	//geo ledge jump (no hitboxes)
+	scr_add_hurtbox(spr_geo_ledge, 0, 0, CIRCLE, 17, 11, -31, 31, 0) //add the top hurtbox
+	scr_add_hurtbox(spr_geo_ledge, 1, 0, CIRCLE, 17, 11, -31, 27, 0) //add the top hurtbox
+	scr_add_hurtbox(spr_geo_ledge, 2, 0, CIRCLE, 17, 11, -28, 14, 0) //add the top hurtbox
+	scr_add_hurtbox(spr_geo_ledge, 3, 0, CIRCLE, 17, 11, -26, 8, 0) //add the top hurtbox
+	scr_add_hurtbox(spr_geo_ledge, 4, 0, CIRCLE, 17, 11, -21, -2, 0) //add the top hurtbox
+	scr_add_hurtbox(spr_geo_ledge, 0, 1, CIRCLE, 9, 12, -31, 40, 0) //add lower hurtbox shifted left
+	scr_add_hurtbox(spr_geo_ledge, 1, 1, CIRCLE, 9, 12, -31, 36, 0) //add lower hurtbox shifted left
+	scr_add_hurtbox(spr_geo_ledge, 2, 1, CIRCLE, 9, 12, -27, 17, 0) //add lower hurtbox
+	scr_add_hurtbox(spr_geo_ledge, 3, 1, CIRCLE, 9, 12, -25, 11, 0) //add lower hurtbox
+	scr_add_hurtbox(spr_geo_ledge, 4, 1, CIRCLE, 9, 12, -20, 1, 0) //add lower hurtbox shifted left
+
+	//geo ledge grab (discontinuous hitboxes)
+	scr_add_hurtbox(spr_geo_ledge_grab, 0, 0, CIRCLE, 17, 11, -31, 31, 0) //add the top hurtbox
+	scr_add_hurtbox(spr_geo_ledge_grab, 1, 0, CIRCLE, 17, 11, -31, 27, 0) //add the top hurtbox 
+	scr_add_hurtbox(spr_geo_ledge_grab, 2, 0, CIRCLE, 17, 11, -28, 14, 0) //add the top hurtbox 
+	scr_add_hurtbox(spr_geo_ledge_grab, 3, 0, CIRCLE, 17, 11, -26, 8, 0) //add the top hurtbox 
+	scr_add_hurtbox(spr_geo_ledge_grab, 4, 0, CIRCLE, 17, 11, -21, -2, 0) //add the top hurtbox 
+	scr_add_hurtbox(spr_geo_ledge_grab, 5, 0, CIRCLE, 17, 11, -17, -7, 0) //add the top hurtbox 
+	scr_add_hurtbox(spr_geo_ledge_grab, 6, 0, CIRCLE, 17, 11, -10, -11, 0) //add the top hurtbox
+	scr_add_hurtbox(spr_geo_ledge_grab, 7, 0, CIRCLE, 17, 11, 0, -18, 0) //add the top hurtbox 
+	scr_add_hurtbox(spr_geo_ledge_grab, 8, 0, CIRCLE, 17, 11, 11, -18, 0) //add the top hurtbox
+	scr_add_hurtbox(spr_geo_ledge_grab, 9, 0, CIRCLE, 17, 11, 24, -18, 0) //add the top hurtbox
+	scr_add_hurtbox(spr_geo_ledge_grab, 0, 1, CIRCLE, 9, 12, -31, 40, 0) //add lower hurtbox shifted left
+	scr_add_hurtbox(spr_geo_ledge_grab, 1, 1, CIRCLE, 9, 12, -31, 36, 0) //add lower hurtbox shifted left
+	scr_add_hurtbox(spr_geo_ledge_grab, 2, 1, CIRCLE, 9, 12, -27, 23, 0) //add lower hurtbox
+	scr_add_hurtbox(spr_geo_ledge_grab, 3, 1, CIRCLE, 9, 12, -25, 17, 0) //add lower hurtbox
+	scr_add_hurtbox(spr_geo_ledge_grab, 4, 1, CIRCLE, 9, 12, -21, 7, 0) //add lower hurtbox shifted left
+	scr_add_hurtbox(spr_geo_ledge_grab, 5, 1, CIRCLE, 9, 12, -17, 2, 0) //add lower hurtbox shifted left
+	scr_add_hurtbox(spr_geo_ledge_grab, 6, 1, CIRCLE, 9, 12, -10, -2, 0) //add lower hurtbox shifted left
+	scr_add_hurtbox(spr_geo_ledge_grab, 7, 1, CIRCLE, 9, 12, 1, -9, 0) //add lower hurtbox
+	scr_add_hurtbox(spr_geo_ledge_grab, 8, 1, CIRCLE, 9, 12, 12, -9, 0) //add lower hurtbox
+	scr_add_hurtbox(spr_geo_ledge_grab, 9, 1, CIRCLE, 9, 12, 24, -9, 0) //add lower hurtbox shifted left
+	scr_add_move(spr_geo_ledge_grab, 4, 0, CIRCLE, 26, 39, -40, -17, 0, 8, HOLD)
+	scr_add_move(spr_geo_ledge_grab, 5, 0, CIRCLE, 55, 28, -14, -30, 0, 8, HOLD)
+	scr_add_move(spr_geo_ledge_grab, 6, 0, CIRCLE, 20, 20, 16, -33, 0, 8, HOLD)
+	scr_add_move(spr_geo_ledge_grab, 7, 0, CIRCLE, 25, 17, 26, -27, 0, 8, HOLD)
+	scr_add_move(spr_geo_ledge_grab, 8, 0, CIRCLE, 21, 21, 34, -19, 0, 8, HOLD)
+
+	//geo ledge attack (discontinuous hitboxes)
+	scr_add_hurtbox(spr_geo_ledge_attack, 0, 0, CIRCLE, 17, 11, -31, 31, 0)
+	scr_add_hurtbox(spr_geo_ledge_attack, 1, 0, CIRCLE, 17, 11, -31, 27, 0)
+	scr_add_hurtbox(spr_geo_ledge_attack, 2, 0, CIRCLE, 17, 11, -28, 14, 0)
+	scr_add_hurtbox(spr_geo_ledge_attack, 3, 0, CIRCLE, 17, 11, -26, 8, 0)
+	scr_add_hurtbox(spr_geo_ledge_attack, 4, 0, CIRCLE, 17, 11, -21, 1, 0)
+	scr_add_hurtbox(spr_geo_ledge_attack, 5, 0, CIRCLE, 17, 11, -16, -4, 0)
+	scr_add_hurtbox(spr_geo_ledge_attack, 6, 0, CIRCLE, 17, 11, -9, -11, 0)
+	scr_add_hurtbox(spr_geo_ledge_attack, 7, 0, CIRCLE, 17, 11, -2, -14, 0)
+	scr_add_hurtbox(spr_geo_ledge_attack, 8, 0, CIRCLE, 17, 11, 2, -15, 0)
+	scr_add_hurtbox(spr_geo_ledge_attack, 0, 1, CIRCLE, 9, 12, -30, 40, 0) //lower hurtboxes
+	scr_add_hurtbox(spr_geo_ledge_attack, 1, 1, CIRCLE, 9, 12, -30, 36, 0)
+	scr_add_hurtbox(spr_geo_ledge_attack, 2, 1, CIRCLE, 9, 12, -27, 23, 0)
+	scr_add_hurtbox(spr_geo_ledge_attack, 3, 1, CIRCLE, 9, 12, -25, 17, 0)
+	scr_add_hurtbox(spr_geo_ledge_attack, 4, 1, CIRCLE, 9, 12, -20, 7, 0)
+	scr_add_hurtbox(spr_geo_ledge_attack, 5, 1, CIRCLE, 9, 12, -15, 2, 0)
+	scr_add_hurtbox(spr_geo_ledge_attack, 6, 1, CIRCLE, 9, 12, -8, -2, 0)
+	scr_add_hurtbox(spr_geo_ledge_attack, 7, 1, CIRCLE, 9, 12, -1, -8, 0)
+	scr_add_hurtbox(spr_geo_ledge_attack, 8, 1, CIRCLE, 9, 12, 3, -9, 0)
+	scr_add_move(spr_geo_ledge_attack, 2, 0, CIRCLE, 20, 26, -26, -3, -20, 13, 30, 3, 4)
+	scr_add_move(spr_geo_ledge_attack, 3, 0, CIRCLE, 20, 28, -18, -11, -45, 13, 30, 3, 4)
+	scr_add_move(spr_geo_ledge_attack, 4, 0, CIRCLE, 64, 30, 0, -15, 0, 13, 30, 3, 4)
+	scr_add_move(spr_geo_ledge_attack, 5, 0, CIRCLE, 60, 28, 0, -15, 0, 13, 30, 3, 4)
+	scr_add_move(spr_geo_ledge_attack, 6, 0, CIRCLE, 51, 29, 5, -23, 0, 13, 30, 3, 4)
+	scr_add_move(spr_geo_ledge_attack, 7, 0, CIRCLE, 33, 18, 5, -30, 0, 13, 30, 3, 4)
+
+	//geo hurt up (no hitbox)
+	scr_add_hurtbox(spr_geo_hurt_up, 0, 0, CIRCLE, 17, 11, 1, -17, 0)
+	scr_add_hurtbox(spr_geo_hurt_up, 0, 1, CIRCLE, 9, 12, 2, -8, 0)
+
+	//geo hurt side (no hitbox)
+	scr_add_hurtbox(spr_geo_hurt_side, 0, 0, CIRCLE, 17, 11, -3, -17, 0)
+	scr_add_hurtbox(spr_geo_hurt_side, 0, 1, CIRCLE, 9, 12, -4, -8, 0)
+
+	//geo hurt down (no hitbox)
+	scr_add_hurtbox(spr_geo_hurt_down, 0, 0, CIRCLE, 15, 17, 0, -7, 0)
+
+	//geo grabbed (no hitbox)
+	scr_add_hurtbox(spr_geo_grabbed, 0, 0, CIRCLE, 17, 11, -6, -1, 0)
+	scr_add_hurtbox(spr_geo_grabbed, 0, 1, CIRCLE, 9, 12, -4, -6, 0)
+
+	//geo crouch (no hitbox)
+	scr_add_hurtbox(spr_geo_crouch, 0, 0, CIRCLE, 17, 11, 1, -17, 0) 
+	scr_add_hurtbox(spr_geo_crouch, 0, 1, CIRCLE, 9, 12, 1, -8, 0)
+	scr_add_hurtbox(spr_geo_crouch, 1, 0, CIRCLE, 16, 14, 0, -11, 0) 
+	scr_add_hurtbox(spr_geo_crouch, 2, 0, CIRCLE, 17, 15, 2, -11, 0) 
+	scr_add_hurtbox(spr_geo_crouch, 3, 0, CIRCLE, 17, 12, 2, -8, 0) 
+	scr_add_hurtbox(spr_geo_crouch, 4, 0, CIRCLE, 17, 11, 2, -7, 0) 
+
+	//geo crouch hold (no hitbox)
+	scr_add_hurtbox(spr_geo_crouch_hold, 0, 0, CIRCLE, 17, 11, 2, -7, 0) 
+
+	//geo crouch end (no hitbox)
+	scr_add_hurtbox(spr_geo_crouch_end, 0, 0, CIRCLE, 17, 11, 2, -7, 0) 
+	scr_add_hurtbox(spr_geo_crouch_end, 1, 0, CIRCLE, 17, 12, 2, -8, 0) 
+	scr_add_hurtbox(spr_geo_crouch_end, 2, 0, CIRCLE, 17, 15, 2, -11, 0) 
+	scr_add_hurtbox(spr_geo_crouch_end, 3, 0, CIRCLE, 16, 14, 0, -11, 0) 
+	scr_add_hurtbox(spr_geo_crouch_end, 4, 0, CIRCLE, 17, 11, 1, -17, 0) 
+	scr_add_hurtbox(spr_geo_crouch_end, 4, 1, CIRCLE, 9, 12, 1, -8, 0)
+
+	//geo grab (discontinuous hitbox)
+	scr_add_move(spr_geo_ledge_grab, 4, 0, CIRCLE, 26, 39, -16, -44, 0, 8, HOLD)
+	scr_add_move(spr_geo_ledge_grab, 5, 0, CIRCLE, 55, 28, 0, -46, 0, 8, HOLD)
+	scr_add_move(spr_geo_ledge_grab, 6, 0, CIRCLE, 20, 20, 35, -39, 0, 8, HOLD)
+	scr_add_move(spr_geo_ledge_grab, 7, 0, CIRCLE, 25, 17, 34, -23, 0, 8, HOLD)
+	scr_add_move(spr_geo_ledge_grab, 8, 0, CIRCLE, 21, 21, 29, -12, 0, 8, HOLD)
+
+	//geo grab hold (no hitbox)
+
+	//geo grab jab (single point hitbox)
+	scr_add_move(spr_geo_grab_jab, 0, 0, RECTANGLE, 1, 1, 0, 0, 0, 3, 0, 0, 0)
+	scr_add_hurtbox(spr_geo_grab_jab, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL)
+	scr_add_hurtbox(spr_geo_grab_jab, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL)
+
+	//geo throw forward (point hitbox)
+	scr_add_move(spr_geo_throw_forward, 5, 0, RECTANGLE, 1, 1, 32, -32, 0, 7, 20, 4, 2)
+
+	//geo throw up (point hitbox)
+	scr_add_move(spr_geo_throw_up, 5, 0, RECTANGLE, 1, 1, 32, -32, 0, 4, 90, 7, 5)
+
+	//geo throw down (point hitbox)
+	scr_add_move(spr_geo_throw_down, 0, 0, RECTANGLE, 1, 1, 32, -32, 0, 7, 270, 2, 7)
+
+	//geo throw back (point hitbox)
+	scr_add_move(spr_geo_throw_back, 0, 0, RECTANGLE, 1, 1, 32, -32, 0, 7, 180, 6, 5)
+
+	//geo tilt forward (discontinuous hitbox)
+	scr_add_move(spr_geo_tilt_forward, 1, 0, CIRCLE, 25, 25, -10, -16, 0, 3, OUT, 2, 3)
+	scr_add_move(spr_geo_tilt_forward, 1, 1, CIRCLE, 25, 25, 10, -16, 0, 3, OUT, 2, 3)
+	scr_add_move(spr_geo_tilt_forward, 2, 0, CIRCLE, 25, 25, -13, -16, 0, 4, OUT, 2, 3)
+	scr_add_move(spr_geo_tilt_forward, 2, 1, CIRCLE, 25, 25, 13, -16, 0, 4, OUT, 2, 3)
+	scr_add_move(spr_geo_tilt_forward, 3, 0, CIRCLE, 25, 25, 16, -16, 0, 6, OUT, 3, 3)
+	scr_add_move(spr_geo_tilt_forward, 3, 1, CIRCLE, 25, 25, -16, -16, 0, 6, OUT, 3, 3)
+	scr_add_move(spr_geo_tilt_forward, 4, 0, CIRCLE, 25, 25, 16, -16, 0, 5, OUT, 2, 3)
+	scr_add_move(spr_geo_tilt_forward, 4, 1, CIRCLE, 25, 25, -16, -16, 0, 5, OUT, 2, 3)
+
+	//geo tilt down (discontinuous hitbox, special hitboxes)
+	scr_add_hurtbox(spr_geo_tilt_down, 0, 0, CIRCLE, 17, 11, 1, -17, 0) 
+	scr_add_hurtbox(spr_geo_tilt_down, 0, 1, CIRCLE, 9, 12, 1, -8, 0)
+	scr_add_hurtbox(spr_geo_tilt_down, 1, 0, CIRCLE, 16, 14, 0, -11, 0) 
+	scr_add_hurtbox(spr_geo_tilt_down, 2, 0, CIRCLE, 17, 15, 2, -11, 0) 
+	scr_add_hurtbox(spr_geo_tilt_down, 3, 0, CIRCLE, 17, 12, 2, -8, 0) 
+	scr_add_hurtbox(spr_geo_tilt_down, 4, 0, CIRCLE, 17, 11, 2, -7, 0) 
+	scr_add_hurtbox(spr_geo_tilt_down, 5, 0, CIRCLE, 17, 11, 2, -7, 0) 
+	scr_add_hurtbox(spr_geo_tilt_down, 6, 0, CIRCLE, 17, 12, 2, -8, 0) 
+	scr_add_hurtbox(spr_geo_tilt_down, 7, 0, CIRCLE, 17, 15, 2, -11, 0) 
+	scr_add_hurtbox(spr_geo_tilt_down, 8, 0, CIRCLE, 16, 14, 0, -11, 0) 
+	scr_add_hurtbox(spr_geo_tilt_down, 9, 0, CIRCLE, 17, 11, 1, -17, 0) 
+	scr_add_hurtbox(spr_geo_tilt_down, 9, 1, CIRCLE, 9, 12, 1, -8, 0)
+	scr_add_move(spr_geo_tilt_down, 1, 0, CIRCLE, 25, 25, -10, -16, 0, 3, OUT, 2, 3)
+	scr_add_move(spr_geo_tilt_down, 1, 1, CIRCLE, 25, 25, 10, -16, 0, 3, OUT, 2, 3)
+	scr_add_move(spr_geo_tilt_down, 2, 0, CIRCLE, 25, 25, -13, -14, 0, 4, OUT, 2, 3)
+	scr_add_move(spr_geo_tilt_down, 2, 1, CIRCLE, 25, 25, 13, -14, 0, 4, OUT, 2, 3)
+	scr_add_move(spr_geo_tilt_down, 3, 0, CIRCLE, 25, 25, 16, -12, 0, 6, OUT, 3, 3)
+	scr_add_move(spr_geo_tilt_down, 3, 1, CIRCLE, 25, 25, -16, -12, 0, 6, OUT, 3, 3)
+	scr_add_move(spr_geo_tilt_down, 4, 0, CIRCLE, 25, 25, 16, -10, 0, 5, OUT, 2, 3)
+	scr_add_move(spr_geo_tilt_down, 4, 1, CIRCLE, 25, 25, -16, -10, 0, 5, OUT, 2, 3)
+
+	//geo tilt up (discontinuous hitboxes)
+	scr_add_move(spr_geo_tilt_up, 2, 0, CIRCLE, 21, 21, 29, -24, 0, 8, OUT, 3, 5)
+	scr_add_move(spr_geo_tilt_up, 3, 0, CIRCLE, 25, 17, 34, -37, 0, 8, OUT, 3, 5)
+	scr_add_move(spr_geo_tilt_up, 4, 0, CIRCLE, 20, 20, 30, -39, 0, 8, OUT, 3, 5)
+	scr_add_move(spr_geo_tilt_up, 5, 0, CIRCLE, 55, 28, 0, -46, 0, 8, OUT, 3, 5)
+	scr_add_move(spr_geo_tilt_up, 6, 0, CIRCLE, 26, 39, -16, -31, 0, 8, OUT, 3, 5)
+
+	//geo flurry (no comment)
+	for (i = 0; i < 10; i++) {
+		scr_add_move(spr_geo_flurry, i, 0, CIRCLE, 42, 44, 0, -22, 0, 1, IN, 1, 1)
+	}
+
+	//geo dash attack (discontinuous hitbox)
+	scr_add_move(spr_geo_dash_attack, 4, 0, CIRCLE, 13, 17, 25, -11, 0, 7, 45, 2, 10)
+	scr_add_move(spr_geo_dash_attack, 5, 0, CIRCLE, 13, 17, 25, -11, 0, 7, 45, 2, 10)
+	scr_add_move(spr_geo_dash_attack, 6, 0, CIRCLE, 13, 17, 25, -11, 0, 7, 45, 2, 10)
+
+	//geo aerial forward (discontinuous hitbox)
+	scr_add_move(spr_geo_aerial_forward, 4, 0, CIRCLE, 13, 17, 25, -11, 0, 9, 45, 6, 1)
+	scr_add_move(spr_geo_aerial_forward, 5, 0, CIRCLE, 13, 17, 25, -11, 0, 9, 45, 6, 1)
+	scr_add_move(spr_geo_aerial_forward, 6, 0, CIRCLE, 13, 17, 25, -11, 0, 9, 45, 6, 1)
+
+	//geo aerial up (discontinuous hitbox)
+	scr_add_move(spr_geo_aerial_up, 1, 0, RECTANGLE, 50, 40, 0, -53, 0, 1, 90, 20, 1)
+	scr_add_move(spr_geo_aerial_up, 2, 0, RECTANGLE, 50, 40, 0, -53, 0, 1, 90, 20, 1)
+	scr_add_move(spr_geo_aerial_up, 3, 0, RECTANGLE, 50, 40, 0, -53, 0, 1, 90, 20, 1)
+	scr_add_move(spr_geo_aerial_up, 4, 0, RECTANGLE, 50, 40, 0, -53, 0, 1, 90, 20, 1)
+	scr_add_move(spr_geo_aerial_up, 5, 0, RECTANGLE, 50, 40, 0, -53, 0, 1, 90, 20, 1)
+	scr_add_move(spr_geo_aerial_up, 6, 0, RECTANGLE, 50, 40, 0, -53, 0, 1, 90, 20, 1)
+	scr_add_move(spr_geo_aerial_up, 7, 0, RECTANGLE, 50, 40, 0, -53, 0, 1, 90, 20, 1)
+
+	//geo aerial down (discontinuous hitbox)
+	scr_add_move(spr_geo_aerial_down, 3, 0, CIRCLE, 20, 20, 1, 15, 0, 7, 270, 4, 1)
+	scr_add_move(spr_geo_aerial_down, 4, 0, CIRCLE, 30, 30, 1, 15, 0, 13, 270, 9, 5)
+	scr_add_move(spr_geo_aerial_down, 5, 0, CIRCLE, 30, 30, 1, 15, 0, 12, 270, 9, 5)
+	scr_add_move(spr_geo_aerial_down, 6, 0, CIRCLE, 20, 20, 1, 15, 0, 4, 270, 3, 2)
+
+	//geo aerial back (discontinuous hitbox)
+	scr_add_move(spr_geo_aerial_back, 7, 0, CIRCLE, 19, 20, -14, -12, 0, 11, 200, 3, 5)
+	scr_add_move(spr_geo_aerial_back, 8, 0, CIRCLE, 19, 20, -14, -12, 0, 11, 200, 3, 5)
+
+	//geo aerial neutral (discontinuous hitbox)
+	for (i = 4; i < 15; i++) {
+		scr_add_move(spr_geo_aerial_neutral, i, 0, CIRCLE, 45, 45, 0, -22, 0, 2, IN, 1, 2)
+	}
+
+	//geo smash forward (discontinuous hitbox)
+	scr_add_move(spr_geo_smash_forward, 2, 0, RECTANGLE, 27, 15, 20, -18, 0, 29, 340, 9, 7)
+
+	//geo smash down (discontinuous hitbox, special hurtboxes)
+	scr_add_hurtbox(spr_geo_smash_down, 0, 0, CIRCLE, 17, 11, 1, -17, 0) 
+	scr_add_hurtbox(spr_geo_smash_down, 0, 1, CIRCLE, 9, 12, 1, -8, 0)
+	scr_add_hurtbox(spr_geo_smash_down, 1, 0, CIRCLE, 16, 14, 0, -11, 0) 
+	scr_add_hurtbox(spr_geo_smash_down, 2, 0, CIRCLE, 17, 15, 2, -11, 0) 
+	scr_add_hurtbox(spr_geo_smash_down, 3, 0, CIRCLE, 17, 12, 2, -8, 0) 
+	scr_add_hurtbox(spr_geo_smash_down, 4, 0, CIRCLE, 17, 11, 2, -7, 0) 
+	for (i = 5; i < 15; i++) {
+		scr_add_hurtbox(spr_geo_smash_down, i, 0, CIRCLE, 17, 11, 2, -7, 0) 
+	}
+	scr_add_hurtbox(spr_geo_smash_down, 15, 0, CIRCLE, 17, 11, 2, -7, 0) 
+	scr_add_hurtbox(spr_geo_smash_down, 16, 0, CIRCLE, 17, 12, 2, -8, 0) 
+	scr_add_hurtbox(spr_geo_smash_down, 17, 0, CIRCLE, 17, 15, 2, -11, 0) 
+	scr_add_hurtbox(spr_geo_smash_down, 18, 0, CIRCLE, 16, 14, 0, -11, 0) 
+	scr_add_hurtbox(spr_geo_smash_down, 19, 0, CIRCLE, 17, 11, 1, -17, 0) 
+	scr_add_hurtbox(spr_geo_smash_down, 19, 1, CIRCLE, 9, 12, 1, -8, 0)
+	for (i = 0; i < 2; i++) {
+		scr_add_move(spr_geo_smash_down, 4 + i*6, 0, CIRCLE, 28, 21, -23, -10, 0, 23, IN, 5, 8)
+		scr_add_move(spr_geo_smash_down, 4 + i*6, 1, CIRCLE, 28, 21, 23, -10, 0, 23, IN, 5, 8)
+		scr_add_move(spr_geo_smash_down, 5 + i*6, 0, RECTANGLE, 55, 13, 1, -5, 0, 23, IN, 5, 8)
+		scr_add_move(spr_geo_smash_down, 6 + i*6, 0, RECTANGLE, 41, 13, 1, -5, 0, 23, OUT, 5, 8)
+		scr_add_move(spr_geo_smash_down, 7 + i*6, 0, RECTANGLE, 55, 13, 1, -5, 0, 23, OUT, 5, 8)
+		scr_add_move(spr_geo_smash_down, 8 + i*6, 0, CIRCLE, 28, 21, 23, -10, 0, 23, OUT, 5, 8)
+		scr_add_move(spr_geo_smash_down, 8 + i*6, 1, CIRCLE, 28, 21, -23, -10, 0, 23, OUT, 5, 8)
+	}
+
+	//geo smash up (discontinuous hitboxes)
+	scr_add_move(spr_geo_smash_up, 3, 0, RECTANGLE, 27, 29, 1, -37, 0, 10, 90, 4, 12)
+	scr_add_move(spr_geo_smash_up, 4, 0, RECTANGLE, 33, 42, 1, -42, 0, 20, 90, 6, 6)
+	scr_add_move(spr_geo_smash_up, 5, 0, RECTANGLE, 36, 65, 0, -54, 0, 30, 90, 8, 2)
+	scr_add_move(spr_geo_smash_up, 6, 0, RECTANGLE, 38, 75, 0, -60, 0, 40, 90, 10, 1)
+
+	//geo special forward (discontinuous hitbox)
+	scr_add_move(spr_geo_special_forward, 1, 0, CIRCLE, 5, 6, 30, -18, 0, 0, 0, 6, 4)
+	scr_add_move(spr_geo_special_forward, 2, 0, CIRCLE, 14, 14, 38, -19, 0, 0, 0, 8, 4)
+	scr_add_move(spr_geo_special_forward, 3, 0, CIRCLE, 21, 23, 45, -23, 0, 0, 0, 10, 4)
+	scr_add_move(spr_geo_special_forward, 4, 0, CIRCLE, 25, 23, 52, -22, 0, 0, 0, 10, 4)
+	scr_add_move(spr_geo_special_forward, 5, 0, CIRCLE, 17, 17, 59, -24, 0, 0, 0, 10, 4)
+	scr_add_move(spr_geo_special_forward, 6, 0, CIRCLE, 10, 11, 63, -24, 0, 0, 0, 8, 4)
+	scr_add_move(spr_geo_special_forward, 7, 0, CIRCLE, 6, 5, 67, -25, 0, 0, 0, 6, 4)
+
+	//geo special down (sustain only has hitbox)
+	for (i = 0; i < 5; i++) {
+		scr_add_move(spr_geo_special_down_sustain, i, 0, CIRCLE, 42, 40, 0, -19, 0, 3, IN, 3, 2)	
+	}
+
+	//geo special up (discontinuous hitbox)
+	scr_add_move(spr_geo_special_up, 6, 0, RECTANGLE, 42, 40, 0, -20, 0, 4, 270, 30, -5)
+
+	//geo special neutral (no hitbox)
+#endregion GEOS
+
+#region ETH 186 lines
+//eth general hurtbox
+for (i = spr_eth_idle; i <= spr_eth_special_neutral; i++) { //for the range of geo sprites
+	if (i = spr_eth_shield) { i = spr_eth_throw_forward } //avoid this range of sprites [min, max)
+	for (o = 0; o < sprite_get_number(i); o++) { //for every frame
+		scr_add_hurtbox(i, o, 0, RECTANGLE, 11, 21, 0, scr_triangle_wave(2, 8, 4.5, -31.5, i), 0) //add the top hurtbox
+	}
+}
+
+//eth air dodge (no hitbox, no hurtbox)
+scr_add_hurtbox(spr_eth_air_dodge, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL)
+
+//eth land (no hitbox)
+scr_add_hurtbox(spr_eth_land, 0, 0, RECTANGLE, 11, 21, 0, -30, 0)
+scr_add_hurtbox(spr_eth_land, 1, 0, RECTANGLE, 11, 21, 0, -29, 0)
+scr_add_hurtbox(spr_eth_land, 2, 0, RECTANGLE, 11, 21, 0, -28, 0)
+
+//eth shield (no hitbox)
+scr_add_hurtbox(spr_eth_shield, 0, 0, RECTANGLE, 11, 21, 0, -28, 0)
+scr_add_hurtbox(spr_eth_shield, 1, 0, RECTANGLE, 11, 21, 0, -26, 0)
+scr_add_hurtbox(spr_eth_shield, 2, 0, RECTANGLE, 11, 21, 0, -22, 0)
+scr_add_hurtbox(spr_eth_shield, 3, 0, RECTANGLE, 11, 21, 0, -17, 0)
+scr_add_hurtbox(spr_eth_shield, 4, 0, RECTANGLE, 11, 21, 0, -16, 0)
+scr_add_hurtbox(spr_eth_shield, 5, 0, RECTANGLE, 11, 21, 0, -16, 0)
+scr_add_hurtbox(spr_eth_shield, 6, 0, RECTANGLE, 11, 21, 0, -16, 0)
+
+//eth hold shield(no hitbox)
+scr_add_hurtbox(spr_eth_hold_shield, 0, 0, RECTANGLE, 11, 21, 0, -16, 0)
+scr_add_hurtbox(spr_eth_hold_shield, 1, 0, RECTANGLE, 11, 21, 0, -16, 0)
+scr_add_hurtbox(spr_eth_hold_shield, 2, 0, RECTANGLE, 11, 21, 0, -16, 0)
+scr_add_hurtbox(spr_eth_hold_shield, 3, 0, RECTANGLE, 11, 21, 0, -16, 0)
+scr_add_hurtbox(spr_eth_hold_shield, 4, 0, RECTANGLE, 11, 21, 0, -16, 0)
+
+//eth un shield (no hitbox)
+scr_add_hurtbox(spr_eth_un_shield, 0, 0, RECTANGLE, 11, 21, 0, -16, 0)
+scr_add_hurtbox(spr_eth_un_shield, 1, 0, RECTANGLE, 11, 21, 0, -16, 0)
+scr_add_hurtbox(spr_eth_un_shield, 2, 0, RECTANGLE, 11, 21, 0, -16, 0)
+scr_add_hurtbox(spr_eth_un_shield, 3, 0, RECTANGLE, 11, 21, 0, -17, 0)
+scr_add_hurtbox(spr_eth_un_shield, 4, 0, RECTANGLE, 11, 21, 0, -22, 0)
+scr_add_hurtbox(spr_eth_un_shield, 5, 0, RECTANGLE, 11, 21, 0, -26, 0)
+scr_add_hurtbox(spr_eth_un_shield, 6, 0, RECTANGLE, 11, 21, 0, -28, 0)
+
+//eth roll (no hitbox, discontinuous hurtbox)
+scr_add_hurtbox(spr_eth_roll, 0, 0, RECTANGLE, 11, 21, 0, -16, 0)
+scr_add_hurtbox(spr_eth_roll, 9, 0, RECTANGLE, 11, 21, 0, -28, 0)
+
+//eth dodge (no hitbox, discontinuous hurtbox)
+scr_add_hurtbox(spr_eth_roll, 0, 0, RECTANGLE, 11, 21, 0, -16, 0)
+scr_add_hurtbox(spr_eth_roll, 9, 0, RECTANGLE, 11, 21, 0, -16, 0)
+
+//eth ledge (no hitbox)
+for (i = 0; i < 7; i++) {
+	scr_add_hurtbox(spr_eth_ledge, i, 0, RECTANGLE, 11, 21, -15, 21, 0)	
+}
+
+//eth ledge hold (no hitbox, no hurtbox)
+
+//eth ledge roll (no hitbox, discontinuous hurtbox)
+scr_add_hurtbox(spr_eth_ledge_roll, 0, 0, RECTANGLE, 11, 21, -15, 21, 0)
+scr_add_hurtbox(spr_eth_ledge_roll, 9, 0, RECTANGLE, 11, 21, 110, -28, 0)
+
+//eth ledge jump (no hitbox, no hurtbox)
+
+//eth ledge grab (no hurtbox, discontinuous hitbox)
+scr_add_move(spr_eth_ledge_grab, 4, 0, CIRCLE, 5, 5, 15, -23, 0, 3, HOLD)
+scr_add_move(spr_eth_ledge_grab, 5, 0, CIRCLE, 5, 5, 25, -23, 0, 3, HOLD)
+scr_add_move(spr_eth_ledge_grab, 6, 0, CIRCLE, 5, 5, 38, -23, 0, 3, HOLD)
+scr_add_move(spr_eth_ledge_grab, 7, 0, CIRCLE, 5, 5, 48, -23, 0, 3, HOLD)
+scr_add_move(spr_eth_ledge_grab, 8, 0, CIRCLE, 5, 5, 58, -23, 0, 3, HOLD)
+
+//eth ledge attack (no hurtbox, discontinuous hitbox)
+scr_add_move(spr_eth_ledge_attack, 7, 0, CIRCLE, 22, 4, 33, -24, 30, 7, 200, 4, 6)
+scr_add_move(spr_eth_ledge_attack, 8, 0, CIRCLE, 38, 15, 24, -21, 30, 7, 200, 4, 6)
+scr_add_move(spr_eth_ledge_attack, 9, 0, CIRCLE, 21, 12, 30, -23, 30, 7, 200, 4, 6)
+
+//eth hurt up (no hitbox)
+scr_add_hurtbox(spr_eth_hurt_up, 0, 0, RECTANGLE, 11, 21, 0, -26, 0)
+
+//eth hurt side (no hitbox)
+scr_add_hurtbox(spr_eth_hurt_side, 0, 0, RECTANGLE, 11, 21, 0, -26, 0)
+
+//eth hurt down (no hitbox)
+scr_add_hurtbox(spr_eth_hurt_down, 0, 0, RECTANGLE, 21, 11, -5, -9, 0)
+
+//eth grabbed (no hitbox)
+scr_add_hurtbox(spr_eth_grabbed, 0, 0, RECTANGLE, 11, 21, 0, -26, 0)
+
+//eth taunt (no hitbox, no hurtbox)
+
+//eth platform, laser, grab, grab hold, are not hitboxes, but objects so are omitted
+
+//eth grab jab (no hurtbox, point hitbox)
+scr_add_move(spr_eth_grab_jab, 4, 0, RECTANGLE, 1, 1, 0, 0, 0, 6, 0, 0, 0)
+
+//eth throws are handled by eths grab oject
+
+//eth aerial forward (single hitbox, hurtbox already handled)
+scr_add_move(spr_eth_aerial_forward, 9, 0, CIRCLE, 19, 19, 29, -32, 0, 8, 0, 3, 2)
+scr_add_move(spr_eth_aerial_forward, 9, 1, CIRCLE, 1, , 29, -32, 0, 8, 0, 3, 2)
+
+//eth aerial down (single hitbox, hurtbox already handled)
+scr_add_move(spr_eth_aerial_down, 9, 0, CIRCLE, 19, 19, -2, -2, 0, 8, 270, 3, 2)
+scr_add_move(spr_eth_aerial_down, 9, 1, CIRCLE, 1, 1, -2, -2, 0, 8, 270, 3, 2)
+
+//eth aerial up (single hitbox, hurtbox already handled)
+scr_add_move(spr_eth_aerial_up, 9, 0, CIRCLE, 19, 19, 1, -46, 0, 8, 90, 3, 2)
+scr_add_move(spr_eth_aerial_up, 9, 1, CIRCLE, 1, 1, 1, -46, 0, 8, 90, 3, 2)
+
+//eth aerial back (single hitbox, hurtbox already handled)
+scr_add_move(spr_eth_aerial_back, 9, 0, CIRCLE, 19, 19, -15, -22, 0, 8, 180, 3, 2)
+scr_add_move(spr_eth_aerial_back, 9, 1, CIRCLE, 1, 1, -15, -22, 0, 8, 180, 3, 2)
+
+//eth aerial neutral (single hitbox, hurtbox already handled)
+scr_add_move(spr_eth_aerial_neutral, 9, 0, CIRCLE, 19, 19, -26, -59, 0, 8, OUT, 3, 2)
+scr_add_move(spr_eth_aerial_neutral, 9, 1, CIRCLE, 19, 19, 24, 6, 0, 8, OUT, 3, 2)
+scr_add_move(spr_eth_aerial_neutral, 9, 2, CIRCLE, 19, 19, -27, 6, 0, 8, OUT, 3, 2)
+scr_add_move(spr_eth_aerial_neutral, 9, 3, CIRCLE, 19, 19, 23, -59, 0, 8, OUT, 3, 2)
+
+//eth smash forward (discontinuous hitbox)
+scr_add_move(spr_eth_smash_forward, 3, 0, CIRCLE, 22, 4, 23, -25, -30, 27, 200, 14, 6)
+scr_add_move(spr_eth_smash_forward, 4, 0, CIRCLE, 38, 15, 33, -21, -30, 27, 200, 14, 6)
+scr_add_move(spr_eth_smash_forward, 5, 0, CIRCLE, 21, 12, 28, -23, -30, 27, 200, 14, 6)
+
+//eth smash down (discontinuous hitbox, special hurtbox)
+scr_add_hurtbox(spr_eth_smash_down, 0, 0, RECTANGLE, 11, 21, 0, -28, 0)
+scr_add_hurtbox(spr_eth_smash_down, 1, 0, RECTANGLE, 11, 21, 0, -26, 0)
+scr_add_hurtbox(spr_eth_smash_down, 2, 0, RECTANGLE, 11, 21, 0, -22, 0)
+scr_add_hurtbox(spr_eth_smash_down, 3, 0, RECTANGLE, 11, 21, 0, -17, 0)
+scr_add_hurtbox(spr_eth_smash_down, 4, 0, RECTANGLE, 11, 21, 0, -16, 0)
+scr_add_hurtbox(spr_eth_smash_down, 5, 0, RECTANGLE, 11, 21, 0, -16, 0)
+scr_add_hurtbox(spr_eth_smash_down, 6, 0, RECTANGLE, 11, 21, 0, -16, 0)
+scr_add_hurtbox(spr_eth_smash_down, 7, 0, RECTANGLE, 11, 21, 0, -16, 0)
+scr_add_hurtbox(spr_eth_smash_down, 8, 0, RECTANGLE, 11, 21, 0, -16, 0)
+scr_add_hurtbox(spr_eth_smash_down, 9, 0, RECTANGLE, 11, 21, 0, -16, 0)
+scr_add_hurtbox(spr_eth_smash_down, 10, 0, RECTANGLE, 11, 21, 0, -17, 0)
+scr_add_hurtbox(spr_eth_smash_down, 11, 0, RECTANGLE, 11, 21, 0, -22, 0)
+scr_add_hurtbox(spr_eth_smash_down, 12, 0, RECTANGLE, 11, 21, 0, -26, 0)
+scr_add_hurtbox(spr_eth_smash_down, 13, 0, RECTANGLE, 11, 21, 0, -28, 0)
+scr_add_move(spr_eth_smash_down, 6, 0, CIRCLE, 22, 4, -12, -13, 30, 29, OUT, 5, 8)
+scr_add_move(spr_eth_smash_down, 6, 1, CIRCLE, 22, 4, 34, -13, -30, 29, OUT, 5, 8)
+scr_add_move(spr_eth_smash_down, 7, 0, CIRCLE, 38, 15, -22, -10, 30, 29, OUT, 5, 8)
+scr_add_move(spr_eth_smash_down, 7, 1, CIRCLE, 38, 15, 44, -10, -30, 29, OUT, 5, 8)
+scr_add_move(spr_eth_smash_down, 8, 0, CIRCLE, 21, 12, -17, -13, 30, 29, OUT, 5, 8)
+scr_add_move(spr_eth_smash_down, 8, 1, CIRCLE, 21, 12, 39, -13, -30, 29, OUT, 5, 8)
+
+//eth smash up (special hurtbox, discontinuous hitbox)
+scr_add_hurtbox(spr_eth_smash_up, 0, 0, RECTANGLE, 11, 21, 0, -28, 0)
+scr_add_hurtbox(spr_eth_smash_up, 1, 0, RECTANGLE, 11, 21, 0, -26, 0)
+scr_add_hurtbox(spr_eth_smash_up, 2, 0, RECTANGLE, 11, 21, 0, -22, 0)
+scr_add_hurtbox(spr_eth_smash_up, 3, 0, RECTANGLE, 11, 21, 0, -17, 0)
+for (i = 4; i < 15; i++) {
+	scr_add_hurtbox(spr_eth_smash_up, i, 0, RECTANGLE, 11, 21, 0, 4 - i*5, 0)
+	scr_add_move(spr_eth_smash_up, i, 0, RECTANGLE, 100, 3, 0, i*5 - 20, 0, 10, 90, 2, 5)
+}
+scr_add_hurtbox(spr_eth_smash_up, 15, 0, RECTANGLE, 11, 21, 0, -80, 0)
+scr_add_hurtbox(spr_eth_smash_up, 16, 0, RECTANGLE, 11, 21, 0, -90, 0)
+scr_add_hurtbox(spr_eth_smash_up, 17, 0, RECTANGLE, 11, 21, 0, -96, 0)
+
+//eth special forward (removes some hurtboxes, discontinuous hitboxes)
+for (i = 1; i < 10; i++) {
+	scr_add_hurtbox(spr_eth_special_forward, i, 0, NULL, NULL, NULL, NULL, NULL, NULL)	
+}
+scr_add_move(spr_eth_special_forward, 0, 0, RECTANGLE, 11, 21, 0, -27, 0, 10, OUT, 2, 5)
+scr_add_move(spr_eth_special_forward, 10, 0, RECTANGLE, 11, 21, 0, -27, 0, 10, OUT, 2, 5)
+
+//eth special down (hitboxes handled in other code, hurtboxes changed
+scr_add_hurtbox(spr_eth_smash_down, 0, 0, RECTANGLE, 11, 21, 0, -28, 0)
+scr_add_hurtbox(spr_eth_smash_down, 1, 0, RECTANGLE, 11, 21, 0, -26, 0)
+scr_add_hurtbox(spr_eth_smash_down, 2, 0, RECTANGLE, 11, 21, 0, -22, 0)
+scr_add_hurtbox(spr_eth_smash_down, 3, 0, RECTANGLE, 11, 21, 0, -17, 0)
+scr_add_hurtbox(spr_eth_smash_down, 4, 0, RECTANGLE, 11, 21, 0, -17, 0)
+scr_add_hurtbox(spr_eth_smash_down, 5, 0, RECTANGLE, 11, 21, 0, -22, 0)
+scr_add_hurtbox(spr_eth_smash_down, 6, 0, RECTANGLE, 11, 21, 0, -26, 0)
+scr_add_hurtbox(spr_eth_smash_down, 7, 0, RECTANGLE, 11, 21, 0, -28, 0)
+
+//eth special up (special hurtboxes, discontinuous hitboxes)
+for (i = 0; i < 17; i++) {
+	scr_add_hurtbox(spr_eth_smash_down, i, 0, RECTANGLE, 11, 21, 0, -28, 0)
+	if ((i mod 11) > 5) {
+		scr_add_move(spr_eth_smash_down, i, 0, RECTANGLE, 11, 40, 0, -24, 0, 8, DIR, 3, 5)		
+	}
+}
+
+//eth special neutral (hitbox object handled in other code, no new hurtbox)
+
+#endregion
+
+#endregion that took forever, probably create a tool for making hitboxes if any more characters are added.
+
+
+//add any patches down here so that they can be turned off or on for replays (add them in a script)

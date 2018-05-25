@@ -2,55 +2,58 @@
 draw_set_font(fnt_pixel_large)
 
 
+
 //redo and implement this shape rotation code into hitboxes, also draw all shapes of a similiar rotation together
+
 if (character = "bal"){
-
-if (alarm[1] > 0) {
-	if (alarm[0] > 0) {
-		_centre_x = 500
-		_centre_y = 300
-		_maj = 100
-		_min = 25
-		_angle = 45
+	if (alarm[1] > 0) {
+		if (alarm[0] > 0) {
+			_centre_x = 500
+			_centre_y = 300
+			_maj = 100
+			_min = 25
+			_angle = 45
+		}
+	} else {
+	_centre_x = 200 + irandom(200)
+	_centre_y = 200 + irandom(200)	
+	_maj = 10 + irandom(200)
+	_min = 10 + irandom(200)
+	alarm[1] = room_speed*3
+	_angle = 75
 	}
-} else {
-_centre_x = 200 + irandom(200)
-_centre_y = 200 + irandom(200)	
-_maj = 10 + irandom(200)
-_min = 10 + irandom(200)
-alarm[1] = room_speed*3
-_angle = irandom(180) - 90
+	_angle += 1
+	//_angle = 90
+_maj = _min
+	var _len = 20
+
+	var _x = _centre_x
+	var _y = _centre_y
+
+	draw_set_colour(c_red)
+	draw_ellipse(_x - _maj, _y - _min, _x + _maj, _y + _min, true)
+
+	draw_set_colour(c_black)
+	draw_circle(_x, _y, 5, true)
+
+
+	var _mat = matrix_build(0, 0, 0, 0, 0, _angle, 1, 1, 1)
+	_angle = degtorad(_angle)
+	matrix_set(matrix_world, _mat)
+	draw_set_colour(c_blue)
+
+	_x = (_centre_x)*cos(_angle) - (_centre_y)*sin(_angle)
+	_y = (_centre_x)*sin(_angle) + (_centre_y)*cos(_angle)
+	draw_ellipse(_x - _maj, _y - _min, _x + _maj, _y + _min, true)
+	draw_set_colour(c_white)
+	draw_circle(_x, _y, 5, true)
+
+	_mat = matrix_build_identity()
+	matrix_set(matrix_world, _mat)
+
+	_angle = radtodeg(_angle)
 }
-_angle += 5
 
-var _len = 20
-
-var _x = _centre_x
-var _y = _centre_y
-
-draw_set_colour(c_red)
-draw_ellipse(_x - _maj, _y - _min, _x + _maj, _y + _min, true)
-
-draw_set_colour(c_black)
-draw_circle(_x, _y, 3, true)
-
-
-var _mat = matrix_build(0, 0, 0, 0, 0, _angle, 1, 1, 1)
-_angle = degtorad(_angle)
-matrix_set(matrix_world, _mat)
-draw_set_colour(c_blue)
-
-_x = (_centre_x)*cos(_angle) - (_centre_y)*sin(_angle)
-_y = (_centre_x)*sin(_angle) + (_centre_y)*cos(_angle)
-draw_ellipse(_x - _maj, _y - _min, _x + _maj, _y + _min, true)
-draw_set_colour(c_white)
-draw_circle(_x, _y, 5, true)
-
-_mat = matrix_build_identity()
-matrix_set(matrix_world, _mat)
-
-_angle = radtodeg(_angle)
-}
 
 
 if (character = "eth") {
@@ -70,9 +73,10 @@ if(keyboard_check(ord("A"))) {
 	draw_sprite_ext(sprite_shield_ball, draw_count, x, y - _y, image_xscale, image_yscale, draw_count, c_white, 0.5)
 }
 
-draw_set_colour(c_red)
+draw_set_colour(c_blue)
+draw_set_alpha(0.5)
 
-if (character = "bal") {
+if (((character = "bal") or (character = "mac") or (character = "geo")) and (sprite_exists(sprite_index))) {
 	var j = 0
 	do {
 		var i = sprite_index
@@ -123,3 +127,4 @@ if (character = "bal") {
 }
 
 draw_set_colour(c_white)
+draw_set_alpha(1)

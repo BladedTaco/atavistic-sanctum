@@ -1,3 +1,6 @@
 Global variables are defined in the macros script, and therefore it must be called by the first object created
 network type is udp by default, but can be switched to tcp in the macros script
 for WAN play port forwarding must be used. This is sub-optimal but no server can be hosted.
+
+hitstun from attacks is based on knockback of move * damage of move * character multiplier,
+the hitstun character value can be changed based off of moves, eg geos n-special

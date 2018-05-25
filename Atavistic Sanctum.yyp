@@ -1407,6 +1407,14 @@
             }
         },
         {
+            "Key": "7c25f9b7-0ccd-4ea5-93d1-c18226954384",
+            "Value": {
+                "id": "c4321b5a-4da5-497a-aa58-34e1efd99a61",
+                "resourcePath": "scripts\\scr_triangle_wave\\scr_triangle_wave.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "7c3f4262-9332-4786-b438-68eb589fac2a",
             "Value": {
                 "id": "bb34e4f1-6ee6-490e-a9a7-64de156d4008",
@@ -2910,7 +2918,8 @@
         "7492d33a-15cf-4a45-adf1-c2db28187ab9",
         "d978f643-6bc3-472b-ab48-37416c6437ec",
         "c786f13f-7553-4055-bb66-57779440e85c",
-        "65131081-a43b-4f41-83e1-c549c13007b3"
+        "65131081-a43b-4f41-83e1-c549c13007b3",
+        "7c25f9b7-0ccd-4ea5-93d1-c18226954384"
     ],
     "tutorial": ""
 }
