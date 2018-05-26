@@ -14,7 +14,6 @@
 ///@param scaling - the scaling knockback of the move
 ///@desc creates a move and its hitboxes with the given information based on a sprite index and image index
 
-if (argument[3] = NULL) { exit } //if there is no hitbox, exit script
 
 var i = argument[0]							//first element of array
 var o = argument[1]*100	+ argument[2]*10	//second element of array (mostly)

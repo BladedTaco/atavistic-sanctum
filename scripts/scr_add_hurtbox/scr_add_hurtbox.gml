@@ -10,7 +10,6 @@
 ///@param rotation - the rotation of the hurtbox (default is major axis is x, minor is y)
 ///@desc creates the hurtboxes for a move with the given information based on a sprite index and image index
 
-if (argument[3] = NULL) { exit } //if there is no hurtbox, exit script
 
 var i = argument[0]							//first element of array
 var o = argument[1]*100	+ argument[2]*10	//second element of array (mostly)

@@ -1,9 +1,6 @@
 /// @description Define game constants (macros) and global scope variable (globals)
 
 
-for (var i = 0; i < 20; i++) {
-	show_debug_message("(" + string(i) + ", " + string(scr_triangle_wave(2, 8, 4.5, -31.5, i)) + ")")
-}
 //macros
 
 //settings
@@ -90,7 +87,6 @@ for (var i = 0; i < 20; i++) {
 #macro IN 361 //direction towards centre
 #macro OUT 362 //direction away from centre
 #macro DIR 363 //direction image angle
-#macro REL 364 //direction relative
 #macro HOLD 365, 365, 365 //direction irrelevant, its a grab
 
 

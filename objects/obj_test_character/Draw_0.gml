@@ -76,7 +76,7 @@ if(keyboard_check(ord("A"))) {
 draw_set_colour(c_blue)
 draw_set_alpha(0.5)
 
-if (((character = "bal") or (character = "mac") or (character = "geo")) and (sprite_exists(sprite_index))) {
+if (sprite_exists(sprite_index)) {
 	var j = 0
 	do {
 		var i = sprite_index
