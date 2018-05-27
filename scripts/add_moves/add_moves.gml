@@ -1070,9 +1070,9 @@ var i = 0 //variable created now for use in loops below if hurtboxes or hitboxes
 	//mac special up (discontinuous hitboxes)
 	for (i = 0; i < 16; i++) {
 		scr_add_hurtbox(spr_mac_special_up, i, 0, RECTANGLE, 12, 16, 1, -21, 0)	
-		scr_add_move(spr_mac_special_up, i, 0, CIRCLE, 24, 32, 1, -21, 0, 2, DIR, 2, 1)
+		scr_add_move(spr_mac_special_up, i, 0, CIRCLE, 24, 32, 1, -21, DIR, 2, DIR, 2, 1)
 	}
-	scr_add_move(spr_mac_special_up, 15, 0, CIRCLE, 28, 36, 1, -21, 0, 6, DIR, 5, 9) //overwrite
+	scr_add_move(spr_mac_special_up, 15, 0, CIRCLE, 28, 36, 1, -21, DIR, 6, DIR, 5, 9) //overwrite
 	scr_add_hurtbox(spr_mac_special_up, 16, 0, RECTANGLE, 12, 16, 1, -21, 0)	
 	scr_add_hurtbox(spr_mac_special_up, 17, 0, RECTANGLE, 12, 16, 1, -21, 0)	
 	scr_add_hurtbox(spr_mac_special_up, 18, 0, RECTANGLE, 12, 16, 1, -21, 0)	

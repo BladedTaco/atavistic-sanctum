@@ -207,6 +207,14 @@
             }
         },
         {
+            "Key": "0bc7cdbb-2f97-4d01-9864-403fecad55e2",
+            "Value": {
+                "id": "04d76aec-4eb8-4af9-b614-45e5682c63da",
+                "resourcePath": "sprites\\spr_portrait_4\\spr_portrait_4.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "0cee7d11-97fd-467a-ac6d-0e14f3615a7e",
             "Value": {
                 "id": "001fe336-e1bf-44fe-875c-9e9fcea6b431",
@@ -380,6 +388,14 @@
                 "id": "f8cf5490-9af2-4d45-a917-b076b1a5da0f",
                 "resourcePath": "sprites\\spr_geo_aerial_forward\\spr_geo_aerial_forward.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "1a8c4a98-63d5-4c56-b729-0aacb9d1ee95",
+            "Value": {
+                "id": "84c924ab-4db4-4ca2-8b75-b83e358c10c5",
+                "resourcePath": "scripts\\scr_draw_hitboxes\\scr_draw_hitboxes.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -2159,6 +2175,14 @@
             }
         },
         {
+            "Key": "bbcab5ea-045c-455f-8648-f655f6edea9c",
+            "Value": {
+                "id": "d21fc69e-6b18-43cb-b81d-c0326b863323",
+                "resourcePath": "sprites\\spr_portrait_4_cropped\\spr_portrait_4_cropped.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "bc16dbd5-c262-42e8-8d53-de99c6185a82",
             "Value": {
                 "id": "9f63a3ca-1a33-47fb-90f2-bfa75823802e",
@@ -2935,7 +2959,8 @@
         "d978f643-6bc3-472b-ab48-37416c6437ec",
         "c786f13f-7553-4055-bb66-57779440e85c",
         "65131081-a43b-4f41-83e1-c549c13007b3",
-        "7c25f9b7-0ccd-4ea5-93d1-c18226954384"
+        "7c25f9b7-0ccd-4ea5-93d1-c18226954384",
+        "1a8c4a98-63d5-4c56-b729-0aacb9d1ee95"
     ],
     "tutorial": ""
 }
