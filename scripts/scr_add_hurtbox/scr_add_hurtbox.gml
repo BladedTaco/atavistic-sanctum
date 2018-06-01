@@ -12,7 +12,7 @@
 
 
 var i = argument[0]							//first element of array
-var o = argument[1]*100	+ argument[2]*10	//second element of array (mostly)
+var o = argument[1]*100	+ argument[2]*11	//second element of array (mostly)
 
 global.hurtbox[i, o + 0] = argument[3]		//shape
 global.hurtbox[i, o + 1] = argument[4]		//major axis

@@ -4,30 +4,26 @@
 draw_set_alpha(0.5) //set draw alpha to 1/2
 
 //define variables
-var _x, _y, _maj, _min, i, o, _mat, _dir, _xy, _array, col_hurt, col_hit
+var _x, _y, _maj, _min, i, o, _mat, _dir, _xy, _array
 _mat = matrix_build_identity()
-col_hurt = c_lime
-col_hit = c_blue
 
-var _surf = argument[0]
-
-repeat (2) { //repeat for hitbox and hurtbox
-	switch (draw_get_colour()) { //check draw colour
-		case col_hurt: //hurtboxes last drawn
-			draw_set_colour(col_hit) //set draw colour for hitboxes
-			_array = global.hitbox
-		break;
+with (obj_test_character) { //for each character (TODO change this when proper characters are in)
+	i = sprite_index //get arrays first entry
+	if (sprite_exists(i)) { //if there is a sprite to draw hitboxes for
+		o = floor(image_index)*100 //get arrays second entry
+		repeat (2) { //repeat for hitbox and hurtbox
+				switch (draw_get_colour()) { //check draw colour
+					case c_blue: //hurtboxes last drawn
+						draw_set_colour(c_lime) //set draw colour for hitboxes
+						_array = global.hitbox
+					break;
 		
-		default: //hitboxes last drawn, or first run through
-			draw_set_colour(col_hurt) //set draw colour for hurtboxes
-			_array = global.hurtbox
-		break;
-	}
-
-	with (obj_test_character) { //for each character (TODO change this when proper characters are in)
-		i = sprite_index //get arrays first entry
-		if (sprite_exists(i)) { //if there is a sprite to draw hitboxes for
-			o = floor(image_index)*100 //get arrays second entry
+					default: //hitboxes last drawn, or first run through
+						draw_set_colour(c_blue) //set draw colour for hurtboxes
+						_array = global.hurtbox
+					break;
+				}
+	
 			while (_array[i, o] != NULL) { //for every hitbox
 	
 				//get parameters
@@ -66,12 +62,6 @@ repeat (2) { //repeat for hitbox and hurtbox
 					_mat = matrix_build_identity() //build identity matrix
 					matrix_set(matrix_world, _mat) //set the world matrix to identity
 				}
-				
-				//if (draw_get_colour() = col_hurt) {
-					scr_check_collision(_array[i, o], _maj, _min, _x, _y, _dir)
-			
-				//}
-				
 				o += 11 //increment o to check for multiple hitboxes on a single frame
 			}
 			o = floor(image_index)*100 //reset o to redo loop for hitboxes
@@ -79,10 +69,3 @@ repeat (2) { //repeat for hitbox and hurtbox
 	}
 }
 draw_set_alpha(1) //reset draw alpha
-
-
-
-
-
-
-

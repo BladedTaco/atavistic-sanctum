@@ -7,6 +7,8 @@ last_y = 0
 last_x2 = 0
 last_y2 = 0
 
+surf = surface_create(2048, 2048)
+
 grounded = false
 dash = 1
 

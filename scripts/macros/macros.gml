@@ -109,6 +109,23 @@ global.player_number = 0
 global.local_players = 1
 global.wait = false
 
+//variables used to pass in info for a bbox's create event
+global.bbox_maj = 0
+global.bbox_min = 0
+global.bbox_dir = 0
+global.bbox_shape = CIRCLE
+
+
+global.num = 0
+
+global.coll[0] = 0
+global.coll[1] = 0
+global.coll[2] = 0
+global.coll[3] = 0
+global.coll[4] = 0
+global.coll[5] = 0
+global.coll[6] = 0
+global.coll[7] = 0
 
 //enums
 enum _IMPULSE { //define an impulse enumeration field

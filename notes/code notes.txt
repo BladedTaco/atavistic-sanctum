@@ -4,3 +4,5 @@ for WAN play port forwarding must be used. This is sub-optimal but no server can
 
 hitstun from attacks is based on knockback of move * damage of move * character multiplier,
 the hitstun character value can be changed based off of moves, eg geos n-special
+
+rectangle rectangle collision value is only true for !creator
