@@ -1,5 +1,5 @@
 /// @description 
-
+draw_text_normal(200, 200, string(shape))
 if !(creator) {
 if (col > 0) {
 	draw_text_normal(100, 100, "COLLIDING")	

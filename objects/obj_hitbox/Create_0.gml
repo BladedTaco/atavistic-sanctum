@@ -1,5 +1,5 @@
 /// @description 
-alarm[0] = 3
+alarm[0] = 2
 _maj = global.bbox_maj
 _min = global.bbox_min
 _dir = global.bbox_dir
@@ -33,6 +33,7 @@ _y[3] = bb[0]*sin(_dir) + bb[3]*cos(_dir)
 
 if (instance_number(obj_hitbox) = 1) {
 	creator = false	
+	shape = CIRCLE
 } else {
 	creator = true	
 }

@@ -15,6 +15,7 @@ with (obj_hitbox) {
 						case CIRCLE:
 							//rectangle circle collision
 							other.col = scr_col_cir_rec(id, other.id)
+							_id = id
 						break;
 						
 						case RECTANGLE:
@@ -45,16 +46,14 @@ if (shape = CIRCLE) {
 		global.coll[col] += 1
 		colled = true
 		//do expensive collision check
-		/*
-		if (instance_exists(_id) and (col = 6)) {
+		if (instance_exists(_id) and (col >= 6)) {
 			for (var i = bb[0]; i <= bb[2]; i++) {
 				for (var o = bb[1]; o <= bb[3]; o++) {
 					if (scr_point_in_rec(i, o, _id)) { 
 						if (scr_point_in_cir(i, o, id)) {
 							if (col = 6) {
 								global.coll[7] += 1	
-								save = true
-								
+								save = 1
 								exit
 							}
 						}
@@ -62,6 +61,5 @@ if (shape = CIRCLE) {
 				}
 			}
 		}
-		*/
 	}
 }

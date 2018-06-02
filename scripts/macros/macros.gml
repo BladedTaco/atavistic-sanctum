@@ -126,7 +126,6 @@ global.coll[4] = 0
 global.coll[5] = 0
 global.coll[6] = 0
 global.coll[7] = 0
-
 //enums
 enum _IMPULSE { //define an impulse enumeration field
 	_AIR_DODGE = 5, //air dodge impulse (instant)
