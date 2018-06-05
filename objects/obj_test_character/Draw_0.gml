@@ -7,7 +7,7 @@ if (character = "eth") {
 }
 
 if (sprite_exists(sprite_index)) {
-	draw_self()
+	//draw_self()
 	draw_text_normal(x, 100, sprite_get_name(sprite_index))	
 }
 

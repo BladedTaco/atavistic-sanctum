@@ -7,7 +7,7 @@
 if (input_array[argument[1], TILT] = NEUTRAL_MOVE) { //neutral attack
 	return "neutral"
 } else {
-	switch (round(argument[3]/90)) { //get direction
+	switch (round(argument[2]/90)) { //get direction
 		case 0: //right
 		case 4: //right
 			if (sign(argument[0].image_xscale) = 1) { //facing right

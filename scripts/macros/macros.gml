@@ -1,4 +1,4 @@
-/// @description Define game constants (macros) and global scope variable (globals)
+///@desc Define game constants (macros) and global scope variable (globals)
 
 
 //macros
@@ -90,7 +90,6 @@
 #macro HOLD 365, 365, 365 //direction irrelevant, its a grab
 
 
-
 //globals
 global.network_protocol = network_socket_tcp //**note, if UDP is found to be too unreliable, switch to the more reliable, but slower TCP
 global.network_ip = get_string("enter ip", "127.0.0.1")//"127.0.0.1"
@@ -105,27 +104,26 @@ global.input_buffer_length = 6
 global.max_players = 8
 global.game_version = "1.0.0"
 global.client = -1
-global.player_number = 0
+global.player_number = 1
 global.local_players = 1
 global.wait = false
 
 //variables used to pass in info for a bbox's create event
-global.bbox_maj = 0
-global.bbox_min = 0
-global.bbox_dir = 0
-global.bbox_shape = CIRCLE
+for (var i = 10; i >= 0; i--) {
+	global.bbox[i] = 0
+}
+
+//initialise global variables for ellipse-ellipse collision testing
+global.maxIterations = 4
+global.innerPolygonCoef[0] = 0
+global.outerPolygonCoef[0] = 0
+for (var t = 0; t <= global.maxIterations; t++) {
+	var numNodes = 4 << t;
+	global.innerPolygonCoef[t] = 0.5/cos(2*pi/numNodes);
+	global.outerPolygonCoef[t] = 0.5/(cos(pi/numNodes)*cos(pi/numNodes));
+}
 
 
-global.num = 0
-
-global.coll[0] = 0
-global.coll[1] = 0
-global.coll[2] = 0
-global.coll[3] = 0
-global.coll[4] = 0
-global.coll[5] = 0
-global.coll[6] = 0
-global.coll[7] = 0
 //enums
 enum _IMPULSE { //define an impulse enumeration field
 	_AIR_DODGE = 5, //air dodge impulse (instant)

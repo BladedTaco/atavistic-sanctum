@@ -145,7 +145,6 @@ do {
 		break;
 		
 	}
-	
 	if (_move_character = 0) { //default move character
 		scr_move_character(_inst, i)
 	} else { //handle special movement cases
@@ -153,4 +152,4 @@ do {
 	}
 	
 	i++
-}  until(i = global.player_number)
+}  until(i >= global.player_number)

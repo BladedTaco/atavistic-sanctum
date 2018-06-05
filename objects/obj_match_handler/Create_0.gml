@@ -9,7 +9,13 @@ jumps[0] = 1
 momentum_x[0] = 0
 momentum_y[0] = 0
 player[0] = -1 //create the players here and populate the array with their instance ids
+hitbox = false //draw hitboxes on true
 
+
+with(instance_create(200, 200, obj_player)) {
+	other.player[0] = id
+	controller = false
+}
 
 //get data from server for the match
 
@@ -17,7 +23,7 @@ player[0] = -1 //create the players here and populate the array with their insta
 
 
 
-
+/*
 //create the replay file
 replay_file = string(working_directory + "replays/" + date_datetime_string(date_current_datetime()) + ".txt") //get name of file based on time
 if (file_exists(replay_file)) { //if a file already exists with this name

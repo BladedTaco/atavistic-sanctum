@@ -4,7 +4,7 @@
 ///@param type - the type of special movement (stop, drift, DI) (1 2 3 respectively)
 ///@desc handles special movement types, possibly ignoring current inputs
 
-var _x1 = input_array[argument[0], XAXIS]
-var _y1 = input_array[argument[0], YAXIS]
-var _x2 = old_axis[argument[0], XAXIS]
-var _y2 = old_axis[argument[0], YAXIS]
+var _x1 = input_array[argument[1], XAXIS]
+var _y1 = input_array[argument[1], YAXIS]
+var _x2 = old_axis[argument[1], XAXIS]
+var _y2 = old_axis[argument[1], YAXIS]

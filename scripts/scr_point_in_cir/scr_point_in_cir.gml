@@ -1,4 +1,8 @@
 ///@func scr_point_in_cir(x, y, circle)
+///@param x - the x position of the point
+///@param y - the y position of the point
+///@param circle - the instance id of the ellipse hitbox
+///@desc check if a point is inside an ellipse
 var _id = argument[2]
 var _xx, _yy
 _xx = argument[0] - _id.x

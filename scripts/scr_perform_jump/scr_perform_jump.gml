@@ -6,4 +6,13 @@
 
 argument[0].sprite_index = scr_get_sprite(argument[0], "jump") //set animation to jump animation
 argument[0].image_index = 0 //set animation frame to the first one
+if (state[argument[1]] = AIRBORNE) {
+	if (jumps[argument[1]] > 0) {
+		argument[0].momentum_y = 0
+		jumps[argument[1]] -= 1
+		scr_apply_impulse(argument[0], argument[1], 90, _IMPULSE._JUMP, false)
+	}
+} else {
+	scr_apply_impulse(argument[0], argument[1], 90, _IMPULSE._JUMP, false)
+}
 return JUMPING //return the jumping state
