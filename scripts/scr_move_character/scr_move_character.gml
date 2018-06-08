@@ -10,9 +10,25 @@ var _x2 = old_axis[argument[1], XAXIS]
 var _y2 = old_axis[argument[1], YAXIS]
 var _end = false //to end a walk or run, or start a dash ro speed up
 
+
 scr_apply_impulse(argument[0], argument[1], 270, _IMPULSE._GRAVITY/100, false) //apply gravity
 
-if (abs(_x1) > obj_input.l_stick_deadzone[argument[1]]) {
+if (state[argument[1]] = SPEED_UP) {
+	if (argument[0].sprite_index != scr_get_sprite(argument[0], "speed_up")) {
+		argument[0].sprite_index = scr_get_sprite(argument[0], "speed_up")
+		argument[0].image_index = 0
+	}
+}
+if (state[argument[1]] = DASHING) {
+	if (argument[0].sprite_index != scr_get_sprite(argument[0], "dash")) {
+		argument[0].sprite_index = scr_get_sprite(argument[0], "dash")
+		argument[0].image_index = 0
+	}
+}
+
+if (_ret = DASH_SLOW) or (_ret = SPEED_DOWN) {
+	//break if chain
+} else if (_x1*argument[0].image_xscale > obj_input.l_stick_deadzone[argument[1]]) { //if moving in the right direction
 	if (keyboard_check(ord("F"))) { //walking
 		scr_apply_impulse(argument[0], argument[1], point_direction(0, 0, _x1, 0), _IMPULSE._WALK*point_distance(0, 0, _x1, 0)/100, false)
 		if (_ret != WALKING) {
@@ -39,47 +55,26 @@ if (abs(_x1) > obj_input.l_stick_deadzone[argument[1]]) {
 }	
 
 
-//wrapping code
-if (argument[0].x > room_width) {
-	argument[0].x = 5	
-}
-if (argument[0].x < 0) {
-	argument[0].x = room_width - 5	
-}
-
-if (argument[0].y > room_height) {
-	argument[0].y = 5	
-}
-
-if (abs(argument[0].momentum_x) < 0.001) {
-	argument[0].momentum_x = 0
-}
 
 argument[0].momentum_x *= 0.8/argument[0].inertia
 argument[0].momentum_y *= 0.9/argument[0].inertia
 
 
-switch (state[argument[1]]) {
-	case AIRBORNE: case AIR_ATTACK: case JUMP_RISE: case FREEFALL: break;
-	//case SHIELDING: case DODGING: case SMASH_ATTACK: case TILT_ATTACK: case GRAB: break;
-	default: //only update state if not one of the above states
-		state[argument[1]] = _ret
-		if (_end) {
-			switch (_ret) {
-				case DASHING:
-					argument[0].sprite_index = scr_get_sprite(argument[0], "dash")
-				break;
-				case SPEED_UP:
-					argument[0].sprite_index = scr_get_sprite(argument[0], "speed_up")
-				break;
-				case DASH_SLOW:
-					argument[0].sprite_index = scr_get_sprite(argument[0], "dash_slow")
-				break;
-				case SPEED_DOWN:
-					argument[0].sprite_index = scr_get_sprite(argument[0], "speed_down")
-				break;
-			}
-			argument[0].image_index = 0	
-		}
-	break;
+state[argument[1]] = _ret
+if (_end) {
+	switch (_ret) {
+		case DASHING:
+			argument[0].sprite_index = scr_get_sprite(argument[0], "dash")
+		break;
+		case SPEED_UP:
+			argument[0].sprite_index = scr_get_sprite(argument[0], "speed_up")
+		break;
+		case DASH_SLOW:
+			argument[0].sprite_index = scr_get_sprite(argument[0], "dash_slow")
+		break;
+		case SPEED_DOWN:
+			argument[0].sprite_index = scr_get_sprite(argument[0], "speed_down")
+		break;
+	}
+	argument[0].image_index = 0	
 }

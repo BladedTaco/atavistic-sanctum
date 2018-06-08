@@ -15,7 +15,11 @@ do {
 	do {
 		var _state = state[i]
 		switch (state[i]) { //perform actions based on state
-			case GROUNDED: case WALKING: 
+			case GROUNDED: 
+				if (abs(input_array[i, XAXIS]) > obj_input.l_stick_deadzone[i]) { //change direction
+					_inst.image_xscale = sign(input_array[i, XAXIS])
+				}
+			case WALKING: 
 				if (input_array[i, SHIELD]) { //shield
 					state[i] = scr_perform_shield(_inst, i)	
 				}
@@ -34,9 +38,7 @@ do {
 				if (input_array[i, TAUNT]) { //taunt
 					state[i] = scr_perform_taunt(_inst, i)
 				}
-				if (abs(input_array[i, XAXIS]) > obj_input.l_stick_deadzone[i]) { //change direction
-					_inst.image_xscale = sign(input_array[i, XAXIS])
-				}
+				_move_character = 0 //move normally
 			break;
 		
 		
@@ -44,11 +46,19 @@ do {
 				_move_character = 2 //drift
 			break;
 		
-			case SHIELDING: 
+			case SHIELDING:
+				if (!input_array[i, SHIELD]) {
+					state[i] = UNSHIELDING	
+					_inst.sprite_index = scr_get_sprite(_inst.id, "un_shield")
+					_inst.image_index = 0
+				} else if (point_distance(0, 0, input_array[i, XAXIS], input_array[i, YAXIS]) > obj_input.l_stick_deadzone[i]) {
+					state[i] = scr_perform_dodge(_inst, i, 0, point_direction(0, 0, input_array[i, XAXIS], input_array[i, YAXIS]))
+				}
+			case UNSHIELDING:
 				if (_inst.character = GEO) {
-					_move_character = 0
+					_move_character = 0 //move normally
 				} else {
-					_move_character = 2
+					_move_character = 2 //drift
 				}
 			break;
 		
@@ -59,7 +69,17 @@ do {
 			case HIT_STUN:
 				_move_character = 3 //DI
 			break;
-		
+			
+			case DASH_SLOW: case SPEED_DOWN: 
+				_move_character = 0 //move normally
+				if (abs(input_array[i, XAXIS]) > obj_input.l_stick_deadzone[i]) { //change direction
+					if (_inst.image_xscale != sign(input_array[i, XAXIS])) { //if different direction
+						state[i] = GROUNDED //make state grounded so a new dash is performed
+						_inst.momentum_x *= -1 //make momentum switch direction
+						_inst.image_xscale = sign(input_array[i, XAXIS]) //change image facing direction
+					}
+				}
+			break;
 			case JUMP_RISE:
 				if (_inst.momentum_y >= 0) {
 					state[i] = AIRBORNE	
@@ -67,14 +87,22 @@ do {
 				if (input_array[i, JUMP]) {
 					scr_perform_jump_rise(_inst, i)	
 				}
-			case FREEFALL: case SPEED_UP: case DASHING: case SPEED_DOWN: case DASH_SLOW:
+				if (input_array[i, SHIELD]) { //shield or airdodge
+					if (_inst.character = GEO) {
+						state[i] = scr_perform_shield(_inst, i)	
+					} else if (point_distance(0, 0, input_array[i, XAXIS], input_array[i, YAXIS]) > obj_input.l_stick_deadzone[i]) {
+						state[i] = scr_perform_dodge(_inst, i, 1, point_direction(0, 0, input_array[i, XAXIS], input_array[i, YAXIS]))
+					}
+				}
+			case AIR_ATTACK: case FREEFALL:
+				_move_character = 4//airborne
+			break;
+			case SPEED_UP: case DASHING:
 				if (input_array[i, SHIELD] and (_inst.character = GEO)) {
 					state[i] = scr_perform_shield(_inst, i)	
 				}
-			case AIR_ATTACK:
 				_move_character = 0 //move normally
 			break;
-		
 			case RUNNING: 
 				if (input_array[i, SHIELD]) { //shield
 					state[i] = scr_perform_shield(_inst, i)	
@@ -91,9 +119,7 @@ do {
 				if (input_array[i, JUMP]) { //jump
 					state[i] = scr_perform_jump_squat(_inst, i, 0)
 				}
-				if (abs(input_array[i, XAXIS]) > obj_input.l_stick_deadzone[i]) { //change direction
-					_inst.image_xscale = sign(input_array[i, XAXIS])
-				}
+				_move_character = 0 //move normally
 			break;
 		
 			case JUMPING: 
@@ -110,14 +136,18 @@ do {
 				if (abs(input_array[i, XAXIS]) > obj_input.l_stick_deadzone[i]) { //change direction
 					_inst.image_xscale = sign(input_array[i, XAXIS])
 				}
-				if (_inst.image_index >= 1.5) {
+				if (_inst.image_index >= 1) {
 					state[i] = scr_perform_jump(_inst, i, false)	
 				}
 			break;
 		
 			case AIRBORNE: 
 				if (input_array[i, SHIELD]) { //shield
-					state[i] = scr_perform_shield(_inst, i)	
+					if (_inst.character = GEO) {
+						state[i] = scr_perform_shield(_inst, i)	
+					} else if (point_distance(0, 0, input_array[i, XAXIS], input_array[i, YAXIS]) > obj_input.l_stick_deadzone[i]) {
+						state[i] = scr_perform_dodge(_inst, i, 1, point_direction(0, 0, input_array[i, XAXIS], input_array[i, YAXIS]))
+					}
 				}
 				if (input_array[i, ATTACK]) { //attack
 					state[i] = scr_perform_attack(_inst, i, 5, _dir)
@@ -134,6 +164,7 @@ do {
 				if (input_array[i, YAXIS] > obj_input.l_stick_deadzone[i]) { //fastfall
 					scr_apply_impulse(_inst, i, 270, _inst.weight*_IMPULSE._FASTFALL/100, false)
 				}
+				_move_character = 4 //airborne
 			break;
 		
 			case LEDGE: 
@@ -188,6 +219,23 @@ do {
 				_inst.image_index = 0
 			break;
 		}
+	}
+	
+	
+	//wrapping code
+	if (_inst.x > room_width) {
+		_inst.x = 5	
+	}
+	if (_inst.x < 0) {
+		_inst.x = room_width - 5	
+	}
+
+	if (_inst.y > room_height) {
+		_inst.y = 5	
+	}
+
+	if (abs(_inst.momentum_x) < 0.001) {
+		_inst.momentum_x = 0
 	}
 	
 	i++

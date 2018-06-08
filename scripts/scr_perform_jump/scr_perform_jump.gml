@@ -13,12 +13,14 @@ if (argument[0].momentum_y >= 0) { //if able to jump
 			argument[0].sprite_index = scr_get_sprite(argument[0], "air_jump") //set animation to air jumpanimation
 			argument[0].image_index = 0 //set animation frame to the first one
 		} else {
-			return state[argument[1]] //return no change in state id unable to jump
+			return state[argument[1]] //return no change in state if unable to jump
 		}
-	} else { //grounded jump
+	} else if (!argument[2]) { //grounded jump
 		argument[0].sprite_index = scr_get_sprite(argument[0], "air_move") //set animation to air move animation
 		argument[0].image_index = 0 //set animation frame to the first one
 		scr_apply_impulse(argument[0], argument[1], 90, _IMPULSE._JUMP/100, false)
+	} else {
+		return state[argument[1]] //return no change in state if unable to jump
 	}
 	obj_input.sticky_jump[argument[1]] = true //set sticky jump to true
 	return JUMP_RISE //return the jumping state

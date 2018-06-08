@@ -105,7 +105,7 @@
             "mvc": "1.0",
             "SpriteId": "9d165c45-ba7a-4b62-bef4-4a4adf1eb2da",
             "blendMode": 0,
-            "isLocked": true,
+            "isLocked": false,
             "name": "portrait",
             "opacity": 100,
             "visible": true

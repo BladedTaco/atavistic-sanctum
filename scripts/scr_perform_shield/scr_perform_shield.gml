@@ -1,7 +1,6 @@
-///@func scr_perform_shield(object, player_number, GEO)
+///@func scr_perform_shield(object, player_number)
 ///@param object - the instance id of the character object
 ///@param player_number - the number of the player to perform the shield with
-///@param GEO - if the character is GEO or another moving shield character (booleanic)
 ///@desc causes the given character to perform a shield and returns state
 
 if (argument[0].character = GEO) { //moving shield

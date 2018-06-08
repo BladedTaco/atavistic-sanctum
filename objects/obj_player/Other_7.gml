@@ -49,18 +49,36 @@ switch (obj_match_handler.state[player_number]) {
 			obj_match_handler.state[player_number] = GROUNDED
 		break;
 		case DODGING:
-			if (obj_input.input_array[player_number, SHIELD]) { //shielding
-				sprite_index = scr_get_sprite(id, "shield")
+			if (sprite_index = scr_get_sprite(id, "dodge")) {
+				sprite_index = scr_get_sprite(id, "hold_shield")
 				obj_match_handler.state[player_number] = SHIELDING
-			} else { //idling
+				with (instance_create(x, y, obj_shield)) { //with the shield object
+					sprite_index = scr_get_sprite(other.id, "shield_ball") //give it its sprite
+					creator = other.id //give it its assigned character
+				}
+			} else {
 				sprite_index = scr_get_sprite(id, "idle")
 				obj_match_handler.state[player_number] = GROUNDED
 			}
+			image_index = 0
 		break;
-		//AIR_DODGING handled elsewhere
+		case AIR_DODGING:
+			sprite_index = scr_get_sprite(id, "air_move")
+			obj_match_handler.state[player_number] = AIRBORNE
+		break;
 		case SHIELDING:
 			sprite_index = scr_get_sprite(id, "hold_shield")
-			obj_match_handler.state[player_number] = SHIELDING
+			image_index = 0
+		break;
+		case UNSHIELDING:
+			if (scr_check_for_ground()) {
+				sprite_index = scr_get_sprite(id, "idle")
+				obj_match_handler.state[player_number] = GROUNDED
+			} else {
+				sprite_index = scr_get_sprite(id, "air_move")
+				obj_match_handler.state[player_number] = AIRBORNE
+			}
+			image_index = 0
 		break;
 		//HIT_STUN
 		//TECHING

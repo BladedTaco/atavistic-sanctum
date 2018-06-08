@@ -30,19 +30,34 @@ if (argument[1]) { //controller inputs
 } else { //keyboard inputs
 	for (var i = 0; i < array_length_2d(button_const_array, argument[0]) - 20; i++) {
 		if (i >= 8) { //single button
-			_input[button_array[argument[0], i]] += keyboard_check(button_const_array[i + 20])	
+			_input[button_array[argument[0], i]] = keyboard_check(button_const_array[i + 20])	
 		} else { //button pair (axis)
 			_input[button_array[argument[0], i]] = keyboard_check(button_const_array[i + 20]) - keyboard_check(button_const_array[i+1 + 20])
 			i++
 		}
 	}
 	if (abs(_input[XAXIS]) + abs(_input[YAXIS]) > l_stick_deadzone[argument[0]]) {
-		_input[TILT] = SMASH_MOVE	
+		if (keyboard_check(ord("N"))) {
+			_input[TILT] = TILT_MOVE	
+		} else if (keyboard_check(ord("M"))) {
+			_input[TILT] = SMASH_MOVE	
+		} else {
+			_input[TILT] = NEUTRAL_MOVE	
+			
+		}
 	}
+	//limit _input to be less than 0.5 away from last postion in both directions
+	var a = _input[XAXIS] - input_buffer_array[argument[0], XAXIS]
+	var b = _input[YAXIS] - input_buffer_array[argument[0], YAXIS]
+	_input[XAXIS] =	input_buffer_array[argument[0], XAXIS] + clamp(a, -1/2, 1/2)
+	_input[YAXIS] =	input_buffer_array[argument[0], YAXIS] + clamp(b, -1/2, 1/2)	
 }
 
-if (sticky_jump[argument[0]] and !_input[JUMP]) {
-	sticky_jump[argument[0]] = false
+//limit l stick to magnitude of 1
+var _len = point_distance(0, 0, _input[XAXIS], _input[YAXIS])
+if (_len > 1) {
+	_input[XAXIS] /= _len
+	_input[YAXIS] /= _len
 }
 
 scr_handle_c_stick(argument[0], _input)

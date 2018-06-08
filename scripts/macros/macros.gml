@@ -55,7 +55,7 @@
 #macro RUNNING 4
 #macro JUMPING 5 //only describes jumpsquat, once in air, state is airborne
 #macro AIRBORNE 6 //describes being in the air, including moving hitstun
-#macro FREEFALL 7
+#macro FREEFALL 7 //describes the helpess state
 #macro TILT_ATTACK 8
 #macro SMASH_ATTACK 9
 #macro SPECIAL_ATTACK 10
@@ -64,7 +64,7 @@
 #macro LANDING 13 //only describes landing lag
 #macro DODGING 14
 #macro AIR_DODGING 15
-#macro SHIELDING 16
+#macro SHIELDING 16 //describes shield and hold shield animation
 #macro HIT_STUN 17 //describes static hitstun
 #macro TECHING 18
 #macro JUMP_RISE 19 //describes holding jump after pressing it
@@ -73,7 +73,7 @@
 #macro HOLDING 22 //describes holding a grab with a character 
 #macro SPEED_DOWN 23
 #macro DASH_SLOW 24
-
+#macro UNSHIELDING 25 //describes unshield animation
 
 //character identiiers
 #macro BAL 0
@@ -129,7 +129,7 @@ for (var t = 0; t <= global.maxIterations; t++) {
 
 //enums
 enum _IMPULSE { //define an impulse enumeration field (actual values are divided by 100)
-	_AIR_DODGE = 500, //air dodge impulse (instant)
+	_AIR_DODGE = 1400, //air dodge impulse (instant)
 	_ROLL = 1000, //roll impulse (instant)
 	_WALK = 50, //walking impulse (ongoing)
 	_RUN = 100, //running impulse (ongoing)
@@ -137,7 +137,8 @@ enum _IMPULSE { //define an impulse enumeration field (actual values are divided
 	_JUMP = 1250, //jumping impulse (instant)
 	_JUMPRISE = 25, //jumprise impulse (ongoing)
 	_GRAVITY = 30, //gravity impulse (ongoing)
-	_FASTFALL = 150 //fastfall impulse (ongoing)
+	_FASTFALL = 150, //fastfall impulse (ongoing)
+	_AIR_MOVE = 75 //moving in air (ongoing)
 }
 
 

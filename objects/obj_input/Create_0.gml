@@ -32,3 +32,4 @@ controller[0] = false //if this player is using a controller
 controller_number[0] = 4 //the slot number of the controller the player is using
 player_is_local[0] = true; //if player is locally controlled
 sticky_jump[0] = false //make it only jump multiple times on multiple presses
+sticky_dodge[0] = false //make it only dodge multiple times on multiple presses

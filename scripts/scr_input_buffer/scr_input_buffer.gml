@@ -28,3 +28,14 @@ if (!global.wait) {
 for (var i = 0; i < array_length_1d(_input); i++) {
 	input_buffer_array[_index, i] = _input[i]
 }
+
+
+//check for termination of sticky jump
+if (sticky_jump[argument[0]] and !input_array[argument[0], JUMP]) {
+	sticky_jump[argument[0]] = false
+}
+
+//check for termination of sticky dodge
+if (sticky_dodge[argument[0]] and !input_array[argument[0], SHIELD]) {
+	sticky_dodge[argument[0]] = false
+}

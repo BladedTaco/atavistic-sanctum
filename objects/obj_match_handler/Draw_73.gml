@@ -28,5 +28,6 @@ switch (state[0]) {
 	case HOLDING		: _str = "HOLDING"			break;
 	case DASH_SLOW		: _str = "DASH_SLOW"		break;
 	case SPEED_DOWN		: _str = "SPEED_DOWN"		break;
+	case UNSHIELDING	: _str = "UNSHIELDING"		break;
 }
 draw_text_normal(200, 200, _str)
