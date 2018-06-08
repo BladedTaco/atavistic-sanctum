@@ -1,0 +1,1 @@
+return position_meeting(x + momentum_x,	y + momentum_y,	obj_ground)

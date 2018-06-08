@@ -70,7 +70,9 @@
 #macro JUMP_RISE 19 //describes holding jump after pressing it
 #macro AIR_ATTACK 20
 #macro GRABBING 21 //describes performing a grab
-#macro HOLDING 22 //describes holding a grab with a character held
+#macro HOLDING 22 //describes holding a grab with a character 
+#macro SPEED_DOWN 23
+#macro DASH_SLOW 24
 
 
 //character identiiers
@@ -107,6 +109,7 @@ global.client = -1
 global.player_number = 1
 global.local_players = 1
 global.wait = false
+global.paused = false
 
 //variables used to pass in info for a bbox's create event
 for (var i = 10; i >= 0; i--) {
@@ -125,14 +128,19 @@ for (var t = 0; t <= global.maxIterations; t++) {
 
 
 //enums
-enum _IMPULSE { //define an impulse enumeration field
-	_AIR_DODGE = 5, //air dodge impulse (instant)
-	_ROLL = 10, //roll impulse (instant)
-	_WALK = 0.5, //walking impulse (ongoing)
-	_RUN = 1, //running impulse (ongoing)
-	_DASH = 5, //dashing impulse (instant)
-	_JUMP = 20, //jumping impulse (instant)
+enum _IMPULSE { //define an impulse enumeration field (actual values are divided by 100)
+	_AIR_DODGE = 500, //air dodge impulse (instant)
+	_ROLL = 1000, //roll impulse (instant)
+	_WALK = 50, //walking impulse (ongoing)
+	_RUN = 100, //running impulse (ongoing)
+	_DASH = 700, //dashing impulse (instant)
+	_JUMP = 1250, //jumping impulse (instant)
+	_JUMPRISE = 25, //jumprise impulse (ongoing)
+	_GRAVITY = 30, //gravity impulse (ongoing)
+	_FASTFALL = 150 //fastfall impulse (ongoing)
 }
 
 
 add_moves() //add all of the attacks of the characters into memory (very very intensive)
+
+draw_set_font(fnt_pixel_large) //set font

@@ -3,6 +3,9 @@ var _id = noone
 var c = false
 col = false
 with (obj_hitbox) {
+	if (hitbox) { //skip hitboxes, only check for hurtboxes
+		continue; //skip this collision check
+	}
 	switch (rectangle_in_rectangle(bb[0], bb[1], bb[2], bb[3], other.bb[0], other.bb[1], other.bb[2], other.bb[3])) {
 		case 0: c = false break; //not colliding at all
 		

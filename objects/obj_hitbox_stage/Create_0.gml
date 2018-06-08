@@ -47,21 +47,3 @@ for (var i = 0; i <= 3; i++) {
 	if (bb[2] < _x[i]) { bb[2] = _x[i] }
 	if (bb[3] < _y[i]) { bb[3] = _y[i] }
 }
-
-/*
-if (shape = CIRCLE) {
-	//for an ellipse, get the foci
-	var _len = sqrt(abs(_maj*_maj - _min*_min)) //get the length from the centre
-	if (_maj > _min) { //if horizontal ellipse (unrotated)
-		var _xx = _len*cos(_dir) //get relative x
-		var _yy = _len*sin(_dir) //get relative y
-	} else { //if vertical ellipse (unrotated)
-		var _xx = -_len*sin(_dir) //get relative x
-		var _yy = _len*cos(_dir) //get relative y
-	}
-	//get actual foci positions
-	f_x1 = _xx + x
-	f_y1 = _yy + y
-	f_x2 = -_xx + x
-	f_y2 = -_yy + y
-}

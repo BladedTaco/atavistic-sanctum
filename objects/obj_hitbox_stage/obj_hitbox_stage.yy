@@ -2,7 +2,7 @@
     "id": "f71b9ee2-ec27-4ae6-9faf-acd26ab8db7c",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_hitbox_test",
+    "name": "obj_hitbox_stage",
     "eventList": [
         {
             "id": "3572947c-369d-430a-8e83-6c7e25b0bba7",
@@ -22,16 +22,6 @@
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 2,
             "eventtype": 3,
-            "m_owner": "f71b9ee2-ec27-4ae6-9faf-acd26ab8db7c"
-        },
-        {
-            "id": "85923d6e-1f34-467a-9e6c-2c79928168af",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 8,
             "m_owner": "f71b9ee2-ec27-4ae6-9faf-acd26ab8db7c"
         }
     ],

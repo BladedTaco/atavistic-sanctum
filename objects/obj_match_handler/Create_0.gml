@@ -4,7 +4,7 @@
 //input variables and control variables initialisation
 old_axis[0, 0] = 0
 input_array[0, 0] = 0
-state[0] = GROUNDED
+state[0] = FREEFALL
 jumps[0] = 1
 momentum_x[0] = 0
 momentum_y[0] = 0
@@ -12,9 +12,10 @@ player[0] = -1 //create the players here and populate the array with their insta
 hitbox = false //draw hitboxes on true
 
 
-with(instance_create(200, 200, obj_player)) {
+with(instance_create(200, -200, obj_player)) {
 	other.player[0] = id
 	controller = false
+	sprite_index = scr_get_sprite(id, "hurt_down")
 }
 
 //get data from server for the match

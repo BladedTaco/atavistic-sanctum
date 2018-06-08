@@ -36,6 +36,13 @@ if (argument[1]) { //controller inputs
 			i++
 		}
 	}
+	if (abs(_input[XAXIS]) + abs(_input[YAXIS]) > l_stick_deadzone[argument[0]]) {
+		_input[TILT] = SMASH_MOVE	
+	}
+}
+
+if (sticky_jump[argument[0]] and !_input[JUMP]) {
+	sticky_jump[argument[0]] = false
 }
 
 scr_handle_c_stick(argument[0], _input)
