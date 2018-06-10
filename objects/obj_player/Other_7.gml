@@ -65,6 +65,8 @@ switch (obj_match_handler.state[player_number]) {
 		case AIR_DODGING:
 			sprite_index = scr_get_sprite(id, "air_move")
 			obj_match_handler.state[player_number] = AIRBORNE
+			momentum_x *= 0.5
+			momentum_y *= 0.5
 		break;
 		case SHIELDING:
 			sprite_index = scr_get_sprite(id, "hold_shield")
@@ -93,13 +95,13 @@ switch (obj_match_handler.state[player_number]) {
 			obj_match_handler.state[player_number] = AIRBORNE
 		break;
 		case GRABBING:
+			image_index = 0
 			if (scr_check_for_ground()) { //grounded
 				sprite_index = scr_get_sprite(id, "idle")
 				obj_match_handler.state[player_number] = GROUNDED
 			} else { //put in freefall
-				with (obj_match_handler) {
-					state[other.player_number] = scr_perform_freefall(other.id, other.player_number) 
-				}
+				sprite_index = scr_get_sprite(id, "air_move")
+				obj_match_handler.state[player_number] = AIRBORNE
 			}
 		break;
 		//HOLDING

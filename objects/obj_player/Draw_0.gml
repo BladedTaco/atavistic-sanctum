@@ -7,14 +7,15 @@ if (character = "eth") {
 }
 
 if (obj_match_handler.state[player_number] = AIR_DODGING) {
-	image_blend = c_dkgray
+	image_blend = c_gray
 }
 draw_self();
 
-//*
+
 draw_set_colour(c_aqua)
 draw_line(x, y, x + momentum_x, y + momentum_y)
 
+/*
 if (sprite_index != sprite[0, 0]) or (floor(image_index) != sprite[0, 1]) or (image_xscale != sprite[0, 2]) {
 	for (var i = array_height_2d(sprite) - 1; i >= 0; i--) {
 		sprite[i + 1, 0] = sprite[i, 0]

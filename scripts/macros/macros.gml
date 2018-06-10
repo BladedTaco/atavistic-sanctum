@@ -138,7 +138,8 @@ enum _IMPULSE { //define an impulse enumeration field (actual values are divided
 	_JUMPRISE = 25, //jumprise impulse (ongoing)
 	_GRAVITY = 30, //gravity impulse (ongoing)
 	_FASTFALL = 150, //fastfall impulse (ongoing)
-	_AIR_MOVE = 75 //moving in air (ongoing)
+	_AIR_MOVE = 100, //moving in air (ongoing)
+	_FREEFALL = 100 //starting freefall (instant)
 }
 
 

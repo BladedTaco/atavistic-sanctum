@@ -5,11 +5,27 @@
 
 var _input;
 _input = argument[1]
-_input[@ ALT_XAXIS] *= -1 //flip alt_xaxis
+
 
 var j = 0 //the entry of the input array to change
 var k = 1 //the value to change it to
 
+switch (obj_match_handler.state[argument[0]]) {
+	case AIRBORNE: case JUMP_RISE:
+		if (c_stick_action[argument[0]] = C_TAUNT) {
+			exit; //exit script if unable to use c stick	
+		}
+	case GROUNDED: case WALKING: case RUNNING: case JUMPING:
+	break;
+	case SHIELDING:
+		if (c_stick_action[argument[0]] !=  C_ROLL) {
+			exit; //exit script if unable to use c stick	
+		}
+	break;
+	default:
+		exit; //exit script if unable to use c stick
+	break;
+}
 
 if (power(_input[ALT_XAXIS], 2) + power(_input[ALT_YAXIS], 2) > power(c_stick_deadzone[argument[0]], 2)) { //if input is outside deadzone
 	switch(c_stick_action[argument[0]]) {

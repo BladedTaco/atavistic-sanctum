@@ -16,11 +16,15 @@ if (argument[1]) { //controller inputs
 		for (var i = 0; i < 20; i++) {
 			if (i < 14) { //button
 				_input[button_array[argument[0], i]] += gamepad_button_check(argument[2], button_const_array[i])
-			} else if (i < 16) { //analogue button
-				if (gamepad_axis_value(argument[2], button_const_array[i]) < trigger_threshold[argument[0]]) { //if being pressed
+			} else if (i < 15) { //left analogue button
+				if (gamepad_axis_value(argument[2], button_const_array[i])*axis[argument[0], 4] > trigger_threshold[argument[0]]) { //if being pressed
 					_input[button_array[argument[0], i]] = 1 
 				}
-				_input[i] = gamepad_button_value(argument[2], button_const_array[i])
+			} else if (i < 16) { //right analogue button
+				if (gamepad_axis_value(argument[2], button_const_array[i])*axis[argument[0], 5] > trigger_threshold[argument[0]]) { //if being pressed
+					_input[button_array[argument[0], i]] = 1 
+				}
+				//_input[i] = gamepad_button_value(argument[2], button_const_array[i])
 			} else { //directional stick
 				_input[button_array[argument[0], i]] = gamepad_axis_value(argument[2], button_const_array[i])	
 			}
@@ -52,6 +56,7 @@ if (argument[1]) { //controller inputs
 	_input[XAXIS] =	input_buffer_array[argument[0], XAXIS] + clamp(a, -1/2, 1/2)
 	_input[YAXIS] =	input_buffer_array[argument[0], YAXIS] + clamp(b, -1/2, 1/2)	
 }
+
 
 //limit l stick to magnitude of 1
 var _len = point_distance(0, 0, _input[XAXIS], _input[YAXIS])

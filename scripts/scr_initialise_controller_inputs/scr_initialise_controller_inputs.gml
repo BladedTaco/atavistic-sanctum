@@ -2,7 +2,7 @@
 ///@desc Initialises the controller inputs
 
 for (var i = 0; i < 8; i++) {
-	trigger_threshold[i] = 0			//trigger threshold for triggers
+	trigger_threshold[i] = 0.5			//trigger threshold for triggers
 										//constants			GameCube		PSX				XBOX/GENERIC	
 	button_array[i, 0]  = ATTACK		//gp_face1			A				Cross			A					
 	button_array[i, 1]  = SPECIAL		//gp_face2			B				Circle			B			
@@ -69,3 +69,25 @@ button_const_array[16] = gp_axislh		//L H
 button_const_array[17] = gp_axislv		//L V		
 button_const_array[18] = gp_shoulderl	//-R H		
 button_const_array[19] = gp_axisrh		//R V		
+
+//BASE
+button_const_array[0]  = -1	
+button_const_array[1]  = -1	
+button_const_array[2]  = -1	
+button_const_array[3]  = -1	
+button_const_array[4]  = -1	
+button_const_array[5]  = -1	
+button_const_array[6]  = -1	
+button_const_array[7]  = -1	
+button_const_array[8]  = -1	
+button_const_array[9]  = -1	
+button_const_array[10] = -1	
+button_const_array[11] = -1	
+button_const_array[12] = -1	
+button_const_array[13] = -1	
+button_const_array[14] = -1	
+button_const_array[15] = -1	
+button_const_array[16] = -1
+button_const_array[17] = -1
+button_const_array[18] = -1	
+button_const_array[19] = -1

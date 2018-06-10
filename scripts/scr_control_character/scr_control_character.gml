@@ -41,8 +41,13 @@ do {
 				_move_character = 0 //move normally
 			break;
 		
-		
-			case TILT_ATTACK: case SMASH_ATTACK: case SPECIAL_ATTACK: case LANDING: case DODGING: case AIR_DODGING:
+			case AIR_DODGING:
+				if (scr_check_for_ground(_inst)) {
+					state[i] = LANDING
+					_inst.sprite_index = scr_get_sprite(_inst, "land") 
+					_inst.image_index = 0
+				}
+			case TILT_ATTACK: case SMASH_ATTACK: case SPECIAL_ATTACK: case LANDING: case DODGING:
 				_move_character = 2 //drift
 			break;
 		

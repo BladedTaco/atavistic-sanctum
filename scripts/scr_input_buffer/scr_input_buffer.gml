@@ -38,6 +38,6 @@ if (sticky_jump[argument[0]] and !input_array[argument[0], JUMP]) {
 //check for termination of sticky dodge
 if (sticky_dodge[argument[0]] and ((!input_array[argument[0], SHIELD]) or
 	(point_distance(0, 0, input_array[argument[0], XAXIS], input_array[argument[0], YAXIS])
-	< (1 - l_stick_deadzone[argument[0]])))) {
+	< l_stick_neutral[argument[0]]))) {
 	sticky_dodge[argument[0]] = false
 }

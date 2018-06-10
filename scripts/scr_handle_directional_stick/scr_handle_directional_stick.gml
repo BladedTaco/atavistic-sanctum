@@ -5,6 +5,14 @@
 
 var _input = argument[1]
 
+
+//axis multipliers
+_input[@ XAXIS] *= axis[argument[0], 0]
+_input[@ YAXIS] *= axis[argument[0], 1]
+_input[@ ALT_XAXIS] *= axis[argument[0], 2]
+_input[@ ALT_YAXIS] *= axis[argument[0], 3]
+
+
 var _movement = power(_input[0], 2) + power(_input[1], 2)
 var _old_position = power(input_array[argument[0], 0], 2) + power(input_array[argument[0], 1], 2)
 var _tilt_deadzone = power(0.5, 2) //temporary value
