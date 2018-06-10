@@ -12,6 +12,7 @@ if (abs(round(argument[3]/90) - 1) = 1) { //side
 	argument[0].sprite_index = scr_get_sprite(argument[0], "grab_up") //set animation to upwards grab
 }
 
+
 if (argument[2]) { //airborne
 	return FREEFALL //set state to freefall (this will only trigger if it misses)
 } else { //grounded

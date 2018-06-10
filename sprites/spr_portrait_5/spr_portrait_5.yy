@@ -69,6 +69,20 @@
                     "mvc": "1.0",
                     "FrameId": "a3ff4edf-e704-4d9a-9036-449eaa9c82b4",
                     "LayerId": "b0b6ce13-2b51-4185-8032-2005b5e35b76"
+                },
+                {
+                    "id": "2a16c92b-3a12-4dac-8dbe-9f3977af1671",
+                    "modelName": "GMSpriteImage",
+                    "mvc": "1.0",
+                    "FrameId": "a3ff4edf-e704-4d9a-9036-449eaa9c82b4",
+                    "LayerId": "3a051872-9963-4b81-bff4-4776a623ba15"
+                },
+                {
+                    "id": "b5e24b03-9ecd-47c5-b0e3-3b7a9fb9aac1",
+                    "modelName": "GMSpriteImage",
+                    "mvc": "1.0",
+                    "FrameId": "a3ff4edf-e704-4d9a-9036-449eaa9c82b4",
+                    "LayerId": "676c031e-3686-435c-9bb0-1d452fb74def"
                 }
             ]
         }
@@ -97,7 +111,7 @@
             "isLocked": true,
             "name": "hearts portrait",
             "opacity": 55,
-            "visible": false
+            "visible": true
         },
         {
             "id": "9b961cc9-e109-4091-87eb-f3242a6f989c",
@@ -105,8 +119,30 @@
             "mvc": "1.0",
             "SpriteId": "9d165c45-ba7a-4b62-bef4-4a4adf1eb2da",
             "blendMode": 0,
-            "isLocked": false,
+            "isLocked": true,
             "name": "portrait",
+            "opacity": 100,
+            "visible": true
+        },
+        {
+            "id": "676c031e-3686-435c-9bb0-1d452fb74def",
+            "modelName": "GMImageLayer",
+            "mvc": "1.0",
+            "SpriteId": "9d165c45-ba7a-4b62-bef4-4a4adf1eb2da",
+            "blendMode": 0,
+            "isLocked": true,
+            "name": "shirt",
+            "opacity": 100,
+            "visible": true
+        },
+        {
+            "id": "3a051872-9963-4b81-bff4-4776a623ba15",
+            "modelName": "GMImageLayer",
+            "mvc": "1.0",
+            "SpriteId": "9d165c45-ba7a-4b62-bef4-4a4adf1eb2da",
+            "blendMode": 0,
+            "isLocked": true,
+            "name": "hair",
             "opacity": 100,
             "visible": true
         },
@@ -127,10 +163,10 @@
             "mvc": "1.0",
             "SpriteId": "9d165c45-ba7a-4b62-bef4-4a4adf1eb2da",
             "blendMode": 0,
-            "isLocked": true,
+            "isLocked": false,
             "name": "background",
             "opacity": 100,
-            "visible": false
+            "visible": true
         },
         {
             "id": "2c4cc6f4-b094-46c0-a96e-9fa8f18ed5f5",

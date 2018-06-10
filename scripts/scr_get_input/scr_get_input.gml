@@ -17,8 +17,8 @@ if (argument[1]) { //controller inputs
 			if (i < 14) { //button
 				_input[button_array[argument[0], i]] += gamepad_button_check(argument[2], button_const_array[i])
 			} else if (i < 16) { //analogue button
-				if (gamepad_button_value(argument[2], button_const_array[i]) > trigger_threshold[argument[0]]) { //if being pressed
-					_input[button_array[argument[0], i]] += 1 
+				if (gamepad_axis_value(argument[2], button_const_array[i]) < trigger_threshold[argument[0]]) { //if being pressed
+					_input[button_array[argument[0], i]] = 1 
 				}
 				_input[i] = gamepad_button_value(argument[2], button_const_array[i])
 			} else { //directional stick

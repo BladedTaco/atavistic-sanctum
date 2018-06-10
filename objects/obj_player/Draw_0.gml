@@ -11,6 +11,7 @@ if (obj_match_handler.state[player_number] = AIR_DODGING) {
 }
 draw_self();
 
+//*
 draw_set_colour(c_aqua)
 draw_line(x, y, x + momentum_x, y + momentum_y)
 

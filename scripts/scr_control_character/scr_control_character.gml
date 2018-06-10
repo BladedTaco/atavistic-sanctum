@@ -94,6 +94,15 @@ do {
 						state[i] = scr_perform_dodge(_inst, i, 1, point_direction(0, 0, input_array[i, XAXIS], input_array[i, YAXIS]))
 					}
 				}
+				if (input_array[i, ATTACK]) { //attack
+					state[i] = scr_perform_attack(_inst, i, 5, _dir)
+				}
+				if (input_array[i, SPECIAL]) { //special attack
+					state[i] = scr_perform_attack(_inst, i, 3, _dir)
+				}
+				if (input_array[i, GRAB]) { //grab
+					state[i] = scr_perform_grab(_inst, i, 1, _dir)
+				}
 			case AIR_ATTACK: case FREEFALL:
 				_move_character = 4//airborne
 			break;

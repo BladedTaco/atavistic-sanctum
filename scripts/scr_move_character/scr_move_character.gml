@@ -27,7 +27,8 @@ if (state[argument[1]] = DASHING) {
 }
 
 if (_ret = DASH_SLOW) or (_ret = SPEED_DOWN) {
-	//break if chain
+	input_array[argument[1], XAXIS] = old_axis[argument[1], XAXIS]
+	input_array[argument[1], YAXIS] = old_axis[argument[1], YAXIS]
 } else if (_x1*argument[0].image_xscale > obj_input.l_stick_deadzone[argument[1]]) { //if moving in the right direction
 	if (keyboard_check(ord("F"))) { //walking
 		scr_apply_impulse(argument[0], argument[1], point_direction(0, 0, _x1, 0), _IMPULSE._WALK*point_distance(0, 0, _x1, 0)/100, false)
@@ -41,6 +42,9 @@ if (_ret = DASH_SLOW) or (_ret = SPEED_DOWN) {
 			_ret = DASHING
 		} else {
 			scr_apply_impulse(argument[0], argument[1], point_direction(0, 0, _x1, 0), _IMPULSE._RUN*point_distance(0, 0, _x1, 0)/100, false)
+			if (_ret != RUNNING) {
+				_ret = DASHING
+			}	
 		}
 	}
 	if (abs(_x2) < obj_input.l_stick_deadzone[argument[1]]) {

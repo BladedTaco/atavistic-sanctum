@@ -1,6 +1,6 @@
 /// @description Draw hitboxes and create hitboxes
 scr_draw_hitboxes(hitbox)	
-
+//*
 var _str = ""
 switch (state[0]) {
 	case GROUNDED		: _str = "GROUNDED"			break;
