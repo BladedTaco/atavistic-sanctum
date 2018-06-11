@@ -13,7 +13,7 @@ switch (argument[0].character) { //check charater
 	case MAC: i = "spr_mac_" break;
 }
 
-show_debug_message(string(i + argument[1]))
+//show_debug_message(string(i + argument[1]))
 ret = asset_get_index(string(i + argument[1]))
 if (ret = -1) { //if nonexistant sprite
 	//check for special cases
@@ -40,7 +40,7 @@ if (ret = -1) { //if nonexistant sprite
 			}
 		break;
 	}	
-	show_debug_message(ret)
+	//show_debug_message(ret)
 	if (sprite_exists(ret)) {
 		return ret
 	} else {

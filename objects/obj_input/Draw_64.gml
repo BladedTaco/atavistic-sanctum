@@ -2,7 +2,7 @@
 
 switch (controls_set[0] - 2) {
 	case -2: draw_text_normal(600, 400, "Hold any face button, then press G to configure controller") break;
-	case -1: draw_text_normal(600, 400, "Make sure nothing is pressed, then press G") break;
+	case -1: draw_text_normal(600, 400, "Make sure nothing is pressed, then press G to configure, or H to load default") break;
 	case 0:  draw_text_normal(600, 400, "Hold ATTACK, then press G") break;
 	case 1:  draw_text_normal(600, 400, "Hold SPECIAL, then press G") break;
 	case 2:  draw_text_normal(600, 400, "Hold JUMP, then press G") break;
@@ -33,10 +33,10 @@ for (var i = 0; i <= global.player_number; i++) {
 	}
 }
 
-for (var i = 0; i < array_length_1d(button_const_array); i++) {
-	draw_text_normal(200, 10 + i*15, gamepad_button_check(controller_number[0], button_const_array[i]))
-	draw_text_normal(250, 10 + i*15, gamepad_button_value(controller_number[0], button_const_array[i]))
-	draw_text_normal(300, 10 + i*15, gamepad_axis_value(controller_number[0], button_const_array[i]))
+for (var i = 0; i < array_length_2d(button_const_array, 0); i++) {
+	draw_text_normal(200, 10 + i*15, gamepad_button_check(controller_number[0], button_const_array[0, i]))
+	draw_text_normal(250, 10 + i*15, gamepad_button_value(controller_number[0], button_const_array[0, i]))
+	draw_text_normal(300, 10 + i*15, gamepad_axis_value(controller_number[0], button_const_array[0, i]))
 }
 
 draw_set_colour(c_aqua)

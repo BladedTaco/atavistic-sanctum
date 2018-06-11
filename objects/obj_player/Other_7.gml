@@ -39,10 +39,19 @@ switch (obj_match_handler.state[player_number]) {
 				obj_match_handler.state[player_number] = AIRBORNE	
 			}
 		break;
-		//LEDGE 
-		case LEDGE_ALT: //ledge jump and release is handled in special instructions
-			sprite_index = scr_get_sprite(id, "idle")
-			obj_match_handler.state[player_number] = GROUNDED
+		case LEDGE:
+			sprite_index = scr_get_sprite(id, "ledge_hold")
+			image_index = 0
+		break;
+		case LEDGE_ALT:
+			if (scr_check_for_ground()) {
+				sprite_index = scr_get_sprite(id, "idle")
+				obj_match_handler.state[player_number] = GROUNDED
+			} else {
+				with (obj_match_handler) {
+					state[other.player_number] = scr_perform_freefall(other.id, other.player_number)	
+				}
+			}
 		break;
 		case LANDING:
 			sprite_index = scr_get_sprite(id, "idle")

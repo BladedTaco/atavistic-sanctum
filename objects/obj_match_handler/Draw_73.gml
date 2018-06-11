@@ -1,4 +1,7 @@
 /// @description Draw hitboxes and create hitboxes
+
+//clear hitbox objects
+with (obj_hitbox) {	instance_destroy() }
 scr_draw_hitboxes(hitbox)	
 //*
 var _str = ""

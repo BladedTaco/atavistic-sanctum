@@ -183,17 +183,24 @@ do {
 		
 			case LEDGE: 
 				_move_character = 1 //stop
-				if (input_array[i, SHIELD]) { //roll
-					state[i] = scr_perform_ledge(_inst, i, 2)	
+				if (_inst.sprite_index = scr_get_sprite(_inst, "ledge")) {
+					state[i] = scr_perform_ledge(_inst, i, 0)	
 				}
-				if (input_array[i, ATTACK] or input_array[i, SPECIAL]) { //attack
-					state[i] = scr_perform_ledge(_inst, i, 1, _dir)
-				}
-				if (input_array[i, GRAB]) { //grab
-					state[i] = scr_perform_ledge(_inst, i, 3, _dir)
-				}
-				if (input_array[i, JUMP]) { //jump
-					state[i] = scr_perform_ledge(_inst, i, 4)
+				if (_inst.sprite_index = scr_get_sprite(_inst, "ledge_hold")) {
+					if (input_array[i, SHIELD]) { //roll
+						if (_inst.character != GEO) {
+							state[i] = scr_perform_ledge(_inst, i, 2)	
+						}
+					}
+					if (input_array[i, ATTACK] or input_array[i, SPECIAL]) { //attack
+						state[i] = scr_perform_ledge(_inst, i, 1, _dir)
+					}
+					if (input_array[i, GRAB]) { //grab
+						state[i] = scr_perform_ledge(_inst, i, 3, _dir)
+					}
+					if (input_array[i, JUMP]) { //jump
+						state[i] = scr_perform_ledge(_inst, i, 4)
+					}
 				}
 			break;
 		
@@ -222,16 +229,26 @@ do {
 	}
 	
 	//check for ground
-	if (position_meeting(_inst.x + _inst.momentum_x, _inst.y + _inst.momentum_y, obj_ground)) {
-		_inst.momentum_y = 0	
-		_inst.y = obj_ground.bbox_top
-		jumps[i] = _inst.max_jumps //refresh jumps
-		switch (state[i]) {
-			case AIRBORNE: case FREEFALL: case AIR_ATTACK:
-				state[i] = LANDING //set state
-				_inst.sprite_index = scr_get_sprite(_inst, "land")
-				_inst.image_index = 0
-			break;
+	if (scr_check_for_ground(_inst)) {
+		_inst.alarm[0] = GAME_SPEED //set ledge alarm
+		var _ground = instance_position(_inst.x + _inst.momentum_x, _inst.y + _inst.momentum_y + 1, obj_ground)
+		if (_inst.y + _inst.momentum_y - _ground.bbox_top < 15) {
+			_inst.momentum_y = 0	
+			_inst.y = _ground.bbox_top - 1
+			jumps[i] = _inst.max_jumps //refresh jumps
+			switch (state[i]) {
+				case AIRBORNE: case FREEFALL: case AIR_ATTACK:
+					state[i] = LANDING //set state
+					_inst.sprite_index = scr_get_sprite(_inst, "land")
+					_inst.image_index = 0
+				break;
+			}
+		}
+	} else {
+		if ((state[i] = WALKING) or (state[i] = RUNNING)) {
+			state[i] = AIRBORNE
+			_inst.sprite_index = scr_get_sprite(_inst, "jump")
+			_inst.image_index = 0
 		}
 	}
 	

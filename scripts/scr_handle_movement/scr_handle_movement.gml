@@ -17,8 +17,8 @@ switch (argument[2]) {
 	
 	case 2: //drift
 		argument[0].momentum_x *= 0.95/argument[0].inertia //reduce momentum
-		argument[0].momentum_y *= 0.95/argument[0].inertia //reduce momentum
-		scr_apply_impulse(argument[0], argument[1], 270, _IMPULSE._GRAVITY/100, false) //apply gravity
+		argument[0].momentum_y *= 0.85/argument[0].inertia //reduce momentum
+		scr_apply_impulse(argument[0], argument[1], 270, _IMPULSE._GRAVITY/200, false) //apply half gravity
 		if (state[argument[1]] = LANDING) {
 			input_array[argument[1], XAXIS] = 0
 			input_array[argument[1], YAXIS] = 0

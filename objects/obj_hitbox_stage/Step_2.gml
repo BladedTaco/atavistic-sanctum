@@ -15,7 +15,6 @@ with (obj_hitbox) {
 				case RECTANGLE:
 					switch (shape) {
 						case CIRCLE:
-							//rectangle circle collision
 							c = scr_cir_col_rec(id, other.id)
 						break;
 						
@@ -41,11 +40,18 @@ with (obj_hitbox) {
 		break;
 	
 	}
-	/* handle collision here
-	collide
-	collide
-	*/
+	
+	//collide
 	if (c) {
-		other.col = true
+		switch (other.creator.object_index) {
+			case obj_ledge:
+				if (obj_match_handler.state[creator.player_number] = AIRBORNE) {
+					with (obj_match_handler) {
+						state[other.creator.player_number] = scr_perform_ledge(other.creator, other.creator.player_number, 0)	
+					}
+				}
+			break;
+		}
 	}
+	
 }

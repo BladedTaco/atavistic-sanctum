@@ -3,8 +3,14 @@
 ///@desc checks for the ground with the given instance, or the calling instance if none given
 if (argument_count > 0) {
 	with (argument[0]) {
-		return position_meeting(x + momentum_x,	y + momentum_y,	obj_ground)
+		if ((obj_match_handler.state[player_number] = LEDGE) or (obj_match_handler.state[player_number] = LEDGE_ALT)) {
+			return false	
+		}
+		return position_meeting(x + momentum_x,	y + momentum_y + 1,	obj_ground)
 	}
 } else {
-	return position_meeting(x + momentum_x,	y + momentum_y,	obj_ground)
+	if ((obj_match_handler.state[player_number] = LEDGE) or (obj_match_handler.state[player_number] = LEDGE_ALT)) {
+		return false	
+	}
+	return position_meeting(x + momentum_x,	y + momentum_y + 1,	obj_ground)
 }

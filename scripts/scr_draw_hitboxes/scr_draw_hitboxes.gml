@@ -88,7 +88,7 @@ if (argument[0]) { //draw and create hitboxes
 	var _array = global.hitbox
 	var i, o;
 	repeat (2) { //repeat for hitbox and hurtbox
-		switch (_array) { //check draw colour
+		switch (_array) { //check array type
 			case global.hurtbox: //hurtboxes last drawn
 				_array = global.hitbox
 			break;
@@ -98,6 +98,7 @@ if (argument[0]) { //draw and create hitboxes
 			break;
 		}
 		with (obj_player) { //for each character
+			global.bbox[10] = id
 			i = sprite_index //get arrays first entry
 			if (sprite_exists(i)) { //if there is a sprite to draw hitboxes for
 				o = floor(image_index)*100 //get arrays second entry
@@ -105,14 +106,13 @@ if (argument[0]) { //draw and create hitboxes
 					//create the hurtbox
 					if (_array = global.hitbox) {
 						scr_check_collision(_array[i, o], _array[i, o+1], _array[i, o+2], 
-						_array[i, o+3], _array[i, o+4], _array[i, o+5], 
+						_array[i, o+3] + x, _array[i, o+4] + y, _array[i, o+5], 
 						_array[i, o + 6], _array[i, o + 7], _array[i, o + 8], 
 						_array[i, o + 9], _array[i, o + 10]) //create the hitbox
 					} else {
 						scr_check_collision(_array[i, o], _array[i, o+1], _array[i, o+2], 
-						_array[i, o+3], _array[i, o+4], _array[i, o+5]) //create the hurtbox
+						_array[i, o+3] + x, _array[i, o+4] + y, _array[i, o+5]) //create the hurtbox
 					}
-					global.bbox[10] = id
 					o += 11 //increment o to check for more hitboxes
 				}
 				o = floor(image_index)*100 //get arrays second entry

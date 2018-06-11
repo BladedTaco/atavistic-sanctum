@@ -13,6 +13,26 @@ switch (character) {
 				sprite_index = spr_bal_air_move
 				image_index = 0
 			break;
+			case spr_bal_ledge_attack:
+				x += 27*image_xscale
+				y -= 1
+			break;
+			case spr_bal_ledge_roll:
+				x += 103*image_xscale
+				y -= 1
+			break;
+			case spr_bal_ledge_jump:
+				x -= 4*image_xscale
+				y -= 7
+				scr_apply_impulse(id, player_number, 90, _IMPULSE._JUMP/100, false)
+				obj_match_handler.state[player_number] = JUMP_RISE
+				image_index = 0
+				sprite_index = scr_get_sprite(id, "air_move")
+			break;
+			case spr_bal_ledge_grab:
+				x += 69*image_xscale
+				y -= 1
+			break;
 		}
 	break;
 }

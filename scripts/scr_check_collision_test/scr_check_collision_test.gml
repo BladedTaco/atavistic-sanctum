@@ -21,4 +21,5 @@ global.bbox[0] = argument[0] //shape
 global.bbox[1] = argument[1] //maj
 global.bbox[2] = argument[2] //min
 global.bbox[3] = argument[5] //dir
+global.bbox[10] = id
 instance_create(argument[3], argument[4], obj_hitbox_stage)

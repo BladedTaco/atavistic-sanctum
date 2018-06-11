@@ -44,4 +44,4 @@ sticky_jump[0] = false //make it only jump multiple times on multiple presses
 sticky_dodge[0] = false //make it only dodge multiple times on multiple presses
 
 
-alarm[0] = room_speed
+alarm[0] = room_speed //alarm for keeping OS from sleeping

@@ -15,18 +15,13 @@ if (argument[1]) { //controller inputs
 	if (gamepad_is_connected(argument[2])) {
 		for (var i = 0; i < 20; i++) {
 			if (i < 14) { //button
-				_input[button_array[argument[0], i]] += gamepad_button_check(argument[2], button_const_array[i])
-			} else if (i < 15) { //left analogue button
-				if (gamepad_axis_value(argument[2], button_const_array[i])*axis[argument[0], 4] > trigger_threshold[argument[0]]) { //if being pressed
+				_input[button_array[argument[0], i]] += gamepad_button_check(argument[2], button_const_array[argument[0], i])
+			} else if (i < 16) { //analogue button
+				if (gamepad_axis_value(argument[2], button_const_array[argument[0], i])*axis[argument[0], i-10] > trigger_threshold[argument[0]]) { //if being pressed
 					_input[button_array[argument[0], i]] = 1 
 				}
-			} else if (i < 16) { //right analogue button
-				if (gamepad_axis_value(argument[2], button_const_array[i])*axis[argument[0], 5] > trigger_threshold[argument[0]]) { //if being pressed
-					_input[button_array[argument[0], i]] = 1 
-				}
-				//_input[i] = gamepad_button_value(argument[2], button_const_array[i])
 			} else { //directional stick
-				_input[button_array[argument[0], i]] = gamepad_axis_value(argument[2], button_const_array[i])	
+				_input[button_array[argument[0], i]] = gamepad_axis_value(argument[2], button_const_array[argument[0], i])	
 			}
 		}
 	scr_handle_directional_stick(argument[0], _input)
@@ -34,9 +29,9 @@ if (argument[1]) { //controller inputs
 } else { //keyboard inputs
 	for (var i = 0; i < array_length_2d(button_const_array, argument[0]) - 20; i++) {
 		if (i >= 8) { //single button
-			_input[button_array[argument[0], i]] = keyboard_check(button_const_array[i + 20])	
+			_input[button_array[argument[0], i]] = keyboard_check(button_const_array[argument[0], i + 20])	
 		} else { //button pair (axis)
-			_input[button_array[argument[0], i]] = keyboard_check(button_const_array[i + 20]) - keyboard_check(button_const_array[i+1 + 20])
+			_input[button_array[argument[0], i]] = keyboard_check(button_const_array[argument[0], i + 20]) - keyboard_check(button_const_array[argument[0], i+1 + 20])
 			i++
 		}
 	}

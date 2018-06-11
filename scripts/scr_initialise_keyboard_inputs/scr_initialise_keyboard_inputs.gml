@@ -7,7 +7,7 @@ var _file = file_text_open_read("default_keyboard_controls.txt") //open keyboad 
 
 var i = 0
 do {
-	button_const_array[i + 20] = file_text_read_real(_file) //read the unicode identifer
+	button_const_array[argument[0], i + 20] = file_text_read_real(_file) //read the unicode identifer
 	file_text_readln(_file) //go to next line
 	button_array[argument[0], i] = file_text_read_real(_file) //read the input array entry it corresponds to
 	file_text_readln(_file) //go to next line

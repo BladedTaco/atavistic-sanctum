@@ -6,7 +6,3 @@ scr_control_character()
 
 
 
-
-//clear hitbox objects
-with (obj_hitbox) {	instance_destroy() }
-with (obj_hitbox_stage) { instance_destroy() }

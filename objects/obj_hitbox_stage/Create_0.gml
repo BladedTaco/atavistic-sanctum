@@ -4,7 +4,7 @@ _maj = global.bbox[1]
 _min = global.bbox[2]
 _dir = global.bbox[3]
 _dir = degtorad(_dir)
-
+creator = global.bbox[10]
 if (global.bbox[4]) { //hitbox
 	hitbox = true
 	a = global.bbox[5] //direction of knocbkac
