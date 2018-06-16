@@ -26,18 +26,27 @@ if (argument[0]) { //draw and create hitboxes
 		}
 
 		with (obj_player) { //for each character
+			global.bbox[10] = id //set creator
 			i = sprite_index //get arrays first entry
 			if (sprite_exists(i)) { //if there is a sprite to draw hitboxes for
 				o = floor(image_index)*100 //get arrays second entry
 				while (_array[i, o] != NULL) { //for every hitbox
-	
 					//get parameters
 					_maj = image_xscale*_array[i, o + 1]/2
 					_min = image_yscale*_array[i, o + 2]/2
-					_x = image_xscale*_array[i, o + 3] + x
-					_y = image_yscale*_array[i, o + 4] + y
-					_dir = sign(image_xscale)*_array[i, o + 5]
-		
+					_x = image_xscale*_array[i, o + 3]
+					_y = image_yscale*_array[i, o + 4]
+					_dir = sign(image_xscale)*_array[i, o + 5] + image_angle
+					if (image_angle != 0) {
+						var _d = degtorad(-image_angle)
+						_xy = _x
+						_x = _xy*cos(_d) - _y*sin(_d) + x//rotate around origin and translate
+						_y = _xy*sin(_d) + _y*cos(_d) + y//rotate around origin and translate
+					} else {
+						_x += x
+						_y += y
+					}
+					
 					//create the hurtbox
 					if (_array = global.hitbox) {
 						scr_check_collision(_array[i, o], _maj, _min, _x, _y, _dir, 
@@ -86,7 +95,7 @@ if (argument[0]) { //draw and create hitboxes
 
 } else { //only create hitboxes without drawing 
 	var _array = global.hitbox
-	var i, o;
+	var i, o, _x, _y, _xy;
 	repeat (2) { //repeat for hitbox and hurtbox
 		switch (_array) { //check array type
 			case global.hurtbox: //hurtboxes last drawn
@@ -98,20 +107,26 @@ if (argument[0]) { //draw and create hitboxes
 			break;
 		}
 		with (obj_player) { //for each character
-			global.bbox[10] = id
+			global.bbox[10] = id //set creator
 			i = sprite_index //get arrays first entry
 			if (sprite_exists(i)) { //if there is a sprite to draw hitboxes for
 				o = floor(image_index)*100 //get arrays second entry
 				while (_array[i, o] != NULL) { //for every hitbox
 					//create the hurtbox
+					_x = _array[i, o+3]*image_xscale
+					_y = _array[i, o+4]*image_xscale
+					var _d = degtorad(image_angle)
+					_xy = _x
+					_x = _xy*cos(_d) - _y*sin(_d) //rotate around origin
+					_y = _xy*sin(_d) + _y*cos(_d) //rotate around origin
 					if (_array = global.hitbox) {
 						scr_check_collision(_array[i, o], _array[i, o+1], _array[i, o+2], 
-						_array[i, o+3] + x, _array[i, o+4] + y, _array[i, o+5], 
+						_x + x, _y + y, _array[i, o+5] + image_angle, 
 						_array[i, o + 6], _array[i, o + 7], _array[i, o + 8], 
 						_array[i, o + 9], _array[i, o + 10]) //create the hitbox
 					} else {
 						scr_check_collision(_array[i, o], _array[i, o+1], _array[i, o+2], 
-						_array[i, o+3] + x, _array[i, o+4] + y, _array[i, o+5]) //create the hurtbox
+						_x + x, _y + y, _array[i, o+5] + image_angle) //create the hurtbox
 					}
 					o += 11 //increment o to check for more hitboxes
 				}

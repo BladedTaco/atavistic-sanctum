@@ -11,13 +11,18 @@ momentum_y[0] = 0
 player[0] = -1 //create the players here and populate the array with their instance ids
 hitbox = false //draw hitboxes on true
 
+st[0] = 0
+st[1] = 0
+st[2] = 0
+st[3] = 0
+st[4] = 0
+st[5] = 0
 
 with(instance_create(200, -200, obj_player)) {
 	other.player[0] = id
-	controller = false
+	controller = true
 	sprite_index = scr_get_sprite(id, "hurt_down")
 }
-
 //get data from server for the match
 
 

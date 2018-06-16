@@ -35,6 +35,7 @@ axis[0, 4] = 1 //l trigger multiplier
 axis[0, 5] = 1 //r trigger multiplier
 controls_set[0] = 0 //stage of control configuration
 button[0, 0] = 0 //initial controller configuartion
+smash[0] = 0.2 //difference needed for a dash
 
 
 controller[0] = true //if this player is using a controller

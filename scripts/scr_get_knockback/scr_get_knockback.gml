@@ -26,4 +26,4 @@ _mag *= power(s, 2)							// k * (s^2)
 _mag += b									// k + base knockback
 _mag *= argument[1].bracing					// k + state scaling
 
-scr_apply_impulse(argument[1], _dir, _mag, true) //apply the knockback impulse
+scr_apply_impulse(argument[1], argument[1].player_number, _dir, _mag, true) //apply the knockback impulse

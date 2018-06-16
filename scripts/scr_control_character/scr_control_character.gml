@@ -15,7 +15,29 @@ do {
 	do {
 		var _state = state[i]
 		switch (state[i]) { //perform actions based on state
+			case CROUCHING:
+				if (input_array[i, YAXIS] < 0.5) {
+					if (_inst.sprite_index != scr_get_sprite(_inst, "crouch_end")) {
+						_inst.sprite_index = scr_get_sprite(_inst, "crouch_end")
+						_inst.image_index = 0
+					}
+				}
+				if (input_array[i, ATTACK]) { //attack
+					state[i] = scr_perform_attack(_inst, i, input_array[i, TILT], _dir)
+				}
+				if (input_array[i, SPECIAL]) { //special attacck
+					state[i] = scr_perform_attack(_inst, i, 3, _dir)
+				}
+				_move_character = 1 //stop
+			break;
+			_inst.bracing = 1
+			show_debug_message("HI_")
 			case GROUNDED: 
+				if (input_array[i, YAXIS] > 0.5) {
+					_inst.sprite_index = scr_get_sprite(_inst, "crouch")
+					_inst.image_index = 0
+					state[i] = CROUCHING
+				}
 				if (abs(input_array[i, XAXIS]) > obj_input.l_stick_deadzone[i]) { //change direction
 					_inst.image_xscale = sign(input_array[i, XAXIS])
 				}
@@ -46,11 +68,13 @@ do {
 					state[i] = LANDING
 					_inst.sprite_index = scr_get_sprite(_inst, "land") 
 					_inst.image_index = 0
+					with (instance_create(_inst.x + _inst.momentum_x, _inst.y + _inst.momentum_y, obj_dash_effect)) {
+						image_xscale = _inst.image_xscale	
+					}
 				}
 			case TILT_ATTACK: case SMASH_ATTACK: case SPECIAL_ATTACK: case LANDING: case DODGING:
 				_move_character = 2 //drift
 			break;
-		
 			case SHIELDING:
 				if (!input_array[i, SHIELD]) {
 					state[i] = UNSHIELDING	
@@ -63,7 +87,7 @@ do {
 				if (_inst.character = GEO) {
 					_move_character = 0 //move normally
 				} else {
-					_move_character = 2 //drift
+					_move_character = 1 //stop
 				}
 			break;
 		
@@ -90,7 +114,11 @@ do {
 					state[i] = AIRBORNE	
 				}
 				if (input_array[i, JUMP]) {
-					scr_perform_jump_rise(_inst, i)	
+					if ((_inst.momentum_y >= -0.5) and (!obj_input.sticky_jump[i])) {
+						scr_perform_jump(_inst, i, true)
+					} else {
+						scr_perform_jump_rise(_inst, i)	
+					}
 				}
 				if (input_array[i, SHIELD]) { //shield or airdodge
 					if (_inst.character = GEO) {
@@ -206,8 +234,10 @@ do {
 		
 
 			case TECHING: 
-				_move_character = 1 //stop
-				if (input_array[i, JUMP]) { //jump
+				_move_character = 5 //momentum delay
+				if (input_array[i, JUMP] and !obj_input.sticky_jump[i]) { //jump
+					_inst.momentum_x = 0
+					_inst.momentum_y = 0
 					state[i] = scr_perform_jump(_inst, i, 0)	
 				}
 			break;
@@ -226,33 +256,59 @@ do {
 		scr_move_character(_inst, i)
 	} else { //handle special movement cases
 		scr_handle_movement(_inst, i, _move_character)
-	}
+	}			
+	
+	show_debug_message("MOMENTUM " + string(_inst.momentum_x) + ", " + string(_inst.momentum_y))
+	show_debug_message("STATE: " + scr_get_state_name(state[i]))
+	
+	
+	
 	
 	//check for ground
-	if (scr_check_for_ground(_inst)) {
-		_inst.alarm[0] = GAME_SPEED //set ledge alarm
-		var _ground = instance_position(_inst.x + _inst.momentum_x, _inst.y + _inst.momentum_y + 1, obj_ground)
-		if (_inst.y + _inst.momentum_y - _ground.bbox_top < 15) {
-			_inst.momentum_y = 0	
-			_inst.y = _ground.bbox_top - 1
-			jumps[i] = _inst.max_jumps //refresh jumps
-			switch (state[i]) {
-				case AIRBORNE: case FREEFALL: case AIR_ATTACK:
-					state[i] = LANDING //set state
-					_inst.sprite_index = scr_get_sprite(_inst, "land")
+	if (_move_character != 5) {
+		if (scr_check_for_ground(_inst) and !(state[i] = LEDGE)) {			
+			var _xx = _inst.x// + _inst.momentum_x
+			var _yy = _inst.y// + _inst.momentum_y 
+			var _ground = global.ground
+			global.ground = noone
+			if (instance_exists(_ground)) {
+				_inst.image_angle = _ground.image_angle
+				if (scr_point_in_rec(_xx, _yy, _ground.hurtbox)) { //in the top 15 pixels of the ground hitbox
+					_inst.y += _inst.momentum_y
+					_inst.momentum_y = 0	//set vertical momentum to 0
+					var _d = _inst.image_angle
+					while (scr_point_in_rec(_inst.x, _inst.y, _ground.hurtbox)) {
+						show_debug_message(string(_inst.x) + ", " + string(_inst.y))
+						_inst.y -= 0.25
+					}
+					_inst.alarm[0] = GAME_SPEED //set ledge alarm
+					jumps[i] = _inst.max_jumps //refresh jumps
+					switch (state[i]) {
+						case AIRBORNE: case FREEFALL: case AIR_ATTACK:
+							_inst.spawning = false
+							state[i] = LANDING //set state
+							_inst.sprite_index = scr_get_sprite(_inst, "land")
+							_inst.image_index = 0
+						break;
+					}
+				}
+			} else { show_debug_message("GROUND DISAPPEARED") }
+		} else {
+			if (_inst.image_angle != 0) and (scr_check_for_ground(_inst, -_inst.momentum_x, 0)) {
+				while (!scr_check_for_ground(_inst)) {
+					_inst.y += 0.25
+				}
+			} else {
+				_inst.image_angle = 0
+				if ((state[i] = WALKING) or (state[i] = RUNNING)) {
+					state[i] = AIRBORNE
+					_inst.sprite_index = scr_get_sprite(_inst, "jump")
 					_inst.image_index = 0
-				break;
+				}
 			}
 		}
-	} else {
-		if ((state[i] = WALKING) or (state[i] = RUNNING)) {
-			state[i] = AIRBORNE
-			_inst.sprite_index = scr_get_sprite(_inst, "jump")
-			_inst.image_index = 0
-		}
 	}
-	
-	
+
 	//wrapping code
 	if (_inst.x > room_width) {
 		_inst.x = 5	

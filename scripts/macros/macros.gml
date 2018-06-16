@@ -66,7 +66,7 @@
 #macro AIR_DODGING 15
 #macro SHIELDING 16 //describes shield and hold shield animation
 #macro HIT_STUN 17 //describes static hitstun
-#macro TECHING 18
+#macro TECHING 18 //describes the time the character is able to tech, not the actual tech
 #macro JUMP_RISE 19 //describes holding jump after pressing it
 #macro AIR_ATTACK 20
 #macro GRABBING 21 //describes performing a grab
@@ -74,6 +74,7 @@
 #macro SPEED_DOWN 23
 #macro DASH_SLOW 24
 #macro UNSHIELDING 25 //describes unshield animation
+#macro CROUCHING 26 //describes all 3 crouching states
 
 //character identiiers
 #macro BAL 0
@@ -91,6 +92,8 @@
 #macro DIR 363 //direction image angle
 #macro HOLD 365, 365, 365 //direction irrelevant, its a grab
 
+
+#macro GROUND_HEIGHT 5 //half the height from the top of the ground that is considered acceptable as on top
 
 //globals
 global.network_protocol = network_socket_tcp //**note, if UDP is found to be too unreliable, switch to the more reliable, but slower TCP
@@ -126,20 +129,24 @@ for (var t = 0; t <= global.maxIterations; t++) {
 	global.outerPolygonCoef[t] = 0.5/(cos(pi/numNodes)*cos(pi/numNodes));
 }
 
+//match variables
+global.ground = noone
+
 
 //enums
 enum _IMPULSE { //define an impulse enumeration field (actual values are divided by 100)
 	_AIR_DODGE = 1400, //air dodge impulse (instant)
-	_ROLL = 1000, //roll impulse (instant)
+	_ROLL = 500, //roll impulse (instant)
 	_WALK = 50, //walking impulse (ongoing)
 	_RUN = 100, //running impulse (ongoing)
 	_DASH = 700, //dashing impulse (instant)
-	_JUMP = 1250, //jumping impulse (instant)
-	_JUMPRISE = 25, //jumprise impulse (ongoing)
+	_JUMP = 1000, //jumping impulse (instant)
+	_JUMPRISE = 23, //jumprise impulse (ongoing)
 	_GRAVITY = 30, //gravity impulse (ongoing)
 	_FASTFALL = 150, //fastfall impulse (ongoing)
 	_AIR_MOVE = 100, //moving in air (ongoing)
-	_FREEFALL = 100 //starting freefall (instant)
+	_FREEFALL = 100, //starting freefall (instant)
+	_SUB_DASH = 750 //dash performed during a run in the same direction (instant)
 }
 
 

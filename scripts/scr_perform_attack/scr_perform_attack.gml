@@ -13,6 +13,7 @@ switch (argument[2]) { //get attack type as string
 	case 0: //jab
 		_type = "jab"
 		_ret = TILT_ATTACK
+		argument[0].jab = (argument[0].jab + 1) mod 4 //incrment jab counter
 	break;
 	case 1: //tilt
 		_type = "tilt"

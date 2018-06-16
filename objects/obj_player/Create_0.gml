@@ -11,10 +11,14 @@ jab = 1 //current jab number
 bracing = 1 //resistance to knockback based on state
 momentum_x = 0 //momentum horizontally
 momentum_y = 0 //momentum vertically
+mom_x = 0 //momentum horiztontally used for momentum lag
+mom_y = 0 //momentum vertically used for momentum lag
+inertial = true //false for when momentum should not be used to move character
 last_x = x //used for eth trail effect
 last_y = y //used for eth trail effect
 last_x2 = x //used for eth trail effect
 last_y2 = y //used for eth trail effect
+spawning = true //if just spawned in
 alarm[0] = -1 //ledge alarm
 
 sprite[0, 0] = sprite_index

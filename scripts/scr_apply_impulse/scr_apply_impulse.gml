@@ -8,10 +8,13 @@
 
 var _mag = argument[3] //store the initial magnitude of the vector
 
-if (!argument[3]) {//if it is not an attack
+if (!argument[4]) {//if it is not an attack
 	_mag *= (1/argument[0].weight) //mulitply the magnitude by the inverse of its weight	more weight = less mag
 	_mag *= 1 + (argument[0].percentage/100) //multiply magnitude by 1 + percentage (as decimal) more % = more mag
 }
-
-argument[0].momentum_x += lengthdir_x(_mag, argument[2]) //apply horizontal momentum
-argument[0].momentum_y += lengthdir_y(_mag, argument[2]) //apply vertical momentum
+var _d = argument[2]
+if (!((abs(argument[2] - 180) = 90) or (argument[4]) or (argument[0].image_angle = 0)))  {
+	_d += argument[0].image_angle
+}
+argument[0].momentum_x += lengthdir_x(_mag, _d) //apply horizontal momentum
+argument[0].momentum_y += lengthdir_y(_mag, _d) //apply vertical momentum

@@ -58,16 +58,21 @@ switch (obj_match_handler.state[player_number]) {
 			obj_match_handler.state[player_number] = GROUNDED
 		break;
 		case DODGING:
-			if (sprite_index = scr_get_sprite(id, "dodge")) {
-				sprite_index = scr_get_sprite(id, "hold_shield")
-				obj_match_handler.state[player_number] = SHIELDING
-				with (instance_create(x, y, obj_shield)) { //with the shield object
-					sprite_index = scr_get_sprite(other.id, "shield_ball") //give it its sprite
-					creator = other.id //give it its assigned character
+			if (scr_check_for_ground()) {
+				if (sprite_index = scr_get_sprite(id, "dodge")) {
+					sprite_index = scr_get_sprite(id, "hold_shield")
+					obj_match_handler.state[player_number] = SHIELDING
+					with (instance_create(x, y, obj_shield)) { //with the shield object
+						sprite_index = scr_get_sprite(other.id, "shield_ball") //give it its sprite
+						creator = other.id //give it its assigned character
+					}
+				} else {
+					sprite_index = scr_get_sprite(id, "idle")
+					obj_match_handler.state[player_number] = GROUNDED
 				}
 			} else {
-				sprite_index = scr_get_sprite(id, "idle")
-				obj_match_handler.state[player_number] = GROUNDED
+				sprite_index = scr_get_sprite(id, "air_move")
+				obj_match_handler.state[player_number] = AIRBORNE
 			}
 			image_index = 0
 		break;
@@ -114,4 +119,15 @@ switch (obj_match_handler.state[player_number]) {
 			}
 		break;
 		//HOLDING
+		case CROUCHING:
+			image_index = 0
+			if (sprite_index = scr_get_sprite(id, "crouch")) {
+				sprite_index = scr_get_sprite(id, "crouch_hold")	
+				bracing = 0.25
+			} else if (sprite_index = scr_get_sprite(id, "crouch_end")) {
+				sprite_index = scr_get_sprite(id, "idle")
+				obj_match_handler.state[player_number] = GROUNDED
+				bracing = 1
+			}
+		break;
 }

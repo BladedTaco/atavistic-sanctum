@@ -1,7 +1,7 @@
 ///@func scr_handle_movement(object, player_number, type)
 ///@param object - the instance id of the character object
 ///@param player_number - the number of the player to perform the shield with
-///@param type - the type of special movement (stop, drift, DI, airborne) (1 2 3 4 respectively)
+///@param type - the type of special movement (stop, drift, DI, airborne, delay) (1 2 3 4 5 respectively)
 ///@desc handles special movement types, possibly ignoring current inputs
 
 var _x1 = input_array[argument[1], XAXIS]
@@ -16,9 +16,9 @@ switch (argument[2]) {
 	break;
 	
 	case 2: //drift
-		argument[0].momentum_x *= 0.95/argument[0].inertia //reduce momentum
+		argument[0].momentum_x *= 0.97/argument[0].inertia //reduce momentum
 		argument[0].momentum_y *= 0.85/argument[0].inertia //reduce momentum
-		scr_apply_impulse(argument[0], argument[1], 270, _IMPULSE._GRAVITY/200, false) //apply half gravity
+		scr_apply_impulse(argument[0], argument[1], 270, _IMPULSE._GRAVITY/100, false) //apply gravity
 		if (state[argument[1]] = LANDING) {
 			input_array[argument[1], XAXIS] = 0
 			input_array[argument[1], YAXIS] = 0
@@ -41,5 +41,14 @@ switch (argument[2]) {
 		//apply friction
 		argument[0].momentum_x *= 0.8/argument[0].inertia
 		argument[0].momentum_y *= 0.9/argument[0].inertia
+	break;
+	
+	case 5: //momentum delay
+		argument[0].mom_x *= 0.75 //reduce momentum counter
+		argument[0].mom_y *= 0.75 //reduce momentum counter
+		if ((abs(argument[0].mom_x) < 5) and (abs(argument[0].mom_y) < 5)) { //if -5 < mom_x and mom_y < 5
+			argument[0].inertial = true //end momentum delay
+			state[argument[1]] = scr_perform_freefall(argument[0], argument[1])
+		}
 	break;
 }

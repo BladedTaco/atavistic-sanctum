@@ -9,6 +9,7 @@ var _y1 = input_array[argument[1], YAXIS]
 var _x2 = old_axis[argument[1], XAXIS]
 var _y2 = old_axis[argument[1], YAXIS]
 var _end = false //to end a walk or run, or start a dash ro speed up
+var _s = state[argument[1]]
 
 
 scr_apply_impulse(argument[0], argument[1], 270, _IMPULSE._GRAVITY/100, false) //apply gravity
@@ -26,19 +27,15 @@ if (state[argument[1]] = DASHING) {
 	}
 }
 
-if (_ret = DASH_SLOW) or (_ret = SPEED_DOWN) {
-	input_array[argument[1], XAXIS] = old_axis[argument[1], XAXIS]
-	input_array[argument[1], YAXIS] = old_axis[argument[1], YAXIS]
-} else if (_x1*argument[0].image_xscale > obj_input.l_stick_deadzone[argument[1]]) { //if moving in the right direction
-	if (keyboard_check(ord("F"))) { //walking
+
+if (_x1*argument[0].image_xscale > obj_input.l_stick_deadzone[argument[1]]) { //if moving in the right direction
+	if !((input_array[argument[1], TILT] > 1) or (_s = RUNNING) or (_s = DASH_SLOW) or (_s = SPEED_DOWN) or (_s = DASHING)) { //walking WALKING< SPEEDDOWN
 		scr_apply_impulse(argument[0], argument[1], point_direction(0, 0, _x1, 0), _IMPULSE._WALK*point_distance(0, 0, _x1, 0)/100, false)
 		if (_ret != WALKING) {
 			_ret = SPEED_UP
 		}
 	} else { //running
-
-		if ((sign(_x2 - _x1) != sign(_x2)) and (point_distance(_x1, _y1, _x2, _y2) > 0.25)) {
-			scr_apply_impulse(argument[0], argument[1], point_direction(0, 0, _x1, 0), _IMPULSE._DASH/100, false)
+		if ((sign(_x2 - _x1) != sign(_x2)) and (point_distance(_x1, _y1, _x2, _y2) > obj_input.smash[0])) { //big enough change to dash
 			_ret = DASHING
 		} else {
 			scr_apply_impulse(argument[0], argument[1], point_direction(0, 0, _x1, 0), _IMPULSE._RUN*point_distance(0, 0, _x1, 0)/100, false)
@@ -63,6 +60,17 @@ if (_ret = DASH_SLOW) or (_ret = SPEED_DOWN) {
 argument[0].momentum_x *= 0.8/argument[0].inertia
 argument[0].momentum_y *= 0.9/argument[0].inertia
 
+if ((_ret = DASHING) and (state[argument[1]] != DASHING)) {
+	if ((sign(_x1) = sign(_x2)) and (state[argument[1]] = RUNNING)) { //not an intial dash or dash dance
+		scr_apply_impulse(argument[0], argument[1], point_direction(0, 0, _x1, 0), _IMPULSE._SUB_DASH/100, false)
+	} else {
+		scr_apply_impulse(argument[0], argument[1], point_direction(0, 0, _x1, 0), _IMPULSE._DASH/100, false)
+	}
+	with (instance_create(argument[0].x, argument[0].y, obj_dash_effect)) {
+		image_xscale = argument[0].image_xscale	
+		image_angle = argument[0].image_angle
+	}	
+}
 
 state[argument[1]] = _ret
 if (_end) {

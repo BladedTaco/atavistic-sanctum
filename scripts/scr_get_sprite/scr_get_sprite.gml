@@ -13,20 +13,19 @@ switch (argument[0].character) { //check charater
 	case MAC: i = "spr_mac_" break;
 }
 
-//show_debug_message(string(i + argument[1]))
 ret = asset_get_index(string(i + argument[1]))
 if (ret = -1) { //if nonexistant sprite
 	//check for special cases
-	if (string_copy(argument[1], 1, 11) = "dash_attack") { //jab attack
-		ret = asset_get_index(i + "smash_forward")	
+	if (string_copy(argument[1], 1, 11) = "dash_attack") { //dash attack
+		ret = asset_get_index(i + "dash_attack")	
 	}
 	if (string_copy(argument[1], 1, 3) = "jab") { //jab attack
 		ret = asset_get_index(i + "jab_" + string(argument[0].jab))	
 	}
-	if (string_copy(argument[1], 1, 10) = "smash_back") { //jab attack
+	if (string_copy(argument[1], 1, 10) = "smash_back") { //smash forward and pivot
 		ret = asset_get_index(i + "smash_forward")	
 	}
-	if (string_copy(argument[1], 1, 9) = "tilt_back") { //jab attack
+	if (string_copy(argument[1], 1, 9) = "tilt_back") { //tilt forward and pivot
 		ret = asset_get_index(i + "tilt_forward")	
 	}
 	if (string_copy(argument[1], 1, 8) = "grab_jab") { //grab jab
@@ -40,7 +39,6 @@ if (ret = -1) { //if nonexistant sprite
 			}
 		break;
 	}	
-	//show_debug_message(ret)
 	if (sprite_exists(ret)) {
 		return ret
 	} else {

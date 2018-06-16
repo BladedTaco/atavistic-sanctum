@@ -91,9 +91,9 @@ var i = 0 //variable created now for use in loops below if hurtboxes or hitboxes
 
 	//bal land (no hitboxes)
 	scr_add_hurtbox(spr_bal_land, 0, 0, CIRCLE, 15, 20, 1, -31, 0)
-	scr_add_hurtbox(spr_bal_land, 0, 0, CIRCLE, 15, 20, 0, -30, 0)
-	scr_add_hurtbox(spr_bal_land, 0, 0, CIRCLE, 15, 20, 0, -29, 0)
-	scr_add_hurtbox(spr_bal_land, 0, 0, CIRCLE, 15, 20, 0, -28, 0)
+	scr_add_hurtbox(spr_bal_land, 1, 0, CIRCLE, 15, 20, 0, -30, 0)
+	scr_add_hurtbox(spr_bal_land, 2, 0, CIRCLE, 15, 20, 0, -29, 0)
+	scr_add_hurtbox(spr_bal_land, 3, 0, CIRCLE, 15, 20, 0, -28, 0)
 
 	//bal shield (no hitboxes)
 	scr_add_hurtbox(spr_bal_shield, 0, 0, CIRCLE, 15, 20, 2, -31, 0)
@@ -110,13 +110,13 @@ var i = 0 //variable created now for use in loops below if hurtboxes or hitboxes
 	scr_add_hurtbox(spr_bal_hold_shield, 2, 0, CIRCLE, 15, 20, 1, -7, 0)
 
 	//bal un shield (no hitboxes)
-	scr_add_hurtbox(spr_bal_shield, 0, 0, CIRCLE, 15, 20, 1, -7, 0)
-	scr_add_hurtbox(spr_bal_shield, 1, 0, CIRCLE, 15, 20, 1, -7, 0)
-	scr_add_hurtbox(spr_bal_shield, 2, 0, CIRCLE, 15, 20, 1, -7, 0)
-	scr_add_hurtbox(spr_bal_shield, 3, 0, CIRCLE, 21, 16, 11, -11, -45)
-	scr_add_hurtbox(spr_bal_shield, 4, 0, CIRCLE, 20, 15, 12, -20, 0)
-	scr_add_hurtbox(spr_bal_shield, 5, 0, CIRCLE, 16, 21, 9, -28, -45)
-	scr_add_hurtbox(spr_bal_shield, 6, 0, CIRCLE, 15, 20, 2, -31, 0)
+	scr_add_hurtbox(spr_bal_un_shield, 0, 0, CIRCLE, 15, 20, 1, -7, 0)
+	scr_add_hurtbox(spr_bal_un_shield, 1, 0, CIRCLE, 15, 20, 1, -7, 0)
+	scr_add_hurtbox(spr_bal_un_shield, 2, 0, CIRCLE, 15, 20, 1, -7, 0)
+	scr_add_hurtbox(spr_bal_un_shield, 3, 0, CIRCLE, 21, 16, 11, -11, -45)
+	scr_add_hurtbox(spr_bal_un_shield, 4, 0, CIRCLE, 20, 15, 12, -20, 0)
+	scr_add_hurtbox(spr_bal_un_shield, 5, 0, CIRCLE, 16, 21, 9, -28, -45)
+	scr_add_hurtbox(spr_bal_un_shield, 6, 0, CIRCLE, 15, 20, 2, -31, 0)
 
 	//bal roll (no hitboxes, discontinuous hurtboxes)
 	scr_add_hurtbox(spr_bal_roll, 0, 0, CIRCLE, 15, 20, 1, -7, 0)
