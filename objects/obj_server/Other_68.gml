@@ -41,7 +41,6 @@ if ((server = event_id) and (global.network_protocol = network_socket_tcp)) { //
 			network_array[_index] = buffer_read(buff, buffer_s16) + 1//read player number
 			network_array[++_index] = buffer_read(buff, buffer_s16) //read frame data was sent
 			if (!global.advance) { global.advance = true; global.match_frame = network_array[_index]; }
-			//show_debug_message(string(network_array[_index]) + "  " + string(global.match_frame))
 			network_array[++_index] = buffer_read(buff, buffer_f32) //read axis data
 			network_array[++_index] = buffer_read(buff, buffer_f32) //read axis data
 			for (var o = 2; o < 10; o++) {

@@ -46,7 +46,7 @@ switch (argument[2]) {
 	case 5: //momentum delay
 		argument[0].mom_x *= 0.75 //reduce momentum counter
 		argument[0].mom_y *= 0.75 //reduce momentum counter
-		if ((abs(argument[0].mom_x) < 5) and (abs(argument[0].mom_y) < 5)) { //if -5 < mom_x and mom_y < 5
+		if ((abs(argument[0].mom_x) < 3) and (abs(argument[0].mom_y) < 3)) { //if -3 < mom_x and mom_y < 3
 			argument[0].inertial = true //end momentum delay
 			state[argument[1]] = scr_perform_freefall(argument[0], argument[1])
 		}

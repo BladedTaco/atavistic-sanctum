@@ -93,7 +93,7 @@
 #macro HOLD 365, 365, 365 //direction irrelevant, its a grab
 
 
-#macro GROUND_HEIGHT 5 //half the height from the top of the ground that is considered acceptable as on top
+#macro GROUND_HEIGHT 10 //half the height from the top of the ground that is considered acceptable as on top
 
 //globals
 global.network_protocol = network_socket_tcp //**note, if UDP is found to be too unreliable, switch to the more reliable, but slower TCP

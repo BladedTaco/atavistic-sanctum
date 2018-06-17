@@ -4,7 +4,8 @@
     "mvc": "1.1",
     "name": "3fc241c3-a31d-4ef3-8945-7422eb1477da",
     "children": [
-        "2203f60d-730b-4bd7-b7ab-e89dc9966b25"
+        "2203f60d-730b-4bd7-b7ab-e89dc9966b25",
+        "fa8f2a34-5c1f-4e3b-9ee1-b72bbbd74eca"
     ],
     "filterType": "GMSprite",
     "folderName": "game",

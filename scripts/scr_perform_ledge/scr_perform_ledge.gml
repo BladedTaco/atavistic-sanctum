@@ -16,12 +16,12 @@ switch (argument[2]) { //check action type
 				} else {
 					switch (state[argument[1]]) {
 						case AIRBORNE: case JUMP_RISE: case FREEFALL: //if able to grab ledge
-						argument[0].x = (_ledge.x + argument[0].x)/2
-						argument[0].y = (_ledge.y + argument[0].y)/2
-						argument[0].image_xscale = _ledge.facing
-						argument[0].image_index = 0 //set character to first frame of animation
-						argument[0].alarm[0] = GAME_SPEED*3 //set ledge alarm for hold duration
-						return LEDGE //return ledge hold state
+							argument[0].x = (_ledge.x + argument[0].x)/2
+							argument[0].y = (_ledge.y + argument[0].y)/2
+							argument[0].image_xscale = _ledge.facing
+							argument[0].image_index = 0 //set character to first frame of animation
+							argument[0].alarm[0] = GAME_SPEED*3 //set ledge alarm for hold duration
+							return LEDGE //return ledge hold state
 						break; 
 						
 						default:

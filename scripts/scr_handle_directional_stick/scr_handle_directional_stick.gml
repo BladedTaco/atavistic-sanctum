@@ -22,7 +22,7 @@ var _smash_difference = smash[argument[0]] //temporary value
 
 if (_movement < _old_position) { _difference = 0 } //make difference 0 if returning to centre
 
-if (_movement < power(l_stick_deadzone[argument[0]], 2)) { //if left stick input is inside deadzone
+if (_movement < l_stick_deadzone[argument[0]]) { //if left stick input is inside deadzone
 	_input[@ 0] = 0 //set xaxis to 0
 	_input[@ 1] = 0 //set yaxis to 0
 } else if (_movement < _tilt_deadzone) { //neutral movement

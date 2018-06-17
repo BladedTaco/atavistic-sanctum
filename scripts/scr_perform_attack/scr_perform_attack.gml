@@ -46,7 +46,5 @@ if (sprite_exists(_sprite)) { //if the sprite exists
 	argument[0].sprite_index = _sprite //set sprite to the attack sprite
 	argument[0].image_index = 0 //set animation frame to the first one
 	return _ret //return the state
-} else {
-	//show_debug_message(_sprite)	
 }
 return FREEFALL //return freefall state is sprite is not found

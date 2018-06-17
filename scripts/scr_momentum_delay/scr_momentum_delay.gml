@@ -8,7 +8,7 @@ with (argument[0]) {
 	mom_x += argument[1]*argument[3]
 	mom_y += argument[2]*argument[3]
 
-	if ((abs(mom_x) < 5) and (abs(mom_y) < 5)) { //if -5 < mom_x and mom_y < 5
+	if ((abs(mom_x) < 3) and (abs(mom_y) < 3)) { //if -3 < mom_x and mom_y < 3
 		inertial = true //end momentum delay
 	} else { //otherwise decrease until they are
 		inertial = false

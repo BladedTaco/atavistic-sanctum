@@ -19,6 +19,8 @@ last_y = y //used for eth trail effect
 last_x2 = x //used for eth trail effect
 last_y2 = y //used for eth trail effect
 spawning = true //if just spawned in
+effective_x = x //the effective x offset used for moves that move the character without changing position
+effective_y = y //the effective y offset used for moves that move the character without changing position
 alarm[0] = -1 //ledge alarm
 
 sprite[0, 0] = sprite_index

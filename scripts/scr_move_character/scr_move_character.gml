@@ -29,7 +29,8 @@ if (state[argument[1]] = DASHING) {
 
 
 if (_x1*argument[0].image_xscale > obj_input.l_stick_deadzone[argument[1]]) { //if moving in the right direction
-	if !((input_array[argument[1], TILT] > 1) or (_s = RUNNING) or (_s = DASH_SLOW) or (_s = SPEED_DOWN) or (_s = DASHING)) { //walking WALKING< SPEEDDOWN
+	if !((input_array[argument[1], TILT] > 1) or (_s = RUNNING) or (_s = DASH_SLOW) or (_s = SPEED_DOWN) or (_s = DASHING)) { //walking 
+		show_debug_message("WALKING")
 		scr_apply_impulse(argument[0], argument[1], point_direction(0, 0, _x1, 0), _IMPULSE._WALK*point_distance(0, 0, _x1, 0)/100, false)
 		if (_ret != WALKING) {
 			_ret = SPEED_UP

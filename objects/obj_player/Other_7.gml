@@ -1,6 +1,6 @@
 /// @description animation effects on sprite
 
-scr_check_special_instructions()
+scr_check_special_instructions(0)
 
 switch (obj_match_handler.state[player_number]) {
 		//GROUNDED n/a
@@ -22,15 +22,8 @@ switch (obj_match_handler.state[player_number]) {
 		//WALKING n/a
 		//RUNNING n/a
 		//FREEFALL n/a
-		case TILT_ATTACK: //transition to grounded state
-			sprite_index = scr_get_sprite(id, "idle")
-			obj_match_handler.state[player_number] = GROUNDED
-		break;
-		case SMASH_ATTACK: //transition to grounded state
-			sprite_index = scr_get_sprite(id, "idle")
-			obj_match_handler.state[player_number] = GROUNDED
-		break;
-		case SPECIAL_ATTACK:
+		case TILT_ATTACK: case SMASH_ATTACK: case SPECIAL_ATTACK: case UNSHIELDING: case GRABBING:
+			image_index = 0
 			if (scr_check_for_ground()) { //if grounded
 				sprite_index = scr_get_sprite(id, "idle")
 				obj_match_handler.state[player_number] = GROUNDED
@@ -86,16 +79,6 @@ switch (obj_match_handler.state[player_number]) {
 			sprite_index = scr_get_sprite(id, "hold_shield")
 			image_index = 0
 		break;
-		case UNSHIELDING:
-			if (scr_check_for_ground()) {
-				sprite_index = scr_get_sprite(id, "idle")
-				obj_match_handler.state[player_number] = GROUNDED
-			} else {
-				sprite_index = scr_get_sprite(id, "air_move")
-				obj_match_handler.state[player_number] = AIRBORNE
-			}
-			image_index = 0
-		break;
 		//HIT_STUN
 		//TECHING
 		case JUMP_RISE: case JUMPING: case AIRBORNE:
@@ -107,16 +90,6 @@ switch (obj_match_handler.state[player_number]) {
 		case AIR_ATTACK:
 			sprite_index = scr_get_sprite(id, "air_move")
 			obj_match_handler.state[player_number] = AIRBORNE
-		break;
-		case GRABBING:
-			image_index = 0
-			if (scr_check_for_ground()) { //grounded
-				sprite_index = scr_get_sprite(id, "idle")
-				obj_match_handler.state[player_number] = GROUNDED
-			} else { //put in freefall
-				sprite_index = scr_get_sprite(id, "air_move")
-				obj_match_handler.state[player_number] = AIRBORNE
-			}
 		break;
 		//HOLDING
 		case CROUCHING:

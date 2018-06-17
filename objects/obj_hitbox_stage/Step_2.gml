@@ -1,5 +1,5 @@
 /// @description check collisions
-var _id = noone
+var _id = id
 var c = false
 col = false
 with (obj_hitbox) {
@@ -78,11 +78,11 @@ with (obj_hitbox) {
 						var _yy = other.y - momentum_y*2
 						if (_inst.image_angle != 0) { //complex check, rotated ground
 							for (var i = 0; i <= 3; i++) {
-								if (sign((_xx - other._x[i])*(other._y[(i+1) mod 4] - other._y[i]) - 
-								(_yy - other._y[i])*(other._x[(i+1) mod 4] - other._x[i])) != other.side[i]) { //outside line
+								if (sign((_xx - _id._x[i])*(_id._y[(i+1) mod 4] - _id._y[i]) - 
+								(_yy - _id._y[i])*(_id._x[(i+1) mod 4] - _id._x[i])) != _id.side[i]) { //outside line
 									var _l = point_distance(0, 0, momentum_x, momentum_y)
 									var _d = point_direction(0, 0, momentum_x, momentum_y)
-									var _d2 = (point_direction(other._x[i], other._y[i], other._x[(i+1) mod 4], other._y[(i+1) mod 4]) + 90) mod 360
+									var _d2 = (point_direction(_id._x[i], _id._y[i], _id._x[(i+1) mod 4], _id._y[(i+1) mod 4]) + 90) mod 360
 									_d = _d2 - _d
 									_d = _d + _d2
 									momentum_x = lengthdir_x(_l, _d)

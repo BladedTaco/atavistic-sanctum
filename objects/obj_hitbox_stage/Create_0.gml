@@ -48,8 +48,6 @@ for (var i = 0; i <= 3; i++) {
 	if (bb[3] < _y[i]) { bb[3] = _y[i] }
 }
 
-if (creator.object_index = obj_ground) {
-	for (var i = 0; i < 4; i++) {
-		side[i] = sign((x - _x[i])*(_y[(i+1) mod 4] - _y[i]) - (y - _y[i])*(_x[(i+1) mod 4] - _x[i]))	
-	}
+for (var i = 0; i < 4; i++) {
+	side[i] = sign((x - _x[i])*(_y[(i+1) mod 4] - _y[i]) - (y - _y[i])*(_x[(i+1) mod 4] - _x[i]))	
 }
