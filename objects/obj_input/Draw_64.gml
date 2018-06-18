@@ -34,17 +34,10 @@ switch (controls_set[0] - 2) {
 	case 20: draw_text_normal(600, 400, "Press G to reset controls") break;
 }
 
-
 for (var i = 0; i <= global.player_number; i++) {
 	for (var o = 0; o < array_length_2d(input_array, i); o++) {
-		draw_text_normal(i*50 + 50, o*15 + 50, input_array[i, o])
+		draw_text_normal(i*150 + 50, o*15 + 50, input_array[i, o])
 	}
-}
-
-for (var i = 0; i < array_length_2d(button_const_array, 0); i++) {
-	draw_text_normal(200, 10 + i*15, gamepad_button_check(controller_number[0], button_const_array[0, i]))
-	draw_text_normal(250, 10 + i*15, gamepad_button_value(controller_number[0], button_const_array[0, i]))
-	draw_text_normal(300, 10 + i*15, gamepad_axis_value(controller_number[0], button_const_array[0, i]))
 }
 
 draw_set_colour(c_aqua)

@@ -12,9 +12,12 @@ do {
 	if (input_array[i, PAUSE]) { //pause or unpause
 		global.paused = !global.paused	
 	}
+	if ((input_array[i, YAXIS] < 0.5) and !input_array[i, ATTACK]) {
+		_inst.alarm[1] = 5 
+	} //platform drop alarm
 	do {
 		var _state = state[i]
-		switch (state[i]) { //perform actions based on state
+		switch (state[i]) { //perform actions based on state 
 			case CROUCHING:
 				if (input_array[i, YAXIS] < 0.5) {
 					if (_inst.sprite_index != scr_get_sprite(_inst, "crouch_end")) {
@@ -70,7 +73,15 @@ do {
 						image_xscale = _inst.image_xscale	
 					}
 				}
-			case TILT_ATTACK: case SMASH_ATTACK: case SPECIAL_ATTACK: case LANDING: case DODGING:
+			case SMASH_ATTACK:
+				if (input_array[i, ATTACK] and (_inst.image_index < 2)) {
+					if (_inst.alarm[2] >= 0) {
+						_inst.image_index = 1
+					}
+				} else {
+					_inst.smash_charge = 1 - (_inst.alarm[2]/GAME_SPEED)
+				}
+			case TILT_ATTACK: case SPECIAL_ATTACK: case LANDING: case DODGING:
 				_move_character = 2 //drift
 			break;
 			case SHIELDING:
@@ -271,7 +282,7 @@ do {
 				global.ground = noone
 				if (instance_exists(_ground)) {
 					var _d = degtorad(angle_difference(_inst.image_angle, _ground.image_angle))
-					if ((abs(_ex) + abs(_ey))*abs(_d) != 0) { //if position is offset and rotated
+					if ((abs(_ex) + abs(_ey) > 0) or (abs(_d) != 0)) { //if position is offset and rotated
 						//rotate position around that offset 
 						_inst.x = (-_ex)*cos(_d) - (-_ey)*sin(_d) + _inst.effective_x
 						_inst.y = (-_ex)*sin(_d) + (-_ey)*cos(_d) + _inst.effective_y
@@ -303,12 +314,15 @@ do {
 				while (!scr_check_for_ground(_inst, _ex, _ey)) {
 					_inst.y += 0.25
 				}
-			} else {
+			} else { //absolutely no ground found
 				_inst.image_angle = 0
-				if ((state[i] = WALKING) or (state[i] = RUNNING) or (state[i] = CROUCHING)) {
-					state[i] = AIRBORNE
-					_inst.sprite_index = scr_get_sprite(_inst, "jump")
-					_inst.image_index = 0
+				switch (state[i]) { //if in a certain state, make character airborne
+					case WALKING: case RUNNING: case CROUCHING: case SPEED_UP: case DASHING:
+					case DASH_SLOW: case SPEED_DOWN:
+						state[i] = AIRBORNE
+						_inst.sprite_index = scr_get_sprite(_inst, "jump")
+						_inst.image_index = 0
+					break;
 				}
 			}
 		}

@@ -91,6 +91,7 @@
 #macro OUT 362 //direction away from centre
 #macro DIR 363 //direction image angle
 #macro HOLD 365, 365, 365 //direction irrelevant, its a grab
+#macro HOLD_DIR 365 //just the direction of the grab
 
 
 #macro GROUND_HEIGHT 10 //half the height from the top of the ground that is considered acceptable as on top
@@ -135,7 +136,7 @@ global.ground = noone
 
 //enums
 enum _IMPULSE { //define an impulse enumeration field (actual values are divided by 100)
-	_AIR_DODGE = 1400, //air dodge impulse (instant)
+	_AIR_DODGE = 1200, //air dodge impulse (instant)
 	_ROLL = 500, //roll impulse (instant)
 	_WALK = 50, //walking impulse (ongoing)
 	_RUN = 100, //running impulse (ongoing)
@@ -146,8 +147,13 @@ enum _IMPULSE { //define an impulse enumeration field (actual values are divided
 	_FASTFALL = 150, //fastfall impulse (ongoing)
 	_AIR_MOVE = 100, //moving in air (ongoing)
 	_FREEFALL = 100, //starting freefall (instant)
-	_SUB_DASH = 750 //dash performed during a run in the same direction (instant)
+	_SUB_DASH = 750, //dash performed during a run in the same direction (instant)
+	_RIGIDITY = 10, //the force pushing players apart when they are colliding (ongoing)
+	_CLASH = 250, //when a hitbox collides with a hitbox (instant)
+	//attack impulses
+	_BAL_U_SPEC = 100 //balloony's recovery (ongoing)
 }
+
 
 
 add_moves() //add all of the attacks of the characters into memory (very very intensive)

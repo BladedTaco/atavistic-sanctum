@@ -1,0 +1,1 @@
+/// @description smash attack alarm

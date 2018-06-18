@@ -14,14 +14,14 @@ for (var i = 0; i <= 100; i++) {
 if (argument[1]) { //controller inputs
 	if (gamepad_is_connected(argument[2])) {
 		for (var i = 0; i < 20; i++) {
-			if (i < 14) { //button
+			if (i < 14 + analogue[argument[0]]) { //button
 				_input[button_array[argument[0], i]] += gamepad_button_check(argument[2], button_const_array[argument[0], i])
 			} else if (i < 16) { //analogue button
 				if (gamepad_axis_value(argument[2], button_const_array[argument[0], i])*axis[argument[0], i-10] > trigger_threshold[argument[0]]) { //if being pressed
 					_input[button_array[argument[0], i]] = 1 
 				}
 			} else { //directional stick
-				_input[button_array[argument[0], i]] = gamepad_axis_value(argument[2], button_const_array[argument[0], i])	
+				_input[button_array[argument[0], i]] = gamepad_axis_value(argument[2], button_const_array[argument[0], i])*axis[argument[0], i - 16]
 			}
 		}
 	scr_handle_directional_stick(argument[0], _input)
@@ -36,22 +36,9 @@ if (argument[1]) { //controller inputs
 		}
 	}
 	if (abs(_input[XAXIS]) + abs(_input[YAXIS]) > l_stick_deadzone[argument[0]]) {
-		if (keyboard_check(ord("N"))) {
-			_input[TILT] = TILT_MOVE	
-		} else if (keyboard_check(ord("M"))) {
-			_input[TILT] = SMASH_MOVE	
-		} else {
-			_input[TILT] = NEUTRAL_MOVE	
-			
-		}
+		_input[TILT] += 1 //increment movement if axis is moving
 	}
-	//limit _input to be less than 0.5 away from last postion in both directions
-	var a = _input[XAXIS] - input_buffer_array[argument[0], XAXIS]
-	var b = _input[YAXIS] - input_buffer_array[argument[0], YAXIS]
-	_input[XAXIS] =	input_buffer_array[argument[0], XAXIS] + clamp(a, -1/2, 1/2)
-	_input[YAXIS] =	input_buffer_array[argument[0], YAXIS] + clamp(b, -1/2, 1/2)	
 }
-
 
 //limit l stick to magnitude of 1
 var _len = point_distance(0, 0, _input[XAXIS], _input[YAXIS])

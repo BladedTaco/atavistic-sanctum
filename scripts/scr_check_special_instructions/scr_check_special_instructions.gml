@@ -10,9 +10,6 @@ switch (argument[0]) {
 			case BAL:
 				switch (sprite_index) {
 					case spr_bal_smash_forward:
-						//_xx = 88*image_xscale
-						//effective_x = x
-						//effective_y = y
 						x = effective_x
 						y = effective_y
 					break;
@@ -51,6 +48,9 @@ switch (argument[0]) {
 		switch (character) {
 			case BAL:
 				switch (sprite_index) {
+					case spr_bal_special_up:
+						scr_apply_impulse(id, player_number, 90, _IMPULSE._BAL_U_SPEC/100, false)
+					break;
 					case spr_bal_smash_forward:
 						switch (floor(image_index)) {
 							case 3: _xx = 3*image_xscale; break;

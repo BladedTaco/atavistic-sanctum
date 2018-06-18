@@ -8,13 +8,13 @@
 
 var _mag = argument[3] //store the initial magnitude of the vector
 
-if (!argument[4]) {//if it is not an attack
+if (!argument[4]) {//if it is not an attack (as these are done in the knockback formula)
 	_mag *= (1/argument[0].weight) //mulitply the magnitude by the inverse of its weight	more weight = less mag
-	_mag *= 1 + (argument[0].percentage/100) //multiply magnitude by 1 + percentage (as decimal) more % = more mag
+	_mag *= 1 + (argument[0].percentage/1000) //multiply magnitude by 1 + percentage/10 (as decimal) more % = more mag
 }
 var _d = argument[2]
-if (!((abs(argument[2] - 180) = 90) or (argument[4]) or (argument[0].image_angle = 0)))  {
-	_d += argument[0].image_angle
+if (!((abs(argument[2] - 180) = 90) or (argument[4])))  {
+	_d += argument[0].image_angle //if not vertical, or an attack 
 }
 argument[0].momentum_x += lengthdir_x(_mag, _d) //apply horizontal momentum
 argument[0].momentum_y += lengthdir_y(_mag, _d) //apply vertical momentum

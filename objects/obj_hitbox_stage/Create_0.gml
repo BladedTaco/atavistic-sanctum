@@ -7,8 +7,8 @@ _dir = degtorad(_dir)
 creator = global.bbox[10]
 if (global.bbox[4]) { //hitbox
 	hitbox = true
-	a = global.bbox[5] //direction of knocbkac
-	d = global.bbox[6] //damage
+	d = global.bbox[5] //damage
+	a = global.bbox[6] //direction of knocbkac
 	b = global.bbox[7] //base knocback
 	s = global.bbox[8] //scaling knocback
 	h = global.bbox[9] //hitstun multiplier
@@ -16,7 +16,7 @@ if (global.bbox[4]) { //hitbox
 	hitbox = false
 }
 
-col = 0
+col = false
 //set these as the rectangle bounding box relative to position, but first have it as the unrotated rectangle
 bb[0] = -_maj
 bb[1] = -_min

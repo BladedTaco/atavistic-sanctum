@@ -18,3 +18,4 @@ draw_set_colour(c_lime)
 draw_circle(effective_x, effective_y, 2, false)
 draw_set_colour(c_orange)
 draw_line(effective_x, effective_y, effective_x + momentum_x, effective_y + momentum_y)
+

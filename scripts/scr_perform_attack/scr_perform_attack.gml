@@ -22,6 +22,8 @@ switch (argument[2]) { //get attack type as string
 	case 2: //smash
 		_type = "smash"
 		_ret = SMASH_ATTACK
+		argument[0].alarm[2] = GAME_SPEED //set max smash hold
+		argument[0].smash_charge = 0
 	break;
 	case 3: //special
 		_type = "special"

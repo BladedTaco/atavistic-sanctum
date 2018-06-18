@@ -31,6 +31,12 @@ switch (argument[2]) {
 		var _len = point_distance(0, 0, argument[0].momentum_x, argument[0].momentum_y)
 		argument[0].momentum_x = lengthdir_x(_len, _dir)
 		argument[0].momentum_y = lengthdir_y(_len, _dir)
+		argument[0].mom_x *= 0.75 //reduce momentum counter
+		argument[0].mom_y *= 0.75 //reduce momentum counter
+		if ((abs(argument[0].mom_x) < 3) and (abs(argument[0].mom_y) < 3)) { //if -3 < mom_x and mom_y < 3
+			argument[0].inertial = true //end momentum delay
+			state[argument[1]] = AIRBORNE
+		}
 	break;
 	
 	case 4: //airborne

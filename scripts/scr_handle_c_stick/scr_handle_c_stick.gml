@@ -6,7 +6,6 @@
 var _input;
 _input = argument[1]
 
-
 var j = 0 //the entry of the input array to change
 var k = 1 //the value to change it to
 
@@ -15,7 +14,7 @@ switch (obj_match_handler.state[argument[0]]) {
 		if (c_stick_action[argument[0]] = C_TAUNT) {
 			exit; //exit script if unable to use c stick	
 		}
-	case GROUNDED: case WALKING: case RUNNING: case JUMPING:
+	case GROUNDED: case WALKING: case RUNNING: case JUMPING: case SMASH_ATTACK:
 	break;
 	case SHIELDING:
 		if (c_stick_action[argument[0]] !=  C_ROLL) {
@@ -27,7 +26,8 @@ switch (obj_match_handler.state[argument[0]]) {
 	break;
 }
 
-if (power(_input[ALT_XAXIS], 2) + power(_input[ALT_YAXIS], 2) > power(c_stick_deadzone[argument[0]], 2)) { //if input is outside deadzone
+if (point_distance(0, 0, _input[ALT_XAXIS], _input[ALT_YAXIS]) > c_stick_deadzone[argument[0]]) { //if input is outside deadzone
+	
 	switch(c_stick_action[argument[0]]) {
 		case C_SMASH_ATTACK: 
 			_input[@ TILT] = SMASH_MOVE //set attack type to smash attack
@@ -68,12 +68,12 @@ if (power(_input[ALT_XAXIS], 2) + power(_input[ALT_YAXIS], 2) > power(c_stick_de
 		break;
 	}
 	
-	_input[@ argument[0], XAXIS] = _input[ALT_XAXIS] //set normal xaxis to the c_stick xaxis value
-	_input[@ argument[0], YAXIS] = _input[ALT_YAXIS] //set normal yaxis to the c_stick yaxis value
-	_input[@ argument[0], j] = k //set input mapped to c_stick to associated value (normally 1)
+	_input[@ XAXIS] = _input[@ ALT_XAXIS] //set normal xaxis to the c_stick xaxis value
+	_input[@ YAXIS] = _input[@ ALT_YAXIS] //set normal yaxis to the c_stick yaxis value
+	_input[@ j] = k //set input mapped to c_stick to associated value (normally 1)
 }
 
 
 
-_input[@ argument[0], ALT_XAXIS] = 0 //set alt_xaxis to 0
-_input[@ argument[0], ALT_YAXIS] = 0 //set alt_yaxis to 0
+_input[@ ALT_XAXIS] = 0 //set alt_xaxis to 0
+_input[@ ALT_YAXIS] = 0 //set alt_yaxis to 0

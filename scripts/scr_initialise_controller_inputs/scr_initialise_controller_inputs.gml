@@ -52,7 +52,7 @@ if (argument_count = 0) { //default init for all ports
 	}
 } else { //specific init for a specific port
 	switch (argument[1]) {
-		case 0: case 2:
+		case 0: case 2: //generic
 			button_const_array[argument[0], 0]  = gp_face1		
 			button_const_array[argument[0], 1]  = gp_face2		
 			button_const_array[argument[0], 2]  = gp_face3		
@@ -81,7 +81,7 @@ if (argument_count = 0) { //default init for all ports
 			axis[argument[0], 5] = 1 //r trigger multiplier
 		break;
 		
-		case 1:
+		case 1: //gamecube
 			button_const_array[argument[0], 0]  = gp_face2		
 			button_const_array[argument[0], 1]  = gp_face3		
 			button_const_array[argument[0], 2]  = gp_face4		
@@ -102,10 +102,10 @@ if (argument_count = 0) { //default init for all ports
 			button_const_array[argument[0], 17] = gp_axislv		
 			button_const_array[argument[0], 18] = gp_shoulderl	
 			button_const_array[argument[0], 19] = gp_axisrh		
-			axis[argument[0], 0] = 1 //l horizontal multiplier
-			axis[argument[0], 1] = 1 //l vertical multiplier
-			axis[argument[0], 2] = -1 //r horizontal multiplier
-			axis[argument[0], 3] = 1 //r vertical multiplier
+			axis[argument[0], 0] = 1.33 //l horizontal multiplier
+			axis[argument[0], 1] = 1.33 //l vertical multiplier
+			axis[argument[0], 2] = -1.33 //r horizontal multiplier
+			axis[argument[0], 3] = 1.33 //r vertical multiplier
 			axis[argument[0], 4] = -1 //l trigger multiplier
 			axis[argument[0], 5] = -1 //r trigger multiplier
 		break;

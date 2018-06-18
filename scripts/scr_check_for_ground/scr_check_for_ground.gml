@@ -28,8 +28,8 @@ with (_inst) {
 			}
 		}
 	
-		//if input to fall through platform is being performed
-		if ((obj_input.input_array[_inst.player_number, YAXIS] < 0.5) and (obj_input.input_array[_inst.player_number, TILT] < 2)) {
+		//if not trying to fall through platform
+		if ((_inst.alarm[1] > 0)) {
 			with (obj_platform) {
 				if (scr_point_in_rec(_xx, _yy, hitbox)) {
 					global.ground = id

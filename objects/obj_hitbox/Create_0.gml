@@ -7,16 +7,25 @@ _dir = degtorad(_dir)
 creator = global.bbox[10]
 if (global.bbox[4]) { //hitbox
 	hitbox = true
-	a = global.bbox[5] //direction of knocbkac
-	d = global.bbox[6] //damage
+	d = global.bbox[5] //damage
+	a = global.bbox[6] //direction of knocbkac
 	b = global.bbox[7] //base knocback
 	s = global.bbox[8] //scaling knocback
 	h = global.bbox[9] //hitstun multiplier
+	//on a smash attack, multiply by 1/3 + 2/3 * charge up percent
+	if (creator.smash_charge >= 0) {
+		var i = (1 + 2*creator.smash_charge)/3
+		d *= i
+		b *= i
+		s *= i
+		h *= i
+		creator.smash_charge = -1 //reset smash charge
+	}
 } else { //hurtbox
 	hitbox = false
 }
 
-col = 0
+col = false
 //set these as the rectangle bounding box relative to position, but first have it as the unrotated rectangle
 bb[0] = -_maj
 bb[1] = -_min

@@ -44,6 +44,14 @@ if (inertial and (obj_match_handler.state[player_number] != LEDGE_ALT) and (obj_
 	}
 }
 
+if (l <= 0) { //check if still in ground after exceeding loop limit above
+	l = 100
+	while (instance_place(x, y+1, _inst)*l > 0) {
+		y -= 1
+		l--
+	}
+}
+
 //get previous x values
 last_x2 = last_x
 last_x = xprevious

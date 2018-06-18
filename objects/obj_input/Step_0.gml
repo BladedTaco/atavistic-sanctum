@@ -8,16 +8,9 @@ for (var i = 0; i < global.player_number; i++) {
 	}
 
 
-
-
-
-scr_input_buffer_nonlocal(1)
-
-
-
 }
 
-var j = 0
+var j = 0 //the player number
 
 if (gamepad_is_connected(controller_number[j])) {
 	if (keyboard_check_pressed(ord("H"))) {
@@ -69,7 +62,11 @@ if (keyboard_check_pressed(ord("G"))) {
 				} else if (controls_set[j] < 18) { //trigger
 					for (var i = gp_face1; i <= gp_axisrv; i++) {
 						if (abs(gamepad_axis_value(o, i) - button[i-gp_face1, 1]) > 0.25) {
-							axis[j, controls_set[j] - 12] = sign(gamepad_axis_value(o, i))
+							axis[j, controls_set[j] - 12] = 1/gamepad_axis_value(o, i)
+							button_const_array[j, controls_set[j]-2] = i	
+							break;
+						} else if (gamepad_button_value(o, i) != button[i-gp_face1, 1]) {
+							analogue[j] = 2
 							button_const_array[j, controls_set[j]-2] = i	
 							break;
 						}
@@ -77,7 +74,7 @@ if (keyboard_check_pressed(ord("G"))) {
 				} else { //directional stick
 					for (var i = gp_face1; i <= gp_axisrv; i++) {
 						if (abs(gamepad_axis_value(o, i) - button[i-gp_face1, 1]) > 0.25) {
-							axis[j, controls_set[j] - 18] = sign(gamepad_axis_value(o, i))
+							axis[j, controls_set[j] - 18] = 1/gamepad_axis_value(o, i)
 							button_const_array[j, controls_set[j]-2] = i	
 							break;
 						}

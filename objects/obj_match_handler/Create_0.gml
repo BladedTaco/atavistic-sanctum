@@ -2,13 +2,15 @@
 
 
 //input variables and control variables initialisation
-old_axis[0, 0] = 0
-input_array[0, 0] = 0
-state[0] = FREEFALL
-jumps[0] = 1
-momentum_x[0] = 0
-momentum_y[0] = 0
-player[0] = -1 //create the players here and populate the array with their instance ids
+for (var i = 0; i < 8; i++) {
+	old_axis[i, 0] = 0
+	input_array[i, 0] = 0
+	state[i] = FREEFALL
+	jumps[i] = 1
+	momentum_x[i] = 0
+	momentum_y[i] = 0
+	player[i] = -1 //create the players here and populate the array with their instance ids
+}
 hitbox = false //draw hitboxes on true
 
 st[0] = 0
@@ -19,10 +21,20 @@ st[4] = 0
 st[5] = 0
 
 with(instance_create(200, -200, obj_player)) {
+	player_number = 0
 	other.player[0] = id
 	controller = true
 	sprite_index = scr_get_sprite(id, "hurt_down")
 }
+
+with(instance_create(300, -200, obj_player)) {
+	player_number = 1
+	other.player[1] = id
+	controller = false
+	sprite_index = scr_get_sprite(id, "hurt_down")
+}
+global.player_number = 2
+
 //get data from server for the match
 
 

@@ -13,6 +13,27 @@ for (var i = 0; i < 8; i++) { //player number
 			input_buffer_array[j*100 + i, k] = 0 //initialise an array position
 		}
 	}
+	c_stick_action[i] = C_SMASH_ATTACK //action the c_stick maps to
+	c_stick_deadzone[i] = 0.1 //the deadzone for the c_stick
+	l_stick_deadzone[i] = 0.1 //the deadzone for the left stick
+	l_stick_neutral[i] = 0.5 //the point where a input is considered not neutral
+	axis[i, 0] = 1 //l horizontal multiplier
+	axis[i, 1] = 1 //l vertical multiplier
+	axis[i, 2] = 1 //r horizontal multiplier
+	axis[i, 3] = 1 //r vertical multiplier
+	axis[i, 4] = 1 //l trigger multiplier
+	axis[i, 5] = 1 //r trigger multiplier
+	controls_set[i] = 0 //stage of control configuration
+	button[i, 0] = 0 //initial controller configuartion
+	smash[i] = 0.2 //difference needed for a dash
+	analogue[i] = 0 //0 if analogue triggers, 2 if digital triggers
+
+	controller[i] = true //if this player is using a controller
+	controller_number[i] = -1 //the slot number of the controller the player is using
+	player_is_local[i] = true; //if player is locally controlled
+	sticky_jump[i] = false //make it only jump multiple times on multiple presses
+	sticky_dodge[i] = false //make it only dodge multiple times on multiple presses
+	smash_deadzone[i] = 0.3 //the deadzone where smash attacks cannot happen inside
 }
 
 
@@ -20,29 +41,7 @@ for (var i = 0; i < 8; i++) { //player number
 //initialise input buttons and their mappings
 
 scr_initialise_controller_inputs()
-//scr_initialise_keyboard_inputs(1)
-
-
-c_stick_action[0] = C_SMASH_ATTACK //action the c_stick maps to
-c_stick_deadzone[0] = 0.25 //the deadzone for the c_stick
-l_stick_deadzone[0] = 0.25 //the deadzone for the left stick
-l_stick_neutral[0] = 0.5 //the point where a input is considered not neutral
-axis[0, 0] = 1 //l horizontal multiplier
-axis[0, 1] = 1 //l vertical multiplier
-axis[0, 2] = 1 //r horizontal multiplier
-axis[0, 3] = 1 //r vertical multiplier
-axis[0, 4] = 1 //l trigger multiplier
-axis[0, 5] = 1 //r trigger multiplier
-controls_set[0] = 0 //stage of control configuration
-button[0, 0] = 0 //initial controller configuartion
-smash[0] = 0.2 //difference needed for a dash
-
-
-controller[0] = true //if this player is using a controller
-controller_number[0] = -1 //the slot number of the controller the player is using
-player_is_local[0] = true; //if player is locally controlled
-sticky_jump[0] = false //make it only jump multiple times on multiple presses
-sticky_dodge[0] = false //make it only dodge multiple times on multiple presses
+scr_initialise_keyboard_inputs(1)
 
 
 alarm[0] = room_speed //alarm for keeping OS from sleeping

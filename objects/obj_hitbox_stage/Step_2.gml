@@ -58,7 +58,7 @@ with (obj_hitbox) {
 				var _inst = other.creator
 				with (creator) {
 					if (inertial and (obj_match_handler.state[player_number] = FREEFALL) and !spawning) { //if colliding into ground
-						scr_momentum_delay(id, momentum_x, momentum_y, 1) //delay momentum
+						scr_momentum_delay(id, momentum_x, momentum_y, 1, false) //delay momentum
 						//check for y difference
 						switch(round((point_direction(x, y, _inst.x, _inst.y) - _inst.image_angle)/45) mod 8) {
 							case 0: //moving right
@@ -111,5 +111,4 @@ with (obj_hitbox) {
 			break;
 		}
 	}
-	
 }
