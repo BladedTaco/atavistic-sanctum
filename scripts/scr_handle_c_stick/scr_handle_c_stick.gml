@@ -27,10 +27,11 @@ switch (obj_match_handler.state[argument[0]]) {
 }
 
 if (point_distance(0, 0, _input[ALT_XAXIS], _input[ALT_YAXIS]) > c_stick_deadzone[argument[0]]) { //if input is outside deadzone
-	
 	switch(c_stick_action[argument[0]]) {
 		case C_SMASH_ATTACK: 
-			_input[@ TILT] = SMASH_MOVE //set attack type to smash attack
+			if !(obj_match_handler.state[argument[0]] = SMASH_ATTACK) {
+				_input[@ TILT] = SMASH_MOVE //set attack type to smash attack
+			}
 			j = ATTACK
 		break;
 		
@@ -68,9 +69,12 @@ if (point_distance(0, 0, _input[ALT_XAXIS], _input[ALT_YAXIS]) > c_stick_deadzon
 		break;
 	}
 	
-	_input[@ XAXIS] = _input[@ ALT_XAXIS] //set normal xaxis to the c_stick xaxis value
-	_input[@ YAXIS] = _input[@ ALT_YAXIS] //set normal yaxis to the c_stick yaxis value
-	_input[@ j] = k //set input mapped to c_stick to associated value (normally 1)
+	if (obj_match_handler.player[argument[0]].alarm[3] <= 0) {
+		_input[@ XAXIS] = _input[@ ALT_XAXIS] //set normal xaxis to the c_stick xaxis value
+		_input[@ YAXIS] = _input[@ ALT_YAXIS] //set normal yaxis to the c_stick yaxis value
+		obj_match_handler.player[argument[0]].alarm[3] = global.input_buffer_length
+	}
+	_input[@ j] = k //set input mapped to c_stick to associated value
 }
 
 

@@ -31,11 +31,18 @@ switch (argument[2]) {
 		var _len = point_distance(0, 0, argument[0].momentum_x, argument[0].momentum_y)
 		argument[0].momentum_x = lengthdir_x(_len, _dir)
 		argument[0].momentum_y = lengthdir_y(_len, _dir)
-		argument[0].mom_x *= 0.75 //reduce momentum counter
-		argument[0].mom_y *= 0.75 //reduce momentum counter
-		if ((abs(argument[0].mom_x) < 3) and (abs(argument[0].mom_y) < 3)) { //if -3 < mom_x and mom_y < 3
+		argument[0].mom_x -= sign(argument[0].mom_x)*1 + argument[0].mom_x*0.025 //reduce momentum counter
+		argument[0].mom_y -= sign(argument[0].mom_y)*1 + argument[0].mom_y*0.025 //reduce momentum counter
+		if (point_distance(0, 0, argument[0].mom_x, argument[0].mom_y) < 3) { //if small impulse left
+			argument[0].image_speed = 1
 			argument[0].inertial = true //end momentum delay
-			state[argument[1]] = AIRBORNE
+			state[argument[1]] = HELPLESS
+			argument[0].mom_x = argument[0].momentum_x
+			argument[0].mom_y = argument[0].momentum_y
+			if (instance_exists(argument[0].attacker)) {
+				argument[0].attacker.image_speed = 1 //unfreeze attacker
+			}
+			var _s = scr_perform_freefall(argument[0], argument[1]) //perform freefall wtihout changing state to get animation
 		}
 	break;
 	
@@ -52,9 +59,14 @@ switch (argument[2]) {
 	case 5: //momentum delay
 		argument[0].mom_x *= 0.75 //reduce momentum counter
 		argument[0].mom_y *= 0.75 //reduce momentum counter
-		if ((abs(argument[0].mom_x) < 3) and (abs(argument[0].mom_y) < 3)) { //if -3 < mom_x and mom_y < 3
+		if (point_distance(0, 0, argument[0].mom_x, argument[0].mom_y) < 3) { //if small impulse left
+			argument[0].sprite_index = argument[0].helpless_sprite
+			argument[0].momentum_x = argument[0].new_momentum_x
+			argument[0].momentum_y = argument[0].new_momentum_y
+			argument[0].new_momentum_x = 0
+			argument[0].new_momentum_y = 0
 			argument[0].inertial = true //end momentum delay
-			state[argument[1]] = scr_perform_freefall(argument[0], argument[1])
+			state[argument[1]] = HELPLESS
 		}
 	break;
 }

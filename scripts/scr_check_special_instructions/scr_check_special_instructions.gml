@@ -10,8 +10,8 @@ switch (argument[0]) {
 			case BAL:
 				switch (sprite_index) {
 					case spr_bal_smash_forward:
-						x = effective_x
-						y = effective_y
+						x += effective_x
+						y += effective_y
 					break;
 					case spr_bal_special_down:
 						_yy = -25
@@ -70,7 +70,8 @@ switch (argument[0]) {
 				}
 			break;
 		}
-		effective_x = _xx*cos(_d) - _yy*sin(_d) + x
-		effective_y = _xx*sin(_d) + _yy*cos(_d) + y
+		if ((_xx = 0) and (_yy = 0)) { break } //skip calculation if no difference in effective x
+		effective_x = _xx*cos(_d) - _yy*sin(_d)
+		effective_y = _xx*sin(_d) + _yy*cos(_d)
 	break;
 }

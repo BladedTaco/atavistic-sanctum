@@ -47,6 +47,13 @@ if (_len > 1) {
 	_input[YAXIS] /= _len
 }
 
+//limit c stick to magnitude of 1
+_len = point_distance(0, 0, _input[ALT_XAXIS], _input[ALT_YAXIS])
+if (_len > 1) {
+	_input[ALT_XAXIS] /= _len
+	_input[ALT_YAXIS] /= _len
+}
+
 scr_handle_c_stick(argument[0], _input)
 
 scr_input_buffer(argument[0], _input)

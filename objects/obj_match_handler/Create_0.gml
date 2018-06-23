@@ -21,6 +21,7 @@ st[4] = 0
 st[5] = 0
 
 with(instance_create(200, -200, obj_player)) {
+	image_blend = c_aqua
 	player_number = 0
 	other.player[0] = id
 	controller = true
@@ -28,6 +29,7 @@ with(instance_create(200, -200, obj_player)) {
 }
 
 with(instance_create(300, -200, obj_player)) {
+	image_blend = c_lime
 	player_number = 1
 	other.player[1] = id
 	controller = false

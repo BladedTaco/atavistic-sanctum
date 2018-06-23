@@ -75,6 +75,7 @@ do {
 				}
 			case SMASH_ATTACK:
 				if (input_array[i, ATTACK] and (_inst.image_index < 2)) {
+					obj_input.sticky_attack[i] = true //set sticky attack to true
 					if (_inst.alarm[2] >= 0) {
 						_inst.image_index = 1
 					}
@@ -145,7 +146,7 @@ do {
 				if (input_array[i, GRAB]) { //grab
 					state[i] = scr_perform_grab(_inst, i, 1, _dir)
 				}
-			case AIR_ATTACK: case FREEFALL:
+			case FREEFALL:
 				_move_character = 4//airborne
 			break;
 			case SPEED_UP: case DASHING:
@@ -212,8 +213,9 @@ do {
 				if (input_array[i, JUMP]) { //jump
 					state[i] = scr_perform_jump(_inst, i, 1)
 				}
-				if (input_array[i, YAXIS] > obj_input.l_stick_deadzone[i]) { //fastfall
-					scr_apply_impulse(_inst, i, 270, _inst.weight*_IMPULSE._FASTFALL/100, false)
+			case AIR_ATTACK:
+				if (input_array[i, YAXIS] > obj_input.l_stick_neutral[i]) { //fastfall
+					scr_apply_impulse(_inst, i, 270, 2*_inst.weight*_IMPULSE._FASTFALL/100, false)
 				}
 				_move_character = 4 //airborne
 			break;
@@ -240,13 +242,28 @@ do {
 					}
 				}
 			break;
-		
+			
+			case HELPLESS:
+				_move_character = 4 //airborne
+				if (point_distance(0, 0, _inst.momentum_x, _inst.momentum_y) <= 3) {
+					if (scr_check_for_ground(_inst)) { //grounded
+						state[i] = GROUNDED
+						_inst.sprite_index = scr_get_sprite(_inst, "idle")
+						_inst.image_index = 0
+					} else {
+						state[i] = AIRBORNE
+						_inst.sprite_index = scr_get_sprite(_inst, "air_move")
+						_inst.image_index = 0
+					}
+				}
+			break;
 
 			case TECHING: 
 				_move_character = 5 //momentum delay
 				if (input_array[i, JUMP] and !obj_input.sticky_jump[i]) { //jump
 					_inst.momentum_x = 0
 					_inst.momentum_y = 0
+					_inst.inertial = true
 					state[i] = scr_perform_jump(_inst, i, 0)	
 				}
 			break;
@@ -268,11 +285,11 @@ do {
 	}			
 		
 	//check for ground
-	if (_move_character != 5) {
-		var _ex = _inst.effective_x - _inst.x //store initial effective x difference
-		var _ey = _inst.effective_y - _inst.y//store initial effective y difference
+	if ((_move_character != 5) and (state[i] != HELPLESS) and (state[i] != HIT_STUN)) {
+		var _ex = _inst.effective_x //store initial effective x difference for shorthand use
+		var _ey = _inst.effective_y //store initial effective y difference for shorthand use
 		if (scr_check_for_ground(_inst, _ex, _ey) and !(state[i] = LEDGE) and !(state[i] = LEDGE_ALT)) {	
-			var l = max(ceil(point_distance(0, 0, _inst.momentum_x, _inst.momentum_y)/GROUND_HEIGHT), 1)
+			var l = max(ceil(2*point_distance(0, 0, _inst.momentum_x, _inst.momentum_y)/GROUND_HEIGHT), 1)
 			var _xx = _inst.x 
 			var _yy = _inst.y 
 			repeat (l) {
@@ -280,20 +297,19 @@ do {
 				_yy += _inst.momentum_y/l
 				var _ground = global.ground
 				global.ground = noone
-				if (instance_exists(_ground)) {
+				if (instance_exists(_ground)) { //if there is ground to collide with
 					var _d = degtorad(angle_difference(_inst.image_angle, _ground.image_angle))
 					if ((abs(_ex) + abs(_ey) > 0) or (abs(_d) != 0)) { //if position is offset and rotated
 						//rotate position around that offset 
-						_inst.x = (-_ex)*cos(_d) - (-_ey)*sin(_d) + _inst.effective_x
-						_inst.y = (-_ex)*sin(_d) + (-_ey)*cos(_d) + _inst.effective_y
+						_xx = (-_ex)*cos(_d) - (-_ey)*sin(_d) + (_ex + _xx) //rotate around effective x
+						_yy = (-_ex)*sin(_d) + (-_ey)*cos(_d) + (_ey + _yy) //rotate around effective y
 					}
 					_inst.image_angle = _ground.image_angle 
 					if (scr_point_in_rec(_xx + _ex, _yy + _ey, _ground.hurtbox)) { //in the top of the ground hitbox
-						_inst.y += _inst.momentum_y/l
 						_inst.momentum_y = 0 //set vertical momentum to 0
 						var _d = _inst.image_angle
-						while (scr_point_in_rec(_inst.x + _ex, _inst.y + _ey, _ground.hurtbox)) {
-							_inst.y -= 0.25
+						while (scr_point_in_rec(_xx + _ex, _yy + _ey, _ground.hurtbox)) {
+							_yy -= 0.25
 						}
 						_inst.alarm[0] = GAME_SPEED //set ledge alarm
 						jumps[i] = _inst.max_jumps //refresh jumps
@@ -307,8 +323,10 @@ do {
 						}
 						break; //break the repeat loop if the ground is found
 					}
-				} else { show_debug_message("GROUND DISAPPEARED") }
+				}
 			}
+			_inst.x = _xx //update instance position
+			_inst.y = _yy //update instance position
 		} else {
 			if (_inst.image_angle != 0) and (scr_check_for_ground(_inst, -_inst.momentum_x*2 + _ex, _ey)) {
 				while (!scr_check_for_ground(_inst, _ex, _ey)) {
@@ -320,7 +338,7 @@ do {
 					case WALKING: case RUNNING: case CROUCHING: case SPEED_UP: case DASHING:
 					case DASH_SLOW: case SPEED_DOWN:
 						state[i] = AIRBORNE
-						_inst.sprite_index = scr_get_sprite(_inst, "jump")
+						_inst.sprite_index = scr_get_sprite(_inst, "air_move")
 						_inst.image_index = 0
 					break;
 				}
@@ -330,14 +348,21 @@ do {
 
 	//wrapping code
 	if (_inst.x > room_width) {
-		_inst.x = 5	
+		_inst.x = room_width/2
+		_inst.y = room_height/2
 	}
 	if (_inst.x < 0) {
-		_inst.x = room_width - 5	
+		_inst.x = room_width/2
+		_inst.y = room_height/2	
 	}
 
 	if (_inst.y > room_height) {
-		_inst.y = 5	
+		_inst.x = room_width/2
+		_inst.y = room_height/2
+	}
+	if (_inst.y < 0) {
+		_inst.x = room_width/2
+		_inst.y = room_height/2
 	}
 
 	//floor momentum if almost nonexistant

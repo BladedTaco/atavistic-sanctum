@@ -1,26 +1,36 @@
 /// @description 
 
-effective_x = x
-effective_y = y
+effective_x = 0
+effective_y = 0
 scr_check_special_instructions(1)
 
 //move
 var l = 100
-if (inertial and (obj_match_handler.state[player_number] != LEDGE_ALT) and (obj_match_handler.state[player_number] != LEDGE)) {
-	var j = max(round(point_distance(0, 0, momentum_x, momentum_y)/2), 1)
-	var _ex = effective_x - x
-	var _ey = effective_y - y
+if ((obj_match_handler.state[player_number] != LEDGE_ALT) and (obj_match_handler.state[player_number] != LEDGE) and (image_speed != 0)) {
+	var j = max(round(2*point_distance(0, 0, momentum_x, momentum_y)/GROUND_HEIGHT), 1)
+	var _ex = effective_x
+	var _ey = effective_y
+	var _mx = momentum_x
+	var _my = momentum_y
 	repeat(j) {
 		l = 100
-		x += momentum_x/j
-		y += momentum_y/j
-		while (instance_place(x, y+1, obj_ground)) {
+		if (inertial) {
+			x += _mx/j
+			y += _my/j
+		}
+		while (instance_place(x, y+1, obj_ground) or instance_position(x, y+1, obj_ground)) {
 			var _inst = instance_place(x, y+1, obj_ground)
-			if (instance_exists(_inst)) {
-				var _d = point_direction(_inst.x, _inst.y, (bbox_right + bbox_left)/2 - momentum_x + _ex, (bbox_top + bbox_bottom)/2 - momentum_y + _ey)
+			if !(instance_exists(_inst)) { //if no instance found with sprite mask
+				_inst = instance_position(x, y+1, obj_ground) //check for one at coordinates
+			}
+			if (instance_exists(_inst)) { //if there is an instance of a ground object to check against
+				scr_helpless_bounce(_inst, _inst.hitbox, id)
+				var _d = point_direction(_inst.x, _inst.y, x + _ex - (momentum_x/j), y + _ey - (momentum_y/j))
 				if (((angle_difference(_inst.diag1, _d) > 0) and (angle_difference(_inst.diag2, _d) < 0)) 
 				or ((angle_difference(_inst.diag3, _d) > 0) and (angle_difference(_inst.diag4, _d) < 0))) { //above or below
 					if (angle_difference(_inst.image_angle, _d) < 0) { //above
+						_my = 0 //stop vertical movement while keeping momentum
+						_mx = 0 //stop horizontal movement while keeping momentum
 						break; //handled elsewhere
 					} else { //below
 						_d = image_angle - 90
@@ -41,6 +51,7 @@ if (inertial and (obj_match_handler.state[player_number] != LEDGE_ALT) and (obj_
 			}
 			if (l <= 0) { break; }
 		}
+		if (j <= 0) { break; }
 	}
 }
 
@@ -51,6 +62,7 @@ if (l <= 0) { //check if still in ground after exceeding loop limit above
 		l--
 	}
 }
+
 
 //get previous x values
 last_x2 = last_x

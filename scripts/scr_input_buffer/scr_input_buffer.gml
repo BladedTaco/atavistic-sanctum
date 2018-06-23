@@ -34,6 +34,12 @@ for (var i = 0; i < array_length_1d(_input); i++) {
 if (sticky_jump[argument[0]] and !input_array[argument[0], JUMP]) {
 	sticky_jump[argument[0]] = false
 }
+if (sticky_attack[argument[0]] and !input_array[argument[0], ATTACK]) {
+	sticky_attack[argument[0]] = false
+}
+if (sticky_special[argument[0]] and !input_array[argument[0], SPECIAL]) {
+	sticky_special[argument[0]] = false
+}
 
 //check for termination of sticky dodge
 if (sticky_dodge[argument[0]] and ((!input_array[argument[0], SHIELD]) or

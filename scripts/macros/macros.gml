@@ -75,6 +75,7 @@
 #macro DASH_SLOW 24
 #macro UNSHIELDING 25 //describes unshield animation
 #macro CROUCHING 26 //describes all 3 crouching states
+#macro HELPLESS 27 //airborne from an attacks knocback
 
 //character identiiers
 #macro BAL 0
@@ -121,7 +122,7 @@ for (var i = 10; i >= 0; i--) {
 }
 
 //initialise global variables for ellipse-ellipse collision testing
-global.maxIterations = 4
+global.maxIterations = 10
 global.innerPolygonCoef[0] = 0
 global.outerPolygonCoef[0] = 0
 for (var t = 0; t <= global.maxIterations; t++) {
@@ -132,6 +133,7 @@ for (var t = 0; t <= global.maxIterations; t++) {
 
 //match variables
 global.ground = noone
+global.ground_distance = 0
 
 
 //enums
@@ -151,7 +153,7 @@ enum _IMPULSE { //define an impulse enumeration field (actual values are divided
 	_RIGIDITY = 10, //the force pushing players apart when they are colliding (ongoing)
 	_CLASH = 250, //when a hitbox collides with a hitbox (instant)
 	//attack impulses
-	_BAL_U_SPEC = 100 //balloony's recovery (ongoing)
+	_BAL_U_SPEC = 70 //balloony's recovery (ongoing)
 }
 
 

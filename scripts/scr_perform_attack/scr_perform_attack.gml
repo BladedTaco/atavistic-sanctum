@@ -5,6 +5,14 @@
 ///@param direction - the direction of movement
 ///@desc causes the given character to perform an attack and returns state
 
+if (argument[2] = 3) { //if special attack
+	if (obj_input.sticky_special[argument[1]]) { return state[argument[1]] } //exit the script if attack button is held
+	obj_input.sticky_special[argument[1]] = true //set sticky attack to true
+} else { //if normal attack
+	if (obj_input.sticky_attack[argument[1]]) { return state[argument[1]] } //exit the script if attack button is held
+	obj_input.sticky_attack[argument[1]] = true //set sticky attack to true
+}
+
 var _type, _direction, _sprite, _ret //define local variables
 
 _direction = scr_get_direction(argument[0], argument[1], argument[3]) //get the directon
@@ -28,6 +36,10 @@ switch (argument[2]) { //get attack type as string
 	case 3: //special
 		_type = "special"
 		_ret = SPECIAL_ATTACK
+		if (_direction = "back") {
+			argument[0].image_xscale *= -1
+			_direction = "forward"
+		}
 	break;
 	case 4: //dash
 		_type = "dash_attack"
@@ -44,9 +56,10 @@ switch (argument[2]) { //get attack type as string
 }
 
 _sprite = scr_get_sprite(argument[0], string(_type + "_" + _direction)) //get sprite
+
 if (sprite_exists(_sprite)) { //if the sprite exists
 	argument[0].sprite_index = _sprite //set sprite to the attack sprite
 	argument[0].image_index = 0 //set animation frame to the first one
 	return _ret //return the state
 }
-return FREEFALL //return freefall state is sprite is not found
+return FREEFALL //return freefall state is sprite is not found, this should never happen

@@ -1,10 +1,10 @@
 /// @description 
+creator = global.bbox[10]
 shape = global.bbox[0]
 _maj = global.bbox[1]
 _min = global.bbox[2]
 _dir = global.bbox[3]
 _dir = degtorad(_dir)
-creator = global.bbox[10]
 if (global.bbox[4]) { //hitbox
 	hitbox = true
 	d = global.bbox[5] //damage

@@ -15,7 +15,10 @@ draw_self();
 draw_set_colour(c_aqua)
 draw_line(x, y, x + momentum_x, y + momentum_y)
 draw_set_colour(c_lime)
-draw_circle(effective_x, effective_y, 2, false)
+draw_circle(x + effective_x, y + effective_y, 2, false)
 draw_set_colour(c_orange)
-draw_line(effective_x, effective_y, effective_x + momentum_x, effective_y + momentum_y)
+draw_line(x + effective_x, y + effective_y, x + effective_x + momentum_x, y + effective_y + momentum_y)
 
+
+draw_set_colour(c_olive)
+draw_circle(clamp(x, 0, room_width), clamp(y, 0, room_height), 3, false)

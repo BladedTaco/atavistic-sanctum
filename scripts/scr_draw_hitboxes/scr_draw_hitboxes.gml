@@ -6,7 +6,7 @@ if (argument[0]) { //draw and create hitboxes
 	
 	draw_set_alpha(0.5) //set draw alpha to 1/2
 	//define variables
-	var _x, _y, _maj, _min, i, o, _mat, _dir, _xy, _array, col_hurt, col_hit
+	var _x, _y, _maj, _min, i, o, _mat, _dir, _xy, _array, col_hurt, col_hit, a
 	_mat = matrix_build_identity()
 	col_hurt = c_lime
 	col_hit = c_blue
@@ -37,6 +37,7 @@ if (argument[0]) { //draw and create hitboxes
 					_x = image_xscale*_array[i, o + 3]
 					_y = image_yscale*_array[i, o + 4]
 					_dir = sign(image_xscale)*_array[i, o + 5] + image_angle
+					
 					if (image_angle != 0) {
 						var _d = degtorad(-image_angle)
 						_xy = _x
@@ -49,8 +50,17 @@ if (argument[0]) { //draw and create hitboxes
 					
 					//create the hurtbox
 					if (_array = global.hitbox) {
+						//get the knocback direction
+						a = _array[i, o + 7]
+						if (a <= 360) { //if angle is an absolute direction
+							if (image_xscale < 0) { 
+							 a = 180 - a //flip angle horizontally if facing left
+							}
+							a = (a + image_angle + 360) mod 360 //change angle by facing direction
+						}
+						
 						scr_check_collision(_array[i, o], _maj, _min, _x, _y, _dir, 
-						_array[i, o + 6], _array[i, o + 7], _array[i, o + 8], 
+						_array[i, o + 6], a, _array[i, o + 8], 
 						_array[i, o + 9], _array[i, o + 10]) //create the hitbox
 					} else {
 						scr_check_collision(_array[i, o], _maj, _min, _x, _y, _dir) //create the hurtbox
@@ -120,9 +130,18 @@ if (argument[0]) { //draw and create hitboxes
 					_x = _xy*cos(_d) - _y*sin(_d) //rotate around origin
 					_y = _xy*sin(_d) + _y*cos(_d) //rotate around origin
 					if (_array = global.hitbox) {
+						//get the knocback direction
+						a = _array[i, o + 7]
+						if (a <= 360) { //if angle is an absolute direction
+							if (image_xscale < 0) { 
+							 a = 180 - a //flip angle horizontally if facing left
+							}
+							a = (a + image_angle + 360) mod 360 //change angle by facing direction
+						}
+						
 						scr_check_collision(_array[i, o], _array[i, o+1], _array[i, o+2], 
 						_x + x, _y + y, _array[i, o+5] + image_angle, 
-						_array[i, o + 6], _array[i, o + 7], _array[i, o + 8], 
+						_array[i, o + 6], a, _array[i, o + 8], 
 						_array[i, o + 9], _array[i, o + 10]) //create the hitbox
 					} else {
 						scr_check_collision(_array[i, o], _array[i, o+1], _array[i, o+2], 

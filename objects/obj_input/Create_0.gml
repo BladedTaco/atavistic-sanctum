@@ -25,7 +25,7 @@ for (var i = 0; i < 8; i++) { //player number
 	axis[i, 5] = 1 //r trigger multiplier
 	controls_set[i] = 0 //stage of control configuration
 	button[i, 0] = 0 //initial controller configuartion
-	smash[i] = 0.2 //difference needed for a dash
+	smash[i] = 0.3 //difference needed for a smash
 	analogue[i] = 0 //0 if analogue triggers, 2 if digital triggers
 
 	controller[i] = true //if this player is using a controller
@@ -33,7 +33,9 @@ for (var i = 0; i < 8; i++) { //player number
 	player_is_local[i] = true; //if player is locally controlled
 	sticky_jump[i] = false //make it only jump multiple times on multiple presses
 	sticky_dodge[i] = false //make it only dodge multiple times on multiple presses
-	smash_deadzone[i] = 0.3 //the deadzone where smash attacks cannot happen inside
+	sticky_attack[i] = false //make it only attack multiple times on multiple presses
+	sticky_special[i] = false //make it only use special multiple times on multiple presses
+	smash_deadzone[i] = 0.25 //the deadzone where smash attacks cannot happen inside
 }
 
 
