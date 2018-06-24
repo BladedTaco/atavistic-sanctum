@@ -2,12 +2,14 @@
 ///@desc controls the characters based on movements and states
 
 var i = 0 //initialise the loop counter to 0
-var _check_state, _move_character, _dir, _inst; //initialise some local variables in memory
+var _check_state, _move_character, _dir, _inst, _ex, _ey; //initialise some local variables in memory
 do {
 	_dir = point_direction(0, 0, input_array[i, XAXIS], input_array[i, YAXIS]) //get direction
 	_check_state = true //set base state of variable
 	_move_character = 0 //set base state of variable
 	_inst = player[i] //get the player object corresponding to the player number
+	_ex = _inst.effective_x //store initial effective x difference for shorthand use
+	_ey = _inst.effective_y //store initial effective y difference for shorthand use
 	if (!instance_exists(_inst)) { exit }
 	if (input_array[i, PAUSE]) { //pause or unpause
 		global.paused = !global.paused	
@@ -66,6 +68,7 @@ do {
 		
 			case AIR_DODGING:
 				if (scr_check_for_ground(_inst)) {
+					_inst.momentum_x /= 2 //halve horizontal momentum
 					state[i] = LANDING
 					_inst.sprite_index = scr_get_sprite(_inst, "land") 
 					_inst.image_index = 0
@@ -73,6 +76,13 @@ do {
 						image_xscale = _inst.image_xscale	
 					}
 				}
+			case SPECIAL_ATTACK:
+				if (scr_check_for_ground(_inst, _ex, _ey)) {
+					_move_character = 4 //airborne
+				} else {
+					_move_character = 2 //drift
+				}
+			break;
 			case SMASH_ATTACK:
 				if (input_array[i, ATTACK] and (_inst.image_index < 2)) {
 					obj_input.sticky_attack[i] = true //set sticky attack to true
@@ -82,7 +92,15 @@ do {
 				} else {
 					_inst.smash_charge = 1 - (_inst.alarm[2]/GAME_SPEED)
 				}
-			case TILT_ATTACK: case SPECIAL_ATTACK: case LANDING: case DODGING:
+				_move_character = 2 //drift
+			break;
+			case TILT_ATTACK:
+				//allow cancelling a tilt into a smash attack
+				if (input_array[i, ATTACK] and (input_array[i, TILT] = SMASH_MOVE)) { //attack
+					obj_input.sticky_attack[i] = false
+					state[i] = scr_perform_attack(_inst, i, input_array[i, TILT], _dir)
+				}
+			case LANDING: case DODGING:
 				_move_character = 2 //drift
 			break;
 			case SHIELDING:
@@ -215,7 +233,7 @@ do {
 				}
 			case AIR_ATTACK:
 				if (input_array[i, YAXIS] > obj_input.l_stick_neutral[i]) { //fastfall
-					scr_apply_impulse(_inst, i, 270, 2*_inst.weight*_IMPULSE._FASTFALL/100, false)
+					scr_apply_impulse(_inst, i, 270, _inst.weight*_IMPULSE._FASTFALL/100, false)
 				}
 				_move_character = 4 //airborne
 			break;
@@ -244,6 +262,9 @@ do {
 			break;
 			
 			case HELPLESS:
+				if (_inst.alarm[4] > 6) { //if a large time left on invulnerability alarm
+					_inst.alarm[4] = 5 //end invulnerability alarm in 6 frames
+				}
 				_move_character = 4 //airborne
 				if (point_distance(0, 0, _inst.momentum_x, _inst.momentum_y) <= 3) {
 					if (scr_check_for_ground(_inst)) { //grounded
@@ -286,8 +307,6 @@ do {
 		
 	//check for ground
 	if ((_move_character != 5) and (state[i] != HELPLESS) and (state[i] != HIT_STUN)) {
-		var _ex = _inst.effective_x //store initial effective x difference for shorthand use
-		var _ey = _inst.effective_y //store initial effective y difference for shorthand use
 		if (scr_check_for_ground(_inst, _ex, _ey) and !(state[i] = LEDGE) and !(state[i] = LEDGE_ALT)) {	
 			var l = max(ceil(2*point_distance(0, 0, _inst.momentum_x, _inst.momentum_y)/GROUND_HEIGHT), 1)
 			var _xx = _inst.x 
@@ -315,10 +334,11 @@ do {
 						jumps[i] = _inst.max_jumps //refresh jumps
 						switch (state[i]) {
 							case AIRBORNE: case FREEFALL: case AIR_ATTACK:
-								_inst.spawning = false
+								_inst.spawning = false //set the instance to no longer spawning
 								state[i] = LANDING //set state
-								_inst.sprite_index = scr_get_sprite(_inst, "land")
-								_inst.image_index = 0
+								_inst.sprite_index = scr_get_sprite(_inst, "land") //set to land sprite
+								_inst.image_index = 0 //set to first sub-image
+								_inst.momentum_x /= 2 //halve horizontal momentum
 							break;
 						}
 						break; //break the repeat loop if the ground is found
@@ -348,21 +368,17 @@ do {
 
 	//wrapping code
 	if (_inst.x > room_width) {
-		_inst.x = room_width/2
-		_inst.y = room_height/2
+		_inst.x -= 1
 	}
 	if (_inst.x < 0) {
-		_inst.x = room_width/2
-		_inst.y = room_height/2	
+		_inst.x += 1
 	}
 
 	if (_inst.y > room_height) {
-		_inst.x = room_width/2
-		_inst.y = room_height/2
+		_inst.y -= 1
 	}
 	if (_inst.y < 0) {
-		_inst.x = room_width/2
-		_inst.y = room_height/2
+		_inst.y += 1
 	}
 
 	//floor momentum if almost nonexistant

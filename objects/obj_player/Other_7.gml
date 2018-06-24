@@ -22,7 +22,13 @@ switch (obj_match_handler.state[player_number]) {
 		//WALKING n/a
 		//RUNNING n/a
 		//FREEFALL n/a
-		case TILT_ATTACK: case SMASH_ATTACK: case SPECIAL_ATTACK: case UNSHIELDING: case GRABBING:
+		case TILT_ATTACK: 
+			if (string_pos("flurry", sprite_get_name(sprite_index)) > 0) { //if a flurry attack
+				if (obj_input.input_array[player_number, ATTACK]) { //and holding attack still
+					break; //dont execute further code, let the animation loop
+				}	
+			}
+		case SMASH_ATTACK: case SPECIAL_ATTACK: case UNSHIELDING: case GRABBING:
 			image_index = 0
 			if (scr_check_for_ground()) { //if grounded
 				sprite_index = scr_get_sprite(id, "idle")

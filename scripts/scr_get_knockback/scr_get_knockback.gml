@@ -6,9 +6,9 @@
 
 //knockback formula in readable form
 /*
- / / /	(damage + 3)(damage + percent)		  \							\				     \
-| | |	-------------------------------		+1 | * (scaling knockback)^2 | + (base knockback) | * state
- \ \ \				weight*100				  /							/					 /
+ / / /	(damage + 1)(damage + percent)		  \		(scaling knockback)^2 \				       \
+| | |	-------------------------------		+1 | * ----------------------  | + (base knockback) | * state
+ \ \ \				weight*1000				  /				4			  /					   /
 */
 
 if (argument[0].hitbox = false) {
@@ -44,11 +44,12 @@ switch (_dir) {
 
 var _id = argument[1].creator
 
-_mag =  argument[0].d + 3				// k = damage taken + 3
+_mag =  argument[0].d + 1				// k = damage taken + 1
 _mag *= argument[0].d + _id.percentage	// k = k*(damage taken + percentage)
-_mag /= _id.weight*100					// k = k/(weight*100)
+_mag /= _id.weight*1000					// k = k/(weight*1000)
 _mag += 1								// k = k + 1
-_mag *= power(argument[0].s, 2)			// k = k * (s^2)
+_mag *= argument[0].s * argument[0].s	// k = k * (s^2)
+_mag *= 0.25							// k = k/4
 _mag += argument[0].b					// k = k + base knockback
 _mag *= _id.bracing						// k = k + state scaling
 

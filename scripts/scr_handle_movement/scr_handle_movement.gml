@@ -34,15 +34,17 @@ switch (argument[2]) {
 		argument[0].mom_x -= sign(argument[0].mom_x)*1 + argument[0].mom_x*0.025 //reduce momentum counter
 		argument[0].mom_y -= sign(argument[0].mom_y)*1 + argument[0].mom_y*0.025 //reduce momentum counter
 		if (point_distance(0, 0, argument[0].mom_x, argument[0].mom_y) < 3) { //if small impulse left
-			argument[0].image_speed = 1
+			argument[0].image_speed = 1 //unfreeze animation
 			argument[0].inertial = true //end momentum delay
-			state[argument[1]] = HELPLESS
-			argument[0].mom_x = argument[0].momentum_x
-			argument[0].mom_y = argument[0].momentum_y
+			state[argument[1]] = HELPLESS //set state
+			argument[0].mom_x = argument[0].momentum_x //set momentum counter
+			argument[0].mom_y = argument[0].momentum_y //set momentum counter
+			var _s = scr_perform_freefall(argument[0], argument[1]) //perform freefall wtihout changing state to get animation
+		}
+		if (point_distance(0, 0, argument[0].mom_x, argument[0].mom_y) < 10) {  //if medium impulse left
 			if (instance_exists(argument[0].attacker)) {
 				argument[0].attacker.image_speed = 1 //unfreeze attacker
-			}
-			var _s = scr_perform_freefall(argument[0], argument[1]) //perform freefall wtihout changing state to get animation
+			}	
 		}
 	break;
 	

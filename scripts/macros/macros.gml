@@ -1,5 +1,6 @@
 ///@desc Define game constants (macros) and global scope variable (globals)
 
+show_debug_overlay(debug_mode)
 
 //macros
 
@@ -139,18 +140,18 @@ global.ground_distance = 0
 //enums
 enum _IMPULSE { //define an impulse enumeration field (actual values are divided by 100)
 	_AIR_DODGE = 1200, //air dodge impulse (instant)
-	_ROLL = 500, //roll impulse (instant)
-	_WALK = 50, //walking impulse (ongoing)
-	_RUN = 100, //running impulse (ongoing)
-	_DASH = 700, //dashing impulse (instant)
+	_ROLL = 250, //roll impulse (instant)
+	_WALK = 25, //walking impulse (ongoing)
+	_RUN = 50, //running impulse (ongoing)
+	_DASH = 400, //dashing impulse (instant)
 	_JUMP = 1000, //jumping impulse (instant)
 	_JUMPRISE = 23, //jumprise impulse (ongoing)
 	_GRAVITY = 30, //gravity impulse (ongoing)
 	_FASTFALL = 150, //fastfall impulse (ongoing)
 	_AIR_MOVE = 100, //moving in air (ongoing)
 	_FREEFALL = 100, //starting freefall (instant)
-	_SUB_DASH = 750, //dash performed during a run in the same direction (instant)
-	_RIGIDITY = 10, //the force pushing players apart when they are colliding (ongoing)
+	_SUB_DASH = 425, //dash performed during a run in the same direction (instant)
+	_RIGIDITY = 5, //the force pushing players apart when they are colliding (ongoing)
 	_CLASH = 250, //when a hitbox collides with a hitbox (instant)
 	//attack impulses
 	_BAL_U_SPEC = 70 //balloony's recovery (ongoing)

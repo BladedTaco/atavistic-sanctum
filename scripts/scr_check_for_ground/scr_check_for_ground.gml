@@ -36,7 +36,7 @@ with (_inst) {
 		if ((_inst.alarm[1] > 0)) { //if not trying to fall through platform
 			with (obj_platform) {
 				if (scr_point_in_rec(_xx, _yy, hitbox)) {
-					if (angle_difference(image_angle, point_direction(x, y + 3, _xx - _inst.momentum_x/l, _yy - _inst.momentum_y/l)) <= 0) {
+					if (angle_difference(image_angle, point_direction(x, y + 2 + _inst.momentum_y, _xx - _inst.momentum_x/l, _yy - _inst.momentum_y/l)) <= 0) {
 						global.ground_distance = j/l
 						global.ground = id
 						return true //return true if platform is below character and colliding

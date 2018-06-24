@@ -1,13 +1,5 @@
 /// @description 
 
-draw_set_colour(c_maroon)
-draw_rectangle(0, 0, fps_real*2, 5, false)
-draw_set_colour(c_orange)
-draw_rectangle(0, 0, fps*2, 10, false)
-draw_set_colour(c_white)
-draw_line(GAME_SPEED*2, 0, GAME_SPEED*2, 15)
-
-
 switch (controls_set[0] - 2) {
 	case -2: draw_text_normal(600, 400, "Hold any face button, then press G to configure controller") break;
 	case -1: draw_text_normal(600, 400, "Make sure nothing is pressed, then press G to configure, or H to load default") break;

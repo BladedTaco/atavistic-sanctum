@@ -6,3 +6,5 @@ hitstun from attacks is based on knockback of move * damage of move * character 
 the hitstun character value can be changed based off of moves, eg geos n-special
 
 rectangle rectangle collision value is only true for !creator
+
+****** make sure that match handler is above obj player in resource tree so that it runs first

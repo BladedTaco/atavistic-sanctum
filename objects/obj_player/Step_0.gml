@@ -18,10 +18,10 @@ if ((obj_match_handler.state[player_number] != LEDGE_ALT) and (obj_match_handler
 			x += _mx/j
 			y += _my/j
 		}
-		while (instance_place(x, y+1, obj_ground) or instance_position(x, y+1, obj_ground)) {
+		while (instance_place(x, y+1, obj_ground) or instance_position(x + _ex, y+1 + _ey, obj_ground)) {
 			var _inst = instance_place(x, y+1, obj_ground)
 			if !(instance_exists(_inst)) { //if no instance found with sprite mask
-				_inst = instance_position(x, y+1, obj_ground) //check for one at coordinates
+				_inst = instance_position(x + _ey, y+1 + _ey, obj_ground) //check for one at coordinates
 			}
 			if (instance_exists(_inst)) { //if there is an instance of a ground object to check against
 				scr_helpless_bounce(_inst, _inst.hitbox, id)
@@ -42,7 +42,7 @@ if ((obj_match_handler.state[player_number] != LEDGE_ALT) and (obj_match_handler
 						_d = image_angle 
 					}
 				}
-				while (instance_place(x, y+1, _inst)) {
+				while (instance_place(x, y+1, _inst) or instance_position(x + _ex, y+1 + _ey, _inst)) {
 					l--
 					x += lengthdir_x(0.25, _d)
 					y += lengthdir_y(0.25, _d)
@@ -51,6 +51,22 @@ if ((obj_match_handler.state[player_number] != LEDGE_ALT) and (obj_match_handler
 			}
 			if (l <= 0) { break; }
 		}
+		//check for platform
+		if (instance_place(x, y+1, obj_platform) or instance_position(x + _ex, y+1 + _ey, obj_platform)) {
+			var _inst = instance_place(x, y+1, obj_platform)
+			if !(instance_exists(_inst)) { //if no instance found with sprite mask
+				_inst = instance_position(x + _ex, y+1 + _ey, obj_platform) //check for one at coordinates
+			}
+			if (instance_exists(_inst)) { //if there is an instance of a ground object to check against
+				var _xx = x - momentum_x*2
+				var _yy = y - momentum_y*2
+				var _id = _inst.hitbox
+				if (sign((_xx - _id._x[0])*(_id._y[1] - _id._y[0]) - 
+				(_yy - _id._y[0])*(_id._x[1] - _id._x[0])) != _id.side[0]) { //above line
+					scr_helpless_bounce(_inst, _inst.hitbox, id)
+				}
+			}
+		}	
 		if (j <= 0) { break; }
 	}
 }
