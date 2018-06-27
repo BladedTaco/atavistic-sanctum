@@ -1,7 +1,7 @@
 ///@func scr_handle_movement(object, player_number, type)
 ///@param object - the instance id of the character object
 ///@param player_number - the number of the player to perform the shield with
-///@param type - the type of special movement (stop, drift, DI, airborne, delay) (1 2 3 4 5 respectively)
+///@param type - the type of special movement (stop, drift, DI, airborne, delay, nothing) (1 2 3 4 5 6 respectively)
 ///@desc handles special movement types, possibly ignoring current inputs
 
 var _x1 = input_array[argument[1], XAXIS]

@@ -1,8 +1,7 @@
 /// @description Draw hitboxes and create hitboxes
 
 //clear hitbox objects
-with (obj_hitbox) {	instance_destroy() }
-scr_draw_hitboxes(true)//hitbox)	
+scr_draw_hitboxes(debug_mode)//hitbox)	
 //*
 
 draw_set_halign(fa_center)

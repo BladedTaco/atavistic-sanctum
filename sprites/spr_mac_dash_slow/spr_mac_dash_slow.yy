@@ -11,7 +11,7 @@
     "bbox_right": 28,
     "bbox_top": 0,
     "bboxmode": 0,
-    "colkind": 1,
+    "colkind": 0,
     "coltolerance": 0,
     "edgeFiltering": false,
     "frames": [
@@ -62,7 +62,7 @@
     ],
     "gridX": 0,
     "gridY": 0,
-    "height": 38,
+    "height": 37,
     "layers": [
         {
             "id": "9c2dffb1-1eb7-426d-8a74-efe3e915f5ec",
@@ -81,7 +81,7 @@
     "playbackSpeed": 20,
     "playbackSpeedType": 0,
     "premultiplyAlpha": false,
-    "sepmasks": false,
+    "sepmasks": true,
     "swatchColours": [
         4278190335,
         4278255615,

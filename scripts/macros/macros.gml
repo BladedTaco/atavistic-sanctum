@@ -77,6 +77,8 @@ show_debug_overlay(debug_mode)
 #macro UNSHIELDING 25 //describes unshield animation
 #macro CROUCHING 26 //describes all 3 crouching states
 #macro HELPLESS 27 //airborne from an attacks knocback
+#macro GRABBED 28 //being grabbed
+#macro TAUNTING 29 //taunting
 
 //character identiiers
 #macro BAL 0
@@ -136,7 +138,6 @@ for (var t = 0; t <= global.maxIterations; t++) {
 global.ground = noone
 global.ground_distance = 0
 
-
 //enums
 enum _IMPULSE { //define an impulse enumeration field (actual values are divided by 100)
 	_AIR_DODGE = 1200, //air dodge impulse (instant)
@@ -153,7 +154,10 @@ enum _IMPULSE { //define an impulse enumeration field (actual values are divided
 	_SUB_DASH = 425, //dash performed during a run in the same direction (instant)
 	_RIGIDITY = 5, //the force pushing players apart when they are colliding (ongoing)
 	_CLASH = 250, //when a hitbox collides with a hitbox (instant)
+	_GRAB = 100, //impulse when peforming a grab
+	_GRAB_RELEASE = 500, //when a grabs timer runs out
 	//attack impulses
+	_MAC_SLIDE = 25, //machinations sliding moves (ongoing)
 	_BAL_U_SPEC = 70 //balloony's recovery (ongoing)
 }
 

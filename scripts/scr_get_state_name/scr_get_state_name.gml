@@ -29,5 +29,7 @@ return (  (argument[0] == GROUNDED		 ? "GROUNDED"
 		: (argument[0] == DASH_SLOW		 ? "DASH_SLOW"
 		: (argument[0] == UNSHIELDING	 ? "UNSHIELDING" 
 		: (argument[0] == CROUCHING		 ? "CROUCHING" 
-		: (argument[0] == HELPLESS		 ? "HELPLESS"
-		: "UNKNOWN STATE")))))))))))))))))))))))))))))
+		: (argument[0] == HELPLESS		 ? "HELPLESS" 
+		: (argument[0] == GRABBED		 ? "GRABBED"
+		: (argument[0] == TAUNTING		 ? "TAUNTING"
+		: "UNKNOWN STATE")))))))))))))))))))))))))))))))

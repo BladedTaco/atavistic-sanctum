@@ -1,5 +1,7 @@
 /// @description 
 
+draw_count++ //increment draw_count
+
 effective_x = 0
 effective_y = 0
 scr_check_special_instructions(1)
@@ -19,6 +21,7 @@ if ((obj_match_handler.state[player_number] != LEDGE_ALT) and (obj_match_handler
 			y += _my/j
 		}
 		while (instance_place(x, y+1, obj_ground) or instance_position(x + _ex, y+1 + _ey, obj_ground)) {
+			l--
 			var _inst = instance_place(x, y+1, obj_ground)
 			if !(instance_exists(_inst)) { //if no instance found with sprite mask
 				_inst = instance_position(x + _ey, y+1 + _ey, obj_ground) //check for one at coordinates
@@ -48,7 +51,7 @@ if ((obj_match_handler.state[player_number] != LEDGE_ALT) and (obj_match_handler
 					y += lengthdir_y(0.25, _d)
 					if (l <= 0) { break; }
 				}
-			}
+			} else { break; } //if no instance found, break
 			if (l <= 0) { break; }
 		}
 		//check for platform

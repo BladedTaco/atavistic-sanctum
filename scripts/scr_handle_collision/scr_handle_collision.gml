@@ -11,9 +11,12 @@ if (argument[0].hitbox = argument[1].hitbox) { //same type
 			scr_apply_impulse(argument[1].creator, argument[1].creator.player_number, _d, _IMPULSE._CLASH/100, false)
 		}
 	} else { //hurtbox colliding with hurtbox
-		var _l = _IMPULSE._RIGIDITY/(100*max(point_distance(argument[0].x, argument[0].y, argument[1].x, argument[1].y), 1))
-		scr_apply_impulse(argument[0].creator, argument[0].creator.player_number, _d + 180, _l, false)
-		scr_apply_impulse(argument[1].creator, argument[1].creator.player_number, _d, _l, false)
+		if ((obj_match_handler.state[argument[0].creator.player_number] != GRABBED)
+		and (obj_match_handler.state[argument[1].creator.player_number] != GRABBED)) { //if not in a grab
+			var _l = _IMPULSE._RIGIDITY/(100*max(point_distance(argument[0].x, argument[0].y, argument[1].x, argument[1].y), 1))
+			scr_apply_impulse(argument[0].creator, argument[0].creator.player_number, _d + 180, _l, false)
+			scr_apply_impulse(argument[1].creator, argument[1].creator.player_number, _d, _l, false)
+		}
 	}
 } else { //a hitbox colliding with a hurtbox
 	//call the knockback formula

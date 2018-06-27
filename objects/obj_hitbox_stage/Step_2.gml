@@ -42,20 +42,30 @@ with (obj_hitbox) {
 	}
 	
 	//collide
-	if (c) {
-		switch (other.creator.object_index) {
-			case obj_ledge:
-				switch (obj_match_handler.state[creator.player_number]) {
-					case AIRBORNE: case JUMP_RISE: case FREEFALL:
-						with (obj_match_handler) {
-							state[other.creator.player_number] = scr_perform_ledge(other.creator, other.creator.player_number, 0)	
+	if (c and instance_exists(creator)) {
+		switch (creator.object_index) {
+			case obj_player:
+				switch (other.creator.object_index) {
+					case obj_ledge:
+						switch (obj_match_handler.state[creator.player_number]) {
+							case AIRBORNE: case JUMP_RISE: case FREEFALL:
+								with (obj_match_handler) {
+									state[other.creator.player_number] = scr_perform_ledge(other.creator, other.creator.player_number, 0)	
+								}
+							break;
 						}
+					break;
+			
+					case obj_ground:
+						//scr_helpless_bounce(other.creator, id, creator)
 					break;
 				}
 			break;
 			
-			case obj_ground:
-				//scr_helpless_bounce(other.creator, id, creator)
+			case obj_mac_projectile:
+				if (other.creator.object_index != obj_ledge) {
+					instance_destroy(creator);
+				}
 			break;
 		}
 	}

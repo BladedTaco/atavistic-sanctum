@@ -7,24 +7,18 @@ for (var i = 0; i < 8; i++) {
 	input_array[i, 0] = 0
 	state[i] = FREEFALL
 	jumps[i] = 1
-	momentum_x[i] = 0
-	momentum_y[i] = 0
 	player[i] = -1 //create the players here and populate the array with their instance ids
 }
 hitbox = false //draw hitboxes on true
 
-st[0] = 0
-st[1] = 0
-st[2] = 0
-st[3] = 0
-st[4] = 0
-st[5] = 0
 
 with(instance_create(200, -200, obj_player)) {
 	image_blend = c_aqua
 	player_number = 0
 	other.player[0] = id
 	controller = true
+	character = MAC
+	max_jumps = 0
 	sprite_index = scr_get_sprite(id, "hurt_down")
 }
 

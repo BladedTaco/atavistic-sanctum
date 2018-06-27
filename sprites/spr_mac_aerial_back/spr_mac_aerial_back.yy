@@ -7,11 +7,11 @@
     "HTile": false,
     "VTile": false,
     "bbox_bottom": 37,
-    "bbox_left": 0,
+    "bbox_left": 22,
     "bbox_right": 46,
     "bbox_top": 0,
-    "bboxmode": 0,
-    "colkind": 1,
+    "bboxmode": 2,
+    "colkind": 0,
     "coltolerance": 0,
     "edgeFiltering": false,
     "frames": [
@@ -976,7 +976,7 @@
     "playbackSpeed": 30,
     "playbackSpeedType": 0,
     "premultiplyAlpha": false,
-    "sepmasks": false,
+    "sepmasks": true,
     "swatchColours": [
         4278190335,
         4278255615,

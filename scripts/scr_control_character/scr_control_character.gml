@@ -14,7 +14,7 @@ do {
 	if (input_array[i, PAUSE]) { //pause or unpause
 		global.paused = !global.paused	
 	}
-	if ((input_array[i, YAXIS] < 0.5) and !input_array[i, ATTACK]) {
+	if ((input_array[i, YAXIS] < 0.5) or (state[i] = SMASH_ATTACK)) {
 		_inst.alarm[1] = 5 
 	} //platform drop alarm
 	do {
@@ -77,17 +77,22 @@ do {
 					}
 				}
 			case SPECIAL_ATTACK:
-				if (scr_check_for_ground(_inst, _ex, _ey)) {
-					_move_character = 4 //airborne
+				if (_inst.sprite_index = spr_mac_special_up) {
+					_move_character = 6 //nothing
 				} else {
-					_move_character = 2 //drift
+					//allow movement if in air
+					if (scr_check_for_ground(_inst, _ex, _ey)) {
+						_move_character = 2 //drift
+					} else {
+						_move_character = 4 //airborne
+					}
 				}
 			break;
 			case SMASH_ATTACK:
-				if (input_array[i, ATTACK] and (_inst.image_index < 2)) {
+				if (input_array[i, ATTACK] and (floor(_inst.image_index) = _inst.smash_frame)) {
 					obj_input.sticky_attack[i] = true //set sticky attack to true
 					if (_inst.alarm[2] >= 0) {
-						_inst.image_index = 1
+						_inst.image_index = _inst.smash_frame
 					}
 				} else {
 					_inst.smash_charge = 1 - (_inst.alarm[2]/GAME_SPEED)
@@ -289,13 +294,53 @@ do {
 				}
 			break;
 		
-			case GRABBING:
-				if (input_array[i, ATTACK]) { //grab jab
-					scr_perform_attack(_inst, i, 6, 0)
-				}
+			case GRABBING: case TAUNTING:
 				_move_character = 2 //drift
 			break;
 		
+			case GRABBED:
+				_move_character = 1; //stop
+				if (instance_exists(_inst.attacker)) { //if the grabber exists
+					if (_inst.attacker.alarm[5] > GAME_SPEED/4) { //if more than 1/4 of a second left in the grab
+						if (input_array[i, TILT] = SMASH_MOVE) { //if smashing stick
+							_inst.attacker.alarm[5] -= 1 //reduce alarm	
+							_inst.wiggle = true //set wiggle to true
+						}
+						//reduce alarm by 3 on a new button press
+						if (!obj_input.sticky_attack[i] and input_array[i, ATTACK]) {
+							_inst.attacker.alarm[5] -= 3 
+							_inst.wiggle = true //set wiggle to true
+							obj_input.sticky_attack[i] = true //set sticky to true
+						}
+						if (!obj_input.sticky_special[i] and input_array[i, SPECIAL]) {
+							_inst.attacker.alarm[5] -= 3
+							_inst.wiggle = true //set wiggle to true
+							obj_input.sticky_special[i] = true //set sticky to true
+						}
+						if (!obj_input.sticky_jump[i] and input_array[i, JUMP]) {
+							_inst.attacker.alarm[5] -= 3
+							_inst.wiggle = true //set wiggle to true
+							obj_input.sticky_jump[i] = true //set sticky to true
+						}
+					}
+				}
+			break;
+			
+			case HOLDING:
+				_move_character = 2//drift
+				if (_inst.sprite_index = scr_get_sprite(_inst, "grab_hold")) {
+					if (input_array[i, TILT] = SMASH_MOVE) { 
+						_inst.alarm[5] = GAME_SPEED //set grab release alarm to 1 second
+						state[i] = scr_perform_throw(_inst, i, point_direction(0, 0, input_array[i, XAXIS], input_array[i, YAXIS]))
+					}
+					if (input_array[i, ATTACK]) { //grab jab
+						state[i] = scr_perform_attack(_inst, i, 6, 0)
+						if (_inst.alarm[5] > GAME_SPEED/5) {
+							_inst.alarm[5] -= GAME_SPEED/5 //reduce grab alarm
+						}
+					}
+				}
+			break;
 		}
 	} until (state[i] = _state) //repeat until a change of state does not happen
 	
@@ -306,8 +351,9 @@ do {
 	}			
 		
 	//check for ground
-	if ((_move_character != 5) and (state[i] != HELPLESS) and (state[i] != HIT_STUN)) {
+	if ((_move_character < 5) and (state[i] != HELPLESS) and (state[i] != HIT_STUN)) {
 		if (scr_check_for_ground(_inst, _ex, _ey) and !(state[i] = LEDGE) and !(state[i] = LEDGE_ALT)) {	
+			var j = 100
 			var l = max(ceil(2*point_distance(0, 0, _inst.momentum_x, _inst.momentum_y)/GROUND_HEIGHT), 1)
 			var _xx = _inst.x 
 			var _yy = _inst.y 
@@ -329,11 +375,15 @@ do {
 						var _d = _inst.image_angle
 						while (scr_point_in_rec(_xx + _ex, _yy + _ey, _ground.hurtbox)) {
 							_yy -= 0.25
+							j--
+							if (j < 0) { break }
 						}
 						_inst.alarm[0] = GAME_SPEED //set ledge alarm
 						jumps[i] = _inst.max_jumps //refresh jumps
+						_inst.recovered = false //refresh recovery
 						switch (state[i]) {
 							case AIRBORNE: case FREEFALL: case AIR_ATTACK:
+								_inst.image_speed = 1 //end any hitlag
 								_inst.spawning = false //set the instance to no longer spawning
 								state[i] = LANDING //set state
 								_inst.sprite_index = scr_get_sprite(_inst, "land") //set to land sprite
@@ -349,11 +399,13 @@ do {
 			_inst.y = _yy //update instance position
 		} else {
 			if (_inst.image_angle != 0) and (scr_check_for_ground(_inst, -_inst.momentum_x*2 + _ex, _ey)) {
-				while (!scr_check_for_ground(_inst, _ex, _ey)) {
+				l = 100
+				while (!scr_check_for_ground(_inst, _ex, _ey) and (l > 0)) {
+					l--
 					_inst.y += 0.25
 				}
 			} else { //absolutely no ground found
-				_inst.image_angle = 0
+					_inst.image_angle = 0
 				switch (state[i]) { //if in a certain state, make character airborne
 					case WALKING: case RUNNING: case CROUCHING: case SPEED_UP: case DASHING:
 					case DASH_SLOW: case SPEED_DOWN:
@@ -368,17 +420,17 @@ do {
 
 	//wrapping code
 	if (_inst.x > room_width) {
-		_inst.x -= 1
+		_inst.x -= 5
 	}
 	if (_inst.x < 0) {
-		_inst.x += 1
+		_inst.x += 5
 	}
 
 	if (_inst.y > room_height) {
-		_inst.y -= 1
+		_inst.y -= 5
 	}
 	if (_inst.y < 0) {
-		_inst.y += 1
+		_inst.y += 5
 	}
 
 	//floor momentum if almost nonexistant

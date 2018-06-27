@@ -26,13 +26,15 @@ switch (controls_set[0] - 2) {
 	case 20: draw_text_normal(600, 400, "Press G to reset controls") break;
 }
 
-for (var i = 0; i <= global.player_number; i++) {
-	for (var o = 0; o < array_length_2d(input_array, i); o++) {
-		draw_text_normal(i*150 + 50, o*15 + 50, input_array[i, o])
+if (debug_mode) {
+	for (var i = 0; i <= global.player_number; i++) {
+		for (var o = 0; o < array_length_2d(input_array, i); o++) {
+			draw_text_normal(i*150 + 50, o*15 + 50, input_array[i, o])
+		}
 	}
-}
 
-draw_set_colour(c_aqua)
-for (var i = 0; i <= global.input_buffer_length; i++) {
-	draw_circle(400 + i*15, 100 + 50*input_buffer_array[i*100 + 0, XAXIS], 5, false)
+	draw_set_colour(c_aqua)
+	for (var i = 0; i <= global.input_buffer_length; i++) {
+		draw_circle(400 + i*15, 100 + 50*input_buffer_array[i*100 + 0, XAXIS], 5, false)
+	}
 }

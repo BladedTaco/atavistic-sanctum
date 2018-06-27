@@ -1,5 +1,5 @@
-///@func scr_get_sprite(character_number, string)
-///@param object - the number assigned to the character type
+///@func scr_get_sprite(object, string)
+///@param object - the player object
 ///@param string - the string identifier of the sprite (everything after character 7)
 ///@desc returns the sprite id of a specific sprite given the character and animation type
 
@@ -13,7 +13,19 @@ switch (argument[0].character) { //check charater
 	case MAC: i = "spr_mac_" break;
 }
 
-ret = asset_get_index(string(i + argument[1]))
+ret = asset_get_index(string(i + argument[1])) //get sprite
+
+//check for special cases
+if (ret = spr_mac_special_up) {
+	ret = argument[0].sprite_index
+	argument[0].image_speed = 0
+	argument[0].hitbox_override = true
+	with (instance_create((argument[0].bbox_left + argument[0].bbox_right)/2, 
+	(argument[0].bbox_top + argument[0].bbox_bottom)/2, obj_mac_projectile)) {
+		creator = argument[0]	
+		type = 0
+	}
+}
 if (ret = -1) { //if nonexistant sprite
 	//check for special cases
 	if (string_copy(argument[1], 1, 11) = "dash_attack") { //dash attack
@@ -30,6 +42,11 @@ if (ret = -1) { //if nonexistant sprite
 	}
 	if (string_copy(argument[1], 1, 8) = "grab_jab") { //grab jab
 		ret = asset_get_index(i + "grab_jab")	
+	}
+	if (string_copy(argument[1], 1, 4) = "grab") {
+		if (asset_get_index(i + "grab") > -1) { //if a directionless grab exists
+			ret = asset_get_index(i + "grab")
+		}
 	}
 	switch (argument[0].character) { //check for character specific special cases
 		case ETH:

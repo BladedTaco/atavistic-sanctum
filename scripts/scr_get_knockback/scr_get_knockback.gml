@@ -24,6 +24,8 @@ if (argument[0].hitbox = false) {
 
 var _dir = argument[0].a //the direction of the attack
 var _mag = 0 //the magnitude of the knockback vector
+var _id = argument[1].creator //attacked
+var _id2 = argument[0].creator //attacker
 
 switch (_dir) {
 	case IN: 
@@ -33,40 +35,73 @@ switch (_dir) {
 		_dir = point_direction(argument[0].x, argument[0].y, argument[1].x, argument[1].y)
 	break;
 	case DIR:
-		_dir = argument[0].image_angle
+		_dir = _id2.image_angle + 90
 	break;
 	case HOLD_DIR: //this is equivalent to hold	
-		show_message("Grabs are not currrently implemented")
+		//set each player as each others attacker
+		_id.attacker = _id2
+		_id2.attacker = _id
+		//set the sprites
+		_id.sprite_index = scr_get_sprite(_id, "grabbed")
+		_id.image_index = 0
+		_id2.sprite_index = scr_get_sprite(_id2, "grab_hold")
+		_id2.image_index = 0
+		obj_match_handler.state[_id2.player_number] = HOLDING //set the holding player
+		obj_match_handler.state[_id.player_number] = GRABBED //set the held player
+		_id.percentage += argument[0].d //apply damage
+		_id.last_damage = argument[0].d //remember the amount of damage taken
+		_id2.alarm[5] = GAME_SPEED*5 //set grab alarm time
+		_id.image_xscale = -_id2.image_xscale //face the right direction
+		exit //exit the script
 	break;	
 	default:
 	break;
 }
 
-var _id = argument[1].creator
-
-_mag =  argument[0].d + 1				// k = damage taken + 1
-_mag *= argument[0].d + _id.percentage	// k = k*(damage taken + percentage)
-_mag /= _id.weight*1000					// k = k/(weight*1000)
-_mag += 1								// k = k + 1
-_mag *= argument[0].s * argument[0].s	// k = k * (s^2)
-_mag *= 0.25							// k = k/4
-_mag += argument[0].b					// k = k + base knockback
-_mag *= _id.bracing						// k = k + state scaling
-
-if ((_id.alarm[4] <= 0) or (_id.last_damage + 5 < argument[0].d)) { //if not sleeping hitbox or a significantly stronger hitbox
+if (argument[0].h = -1) { //if negative hitstun, only apply damage and no state change or knockback
 	_id.percentage += argument[0].d //apply damage
-	_id.last_damage = argument[0].d
-	scr_apply_impulse(_id, _id.player_number, _dir, _mag, true) //apply the knockback impuls
-	scr_momentum_delay(_id, _id.momentum_x, _id.momentum_y, argument[0].h, true)
-	if (instance_exists(_id.attacker)) {
-		_id.attacker.image_speed = 1
+	_id.last_damage = argument[0].d //remember the amount of damage taken
+} else {
+	_mag =  argument[0].d + 1				// k = damage taken + 1
+	_mag *= argument[0].d + _id.percentage	// k = k*(damage taken + percentage)
+	_mag /= _id.weight*1000					// k = k/(weight*1000)
+	_mag += 1								// k = k + 1
+	_mag *= argument[0].s * argument[0].s	// k = k * (s^2)
+	_mag *= 0.25							// k = k/4
+	_mag += argument[0].b					// k = k + base knockback
+	_mag *= _id.bracing						// k = k + state scaling
+	
+	if (_mag < 0) { //negative magnitude means to follow the attacker
+		_mag = point_distance(0, 0, _id2.momentum_x, _id2.momentum_y)*4
+		_id.momentum_x = 0
+		_id.momentum_y = 0
 	}
-	_id.attacker = argument[0].creator
-	_id.attacker.image_speed = 0
-	_id.image_speed = 0
-	//handle hitbox sleeping alarm
-	if ((_mag > 3) or (argument[0].d > 3)) {//if large attack
-		//set the attacked players hitbox sleeping alarm
-		_id.alarm[4] = _mag
+	
+	//if (not sleeping hitbox) or (a significantly stronger hitbox) or (a windbox) or (high hitstun)
+	if ((_id.alarm[4] <= 0) or (_id.last_damage + 5 < argument[0].d) or (argument[0].d = 0) or (argument[0].h > 1)) { 
+		_id.percentage += argument[0].d //apply damage
+		_id.last_damage = argument[0].d //remember the amount of damage taken
+		scr_apply_impulse(_id, _id.player_number, _dir, _mag, true) //apply the knockback impulse
+		scr_momentum_delay(_id, _id.momentum_x, _id.momentum_y, argument[0].h, true)
+		if (instance_exists(_id.attacker)) {
+			_id.attacker.image_speed = 1
+			if (_id.attacker.alarm[5] > 0) { //if was in the middle of a grab
+				//release the grab
+				_id.attacker.alarm[5] = 0
+				_id.attacker.attacker = noone //make the attackers attacker noone
+			}
+		}
+		if (_id2.object_index = obj_player) {
+			_id.attacker = _id2
+			if (argument[0].h > 0) {
+				_id.attacker.image_speed = 0
+				_id.image_speed = 0
+			}
+		}
+		//handle hitbox sleeping alarm
+		if ((_mag > 3) and (argument[0].d > 3)) {//if large attack
+			//set the attacked players hitbox sleeping alarm
+			_id.alarm[4] = _mag
+		}
 	}
 }

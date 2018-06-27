@@ -8,3 +8,22 @@ the hitstun character value can be changed based off of moves, eg geos n-special
 rectangle rectangle collision value is only true for !creator
 
 ****** make sure that match handler is above obj player in resource tree so that it runs first
+******* make sure that all windboxes have a hitstun multiplier of 0
+
+
+-------------------------------------------------------------------
+make a medusa map where you are stuck looking away from whichever direction the medusa is
+dash dodging tutorial
+circle dash dancing tutorial
+dash dancing tutorial
+wavedash tutorial
+tilt to smash cancelling tutorial
+
+never sandwich ground objects, only platform objects
+make all sprites have precise collision masks
+make sure all sprites are cropped properly
+make sure all sprite origins are correct
+make sure every windbox has a hitstun multipleri of 0
+
+add colour swaps and flash yellow outline when alarm[2] >= 0
+

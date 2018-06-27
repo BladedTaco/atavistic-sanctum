@@ -351,6 +351,14 @@
             }
         },
         {
+            "Key": "144d6837-6210-40bb-975a-b4b0735c83a2",
+            "Value": {
+                "id": "eb083a1d-c723-4e81-8070-664de5b726f9",
+                "resourcePath": "scripts\\scr_handle_special_collision\\scr_handle_special_collision.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "14781499-8551-42d5-9517-a78c66e87f1a",
             "Value": {
                 "id": "d34fab33-7269-439b-9c35-936f94db66ef",
@@ -1004,6 +1012,14 @@
                 "id": "0a7c4fd7-2d09-4989-bd2f-eaac0a8bbdad",
                 "resourcePath": "sprites\\spr_portrait\\spr_portrait.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "52932928-fab9-4f79-8b01-1e5ca1eda602",
+            "Value": {
+                "id": "dd3621b8-4003-456c-9666-1f1f0676e92e",
+                "resourcePath": "scripts\\scr_get_smash_frame\\scr_get_smash_frame.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -1687,6 +1703,14 @@
             }
         },
         {
+            "Key": "81fb6cac-c414-4fd2-bec2-9d3f1faf8863",
+            "Value": {
+                "id": "77a332de-fee6-4177-ad39-2fec955e25b8",
+                "resourcePath": "scripts\\scr_perform_throw\\scr_perform_throw.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "826cd0d7-f22e-4c60-b31b-4c4cca3a4bbb",
             "Value": {
                 "id": "e8b8ef3b-7f6f-4b33-b1fd-2c3d5bb4a1d6",
@@ -2212,6 +2236,14 @@
                 "id": "f6fbbe8d-8fe1-45a9-b4fa-acc183b74819",
                 "resourcePath": "sprites\\spr_geo_tilt_forward\\spr_geo_tilt_forward.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "b1f987b8-9546-45b3-9a0a-1fcc89805aa2",
+            "Value": {
+                "id": "a00b1f38-2dde-4924-8ca7-087a29d97880",
+                "resourcePath": "objects\\obj_mac_projectile\\obj_mac_projectile.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -3248,6 +3280,7 @@
         "473bb6d3-774c-428a-880a-4aff19859fd1",
         "40e5c7c5-86c9-48b8-b302-cb51597f035d",
         "f7641e56-1bf2-4d51-b8d7-e91665cd45ad",
+        "81fb6cac-c414-4fd2-bec2-9d3f1faf8863",
         "00c4b137-5a2a-4879-b621-642e37b94eb6",
         "5465a2bb-7a1c-435e-a490-b02f442073f4",
         "4391d1df-ff3e-4089-8a8c-058fee2e9c87",
@@ -3277,7 +3310,9 @@
         "d81cdb5f-edbb-4e4c-b41d-c90e3c328d14",
         "64e3f6c5-eacf-4972-bc7b-639012ace168",
         "ce018525-82d9-400f-a20c-b3100bb3852c",
-        "dfa285a0-e273-46fa-9cf7-2fd6f5ef2d5e"
+        "dfa285a0-e273-46fa-9cf7-2fd6f5ef2d5e",
+        "144d6837-6210-40bb-975a-b4b0735c83a2",
+        "52932928-fab9-4f79-8b01-1e5ca1eda602"
     ],
     "tutorial": ""
 }

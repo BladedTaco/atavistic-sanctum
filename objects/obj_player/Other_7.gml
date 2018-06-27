@@ -28,7 +28,7 @@ switch (obj_match_handler.state[player_number]) {
 					break; //dont execute further code, let the animation loop
 				}	
 			}
-		case SMASH_ATTACK: case SPECIAL_ATTACK: case UNSHIELDING: case GRABBING:
+		case SMASH_ATTACK: case SPECIAL_ATTACK: case UNSHIELDING: case GRABBING: case TAUNTING:
 			image_index = 0
 			if (scr_check_for_ground()) { //if grounded
 				sprite_index = scr_get_sprite(id, "idle")
@@ -92,12 +92,31 @@ switch (obj_match_handler.state[player_number]) {
 				sprite_index = scr_get_sprite(id, "air_move")
 				image_index = 0
 			}
+			if (sprite_index = scr_get_sprite(id, "jump")) {
+				sprite_index = scr_get_sprite(id, "air_move") //set animation to air move animation
+				image_index = 0 //set animation frame to the first one	
+			}
 		break;
 		case AIR_ATTACK:
 			sprite_index = scr_get_sprite(id, "air_move")
 			obj_match_handler.state[player_number] = AIRBORNE
 		break;
-		//HOLDING
+		case HOLDING:
+			if ((sprite_index != scr_get_sprite(id, "grab_hold")) and (sprite_index != scr_get_sprite(id, "grab_jab"))) {
+				//if ending a throw
+				image_index = 0
+				if (scr_check_for_ground()) { //if grounded
+					sprite_index = scr_get_sprite(id, "idle")
+					obj_match_handler.state[player_number] = GROUNDED
+				} else { //airborne
+					sprite_index = scr_get_sprite(id, "air_move")
+					obj_match_handler.state[player_number] = AIRBORNE	
+				}
+			} else { //set to grab sprite
+				image_index = 0
+				sprite_index = scr_get_sprite(id, "grab_hold")
+			}
+		break;
 		case CROUCHING:
 			image_index = 0
 			if (sprite_index = scr_get_sprite(id, "crouch")) {

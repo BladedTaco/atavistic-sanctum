@@ -13,8 +13,9 @@ if (argument[2] = 3) { //if special attack
 	obj_input.sticky_attack[argument[1]] = true //set sticky attack to true
 }
 
-var _type, _direction, _sprite, _ret //define local variables
+var _type, _direction, _sprite, _ret, _get_smash_frame //define local variables
 
+_get_smash_frame = false
 _direction = scr_get_direction(argument[0], argument[1], argument[3]) //get the directon
 
 switch (argument[2]) { //get attack type as string
@@ -32,6 +33,7 @@ switch (argument[2]) { //get attack type as string
 		_ret = SMASH_ATTACK
 		argument[0].alarm[2] = GAME_SPEED //set max smash hold
 		argument[0].smash_charge = 0
+		_get_smash_frame = true
 	break;
 	case 3: //special
 		_type = "special"
@@ -51,15 +53,16 @@ switch (argument[2]) { //get attack type as string
 	break;
 	case 6: //grab jab
 		_type = "grab_jab"
-		_ret = TILT_ATTACK
+		_ret = HOLDING
 	break;
 }
 
 _sprite = scr_get_sprite(argument[0], string(_type + "_" + _direction)) //get sprite
 
 if (sprite_exists(_sprite)) { //if the sprite exists
+	if (_get_smash_frame) { scr_get_smash_frame(argument[0], _sprite) }
 	argument[0].sprite_index = _sprite //set sprite to the attack sprite
 	argument[0].image_index = 0 //set animation frame to the first one
 	return _ret //return the state
 }
-return FREEFALL //return freefall state is sprite is not found, this should never happen
+return scr_perform_freefall(argument[0], argument[1]) //return freefall state is sprite is not found, this should never happen
