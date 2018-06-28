@@ -41,6 +41,11 @@ switch (_dir) {
 		//set each player as each others attacker
 		_id.attacker = _id2
 		_id2.attacker = _id
+		//move the attacker to the attacked if this is from a ledge grab
+		if (obj_match_handler.state[_id2.player_number] = LEDGE_ALT) {
+			_id2.x = _id.x
+			_id2.y = _id.y
+		}
 		//set the sprites
 		_id.sprite_index = scr_get_sprite(_id, "grabbed")
 		_id.image_index = 0

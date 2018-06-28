@@ -738,11 +738,11 @@ var i = 0 //variable created now for use in loops below if hurtboxes or hitboxes
 	//mac ledge jump (no hitboxes, no hurtboxes)
 
 	//mac ledge grab (discontinuous hitboxes, no hurtboxes)
-	scr_add_move(spr_mac_ledge_grab, 0, 0, CIRCLE, 10, 10, 3, -7, 0, 0, HOLD)
-	scr_add_move(spr_mac_ledge_grab, 1, 0, CIRCLE, 10, 10, 9, -12, 0, 0, HOLD)
-	scr_add_move(spr_mac_ledge_grab, 2, 0, CIRCLE, 10, 10, 15, -16, 0, 0, HOLD)
-	scr_add_move(spr_mac_ledge_grab, 3, 0, CIRCLE, 10, 10, 20, -20, 0, 0, HOLD)
-	scr_add_move(spr_mac_ledge_grab, 4, 0, CIRCLE, 10, 10, 24, -20, 0, 0, HOLD)
+	scr_add_move(spr_mac_ledge_grab, 10, 0, CIRCLE, 10, 10, 3, -7, 0, 0, HOLD)
+	scr_add_move(spr_mac_ledge_grab, 11, 0, CIRCLE, 10, 10, 9, -12, 0, 0, HOLD)
+	scr_add_move(spr_mac_ledge_grab, 12, 0, CIRCLE, 10, 10, 15, -16, 0, 0, HOLD)
+	scr_add_move(spr_mac_ledge_grab, 13, 0, CIRCLE, 10, 10, 20, -20, 0, 0, HOLD)
+	scr_add_move(spr_mac_ledge_grab, 14, 0, CIRCLE, 10, 10, 24, -20, 0, 0, HOLD)
 
 	//mac ledge attack (discontinuous hitboxes, no hurtboxes)
 	scr_add_move(spr_mac_ledge_attack, 4, 0, RECTANGLE, 25, 16, -14, 21, 0, 16, 90, 8, 3)
@@ -832,7 +832,7 @@ var i = 0 //variable created now for use in loops below if hurtboxes or hitboxes
 	for (i = 0; i < 14; i++) {
 		scr_add_hurtbox(spr_mac_throw_back, i, 0, RECTANGLE, 12, 16, -9, -24, 0)
 	}
-	scr_add_move(spr_mac_throw_down, 5, 0, RECTANGLE, 1, 1, -9, -24, 0, 13, 215, 4, 6, 0)
+	scr_add_move(spr_mac_throw_back, 5, 0, RECTANGLE, 1, 1, -9, -24, 0, 13, 215, 4, 6, 0)
 
 	//mac tilt forward (discontinuous hitboxes)
 	scr_add_hurtbox(spr_mac_tilt_forward, 0, 0, RECTANGLE, 12, 16, 1, -19, 0)
@@ -1017,9 +1017,9 @@ var i = 0 //variable created now for use in loops below if hurtboxes or hitboxes
 	scr_add_hurtbox(spr_mac_smash_forward, 18, 0, RECTANGLE, 12, 16, 0, -20, 0)
 	scr_add_hurtbox(spr_mac_smash_forward, 19, 0, RECTANGLE, 12, 16, 0, -20, 0)
 	scr_add_hurtbox(spr_mac_smash_forward, 20, 0, RECTANGLE, 12, 16, 1, -19, 0)
-	scr_add_move(spr_mac_smash_forward, 17, 0, CIRCLE, 28, 16, 24, -21, 0, 29, 30, 1, 11)
-	scr_add_move(spr_mac_smash_forward, 18, 0, RECTANGLE, 86, 24, 54, -22, 0, 29, 30, 1, 11)
-	scr_add_move(spr_mac_smash_forward, 19, 0, CIRCLE, 18, 22, 88, -21, 0, 29, 30, 1, 11)
+	scr_add_move(spr_mac_smash_forward, 17, 0, CIRCLE, 28, 16, 24, -21, 0, 14, 30, 1, 11)
+	scr_add_move(spr_mac_smash_forward, 18, 0, RECTANGLE, 86, 24, 54, -22, 0, 14, 30, 1, 11)
+	scr_add_move(spr_mac_smash_forward, 19, 0, CIRCLE, 18, 22, 88, -21, 0, 14, 30, 1, 11)
 
 
 	//mac smash down (discontinuous hitbox, discontinuous hurtbox)
@@ -1036,18 +1036,18 @@ var i = 0 //variable created now for use in loops below if hurtboxes or hitboxes
 	scr_add_hurtbox(spr_mac_smash_down, 17, 0, RECTANGLE, 12, 16, 1, -19, 0)
 	scr_add_hurtbox(spr_mac_smash_down, 18, 0, RECTANGLE, 12, 16, 1, -19, 0)
 	scr_add_hurtbox(spr_mac_smash_down, 19, 0, RECTANGLE, 12, 16, 1, -19, 0)
-	scr_add_move(spr_mac_smash_down, 14, 0, CIRCLE, 39, 32, 0, 0, 0, 30, 90, 5, 7)
-	scr_add_move(spr_mac_smash_down, 15, 0, CIRCLE, 39, 60, 0, 0, 0, 30, 90, 5, 7)
-	scr_add_move(spr_mac_smash_down, 16, 0, CIRCLE, 39, 100, 0, 0, 0, 30, 90, 5, 7)
+	scr_add_move(spr_mac_smash_down, 14, 0, CIRCLE, 39, 32, 0, 0, 0, 20, 90, 5, 7)
+	scr_add_move(spr_mac_smash_down, 15, 0, CIRCLE, 39, 60, 0, 0, 0, 20, 90, 5, 7)
+	scr_add_move(spr_mac_smash_down, 16, 0, CIRCLE, 39, 100, 0, 0, 0, 20, 90, 5, 7)
 
 	//mac smash up (discontinuos hitboxes)
 	for (i = 0; i < 11; i++) {
 		scr_add_hurtbox(spr_mac_smash_up, i, 0, RECTANGLE, 12, 16, 1, -19, 0)	
 	}
-	scr_add_move(spr_mac_smash_up, 3, 0, CIRCLE, 26, 30, 28, 0, 0, 31, 90, 9, 2)
-	scr_add_move(spr_mac_smash_up, 4, 0, CIRCLE, 26, 30, 28, 0, 0, 31, 90, 9, 2)
-	scr_add_move(spr_mac_smash_up, 5, 0, CIRCLE, 26, 100, 28, 0, 0, 31, 90, 9, 2)
-	scr_add_move(spr_mac_smash_up, 6, 0, CIRCLE, 14, 96, 28, 0, 0, 31, 90, 9, 2)
+	scr_add_move(spr_mac_smash_up, 3, 0, CIRCLE, 26, 30, 28, 0, 0, 25, 90, 14, 5)
+	scr_add_move(spr_mac_smash_up, 4, 0, CIRCLE, 26, 30, 28, 0, 0, 25, 90, 14, 5)
+	scr_add_move(spr_mac_smash_up, 5, 0, CIRCLE, 26, 100, 28, 0, 0, 25, 90, 14, 5)
+	scr_add_move(spr_mac_smash_up, 6, 0, CIRCLE, 14, 96, 28, 0, 0, 25, 90, 14, 5)
 
 	//mac special forward (no comment)
 	for (i = 0; i < 13; i ++) {

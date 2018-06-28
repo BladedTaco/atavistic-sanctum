@@ -77,6 +77,7 @@ switch (argument[0]) {
 						y = _xx*sin(-_d) - _yy*cos(-_d) + _gy
 						_gx = 0; _gy = 0; _xx = 0; _yy = 0; //reset variables
 						obj_match_handler.state[player_number] = scr_perform_freefall(id, player_number)
+						recovered = true
 					break;
 				}
 			break;
@@ -164,8 +165,12 @@ switch (argument[0]) {
 			
 			case MAC:
 				switch (sprite_index) {
-					case spr_mac_tilt_down: case spr_mac_tilt_forward: case spr_mac_special_forward:
+					case spr_mac_tilt_forward: case spr_mac_special_forward:
 						scr_apply_impulse(id, player_number, point_direction(0, 0, image_xscale, 0), _IMPULSE._MAC_SLIDE/100, false)
+					break;
+					
+					case spr_mac_tilt_down: 
+						scr_apply_impulse(id, player_number, point_direction(0, 0, image_xscale, 0), _IMPULSE._MAC_SLIDE_SMALL/100, false)
 					break;
 					
 					case spr_mac_special_up:
@@ -175,6 +180,55 @@ switch (argument[0]) {
 						} else {
 							momentum_x = 0
 							momentum_y = 0
+						}
+					break;
+					
+					case spr_mac_grab_hold:
+						_xs = -1; _gx = 4; _gy = -35;
+					break;
+					
+					case spr_mac_throw_forward:
+						_xs = -1
+						switch (floor(image_index)) {
+							case 0: _gx = 4; _gy = -35; break;
+							default: _gx = 0; _gy = 0; break;
+						}
+					break;
+					
+					case spr_mac_throw_up:
+						_xs = -1; _gx = 4; _gy = -35; //set grab
+						scr_apply_impulse(id, player_number, 90, _IMPULSE._MAC_U_THROW/100, false) //apply impulse
+					break;
+					
+					case spr_mac_throw_down:
+						_xs = -1
+						switch (floor(image_index)) {
+							case 0: _gx = 4; _gy = -35; break;
+							case 1: _gx = 3; _gy = -32; break;
+							case 2: _gx = 1; _gy = -31; break;
+							case 3: _gx = -4; _gy = -24; break;
+							case 4: _gx = -14; _gy = -12;
+								if (!scr_check_for_ground()) {
+									image_index = 4
+									alarm[5] = GAME_SPEED
+									scr_apply_impulse(id, player_number, 270, _IMPULSE._MAC_D_THROW/100, false) //apply impulse
+								}
+							break;
+							case 5: _gx = -20; _gy = 0; break;
+							default: _gx = 0; _gy = 0; break;
+						}
+					break;
+					
+					case spr_mac_throw_back:
+						_xs = -1
+						switch (floor(image_index)) {
+							case 0: _gx = 4; _gy = -35; break;
+							case 1: _gx = 3; _gy = -32; break;
+							case 2: _gx = 1; _gy = -31; break;
+							case 3: _gx = -4; _gy = -24; break;
+							case 4: _gx = -14; _gy = -12; break;
+							case 5: _gx = -20; _gy = 0; break;
+							default: _gx = 0; _gy = 0; break;
 						}
 					break;
 				}

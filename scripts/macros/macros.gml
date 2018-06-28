@@ -158,6 +158,9 @@ enum _IMPULSE { //define an impulse enumeration field (actual values are divided
 	_GRAB_RELEASE = 500, //when a grabs timer runs out
 	//attack impulses
 	_MAC_SLIDE = 25, //machinations sliding moves (ongoing)
+	_MAC_SLIDE_SMALL = 10, //machinations sliding moves (small) (ongoing)
+	_MAC_U_THROW = 175, //machinations up throw (ongoing)
+	_MAC_D_THROW = 50, //machinationd down throw (ongoing)
 	_BAL_U_SPEC = 70 //balloony's recovery (ongoing)
 }
 

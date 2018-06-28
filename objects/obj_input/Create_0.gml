@@ -14,8 +14,8 @@ for (var i = 0; i < 8; i++) { //player number
 		}
 	}
 	c_stick_action[i] = C_SMASH_ATTACK //action the c_stick maps to
-	c_stick_deadzone[i] = 0.1 //the deadzone for the c_stick
-	l_stick_deadzone[i] = 0.1 //the deadzone for the left stick
+	c_stick_deadzone[i] = 0.15 //the deadzone for the c_stick
+	l_stick_deadzone[i] = 0.15 //the deadzone for the left stick
 	l_stick_neutral[i] = 0.5 //the point where a input is considered not neutral
 	axis[i, 0] = 1 //l horizontal multiplier
 	axis[i, 1] = 1 //l vertical multiplier
