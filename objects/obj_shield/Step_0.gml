@@ -6,10 +6,13 @@ if (instance_exists(creator)) {
 	var _yy = 0
 	var _d = degtorad(-creator.image_angle)
 	switch (creator.character) {
-		case BAL: case GEO: case ETH:
+		case BAL:
 			 _yy = -10
 		break;
-		case MAC:
+		case ETH:
+			_yy = -15 
+		break;
+		case MAC: case GEO:
 			_yy = -20
 		break;
 	}

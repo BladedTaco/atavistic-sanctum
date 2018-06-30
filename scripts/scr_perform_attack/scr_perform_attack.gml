@@ -20,13 +20,20 @@ _direction = scr_get_direction(argument[0], argument[1], argument[3]) //get the 
 
 switch (argument[2]) { //get attack type as string
 	case 0: //jab
+		if (argument[0].character = ETH) {
+			return state[argument[1]]	
+		}
 		_type = "jab"
 		_ret = TILT_ATTACK
-		argument[0].jab = (argument[0].jab + 1) mod 4 //incrment jab counter
+		argument[0].jab = ((argument[0].jab + 1) mod 3) + 1 //incrment jab counter
 	break;
 	case 1: //tilt
 		_type = "tilt"
 		_ret = TILT_ATTACK
+		if (argument[0].character = ETH) {
+			argument[0].alarm[2] = GAME_SPEED //set max smash hold
+			argument[0].smash_charge = 0	
+		}
 	break;
 	case 2: //smash
 		_type = "smash"
@@ -52,8 +59,25 @@ switch (argument[2]) { //get attack type as string
 		_ret = AIR_ATTACK
 	break;
 	case 6: //grab jab
-		_type = "grab_jab"
-		_ret = HOLDING
+		if (argument[0].character = GEO) {
+			with (instance_create(argument[0].x, argument[0].y, obj_geo_grab_jab)) {
+				creator = argument[0]
+				attacker = argument[0].attacker
+			}
+			return HOLDING
+		} else if (argument[0].character = ETH) {
+			//handle the grab jab with the grab object
+			if (instance_exists(child_object)) {
+				if (child_object.sprite_index != spr_eth_grab_jab) {
+					child_object.sprite_index = spr_eth_grab_jab
+					child_object.image_index = 0
+				}
+			}
+			return HOLDING
+		} else {
+			_type = "grab_jab"
+			_ret = HOLDING
+		}
 	break;
 }
 

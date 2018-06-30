@@ -16,10 +16,18 @@ switch (argument[0].character) {
 	break;
 	
 	case GEO:
-	
+		switch (argument[1]) { //switch of sprite
+			case spr_geo_smash_forward: argument[0].smash_frame = 1; break;
+			case spr_geo_smash_down: argument[0].smash_frame = 3; break;
+			case spr_geo_smash_up: argument[0].smash_frame = 1; break;
+		}
 	break;
 	
 	case ETH:
-	
+		switch (argument[1]) { //switch of sprite
+			case spr_eth_smash_forward: argument[0].smash_frame = 1; break;
+			case spr_eth_smash_down: argument[0].smash_frame = 4; break;
+			case spr_eth_smash_up: argument[0].smash_frame = 3; break;
+		}
 	break;
 }

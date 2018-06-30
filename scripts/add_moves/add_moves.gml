@@ -3,7 +3,7 @@
 
 //values for below array will need to be increased if more moves are created
 var _i_max = spr_eth_special_neutral //total number of sprites used for characters
-var _o_max = 40 //maximum number of sub_images per used sprite (absolute max is 319 with this system)
+var _o_max = 42 //maximum number of sub_images per used sprite (absolute max is 319 with this system)
 _o_max *= 100
 global.hitbox[_i_max, _o_max] = NULL //initialise the array		accessors are [sprite_index, image_index*100 + index*11 + entry]
 global.hurtbox[_i_max, _o_max] = NULL //initialise the array		accessors are [sprite_index, image_index*100 + index*11 + entry]
@@ -1236,6 +1236,8 @@ var i = 0 //variable created now for use in loops below if hurtboxes or hitboxes
 
 	//geo crouch hold (no hitbox)
 	scr_add_hurtbox(spr_geo_crouch_hold, 0, 0, CIRCLE, 17, 11, 2, -7, 0) 
+	scr_add_hurtbox(spr_geo_crouch_hold, 1, 0, CIRCLE, 17, 11, 2, -7, 0) 
+	scr_add_hurtbox(spr_geo_crouch_hold, 2, 0, CIRCLE, 17, 11, 2, -7, 0) 
 
 	//geo crouch end (no hitbox)
 	scr_add_hurtbox(spr_geo_crouch_end, 0, 0, CIRCLE, 17, 11, 2, -7, 0) 
@@ -1246,30 +1248,27 @@ var i = 0 //variable created now for use in loops below if hurtboxes or hitboxes
 	scr_add_hurtbox(spr_geo_crouch_end, 4, 1, CIRCLE, 9, 12, 1, -8, 0)
 
 	//geo grab (discontinuous hitbox)
-	scr_add_move(spr_geo_ledge_grab, 4, 0, CIRCLE, 26, 39, -16, -44, 0, 8, HOLD)
-	scr_add_move(spr_geo_ledge_grab, 5, 0, CIRCLE, 55, 28, 0, -46, 0, 8, HOLD)
-	scr_add_move(spr_geo_ledge_grab, 6, 0, CIRCLE, 20, 20, 35, -39, 0, 8, HOLD)
-	scr_add_move(spr_geo_ledge_grab, 7, 0, CIRCLE, 25, 17, 34, -23, 0, 8, HOLD)
-	scr_add_move(spr_geo_ledge_grab, 8, 0, CIRCLE, 21, 21, 29, -12, 0, 8, HOLD)
+	scr_add_move(spr_geo_grab, 4, 0, CIRCLE, 26, 39, -16, -44, 0, 8, HOLD)
+	scr_add_move(spr_geo_grab, 5, 0, CIRCLE, 55, 28, 0, -46, 0, 8, HOLD)
+	scr_add_move(spr_geo_grab, 6, 0, CIRCLE, 20, 20, 35, -39, 0, 8, HOLD)
+	scr_add_move(spr_geo_grab, 7, 0, CIRCLE, 25, 17, 34, -23, 0, 8, HOLD)
+	scr_add_move(spr_geo_grab, 8, 0, CIRCLE, 21, 21, 29, -12, 0, 8, HOLD)
 
 	//geo grab hold (no hitbox)
 
-	//geo grab jab (single point hitbox)
-	scr_add_move(spr_geo_grab_jab, 0, 0, RECTANGLE, 1, 1, 0, 0, 0, 3, 0, 0, 0, -1)
-	scr_add_hurtbox(spr_geo_grab_jab, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL)
-	scr_add_hurtbox(spr_geo_grab_jab, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL)
+	//geo grab jab (handled elsewhere)
 
 	//geo throw forward (point hitbox)
-	scr_add_move(spr_geo_throw_forward, 5, 0, RECTANGLE, 1, 1, 32, -32, 0, 7, 20, 4, 2, 0)
+	scr_add_move(spr_geo_throw_forward, 5, 0, RECTANGLE, 1, 1, 32, -32, 0, 11, 20, 4, 2, 0)
 
 	//geo throw up (point hitbox)
 	scr_add_move(spr_geo_throw_up, 5, 0, RECTANGLE, 1, 1, 32, -32, 0, 4, 90, 7, 5, 0)
 
 	//geo throw down (point hitbox)
-	scr_add_move(spr_geo_throw_down, 0, 0, RECTANGLE, 1, 1, 32, -32, 0, 7, 270, 2, 7, 0)
+	scr_add_move(spr_geo_throw_down, 0, 0, RECTANGLE, 1, 1, 32, -32, 0, 7, 270, 2, 10, 0)
 
 	//geo throw back (point hitbox)
-	scr_add_move(spr_geo_throw_back, 0, 0, RECTANGLE, 1, 1, 32, -32, 0, 7, 180, 6, 5, 0)
+	scr_add_move(spr_geo_throw_back, 0, 0, RECTANGLE, 1, 1, 32, -32, 0, 7, 180, 10, 5, 0)
 
 	//geo tilt forward (discontinuous hitbox)
 	scr_add_move(spr_geo_tilt_forward, 1, 0, CIRCLE, 25, 25, -10, -16, 0, 3, OUT, 2, 3)
@@ -1312,7 +1311,7 @@ var i = 0 //variable created now for use in loops below if hurtboxes or hitboxes
 
 	//geo flurry (no comment)
 	for (i = 0; i < 10; i++) {
-		scr_add_move(spr_geo_flurry, i, 0, CIRCLE, 42, 44, 0, -22, 0, 1, IN, 1, 1)
+		scr_add_move(spr_geo_flurry, i, 0, CIRCLE, 42, 44, 0, -22, 0, 0.25, IN, 1, 1, 0.5)
 	}
 
 	//geo dash attack (discontinuous hitbox)
@@ -1326,13 +1325,13 @@ var i = 0 //variable created now for use in loops below if hurtboxes or hitboxes
 	scr_add_move(spr_geo_aerial_forward, 6, 0, CIRCLE, 13, 17, 25, -11, 0, 9, 45, 6, 1)
 
 	//geo aerial up (discontinuous hitbox)
-	scr_add_move(spr_geo_aerial_up, 1, 0, RECTANGLE, 50, 40, 0, -53, 0, 1, 90, 10, 1)
-	scr_add_move(spr_geo_aerial_up, 2, 0, RECTANGLE, 50, 40, 0, -53, 0, 1, 90, 10, 1)
-	scr_add_move(spr_geo_aerial_up, 3, 0, RECTANGLE, 50, 40, 0, -53, 0, 1, 90, 10, 1)
-	scr_add_move(spr_geo_aerial_up, 4, 0, RECTANGLE, 50, 40, 0, -53, 0, 1, 90, 10, 1)
-	scr_add_move(spr_geo_aerial_up, 5, 0, RECTANGLE, 50, 40, 0, -53, 0, 1, 90, 10, 1)
-	scr_add_move(spr_geo_aerial_up, 6, 0, RECTANGLE, 50, 40, 0, -53, 0, 1, 90, 10, 1)
-	scr_add_move(spr_geo_aerial_up, 7, 0, RECTANGLE, 50, 40, 0, -53, 0, 1, 90, 10, 1)
+	scr_add_move(spr_geo_aerial_up, 1, 0, RECTANGLE, 50, 40, 0, -53, 0, 1, 90, 2, 8, 0)
+	scr_add_move(spr_geo_aerial_up, 2, 0, RECTANGLE, 50, 40, 0, -53, 0, 1, 90, 2, 8, 0)
+	scr_add_move(spr_geo_aerial_up, 3, 0, RECTANGLE, 50, 40, 0, -53, 0, 1, 90, 2, 8, 0)
+	scr_add_move(spr_geo_aerial_up, 4, 0, RECTANGLE, 50, 40, 0, -53, 0, 1, 90, 2, 8, 0)
+	scr_add_move(spr_geo_aerial_up, 5, 0, RECTANGLE, 50, 40, 0, -53, 0, 1, 90, 2, 8, 0)
+	scr_add_move(spr_geo_aerial_up, 6, 0, RECTANGLE, 50, 40, 0, -53, 0, 1, 90, 2, 8, 0)
+	scr_add_move(spr_geo_aerial_up, 7, 0, RECTANGLE, 50, 40, 0, -53, 0, 1, 90, 2, 8, 0)
 
 	//geo aerial down (discontinuous hitbox)
 	scr_add_move(spr_geo_aerial_down, 3, 0, CIRCLE, 20, 20, 1, 15, 0, 7, 270, 4, 1)
@@ -1385,17 +1384,17 @@ var i = 0 //variable created now for use in loops below if hurtboxes or hitboxes
 	scr_add_move(spr_geo_smash_up, 6, 0, RECTANGLE, 38, 75, 0, -60, 0, 40, 90, 10, 1)
 
 	//geo special forward (discontinuous hitbox)
-	scr_add_move(spr_geo_special_forward, 1, 0, CIRCLE, 5, 6, 30, -18, 0, 0, 0, 6, 4)
-	scr_add_move(spr_geo_special_forward, 2, 0, CIRCLE, 14, 14, 38, -19, 0, 0, 0, 8, 4)
-	scr_add_move(spr_geo_special_forward, 3, 0, CIRCLE, 21, 23, 45, -23, 0, 0, 0, 10, 4)
-	scr_add_move(spr_geo_special_forward, 4, 0, CIRCLE, 25, 23, 52, -22, 0, 0, 0, 10, 4)
-	scr_add_move(spr_geo_special_forward, 5, 0, CIRCLE, 17, 17, 59, -24, 0, 0, 0, 10, 4)
-	scr_add_move(spr_geo_special_forward, 6, 0, CIRCLE, 10, 11, 63, -24, 0, 0, 0, 8, 4)
-	scr_add_move(spr_geo_special_forward, 7, 0, CIRCLE, 6, 5, 67, -25, 0, 0, 0, 6, 4)
+	scr_add_move(spr_geo_special_forward, 1, 0, CIRCLE, 5, 6, 30, -18, 0, 0, 0, 6, 4, -1)
+	scr_add_move(spr_geo_special_forward, 2, 0, CIRCLE, 14, 14, 38, -19, 0, 0, 0, 8, 4, -1)
+	scr_add_move(spr_geo_special_forward, 3, 0, CIRCLE, 21, 23, 45, -23, 0, 0, 0, 10, 4, -1)
+	scr_add_move(spr_geo_special_forward, 4, 0, CIRCLE, 25, 23, 52, -22, 0, 0, 0, 10, 4, -1)
+	scr_add_move(spr_geo_special_forward, 5, 0, CIRCLE, 17, 17, 59, -24, 0, 0, 0, 10, 4, -1)
+	scr_add_move(spr_geo_special_forward, 6, 0, CIRCLE, 10, 11, 63, -24, 0, 0, 0, 8, 4, -1)
+	scr_add_move(spr_geo_special_forward, 7, 0, CIRCLE, 6, 5, 67, -25, 0, 0, 0, 6, 4, -1)
 
 	//geo special down (sustain only has hitbox)
 	for (i = 0; i < 5; i++) {
-		scr_add_move(spr_geo_special_down_sustain, i, 0, CIRCLE, 42, 40, 0, -19, 0, 3, IN, 3, 2)	
+		scr_add_move(spr_geo_special_down_sustain, i, 0, CIRCLE, 42, 40, 0, -19, 0, 2, IN, 3, 2)	
 	}
 
 	//geo special up (discontinuous hitbox)
@@ -1494,12 +1493,13 @@ var i = 0 //variable created now for use in loops below if hurtboxes or hitboxes
 
 	//eth taunt (no hitbox, no hurtbox)
 
-	//eth platform, laser, grab, grab hold, are not hitboxes, but objects so are omitted
+	//eth platform, laser, grab, grab jab, grab hold, are not hitboxes, but objects so are omitted
 
-	//eth grab jab (no hurtbox, point hitbox)
-	scr_add_move(spr_eth_grab_jab, 4, 0, RECTANGLE, 1, 1, 0, 0, 0, 6, 0, 0, 0, -1)
-
-	//eth throws are handled by eths grab oject
+	//eth throws
+	scr_add_move(spr_eth_throw_forward, 5, 0, RECTANGLE, 1, 1, 0, 0, 0, 10, 0, 8, 5, 0)
+	scr_add_move(spr_eth_throw_up, 4, 0, RECTANGLE, 1, 1, 0, 0, 0, 12, 90, 2, 7, 0)
+	scr_add_move(spr_eth_throw_down, 8, 0, RECTANGLE, 1, 1, 0, 0, 0, 6, 270, 1, 9, 0)
+	scr_add_move(spr_eth_throw_back, 39, 0, RECTANGLE, 1, 1, 0, 0, 0, 20, 180, 4, 10, 0)
 
 	//eth aerial forward (single hitbox, hurtbox already handled)
 	scr_add_move(spr_eth_aerial_forward, 9, 0, CIRCLE, 19, 19, 29, -32, 0, 8, 0, 3, 2)
@@ -1524,9 +1524,9 @@ var i = 0 //variable created now for use in loops below if hurtboxes or hitboxes
 	scr_add_move(spr_eth_aerial_neutral, 9, 3, CIRCLE, 19, 19, 23, -59, 0, 8, OUT, 3, 2, 3)
 
 	//eth smash forward (discontinuous hitbox)
-	scr_add_move(spr_eth_smash_forward, 3, 0, CIRCLE, 22, 4, 23, -25, -30, 27, 200, 14, 6)
-	scr_add_move(spr_eth_smash_forward, 4, 0, CIRCLE, 38, 15, 33, -21, -30, 27, 200, 14, 6)
-	scr_add_move(spr_eth_smash_forward, 5, 0, CIRCLE, 21, 12, 28, -23, -30, 27, 200, 14, 6)
+	scr_add_move(spr_eth_smash_forward, 3, 0, CIRCLE, 22, 4, 23, -25, -30, 27, 340, 14, 6)
+	scr_add_move(spr_eth_smash_forward, 4, 0, CIRCLE, 38, 15, 33, -21, -30, 27, 340, 14, 6)
+	scr_add_move(spr_eth_smash_forward, 5, 0, CIRCLE, 21, 12, 28, -23, -30, 27, 340, 14, 6)
 
 	//eth smash down (discontinuous hitbox, special hurtbox)
 	scr_add_hurtbox(spr_eth_smash_down, 0, 0, RECTANGLE, 11, 21, 0, -28, 0)

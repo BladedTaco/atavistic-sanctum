@@ -14,7 +14,7 @@ do {
 	if (input_array[i, PAUSE]) { //pause or unpause
 		global.paused = !global.paused	
 	}
-	if ((input_array[i, YAXIS] < 0.5) or (state[i] = SMASH_ATTACK)) {
+	if ((input_array[i, YAXIS] < 0.5) or (state[i] = SMASH_ATTACK) or (state[i] = SPECIAL_ATTACK) or (state[i] = TILT_ATTACK)) {
 		_inst.alarm[1] = 5 
 	} //platform drop alarm
 	do {
@@ -37,9 +37,11 @@ do {
 			break;
 			case GROUNDED: 
 				if (input_array[i, YAXIS] > 0.5) {
-					_inst.sprite_index = scr_get_sprite(_inst, "crouch")
-					_inst.image_index = 0
-					state[i] = CROUCHING
+					if (_inst.character != ETH) {
+						_inst.sprite_index = scr_get_sprite(_inst, "crouch")
+						_inst.image_index = 0
+						state[i] = CROUCHING
+					}
 				}
 				if (abs(input_array[i, XAXIS]) > obj_input.l_stick_deadzone[i]) { //change direction
 					_inst.image_xscale = sign(input_array[i, XAXIS])
@@ -109,16 +111,25 @@ do {
 				_move_character = 2 //drift
 			break;
 			case SHIELDING:
-				if (!input_array[i, SHIELD]) {
-					state[i] = UNSHIELDING	
-					_inst.sprite_index = scr_get_sprite(_inst.id, "un_shield")
-					_inst.image_index = 0
-				} else if (point_distance(0, 0, input_array[i, XAXIS], input_array[i, YAXIS]) > obj_input.l_stick_deadzone[i]) {
-					state[i] = scr_perform_dodge(_inst, i, 0, point_direction(0, 0, input_array[i, XAXIS], input_array[i, YAXIS]))
+				if (_inst.character = GEO) {
+					if (!input_array[i, SHIELD]) {
+						state[i] = UNSHIELDING	
+					}
+					if (abs(input_array[i, XAXIS]) > obj_input.l_stick_deadzone[i]) { //change direction
+						_inst.image_xscale = sign(input_array[i, XAXIS])
+					}
+				} else {
+					if (!input_array[i, SHIELD]) {
+						state[i] = UNSHIELDING	
+						_inst.sprite_index = scr_get_sprite(_inst.id, "un_shield")
+						_inst.image_index = 0
+					} else if (point_distance(0, 0, input_array[i, XAXIS], input_array[i, YAXIS]) > obj_input.l_stick_deadzone[i]) {
+						state[i] = scr_perform_dodge(_inst, i, 0, point_direction(0, 0, input_array[i, XAXIS], input_array[i, YAXIS]))
+					}
 				}
 			case UNSHIELDING:
 				if (_inst.character = GEO) {
-					_move_character = 0 //move normally
+					_move_character = -1 //shield walk
 				} else {
 					_move_character = 1 //stop
 				}
@@ -328,12 +339,12 @@ do {
 			
 			case HOLDING:
 				_move_character = 2//drift
-				if (_inst.sprite_index = scr_get_sprite(_inst, "grab_hold")) {
+				if (_inst.sprite_index = scr_get_sprite(_inst, "grab_hold") or ((_inst.character = ETH) and (_inst.child_object.state = 1))) {
 					if (input_array[i, TILT] = SMASH_MOVE) { 
 						_inst.alarm[5] = GAME_SPEED //set grab release alarm to 1 second
 						state[i] = scr_perform_throw(_inst, i, point_direction(0, 0, input_array[i, XAXIS], input_array[i, YAXIS]))
 					}
-					if (input_array[i, ATTACK]) { //grab jab
+					if (input_array[i, ATTACK] and !obj_input.sticky_attack[i]) { //grab jab
 						state[i] = scr_perform_attack(_inst, i, 6, 0)
 						if (_inst.alarm[5] > GAME_SPEED/5) {
 							_inst.alarm[5] -= GAME_SPEED/5 //reduce grab alarm

@@ -17,8 +17,7 @@ with(instance_create(200, -200, obj_player)) {
 	player_number = 0
 	other.player[0] = id
 	controller = true
-	character = MAC
-	max_jumps = 0
+	character = ETH
 	sprite_index = scr_get_sprite(id, "hurt_down")
 }
 
@@ -26,6 +25,7 @@ with(instance_create(300, -200, obj_player)) {
 	image_blend = c_lime
 	player_number = 1
 	other.player[1] = id
+	character = BAL
 	controller = false
 	sprite_index = scr_get_sprite(id, "hurt_down")
 }

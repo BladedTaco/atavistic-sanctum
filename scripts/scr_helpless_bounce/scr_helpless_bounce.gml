@@ -7,7 +7,7 @@ var _id = argument[1] //hitbox
 var _i_max = 3 //the maximum value for i to reach
 var _override = (sprite_index == spr_mac_special_up) //override on this sprite
 with (argument[2]) {//creator) {
-	if ((inertial and (obj_match_handler.state[player_number] = HELPLESS) and !spawning) or (_override))  { //if colliding into ground
+	if ((inertial and (obj_match_handler.state[player_number] = HELPLESS) and !spawning and (point_distance(0, 0, momentum_x, momentum_y) > 2)) or (_override))  { //if colliding into ground
 		//move to top of ground
 		var _mx = momentum_x
 		var _my = momentum_y
@@ -45,8 +45,8 @@ with (argument[2]) {//creator) {
 				break;
 			}
 		}
-		var _xx = x - momentum_x*2
-		var _yy = y - momentum_y*2
+		var _xx = x - momentum_x*2 //get position to check for bounce with
+		var _yy = y - momentum_y*2 //get position to check for bounce with
 		var j = -1
 		for (var i = 0; i <= _i_max; i++) {
 			if (sign((_xx - _id._x[i])*(_id._y[(i+1) mod 4] - _id._y[i]) - 

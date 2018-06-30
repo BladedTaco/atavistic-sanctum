@@ -1,8 +1,7 @@
 /// @description animation effects on sprite
 
-scr_check_special_instructions(0)
-
-switch (obj_match_handler.state[player_number]) {
+if (scr_check_special_instructions(0)) {
+	switch (obj_match_handler.state[player_number]) {
 		//GROUNDED n/a
 		case SPEED_UP: //transition to walk
 			sprite_index = scr_get_sprite(id, "walk")
@@ -22,13 +21,7 @@ switch (obj_match_handler.state[player_number]) {
 		//WALKING n/a
 		//RUNNING n/a
 		//FREEFALL n/a
-		case TILT_ATTACK: 
-			if (string_pos("flurry", sprite_get_name(sprite_index)) > 0) { //if a flurry attack
-				if (obj_input.input_array[player_number, ATTACK]) { //and holding attack still
-					break; //dont execute further code, let the animation loop
-				}	
-			}
-		case SMASH_ATTACK: case SPECIAL_ATTACK: case UNSHIELDING: case GRABBING: case TAUNTING:
+		case TILT_ATTACK: case SMASH_ATTACK: case SPECIAL_ATTACK: case UNSHIELDING: case GRABBING: case TAUNTING:
 			image_index = 0
 			if (scr_check_for_ground()) { //if grounded
 				sprite_index = scr_get_sprite(id, "idle")
@@ -82,8 +75,10 @@ switch (obj_match_handler.state[player_number]) {
 			momentum_y *= 0.5
 		break;
 		case SHIELDING:
-			sprite_index = scr_get_sprite(id, "hold_shield")
-			image_index = 0
+			if (character != GEO) {
+				sprite_index = scr_get_sprite(id, "hold_shield")
+				image_index = 0
+			}
 		break;
 		//HIT_STUN
 		//TECHING
@@ -102,6 +97,11 @@ switch (obj_match_handler.state[player_number]) {
 			obj_match_handler.state[player_number] = AIRBORNE
 		break;
 		case HOLDING:
+			if ((character = ETH) and instance_exists(child_object)) {
+				if (child_object.state != 3) {
+					break;	
+				}
+			} 
 			if ((sprite_index != scr_get_sprite(id, "grab_hold")) and (sprite_index != scr_get_sprite(id, "grab_jab"))) {
 				//if ending a throw
 				image_index = 0
@@ -128,4 +128,5 @@ switch (obj_match_handler.state[player_number]) {
 				bracing = 1
 			}
 		break;
+	}
 }

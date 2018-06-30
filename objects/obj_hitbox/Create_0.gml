@@ -11,7 +11,7 @@ if (global.bbox[4]) { //hitbox
 	a = global.bbox[6] //direction of knocbkac
 	b = global.bbox[7] //base knocback
 	s = global.bbox[8] //scaling knocback
-	h = global.bbox[9] //hitstun multiplie
+	h = global.bbox[9]*creator.hitstun //hitstun multiplie
 	if (creator.object_index = obj_player) { //if a player
 		//on a smash attack, multiply by 1/3 + 2/3 * charge up percent
 		if (creator.smash_charge >= 0) {

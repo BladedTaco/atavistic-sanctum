@@ -137,6 +137,7 @@ for (var t = 0; t <= global.maxIterations; t++) {
 //match variables
 global.ground = noone
 global.ground_distance = 0
+global.eth_angle = 0 //used for eth platform creation
 
 //enums
 enum _IMPULSE { //define an impulse enumeration field (actual values are divided by 100)
@@ -161,6 +162,9 @@ enum _IMPULSE { //define an impulse enumeration field (actual values are divided
 	_MAC_SLIDE_SMALL = 10, //machinations sliding moves (small) (ongoing)
 	_MAC_U_THROW = 175, //machinations up throw (ongoing)
 	_MAC_D_THROW = 50, //machinationd down throw (ongoing)
+	_GEO_U_SPEC = 75, //geos recovery (ongoing)
+	_GEO_D_SPEC = 55, //geos down special (ongoing)
+	_ETH_U_SPEC = 100, //etheral spirits up special (ongoing)
 	_BAL_U_SPEC = 70 //balloony's recovery (ongoing)
 }
 

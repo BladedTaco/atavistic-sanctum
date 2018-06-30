@@ -21,6 +21,7 @@ switch (argument[2]) { //check action type
 							argument[0].image_xscale = _ledge.facing
 							argument[0].image_index = 0 //set character to first frame of animation
 							argument[0].alarm[0] = GAME_SPEED*3 //set ledge alarm for hold duration
+							_ledge.free = false
 							return LEDGE //return ledge hold state
 						break; 
 						

@@ -1,6 +1,6 @@
 ///@func scr_check_special_instruction(type)
 ///@param type - the type of current situation (0 1) (animation_end step)
-///@desc checks for any special cases where code needs to be executed on animation end
+///@desc checks for any special cases where code needs to be executed, returns whether normal code should be executed
 var _xx = 0 //effective x
 var _yy = 0 //effective y
 var _gx = 0 //grab x
@@ -78,6 +78,76 @@ switch (argument[0]) {
 						_gx = 0; _gy = 0; _xx = 0; _yy = 0; //reset variables
 						obj_match_handler.state[player_number] = scr_perform_freefall(id, player_number)
 						recovered = true
+					break;
+				}
+			break;
+			
+			case GEO:
+				switch (sprite_index) {
+					case spr_geo_special_down_start:
+						sprite_index = spr_geo_special_down_sustain
+						image_index = 0
+						return false //dont execute normal code
+					break;
+					case spr_geo_special_down_sustain:
+						//allow repeats of the move
+						sub_recovery++
+						if (!obj_input.input_array[player_number, SPECIAL] or (sub_recovery >= 3)) {
+							sprite_index = spr_geo_special_down_end
+							image_index = 0
+							obj_match_handler.jumps[player_number] -- //take away a jump
+							sub_recovery = 0
+						}
+						return false //dont execute normal code
+					break;
+					case spr_geo_special_neutral:
+						hitstun = 10;
+					break;
+					case spr_geo_special_up:
+						recovered = true
+					break;
+					case spr_geo_flurry:
+						sub_recovery++ //increment sub recovery to allow repeats of the move
+						if (obj_input.input_array[player_number, ATTACK] and (sub_recovery <= 5)) { //and holding attack still
+							return false; //let animation loop
+						}
+						sub_recovery = 0 //reset sub recovery if the above statement fails
+					break;
+					
+					case spr_geo_ledge_jump:
+						_xx = -22
+						_yy = 16
+						scr_apply_impulse(id, player_number, 90, _IMPULSE._JUMP/100, false)
+						obj_match_handler.state[player_number] = JUMP_RISE
+						image_index = 0
+						sprite_index = scr_get_sprite(id, "air_move")
+					break;
+					case spr_geo_ledge_grab:
+						_xx = 23
+						_yy = -1
+					break;
+					case spr_geo_ledge_attack:
+						_xx = 1
+						_yy = -1
+					break;
+				}	
+			break;
+			
+			case ETH:
+				switch (sprite_index) {
+					case spr_eth_special_up:
+						recovered = true
+					break;
+					case spr_eth_smash_up:
+						_yy = -67
+						if (instance_exists(obj_eth_platform)) {
+							instance_destroy(obj_eth_platform)	
+						}
+						global.eth_angle = image_angle
+						instance_create(x - _yy*sin(_d), y + _yy*cos(_d), obj_eth_platform)
+					break;
+					case spr_eth_throw_forward: case spr_eth_throw_up: case spr_eth_throw_down: case spr_eth_throw_back:
+						if (instance_exists(child_object)) { instance_destroy(child_object) }
 					break;
 				}
 			break;
@@ -233,6 +303,131 @@ switch (argument[0]) {
 					break;
 				}
 			break;
+			
+			case GEO:
+				switch(sprite_index) {
+					case spr_geo_special_up:
+						if (!recovered) {
+							scr_apply_impulse(id, player_number, 90, _IMPULSE._GEO_U_SPEC/100, false)
+						}
+					break;
+					
+					case spr_geo_special_down_sustain:
+						if (obj_match_handler.jumps[player_number] >= 0) {
+							scr_apply_impulse(id, player_number, 90, _IMPULSE._GEO_D_SPEC/100, false)
+						}
+					break;
+					
+					case spr_geo_grab_hold:
+						_xs = -1; _gx = 31; _gy = -31
+					break;
+					case spr_geo_throw_forward: case spr_geo_throw_up:
+						_xs = -1
+						if (floor(image_index) < 5) {
+							_gx = 31; _gy = -31;
+						} else {
+							_gx = 0; _gy = 0;
+						}
+					break;
+					case spr_geo_throw_down: case spr_geo_throw_back:
+						_xs = -1; _gx = 0; _gy = 0;
+					break;
+				}
+			break;
+			
+			case ETH:
+				switch(sprite_index) {
+					case spr_eth_special_up:
+						if (!recovered) {
+							scr_apply_impulse(id, player_number, 90, _IMPULSE._GEO_U_SPEC/100, false)
+						}
+					break;
+					
+					case spr_eth_special_neutral:
+						if (sub_recovery < 14) {
+							if (floor(image_index) = 1) {
+								sub_recovery ++
+								global.bbox[10] = id
+								_xx = 19*image_xscale; _yy = -28 + (image_index-1)*6 - 3
+								global.eth_angle = image_angle + point_direction(0, -28, 10*image_xscale, _yy)
+								instance_create(x + _xx*cos(_d) - _yy*sin(_d), y + _xx*sin(_d) + _yy*cos(_d), obj_eth_projectile)
+								_xx = 0; _yy = 0
+							}
+						}
+					break;
+					
+					case spr_eth_special_down:
+						if (floor(image_index) = 3) {
+							image_index = 4
+							with (obj_player) {
+								if !(scr_check_for_ground(id)) {
+									var _inst = collision_line(x, y, x, room_height, obj_ground, true, false)
+									if (instance_exists(_inst)) {
+										y = _inst.bbox_top - 2 //move to top of bounding box
+										do { //move down until the ground is found
+											y -= 1
+										} until (scr_check_for_ground(id)) 
+									}
+								}
+							}
+						}
+					break;
+					case spr_eth_throw_forward:
+						_xs = -1
+						switch (floor(image_index)) {
+							case 0: _gx = 30; _gy = -20; break;
+							case 1: _gx = 35; _gy = -20; break;
+							case 2: _gx = 40; _gy = -20; break;
+							case 3: _gx = 45; _gy = -20; break;
+							case 4: _gx = 50; _gy = -20; break;
+							case 5: _gx = 55; _gy = -20; break;
+							default: _gx = 0; _gy = 0; break;
+						}
+					break;
+					case spr_eth_throw_up:
+						_xs = -1
+						switch (floor(image_index)) {
+							case 0: _gx = 30; _gy = -20; break;
+							case 1: _gx = 30; _gy = -25; break;
+							case 2: _gx = 30; _gy = -30; break;
+							case 3: _gx = 30; _gy = -35; break;
+							case 4: _gx = 30; _gy = -40; break;
+							default: _gx = 0; _gy = 0; break;
+						}
+					break;
+					case spr_eth_throw_down:
+						_xs = -1
+						switch (floor(image_index)) {
+							case 0: _gx = 30; _gy = -20; break;
+							case 1: _gx = 30; _gy = -25; break;
+							case 2: _gx = 30; _gy = -30; break;
+							case 3: _gx = 30; _gy = -35; break;
+							case 4: _gx = 30; _gy = -40; break;
+							case 5: _gx = 30; _gy = -35; break;
+							case 6: _gx = 30; _gy = -30; break;
+							case 7: _gx = 30; _gy = -25; break;
+							case 8: _gx = 30; _gy = -20; break;
+							default: _gx = 0; _gy = 0; break;
+						}
+					break;
+					case spr_eth_throw_back:
+						if (image_index <= 39) {
+							switch (floor(image_index) mod 9) {
+								case 0: _gx = 15; _gy = -20; _xs = -1; break;
+								case 1: _gx = 0; _gy = -20; _xs = -1; break;
+								case 2: _gx = -15; _gy = -20; _xs = 1; break;
+								case 4: _gx = -30; _gy = -20; _xs = 1; break;	
+								case 5: _gx = -15; _gy = -20; _xs = 1; break;
+								case 6: _gx = 0; _gy = -20; _xs = -1; break;		
+								case 7: _gx = 15; _gy = -20; _xs = -1; break;	
+								case 8: _gx = 30; _gy = -20; _xs = -1; break;
+							}
+							_gy -= floor(image_index)*3
+						} else { _gx = 0; _gy = 0; }
+					break;
+				}
+			break;
+			
 		}
 		_gx *= image_xscale
 		_xx *= image_xscale
@@ -255,3 +450,5 @@ switch (argument[0]) {
 		}
 	break;
 }
+
+return true //return true if false is not yet returned

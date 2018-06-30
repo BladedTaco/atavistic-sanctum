@@ -11,16 +11,15 @@ var _y2 = old_axis[argument[1], YAXIS]
 var _end = false //to end a walk or run, or start a dash ro speed up
 var _s = state[argument[1]]
 
-
 scr_apply_impulse(argument[0], argument[1], 270, _IMPULSE._GRAVITY/100, false) //apply gravity
 
-if (state[argument[1]] = SPEED_UP) {
+if (_s = SPEED_UP) {
 	if (argument[0].sprite_index != scr_get_sprite(argument[0], "speed_up")) {
 		argument[0].sprite_index = scr_get_sprite(argument[0], "speed_up")
 		argument[0].image_index = 0
 	}
 }
-if (state[argument[1]] = DASHING) {
+if (_s = DASHING) {
 	if (argument[0].sprite_index != scr_get_sprite(argument[0], "dash")) {
 		argument[0].sprite_index = scr_get_sprite(argument[0], "dash")
 		argument[0].image_index = 0
@@ -47,10 +46,10 @@ if (_x1*argument[0].image_xscale > obj_input.l_stick_deadzone[argument[1]]) { //
 	if (abs(_x2) < obj_input.l_stick_deadzone[argument[1]]) {
 		_end = true
 	}
-} else if (state[argument[1]] = RUNNING) { //stop running state
+} else if (_s = RUNNING) { //stop running state
 	_ret = DASH_SLOW
 	_end = true
-} else if (state[argument[1]] = WALKING) { //stop walking state
+} else if (_s = WALKING) { //stop walking state
 	_ret = SPEED_DOWN
 	_end = true
 }	
@@ -60,8 +59,8 @@ if (_x1*argument[0].image_xscale > obj_input.l_stick_deadzone[argument[1]]) { //
 argument[0].momentum_x *= 0.8/argument[0].inertia
 argument[0].momentum_y *= 0.9/argument[0].inertia
 
-if ((_ret = DASHING) and (state[argument[1]] != DASHING)) {
-	if ((sign(_x1) = sign(_x2)) and (state[argument[1]] = RUNNING)) { //not an intial dash or dash dance
+if ((_ret = DASHING) and (_s != DASHING)) {
+	if ((sign(_x1) = sign(_x2)) and (_s = RUNNING)) { //not an intial dash or dash dance
 		scr_apply_impulse(argument[0], argument[1], point_direction(0, 0, _x1, 0), _IMPULSE._SUB_DASH/100, false)
 	} else {
 		scr_apply_impulse(argument[0], argument[1], point_direction(0, 0, _x1, 0), _IMPULSE._DASH/100, false)
@@ -73,6 +72,7 @@ if ((_ret = DASHING) and (state[argument[1]] != DASHING)) {
 }
 
 state[argument[1]] = _ret
+
 if (_end) {
 	switch (_ret) {
 		case DASHING:

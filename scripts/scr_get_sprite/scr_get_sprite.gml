@@ -51,8 +51,27 @@ if (ret = -1) { //if nonexistant sprite
 	switch (argument[0].character) { //check for character specific special cases
 		case ETH:
 			if (string_copy(argument[1], 1, 4) = "tilt") { //smash attack
-				ret = asset_get_index(string_replace(argument[1], "tilt", "smash"))
-				if (ret != -1) { return ret }
+				ret = asset_get_index(i + string_replace(argument[1], "tilt", "smash"))
+			}
+			if (string_copy(argument[1], 1, 4) = "dash") {
+				ret = asset_get_index(i + "run")
+			}
+			if (string_copy(argument[1], 1, 5) = "speed") {
+				ret = asset_get_index(i + "walk")
+			}
+		break;
+		case GEO:
+			if (string_copy(argument[1], 1, 4) = "dash") {
+				ret = asset_get_index(i + "run")
+			}
+			if (string_copy(argument[1], 1, 5) = "speed") {
+				ret = asset_get_index(i + "walk")
+			}
+			if (string_copy(argument[1], 1, 12) = "special_down") {
+				ret = asset_get_index(i + "special_down_start")
+			}
+			if (string_copy(argument[1], 1, 3) = "jab") {
+				ret = asset_get_index(i + "flurry")	
 			}
 		break;
 	}	

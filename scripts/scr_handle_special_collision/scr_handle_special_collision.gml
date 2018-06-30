@@ -9,6 +9,12 @@ if (argument[1].creator.object_index = obj_player) {
 	exit
 }
 
+if (argument[0].creator.object_index != obj_player) {
+	if (argument[0].creator.creator = argument[1].creator.creator) {
+		exit
+	}
+}
+
 if (argument[0].hitbox = argument[1].hitbox) { //same type
 	var _d = point_direction(argument[0].x, argument[0].y, argument[1].x, argument[1].y)
 	if (argument[0].hitbox) { //hitbox colliding with hitbox

@@ -27,6 +27,10 @@ var _mag = 0 //the magnitude of the knockback vector
 var _id = argument[1].creator //attacked
 var _id2 = argument[0].creator //attacker
 
+if ((_id2.character = GEO) and (argument[0].h > 1)) { //reset geo histun on successful stunning attack
+	_id2.hitstun = 1
+}
+
 switch (_dir) {
 	case IN: 
 		_dir = point_direction(argument[1].x, argument[1].y, argument[0].x, argument[0].y)
@@ -49,8 +53,16 @@ switch (_dir) {
 		//set the sprites
 		_id.sprite_index = scr_get_sprite(_id, "grabbed")
 		_id.image_index = 0
-		_id2.sprite_index = scr_get_sprite(_id2, "grab_hold")
-		_id2.image_index = 0
+		if (_id2.character = ETH) {
+			_id2.child_object.sprite_index = spr_eth_grab_hold
+			_id2.child_object.state = 1
+			_id2.child_object.attacker = _id
+			_id2.sprite_index = spr_eth_idle
+			_id2.image_index = 0
+		} else {
+			_id2.sprite_index = scr_get_sprite(_id2, "grab_hold")
+			_id2.image_index = 0
+		}
 		obj_match_handler.state[_id2.player_number] = HOLDING //set the holding player
 		obj_match_handler.state[_id.player_number] = GRABBED //set the held player
 		_id.percentage += argument[0].d //apply damage
@@ -109,4 +121,9 @@ if (argument[0].h = -1) { //if negative hitstun, only apply damage and no state 
 			_id.alarm[4] = _mag
 		}
 	}
+}
+
+if (argument[0].creator.object_index = obj_eth_projectile) {
+	argument[0].creator.alarm[0] = 1
+	argument[0].creator.image_index = 7
 }

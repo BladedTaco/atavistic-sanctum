@@ -527,6 +527,14 @@
             }
         },
         {
+            "Key": "22d4464c-7b92-47d8-a7bb-132cc0a946ba",
+            "Value": {
+                "id": "a4f7642e-230b-48b3-92da-e6590738a097",
+                "resourcePath": "objects\\obj_eth_projectile\\obj_eth_projectile.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "24861b70-319b-4e6b-a123-aa40b0e840cf",
             "Value": {
                 "id": "259442c2-f659-4dc8-8ed9-de3b284709b5",
@@ -999,6 +1007,14 @@
             }
         },
         {
+            "Key": "4e56aa47-7981-4943-8d27-b2f28c4ae7f2",
+            "Value": {
+                "id": "5d76dfdf-1593-467a-acac-cd5153f2797a",
+                "resourcePath": "objects\\obj_eth_grab\\obj_eth_grab.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "4f2a8bcf-4544-48c0-ab9b-f2176b73c192",
             "Value": {
                 "id": "aebdcb33-d581-44ac-96d4-c22f08333cda",
@@ -1036,6 +1052,14 @@
                 "id": "f31e9d8e-cac2-4571-b989-a39eaa8c0509",
                 "resourcePath": "sprites\\spr_mac_tilt_forward\\spr_mac_tilt_forward.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "54642451-ee32-468a-954c-a0f7f676c5a9",
+            "Value": {
+                "id": "dbce8379-84f3-417f-b179-9e12e3f7268f",
+                "resourcePath": "objects\\obj_eth_platform\\obj_eth_platform.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -2748,6 +2772,14 @@
                 "id": "73ec6f88-7f41-4164-8019-1808cde3a572",
                 "resourcePath": "views\\d4780140-5a3e-497a-b1ca-9e69bca1cb99.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "d4df1bf3-fa3f-4869-b01c-073fe324aea5",
+            "Value": {
+                "id": "3f4899b7-6a0c-4727-a975-7132255a3951",
+                "resourcePath": "objects\\obj_geo_grab_jab\\obj_geo_grab_jab.yy",
+                "resourceType": "GMObject"
             }
         },
         {
