@@ -12,4 +12,5 @@ state = 0 //states are (0 1 2 3) (grab, hold, grab jab, throw)
 hitstun = 1
 character = ETH
 attacker = noone
+can_throw = false
 depth = -15 //set depth to be in front of player

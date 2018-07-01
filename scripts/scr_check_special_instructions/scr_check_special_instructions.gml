@@ -149,6 +149,28 @@ switch (argument[0]) {
 					case spr_eth_throw_forward: case spr_eth_throw_up: case spr_eth_throw_down: case spr_eth_throw_back:
 						if (instance_exists(child_object)) { instance_destroy(child_object) }
 					break;
+					
+					case spr_eth_ledge_jump:
+						_xx = -19
+						_yy = 16
+						scr_apply_impulse(id, player_number, 90, _IMPULSE._JUMP/100, false)
+						obj_match_handler.state[player_number] = JUMP_RISE
+						image_index = 0
+						sprite_index = scr_get_sprite(id, "air_move")
+					break;
+					case spr_eth_ledge_grab:
+						_xx = 40
+						_yy = -1
+					break;
+					case spr_eth_ledge_attack:
+						_xx = -59
+						_yy = -1
+						image_xscale *= -1
+					break;
+					case spr_eth_ledge_roll:
+						_xx = 111
+						_yy = -1
+					break;
 				}
 			break;
 		}
@@ -424,6 +446,14 @@ switch (argument[0]) {
 							}
 							_gy -= floor(image_index)*3
 						} else { _gx = 0; _gy = 0; }
+					break;
+					
+					case spr_eth_special_forward:
+						if (floor(image_index) = 5) {
+							var _d = point_direction(0, 0, image_xscale, 0) + image_angle
+							x += lengthdir_x(20, _d)
+							y += lengthdir_y(20, _d)
+						}
 					break;
 				}
 			break;

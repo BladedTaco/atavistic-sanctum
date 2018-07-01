@@ -54,6 +54,13 @@ switch (_dir) {
 		_id.sprite_index = scr_get_sprite(_id, "grabbed")
 		_id.image_index = 0
 		if (_id2.character = ETH) {
+			if (!instance_exists(_id2.child_object)) {
+				with (instance_create(-100, -100, obj_eth_grab)) {
+					creator = _id2
+					_id2.child_object = id
+				}
+			}
+			_id2.child_object.image_index = 0
 			_id2.child_object.sprite_index = spr_eth_grab_hold
 			_id2.child_object.state = 1
 			_id2.child_object.attacker = _id

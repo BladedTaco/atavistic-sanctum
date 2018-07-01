@@ -144,13 +144,29 @@ do {
 			break;
 			
 			case DASH_SLOW: case SPEED_DOWN: 
-				_move_character = 0 //move normally
 				if (abs(input_array[i, XAXIS]) > obj_input.l_stick_deadzone[i]) { //change direction
 					if (_inst.image_xscale != sign(input_array[i, XAXIS])) { //if different direction
 						state[i] = GROUNDED //make state grounded so a new dash is performed
 						_inst.momentum_x *= -1 //make momentum switch direction
 						_inst.image_xscale = sign(input_array[i, XAXIS]) //change image facing direction
 					}
+				}
+			case SPEED_UP: case DASHING:
+				if (input_array[i, SHIELD] and (_inst.character = GEO)) {
+					state[i] = scr_perform_shield(_inst, i)	
+				}
+				_move_character = 0 //move normally
+				if (input_array[i, ATTACK]) { //attack
+					state[i] = scr_perform_attack(_inst, i, 4, _dir)
+				}
+				if (input_array[i, SPECIAL]) { //special attacck
+					state[i] = scr_perform_attack(_inst, i, 3, _dir)
+				}
+				if (input_array[i, GRAB]) { //grab
+					state[i] = scr_perform_grab(_inst, i, 0, _dir)
+				}
+				if (input_array[i, JUMP]) { //jump
+					state[i] = scr_perform_jump_squat(_inst, i, 0)
 				}
 			break;
 			case JUMP_RISE:
@@ -182,12 +198,6 @@ do {
 				}
 			case FREEFALL:
 				_move_character = 4//airborne
-			break;
-			case SPEED_UP: case DASHING:
-				if (input_array[i, SHIELD] and (_inst.character = GEO)) {
-					state[i] = scr_perform_shield(_inst, i)	
-				}
-				_move_character = 0 //move normally
 			break;
 			case RUNNING: 
 				if (input_array[i, SHIELD]) { //shield

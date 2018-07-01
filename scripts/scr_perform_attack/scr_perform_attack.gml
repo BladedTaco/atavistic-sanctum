@@ -67,10 +67,11 @@ switch (argument[2]) { //get attack type as string
 			return HOLDING
 		} else if (argument[0].character = ETH) {
 			//handle the grab jab with the grab object
-			if (instance_exists(child_object)) {
-				if (child_object.sprite_index != spr_eth_grab_jab) {
-					child_object.sprite_index = spr_eth_grab_jab
-					child_object.image_index = 0
+			if (instance_exists(argument[0].child_object)) {
+				if (argument[0].child_object.sprite_index != spr_eth_grab_jab) {
+					argument[0].child_object.sprite_index = spr_eth_grab_jab
+					argument[0].child_object.image_index = 0
+					argument[0].child_object.state = 2
 				}
 			}
 			return HOLDING

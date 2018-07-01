@@ -30,7 +30,7 @@ if (instance_exists(creator)) {
 		case 2: //grab jab
 			if (floor(image_index) = 4) { //attacks twice
 				global.bbox[10] = creator
-				scr_check_collision(RECTANGLE, 1, 1, attacker.x, attacker.y, 0, 3, 0, 0, 0, -1) //create hitbox
+				scr_check_collision(RECTANGLE, 1, 1, attacker.x, attacker.y, 0, 2, 0, 0, 0, -1) //create hitbox
 			}
 		break;
 		

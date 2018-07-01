@@ -1499,7 +1499,7 @@ var i = 0 //variable created now for use in loops below if hurtboxes or hitboxes
 	scr_add_move(spr_eth_throw_forward, 5, 0, RECTANGLE, 1, 1, 0, 0, 0, 10, 0, 8, 5, 0)
 	scr_add_move(spr_eth_throw_up, 4, 0, RECTANGLE, 1, 1, 0, 0, 0, 12, 90, 2, 7, 0)
 	scr_add_move(spr_eth_throw_down, 8, 0, RECTANGLE, 1, 1, 0, 0, 0, 6, 270, 1, 9, 0)
-	scr_add_move(spr_eth_throw_back, 39, 0, RECTANGLE, 1, 1, 0, 0, 0, 20, 180, 4, 10, 0)
+	scr_add_move(spr_eth_throw_back, 39, 0, RECTANGLE, 1, 1, 0, 0, 0, 7, 180, 4, 10, 0)
 
 	//eth aerial forward (single hitbox, hurtbox already handled)
 	scr_add_move(spr_eth_aerial_forward, 9, 0, CIRCLE, 19, 19, 29, -32, 0, 8, 0, 3, 2)

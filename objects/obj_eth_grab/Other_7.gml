@@ -6,3 +6,6 @@ if (state = 2) {
 	state = 1
 	sprite_index = spr_eth_grab_hold
 }
+if (state = 1) {
+	can_throw = true	
+}
