@@ -1,5 +1,6 @@
 ///@desc draw effects
 image_blend = c_white
+pal_swap_set(global.pallet[character], 0.95, false)
 
 if (character = "eth") {
 	draw_sprite_ext(sprite_index, image_index - 2, last_x2, last_y2, image_xscale, image_yscale, 0, c_gray, 0.25)
@@ -18,6 +19,7 @@ switch (obj_match_handler.state[player_number]) {
 }
 draw_self();
 
+pal_swap_reset()
 
 if (debug_mode) {
 	draw_set_colour(c_aqua)
@@ -31,3 +33,4 @@ if (debug_mode) {
 	draw_set_colour(c_olive)
 	draw_circle(clamp(x, 0, room_width), clamp(y, 0, room_height), 3, false)
 }
+

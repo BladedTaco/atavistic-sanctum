@@ -139,6 +139,13 @@ global.ground = noone
 global.ground_distance = 0
 global.eth_angle = 0 //used for eth platform creation
 
+//pallet swap index
+global.pallet[BAL] = pal_bal
+global.pallet[MAC] = pal_mac
+global.pallet[GEO] = pal_geo
+global.pallet[ETH] = pal_eth
+
+
 //enums
 enum _IMPULSE { //define an impulse enumeration field (actual values are divided by 100)
 	_AIR_DODGE = 1200, //air dodge impulse (instant)
@@ -171,5 +178,7 @@ enum _IMPULSE { //define an impulse enumeration field (actual values are divided
 
 
 add_moves() //add all of the attacks of the characters into memory (very very intensive)
+
+pal_swap_init_system(shd_pal_swapper); //initialise pallet swap system
 
 draw_set_font(fnt_pixel_large) //set font

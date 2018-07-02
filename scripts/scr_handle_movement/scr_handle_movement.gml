@@ -59,8 +59,8 @@ switch (argument[2]) {
 	break;
 	
 	case 5: //momentum delay
-		argument[0].mom_x *= 0.75 //reduce momentum counter
-		argument[0].mom_y *= 0.75 //reduce momentum counter
+		argument[0].mom_x *= 0.6 //reduce momentum counter
+		argument[0].mom_y *= 0.6 //reduce momentum counter
 		if (point_distance(0, 0, argument[0].mom_x, argument[0].mom_y) < 3) { //if small impulse left
 			argument[0].sprite_index = argument[0].helpless_sprite
 			argument[0].momentum_x = argument[0].new_momentum_x

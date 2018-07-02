@@ -11,25 +11,22 @@ for (var i = 0; i < 8; i++) {
 }
 hitbox = false //draw hitboxes on true
 
+randomise()
 
-with(instance_create(200, -200, obj_player)) {
-	image_blend = c_aqua
-	player_number = 0
-	other.player[0] = id
-	controller = true
-	character = ETH
-	sprite_index = scr_get_sprite(id, "hurt_down")
-}
 
-with(instance_create(300, -200, obj_player)) {
-	image_blend = c_lime
-	player_number = 1
-	other.player[1] = id
-	character = BAL
-	controller = false
-	sprite_index = scr_get_sprite(id, "hurt_down")
+
+global.player_number = 8
+for (var i = 0; i < 8; i++) {
+	with(instance_create(room_width*((i + 0.5)/(global.player_number)), -200, obj_player)) {
+		image_blend = c_lime
+		player_number = i
+		other.player[i] = id
+		character = choose(BAL, MAC, ETH, GEO)
+		if (character = MAC) { max_jumps = 0 }
+		controller = false
+		sprite_index = scr_get_sprite(id, "hurt_down")
+	}
 }
-global.player_number = 2
 
 //get data from server for the match
 

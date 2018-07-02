@@ -1084,14 +1084,14 @@ var i = 0 //variable created now for use in loops below if hurtboxes or hitboxes
 	for (i = 0; i < 19; i++) {
 		scr_add_hurtbox(spr_mac_special_neutral, i, 0, RECTANGLE, 11, 16, 0, -20, 0)
 	}
-	scr_add_move(spr_mac_special_neutral, 5, 0, CIRCLE, 35, 53, -1, -17, 0, 3, IN, 1, 1)
-	scr_add_move(spr_mac_special_neutral, 6, 0, CIRCLE, 35, 53, -1, -17, 0, 3, IN, 1, 1)
-	scr_add_move(spr_mac_special_neutral, 7, 0, CIRCLE, 35, 53, -1, -17, 0, 3, IN, 1, 1)
-	scr_add_move(spr_mac_special_neutral, 8, 0, CIRCLE, 35, 53, -1, -17, 0, 3, IN, 1, 1)
-	scr_add_move(spr_mac_special_neutral, 9, 0, CIRCLE, 35, 53, -1, -17, 0, 3, IN, 1, 1)
-	scr_add_move(spr_mac_special_neutral, 10, 0, CIRCLE, 35, 53, -1, -17, 0, 3, IN, 1, 1)
-	scr_add_move(spr_mac_special_neutral, 11, 0, CIRCLE, 35, 53, -1, -17, 0, 3, IN, 1, 1)
-	scr_add_move(spr_mac_special_neutral, 12, 0, CIRCLE, 35, 53, -1, -17, 0, 3, IN, 1, 1)
+	scr_add_move(spr_mac_special_neutral, 5, 0, CIRCLE, 35, 53, -1, -17, 0, 1, IN, 1, 1)
+	scr_add_move(spr_mac_special_neutral, 6, 0, CIRCLE, 35, 53, -1, -17, 0, 1, IN, 1, 1)
+	scr_add_move(spr_mac_special_neutral, 7, 0, CIRCLE, 35, 53, -1, -17, 0, 1, IN, 1, 1)
+	scr_add_move(spr_mac_special_neutral, 8, 0, CIRCLE, 35, 53, -1, -17, 0, 1, IN, 1, 1)
+	scr_add_move(spr_mac_special_neutral, 9, 0, CIRCLE, 35, 53, -1, -17, 0, 1, IN, 1, 1)
+	scr_add_move(spr_mac_special_neutral, 10, 0, CIRCLE, 35, 53, -1, -17, 0, 1, IN, 1, 1)
+	scr_add_move(spr_mac_special_neutral, 11, 0, CIRCLE, 35, 53, -1, -17, 0, 1, IN, 1, 1)
+	scr_add_move(spr_mac_special_neutral, 12, 0, CIRCLE, 35, 53, -1, -17, 0, 1, IN, 1, 1)
 #endregion MACHINATION
 
 #region GEOS 302 lines
