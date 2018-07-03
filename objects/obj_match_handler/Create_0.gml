@@ -18,10 +18,10 @@ randomise()
 global.player_number = 8
 for (var i = 0; i < 8; i++) {
 	with(instance_create(100 + i*25, -200, obj_player)) {
-		img_blend = c_white//make_colour_hsv(irandom(255), irandom(155) + 100, irandom(55) + 200)
+		img_blend = c_white
 		player_number = i
 		other.player[i] = id
-		character = choose(BAL, MAC, ETH, GEO)
+		character = (i + 2) mod 4
 		if (character = MAC) { max_jumps = 0 }
 		controller = false
 		sprite_index = scr_get_sprite(id, "hurt_down")
@@ -36,8 +36,11 @@ for (var i = 0; i < 8; i++) {
 		pal_swap_draw_palette(global.pallet[character], 0, 0, 0) //draw base colours
 		pal_swap_draw_palette(global.pallet[character], 1, 1, 0) //draw custom colours
 		//*
-		for (var o = 0; o < pal_swap_get_color_count(global.pallet[character]); o++) {
-			draw_point_colour(1, o, make_colour_hsv(irandom(255), irandom(155) + 100, irandom(100) + 100))
+		draw_point_colour(1, 0, c_black)
+		for (var o = 1; o < pal_swap_get_color_count(global.pallet[character]); o++) {
+			draw_point_colour(1, o, make_colour_rgb(lerp(irandom(255), colour_get_red(surface_getpixel(pal_surface, 0, o)), 0.5),
+													lerp(irandom(255), colour_get_green(surface_getpixel(pal_surface, 0, o)), 0.5),
+													lerp(irandom(255), colour_get_blue(surface_getpixel(pal_surface, 0, o)), 0.5)))
 		}
 		//*/
 		surface_reset_target()

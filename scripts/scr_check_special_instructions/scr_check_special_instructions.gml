@@ -140,11 +140,6 @@ switch (argument[0]) {
 					break;
 					case spr_eth_smash_up:
 						_yy = -67
-						with (obj_eth_platform) {
-							if (creator = id) {
-								instance_destroy(obj_eth_platform)	
-							}
-						}
 						global.eth_angle = image_angle
 						with (instance_create(x - _yy*sin(_d), y + _yy*cos(_d), obj_eth_platform)) {
 							creator = other.id
@@ -363,6 +358,16 @@ switch (argument[0]) {
 			
 			case ETH:
 				switch(sprite_index) {
+					case spr_eth_smash_up:
+						if (floor(image_index) < 2) {
+							with (obj_eth_platform) {
+								if (creator = other.id) {
+									instance_destroy()	
+								}
+							}
+						}
+					break;
+					
 					case spr_eth_special_up:
 						if (!recovered) {
 							scr_apply_impulse(id, player_number, 90, _IMPULSE._GEO_U_SPEC/100, false)

@@ -1,5 +1,9 @@
 /// @description
 
+//stop creator
+creator.momentum_x = 0
+creator.momentum_y = 0
+
 //get direction
 if (obj_input.input_array[creator.player_number, TILT] > NEUTRAL_MOVE) {
 	var _d = point_direction(0, 0, obj_input.input_array[creator.player_number, XAXIS], obj_input.input_array[creator.player_number, YAXIS])
