@@ -321,6 +321,7 @@ do {
 		
 			case GRABBED:
 				_move_character = 1; //stop
+				var _release = false
 				if (instance_exists(_inst.attacker)) { //if the grabber exists
 					if (_inst.attacker.alarm[5] > GAME_SPEED/4) { //if more than 1/4 of a second left in the grab
 						if (input_array[i, TILT] = SMASH_MOVE) { //if smashing stick
@@ -344,6 +345,14 @@ do {
 							obj_input.sticky_jump[i] = true //set sticky to true
 						}
 					}
+					if (_inst.attacker != _inst) {
+						_release = true	
+					}
+				} else { _release = true }
+				if (_release) {
+					state[i] = AIRBORNE
+					_inst.sprite_index = scr_get_sprite(_inst, "air_move")
+					_inst.image_index = 0
 				}
 			break;
 			

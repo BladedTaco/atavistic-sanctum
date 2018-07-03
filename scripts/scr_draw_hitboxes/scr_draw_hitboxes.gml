@@ -26,6 +26,7 @@ if (argument[0]) { //draw and create hitboxes
 		}
 
 		with (obj_player) { //for each character
+			if (other.state[player_number] = SHIELDING) { continue } //dont do hitboxes if shielding
 			global.bbox[10] = id //set creator
 			i = sprite_index //get arrays first entry
 			if (sprite_exists(i)) { //if there is a sprite to draw hitboxes for
@@ -126,6 +127,7 @@ if (argument[0]) { //draw and create hitboxes
 		}
 
 		with (obj_player) { //for each character
+			if (other.state[player_number] = SHIELDING) { continue } //dont create hitboxes if shielding
 			global.bbox[10] = id //set creator
 			i = sprite_index //get arrays first entry
 			if (sprite_exists(i)) { //if there is a sprite to draw hitboxes for

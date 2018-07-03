@@ -1,5 +1,5 @@
 /// @description 
-draw_set_font(fnt_pixel_large)
+draw_set_font(fnt_pixel_2)
 
 if (character = "eth") {
 	draw_sprite_ext(sprite_index, image_index - 2, last_x2, last_y2, image_xscale, image_yscale, 0, c_gray, 0.25)

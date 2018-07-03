@@ -13,6 +13,9 @@ with (argument[2]) {//creator) {
 		var _my = momentum_y
 		var _d = point_direction(0, 0, momentum_x, momentum_y) //get momentum direction
 		var _l = point_distance(0, 0, momentum_x, momentum_y)*0.85 //get momentum length with a small reduction
+		if (abs(angle_difference(_inst.image_angle, _d)) mod 170 < 10) {
+			exit	
+		}
 		//move opposite of momentum until out of the ground
 		while (instance_place(x, y, obj_ground)) {
 			//move

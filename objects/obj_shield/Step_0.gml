@@ -1,5 +1,12 @@
 /// @description 
 if (instance_exists(creator)) {
+	creator.shield_percentage -= 5/GAME_SPEED
+	if (creator.shield_percentage <= 0) {
+		creator.shield_percentage = -creator.shield_max_percentage
+		scr_apply_impulse(creator, creator.player_number, 90, _IMPULSE._SHIELD_BREAK/100, false)
+		obj_match_handler.state[creator.player_number] = scr_perform_freefall(creator, creator.player_number)
+		instance_destroy();
+	}
 	x = creator.x
 	y = creator.y
 	var _xx = 0

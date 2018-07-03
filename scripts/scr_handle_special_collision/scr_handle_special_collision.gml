@@ -15,6 +15,25 @@ if (argument[0].creator.object_index != obj_player) {
 	}
 }
 
+//if one of the hurtboxes is a shield hitbox, and the other is a hitbox, hurt the shield by damage
+for (var i = 0; i < 2; i++) {
+	var _id = argument[(i+1) mod 2].creator
+	var _id2 = argument[i].creator
+	if (_id2.object_index = obj_shield) {
+		if (argument[(i+1) mod 2].hitbox) { 
+			if (_id2.alarm[0] <= 0) {
+				_id2.creator.shield_percentage -= argument[(i+1) mod 2].d
+				_id2.alarm[0] = GAME_SPEED/6
+			}
+		} else {
+			if (_id.object_index = obj_player) {
+				scr_apply_impulse(_id, _id.player_number, point_direction(_id2.x, _id2.y, _id.x, _id.y), _IMPULSE._RIGIDITY/100, false)
+			}
+		}
+		exit //dont execute further code
+	}
+}
+
 if (argument[0].hitbox = argument[1].hitbox) { //same type
 	var _d = point_direction(argument[0].x, argument[0].y, argument[1].x, argument[1].y)
 	if (argument[0].hitbox) { //hitbox colliding with hitbox

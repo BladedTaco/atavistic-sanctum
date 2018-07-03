@@ -162,8 +162,9 @@ enum _IMPULSE { //define an impulse enumeration field (actual values are divided
 	_SUB_DASH = 425, //dash performed during a run in the same direction (instant)
 	_RIGIDITY = 5, //the force pushing players apart when they are colliding (ongoing)
 	_CLASH = 250, //when a hitbox collides with a hitbox (instant)
-	_GRAB = 100, //impulse when peforming a grab
-	_GRAB_RELEASE = 500, //when a grabs timer runs out
+	_GRAB = 100, //impulse when peforming a grab (instant)
+	_GRAB_RELEASE = 500, //when a grabs timer runs out (instant)
+	_SHIELD_BREAK = 5000, //when a shield runs out (instant)
 	//attack impulses
 	_MAC_SLIDE = 25, //machinations sliding moves (ongoing)
 	_MAC_SLIDE_SMALL = 10, //machinations sliding moves (small) (ongoing)
@@ -181,4 +182,4 @@ add_moves() //add all of the attacks of the characters into memory (very very in
 
 pal_swap_init_system(shd_pal_swapper); //initialise pallet swap system
 
-draw_set_font(fnt_pixel_large) //set font
+draw_set_font(fnt_pixel_2) //set font

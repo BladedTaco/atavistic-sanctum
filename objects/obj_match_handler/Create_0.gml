@@ -17,14 +17,30 @@ randomise()
 
 global.player_number = 8
 for (var i = 0; i < 8; i++) {
-	with(instance_create(room_width*((i + 0.5)/(global.player_number)), -200, obj_player)) {
-		image_blend = c_lime
+	with(instance_create(100 + i*25, -200, obj_player)) {
+		img_blend = c_white//make_colour_hsv(irandom(255), irandom(155) + 100, irandom(55) + 200)
 		player_number = i
 		other.player[i] = id
 		character = choose(BAL, MAC, ETH, GEO)
 		if (character = MAC) { max_jumps = 0 }
 		controller = false
 		sprite_index = scr_get_sprite(id, "hurt_down")
+		shield_max_percentage = 30
+		if (character = GEO) { shield_max_percentage = 50 }
+		shield_percentage = shield_max_percentage
+		
+		//create pallet swap surface
+		pal_surface = surface_create(16, 16) //colour pallet as a sprite
+		surface_set_target(pal_surface)
+		draw_clear_alpha(c_white, 1)
+		pal_swap_draw_palette(global.pallet[character], 0, 0, 0) //draw base colours
+		pal_swap_draw_palette(global.pallet[character], 1, 1, 0) //draw custom colours
+		//*
+		for (var o = 0; o < pal_swap_get_color_count(global.pallet[character]); o++) {
+			draw_point_colour(1, o, make_colour_hsv(irandom(255), irandom(155) + 100, irandom(100) + 100))
+		}
+		//*/
+		surface_reset_target()
 	}
 }
 

@@ -3,7 +3,8 @@
 player_number = 0 //number of the player (maps to obj_input.input_array's first dimension
 character = BAL //character as a macro
 colour_pallet = "" //colour pallet as a string
-pallet_sprite = pal_bal //colour pallet as a sprite
+pal_surface = -1 //pallet surface
+img_blend = c_white //image blend colour, based on team
 percentage = 0 //damage
 max_jumps = 3 //maximum amount of aerial jumps
 weight = 1 //weight multiplier (initial knockback resistance)
@@ -35,6 +36,8 @@ hitbox_override = false //override used to create hitboxes when not animation
 draw_count = 0 //an incrementing number used to animate through coded animations
 hitstun = 1 //hitstun mulitplier
 sub_recovery = 0 //used for moves like geo's down special to only allow a certain number of repeats
+shield_max_percentage = 30 //max health for shield
+shield_percentage = shield_max_percentage //current shield health
 child_object = noone //used to hold child objects ids that have to be referenced
 name = choose("PPND", "DRUGS", "BLADED", "BLADEDTACO", "HBox", "Temmie", "Steve", "Bailey", "Milly", "Alfonse", "ALFONSO")
 alarm[0] = -1 //ledge alarm
@@ -42,3 +45,5 @@ alarm[1] = -1 //platform alarm
 alarm[2] = -1 //smash attack alarm
 alarm[3] = -1 //c stick alarm
 alarm[4] = -1 //hitbox sleeping alarm
+
+

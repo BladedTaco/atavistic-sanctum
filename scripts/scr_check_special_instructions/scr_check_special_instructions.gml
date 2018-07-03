@@ -140,11 +140,15 @@ switch (argument[0]) {
 					break;
 					case spr_eth_smash_up:
 						_yy = -67
-						if (instance_exists(obj_eth_platform)) {
-							instance_destroy(obj_eth_platform)	
+						with (obj_eth_platform) {
+							if (creator = id) {
+								instance_destroy(obj_eth_platform)	
+							}
 						}
 						global.eth_angle = image_angle
-						instance_create(x - _yy*sin(_d), y + _yy*cos(_d), obj_eth_platform)
+						with (instance_create(x - _yy*sin(_d), y + _yy*cos(_d), obj_eth_platform)) {
+							creator = other.id
+						}
 					break;
 					case spr_eth_throw_forward: case spr_eth_throw_up: case spr_eth_throw_down: case spr_eth_throw_back:
 						if (instance_exists(child_object)) { instance_destroy(child_object) }
@@ -449,11 +453,37 @@ switch (argument[0]) {
 					break;
 					
 					case spr_eth_special_forward:
+						image_alpha = scr_triangle_wave(0.5, 10, 7.5, 0, image_index)
 						if (floor(image_index) = 5) {
 							var _d = point_direction(0, 0, image_xscale, 0) + image_angle
 							x += lengthdir_x(20, _d)
 							y += lengthdir_y(20, _d)
 						}
+					break;
+					
+					//image alpha changes
+					case spr_eth_taunt:
+						image_alpha = scr_triangle_wave(0.5, 5, 3.75, 0, min(image_index, 30))
+					break;
+					
+					case spr_eth_ledge:
+						image_alpha = scr_triangle_wave(0.5, 7, 5.25, 0, min(image_index, 7))
+					break;
+					
+					case spr_eth_ledge_roll:
+						image_alpha = scr_triangle_wave(0.5, 9, 6.75, 0, min(image_index, 9))
+					break;
+					
+					case spr_eth_ledge_attack:
+						image_alpha = scr_triangle_wave(0.5, 9, 6.75, 0, min(image_index, 9))
+					break;
+					
+					case spr_eth_roll:
+						image_alpha = scr_triangle_wave(0.5, 9, 6.75, 0, min(image_index, 9))
+					break;
+					
+					case spr_eth_dodge:
+						image_alpha = scr_triangle_wave(0.5, 9, 6.75, 0, min(image_index, 9))
 					break;
 				}
 			break;

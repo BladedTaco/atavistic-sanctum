@@ -495,6 +495,14 @@
             }
         },
         {
+            "Key": "1f303918-58dc-40e0-ad16-8b550d77eb8c",
+            "Value": {
+                "id": "6eb18442-24ff-47ab-9cc5-731bf06df12b",
+                "resourcePath": "fonts\\fnt_pixel_3\\fnt_pixel_3.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
             "Key": "1fca7927-9825-41f3-bdf3-67e5cefff460",
             "Value": {
                 "id": "9c040bcb-87a9-404e-a0ae-b99cb25c81a4",
@@ -3042,7 +3050,7 @@
             "Key": "de57d305-62ca-42a0-868e-936e7a630015",
             "Value": {
                 "id": "8681dc8c-e8cf-4271-a296-80d5ee4c5966",
-                "resourcePath": "fonts\\fnt_pixel_huge\\fnt_pixel_huge.yy",
+                "resourcePath": "fonts\\fnt_pixel_4\\fnt_pixel_4.yy",
                 "resourceType": "GMFont"
             }
         },
@@ -3106,7 +3114,7 @@
             "Key": "e5271b10-a952-402e-b59a-103535ca38a4",
             "Value": {
                 "id": "c5a1f077-b045-4223-9273-f374e7e21a5b",
-                "resourcePath": "fonts\\fnt_pixel_large\\fnt_pixel_large.yy",
+                "resourcePath": "fonts\\fnt_pixel_2\\fnt_pixel_2.yy",
                 "resourceType": "GMFont"
             }
         },

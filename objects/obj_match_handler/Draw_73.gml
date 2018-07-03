@@ -17,4 +17,4 @@ for (var i = 0; i < global.player_number; i++) {
 	}
 }
 
-draw_set_font(fnt_pixel_large)
+draw_set_font(fnt_pixel_2)

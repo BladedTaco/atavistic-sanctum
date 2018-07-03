@@ -1,6 +1,7 @@
 /// @description 
 
 draw_count++ //increment draw_count
+shield_percentage = min(shield_percentage + 2/GAME_SPEED, shield_max_percentage) //refresh shield
 
 effective_x = 0
 effective_y = 0
