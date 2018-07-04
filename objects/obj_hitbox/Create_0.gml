@@ -20,7 +20,6 @@ if (global.bbox[4]) { //hitbox
 			b *= i
 			s *= i
 			h *= i
-			creator.smash_charge = -1 //reset smash charge
 		}
 	}
 } else { //hurtbox

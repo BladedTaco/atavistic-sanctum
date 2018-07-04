@@ -1,5 +1,9 @@
 /// @description 
 
+if (spawning) {
+	image_alpha = min(image_alpha + 0.01, 1)	
+}
+
 draw_count++ //increment draw_count
 shield_percentage = min(shield_percentage + 2/GAME_SPEED, shield_max_percentage) //refresh shield
 

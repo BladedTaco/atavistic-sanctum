@@ -12,8 +12,8 @@ for (var i = 0; i < global.player_number; i++) {
 		var _d = degtorad(-image_angle)
 		var _xx = x + effective_x + (45)*sin(_d)
 		var _yy = y + effective_y - (45)*cos(_d)
-		draw_sprite(spr_marker, 0, _xx, _yy)
-		draw_text_normal(_xx, _yy - 6, name)
+		draw_sprite_ext(spr_marker, 0, _xx, _yy, 1, 1, 0, player_col, 1)
+		draw_text_outlined(_xx, _yy - 6, c_black, player_col, name, 1)
 	}
 }
 

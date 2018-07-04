@@ -139,6 +139,11 @@ switch (argument[0]) {
 						recovered = true
 					break;
 					case spr_eth_smash_up:
+						with (obj_eth_platform) {
+							if (creator = other.id) {
+								instance_destroy()	
+							}
+						}
 						_yy = -67
 						global.eth_angle = image_angle
 						with (instance_create(x - _yy*sin(_d), y + _yy*cos(_d), obj_eth_platform)) {
@@ -358,16 +363,6 @@ switch (argument[0]) {
 			
 			case ETH:
 				switch(sprite_index) {
-					case spr_eth_smash_up:
-						if (floor(image_index) < 2) {
-							with (obj_eth_platform) {
-								if (creator = other.id) {
-									instance_destroy()	
-								}
-							}
-						}
-					break;
-					
 					case spr_eth_special_up:
 						if (!recovered) {
 							scr_apply_impulse(id, player_number, 90, _IMPULSE._GEO_U_SPEC/100, false)
@@ -391,13 +386,18 @@ switch (argument[0]) {
 						if (floor(image_index) = 3) {
 							image_index = 4
 							with (obj_player) {
-								if !(scr_check_for_ground(id)) {
+								if !(scr_check_for_ground()) {
 									var _inst = collision_line(x, y, x, room_height, obj_ground, true, false)
 									if (instance_exists(_inst)) {
+										var i = collision_line(x, y, x, _inst.bbox_top - 2, obj_ground, false, false)
+										while (instance_exists(i) and (i != _inst)) {
+											_inst = i	
+											i = collision_line(x, y, x, _inst.bbox_top - 2, obj_ground, false, false)
+										}
 										y = _inst.bbox_top - 2 //move to top of bounding box
 										do { //move down until the ground is found
-											y -= 1
-										} until (scr_check_for_ground(id)) 
+											y += 1
+										} until (scr_check_for_ground()) 
 									}
 								}
 							}

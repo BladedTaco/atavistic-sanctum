@@ -3,8 +3,10 @@
 var _xx = 0
 var _yy = 0
 with (obj_player) {
-	_xx += x + effective_x
-	_yy += y + effective_y
+	if (!dead) {
+		_xx += x + effective_x
+		_yy += y + effective_y
+	}
 }
 _xx /= instance_number(obj_player)
 _yy /= instance_number(obj_player)

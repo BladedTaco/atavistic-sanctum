@@ -1488,7 +1488,7 @@ var i = 0 //variable created now for use in loops below if hurtboxes or hitboxes
 	scr_add_hurtbox(spr_eth_hurt_down, 0, 0, RECTANGLE, 21, 11, -5, -9, 0)
 
 	//eth grabbed (no hitbox)
-	scr_add_hurtbox(spr_eth_grabbed, 0, 0, RECTANGLE, 11, 21, 0, -26, 0)
+	scr_add_hurtbox(spr_eth_grabbed, 0, 0, RECTANGLE, 11, 21, -3, 0, 0)
 	scr_add_hurtbox(spr_eth_grabbed, 0, 1, RECTANGLE, 2, 2, 0, 0, 0)
 
 	//eth taunt (no hitbox, no hurtbox)

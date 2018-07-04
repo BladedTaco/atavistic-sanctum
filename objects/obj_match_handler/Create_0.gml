@@ -14,11 +14,14 @@ hitbox = false //draw hitboxes on true
 randomise()
 
 
-
+var _inst = noone
 global.player_number = 8
-for (var i = 0; i < 8; i++) {
-	with(instance_create(100 + i*25, -200, obj_player)) {
+for (var i = 0; i < 8; i++) { 
+	with (obj_spawn_point) { if (number = i) { _inst = id } } //get spawn point position
+	with(instance_create(_inst.x, _inst.y, obj_player)) {
+		image_alpha = 0
 		img_blend = c_white
+		player_col = make_colour_hsv((i/7)*255, 255, 150)
 		player_number = i
 		other.player[i] = id
 		character = (i + 2) mod 4
@@ -28,6 +31,7 @@ for (var i = 0; i < 8; i++) {
 		shield_max_percentage = 30
 		if (character = GEO) { shield_max_percentage = 50 }
 		shield_percentage = shield_max_percentage
+		spawning = true
 		
 		//create pallet swap surface
 		pal_surface = surface_create(16, 16) //colour pallet as a sprite

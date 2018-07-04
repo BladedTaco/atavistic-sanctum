@@ -43,6 +43,8 @@ switch (_dir) {
 	break;
 	case HOLD_DIR: //this is equivalent to hold	
 		//set each player as each others attacker
+		_id.alarm[6] = ATTACKER_REFRESH	 //set attacker refresh alarm
+		_id2.alarm[6] = ATTACKER_REFRESH //set attacker refresh alarm
 		_id.attacker = _id2
 		_id2.attacker = _id
 		//move the attacker to the attacked if this is from a ledge grab
@@ -107,6 +109,7 @@ if (argument[0].h = -1) { //if negative hitstun, only apply damage and no state 
 		_id.last_damage = argument[0].d //remember the amount of damage taken
 		scr_apply_impulse(_id, _id.player_number, _dir, _mag, true) //apply the knockback impulse
 		scr_momentum_delay(_id, _id.momentum_x, _id.momentum_y, argument[0].h, true)
+		_id.alarm[6] = ATTACKER_REFRESH //set attacker refresh alarm
 		if (instance_exists(_id.attacker)) {
 			_id.attacker.image_speed = 1
 			if (_id.attacker.alarm[5] > 0) { //if was in the middle of a grab

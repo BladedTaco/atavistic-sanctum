@@ -79,6 +79,7 @@ show_debug_overlay(debug_mode)
 #macro HELPLESS 27 //airborne from an attacks knocback
 #macro GRABBED 28 //being grabbed
 #macro TAUNTING 29 //taunting
+#macro DEAD 30 //dead
 
 //character identiiers
 #macro BAL 0
@@ -99,6 +100,8 @@ show_debug_overlay(debug_mode)
 
 
 #macro GROUND_HEIGHT 10 //half the height from the top of the ground that is considered acceptable as on top
+#macro ATTACKER_REFRESH GAME_SPEED*10 //the time an attacker lasts
+
 
 //globals
 global.network_protocol = network_socket_tcp //**note, if UDP is found to be too unreliable, switch to the more reliable, but slower TCP

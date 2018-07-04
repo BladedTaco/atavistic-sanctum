@@ -20,6 +20,7 @@ do {
 	do {
 		var _state = state[i]
 		switch (state[i]) { //perform actions based on state 
+			case DEAD: with (_inst) { image_alpha = 0; image_speed = 0; x = -1000; y = -1000; spawning = true; dead = true } break;
 			case CROUCHING:
 				if (input_array[i, YAXIS] < 0.5) {
 					if (_inst.sprite_index != scr_get_sprite(_inst, "crouch_end")) {
@@ -345,7 +346,7 @@ do {
 							obj_input.sticky_jump[i] = true //set sticky to true
 						}
 					}
-					if (_inst.attacker != _inst) {
+					if (_inst.attacker.attacker != _inst) {
 						_release = true	
 					}
 				} else { _release = true }
@@ -378,7 +379,7 @@ do {
 		scr_move_character(_inst, i)
 	} else { //handle special movement cases
 		scr_handle_movement(_inst, i, _move_character)
-	}			
+	}		
 		
 	//check for ground
 	if ((_move_character < 5) and (state[i] != HELPLESS) and (state[i] != HIT_STUN)) {
@@ -448,24 +449,38 @@ do {
 		}
 	}
 
-	//wrapping code
-	if (_inst.x > room_width) {
-		_inst.x -= 5
-	}
-	if (_inst.x < 0) {
-		_inst.x += 5
-	}
-
-	if (_inst.y > room_height) {
-		_inst.y -= 5
-	}
-	if (_inst.y < 0) {
-		_inst.y += 5
-	}
-
 	//floor momentum if almost nonexistant
 	if (abs(_inst.momentum_x) < 0.001) {
 		_inst.momentum_x = 0
+	}
+	
+	//check for death
+	if !((_inst.spawning) or (position_meeting(_inst.x, _inst.y, obj_blast_zone))) { //if (not spawning) and (not in blast zone)
+		//if not(not helpless, and above the blast zone)
+		if !((state[i] != HELPLESS) and (position_meeting(_inst.x, obj_blast_zone.y, obj_blast_zone)) and (_inst.y < 0)) {
+			_inst.stocks -= 1
+			if (instance_exists(_inst.attacker)) {
+				obj_results.kills[_inst.attacker.player_number, array_length_2d(obj_results.kills, _inst.attacker.player_number)] = _inst.player_number
+				obj_results.deaths[_inst.player_number, array_length_2d(obj_results.deaths, _inst.player_number)] = _inst.attacker.player_number
+			} else {
+				obj_results.deaths[_inst.player_number, array_length_2d(obj_results.deaths, _inst.player_number)] = _inst.player_number
+			}
+			if (_inst.stocks > 0) {
+				with (obj_spawn_point) { if (number = i) { var o = id } } //get spawn point position
+				with(_inst) {
+					draw_count = 0
+					image_alpha = 0
+					x = o.x
+					y = o.y
+					sprite_index = scr_get_sprite(id, "hurt_down")
+					shield_percentage = shield_max_percentage
+					spawning = true
+				}
+			} else {
+				obj_results.placing[array_length_1d(obj_results.placing)] = _inst.player_number
+				state[i] = DEAD
+			}
+		}
 	}
 	
 	i++

@@ -50,7 +50,7 @@ switch (argument[2]) {
 	
 	case 4: //airborne
 		scr_apply_impulse(argument[0], argument[1], 270, _IMPULSE._GRAVITY/100, false) //apply gravity
-		if (abs(_x1) > obj_input.l_stick_deadzone[argument[1]]) { //if moving stick
+		if ((abs(_x1) > obj_input.l_stick_deadzone[argument[1]]) and (!argument[0].spawning)) { //if moving stick
 			scr_apply_impulse(argument[0], argument[1], point_direction(0, 0, _x1, 0), _IMPULSE._AIR_MOVE*point_distance(0, 0, _x1, 0)/100, false)
 		}
 		//apply friction

@@ -16,6 +16,17 @@ if (target = creator) { //if colliding with creator
 	creator.image_index = 0 //set image index
 	creator.image_angle = radtodeg(-_d) - 90 //set image angle
 	obj_match_handler.state[creator.player_number] = SPECIAL_ATTACK
+	with (creator) {
+		var _inst = instance_place(x, y, obj_ground)
+		if (instance_exists(_inst)) {
+			var _xx = lengthdir_x(1, point_direction(_inst.x, _inst.y, _gx, _gy))
+			var _yy = lengthdir_y(1, point_direction(_inst.x, _inst.y, _gx, _gy))
+			while (instance_place(x, y, obj_ground)) {
+				x += _xx
+				y += _yy
+			}
+		}
+	}
 } else {
 	//set state and sprite
 	if (scr_check_for_ground(creator)) {

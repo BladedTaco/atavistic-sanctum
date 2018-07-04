@@ -1,5 +1,5 @@
 /// @description animation effects on sprite
-
+smash_charge = -1//reset smash charge
 if (scr_check_special_instructions(0)) {
 	switch (obj_match_handler.state[player_number]) {
 		//GROUNDED n/a
