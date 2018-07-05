@@ -1,8 +1,14 @@
 /// @description 
 
 if (spawning) {
-	image_alpha = min(image_alpha + 0.01, 1)	
+	image_alpha = min(image_alpha + (1/GAME_SPEED), 1)	
+	percentage = lerp(floor(percentage), 0, 0.04)
+	shield_percentage = lerp(ceil(shield_percentage), shield_max_percentage, 0.04)
+	if (draw_count >= GAME_SPEED) {
+		spawning = false	
+	}
 }
+
 
 draw_count++ //increment draw_count
 shield_percentage = min(shield_percentage + 2/GAME_SPEED, shield_max_percentage) //refresh shield

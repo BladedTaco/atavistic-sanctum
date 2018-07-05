@@ -1,4 +1,6 @@
 /// @description 
-kills[0, 0] = -1
-deaths[0, 0] = -1
+for (var i = 0; i < 8; i++) {
+	kills[i, 0] = noone
+	deaths[i, 0] = noone
+}
 placing[0] = -1

@@ -415,7 +415,6 @@ do {
 						switch (state[i]) {
 							case AIRBORNE: case FREEFALL: case AIR_ATTACK:
 								_inst.image_speed = 1 //end any hitlag
-								_inst.spawning = false //set the instance to no longer spawning
 								state[i] = LANDING //set state
 								_inst.sprite_index = scr_get_sprite(_inst, "land") //set to land sprite
 								_inst.image_index = 0 //set to first sub-image
@@ -455,7 +454,7 @@ do {
 	}
 	
 	//check for death
-	if !((_inst.spawning) or (position_meeting(_inst.x, _inst.y, obj_blast_zone))) { //if (not spawning) and (not in blast zone)
+	if !(position_meeting(_inst.x, _inst.y, obj_blast_zone)) { //if (not in play area)
 		//if not(not helpless, and above the blast zone)
 		if !((state[i] != HELPLESS) and (position_meeting(_inst.x, obj_blast_zone.y, obj_blast_zone)) and (_inst.y < 0)) {
 			_inst.stocks -= 1
@@ -468,13 +467,15 @@ do {
 			if (_inst.stocks > 0) {
 				with (obj_spawn_point) { if (number = i) { var o = id } } //get spawn point position
 				with(_inst) {
+					momentum_x = 0
+					momentum_y = 0
 					draw_count = 0
 					image_alpha = 0
 					x = o.x
 					y = o.y
 					sprite_index = scr_get_sprite(id, "hurt_down")
-					shield_percentage = shield_max_percentage
 					spawning = true
+					state[i] = FREEFALL
 				}
 			} else {
 				obj_results.placing[array_length_1d(obj_results.placing)] = _inst.player_number

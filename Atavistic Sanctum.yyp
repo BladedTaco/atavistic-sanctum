@@ -71,6 +71,14 @@
             }
         },
         {
+            "Key": "01e1e8b4-0e3b-4183-bb97-1e090befa690",
+            "Value": {
+                "id": "ef1d42a5-09f7-4d23-8eec-3b7311b1b114",
+                "resourcePath": "sprites\\spr_bal_stock\\spr_bal_stock.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "01fd7add-43f4-41c0-b0e2-8e41906e1345",
             "Value": {
                 "id": "1c5cfec7-886b-4bde-9b13-1c23fd833e21",
@@ -1123,6 +1131,14 @@
             "Value": {
                 "id": "f31e9d8e-cac2-4571-b989-a39eaa8c0509",
                 "resourcePath": "sprites\\spr_mac_tilt_forward\\spr_mac_tilt_forward.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "53e85e33-f112-4e9e-b802-8ec051a04ea5",
+            "Value": {
+                "id": "f3e3ec13-2aa9-48b7-b27d-02ce1d94d189",
+                "resourcePath": "sprites\\spr_mac_stock\\spr_mac_stock.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -2455,6 +2471,14 @@
             }
         },
         {
+            "Key": "b3cf8582-6754-4ae2-88ea-d07a1ecf24d7",
+            "Value": {
+                "id": "4f8d6d92-52aa-4bdd-ae3b-1fe852827517",
+                "resourcePath": "sprites\\spr_geo_stock\\spr_geo_stock.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "b4189a98-e525-4b3d-b371-c14e598611b0",
             "Value": {
                 "id": "2b751e0c-36a6-4c5b-b8bb-a50bf2531c69",
@@ -3412,6 +3436,14 @@
                 "id": "9e8e8f24-1bbc-4603-a8d5-36daabb0e288",
                 "resourcePath": "views\\f89f845d-c3c9-4017-91f3-7f7ce8d35e52.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "f92952d3-4e0a-4adb-9037-e3651ef18b75",
+            "Value": {
+                "id": "71c36efd-0140-451e-8c8d-5ac0573614b2",
+                "resourcePath": "sprites\\spr_eth_stock\\spr_eth_stock.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

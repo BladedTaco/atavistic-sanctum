@@ -25,13 +25,16 @@ for (var i = 0; i < 8; i++) {
 		player_number = i
 		other.player[i] = id
 		character = (i + 2) mod 4
+		max_jumps = 2
 		if (character = MAC) { max_jumps = 0 }
+		if (character = BAL) { max_jumps = 4 }
 		controller = false
 		sprite_index = scr_get_sprite(id, "hurt_down")
 		shield_max_percentage = 30
 		if (character = GEO) { shield_max_percentage = 50 }
 		shield_percentage = shield_max_percentage
 		spawning = true
+		stocks = 9
 		
 		//create pallet swap surface
 		pal_surface = surface_create(16, 16) //colour pallet as a sprite

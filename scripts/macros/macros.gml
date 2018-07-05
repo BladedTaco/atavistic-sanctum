@@ -100,7 +100,7 @@ show_debug_overlay(debug_mode)
 
 
 #macro GROUND_HEIGHT 10 //half the height from the top of the ground that is considered acceptable as on top
-#macro ATTACKER_REFRESH GAME_SPEED*10 //the time an attacker lasts
+#macro ATTACKER_REFRESH (GAME_SPEED*10) //the time an attacker lasts
 
 
 //globals
