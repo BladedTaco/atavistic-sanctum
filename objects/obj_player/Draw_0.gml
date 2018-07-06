@@ -1,4 +1,28 @@
 ///@desc draw effects
+
+//check for outline colour changes
+surface_set_target(pal_surface)
+draw_point_colour(1, 0, c_black)
+
+if (alarm[2] >= 0) { //smash charge flash
+	if (floor(image_index) = smash_frame) {
+		if (round(draw_count/6) mod 2 = 0) {
+			draw_point_colour(1, 0, c_yellow)
+		}
+	}
+}
+if (alarm[5] >= 0) { //grab colour fade
+	draw_point_colour(1, 0, merge_colour(c_black, c_white, alarm[5]/(GAME_SPEED*5)))
+}
+if (alarm[0] >= 0) { //ledge colour fade
+	if (obj_match_handler.state[player_number] = LEDGE) {
+		draw_point_colour(1, 0, merge_colour(c_black, c_white, alarm[0]/(GAME_SPEED*3)))
+	}
+}
+
+surface_reset_target()
+
+
 image_blend = img_blend
 pal_swap_set(pal_surface, 1, true)
 

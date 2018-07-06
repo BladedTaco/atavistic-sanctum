@@ -36,7 +36,7 @@ if (argument[1]) { //controller inputs
 		}
 	}
 	if (abs(_input[XAXIS]) + abs(_input[YAXIS]) > l_stick_deadzone[argument[0]]) {
-		_input[TILT] += 1 //increment movement if axis is moving
+		_input[TILT] += 1 //on moving axis, increment tilt
 	}
 }
 

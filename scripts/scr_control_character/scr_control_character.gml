@@ -101,7 +101,12 @@ do {
 						_inst.image_index = _inst.smash_frame
 					}
 				} else {
-					_inst.smash_charge = 1 - (_inst.alarm[2]/GAME_SPEED)
+					if (floor(_inst.image_index) > _inst.smash_frame) {
+						if (_inst.smash_charge <= 0) {
+							_inst.smash_charge = 1 - (_inst.alarm[2]/GAME_SPEED)
+							_inst.alarm[2] = -1
+						}
+					}
 				}
 				_move_character = 2 //drift
 			break;

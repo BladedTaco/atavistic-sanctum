@@ -31,7 +31,6 @@ switch (argument[2]) { //get attack type as string
 		_type = "tilt"
 		_ret = TILT_ATTACK
 		if (argument[0].character = ETH) {
-			argument[0].alarm[2] = GAME_SPEED //set max smash hold
 			argument[0].smash_charge = 0	
 		}
 	break;
