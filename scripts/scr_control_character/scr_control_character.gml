@@ -10,7 +10,10 @@ do {
 	_inst = player[i] //get the player object corresponding to the player number
 	_ex = _inst.effective_x //store initial effective x difference for shorthand use
 	_ey = _inst.effective_y //store initial effective y difference for shorthand use
-	if (!instance_exists(_inst)) { exit }
+	//check exit conditions in case of false input
+	if (i >= global.player_number) { exit }
+	if (!instance_exists(_inst)) { i++; continue }
+	if (_inst.dead) { i++; continue }
 	if (input_array[i, PAUSE]) { //pause or unpause
 		global.paused = !global.paused	
 	}
@@ -428,21 +431,26 @@ do {
 			_inst.x = _xx //update instance position
 			_inst.y = _yy //update instance position
 		} else {
-			if (_inst.image_angle != 0) and (scr_check_for_ground(_inst, -_inst.momentum_x*2 + _ex, _ey)) {
-				l = 100
-				while (!scr_check_for_ground(_inst, _ex, _ey) and (l > 0)) {
-					l--
-					_inst.y += 0.25
-				}
-			} else { //absolutely no ground found
-					_inst.image_angle = 0
-				switch (state[i]) { //if in a certain state, make character airborne
-					case WALKING: case RUNNING: case CROUCHING: case SPEED_UP: case DASHING:
-					case DASH_SLOW: case SPEED_DOWN:
-						state[i] = AIRBORNE
-						_inst.sprite_index = scr_get_sprite(_inst, "air_move")
-						_inst.image_index = 0
-					break;
+			if (_inst.sprite_index != spr_eth_smash_up) {
+				if (_inst.image_angle != 0) and (scr_check_for_ground(_inst, -_inst.momentum_x*2 + _ex, _ey)) {
+					l = 100
+					while (!scr_check_for_ground(_inst, _ex, _ey) and (l > 0)) {
+						l--
+						_inst.y += 0.25
+					}
+				} else { //absolutely no ground found
+					
+					switch (state[i]) { //if in a certain state, make character airborne
+						case WALKING: case RUNNING: case CROUCHING: case SPEED_UP: case DASHING:
+						case DASH_SLOW: case SPEED_DOWN: case GROUNDED:
+							_inst.image_angle = 0
+							state[i] = AIRBORNE
+							_inst.sprite_index = scr_get_sprite(_inst, "air_move")
+							_inst.image_index = 0
+						break;
+						case HELPLESS: case HIT_STUN: break;
+						default: _inst.image_angle = 0; break;
+					}
 				}
 			}
 		}
@@ -475,7 +483,7 @@ do {
 					y = o.y
 					sprite_index = scr_get_sprite(id, "hurt_down")
 					spawning = true
-					state[i] = FREEFALL
+					other.state[i] = FREEFALL
 				}
 			} else {
 				obj_results.placing[array_length_1d(obj_results.placing)] = _inst.player_number

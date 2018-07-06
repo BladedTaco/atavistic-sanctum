@@ -34,7 +34,7 @@ for (var i = 0; i < 8; i++) {
 		if (character = GEO) { shield_max_percentage = 50 }
 		shield_percentage = shield_max_percentage
 		spawning = true
-		stocks = 9
+		stocks = 3
 		
 		//create pallet swap surface
 		pal_surface = surface_create(16, 16) //colour pallet as a sprite

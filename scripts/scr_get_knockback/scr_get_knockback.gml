@@ -120,6 +120,7 @@ if (argument[0].h = -1) { //if negative hitstun, only apply damage and no state 
 		}
 		if (_id2.object_index = obj_player) {
 			_id.attacker = _id2
+			_id.image_angle = _id2.image_angle
 			if (argument[0].h > 0) {
 				_id.attacker.image_speed = 0
 				_id.image_speed = 0

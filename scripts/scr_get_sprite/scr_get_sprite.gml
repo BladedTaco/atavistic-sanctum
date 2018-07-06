@@ -81,5 +81,12 @@ if (ret = -1) { //if nonexistant sprite
 		return -1 //if script still running, return nonexistant sprite
 	}
 } else { //sprite exists
+	if (ret = spr_eth_smash_up) {
+		with (obj_eth_platform) {
+			if (scr_point_in_rec(argument[0].x, argument[0].y + 5, hitbox)) {
+				return -1	
+			}
+		}
+	}
 	return ret //return the sprite
 }

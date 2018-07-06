@@ -27,7 +27,7 @@ for (var i = 0; i < 2; i++) {
 			}
 		} else {
 			if (_id.object_index = obj_player) {
-				scr_apply_impulse(_id, _id.player_number, point_direction(_id2.x, _id2.y, _id.x, _id.y), _IMPULSE._RIGIDITY/100, false)
+				scr_apply_impulse(_id, _id.player_number, point_direction(_id2.creator.x, _id2.creator.y, _id.x, _id.y) - _id.image_angle, _IMPULSE._RIGIDITY/100, false)
 			}
 		}
 		exit //dont execute further code

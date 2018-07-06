@@ -363,6 +363,12 @@ switch (argument[0]) {
 			
 			case ETH:
 				switch(sprite_index) {
+					case spr_eth_smash_up:
+						if (floor(image_index) >= 4) {
+							_yy = -5*floor(image_index)	+ 20
+						}
+						momentum_y = 0
+					break;
 					case spr_eth_special_up:
 						if (!recovered) {
 							scr_apply_impulse(id, player_number, 90, _IMPULSE._GEO_U_SPEC/100, false)

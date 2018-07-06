@@ -36,6 +36,14 @@ if ((obj_match_handler.state[player_number] != LEDGE_ALT) and (obj_match_handler
 			var _inst = instance_place(x, y+1, obj_ground)
 			if !(instance_exists(_inst)) { //if no instance found with sprite mask
 				_inst = instance_position(x + _ey, y+1 + _ey, obj_ground) //check for one at coordinates
+			} else {
+				var _img_angle = image_angle
+				image_angle = _inst.image_angle
+				if (instance_place(x, y+1, obj_ground) = noone) {
+					_inst = noone
+				} else {
+					image_angle = _img_angle	
+				}
 			}
 			if (instance_exists(_inst)) { //if there is an instance of a ground object to check against
 				scr_helpless_bounce(_inst, _inst.hitbox, id)
