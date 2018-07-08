@@ -42,6 +42,22 @@ switch (_dir) {
 		_dir = _id2.image_angle + 90
 	break;
 	case HOLD_DIR: //this is equivalent to hold	
+		if (instance_exists(_id.attacker)) {
+			_id.attacker.image_speed = 1
+			if (_id.attacker.alarm[5] > 0) { //if was in the middle of a grab
+				//release the grab
+				_id.attacker.alarm[5] = 0
+				_id.attacker.attacker = noone //make the attackers attacker noone
+			}
+		}
+		if (instance_exists(_id2.attacker)) {
+			_id2.attacker.image_speed = 1
+			if (_id2.attacker.alarm[5] > 0) { //if was in the middle of a grab
+				//release the grab
+				_id2.attacker.alarm[5] = 0
+				_id2.attacker.attacker = noone //make the attackers attacker noone
+			}
+		}
 		//set each player as each others attacker
 		_id.alarm[6] = ATTACKER_REFRESH	 //set attacker refresh alarm
 		_id2.alarm[6] = ATTACKER_REFRESH //set attacker refresh alarm

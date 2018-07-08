@@ -6,10 +6,10 @@ var _max_x = 0
 var _max_y = 0
 with (obj_player) {
 	if (!dead) {
-		if (_min_x > bbox_left) { _min_x = bbox_left }
-		if (_min_y > bbox_top) { _min_y = bbox_top }
-		if (_max_x < bbox_right) { _max_x = bbox_right }
-		if (_max_y < bbox_bottom) { _max_y = bbox_bottom }
+		if (_min_x > x + effective_x) { _min_x = x + effective_x }
+		if (_min_y > y + effective_y) { _min_y = y + effective_y }
+		if (_max_x < x + effective_x) { _max_x = x + effective_x }
+		if (_max_y < y + effective_y) { _max_y = y + effective_y }
 	}
 }
 _min_x = max(_min_x, 0)
@@ -20,8 +20,8 @@ _max_y = min(_max_y, room_height)
 x = lerp(x, (_min_x + _max_x)/2, 0.25) //move towards the centre of the players
 y = lerp(y, (_min_y + _max_y)/2, 0.25) //move towards the centre of the players
 
-var _width = max(_max_x - _min_x, 430) + 50
-var _height = max(_max_y - _min_y, 220) + 50
+var _width = max(_max_x - _min_x, 405) + 75
+var _height = max(_max_y - _min_y, 195) + 75
 
 if (_height*(16/9) < _width) {
 	_height = _width*(9/16)

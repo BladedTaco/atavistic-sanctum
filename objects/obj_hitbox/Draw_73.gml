@@ -1,6 +1,6 @@
 /// @description 
 
-//if (debug_mode) {
+if (debug_mode) {
 	draw_set_alpha(0.5)
 	draw_set_colour(c_white)
 	draw_circle(x, y, _maj, true)
@@ -13,4 +13,4 @@
 		draw_line(x, y, x + lengthdir_x(100, a), y + lengthdir_y(100, a))
 	}
 	draw_set_alpha(1)
-//}
+}

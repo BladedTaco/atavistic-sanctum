@@ -1,5 +1,11 @@
 /// @description
 
+if ((obj_match_handler.state[creator.player_number] = HIT_STUN)
+ or (obj_match_handler.state[creator.player_number] = HELPLESS)){
+	instance_destroy();	
+	exit
+}
+
 //stop creator
 creator.momentum_x = 0
 creator.momentum_y = 0

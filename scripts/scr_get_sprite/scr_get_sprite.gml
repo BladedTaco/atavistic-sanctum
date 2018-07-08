@@ -24,6 +24,7 @@ if (ret = spr_mac_special_up) {
 	(argument[0].bbox_top + argument[0].bbox_bottom)/2, obj_mac_projectile)) {
 		creator = argument[0]	
 		type = 0
+		last_dir = 90 + argument[0].image_angle
 	}
 }
 if (ret = -1) { //if nonexistant sprite

@@ -6,5 +6,7 @@ if (alarm[0] > 3) {
 		image_index = 7
 	}
 } else {
-	creator.sub_recovery --	
+	if (instance_exists(creator)) {
+		creator.sub_recovery --	
+	}
 }

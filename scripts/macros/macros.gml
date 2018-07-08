@@ -141,6 +141,7 @@ for (var t = 0; t <= global.maxIterations; t++) {
 global.ground = noone
 global.ground_distance = 0
 global.eth_angle = 0 //used for eth platform creation
+global.player_outside = false
 
 //pallet swap index
 global.pallet[BAL] = pal_bal

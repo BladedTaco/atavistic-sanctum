@@ -43,6 +43,7 @@ stocks = 3 //number of stocks for the player
 dead = false //whether or not the player is dead
 child_object = noone //used to hold child objects ids that have to be referenced
 name = choose("PPND", "DRUGS", "BLADED", "BLADEDTACO", "HBox", "Temmie", "Steve", "Bailey", "Milly", "Alfonse", "ALFONSO")
+placing = -1 //position in game
 alarm[0] = -1 //ledge alarm
 alarm[1] = -1 //platform alarm
 alarm[2] = -1 //smash attack alarm

@@ -15,8 +15,8 @@ randomise()
 
 
 var _inst = noone
-global.player_number = 8
-for (var i = 0; i < 8; i++) { 
+global.player_number = 2
+for (var i = 0; i < 2; i++) { 
 	with (obj_spawn_point) { if (number = i) { _inst = id } } //get spawn point position
 	with(instance_create(_inst.x, _inst.y, obj_player)) {
 		image_alpha = 0

@@ -379,10 +379,12 @@ switch (argument[0]) {
 						if (sub_recovery < 14) {
 							if (floor(image_index) = 1) {
 								sub_recovery ++
-								global.bbox[10] = id
 								_xx = 19*image_xscale; _yy = -28 + (image_index-1)*6 - 3
 								global.eth_angle = image_angle + point_direction(0, -28, 10*image_xscale, _yy)
-								instance_create(x + _xx*cos(_d) - _yy*sin(_d), y + _xx*sin(_d) + _yy*cos(_d), obj_eth_projectile)
+								global.bbox[10] = id
+								with(instance_create(x + _xx*cos(_d) - _yy*sin(_d), y + _xx*sin(_d) + _yy*cos(_d), obj_eth_projectile)) {
+									creator = other.id	
+								}
 								_xx = 0; _yy = 0
 							}
 						}
@@ -403,7 +405,7 @@ switch (argument[0]) {
 										y = _inst.bbox_top - 2 //move to top of bounding box
 										do { //move down until the ground is found
 											y += 1
-										} until (scr_check_for_ground()) 
+										} until (scr_check_for_ground() or (y > room_height)) 
 									}
 								}
 							}
