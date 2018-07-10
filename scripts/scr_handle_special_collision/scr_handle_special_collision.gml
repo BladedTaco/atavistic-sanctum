@@ -3,6 +3,10 @@
 ///@param _id2 - the id of the other colliding hitbox/hurtbox (special) (hitbox in a hitbox/hurtbox collision)
 ///@desc handles what to do once a collision is found between two hitboxes
 
+if !(instance_exists(argument[1].creator) and instance_exists(argument[0].creator)) {
+	exit
+}
+
 if (argument[1].creator.object_index = obj_player) {
 	//if arguments are in wrong order, recall correctly
 	scr_handle_special_collision(argument[1], argument[0])

@@ -3263,6 +3263,14 @@
             }
         },
         {
+            "Key": "ec60180c-736b-4201-9f81-c490bc433a21",
+            "Value": {
+                "id": "934d627c-6e58-405e-ae8e-bafbc2de39e9",
+                "resourcePath": "objects\\obj_death_effect\\obj_death_effect.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "ec863169-ad94-4248-8135-cef4c99698aa",
             "Value": {
                 "id": "8313e60d-a0f8-4600-af71-b871feb8b825",

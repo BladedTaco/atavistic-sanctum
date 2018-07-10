@@ -3,7 +3,7 @@
 var _alpha = 1
 for (var i = 0; i < global.player_number; i++) {
 	with (player[i]) {
-		draw_set_valign(fa_center)
+		draw_set_valign(fa_middle)
 		draw_set_font(fnt_pixel_3)
 		var _xx = round(display_get_gui_width()*((player_number + 0.5)/(global.player_number)) + 5)
 		var _yy = round(display_get_gui_height() + max((1 - (draw_count/GAME_SPEED))*50, 0))
@@ -17,7 +17,7 @@ for (var i = 0; i < global.player_number; i++) {
 			_alpha = 1
 		}
 		if (dead) {
-			draw_set_alpha(0.5)
+			draw_set_alpha(0.5*_alpha)
 			var _inst;
 			for (var o = 0; o < min(array_length_2d(obj_results.kills, player_number), 4); o++) {
 				_inst = obj_results.kills[player_number, o]
@@ -82,15 +82,43 @@ for (var i = 0; i < global.player_number; i++) {
 }
 
 if (global.player_outside) {
+	_scl = 8 //the inverse of the scale of the blast zone indicator
+	var _bor = 30 //the border from the top left of the screen for the play area box
 	draw_set_alpha(0.5)
 	global.player_outside = false
 	draw_set_colour(c_white)
-	draw_rectangle(25 + obj_blast_zone.bbox_left/10, 25 + obj_blast_zone.bbox_top/10, 25 + obj_blast_zone.bbox_right/10, 25 + obj_blast_zone.bbox_bottom/10, true)
-	draw_rectangle(25, 25, 25 + room_width/10, 25 + room_height/10, true)
+	draw_rectangle(_bor + obj_blast_zone.bbox_left/_scl, _bor + obj_blast_zone.bbox_top/_scl, _bor + obj_blast_zone.bbox_right/_scl, _bor + obj_blast_zone.bbox_bottom/_scl, true)
+	draw_rectangle(_bor, _bor, _bor + room_width/_scl, _bor + room_height/_scl, true)
+	with (obj_ground) {
+		draw_line(_bor + hitbox._x[0]/_scl, _bor + hitbox._y[0]/_scl, _bor + hitbox._x[1]/_scl, _bor + hitbox._y[1]/_scl)
+	}
+	with (obj_ledge) {
+		draw_circle_colour(round(_bor + x/_scl), round(_bor + y/_scl), 1.5, c_yellow, c_yellow, true)	
+	}
 	with (obj_player) {
 		if (!dead) {
-			draw_circle_colour(25 + (x+effective_x)/10, 25 + (y+effective_y)/10, 3, player_col, player_col, false)
+			draw_circle_colour(round(_bor + (x+effective_x)/_scl), round(_bor + (y+effective_y)/_scl), 3, player_col, player_col, false)
 		}
 	}
 	draw_set_alpha(1)
+}
+
+if (alarm[0] > 0) {
+	draw_set_font(fnt_pixel_4)
+	var _str = ""
+	if (alarm[0] >= 3600*GAME_SPEED) {
+		_str += string(floor(alarm[0]/(3600*GAME_SPEED))) + ":"
+		if (string_length(string(floor((alarm[0]/(60*GAME_SPEED)) mod 60))) = 1) {
+			_str += "0"
+		}
+	}
+	if (alarm[0] >= 60*GAME_SPEED) {
+		_str += string(floor((alarm[0]/(60*GAME_SPEED)) mod 60)) + ":"
+		if (string_length(string(floor((alarm[0]/(GAME_SPEED)) mod 60))) = 1) {
+			_str += "0"
+		}
+	}
+	_str += string(((alarm[0]/GAME_SPEED) mod 60) + 0.01)
+	draw_text_outlined(display_get_gui_width()/2, 40, c_black, c_white, _str, 4)
+	show_debug_message(_str)
 }

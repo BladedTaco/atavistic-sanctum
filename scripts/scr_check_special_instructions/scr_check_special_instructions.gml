@@ -383,7 +383,9 @@ switch (argument[0]) {
 								global.eth_angle = image_angle + point_direction(0, -28, 10*image_xscale, _yy)
 								global.bbox[10] = id
 								with(instance_create(x + _xx*cos(_d) - _yy*sin(_d), y + _xx*sin(_d) + _yy*cos(_d), obj_eth_projectile)) {
-									creator = other.id	
+									if (creator.object_index != obj_player) {
+										creator = other.id	
+									}
 								}
 								_xx = 0; _yy = 0
 							}

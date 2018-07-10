@@ -26,6 +26,6 @@ y += lengthdir_y(3, _d)
 
 if (alarm[0] <= GAME_SPEED*3) {
 	global.bbox[10] = id
-	scr_check_collision(CIRCLE, 12, 12, x, y, 0, 1, _d, 1, 0, 3) //create hitbox
+	scr_check_collision(CIRCLE, 12, 12, x, y, 0, 1, _d, 2, 0, 2) //create hitbox
 	scr_check_collision(CIRCLE, 6, 6, x, y, 0) //create hurtbox
 }

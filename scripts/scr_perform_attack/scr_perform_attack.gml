@@ -74,6 +74,8 @@ switch (argument[2]) { //get attack type as string
 				}
 			}
 			return HOLDING
+		} else if (argument[0].character = MAC) {
+			return HOLDING
 		} else {
 			_type = "grab_jab"
 			_ret = HOLDING

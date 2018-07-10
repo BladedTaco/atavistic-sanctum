@@ -13,7 +13,7 @@ for (var i = 0; i < 8; i++) { //player number
 			input_buffer_array[j*100 + i, k] = 0 //initialise an array position
 		}
 	}
-	c_stick_action[i] = C_SMASH_ATTACK //action the c_stick maps to
+	c_stick_action[i] = C_TILT_ATTACK //action the c_stick maps to
 	c_stick_deadzone[i] = 0.15 //the deadzone for the c_stick
 	l_stick_deadzone[i] = 0.15 //the deadzone for the left stick
 	l_stick_neutral[i] = 0.5 //the point where a input is considered not neutral
@@ -35,8 +35,11 @@ for (var i = 0; i < 8; i++) { //player number
 	sticky_dodge[i] = false //make it only dodge multiple times on multiple presses
 	sticky_attack[i] = false //make it only attack multiple times on multiple presses
 	sticky_special[i] = false //make it only use special multiple times on multiple presses
+	sticky_pause[i] = false //make it only pause and unpause on unique presses
 	smash_deadzone[i] = 0.25 //the deadzone where smash attacks cannot happen inside
 }
+paused = -1 //which player has paused the game
+pause_sprite = -1 //the sprite used on the pause screen
 
 
 

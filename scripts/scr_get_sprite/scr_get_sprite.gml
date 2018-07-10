@@ -19,6 +19,7 @@ ret = asset_get_index(string(i + argument[1])) //get sprite
 if (ret = spr_mac_special_up) {
 	ret = argument[0].sprite_index
 	argument[0].image_speed = 0
+	argument[0].alarm[7] = GAME_SPEED*3.5
 	argument[0].hitbox_override = true
 	with (instance_create((argument[0].bbox_left + argument[0].bbox_right)/2, 
 	(argument[0].bbox_top + argument[0].bbox_bottom)/2, obj_mac_projectile)) {

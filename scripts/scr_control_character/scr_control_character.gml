@@ -401,114 +401,120 @@ do {
 		scr_handle_movement(_inst, i, _move_character)
 	}		
 		
-	//check for ground
-	if ((_move_character < 5) and (state[i] != HELPLESS) and (state[i] != HIT_STUN)) {
-		if (scr_check_for_ground(_inst, _ex, _ey) and !(state[i] = LEDGE) and !(state[i] = LEDGE_ALT)) {	
-			var j = 100
-			var l = max(ceil(2*point_distance(0, 0, _inst.momentum_x, _inst.momentum_y)/GROUND_HEIGHT), 1)
-			var _xx = _inst.x 
-			var _yy = _inst.y 
-			repeat (l) {
-				_xx += _inst.momentum_x/l
-				_yy += _inst.momentum_y/l
-				var _ground = global.ground
-				global.ground = noone
-				if (instance_exists(_ground)) { //if there is ground to collide with
-					var _d = degtorad(angle_difference(_inst.image_angle, _ground.image_angle))
-					if ((abs(_ex) + abs(_ey) > 0) or (abs(_d) != 0)) { //if position is offset and rotated
-						//rotate position around that offset 
-						_xx = (-_ex)*cos(_d) - (-_ey)*sin(_d) + (_ex + _xx) //rotate around effective x
-						_yy = (-_ex)*sin(_d) + (-_ey)*cos(_d) + (_ey + _yy) //rotate around effective y
-					}
-					_inst.image_angle = _ground.image_angle 
-					if (scr_point_in_rec(_xx + _ex, _yy + _ey, _ground.hurtbox)) { //in the top of the ground hitbox
-						_inst.momentum_y = 0 //set vertical momentum to 0
-						var _d = _inst.image_angle
-						while (scr_point_in_rec(_xx + _ex, _yy + _ey, _ground.hurtbox)) {
-							_yy -= 0.25
-							j--
-							if (j < 0) { break }
+	if (!_inst.dead) {
+		//check for ground
+		if ((_move_character < 5) and (state[i] != HELPLESS) and (state[i] != HIT_STUN)) {
+			if (scr_check_for_ground(_inst, _ex, _ey) and !(state[i] = LEDGE) and !(state[i] = LEDGE_ALT)) {	
+				var j = 100
+				var l = max(ceil(2*point_distance(0, 0, _inst.momentum_x, _inst.momentum_y)/GROUND_HEIGHT), 1)
+				var _xx = _inst.x 
+				var _yy = _inst.y 
+				repeat (l) {
+					_xx += _inst.momentum_x/l
+					_yy += _inst.momentum_y/l
+					var _ground = global.ground
+					global.ground = noone
+					if (instance_exists(_ground)) { //if there is ground to collide with
+						var _d = degtorad(angle_difference(_inst.image_angle, _ground.image_angle))
+						if ((abs(_ex) + abs(_ey) > 0) or (abs(_d) != 0)) { //if position is offset and rotated
+							//rotate position around that offset 
+							_xx = (-_ex)*cos(_d) - (-_ey)*sin(_d) + (_ex + _xx) //rotate around effective x
+							_yy = (-_ex)*sin(_d) + (-_ey)*cos(_d) + (_ey + _yy) //rotate around effective y
 						}
-						_inst.alarm[0] = GAME_SPEED //set ledge alarm
-						jumps[i] = _inst.max_jumps //refresh jumps
-						_inst.recovered = false //refresh recovery
-						switch (state[i]) {
-							case AIRBORNE: case FREEFALL: case AIR_ATTACK:
-								_inst.image_speed = 1 //end any hitlag
-								state[i] = LANDING //set state
-								_inst.sprite_index = scr_get_sprite(_inst, "land") //set to land sprite
-								_inst.image_index = 0 //set to first sub-image
-								_inst.momentum_x /= 2 //halve horizontal momentum
-							break;
+						_inst.image_angle = _ground.image_angle 
+						if (scr_point_in_rec(_xx + _ex, _yy + _ey, _ground.hurtbox)) { //in the top of the ground hitbox
+							_inst.momentum_y = 0 //set vertical momentum to 0
+							var _d = _inst.image_angle
+							while (scr_point_in_rec(_xx + _ex, _yy + _ey, _ground.hurtbox)) {
+								_yy -= 0.25
+								j--
+								if (j < 0) { break }
+							}
+							_inst.alarm[0] = GAME_SPEED //set ledge alarm
+							jumps[i] = _inst.max_jumps //refresh jumps
+							_inst.recovered = false //refresh recovery
+							switch (state[i]) {
+								case AIRBORNE: case FREEFALL: case AIR_ATTACK:
+									_inst.image_speed = 1 //end any hitlag
+									state[i] = LANDING //set state
+									_inst.sprite_index = scr_get_sprite(_inst, "land") //set to land sprite
+									_inst.image_index = 0 //set to first sub-image
+									_inst.momentum_x /= 2 //halve horizontal momentum
+								break;
+							}
+							break; //break the repeat loop if the ground is found
 						}
-						break; //break the repeat loop if the ground is found
 					}
 				}
-			}
-			_inst.x = _xx //update instance position
-			_inst.y = _yy //update instance position
-		} else {
-			if (_inst.sprite_index != spr_eth_smash_up) {
-				if (_inst.image_angle != 0) and (scr_check_for_ground(_inst, -_inst.momentum_x*2 + _ex, _ey)) {
-					l = 100
-					while (!scr_check_for_ground(_inst, _ex, _ey) and (l > 0)) {
-						l--
-						_inst.y += 0.25
-					}
-				} else { //absolutely no ground found
+				_inst.x = _xx //update instance position
+				_inst.y = _yy //update instance position
+			} else {
+				if (_inst.sprite_index != spr_eth_smash_up) {
+					if (_inst.image_angle != 0) and (scr_check_for_ground(_inst, -_inst.momentum_x*2 + _ex, _ey)) {
+						l = 100
+						while (!scr_check_for_ground(_inst, _ex, _ey) and (l > 0)) {
+							l--
+							_inst.y += 0.25
+						}
+					} else { //absolutely no ground found
 					
-					switch (state[i]) { //if in a certain state, make character airborne
-						case WALKING: case RUNNING: case CROUCHING: case SPEED_UP: case DASHING:
-						case DASH_SLOW: case SPEED_DOWN: case GROUNDED:
-							_inst.image_angle = 0
-							state[i] = AIRBORNE
-							_inst.sprite_index = scr_get_sprite(_inst, "air_move")
-							_inst.image_index = 0
-						break;
-						case HELPLESS: case HIT_STUN: break;
-						default: _inst.image_angle = 0; break;
+						switch (state[i]) { //if in a certain state, make character airborne
+							case WALKING: case RUNNING: case CROUCHING: case SPEED_UP: case DASHING:
+							case DASH_SLOW: case SPEED_DOWN: case GROUNDED:
+								_inst.image_angle = 0
+								state[i] = AIRBORNE
+								_inst.sprite_index = scr_get_sprite(_inst, "air_move")
+								_inst.image_index = 0
+							break;
+							case HELPLESS: case HIT_STUN: break;
+							default: _inst.image_angle = 0; break;
+						}
 					}
 				}
 			}
 		}
-	}
 
-	//floor momentum if almost nonexistant
-	if (abs(_inst.momentum_x) < 0.001) {
-		_inst.momentum_x = 0
-	}
+		//floor momentum if almost nonexistant
+		if (abs(_inst.momentum_x) < 0.001) {
+			_inst.momentum_x = 0
+		}
 	
-	//check for death
-	if !(position_meeting(_inst.x, _inst.y, obj_blast_zone)) { //if (not in play area)
-		//if not(not helpless, and above the blast zone)
-		if !((state[i] != HELPLESS) and (position_meeting(_inst.x, obj_blast_zone.y, obj_blast_zone)) and (_inst.y < 0)) {
-			_inst.stocks -= 1
-			if (instance_exists(_inst.attacker)) {
-				obj_results.kills[_inst.attacker.player_number, array_length_2d(obj_results.kills, _inst.attacker.player_number)] = _inst.player_number
-				obj_results.deaths[_inst.player_number, array_length_2d(obj_results.deaths, _inst.player_number)] = _inst.attacker.player_number
-			} else {
-				obj_results.deaths[_inst.player_number, array_length_2d(obj_results.deaths, _inst.player_number)] = _inst.player_number
-			}
-			if (_inst.stocks > 0) {
-				with (obj_spawn_point) { if (number = i) { var o = id } } //get spawn point position
-				with(_inst) {
-					momentum_x = 0
-					momentum_y = 0
-					draw_count = 0
-					image_alpha = 0
-					x = o.x
-					y = o.y
-					sprite_index = scr_get_sprite(id, "hurt_down")
-					spawning = true
-					other.state[i] = FREEFALL
+		//check for death
+		if !(position_meeting(_inst.x, _inst.y, obj_blast_zone)) { //if (not in play area)
+			//if not(not helpless, and above the blast zone)
+			if !((state[i] != HELPLESS) and (position_meeting(_inst.x, obj_blast_zone.y, obj_blast_zone)) and (_inst.y < 0)) {
+				_inst.stocks -= 1
+				if (instance_exists(_inst.attacker)) {
+					obj_results.kills[_inst.attacker.player_number, array_length_2d(obj_results.kills, _inst.attacker.player_number)] = _inst.player_number
+					obj_results.deaths[_inst.player_number, array_length_2d(obj_results.deaths, _inst.player_number)] = _inst.attacker.player_number
+				} else {
+					obj_results.deaths[_inst.player_number, array_length_2d(obj_results.deaths, _inst.player_number)] = _inst.player_number
 				}
-			} else {
-				obj_results.placing[array_length_1d(obj_results.placing)] = _inst.player_number
-				placing = array_length_1d(obj_results.placing) - 1
-				state[i] = DEAD
-				if (array_length_1d(obj_results.placing) >= global.player_number) {
-					scr_end_game(0)
-					exit
+				with (instance_create(clamp(_inst.x, 0, room_width), clamp(_inst.y, 0, room_height), obj_death_effect)) {
+					player_col = _inst.player_col
+				}
+				if (_inst.stocks > 0) {
+					with (obj_spawn_point) { if (number = i) { var o = id } } //get spawn point position
+					with(_inst) {
+						momentum_x = 0
+						momentum_y = 0
+						draw_count = 0
+						image_alpha = 0
+						x = o.x
+						y = o.y
+						sprite_index = scr_get_sprite(id, "hurt_down")
+						spawning = true
+						other.state[i] = FREEFALL
+					}
+				} else {
+					obj_results.placing[array_length_1d(obj_results.placing)] = _inst.player_number
+					_inst.placing = array_length_1d(obj_results.placing) - 1
+					_inst.dead = true
+					state[i] = DEAD
+					if (array_length_1d(obj_results.placing) >= global.player_number) {
+						scr_end_game(0)
+						exit
+					}
 				}
 			}
 		}

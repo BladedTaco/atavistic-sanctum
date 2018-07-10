@@ -565,7 +565,7 @@ var i = 0 //variable created now for use in loops below if hurtboxes or hitboxes
 	scr_add_hurtbox(spr_bal_smash_up, 6, 0, CIRCLE, 15, 19, 0, -37, 0)
 	scr_add_hurtbox(spr_bal_smash_up, 7, 0, CIRCLE, 15, 19, 0, -33, 0)
 	scr_add_hurtbox(spr_bal_smash_up, 8, 0, CIRCLE, 15, 19, 0, -27, 0)
-	scr_add_move(spr_bal_smash_up, 4, 0, CIRCLE, 15, 30, 0, -20, 0, 18, 90, 3, 4)
+	scr_add_move(spr_bal_smash_up, 4, 0, CIRCLE, 30, 40, 0, -20, 0, 18, 90, 3, 4)
 	scr_add_move(spr_bal_smash_up, 5, 0, CIRCLE, 15, 38, 0, -30, 0, 26, 90, 6, 5)
 
 	//bal special forward (discontinuous hitboxes)
@@ -813,20 +813,21 @@ var i = 0 //variable created now for use in loops below if hurtboxes or hitboxes
 	//mac grab hold (discontinuous hitbox)
 	scr_add_hurtbox(spr_mac_grab_hold, 0, 0, RECTANGLE, 12, 16, -9, -24, 0)
 	scr_add_hurtbox(spr_mac_grab_hold, 1, 0, RECTANGLE, 12, 16, -9, -24, 0)
-	scr_add_move(spr_mac_grab_hold, 1, 0, RECTANGLE, 1, 1, 5, -39, 0, 1, 0, 0, 0, -1)
+	scr_add_move(spr_mac_grab_hold, 1, 0, RECTANGLE, 1, 1, 5, -39, 0, 0.1, 0, 0, 0, -1)
 
 	//mac throw forward (discontinuous hitbox)
 	scr_add_hurtbox(spr_mac_throw_forward, 0, 0, RECTANGLE, 12, 16, -9, -24, 0)
 	scr_add_hurtbox(spr_mac_throw_forward, 1, 0, RECTANGLE, 12, 16, -9, -24, 0)
-	scr_add_move(spr_mac_throw_forward, 0, 0, RECTANGLE, 1, 1, 5, -39, 0, 7, 45, 4, 2, 0)
+	scr_add_move(spr_mac_throw_forward, 0, 0, RECTANGLE, 1, 1, 5, -39, 0, 7, 45, 6, 4, 0)
 
 	//mac throw up (no hitbox)
 	for (i = 0; i < 17; i++) {
 		scr_add_hurtbox(spr_mac_throw_up, i, 0, RECTANGLE, 12, 16, -9, -24, 0)
 	}
+	scr_add_move(spr_mac_throw_up, 16, 0, RECTANGLE, 2, 2, 0, 0, 0, 5, 90, 8, 3, 0)
 
 	//mac throw down (discontinuous hitbox, no hurtbox)
-	scr_add_move(spr_mac_throw_down, 5, 0, RECTANGLE, 1, 1, -5, 0, 0, 14, 135, 8, 1, 0)
+	scr_add_move(spr_mac_throw_down, 5, 0, RECTANGLE, 1, 1, -5, 0, 0, 14, 135, 8, 3, 0)
 
 	//mac throw back (discontinuous hitbox)
 	for (i = 0; i < 14; i++) {

@@ -20,7 +20,7 @@ with (obj_player) {
 		break;
 	}
 	
-	obj_results.real_placing = placing
+	obj_results.real_placing[player_number] = placing
 	obj_results.pal_surface[player_number] = pal_surface
 	obj_results.character[player_number] = character
 	obj_results.name[player_number] = name

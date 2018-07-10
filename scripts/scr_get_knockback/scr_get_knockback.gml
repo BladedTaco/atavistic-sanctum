@@ -6,9 +6,9 @@
 
 //knockback formula in readable form
 /*
- / / /	(damage + 1)(damage + percent)		  \		(scaling knockback)^2 \				       \
-| | |	-------------------------------		+1 | * ----------------------  | + (base knockback) | * state
- \ \ \				weight*1000				  /				4			  /					   /
+ / / /	(damage + 1)(damage + percent^2)	  \		(scaling knockback)^2	\				       \
+| | |	-------------------------------		+1 | * ---------------------------	| + (base knockback) | * state
+ \ \ \				weight*300				  /					4				/				  /
 */
 
 if (argument[0].hitbox = false) {
@@ -106,9 +106,9 @@ if (argument[0].h = -1) { //if negative hitstun, only apply damage and no state 
 } else {
 	_mag =  argument[0].d + 1				// k = damage taken + 1
 	_mag *= argument[0].d + _id.percentage	// k = k*(damage taken + percentage)
-	_mag /= _id.weight*1000					// k = k/(weight*1000)
+	_mag /= _id.weight*300					// k = k/(weight*300)
 	_mag += 1								// k = k + 1
-	_mag *= argument[0].s * argument[0].s	// k = k * (s^2)
+	_mag *= power(argument[0].s + lerp((1/max(argument[0].s, 1))*3, 2, 0.5), 2)		// k = k * ((s+2)^2)
 	_mag *= 0.25							// k = k/4
 	_mag += argument[0].b					// k = k + base knockback
 	_mag *= _id.bracing						// k = k + state scaling
@@ -139,6 +139,8 @@ if (argument[0].h = -1) { //if negative hitstun, only apply damage and no state 
 			if (argument[0].h > 0) {
 				_id.attacker.image_speed = 0
 				_id.image_speed = 0
+				_id.alarm[7] = max(_mag*argument[0].h, 1)
+				_id.attacker.alarm[7] = max(_mag*argument[0].h, 1)
 			}
 		}
 		//handle hitbox sleeping alarm

@@ -1,5 +1,7 @@
 /// @description initialise the match handler
 
+alarm[0] = -1
+pal_surface = surface_create(16, 16)
 
 //input variables and control variables initialisation
 for (var i = 0; i < 8; i++) {
@@ -24,7 +26,7 @@ for (var i = 0; i < 2; i++) {
 		player_col = make_colour_hsv((i/7)*255, 255, 150)
 		player_number = i
 		other.player[i] = id
-		character = (i + 2) mod 4
+		character = get_integer("CHARACTER:\nBAL = 0\nGEO = 1\nMAC = 2\nETH = 3", 0)
 		max_jumps = 2
 		if (character = MAC) { max_jumps = 0 }
 		if (character = BAL) { max_jumps = 4 }
@@ -50,6 +52,7 @@ for (var i = 0; i < 2; i++) {
 													lerp(irandom(255), colour_get_blue(surface_getpixel(pal_surface, 0, o)), 0.5)))
 		}
 		//*/
+		surface_copy_part(other.pal_surface, player_number, 0, pal_surface, 1, 0, 1, 16)
 		surface_reset_target()
 	}
 }
