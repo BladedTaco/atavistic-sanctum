@@ -31,7 +31,3 @@ alarm[0] = GAME_SPEED*2 //create an alarm for sending 'keep alive' pings
 
 
 
-for (var i = 0; i < 200; i++) {
-
-	sprite_set_speed(spr_bal_default + i, sprite_get_speed(spr_bal_default + i)/60, spritespeed_framespergameframe)
-}

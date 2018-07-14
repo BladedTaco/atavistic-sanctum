@@ -54,28 +54,30 @@ if (_len > 1) {
 	_input[ALT_YAXIS] /= _len
 }
 
-global.paused = (paused >= 0)
-
-if (_input[PAUSE]) {
-	if (!sticky_pause[argument[0]]) {
-		if (paused >= 0) {
-			if (paused = argument[0]) {
-				file_delete(working_directory + "PAUSE_SCREEN") //delete the pause screen
-				sprite_delete(pause_sprite)
-				paused = -1
-				instance_activate_all()
+if (instance_exists(obj_match_handler)) {
+	//check for pause (in match only)
+	global.paused = (paused >= 0)
+	if (_input[PAUSE]) {
+		if (!sticky_pause[argument[0]]) {
+			if (paused >= 0) {
+				if (paused = argument[0]) {
+					file_delete(working_directory + "PAUSE_SCREEN") //delete the pause screen
+					sprite_delete(pause_sprite)
+					paused = -1
+					instance_activate_all()
+					sticky_pause[argument[0]] = true
+				}
+			} else {
+				screen_save(working_directory + "PAUSE_SCREEN") //crreate the pause screen
+				pause_sprite = sprite_add(working_directory + "PAUSE_SCREEN", 1, false, false, 0, 0)
+				paused = argument[0]
+				instance_deactivate_all(true)
 				sticky_pause[argument[0]] = true
 			}
-		} else {
-			screen_save(working_directory + "PAUSE_SCREEN") //crreate the pause screen
-			pause_sprite = sprite_add(working_directory + "PAUSE_SCREEN", 1, false, false, 0, 0)
-			paused = argument[0]
-			instance_deactivate_all(true)
-			sticky_pause[argument[0]] = true
 		}
+	} else {
+		sticky_pause[argument[0]] = false	
 	}
-} else {
-	sticky_pause[argument[0]] = false	
 }
 
 scr_handle_c_stick(argument[0], _input)

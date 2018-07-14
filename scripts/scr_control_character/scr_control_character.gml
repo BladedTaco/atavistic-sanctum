@@ -480,9 +480,9 @@ do {
 		}
 	
 		//check for death
-		if !(position_meeting(_inst.x, _inst.y, obj_blast_zone)) { //if (not in play area)
+		if !(position_meeting(_inst.x + _inst.effective_x, _inst.y + _inst.effective_y, obj_blast_zone)) { //if (not in play area)
 			//if not(not helpless, and above the blast zone)
-			if !((state[i] != HELPLESS) and (position_meeting(_inst.x, obj_blast_zone.y, obj_blast_zone)) and (_inst.y < 0)) {
+			if !((state[i] != HELPLESS) and (position_meeting(_inst.x + _inst.effective_x, obj_blast_zone.y, obj_blast_zone)) and (_inst.y < 0)) {
 				_inst.stocks -= 1
 				if (instance_exists(_inst.attacker)) {
 					obj_results.kills[_inst.attacker.player_number, array_length_2d(obj_results.kills, _inst.attacker.player_number)] = _inst.player_number

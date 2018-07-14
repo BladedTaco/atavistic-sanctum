@@ -1,6 +1,7 @@
 /// @description initialise the match handler
 
 alarm[0] = -1
+
 pal_surface = surface_create(16, 16)
 
 //input variables and control variables initialisation
@@ -11,14 +12,13 @@ for (var i = 0; i < 8; i++) {
 	jumps[i] = 1
 	player[i] = -1 //create the players here and populate the array with their instance ids
 }
-hitbox = false //draw hitboxes on true
 
 randomise()
 
 
 var _inst = noone
-global.player_number = 2
-for (var i = 0; i < 2; i++) { 
+global.player_number = clamp(get_integer("Player number:", 2), 2, 8)
+for (var i = 0; i < global.player_number; i++) { 
 	with (obj_spawn_point) { if (number = i) { _inst = id } } //get spawn point position
 	with(instance_create(_inst.x, _inst.y, obj_player)) {
 		image_alpha = 0
@@ -36,7 +36,7 @@ for (var i = 0; i < 2; i++) {
 		if (character = GEO) { shield_max_percentage = 50 }
 		shield_percentage = shield_max_percentage
 		spawning = true
-		stocks = 3
+		stocks = 1
 		
 		//create pallet swap surface
 		pal_surface = surface_create(16, 16) //colour pallet as a sprite

@@ -151,7 +151,7 @@ if (argument[0].h = -1) { //if negative hitstun, only apply damage and no state 
 	}
 }
 
-if (argument[0].creator.object_index = obj_eth_projectile) {
-	argument[0].creator.alarm[0] = 1
-	argument[0].creator.image_index = 7
+if (_id2.object_index = obj_eth_projectile) {
+	_id2.alarm[0] = 1
+	_id2.image_index = 7
 }

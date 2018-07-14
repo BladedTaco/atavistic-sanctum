@@ -14,12 +14,97 @@ if (paused >= 0) {
 	draw_set_font(fnt_pixel_4)
 	draw_set_halign(fa_center)
 	draw_set_valign(fa_middle)
-	draw_text_outlined(_gui_x/2, _gui_y/2, c_black, c_white, "PAUSED", 4)
+	draw_text_outlined(_gui_x/2, _gui_y/2, c_black, c_white, "PAUSED: PLAYER " + string(paused + 1), 4)
 	draw_set_font(fnt_pixel_3)
-	draw_text_outlined(1.2*_gui_x/4, 20, $303030, c_white, "QUIT: ATTACK + SPECIAL + SHIELD + PAUSE", 3)
-	draw_text_outlined(3.2*_gui_x/4, 20, $303030, c_white, "PAUSED: PLAYER " + string(paused + 1), 3)
+	var _col = $3f3f3f
+	var _len = array_length_1d(menu_option)
+	for (var i = 0; i < _len; i++) {
+		if (i = menu_index) {
+			_col = $7f7f7f
+		} else {
+			_col = $3f3f3f	
+		}
+		draw_text_outlined((((i - menu_index + _len + 2.5) mod _len) - 0.5)*_gui_x/4, 20, _col, c_white, menu_option[i mod _len], 3)
+	}
+	if (menu_index != round(menu_index)) { //move menu option
+		menu_index = ((menu_index + 0.05*menu_direction) + _len) mod _len
+		if (abs(menu_index - round(menu_index)) < 0.05) {
+			menu_direction = 0
+			menu_index = round(menu_index)
+		}
+	} else { //control menu
+		//check for menu movement
+		if (abs(input_array[paused, XAXIS]) > 0.5) {
+			menu_direction = sign(input_array[paused, XAXIS])
+			menu_index = ((menu_index + 0.05*menu_direction) + _len) mod _len
+		}
+		
+		//check for menu selection
+		if ((input_array[paused, ATTACK] and !sticky_attack[paused]) or (menu_index = 2) or (menu_index = 3)) {
+			sticky_attack[paused] = true
+			var _end = false
+			switch (menu_index) {
+				case 5: //forfeit
+					_end = true
+				case 0: //resume
+					file_delete(working_directory + "PAUSE_SCREEN") //delete the pause screen
+					sprite_delete(pause_sprite)
+					instance_activate_all()
+					if (_end) {
+						scr_end_game(2, paused)	
+					}
+					paused = -1
+				break;
+				case 1: //hitboxes: shwon
+					if (global.show_hitboxes) {
+						global.show_hitboxes = false	
+						menu_option[1] = "hitboxes: hidden"
+					} else {
+						global.show_hitboxes = true
+						menu_option[1] = "hitboxes: shown"
+					}
+				break;
+				case 2: //Input buffer: 6 frames
+					if (alarm[1] <= 0) {
+						alarm[1] = GAME_SPEED/10
+						if (input_array[paused, YAXIS] > 0.5) {
+							global.input_buffer_length = max(global.input_buffer_length - 1, 0)
+						} else if (input_array[paused, YAXIS] < -0.5) {
+							global.input_buffer_length = min(global.input_buffer_length + 1, 30)
+						}
+						menu_option[2] = "Input lag: " + string(global.input_buffer_length) + " frame"
+					}
+				break;
+				case 3: //game speed: 1x
+					if (alarm[1] <= 0) {
+						alarm[1] = GAME_SPEED/10
+						if (input_array[paused, YAXIS] > 0.5) {
+							room_speed = max(room_speed - 1, 10)
+						} else if (input_array[paused, YAXIS] < -0.5) {
+							room_speed = min(room_speed + 1, 120)
+						}
+						menu_option[3] = "game speed: " + string(room_speed/GAME_SPEED) + "x"
+					}
+				break;
+				case 4: //UI: Shwon
+					if (global.show_ui) {
+						global.show_ui = false
+						menu_option[3] = "ui: hidden"
+					} else {
+						global.show_ui = true
+						menu_option[3] = "ui: shown"
+					}
+				break;
+			}
+		}
+	}
 } else {
-	switch (controls_set[0] - 2) {
+	var j = 1;
+	while (controls_set[j] = 22) {		
+		j++	
+	}
+	
+	switch (controls_set[j] - 2) {
 		case -2: draw_text_normal(600, 400, "Hold any face button, then press G to configure controller") break;
 		case -1: draw_text_normal(600, 400, "Make sure nothing is pressed, then press G to configure, or H to load default") break;
 		case 0:  draw_text_normal(600, 400, "Hold ATTACK, then press G") break;

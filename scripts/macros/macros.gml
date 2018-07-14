@@ -102,6 +102,9 @@ show_debug_overlay(debug_mode)
 #macro GROUND_HEIGHT 10 //half the height from the top of the ground that is considered acceptable as on top
 #macro ATTACKER_REFRESH (GAME_SPEED*10) //the time an attacker lasts
 
+#macro GUI_HEIGHT display_get_gui_height()
+#macro GUI_WIDTH display_get_gui_width()
+#macro MENU_DELAY (GAME_SPEED/6)
 
 //globals
 global.network_protocol = network_socket_tcp //**note, if UDP is found to be too unreliable, switch to the more reliable, but slower TCP
@@ -142,6 +145,8 @@ global.ground = noone
 global.ground_distance = 0
 global.eth_angle = 0 //used for eth platform creation
 global.player_outside = false
+global.show_hitboxes = false
+global.show_ui = true
 
 //pallet swap index
 global.pallet[BAL] = pal_bal
@@ -187,3 +192,7 @@ add_moves() //add all of the attacks of the characters into memory (very very in
 pal_swap_init_system(shd_pal_swapper); //initialise pallet swap system
 
 draw_set_font(fnt_pixel_2) //set font
+
+for (var i = spr_bal_default; i <= spr_eth_special_neutral; i++) {
+	sprite_set_speed(i, sprite_get_speed(i)/GAME_SPEED, spritespeed_framespergameframe)
+}

@@ -1,7 +1,7 @@
 /// @description Draw hitboxes and create hitboxes
 
 //clear hitbox objects
-scr_draw_hitboxes(debug_mode)//hitbox)	
+scr_draw_hitboxes(global.show_hitboxes)	
 
 /*
 draw_set_halign(fa_center)
