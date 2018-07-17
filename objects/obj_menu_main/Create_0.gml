@@ -12,5 +12,5 @@ menu_sprite[4] = spr_menu_exit
 menu_index = 0
 old_menu_index = 0
 draw_count = 0
-active = true
+active = false
 alarm[0] = MENU_DELAY

@@ -1,4 +1,5 @@
 /// @description control menu
+
 if (!active) {
 	if (x < 0) {
 		x += GUI_WIDTH/15
@@ -40,27 +41,28 @@ if (!active) {
 	menu_index = (menu_index + array_length_1d(menu_option)) mod array_length_1d(menu_option) //wrap menu index around its range
 
 	if (_back) {
-		menu_index = array_length_1d(menu_option) - 1	
+		with(instance_create(-GUI_WIDTH, 0, obj_menu_main)) {
+			menu_index = 3	
+		}
+		active = false
 	}
 
 	if (_select) {
 		switch (menu_index) {
-			case 0: //fight
+			case 0: //settings
 				active = false
-				instance_create(-GUI_WIDTH,  0, obj_menu_char_select)
 			break;
-			case 1: //online
+			case 1: //replays
 				active = false		
 			break;
-			case 2: //story
+			case 2: //album
 				active = false		
 			break;
-			case 3: //vault
-				active = false	
-				instance_create(-GUI_WIDTH, 0, obj_menu_vault)
+			case 3: //stats
+				active = false		
 			break;
-			case 4: //exit
-				game_end()
+			case 4: //train
+				active = false
 			break;
 		}
 	}
