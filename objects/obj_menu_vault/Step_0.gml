@@ -27,11 +27,11 @@ if (!active) {
 				_select = true
 				alarm[0] = MENU_DELAY
 			}
-			if (abs(obj_input.input_array[i, ATTACK]) > 0.5) {
+			if (obj_input.input_array[i, ATTACK]) {
 				_select = true
 				alarm[0] = MENU_DELAY
 			}
-			if (abs(obj_input.input_array[i, SPECIAL]) > 0.5) {
+			if (obj_input.input_array[i, SPECIAL]) {
 				_back = true
 				alarm[0] = MENU_DELAY
 			}

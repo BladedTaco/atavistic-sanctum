@@ -78,7 +78,27 @@ if (argument_count = 0) { //default init for all ports
 			axis[argument[0], 2] = 1 //r horizontal multiplier
 			axis[argument[0], 3] = 1 //r vertical multiplier
 			axis[argument[0], 4] = 1 //l trigger multiplier
-			axis[argument[0], 5] = 1 //r trigger multiplier
+			axis[argument[0], 5] = 1 //r trigger multiplier//set button array
+			button_array[argument[0], 0]  = ATTACK	
+			button_array[argument[0], 1]  = SPECIAL	
+			button_array[argument[0], 2]  = JUMP		
+			button_array[argument[0], 3]  = JUMP		
+			button_array[argument[0], 4]  = GRAB		
+			button_array[argument[0], 5]  = GRAB		
+			button_array[argument[0], 6]  = PAUSE			
+			button_array[argument[0], 7]  = PAUSE		
+			button_array[argument[0], 8]  = LEFT_STICK
+			button_array[argument[0], 9]  = RIGHT_STICK
+			button_array[argument[0], 10] = TAUNT		
+			button_array[argument[0], 11] = TAUNT		
+			button_array[argument[0], 12] = TAUNT		
+			button_array[argument[0], 13] = TAUNT		
+			button_array[argument[0], 14] = SHIELD	
+			button_array[argument[0], 15] = SHIELD	
+			button_array[argument[0], 16] = XAXIS		
+			button_array[argument[0], 17] = YAXIS		
+			button_array[argument[0], 18] = ALT_XAXIS	
+			button_array[argument[0], 19] = ALT_YAXIS	
 		break;
 		
 		case 1: //gamecube
@@ -108,6 +128,27 @@ if (argument_count = 0) { //default init for all ports
 			axis[argument[0], 3] = 1.33 //r vertical multiplier
 			axis[argument[0], 4] = -1 //l trigger multiplier
 			axis[argument[0], 5] = -1 //r trigger multiplier
+			//set button array
+			button_array[argument[0], 0]  = ATTACK	
+			button_array[argument[0], 1]  = SPECIAL	
+			button_array[argument[0], 2]  = JUMP		
+			button_array[argument[0], 3]  = JUMP		
+			button_array[argument[0], 4]  = GRAB		
+			button_array[argument[0], 5]  = GRAB		
+			button_array[argument[0], 6]  = PAUSE			
+			button_array[argument[0], 7]  = PAUSE		
+			button_array[argument[0], 8]  = LEFT_STICK
+			button_array[argument[0], 9]  = RIGHT_STICK
+			button_array[argument[0], 10] = TAUNT		
+			button_array[argument[0], 11] = TAUNT		
+			button_array[argument[0], 12] = TAUNT		
+			button_array[argument[0], 13] = TAUNT		
+			button_array[argument[0], 14] = SHIELD	
+			button_array[argument[0], 15] = SHIELD	
+			button_array[argument[0], 16] = XAXIS		
+			button_array[argument[0], 17] = YAXIS		
+			button_array[argument[0], 18] = ALT_XAXIS	
+			button_array[argument[0], 19] = ALT_YAXIS	
 		break;
 	}	
 }

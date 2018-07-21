@@ -1255,6 +1255,14 @@
             }
         },
         {
+            "Key": "59f635c0-ba45-4903-bdba-eec663671b37",
+            "Value": {
+                "id": "a2fafad8-76d2-48b0-8ed2-2594b08100ba",
+                "resourcePath": "objects\\obj_name_menu\\obj_name_menu.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "5a5c4b43-e287-4bf4-a66a-4454542c2075",
             "Value": {
                 "id": "c4d6d128-e98f-464e-80b0-6b889251fdf6",
@@ -1380,6 +1388,14 @@
                 "id": "08ded052-00f7-41fe-89d7-cc8da8ccba6b",
                 "resourcePath": "notes\\symbols.yy",
                 "resourceType": "GMNotes"
+            }
+        },
+        {
+            "Key": "6293bd15-76cd-4c7e-bb87-8036dea6c5e7",
+            "Value": {
+                "id": "c6d79845-5928-4117-b77b-36a65fef2a29",
+                "resourcePath": "scripts\\scr_move_player\\scr_move_player.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -1991,6 +2007,14 @@
             }
         },
         {
+            "Key": "897e7bf3-f612-4873-b8c3-6f3567d3ef9d",
+            "Value": {
+                "id": "d805d208-e883-4753-a88b-8b18ef0f561c",
+                "resourcePath": "scripts\\scr_init_controller\\scr_init_controller.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "8a8088db-b8c0-4c51-9b8a-528211a1067c",
             "Value": {
                 "id": "26a05c25-981e-4c15-83b0-a4adb3aecbbc",
@@ -2484,6 +2508,14 @@
                 "id": "c7782672-e3be-4860-9ec6-48d3c5ab6eaa",
                 "resourcePath": "objects\\obj_ledge\\obj_ledge.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "b32e3ae1-d31e-4a55-8479-c103bad85fba",
+            "Value": {
+                "id": "dbc0fff6-3830-40d8-b20b-cb2b66656ae2",
+                "resourcePath": "scripts\\scr_check_controller_active\\scr_check_controller_active.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -3660,7 +3692,10 @@
         "0ac59313-0faa-4348-beac-7b8d9834d7d2",
         "c7a4716e-2e7b-4cd3-9722-e0d1235065c0",
         "0938c86c-3e23-433f-9a4d-e82e42dab957",
-        "9c003353-cd00-473a-8e80-aa111ce0e02e"
+        "9c003353-cd00-473a-8e80-aa111ce0e02e",
+        "6293bd15-76cd-4c7e-bb87-8036dea6c5e7",
+        "897e7bf3-f612-4873-b8c3-6f3567d3ef9d",
+        "b32e3ae1-d31e-4a55-8479-c103bad85fba"
     ],
     "tutorial": ""
 }

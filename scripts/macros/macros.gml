@@ -83,8 +83,8 @@ show_debug_overlay(debug_mode)
 
 //character identiiers
 #macro BAL 0
-#macro GEO 1
-#macro MAC 2
+#macro MAC 1
+#macro GEO 2
 #macro ETH 3
 
 
@@ -111,6 +111,7 @@ global.network_protocol = network_socket_tcp //**note, if UDP is found to be too
 global.network_ip = get_string("enter ip", "127.0.0.1")//"127.0.0.1"
 
 global.advance = false
+
 
 global.network_port = 6510
 global.player_name = "PLAYER"

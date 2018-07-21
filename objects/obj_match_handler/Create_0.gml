@@ -26,7 +26,7 @@ for (var i = 0; i < global.player_number; i++) {
 		player_col = make_colour_hsv((i/7)*255, 255, 150)
 		player_number = i
 		other.player[i] = id
-		character = get_integer("CHARACTER:\nBAL = 0\nGEO = 1\nMAC = 2\nETH = 3", 0)
+		character = get_integer("CHARACTER:\nBAL = 0\nMAC = 1\nGEO = 2\nETH = 3", 0)
 		max_jumps = 2
 		if (character = MAC) { max_jumps = 0 }
 		if (character = BAL) { max_jumps = 4 }

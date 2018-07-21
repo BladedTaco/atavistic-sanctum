@@ -47,7 +47,7 @@ if (!active) {
 		switch (menu_index) {
 			case 0: //fight
 				active = false
-				instance_create(-GUI_WIDTH,  0, obj_menu_char_select)
+				instance_create(-GUI_WIDTH,  0, obj_menu_char_select)				
 			break;
 			case 1: //online
 				active = false		
