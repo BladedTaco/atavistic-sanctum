@@ -1,6 +1,6 @@
 /// @description 
 
-if (debug_mode) {
+if (global.debug) {
 	draw_set_alpha(0.5)
 	draw_set_colour(c_olive)
 	draw_circle(x, y, _maj, true)

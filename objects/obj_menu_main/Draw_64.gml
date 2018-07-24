@@ -11,7 +11,11 @@ for (var i = 0; i < array_length_1d(menu_option); i++) {
 	_yy = y + 70 + 80*i
 	if (i = menu_index) {
 		_xx = x - 80*_percent*(old_menu_index != menu_index)
-		draw_sprite_ext(spr_menu_item_selected, 0, _xx, _yy, 2, 2, 0, c_white, 1)
+		if (menu_index = 4) {
+			draw_sprite_ext(spr_menu_item_selected, 0, _xx, _yy, 2, 2, 0, merge_colour(c_white, c_black, max(alarm[1]/GAME_SPEED, 0)), 1)
+		} else {
+			draw_sprite_ext(spr_menu_item_selected, 0, _xx, _yy, 2, 2, 0, c_white, 1)
+		}
 		draw_text_outlined(_xx + 180, _yy + 40, c_black, c_white, menu_option[i], 4)
 	} else if (i = old_menu_index) {
 		_xx = x + (80*_percent - 80)*(old_menu_index != menu_index)

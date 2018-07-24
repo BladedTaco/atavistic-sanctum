@@ -130,7 +130,7 @@ if (paused >= 0) {
 		case 20: draw_text_normal(600, 400, "Press G to reset controls") break;
 	}
 
-	if (debug_mode) {
+	if (global.debug) {
 		for (var i = 0; i <= global.player_number; i++) {
 			for (var o = 0; o < array_length_2d(input_array, i); o++) {
 				draw_text_normal(i*150 + 50, o*15 + 50, input_array[i, o])

@@ -1,10 +1,10 @@
 /// @description 
 if !(dead) {
 	if (spawning) {
-		image_alpha = min(image_alpha + (1/GAME_SPEED), 1)	
+		image_alpha = min(image_alpha + (0.35/GAME_SPEED), 1)	
 		percentage = lerp(floor(percentage), 0, 0.04)
 		shield_percentage = lerp(ceil(shield_percentage), shield_max_percentage, 0.04)
-		if (draw_count >= GAME_SPEED) {
+		if (draw_count >= GAME_SPEED*3) {
 			spawning = false	
 		}
 	}

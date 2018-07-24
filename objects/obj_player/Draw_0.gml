@@ -124,7 +124,7 @@ if !(dead) {
 	}
 
 
-	if (debug_mode) {
+	if (global.debug) {
 		draw_set_colour(c_aqua)
 		draw_line(x, y, x + momentum_x, y + momentum_y)
 		draw_set_colour(c_lime)

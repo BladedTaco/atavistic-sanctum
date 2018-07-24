@@ -123,3 +123,14 @@ if (global.show_ui) {
 		draw_text_outlined(display_get_gui_width()/2, 40, c_black, c_white, _str, 4)
 	}
 }
+
+if (starting > -1) {
+	draw_set_font(fnt_pixel_16)
+	if (starting <= 0) {
+		draw_text_outlined(GUI_WIDTH/2, GUI_HEIGHT/2, c_black, c_white, "FIGHT", 16)
+	} else {
+		draw_text_outlined(GUI_WIDTH/2, GUI_HEIGHT/2, c_black, c_white, string(ceil(starting)), 16)
+	}
+	draw_set_font(fnt_pixel)
+	starting -= 1/GAME_SPEED
+}

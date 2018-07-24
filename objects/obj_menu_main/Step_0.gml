@@ -60,7 +60,11 @@ if (!active) {
 				instance_create(-GUI_WIDTH, 0, obj_menu_vault)
 			break;
 			case 4: //exit
-				game_end()
+				alarm[1] += 2 //set exit alarm
+				alarm[0] = -1 //remove input delay alarm
+				if (alarm[1] > GAME_SPEED) {
+					game_end()
+				}
 			break;
 		}
 	}

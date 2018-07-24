@@ -20,8 +20,6 @@ do {
 			global.player_number -= 1
 		}
 	*/
-	_ex = _inst.effective_x //store initial effective x difference for shorthand use
-	_ey = _inst.effective_y //store initial effective y difference for shorthand use
 	//check exit conditions in case of false input
 	if (i >= global.player_number) { exit }
 	if (!instance_exists(_inst)) { i++; continue }
@@ -29,6 +27,8 @@ do {
 	if (input_array[i, PAUSE]) { //pause or unpause
 		global.paused = !global.paused	
 	}
+	_ex = _inst.effective_x //store initial effective x difference for shorthand use
+	_ey = _inst.effective_y //store initial effective y difference for shorthand use
 	if ((input_array[i, YAXIS] < 0.5) or (state[i] = SMASH_ATTACK) or (state[i] = SPECIAL_ATTACK) or (state[i] = TILT_ATTACK)) {
 		_inst.alarm[1] = 5 
 	} //platform drop alarm

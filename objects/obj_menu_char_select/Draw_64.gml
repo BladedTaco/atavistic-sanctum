@@ -39,6 +39,8 @@ if (time > 0) {
 } else {
 	draw_text_outlined(_xx + GUI_WIDTH*0.775, _yy + 20, c_black, c_white, "Time     FOREVER", 4)	
 }
+
+
 draw_set_colour($eeeeee) //faded white
 draw_rectangle(_xx, _yy + 50, _xx + GUI_WIDTH, _yy + GUI_HEIGHT*0.75, false) //middle section colour
 //draw character selection icons with pallet swap applied
@@ -92,7 +94,17 @@ if (player_number < 8) {
 	draw_text_outlined(_xx + GUI_WIDTH*((player_number + 0.5)/(player_number + 1)), _yy + GUI_HEIGHT*0.875, c_black, c_white, "MORE PLAYERS?", 2)
 }
 
+var _start = true
+
 for (var i = 0; i < player_number; i++) {
 	draw_sprite_ext(spr_cursor, 0, _xx + cursor_x[i], _yy + cursor_y[i], 2, 2, 0, player_col[i], 1)
 	draw_text_outlined(_xx + cursor_x[i] + 18, _yy + cursor_y[i] + 14, c_black, c_white, "P" + string(i + 1), 2)
+	if (character[i] < 0) {
+		_start = false	
+	}
+}
+
+if ((player_number > 1) and (_start)) {
+	draw_set_font(fnt_pixel_4)
+	draw_text_outlined(GUI_WIDTH/2, GUI_HEIGHT*0.15, c_black, c_white, "PRESS PAUSE TO START", 4)
 }

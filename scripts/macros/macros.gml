@@ -108,7 +108,7 @@ show_debug_overlay(debug_mode)
 
 //globals
 global.network_protocol = network_socket_tcp //**note, if UDP is found to be too unreliable, switch to the more reliable, but slower TCP
-global.network_ip = get_string("enter ip", "127.0.0.1")//"127.0.0.1"
+global.network_ip = "127.0.0.1"//get_string("enter ip", "127.0.0.1")
 
 global.advance = false
 
@@ -125,6 +125,7 @@ global.player_number = 1
 global.local_players = 1
 global.wait = false
 global.paused = false
+global.debug = false
 
 //variables used to pass in info for a bbox's create event
 for (var i = 10; i >= 0; i--) {
@@ -148,6 +149,22 @@ global.eth_angle = 0 //used for eth platform creation
 global.player_outside = false
 global.show_hitboxes = false
 global.show_ui = true
+//get the standard rules
+if (!file_exists("rules.txt")) {
+	var _file = file_text_open_write("rules.txt")
+	file_text_write_real(_file, 3); file_text_writeln(_file);
+	file_text_write_real(_file, 5); file_text_writeln(_file);
+	file_text_write_real(_file, 100); file_text_writeln(_file);
+	file_text_write_real(_file, 100); file_text_writeln(_file);
+} else {
+	var _file = file_text_open_read("rules.txt")
+}
+global.stocks = file_text_read_real(_file); file_text_readln(_file);
+global.time = file_text_read_real(_file); file_text_readln(_file);
+global.sound = file_text_read_real(_file); file_text_readln(_file); //global sound percentage
+global.music = file_text_read_real(_file); file_text_readln(_file); //global music sound percentage
+file_text_close(_file); //close the file
+
 
 //pallet swap index
 global.pallet[BAL] = pal_bal
@@ -185,6 +202,7 @@ enum _IMPULSE { //define an impulse enumeration field (actual values are divided
 	_ETH_U_SPEC = 100, //etheral spirits up special (ongoing)
 	_BAL_U_SPEC = 70 //balloony's recovery (ongoing)
 }
+
 
 
 

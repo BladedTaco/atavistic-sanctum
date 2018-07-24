@@ -14,3 +14,4 @@ old_menu_index = 0
 draw_count = 0
 active = false
 alarm[0] = MENU_DELAY
+alarm[1] = -1

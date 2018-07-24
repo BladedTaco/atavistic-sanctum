@@ -37,7 +37,6 @@ with (obj_input) {
 	axis[argument[1], 4]  					= axis[argument[0], 4]
 	axis[argument[1], 5]  					= axis[argument[0], 5]
 	controls_set[argument[1]]   			= controls_set[argument[0]]
-	button[argument[1], 0]   				= button[argument[0], 0]
 	smash[argument[1]]   					= smash[argument[0]]
 	analogue[argument[1]]   				= analogue[argument[0]]
 	controller[argument[1]]   				= controller[argument[0]]
@@ -50,6 +49,9 @@ with (obj_input) {
 	sticky_pause[argument[1]]   			= sticky_pause[argument[0]]  
 	smash_deadzone[argument[1]]  			= smash_deadzone[argument[0]]							
 	trigger_threshold[argument[1]]			= trigger_threshold[argument[0]]
+	for (var o = 0; o < array_length_2d(button, argument[0]); o++) {
+		button[argument[1], o]   			= button[argument[0], o]
+	}
 	for (var o = 0; o < 20; o++) {
 		button_const_array[argument[1], o]	= button_const_array[argument[0], o]  
 		button_array[argument[1], o]		= button_array[argument[0], o] 

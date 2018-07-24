@@ -56,7 +56,6 @@ if (_x1*argument[0].image_xscale > obj_input.l_stick_deadzone[argument[1]]) { //
 }	
 
 
-
 argument[0].momentum_x *= 0.8/argument[0].inertia
 argument[0].momentum_y *= 0.9/argument[0].inertia
 

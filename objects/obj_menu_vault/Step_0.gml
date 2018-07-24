@@ -51,6 +51,7 @@ if (!active) {
 		switch (menu_index) {
 			case 0: //settings
 				active = false
+				instance_create(-GUI_WIDTH, 0, obj_menu_settings)
 			break;
 			case 1: //replays
 				active = false		
