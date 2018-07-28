@@ -274,7 +274,7 @@
             "Key": "0d958cf9-3ae5-4201-9367-27ac32ebd957",
             "Value": {
                 "id": "459e2721-0749-4ebd-80ae-07e90d51db0e",
-                "resourcePath": "datafiles_yy\\default_keyboard_controls.txt.yy",
+                "resourcePath": "datafiles_yy\\controllers\\default_keyboard_controls.txt.yy",
                 "resourceType": "GMIncludedFile"
             }
         },
@@ -444,6 +444,14 @@
                 "id": "ae7276a0-7faf-499f-98a7-b0fd462f3b54",
                 "resourcePath": "sprites\\spr_mac_throw_up\\spr_mac_throw_up.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "1928bc42-76a3-479f-80ca-5890e8c80560",
+            "Value": {
+                "id": "37d835a2-6cc4-4eb9-83d0-0070f5d76c9f",
+                "resourcePath": "datafiles_yy\\controllers\\MAYFLASH GameCube Controller Adapter.txt.yy",
+                "resourceType": "GMIncludedFile"
             }
         },
         {
@@ -1447,6 +1455,14 @@
             }
         },
         {
+            "Key": "62adb313-68d1-4671-ae3d-ed2309bb4d5d",
+            "Value": {
+                "id": "f55fd7b3-9ae4-46a8-90bf-448fa3317b08",
+                "resourcePath": "views\\62adb313-68d1-4671-ae3d-ed2309bb4d5d.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "631f062d-de94-489a-81de-22298d04942e",
             "Value": {
                 "id": "9296be24-46a3-485f-b53e-aea167435e45",
@@ -1572,6 +1588,14 @@
                 "id": "cbb7e08d-30c1-4430-892b-3c2715072cb4",
                 "resourcePath": "views\\6adfbf6b-9c8b-410c-883c-4d288e1356c9.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "6bd25a44-ee73-4d0e-be98-2f6e0ca2bd40",
+            "Value": {
+                "id": "c96a5542-5c2c-439f-828c-ddba6a871be7",
+                "resourcePath": "datafiles_yy\\controllers.txt.yy",
+                "resourceType": "GMIncludedFile"
             }
         },
         {
@@ -2439,6 +2463,14 @@
             }
         },
         {
+            "Key": "a947e167-7230-4dbf-acd4-9cbd3bc1853b",
+            "Value": {
+                "id": "2612349b-5e80-4f51-89fb-2976597bb3b9",
+                "resourcePath": "datafiles_yy\\controllers\\default_controller_controls.txt.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "abd2a99b-21a0-4c5c-9085-37634facdd6d",
             "Value": {
                 "id": "890d77c7-a1f3-4f59-87a0-f640054da56d",
@@ -2799,6 +2831,14 @@
             }
         },
         {
+            "Key": "be573dc3-c2f7-4efb-a89f-ef52b59d95ca",
+            "Value": {
+                "id": "c2cae724-910e-4dc0-84e7-54acc1b6b210",
+                "resourcePath": "objects\\obj_profile_menu\\obj_profile_menu.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "bf33f697-ee16-43f4-b2e0-e914820fa0e1",
             "Value": {
                 "id": "a9d16423-a312-4709-bae2-10f2ba96291c",
@@ -3044,6 +3084,14 @@
                 "id": "f92ca8d2-9bd8-43c3-8f13-da09e7829581",
                 "resourcePath": "scripts\\scr_test_collision\\scr_test_collision.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "ce6d5a12-b77b-4d3e-a450-aa844d6ea387",
+            "Value": {
+                "id": "c58ae68d-e056-4f7a-b66a-66c2500ea4b1",
+                "resourcePath": "notes\\included files.yy",
+                "resourceType": "GMNotes"
             }
         },
         {

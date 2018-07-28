@@ -21,7 +21,7 @@ if (argument[0]) {
 				player_number = i
 				other.player[i] = id
 				character = o.character[i]
-				stocks = o.stocks
+				stocks = o.stocks - 1
 				name = o.name[i]
 				//set jumps
 				max_jumps = 2

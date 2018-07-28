@@ -12,8 +12,11 @@ with (obj_player) {
 			}
 		break;
 		case 1: //time ran out
-			if (stocks > 0) {
+			if (stocks > 0) { // was a stock match
 				placing = stocks*100 - percentage/100
+			}
+			if (stocks = -1) { //was a timed match
+				placing = array_length_2d(obj_results.kills, player_number) - array_length_2d(obj_results.deaths, player_number)
 			}
 		break;
 		case 2: //forfeit
@@ -53,5 +56,5 @@ instance_destroy(obj_match_handler)
 
 
 
-
+obj_results.alarm[0] = GAME_SPEED*15
 

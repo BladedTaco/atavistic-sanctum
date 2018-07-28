@@ -50,6 +50,7 @@ if (paused >= 0) {
 					file_delete(working_directory + "PAUSE_SCREEN") //delete the pause screen
 					sprite_delete(pause_sprite)
 					instance_activate_all()
+					instance_deactivate_object(obj_menu_char_select)
 					if (_end) {
 						scr_end_game(2, paused)	
 					}
@@ -99,6 +100,7 @@ if (paused >= 0) {
 		}
 	}
 } else {
+	/*	TODO MOVE THIS CODE
 	var j = 1;
 	while (controls_set[j] = 22) {		
 		j++	
@@ -142,4 +144,5 @@ if (paused >= 0) {
 			draw_circle(400 + i*15, 100 + 50*input_buffer_array[i*100 + 0, XAXIS], 5, false)
 		}
 	}
+	*/
 }

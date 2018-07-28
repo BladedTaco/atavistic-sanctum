@@ -20,6 +20,12 @@ if ((creator.alarm[0] > 0) and (creator.menu_index != creator.old_menu_index)) {
 		}
 	}
 } else {
+	//allow for text wrapping for states 1 and 2
+	if (abs(y) < GUI_HEIGHT*0.1/MENU_DELAY) {
+		y = 0
+	} else {
+		y += (GUI_HEIGHT*0.1/MENU_DELAY)*sign(-y)
+	}
 	x = creator.x + GUI_WIDTH*0.5
 	var _select = false
 	var _back = false
@@ -30,6 +36,9 @@ if ((creator.alarm[0] > 0) and (creator.menu_index != creator.old_menu_index)) {
 					menu_index += sign(obj_input.input_array[i, YAXIS])
 					draw_count = 0
 					alarm[0] = MENU_DELAY
+					if (state < 2) {
+						y += sign(obj_input.input_array[i, YAXIS])*GUI_HEIGHT*0.1	
+					}
 				}
 			}
 			if (state = 2) {
@@ -80,11 +89,6 @@ if ((creator.alarm[0] > 0) and (creator.menu_index != creator.old_menu_index)) {
 						menu_option[3, 1] = "MUSIC = " + string(global.music) + "%" 
 					}
 				}
-			} else {
-				//if (obj_input.input_array[i, XAXIS] > 0.5) {
-				//	_select = true
-				//	alarm[0] = MENU_DELAY
-				//}
 			}
 			if (obj_input.input_array[i, ATTACK] and !obj_input.sticky_attack[i]) {
 				obj_input.sticky_attack[i] = true
@@ -121,15 +125,24 @@ if ((creator.alarm[0] > 0) and (creator.menu_index != creator.old_menu_index)) {
 
 	if (_select) {
 		switch (state) {
-			case 0: //names and profiles
-				active = false
+			case 0: case 1://names and controllers
+				sub_menu = true
+				with(instance_create(0, GUI_HEIGHT, obj_profile_menu)) {
+					depth = other.depth - 1 //set to be above this menu
+					state = other.state*3 //set state
+					if (menu_index < array_length_2d(menu_option, state) - 1) { //if not creating or deleting name
+						name = menu_option[state, menu_index] //give name to handle
+					} else {
+						name = "" //clear name
+						state += array_length_2d(menu_option, state) - menu_index - 1 //set state to create or delete
+					}
+				}
 			break;
-			case 1: //controllers
-				active = false		
-			break;
+			
 			case 2: case 3: //rules and sound
 				sub_menu = !sub_menu
 			break;
+			
 			case 4: //debug
 				global.debug = !global.debug
 				show_debug_overlay(global.debug)

@@ -12,3 +12,6 @@ for (var i = 0; i < global.player_number; i++) {
 	real_placing[i, 1] = -1
 }
 placing[0] = -1
+
+
+alarm[0] = -1

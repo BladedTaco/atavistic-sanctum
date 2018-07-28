@@ -106,5 +106,5 @@ for (var i = 0; i < player_number; i++) {
 
 if ((player_number > 1) and (_start)) {
 	draw_set_font(fnt_pixel_4)
-	draw_text_outlined(GUI_WIDTH/2, GUI_HEIGHT*0.15, c_black, c_white, "PRESS PAUSE TO START", 4)
+	draw_text_outlined(_xx + GUI_WIDTH/2, _yy + GUI_HEIGHT*0.15, c_black, c_white, "PRESS PAUSE TO START", 4)
 }

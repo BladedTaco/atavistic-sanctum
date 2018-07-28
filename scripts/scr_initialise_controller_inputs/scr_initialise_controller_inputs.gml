@@ -1,9 +1,6 @@
-///@func scr_initialise_controller_inputs(*player_number, *controller_type)
-///@param *player_number - optional, the number of the player to intialise
-///@param *controller_type - must be included with player_number, the controller type (0 1 2) (GEN, GC, PSX)
+///@func scr_initialise_controller_inputs()
 ///@desc Initialises the controller inputs
 
-if (argument_count = 0) { //default init for all ports
 	for (var i = 0; i < 8; i++) {
 		trigger_threshold[i] = 0.5			//trigger threshold for triggers
 											//constants			GameCube		PSX				XBOX/GENERIC	
@@ -50,7 +47,9 @@ if (argument_count = 0) { //default init for all ports
 		button_const_array[i, 18] = -1	
 		button_const_array[i, 19] = -1
 	}
-} else { //specific init for a specific port
+
+
+	/* DEPRECATED in favour of using files
 	switch (argument[1]) {
 		case 0: case 2: //generic
 			button_const_array[argument[0], 0]  = gp_face1		
@@ -150,8 +149,9 @@ if (argument_count = 0) { //default init for all ports
 			button_array[argument[0], 18] = ALT_XAXIS	
 			button_array[argument[0], 19] = ALT_YAXIS	
 		break;
-	}	
+	}
 }
+*/
 				/*												//PSX				XBOX/GENRIC		GAMECUBE		ALSO GAMECUBE SOMEHOW
 button_const_array[0]  = gp_face1		//buttons start			//Cross				A				//X				L stick Vert			
 button_const_array[1]  = gp_face2								//Circle			B				//A				C stick Vert		

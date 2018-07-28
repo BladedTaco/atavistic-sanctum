@@ -3,7 +3,7 @@
 ///@desc initialises one slot to be keyboard controls, call after controller initialisation
 
 
-var _file = file_text_open_read("default_keyboard_controls.txt") //open keyboad controls file
+var _file = file_text_open_read("controllers/default_keyboard_controls.txt") //open keyboad controls file
 
 var i = 0
 do {

@@ -39,6 +39,7 @@ if !(sub_menu) {
 				if (obj_input.input_array[i, ATTACK]) {
 					_select = true
 					alarm[0] = MENU_DELAY
+					obj_input.sticky_attack[i] = true
 				}
 				if (obj_input.input_array[i, SPECIAL]) {
 					_back = true

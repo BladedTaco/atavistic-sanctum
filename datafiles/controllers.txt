@@ -1,0 +1,2 @@
+Default
+MAYFLASH GameCube Controller Adapter

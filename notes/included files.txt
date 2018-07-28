@@ -1,0 +1,19 @@
+INCLUDED FILES - included with the game, edited through use of the game, not deletable
+
+	names.txt - the file which holds the names of all the different profiles, edited on name creation/deletion
+	rules.txt - the file which contains the base game rules, edited in settings
+	controllers/
+		controllers.txt - lists the names of all the different controller layout files, edited on controller profile creation/deletion
+		default_keyboard_controls.txt - the file that holds the default keyboard controls for the game, edited in settings
+		default_controller_controls.txt - the file that holds the default controller controls for the game, edited in settings
+		MAYFLASH GameCub Controller Adapter.txt - the file that holds the controller settings of its name, edited in settings
+	
+	
+CREATED FILES - created, edited, and deleted through use of the game
+
+	names/
+		*.txt - a file to hold the profile for a given name, edited in settings
+	replays/
+		*.txt - a file to hold the information for a replay of a match
+	controllers/
+		*.txt - a file to hold the button layout for a controller with a gamepad_get_description value of the filename

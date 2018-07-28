@@ -483,6 +483,7 @@ do {
 		if !(position_meeting(_inst.x + _inst.effective_x, _inst.y + _inst.effective_y, obj_blast_zone)) { //if (not in play area)
 			//if not(not helpless, and above the blast zone)
 			if !((state[i] != HELPLESS) and (position_meeting(_inst.x + _inst.effective_x, obj_blast_zone.y, obj_blast_zone)) and (_inst.y < 0)) {
+				//die
 				_inst.stocks -= 1
 				if (instance_exists(_inst.attacker)) {
 					obj_results.kills[_inst.attacker.player_number, array_length_2d(obj_results.kills, _inst.attacker.player_number)] = _inst.player_number
@@ -493,7 +494,7 @@ do {
 				with (instance_create(clamp(_inst.x, 0, room_width), clamp(_inst.y, 0, room_height), obj_death_effect)) {
 					player_col = _inst.player_col
 				}
-				if (_inst.stocks > 0) {
+				if (_inst.stocks != 0) {
 					with (obj_spawn_point) { if (number = i) { var o = id } } //get spawn point position
 					with(_inst) {
 						momentum_x = 0
@@ -507,13 +508,15 @@ do {
 						other.state[i] = FREEFALL
 					}
 				} else {
-					obj_results.placing[array_length_1d(obj_results.placing)] = _inst.player_number
-					_inst.placing = array_length_1d(obj_results.placing) - 1
-					_inst.dead = true
-					state[i] = DEAD
-					if (array_length_1d(obj_results.placing) >= global.player_number) {
-						scr_end_game(0)
-						exit
+					if (_inst.stocks != -1) {
+						obj_results.placing[array_length_1d(obj_results.placing)] = _inst.player_number
+						_inst.placing = array_length_1d(obj_results.placing) - 1
+						_inst.dead = true
+						state[i] = DEAD
+						if (array_length_1d(obj_results.placing) >= global.player_number) {
+							scr_end_game(0)
+							exit
+						}
 					}
 				}
 			}

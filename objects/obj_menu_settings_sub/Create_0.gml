@@ -1,5 +1,5 @@
 /// @description 
-menu_option[0, 0] = "NAMES/PROFILES" //name and profile creation and deletion
+menu_option[0, 0] = "NAMES" //name/profile creation and deletion
 menu_option[1, 0] = "CONTROLLERS" //change default configurations for controllers
 menu_option[2, 0] = "STOCKS = " + string(global.stocks) //change default match rules
 menu_option[2, 1] = "TIME = " + string(global.time) //change default match rules
@@ -43,3 +43,31 @@ if (global.stocks = 0) {
 if (global.time = 0) {
 	menu_option[2, 1] = "TIME = FOREVER"
 }
+
+//read names to menu
+var _file = file_text_open_read("names.txt")
+var i = 0
+while (!file_text_eof(_file)) {
+	menu_option[0, i] = file_text_read_string(_file)
+	file_text_readln(_file);
+	i++
+}
+file_text_close(_file) //close file
+menu_option[0, i] = "DELETE NAME"
+i++
+menu_option[0, i] = "ADD NAME"
+
+//read controllers to menu
+_file = file_text_open_read("controllers.txt")
+i = 0
+while (!file_text_eof(_file)) {
+	menu_option[1, i] = file_text_read_string(_file)
+	file_text_readln(_file);
+	i++
+}
+file_text_close(_file) //close file
+menu_option[1, i] = "DELETE PROFILE"
+i++
+menu_option[1, i] = "ADD PROFILE"
+
+

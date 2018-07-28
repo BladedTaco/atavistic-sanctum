@@ -181,17 +181,25 @@ if (room = rm_menu) {
 					active = false
 				}
 			}
-			if (obj_input.input_array[i, PAUSE] and !obj_input.sticky_pause[i]) {
-				obj_input.sticky_pause[i] = true
-				for (var o = 0; o < player_number; o++) {
-					if (character[i] < 0) {
-						o = -1
+			if (alarm[0] <= 0) { //dont alllow startgin match if exiting menu
+				if (obj_input.input_array[i, PAUSE] and !obj_input.sticky_pause[i]) {
+					obj_input.sticky_pause[i] = true
+					for (var o = 0; o < player_number; o++) {
+						if (character[o] < 0) { //character not selected
+							o = -1
+							break;
+						}
+					}
+					if (o > 1) { //if all players have a character selected and there are 2 players or more
+						scr_start_match(false) //move to the match room
 						break;
 					}
 				}
-				if (o > 1) {
-					scr_start_match(false) //move to the match room
-					break;
+			} else {
+				//sticky pause somehow gets stuck on a forfeit from a match
+				//this code prevents that from happening.
+				if (!obj_input.input_array[i, PAUSE]) {
+					obj_input.sticky_pause[i] = false
 				}
 			}
 		}
@@ -208,6 +216,6 @@ if (room = rm_menu) {
 	alarm[0] += 2
 	y = ((alarm[0]*alarm[0])/(GAME_SPEED*GAME_SPEED))*GUI_HEIGHT
 	if (alarm[0] > GAME_SPEED) {
-		instance_destroy();	
+		instance_deactivate_object(obj_menu_char_select);	
 	}
 }
