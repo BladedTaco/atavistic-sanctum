@@ -54,16 +54,16 @@ if (!active) {
 				instance_create(-GUI_WIDTH, 0, obj_menu_settings)
 			break;
 			case 1: //replays
-				active = false		
+				//active = false		
 			break;
 			case 2: //album
-				active = false		
+				//active = false		
 			break;
 			case 3: //stats
-				active = false		
+				//active = false		
 			break;
 			case 4: //train
-				active = false
+				//active = false
 			break;
 		}
 	}

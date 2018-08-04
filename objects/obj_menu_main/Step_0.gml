@@ -50,10 +50,10 @@ if (!active) {
 				instance_create(-GUI_WIDTH,  0, obj_menu_char_select)				
 			break;
 			case 1: //online
-				active = false		
+				//active = false		
 			break;
 			case 2: //story
-				active = false		
+				//active = false		
 			break;
 			case 3: //vault
 				active = false	

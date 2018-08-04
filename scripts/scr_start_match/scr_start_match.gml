@@ -50,10 +50,11 @@ if (argument[0]) {
 	}
 } else {
 	//go to the match room
-	var _stage = asset_get_index("rm_match_" + string(get_integer("Select Stage:\n1 = stage 1\n2 = stage 2", 1)))
+	var _stage = asset_get_index("rm_match_" + string(get_integer("Select Stage:\n1 = Ascent\n2 = Outer Sanctum\n3 = Inner Sanctum", 1)))
 	if (room_exists(_stage)) { //if provided with a valid room
 		room_goto(_stage) //go to that room
 	} else { //otherwise
+		show_message("Invalid Room Number,\ngoing to Ascent")
 		room_goto(rm_match_1) //go to the first match room
 	}
 }
