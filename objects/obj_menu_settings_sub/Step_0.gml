@@ -144,7 +144,7 @@ if (creator.alarm[0] > 0) { //if moving between states
 							other.name = menu_option[state, menu_index] //clear name
 							other.state += array_length_2d(menu_option, state) - menu_index  //set state to create or delete
 						}
-					}
+					}			
 				}
 			break;
 			

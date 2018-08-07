@@ -44,7 +44,7 @@ while (!file_text_eof(_file)) {
 file_text_close(_file) //close file
 menu_option[0, i] = "DELETE NAME"
 i++
-menu_option[0, i] = "ADD NAME"
+menu_option[0, i] = "ADD NAME\b"
 
 //read controllers to menu
 _file = file_text_open_read("controllers.txt")

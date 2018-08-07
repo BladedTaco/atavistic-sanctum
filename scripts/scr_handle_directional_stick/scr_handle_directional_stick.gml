@@ -15,11 +15,12 @@ var _smash_difference = smash[argument[0]] //temporary value
 if (_movement < _old_position) { _difference = 0 } //make difference 0 if returning to centre
 
 if (_movement < l_stick_deadzone[argument[0]]) { //if left stick input is inside deadzone
-	_input[@ 0] = 0 //set xaxis to 0
-	_input[@ 1] = 0 //set yaxis to 0
-	_input[@ 9] = NEUTRAL_MOVE //set movement type to neutral
+	_input[@ XAXIS] = 0 //set xaxis to 0
+	_input[@ YAXIS] = 0 //set yaxis to 0
+	_input[@ TILT] += NEUTRAL_MOVE //set movement type to neutral
 } else if ((_difference > _smash_difference) and (_movement > _smash_deadzone)){ //smash movement
-	_input[@ 9] = SMASH_MOVE //set movement type to smash
+	_input[@ TILT] += SMASH_MOVE //set movement type to smash
 } else { //slow movement but on the outside of the stick
-	_input[@ 9] = TILT_MOVE	//set movement type to tilt
+	_input[@ TILT] += TILT_MOVE	//set movement type to tilt
 }
+_input[@ TILT] = min(_input[@ TILT], SMASH_MOVE) //limit tilt

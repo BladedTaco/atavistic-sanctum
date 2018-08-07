@@ -13,17 +13,10 @@ if (file_exists(_file)) {
 
 with (obj_input) { //with the input handler
 	//load values
-	c_stick_action[argument[0]]   			= file_text_read_real(_file); file_text_readln(_file);
-	c_stick_deadzone[argument[0]]   		= file_text_read_real(_file); file_text_readln(_file);		
-	l_stick_deadzone[argument[0]]    		= file_text_read_real(_file); file_text_readln(_file);	
-	l_stick_neutral[argument[0]]   			= file_text_read_real(_file); file_text_readln(_file);		
-	smash[argument[0]]   					= file_text_read_real(_file); file_text_readln(_file);	
-	analogue[argument[0]]   				= file_text_read_real(_file); file_text_readln(_file);	
-	smash_deadzone[argument[0]]				= file_text_read_real(_file); file_text_readln(_file);	
-	trigger_threshold[argument[0]]			= file_text_read_real(_file); file_text_readln(_file);
+	c_stick_action[argument[0]] = file_text_read_real(_file); file_text_readln(_file);
 	var o = 0
 	while (!file_text_eof(_file)) { //stop storing new values when the file closes
-		button_array[argument[0], o]		= file_text_read_real(_file); file_text_readln(_file);
+		button_array[argument[0], o] = file_text_read_real(_file); file_text_readln(_file);
 		o++
 	}
 }

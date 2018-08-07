@@ -7,5 +7,5 @@ alarm[0] = MENU_DELAY*2
 state = 0
 name = ""
 active = false
-sub_index = 0
-sub_name = "TEST NAME HERE"
+sub_index = 1
+sub_name = "|"

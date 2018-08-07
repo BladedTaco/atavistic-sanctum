@@ -1,11 +1,11 @@
-///@func scr_init_controller(player_number, controller_port)
+///@func scr_init_controller(player_number, name)
 ///@param player_number - the number of the player
-///@param controller_port - the number of the port of the controller
+///@param name - the name of the controller profile
 ///@desc intialises the base inputs for the given controller for the given player
 
 with (obj_input) {
 	//get the file and open it
-	var _file = working_directory + "controllers/" + gamepad_get_description(argument[1]) + ".txt"
+	var _file = working_directory + "controllers/" + argument[1] + ".txt"
 	if (file_exists(_file)) {
 		_file = file_text_open_read(_file)
 	} else {

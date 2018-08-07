@@ -32,6 +32,7 @@ show_debug_overlay(debug_mode)
 #macro	ALT_YAXIS 11	
 #macro	LEFT_STICK 12	
 #macro	RIGHT_STICK	13	
+#macro  NOTHING 14
 
 // types of entries for obj_input.input_array[x, 9]
 #macro NEUTRAL_MOVE 0 

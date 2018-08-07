@@ -2,8 +2,7 @@
 if (instance_exists(creator)) {
 	creator.alarm[0] = MENU_DELAY	
 }
-if (active = 1) {
-	
+if (active = 1) { //if menu is active
 	if ((state != 2) and (state != 5)) {
 		//get input for used controller
 		if (gamepad_is_connected(controller)) {
@@ -50,7 +49,11 @@ if (active = 1) {
 					}
 				}
 				if (abs(obj_input.input_array[i, XAXIS]) > 0.5) {
-					menu_index += 10*sign(obj_input.input_array[i, XAXIS])	
+					if (state = 3) {
+						menu_index += 11*sign(obj_input.input_array[i, XAXIS])	
+					} else {
+						menu_index += 10*sign(obj_input.input_array[i, XAXIS])	
+					}
 					alarm[0] = MENU_DELAY
 					menu_index = (menu_index + menu_length) mod menu_length //wrap around menu
 					while (menu_option[menu_index] = "\b") {
@@ -63,33 +66,97 @@ if (active = 1) {
 		if (_select) {
 			switch (state) {
 				case 0: //handle a name
-				break;
-				case 1: //add a name
 					if (menu_index < menu_length - 1) { //selecting an option
-						sub_menu = true
-						with (instance_create(GUI_WIDTH/2, GUI_HEIGHT/2, obj_profile_menu_sub)) {
-							creator = other.id	
-							if (other.menu_index = 17) { //r stick
-								state = 1 //c stick state
-							} else if (other.menu_index = 18) { //name
-								state = 2 //name entry state
+						if (menu_index != 16) { //l stick isnt configurable yet
+							if (menu_index = 18) {
+								//exit menu without saving
+								active = 2
+								alarm[0] = MENU_DELAY
 							} else {
-								state = 0 //default state
+								sub_menu = true
+								with (instance_create(GUI_WIDTH/2, GUI_HEIGHT/2, obj_profile_menu_sub)) {
+									creator = other.id	
+									if (other.menu_index = 17) { //r stick
+										state = 1 //c stick state
+									} else {
+										state = 0 //default state
+									}
+									depth = other.depth - 1
+									name = other.menu_option[other.menu_index]
+									sub_name = other.menu_option[other.menu_index + 20]
+								}
 							}
-							depth = other.depth - 1
-							name = other.menu_option[other.menu_index]
 						}
 					} else {
 						//add name	
-						scr_add_name(sub_name)
+						scr_add_name(name, false) //add name
+						//remove menu
+						active = 2
+						alarm[0] = MENU_DELAY
+					}
+				break;
+				case 1: //add a name
+					if (menu_index < menu_length - 1) { //selecting an option
+						if (menu_index != 16) { //l stick isnt configurable yet
+							sub_menu = true
+							with (instance_create(GUI_WIDTH/2, GUI_HEIGHT/2, obj_profile_menu_sub)) {
+								creator = other.id	
+								if (other.menu_index = 17) { //r stick
+									state = 1 //c stick state
+									sub_name = other.menu_option[other.menu_index + 20]
+								} else if (other.menu_index = 18) { //name
+									state = 2 //name entry state
+								} else {
+									state = 0 //default state
+									sub_name = other.menu_option[other.menu_index + 20]
+								}
+								depth = other.depth - 1
+								name = other.menu_option[other.menu_index]
+							}
+						}
+					} else {
+						//add name	
+						if (name != "ADD NAME\b") { //name set
+							scr_add_name(name) //add name
+							//remove menu
+							active = 2
+							alarm[0] = MENU_DELAY
+						} else { //name not set
+							menu_option[38] = string_insert("?", menu_option[38], 5) //add a question mark to where it asks for name
+						}
 					}
 				break;
 				case 3: //handle a controller
+					if (menu_index = 10) {  //more settings
+							sub_menu = true
+							with (instance_create(GUI_WIDTH/2, GUI_HEIGHT/2, obj_profile_menu_sub)) {
+								creator = other.id
+								state = 3
+								depth = other.depth - 1
+								name = other.menu_option[other.menu_index]
+							}
+					} else if (menu_index = 21) { //confirm
+						//save controller and exit menu
+						scr_add_controller(player_number, name)
+						active = 2
+						alarm[0] = MENU_DELAY
+					} else { //change an input
+						//initialise current input blank slate
+						if (controller >= 0) { //if there is a controller to base inputs off of
+							with (obj_input) {
+								for (var i = gp_face1; i <= gp_axisrv; i++) {
+									button[i - gp_face1, 0] = gamepad_button_check(other.controller, i)
+									button[i - gp_face1, 1] = gamepad_axis_value(other.controller, i)
+								}
+							}
+							//set alarm to get new input
+							alarm[1] = GAME_SPEED
+						}
+					}
 				break;
 				case 4: //add a controller
 					alarm[1] = GAME_SPEED*3
 					sub_menu = true
-					scr_add_controller(name)
 				break;
 				case 2: //delete a name
 				case 5: //delete a controller
@@ -132,27 +199,32 @@ if (active = 1) {
 			//intial menu set up
 			switch (state) {
 				case 0: //handle a name
-				case 1: //add a name
-					menu_option[20] = "ATTACK"	
-					menu_option[21] = "SPECIAL"	
-					menu_option[22] = "JUMP"	
-					menu_option[23] = "JUMP"		
-					menu_option[24] = "SHIELD"	
-					menu_option[25] = "SHIELD"	
-					menu_option[26] = "PAUSE"		
-					menu_option[27] = "PAUSE"		
-					menu_option[28] = "SHIELD"			
-					menu_option[29] = "SHIELD"			
-					menu_option[30] = "TAUNT"	
-					menu_option[31] = "TAUNT"	
-					menu_option[32] = "TAUNT"	
-					menu_option[33] = "TAUNT"	
-					menu_option[34] = "SHIELD"
-					menu_option[35] = "SHIELD"
-					menu_option[36] = "MOVE"
-					menu_option[37] = "SMASHES"
-					menu_option[38] = "NAME"
+					scr_read_name(name)
+					menu_option[38] = "BACK"
 					menu_option[39] = "CONFIRM"
+				case 1: //add a name
+					if (state = 1) {
+						menu_option[20] = "ATTACK"	
+						menu_option[21] = "SPECIAL"	
+						menu_option[22] = "JUMP"	
+						menu_option[23] = "JUMP"		
+						menu_option[24] = "SHIELD"	
+						menu_option[25] = "SHIELD"	
+						menu_option[26] = "PAUSE"		
+						menu_option[27] = "PAUSE"		
+						menu_option[28] = "SHIELD"			
+						menu_option[29] = "SHIELD"			
+						menu_option[30] = "TAUNT"	
+						menu_option[31] = "TAUNT"	
+						menu_option[32] = "TAUNT"	
+						menu_option[33] = "TAUNT"	
+						menu_option[34] = "SHIELD"
+						menu_option[35] = "SHIELD"
+						menu_option[36] = "MOVE"
+						menu_option[37] = "SMASH ATTACK"
+						menu_option[38] = "NAME"
+						menu_option[39] = "CONFIRM"
+					}
 				case 3: //handle a controller
 				case 4: //add a controller
 					menu_option[0] = "FACE DOWN (A)"	
@@ -184,8 +256,48 @@ if (active = 1) {
 						menu_option[18] = ""
 						menu_option[19] = ""
 					} else if (state = 3) { //handling a contorller
-						menu_option[20] = "ACCEPT"	
-						menu_length = 21;
+						menu_option[10] = "MORE SETTINGS"
+						menu_option[11] = "D-PAD UP (DU)"	
+						menu_option[12] = "D-PAD DOWN (DD)"	
+						menu_option[13] = "D-PAD LEFT (DL)"	
+						menu_option[14] = "D-PAD RIGHT (DR)"	
+						menu_option[15] = "R-TRIGGER (R2)"
+						menu_option[16] = "L-TRIGGER (L2)"
+						menu_option[17] = "L-STICK X (LX)"	
+						menu_option[18] = "L-STICK Y (LY)"	
+						menu_option[19] = "R-STICK X (RX)"	
+						menu_option[20] = "R-STICK Y (RY)"	
+						menu_option[21] = "ACCEPT"	
+						menu_length = 22;
+						if (name = "Default") {
+							for (var i = 0; i < global.player_number; i++) {
+								if (obj_input.controller[i]) { //if it isnt a keyboard
+									for (var o = 0; o < array_length_2d(creator.menu_option, 1); o++) { //for the length of the menu
+										if (gamepad_get_description(obj_input.controller_number[i]) = creator.menu_option[1, o]) { 
+											//if there is a controller settings for the controller already, break this inner loop
+											o = -1
+											break;
+										}
+									}
+									if (o > -1) { //controller found
+										player_number = i
+										controller = obj_input.controller_number[i]	
+										scr_init_controller(player_number, controller)
+										break;
+									}
+								}
+							}
+						} else {
+							for (var i = 0; i < global.player_number; i++) {
+								if (gamepad_get_description(obj_input.controller_number[i]) = name) {
+									player_number = i
+									controller = obj_input.controller_number[i]
+									scr_init_controller(player_number, controller)
+									break;
+								}
+							}
+						}
+						scr_init_controller_alt(player_number, name) //call all values into player to read from
 					}
 				break;
 				

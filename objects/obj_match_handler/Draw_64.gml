@@ -80,29 +80,32 @@ if (global.show_ui) {
 				draw_text_outlined(_xx, _yy - 24, c_black, merge_colour(merge_colour(c_white, $0000ff, min(percentage/100, 1)), $00004f, clamp((percentage-100)/300, 0, 1)), string(round(percentage)) + "%", 2)
 			}
 		}
+		
+		if (global.player_outside) {
+			_scl = 8 //the inverse of the scale of the blast zone indicator
+			var _bor = 30 //the border from the top left of the screen for the play area box
+			draw_set_alpha(0.5)
+			global.player_outside = false
+			draw_set_colour(c_black)
+			draw_rectangle(_bor + obj_blast_zone.bbox_left/_scl, _bor + obj_blast_zone.bbox_top/_scl, _bor + obj_blast_zone.bbox_right/_scl, _bor + obj_blast_zone.bbox_bottom/_scl, false)
+			draw_set_colour(c_white)
+			draw_rectangle(_bor + obj_blast_zone.bbox_left/_scl, _bor + obj_blast_zone.bbox_top/_scl, _bor + obj_blast_zone.bbox_right/_scl, _bor + obj_blast_zone.bbox_bottom/_scl, true)
+			draw_rectangle(_bor, _bor, _bor + room_width/_scl, _bor + room_height/_scl, true)
+			with (obj_ground) {
+				draw_line(_bor + hitbox._x[0]/_scl, _bor + hitbox._y[0]/_scl, _bor + hitbox._x[1]/_scl, _bor + hitbox._y[1]/_scl)
+			}
+			with (obj_ledge) {
+				draw_circle_colour(round(_bor + x/_scl), round(_bor + y/_scl), 1.5, c_yellow, c_yellow, true)	
+			}
+			with (obj_player) {
+				if (!dead) {
+					draw_circle_colour(round(_bor + (x+effective_x)/_scl), round(_bor + (y+effective_y)/_scl), 3, player_col, player_col, false)
+				}
+			}
+			draw_set_alpha(1)
+		}
 	}
 
-	if (global.player_outside) {
-		_scl = 8 //the inverse of the scale of the blast zone indicator
-		var _bor = 30 //the border from the top left of the screen for the play area box
-		draw_set_alpha(0.5)
-		global.player_outside = false
-		draw_set_colour(c_white)
-		draw_rectangle(_bor + obj_blast_zone.bbox_left/_scl, _bor + obj_blast_zone.bbox_top/_scl, _bor + obj_blast_zone.bbox_right/_scl, _bor + obj_blast_zone.bbox_bottom/_scl, true)
-		draw_rectangle(_bor, _bor, _bor + room_width/_scl, _bor + room_height/_scl, true)
-		with (obj_ground) {
-			draw_line(_bor + hitbox._x[0]/_scl, _bor + hitbox._y[0]/_scl, _bor + hitbox._x[1]/_scl, _bor + hitbox._y[1]/_scl)
-		}
-		with (obj_ledge) {
-			draw_circle_colour(round(_bor + x/_scl), round(_bor + y/_scl), 1.5, c_yellow, c_yellow, true)	
-		}
-		with (obj_player) {
-			if (!dead) {
-				draw_circle_colour(round(_bor + (x+effective_x)/_scl), round(_bor + (y+effective_y)/_scl), 3, player_col, player_col, false)
-			}
-		}
-		draw_set_alpha(1)
-	}
 
 	if (alarm[0] > 0) {
 		draw_set_font(fnt_pixel_4)
