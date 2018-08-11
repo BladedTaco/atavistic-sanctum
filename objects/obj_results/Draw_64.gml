@@ -63,7 +63,7 @@ draw_set_colour(c_orange)
 draw_rectangle(GUI_WIDTH*0.5 - 150, GUI_HEIGHT - 20, GUI_WIDTH*0.5 + 150, GUI_HEIGHT, false)
 draw_set_font(fnt_pixel_2)
 if (save_replay) {
-	draw_text_outlined(GUI_WIDTH/2, GUI_HEIGHT - 5, c_black, c_white, "REPLAY SAVED!", 2)
+	draw_text_outlined(GUI_WIDTH/2, GUI_HEIGHT - 0, c_black, c_white, "REPLAY SAVED!", 2)
 } else {
-	draw_text_outlined(GUI_WIDTH/2, GUI_HEIGHT - 5, c_black, c_white, "SAVE REPLAY? (GRAB)", 2)
+	draw_text_outlined(GUI_WIDTH/2, GUI_HEIGHT - 0, c_black, c_white, "SAVE REPLAY? (GRAB)", 2)
 }

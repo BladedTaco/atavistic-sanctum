@@ -7,7 +7,7 @@ if (argument[0]) {
 	var _inst = noone
 	with (instance_create(0, 0, obj_match_handler)) { //create the match handler and pass variables through
 		//write rules for replay file header
-		file_text_open_append(replay_file_string) //open the file
+		replay_file = file_text_open_append(replay_file_string) //open the file
 		file_text_write_real(replay_file, o.stocks); file_text_writeln(replay_file);
 		file_text_write_real(replay_file, o.time); file_text_writeln(replay_file);
 		file_text_write_real(replay_file, global.player_number); file_text_writeln(replay_file); //write player number

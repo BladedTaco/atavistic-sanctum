@@ -29,8 +29,8 @@ if (file_exists(replay_file)) { //if a file already exists with this name
 	var i = 0
 	do { //loop until a free filename is found
 		replay_file = string("replays/" + date_date_string(date_current_datetime()) + ".txt") //reset name for each loop
-		replay_file = string_insert("_", replay_file, string_length(replay_file)-4) //insert an underscore before ".txt"
-		replay_file = string_insert(string(i), replay_file, string_length(replay_file)-4) //insert current test number after the underscore
+		replay_file = string_insert("_", replay_file, string_length(replay_file)-3) //insert an underscore before ".txt"
+		replay_file = string_insert(string(i), replay_file, string_length(replay_file)-3) //insert current test number after the underscore
 		i++ //increment i
 	} until !file_exists(replay_file) //file name is free to use
 }
