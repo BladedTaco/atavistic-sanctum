@@ -39,7 +39,7 @@ with (obj_player) {
 }
 
 with (obj_results) {
-	real_placing = array_sort_2d(real_placing, 1, 1) //sort the placing array descending by placing number
+	real_placing = array_sort_2d(real_placing, 1, 1) //sort the placing array descending by placing value
 	real_placing[0, 2] = 1 //set first place
 	for (var i = 1; i < array_height_2d(real_placing); i++) { //loop through to set the rest of the placings
 		if (real_placing[i, 1] = real_placing[i-1, 1]) { //if placed the same as the previous placing
@@ -49,12 +49,26 @@ with (obj_results) {
 		}
 	}
 	real_placing = array_sort_2d(real_placing, 0, 0) //sort the placing array ascending by player number
+	num = global.player_number //set number of player
+	//set kill and death count
+	for (var i = 0; i < num; i++) {
+		for (var o = 0; o < array_length_2d(kills, i); o++) {
+			if (kills[i, o] >= 0) {
+				kill_count[i, kills[i, o]] += 1
+			}
+		}
+		for (var o = 0; o < array_length_2d(deaths, i); o++) {
+			if (deaths[i, o] >= 0) {
+				death_count[i, deaths[i, o]] += 1
+			}
+		}
+	}
+	replay_file = obj_match_handler.replay_file
+	replay_file_string = obj_match_handler.replay_file_string
+	replay_string = obj_match_handler.replay_string
+	x = 0
+	y = GUI_HEIGHT
 	visible = true
 }
 instance_destroy(obj_match_handler)
-
-
-
-
-obj_results.alarm[0] = GAME_SPEED*15
 

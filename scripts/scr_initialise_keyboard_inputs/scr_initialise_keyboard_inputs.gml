@@ -13,6 +13,7 @@ do {
 	file_text_readln(_file) //go to next line
 	i++ //increment i
 } until (file_text_eof(_file)) //until end of file
+file_text_close(_file)
 
 c_stick_action[argument[0]] = C_SMASH_ATTACK //action the c_stick maps to
 c_stick_deadzone[argument[0]] = 0.1 //the deadzone for the c_stick

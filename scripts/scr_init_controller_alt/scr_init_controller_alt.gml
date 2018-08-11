@@ -5,7 +5,7 @@
 
 with (obj_input) {
 	//get the file and open it
-	var _file = working_directory + "controllers/" + argument[1] + ".txt"
+	var _file = "controllers/" + argument[1] + ".txt"
 	if (file_exists(_file)) {
 		_file = file_text_open_read(_file)
 	} else {

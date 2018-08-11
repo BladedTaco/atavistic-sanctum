@@ -4,7 +4,7 @@
 ///@desc creates the given name profile
 
 //check if the profile exists, and if it does, open it
-var _file = file_text_open_write(working_directory + "names/controls/" + argument[0] + ".txt")
+var _file = file_text_open_write("names/controls/" + argument[0] + ".txt")
 
 	//write values
 	var _str;

@@ -54,7 +54,7 @@ menu_option[5] = "FORFEIT"
 //initialise input buttons and their mappings
 
 scr_initialise_controller_inputs()
-scr_initialise_keyboard_inputs(0)
+//scr_initialise_keyboard_inputs(0)
 
 alarm[0] = room_speed //alarm for keeping OS from sleeping
 alarm[1] = -1 //alarm for pause menu

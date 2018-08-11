@@ -5,7 +5,7 @@
 
 //get the read and write files and delete the file
 if (argument[0] = 0) { //name
-	var _file = "names/" + argument[1] + ".txt"
+	var _file = "names/controls/" + argument[1] + ".txt"
 	if (file_exists(_file)) {
 		file_delete(_file)
 	}

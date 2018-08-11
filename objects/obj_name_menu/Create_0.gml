@@ -13,7 +13,8 @@ var i = 0
 //read names from file
 var _file = file_text_open_read("names.txt") //open names text file
 while (!file_text_eof(_file)) {	//while the file has text to read
-	menu_option[i] = file_text_readln(_file) //load names into menu
+	menu_option[i] = file_text_read_string(_file) //load names into menu
+	file_text_readln(_file);
 	i++
 } 
 file_text_close(_file)

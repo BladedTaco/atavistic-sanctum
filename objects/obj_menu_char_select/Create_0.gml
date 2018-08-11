@@ -10,6 +10,8 @@ for (var i = 0; i < 8; i++) {
 	player_col[i] = make_colour_hsv((i*255)/8, 255, 255) //variable for player colour
 	col[i] = 0 //variable for collision found
 	sub_menu[i] = false //if the player is in a sub menu
+	obj_input.controller[i] = false
+	obj_input.controller_number[i] = -1
 }
 
 pal[0] = 0
@@ -24,5 +26,8 @@ active = false
 
 //reset players
 global.player_number = 0
-obj_input.controller[i] = false
-obj_input.controller_number[i] = -1
+with (obj_input) {
+	button_const_array = []
+	button_array = []
+	scr_initialise_controller_inputs()
+}

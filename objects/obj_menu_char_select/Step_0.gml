@@ -7,15 +7,14 @@ if (room = rm_menu) {
 				x = 0
 				active = true
 			}
-		} else {
-			x += GUI_WIDTH/15
-			if (x > GUI_WIDTH) {
-				instance_destroy();	
-			}
 		}
 	} else {
 		while (player_number < global.player_number) { //check if a new player should be initialised
-			cursor_x[player_number] = x + GUI_WIDTH*((player_number + 0.5)/(player_number + 2)) //the x position of the player cursor
+			if (player_number < 7) {
+				cursor_x[player_number] = x + GUI_WIDTH*((player_number + 0.5)/(player_number + 2)) //the x position of the player cursor
+			} else {
+				cursor_x[player_number] = x + GUI_WIDTH*(15/16) //the x position of the player cursor
+			}
 			cursor_y[player_number] = y + GUI_HEIGHT*0.8 //the y position of the player cursor
 			character[player_number] = -1 //the character selected
 			pal_sprite[player_number] = pal_bal //the pallet swap sprite
@@ -112,27 +111,45 @@ if (room = rm_menu) {
 						pal_sprite[i] = pal_bal 
 						sprite[i] = spr_bal_stock
 						pallet[i] = pal[BAL]
+						//make sure pallet is unique
+						while (!scr_unique_pallet(i, BAL, pallet[i])) {
+							pallet[i] = (pallet[i] + 1) mod 11
+						}
 					break; 
 					case 5: //MAC
 						character[i] = MAC;
 						pal_sprite[i] = pal_mac 
 						sprite[i] = spr_mac_stock
 						pallet[i] = pal[MAC]
+						//make sure pallet is unique
+						while (!scr_unique_pallet(i, MAC, pallet[i])) {
+							pallet[i] = (pallet[i] + 1) mod 11
+						}
 					break; 
 					case 6: //GEO
 						character[i] = GEO;
 						pal_sprite[i] = pal_geo 
 						sprite[i] = spr_geo_stock
 						pallet[i] = pal[GEO]
+						//make sure pallet is unique
+						while (!scr_unique_pallet(i, GEO, pallet[i])) {
+							pallet[i] = (pallet[i] + 1) mod 11
+						}
 					break; 
 					case 7: //ETH
 						character[i] = ETH;
 						pal_sprite[i] = pal_eth 
 						sprite[i] = spr_eth_stock
 						pallet[i] = pal[ETH]
+						//make sure pallet is unique
+						while (!scr_unique_pallet(i, ETH, pallet[i])) {
+							pallet[i] = (pallet[i] + 1) mod 11
+						}					
 					break; 
 					case 8: //cycle colour pallet
-						pallet[i] = (pallet[i] + 1) mod 11
+						do { //cycle until a unique pallet found
+							pallet[i] = (pallet[i] + 1) mod 11
+						} until (scr_unique_pallet(i, character[i], pallet[i]))
 					break;
 					case 9: //unassign player
 						player_number -= 1 //reduce player number
@@ -146,6 +163,7 @@ if (room = rm_menu) {
 									player -= 1;
 								}
 								player_number -= 1;
+								//free all name clip surfaces so they automatically resize
 								if (surface_exists(clip_surface)) {
 									surface_free(clip_surface)
 								}
@@ -165,10 +183,12 @@ if (room = rm_menu) {
 						}
 					break; 
 					default: //choosing a colour pallet
-						pallet[i] = col[i] - 11 //set colour pallet
-						cursor_x[i] += (5 - pallet[i])*20
-						cursor_y[i] = GUI_HEIGHT/2 - 50
-						obj_input.sticky_attack[i] = false
+						if (scr_unique_pallet(i, floor(cursor_x[i]/(GUI_WIDTH*0.25)), col[i] - 11)) {
+							pallet[i] = col[i] - 11 //set colour pallet
+							cursor_x[i] += (5 - pallet[i])*20
+							cursor_y[i] = GUI_HEIGHT/2 - 50
+							obj_input.sticky_attack[i] = false
+						}
 					break;
 				}
 			}
@@ -177,8 +197,12 @@ if (room = rm_menu) {
 				if (alarm[0] > GAME_SPEED) { //button held for long enough, exit menu
 					with(instance_create(-GUI_WIDTH, 0, obj_menu_main)) {
 						menu_index = 0	
+						alarm[0] = MENU_DELAY
+						alarm[1] = -1
 					}
+					alarm[0] = MENU_DELAY
 					active = false
+					instance_destroy();
 				}
 			}
 			if (alarm[0] <= 0) { //dont alllow startgin match if exiting menu

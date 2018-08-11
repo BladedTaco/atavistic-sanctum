@@ -1143,6 +1143,14 @@
             }
         },
         {
+            "Key": "4dabd485-f90c-4456-8450-3961c88b432c",
+            "Value": {
+                "id": "7bc11f4f-8824-4b4d-8865-9cac311df22c",
+                "resourcePath": "views\\4dabd485-f90c-4456-8450-3961c88b432c.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "4e56aa47-7981-4943-8d27-b2f28c4ae7f2",
             "Value": {
                 "id": "5d76dfdf-1593-467a-acac-cd5153f2797a",
@@ -2159,6 +2167,14 @@
             }
         },
         {
+            "Key": "8d08f584-497c-4655-9a14-ca43307b5cb8",
+            "Value": {
+                "id": "6fea160c-d01f-4b90-ad7e-e707f558fb44",
+                "resourcePath": "views\\8d08f584-497c-4655-9a14-ca43307b5cb8.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "8d0b78ed-250b-4989-a860-27c557a41001",
             "Value": {
                 "id": "2723f70a-5c06-48dc-bc53-ae1ecd8e2c0b",
@@ -2903,6 +2919,14 @@
             }
         },
         {
+            "Key": "bfa3a308-bb5b-46f3-88ac-ff624c5711a1",
+            "Value": {
+                "id": "a95b82b9-c516-4277-bb6a-6da2e2a79b77",
+                "resourcePath": "datafiles_yy\\names\\controls\\Default.txt.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "bffc24df-b8a8-45aa-b11b-32af42926d56",
             "Value": {
                 "id": "8883b6f3-bc00-4853-884f-a14ef7be699a",
@@ -3395,6 +3419,14 @@
             "Value": {
                 "id": "218f1d60-40ea-4434-ba96-351b64061579",
                 "resourcePath": "scripts\\scr_helpless_bounce\\scr_helpless_bounce.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "e2721abd-bb4e-48d6-93a0-d247ad4de01a",
+            "Value": {
+                "id": "cd0f6873-aa09-4741-8b58-655c2f9fa795",
+                "resourcePath": "scripts\\scr_unique_pallet\\scr_unique_pallet.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -3895,7 +3927,8 @@
         "c47721c4-41e6-4849-95eb-ef092e88f930",
         "2055625a-ca63-4163-8061-511c348ed45b",
         "816b5cd3-d8be-4233-827d-cef3a4240d37",
-        "5b77865a-6cbc-42a5-bcba-4b1775c247f0"
+        "5b77865a-6cbc-42a5-bcba-4b1775c247f0",
+        "e2721abd-bb4e-48d6-93a0-d247ad4de01a"
     ],
     "tutorial": ""
 }

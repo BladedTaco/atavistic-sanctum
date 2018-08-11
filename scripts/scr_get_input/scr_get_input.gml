@@ -61,15 +61,15 @@ if (instance_exists(obj_match_handler)) {
 		if (!sticky_pause[argument[0]]) {
 			if (paused >= 0) {
 				if (paused = argument[0]) {
-					file_delete(working_directory + "PAUSE_SCREEN") //delete the pause screen
+					file_delete("PAUSE_SCREEN") //delete the pause screen
 					sprite_delete(pause_sprite)
 					paused = -1
 					instance_activate_all()
 					sticky_pause[argument[0]] = true
 				}
 			} else {
-				screen_save(working_directory + "PAUSE_SCREEN") //crreate the pause screen
-				pause_sprite = sprite_add(working_directory + "PAUSE_SCREEN", 1, false, false, 0, 0)
+				screen_save("PAUSE_SCREEN") //crreate the pause screen
+				pause_sprite = sprite_add("PAUSE_SCREEN", 1, false, false, 0, 0)
 				paused = argument[0]
 				instance_deactivate_all(true)
 				sticky_pause[argument[0]] = true

@@ -1,5 +1,6 @@
 /// @description control menu
 if (!active) {
+	alarm[0] = MENU_DELAY
 	if (x < 0) {
 		x += GUI_WIDTH/15
 		if (x >= 0) {

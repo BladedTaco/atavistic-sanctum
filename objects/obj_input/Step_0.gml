@@ -24,11 +24,12 @@ if (room = rm_menu) { //if in a menu room
 							break; //break current loop
 						}
 					}
-					if (o >= global.player_number) { //if the entire loop above executed, player isnt already connected
+					if (o > -1) { //if the entire loop above executed, player isnt already connected
 						if (scr_check_controller_active(i)) {
 							scr_init_controller(o, i) //add the player
+							scr_load_name(o, "Default")
 							global.player_number += 1 //increase player number
-							player_is_local[o] = true
+							player_is_local[o] = true //set to local player
 						}
 					}
 				}
@@ -37,14 +38,16 @@ if (room = rm_menu) { //if in a menu room
 		if (keyboard_check_pressed(vk_anykey) and (global.player_number < 8)) {
 			for (var o = 0; o < global.player_number; o++) {
 				if (controller[o] = false) {
-					break;	
+					//o = -1
+					//break;	
 				}
 			}
-			if (o >= global.player_number) { //if the entire loop above executed, player isnt already connected
+			if (o > -1) { //if the entire loop above executed, player isnt already connected
 				scr_initialise_keyboard_inputs(o) //add the player
 				global.player_number += 1 //increase player number
 				player_is_local[o] = true;
 				controller[o] = false;
+				controller_number[o] = -1;
 			}
 		}
 	}

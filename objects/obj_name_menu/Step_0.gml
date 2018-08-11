@@ -11,7 +11,9 @@ if (active = 1) {
 				name = menu_option[menu_index]
 				active = 2
 				obj_input.sticky_attack[player] = true
-				scr_load_name(player, name)
+				if (obj_input.controller[player]) {
+					scr_load_name(player, name)
+				}
 			}
 		}
 		if (obj_input.input_array[player, SPECIAL]) {

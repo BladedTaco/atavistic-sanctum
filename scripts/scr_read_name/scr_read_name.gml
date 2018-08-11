@@ -3,7 +3,7 @@
 ///@desc reads a profile to the menu
 
 //check if the profile exists, and if it does, open it
-var _file = file_text_open_read(working_directory + "names/controls/" + argument[0] + ".txt")
+var _file = file_text_open_read("names/controls/" + argument[0] + ".txt")
 
 	//read values
 	var _str;

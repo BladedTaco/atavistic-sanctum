@@ -4,11 +4,11 @@
 ///@desc loads a player name profie into the given slot
 
 //check if the profile exists, and if it does, open it
-var _file = working_directory + "names/controls/" + argument[1] + ".txt"
+var _file = "names/controls/" + argument[1] + ".txt"
 if (file_exists(_file)) {
 	_file = file_text_open_read(_file)	
 } else {
-	return -1	
+	_file = file_text_open_read("names/controls/Default.txt")
 }
 
 with (obj_input) { //with the input handler

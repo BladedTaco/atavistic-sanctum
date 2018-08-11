@@ -47,7 +47,7 @@ if (paused >= 0) {
 				case 5: //forfeit
 					_end = true
 				case 0: //resume
-					file_delete(working_directory + "PAUSE_SCREEN") //delete the pause screen
+					file_delete("PAUSE_SCREEN") //delete the pause screen
 					sprite_delete(pause_sprite)
 					instance_activate_all()
 					instance_deactivate_object(obj_menu_char_select)

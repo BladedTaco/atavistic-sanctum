@@ -3,7 +3,7 @@
 ///@param name - the profile name to load the player as
 ///@desc loads a player name profie into the given slot
 
-var _file = working_directory + "controllers/" + argument[1] + ".txt" //store the name of the file
+var _file = "controllers/" + argument[1] + ".txt" //store the name of the file
 if (argument[1] != "Default") {
 	if (!file_exists(_file)) { //if there isn't already a file
 		//append the files name to the controller name directory
@@ -15,7 +15,7 @@ if (argument[1] != "Default") {
 }
 
 //open or create the file for writing
-_file = file_text_open_write(working_directory + "controllers/" + argument[1] + ".txt")
+_file = file_text_open_write("controllers/" + argument[1] + ".txt")
 
 with (obj_input) { //with the input handler
 	//write values

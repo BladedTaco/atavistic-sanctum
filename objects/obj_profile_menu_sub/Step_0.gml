@@ -162,7 +162,7 @@ if (alarm[0] <= 0) {
 					sub_name = string_delete(sub_name, sub_index, 1) //delete character
 					sub_index = clamp(sub_index, 1, string_length(sub_name)+1) //clamp index to range
 				} else { //confirm
-					if (!file_exists(working_directory + "names/controls/" + sub_name + ".txt")) { //new name
+					if (!file_exists("names/controls/" + sub_name + ".txt")) { //new name
 						//accept name and return to creator menu
 						creator.name = sub_name
 						creator.alarm[0] = MENU_DELAY
