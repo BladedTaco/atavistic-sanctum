@@ -38,8 +38,10 @@ if (room = rm_menu) { //if in a menu room
 		if (keyboard_check_pressed(vk_anykey) and (global.player_number < 8)) {
 			for (var o = 0; o < global.player_number; o++) {
 				if (controller[o] = false) {
-					//o = -1
-					//break;	
+					if (!(global.debug and keyboard_check(ord("Z")))) { //debug option to register all players are a single controller
+						o = -1
+						break;	
+					}
 				}
 			}
 			if (o > -1) { //if the entire loop above executed, player isnt already connected

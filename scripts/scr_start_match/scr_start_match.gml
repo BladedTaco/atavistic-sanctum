@@ -7,17 +7,13 @@ if (argument[0]) {
 	var _inst = noone
 	with (instance_create(0, 0, obj_match_handler)) { //create the match handler and pass variables through
 		//write rules for replay file header
-		replay_file = file_text_open_append(replay_file_string) //open the file
-		file_text_write_real(replay_file, o.stocks); file_text_writeln(replay_file);
-		file_text_write_real(replay_file, o.time); file_text_writeln(replay_file);
-		file_text_write_real(replay_file, global.player_number); file_text_writeln(replay_file); //write player number
+		var _str = string(global.game_version) + "\n" + string(room) + "\n" + string(o.stocks) + "\n" + string(o.time) + "\n" + string(global.player_number) + "\n"
 		//set the time
 		if (o.time > 0) {
 			alarm[0] = o.time*60*GAME_SPEED + GAME_SPEED*3 //set timer
 		} else {
 			alarm[0] = -1 //set timer to never activate	
 		}
-		replay_string[ceil(alarm[0])] = "" //give the replay string its size
 		//create the characters
 		for (var i = 0; i < global.player_number; i++) { 
 			with (obj_spawn_point) { if (number = i) { _inst = id } } //get spawn point position
@@ -52,19 +48,18 @@ if (argument[0]) {
 				surface_copy_part(other.pal_surface, player_number, 0, pal_surface, 1, 0, 1, 16) //copy custom colours to global pallet backup
 				surface_reset_target() //reset the draw target
 			}
-			//write the players data to the file header
-			file_text_writeln(replay_file) //go to next line
-			file_text_write_real(replay_file, i); file_text_writeln(replay_file) //player number
-			file_text_write_string(replay_file, string(player[i].name)); file_text_writeln(replay_file)//player profile name
-			file_text_write_real(replay_file, string(player[i].character)); file_text_writeln(replay_file)//character
-			file_text_write_string(replay_file, string(o.pallet[i])); file_text_writeln(replay_file)//pallet
-			file_text_write_string(replay_file, string(player[i].player_col)); file_text_writeln(replay_file)//player colour
+			//write the players data to the string
+			_str += "\n" + string(i) + "\n" + string(player[i].name) + "\n" + string(player[i].character) + "\n" + string(o.pallet[i]) + "\n" + string(player[i].player_col) + "\n"
 		
 		}
-		//write the end of the replay file header
-		file_text_writeln(replay_file) //go to next line
-		file_text_writeln(replay_file) //go to next line
-		file_text_close(replay_file) //close the replay file
+		_str += "\n" + "\n" //add a gap
+		//write into the replay buffer
+		if (o.time = 0) {
+			replay_buffer = buffer_create(10485760, buffer_grow, 1) //create a 10MB buffer
+		} else {
+			replay_buffer = buffer_create(o.time*131072*global.player_number, buffer_grow, 1) //create a buffer that is minutes*players/8 MB big
+		}
+		buffer_write(replay_buffer, buffer_text, _str) //write the data into the buffer
 	}
 } else {
 	//go to the match room

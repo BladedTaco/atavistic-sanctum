@@ -40,6 +40,11 @@ if (argument[1]) { //controller inputs
 	}
 }
 
+//check for shield grab
+if (_input[SHIELD] and _input[ATTACK]) {
+	_input[GRAB] = true
+}
+
 //limit l stick to magnitude of 1
 var _len = point_distance(0, 0, _input[XAXIS], _input[YAXIS])
 if (_len > 1) {
@@ -81,6 +86,16 @@ if (instance_exists(obj_match_handler)) {
 }
 
 scr_handle_c_stick(argument[0], _input)
+
+if (global.debug) { //debug option to only allow 1 player to move at a time
+	if (keyboard_check(ord("Z"))) {
+		if (!keyboard_check(ord(string(argument[0])))) {  //if this number not beign pressed
+			for (var i = 0; i < 10; i++) {
+				_input[i] = 0	//remove all input
+			}
+		}
+	}
+}
 
 scr_input_buffer(argument[0], _input)
 

@@ -19,8 +19,6 @@ for (var i = 0; i < global.player_number; i++) {
 }
 placing[0] = -1
 num = 0
-replay_file = -1
-replay_file_string = ""
 save_replay = false
 
 alarm[0] = -1

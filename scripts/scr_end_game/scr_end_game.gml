@@ -63,12 +63,15 @@ with (obj_results) {
 			}
 		}
 	}
-	replay_file = obj_match_handler.replay_file
-	replay_file_string = obj_match_handler.replay_file_string
-	replay_string = obj_match_handler.replay_string
+	//create the replay saving object
+	with (instance_create(x, y, obj_save_replay)) {	
+		replay_buffer = buffer_compress(obj_match_handler.replay_buffer, 0, buffer_tell(obj_match_handler.replay_buffer))
+	}
+	buffer_delete(obj_match_handler.replay_buffer) //delete the buffer from memory
+	//set the position and visibility of the results screen
 	x = 0
 	y = GUI_HEIGHT
 	visible = true
 }
-instance_destroy(obj_match_handler)
+instance_destroy(obj_match_handler) //destroy the match handler
 

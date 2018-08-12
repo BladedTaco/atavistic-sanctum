@@ -39,7 +39,7 @@ for (var i = 0; i < num; i++) { //for each character
 		if (kill_count[i, o] + death_count[i, o] = 0) {
 			continue
 		} else {
-			j += 35
+			j += 32
 			pal_swap_set(pal_surface[o], 1, true)
 			switch (character[o]) { //change sprite based on character
 				case BAL: var _spr = spr_bal_stock; break;
@@ -63,7 +63,11 @@ draw_set_colour(c_orange)
 draw_rectangle(GUI_WIDTH*0.5 - 150, GUI_HEIGHT - 20, GUI_WIDTH*0.5 + 150, GUI_HEIGHT, false)
 draw_set_font(fnt_pixel_2)
 if (save_replay) {
-	draw_text_outlined(GUI_WIDTH/2, GUI_HEIGHT - 0, c_black, c_white, "REPLAY SAVED!", 2)
+	if (instance_exists(obj_save_replay)) {
+		draw_text_outlined(GUI_WIDTH/2, GUI_HEIGHT - 0, c_black, c_white, "SAVING REPLAY", 2)
+	} else {
+		draw_text_outlined(GUI_WIDTH/2, GUI_HEIGHT - 0, c_black, c_white, "REPLAY SAVED!", 2)
+	}
 } else {
 	draw_text_outlined(GUI_WIDTH/2, GUI_HEIGHT - 0, c_black, c_white, "SAVE REPLAY? (GRAB)", 2)
 }

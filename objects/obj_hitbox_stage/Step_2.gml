@@ -63,7 +63,7 @@ with (obj_hitbox) {
 			break;
 			
 			case obj_mac_projectile:
-				if (other.creator.object_index != obj_ledge) {
+				if ((other.creator.object_index != obj_ledge) and (other.creator.object_index != obj_platform)) {
 					instance_destroy(creator);
 				}
 			break;

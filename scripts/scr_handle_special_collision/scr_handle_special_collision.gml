@@ -54,6 +54,11 @@ if (argument[0].hitbox = argument[1].hitbox) { //same type
 } else { //a hitbox colliding with a hurtbox
 	//call the knockback formula
 	if (argument[1].creator.creator != argument[0].creator) {
-		scr_get_knockback(argument[1], argument[0], true)
+		if (argument[0].creator.object_index = obj_player) { //a special and non-special hitbox colliding
+			scr_get_knockback(argument[1], argument[0], true)
+		} else { //special hurting special, destroy both. As this is probably projectile-projectile
+			instance_destroy(argument[0].creator)
+			instance_destroy(argument[1].creator)
+		}
 	}
 }

@@ -6,7 +6,7 @@
 
 //knockback formula in readable form
 /*
- / / /	(damage + 1)(damage + percent^2)	  \		(scaling knockback)^2	\				       \
+ / / /	(damage + 1)(damage + percent^2)	  \		scaling knockback mul	\				       \
 | | |	-------------------------------		+1 | * ---------------------------	| + (base knockback) | * state
  \ \ \				weight*300				  /					4				/				  /
 */
@@ -104,12 +104,14 @@ if (argument[0].h = -1) { //if negative hitstun, only apply damage and no state 
 	_id.percentage += argument[0].d //apply damage
 	_id.last_damage = argument[0].d //remember the amount of damage taken
 } else {
-	_mag =  argument[0].d + 1				// k = damage taken + 1
-	_mag *= argument[0].d + _id.percentage	// k = k*(damage taken + percentage)
-	_mag /= _id.weight*300					// k = k/(weight*300)
-	_mag += 1								// k = k + 1
-	_mag *= power(argument[0].s + lerp((1/max(argument[0].s, 1))*3, 2, 0.5), 2)		// k = k * ((s+2)^2)
-	_mag *= 0.25							// k = k/4
+	if (argument[0].s != 0) { //if scaling knockback is to be applied
+		_mag =  argument[0].d + 1				// k = damage taken + 1
+		_mag *= argument[0].d + _id.percentage	// k = k*(damage taken + percentage)
+		_mag /= _id.weight*300					// k = k/(weight*300)
+		_mag += 1								// k = k + 1
+		_mag *= power(argument[0].s + lerp((1/max(argument[0].s, 1))*3, 2, 0.5), 1.5)		// k = k * ((s+(1/s2))^1.5)
+		_mag *= 0.25							// k = k/4
+	}
 	_mag += argument[0].b					// k = k + base knockback
 	_mag *= _id.bracing						// k = k + state scaling
 	
@@ -137,16 +139,16 @@ if (argument[0].h = -1) { //if negative hitstun, only apply damage and no state 
 		if (_id2.object_index = obj_player) {
 			_id.attacker = _id2
 			if (argument[0].h > 0) {
-				_id.attacker.image_speed = 0
+				_id2.image_speed = 0
 				_id.image_speed = 0
 				_id.alarm[7] = max(_mag*argument[0].h, 1)
-				_id.attacker.alarm[7] = max(_mag*argument[0].h, 1)
+				_id2.alarm[7] = max(_mag*argument[0].h*0.75, 1) //attacker is stuck for slightly less than attackee
 			}
 		}
 		//handle hitbox sleeping alarm
 		if ((_mag > 3) and (argument[0].d > 3)) {//if large attack
 			//set the attacked players hitbox sleeping alarm
-			_id.alarm[4] = _mag
+			_id.alarm[4] = _mag + 5
 		}
 	}
 }

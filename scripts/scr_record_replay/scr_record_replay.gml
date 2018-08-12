@@ -16,7 +16,7 @@ if !(global.wait) {
 				_str += "\n" //write a new line for next player
 			}
 		}
-		replay_string[global.match_frame] = _str //add to the replay string
+		buffer_write(replay_buffer, buffer_text, _str) //write the data to the buffer
 	}
 	global.match_frame += 1 //advance match frame
 }

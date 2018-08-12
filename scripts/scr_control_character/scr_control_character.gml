@@ -148,6 +148,9 @@ do {
 						state[i] = scr_perform_dodge(_inst, i, 0, point_direction(0, 0, input_array[i, XAXIS], input_array[i, YAXIS]))
 					}
 				}
+				if (input_array[i, GRAB]) { //grab
+					state[i] = scr_perform_grab(_inst, i, 0, _dir)
+				}
 			case UNSHIELDING:
 				if (_inst.character = GEO) {
 					_move_character = -1 //shield walk

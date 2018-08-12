@@ -27,7 +27,10 @@ if (visible) { //only do code if active
 			}
 		}
 		if (obj_input.input_array[i, GRAB]) {
-			save_replay = true;	
+			if (!save_replay) {
+				obj_save_replay.visible = true
+				save_replay = true;
+			}
 		}
 	}
 
