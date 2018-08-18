@@ -20,12 +20,12 @@ if (room = rm_menu) {
 			pal_sprite[player_number] = pal_bal //the pallet swap sprite
 			pallet[player_number] = -1 //pallet for the character selected
 			sprite[player_number] = -1 //sprite for the character selected
-			name[player_number] = "NAMELESS"
+			name[player_number] = "P" + string(player_number+1)
 			player_col[player_number] = make_colour_hsv((player_number*255)/8, 255, 255) //variable for player colour
 			col[player_number] = 0 //variable for collision found	
 			player_number += 1
-			if (instance_exists(obj_name_menu)) {
-				with (obj_name_menu) {
+			if (instance_exists(obj_menu_name)) {
+				with (obj_menu_name) {
 					player_number += 1;
 					if (surface_exists(clip_surface)) {
 						surface_free(clip_surface)
@@ -157,8 +157,8 @@ if (room = rm_menu) {
 						for (var o = i; o < player_number; o++) { 
 							scr_move_player(o + 1, o) //move all players down a spot
 						}
-						if (instance_exists(obj_name_menu)) {
-							with (obj_name_menu) {
+						if (instance_exists(obj_menu_name)) {
+							with (obj_menu_name) {
 								if (player > i) {
 									player -= 1;
 								}
@@ -175,7 +175,7 @@ if (room = rm_menu) {
 					break;
 					case 10://change player name
 						sub_menu[i] = true;
-						with (instance_create(GUI_WIDTH*((i + 0.5)/(player_number + 1)), GUI_HEIGHT, obj_name_menu)) {
+						with (instance_create(GUI_WIDTH*((i + 0.5)/(player_number + 1)), GUI_HEIGHT, obj_menu_name)) {
 							player = i
 							player_number = other.player_number
 							name = other.name[i]
@@ -202,6 +202,11 @@ if (room = rm_menu) {
 					}
 					alarm[0] = MENU_DELAY
 					active = false
+					if (instance_exists(obj_menu_name)) { //destroy any name menus
+						with (obj_menu_name) {
+							instance_destroy();	
+						}
+					}
 					instance_destroy();
 				}
 			}
@@ -215,7 +220,10 @@ if (room = rm_menu) {
 						}
 					}
 					if (o > 1) { //if all players have a character selected and there are 2 players or more
-						scr_start_match(false) //move to the match room
+						active = false;
+						with (instance_create(0, GUI_HEIGHT, obj_menu_stage_select)) {
+							depth = other.depth - 1	
+						}
 						break;
 					}
 				}

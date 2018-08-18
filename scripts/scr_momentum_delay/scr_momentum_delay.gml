@@ -9,7 +9,7 @@ with (argument[0]) {
 	mom_x = argument[1]*argument[3]
 	mom_y = argument[2]*argument[3]
 
-	if ((point_distance(0, 0, mom_x, mom_y) < 3) and (!argument[4])) { //if small momentum
+	if (((point_distance(0, 0, mom_x, mom_y) < 3) and (!argument[4])) or (argument[3] = 0)) { //if small momentum
 		inertial = true //end momentum delay
 	} else { //otherwise decrease until they are
 		inertial = false

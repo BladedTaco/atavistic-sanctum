@@ -1,5 +1,5 @@
 /// @description 
-if (visible) { //only do code if active
+if (visible and (y = 0)) { //only do code if active
 	var _exit = true
 	for (var i = 0; i < num; i++) { //for each player
 		if (ready[i] <= 1) {
@@ -11,11 +11,22 @@ if (visible) { //only do code if active
 			ready[i] = clamp(ready[i] + 0.05, 1, 4.5)	
 			_exit = false
 		}
-		if (obj_input.input_array[i, ATTACK]) { //if wanting to leave menu
-			if (ready[i] < 1) {
-				ready[i] = max(ready[i], 0.02) //set ready if it itsnt already
-			} else if (ready[i] = 1) {
-				ready[i] = 1.05 //set ready to leave menu
+		if (obj_input.input_array[i, ATTACK] and !obj_input.sticky_attack[i]) { //if wanting to leave menu
+			obj_input.sticky_attack[i] = true
+			if (instance_exists(obj_replay_handler)) { //end of replay
+				for (var o = 0; o < array_length_1d(ready); o++) {
+					if (ready[o] < 0.02) {
+						ready[o] = 0.02
+					} else if (ready[i] < 1.05) { //if not fully readied
+						ready[o] = 1.05 //set to be ready	
+					}
+				}
+			} else { //end of match
+				if (ready[i] < 1) {
+					ready[i] = max(ready[i], 0.02) //set ready if it isnt already
+				} else if (ready[i] = 1) {
+					ready[i] = 1.05 //set ready to leave menu
+				}
 			}
 		}
 		if (obj_input.input_array[i, SPECIAL] and !obj_input.sticky_special[i]) { //if wanting to undo a ready action
@@ -30,6 +41,16 @@ if (visible) { //only do code if active
 			if (!save_replay) {
 				obj_save_replay.visible = true
 				save_replay = true;
+			}
+		}
+		if (obj_input.input_array[i, PAUSE] and !obj_input.sticky_pause[i]) { //pause means exit menu for all
+			obj_input.sticky_pause[i] = true;
+			for (var i = 0; i < array_length_1d(ready); i++) {
+				if (ready[i] < 0.02) { //if not at all readied
+					ready[i] = 0.02 //make ready stage 1
+				} else if (ready[i] < 1.05) { //if not fully readied
+					ready[i] = 1.05 //set to be ready	
+				}
 			}
 		}
 	}

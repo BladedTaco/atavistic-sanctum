@@ -7,7 +7,7 @@ if (argument[0]) {
 	var _inst = noone
 	with (instance_create(0, 0, obj_match_handler)) { //create the match handler and pass variables through
 		//write rules for replay file header
-		var _str = string(global.game_version) + "\n" + string(room) + "\n" + string(o.stocks) + "\n" + string(o.time) + "\n" + string(global.player_number) + "\n"
+		var _str = string(global.game_version) + "\n" + string_delete(room_get_name(room), 1, 9) + "\n" + string(o.stocks) + "\n" + string(o.time) + "\n" + string(global.player_number) + "\n"
 		//set the time
 		if (o.time > 0) {
 			alarm[0] = o.time*60*GAME_SPEED + GAME_SPEED*3 //set timer
@@ -53,21 +53,27 @@ if (argument[0]) {
 		
 		}
 		_str += "\n" + "\n" //add a gap
+		header_string = _str //set the header string
+		for (var i = 0; i < global.player_number; i++) { //add obj_input varibles after header
+			_str += string(obj_input.smash_deadzone[i]) + "\n" + string(obj_input.c_stick_deadzone[i]) + "\n" +
+			string (obj_input.l_stick_deadzone[i]) + "\n" + string(obj_input.l_stick_neutral[i]) + "\n"	
+		}
+		_str += "\n"
 		//write into the replay buffer
 		if (o.time = 0) {
 			replay_buffer = buffer_create(10485760, buffer_grow, 1) //create a 10MB buffer
 		} else {
 			replay_buffer = buffer_create(o.time*131072*global.player_number, buffer_grow, 1) //create a buffer that is minutes*players/8 MB big
 		}
-		buffer_write(replay_buffer, buffer_text, _str) //write the data into the buffer
+		buffer_write(replay_buffer, buffer_string, _str) //write the data into the buffer
 	}
 } else {
 	//go to the match room
-	var _stage = asset_get_index("rm_match_" + string(get_integer("Select Stage:\n1 = Ascent\n2 = Outer Sanctum\n3 = Inner Sanctum", 1)))
+	var _stage = argument[1] //TODO: add in match room selection
 	if (room_exists(_stage)) { //if provided with a valid room
 		room_goto(_stage) //go to that room
 	} else { //otherwise
 		show_message("Invalid Room Number,\ngoing to Ascent")
-		room_goto(rm_match_1) //go to the first match room
+		room_goto(rm_match_Ascent) //go to the first match room
 	}
 }

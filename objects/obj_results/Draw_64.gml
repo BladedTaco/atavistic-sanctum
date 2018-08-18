@@ -59,15 +59,17 @@ for (var i = 0; i < num; i++) { //for each character
 	}
 }
 
-draw_set_colour(c_orange)
-draw_rectangle(GUI_WIDTH*0.5 - 150, GUI_HEIGHT - 20, GUI_WIDTH*0.5 + 150, GUI_HEIGHT, false)
-draw_set_font(fnt_pixel_2)
-if (save_replay) {
-	if (instance_exists(obj_save_replay)) {
-		draw_text_outlined(GUI_WIDTH/2, GUI_HEIGHT - 0, c_black, c_white, "SAVING REPLAY", 2)
+if (!instance_exists(obj_replay_handler)) { //if not in a replay
+	draw_set_colour(c_orange)
+	draw_rectangle(GUI_WIDTH*0.5 - 150, GUI_HEIGHT - 20, GUI_WIDTH*0.5 + 150, GUI_HEIGHT, false)
+	draw_set_font(fnt_pixel_2)
+	if (save_replay) {
+		if (instance_exists(obj_save_replay)) {
+			draw_text_outlined(GUI_WIDTH/2, GUI_HEIGHT - 0, c_black, c_white, "SAVING REPLAY", 2)
+		} else {
+			draw_text_outlined(GUI_WIDTH/2, GUI_HEIGHT - 0, c_black, c_white, "REPLAY SAVED!", 2)
+		}
 	} else {
-		draw_text_outlined(GUI_WIDTH/2, GUI_HEIGHT - 0, c_black, c_white, "REPLAY SAVED!", 2)
+		draw_text_outlined(GUI_WIDTH/2, GUI_HEIGHT - 0, c_black, c_white, "SAVE REPLAY? (GRAB)", 2)
 	}
-} else {
-	draw_text_outlined(GUI_WIDTH/2, GUI_HEIGHT - 0, c_black, c_white, "SAVE REPLAY? (GRAB)", 2)
 }

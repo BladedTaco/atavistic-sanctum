@@ -1,5 +1,6 @@
 ///@desc Define game constants (macros) and global scope variable (globals)
 
+randomise() //randomise the seed for things such as random character select
 show_debug_overlay(debug_mode)
 
 //macros

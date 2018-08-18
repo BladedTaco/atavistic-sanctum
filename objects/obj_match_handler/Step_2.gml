@@ -25,9 +25,11 @@ var _width = max(_max_x - _min_x, 405) + 75
 var _height = max(_max_y - _min_y, 195) + 75
 
 if (_height*(16/9) < _width) {
-	_height = _width*(9/16)
+	_height = min(_width*(9/16), room_height)
+	_width = min(_width, _height*(16/9))
 } else {
-	_width = _height*(16/9)
+	_width = min(_height*(16/9), room_width)
+	_height = min(_height, _width*(9/16))
 }
 
 camera_set_view_size(view_camera[0], _width, _height)
@@ -36,4 +38,6 @@ camera_set_view_size(view_camera[0], _width, _height)
 view_set_wport(view_camera[0], 960)
 view_set_hport(view_camera[0], 540)
 
-scr_record_replay() //record this frames inputs to replay file
+if (!instance_exists(obj_replay_handler)) { //dont record replay during a replay
+	scr_record_replay() //record this frames inputs to replay file
+}

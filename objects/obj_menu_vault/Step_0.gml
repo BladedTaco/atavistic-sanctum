@@ -54,7 +54,8 @@ if (!active) {
 				instance_create(-GUI_WIDTH, 0, obj_menu_settings)
 			break;
 			case 1: //replays
-				//active = false		
+				active = false		
+				instance_create(-GUI_WIDTH, 0, obj_menu_replay)
 			break;
 			case 2: //album
 				//active = false		

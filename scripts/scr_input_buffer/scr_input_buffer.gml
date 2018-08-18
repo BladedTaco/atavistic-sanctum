@@ -41,6 +41,7 @@ if (sticky_special[argument[0]] and !input_array[argument[0], SPECIAL]) {
 	sticky_special[argument[0]] = false
 }
 
+
 //check for termination of sticky dodge
 if (sticky_dodge[argument[0]] and ((!input_array[argument[0], SHIELD]) or
 	(point_distance(0, 0, input_array[argument[0], XAXIS], input_array[argument[0], YAXIS])

@@ -13,7 +13,7 @@ for (var i = 0; i < 8; i++) {
 	player[i] = noone //create the players here and populate the array with their instance ids
 }
 
-
+header_string = "" //header string for replay file
 starting = 3
 
 global.match_frame = 0

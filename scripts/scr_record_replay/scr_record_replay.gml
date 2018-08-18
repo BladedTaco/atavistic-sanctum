@@ -1,4 +1,4 @@
-///@func scr_record_inputs()
+///@func scr_record_replay()
 ///@desc records inputs to the replay file
 
 if !(global.wait) {
@@ -16,7 +16,7 @@ if !(global.wait) {
 				_str += "\n" //write a new line for next player
 			}
 		}
-		buffer_write(replay_buffer, buffer_text, _str) //write the data to the buffer
+		buffer_write(replay_buffer, buffer_string, _str) //write the data to the buffer
 	}
 	global.match_frame += 1 //advance match frame
 }

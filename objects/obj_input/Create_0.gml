@@ -49,7 +49,7 @@ menu_option[3] = "Game speed: 1x"
 menu_option[4] = "UI: SHOWN"
 menu_option[5] = "FORFEIT"
 
-
+replay = false;
 
 //initialise input buttons and their mappings
 

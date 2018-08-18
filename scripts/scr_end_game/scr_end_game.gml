@@ -63,11 +63,20 @@ with (obj_results) {
 			}
 		}
 	}
-	//create the replay saving object
-	with (instance_create(x, y, obj_save_replay)) {	
-		replay_buffer = buffer_compress(obj_match_handler.replay_buffer, 0, buffer_tell(obj_match_handler.replay_buffer))
+	if (!instance_exists(obj_replay_handler)) { //if not in a replay
+		//create the replay saving object
+		with (obj_match_handler) {
+			scr_record_replay() //record the last frames inputs
+		}
+		with (instance_create(x, y, obj_save_replay)) {	
+			replay_buffer = buffer_compress(obj_match_handler.replay_buffer, 0, buffer_tell(obj_match_handler.replay_buffer))
+			header_string = obj_match_handler.header_string
+		}
+		buffer_delete(obj_match_handler.replay_buffer) //delete the buffer from memory
+	} else { //end of a replay
+		obj_replay_handler.active = false //make sure replay handler is inactive
+		scr_reset_players()
 	}
-	buffer_delete(obj_match_handler.replay_buffer) //delete the buffer from memory
 	//set the position and visibility of the results screen
 	x = 0
 	y = GUI_HEIGHT

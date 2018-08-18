@@ -1,89 +1,90 @@
 ///@desc draw effects
-if !(dead) {
-	//check for outline colour changes
-	surface_set_target(pal_surface)
-	surface_copy_part(pal_surface, 1, 0, obj_match_handler.pal_surface, player_number, 0, 1, 16)
+if (!dead and instance_exists(obj_match_handler)) {
+	if (surface_exists(pal_surface) and surface_exists(obj_match_handler.pal_surface)) {
+		//check for outline colour changes
+		surface_set_target(pal_surface)
+		surface_copy_part(pal_surface, 1, 0, obj_match_handler.pal_surface, player_number, 0, 1, 16)
 
-	if (alarm[2] >= 0) { //smash charge flash
-		if (floor(image_index) = smash_frame) {
-			if (round(draw_count/6) mod 2 = 0) {
-				draw_point_colour(1, 0, c_yellow)
+		if (alarm[2] >= 0) { //smash charge flash
+			if (floor(image_index) = smash_frame) {
+				if (round(draw_count/6) mod 2 = 0) {
+					draw_point_colour(1, 0, c_yellow)
+				}
 			}
 		}
-	}
-	if (alarm[5] >= 0) { //grab colour fade
-		draw_point_colour(1, 0, merge_colour(c_black, c_white, alarm[5]/(GAME_SPEED*5)))
-	}
-	if (alarm[0] >= 0) { //ledge colour fade
-		if (obj_match_handler.state[player_number] = LEDGE) {
-			draw_point_colour(1, 0, merge_colour(c_black, c_white, alarm[0]/(GAME_SPEED*3)))
+		if (alarm[5] >= 0) { //grab colour fade
+			draw_point_colour(1, 0, merge_colour(c_black, c_white, alarm[5]/(GAME_SPEED*5)))
 		}
-	}
+		if (alarm[0] >= 0) { //ledge colour fade
+			if (obj_match_handler.state[player_number] = LEDGE) {
+				draw_point_colour(1, 0, merge_colour(c_black, c_white, alarm[0]/(GAME_SPEED*3)))
+			}
+		}
 	
-	if ((obj_match_handler.state[player_number] = HIT_STUN) or (obj_match_handler.state[player_number] = TECHING)) { //check if the player will likely die from the attack
-		//define variables
-		var _px = x
-		var _py = y
-		var _col = false
-		var _mx = momentum_x
-		var _my = momentum_y
-		var _l = point_distance(0, 0, _mx, _my)
-		var _id, _d2, _d, _inst
-		//move test position by momentum 5 times
-		for (var i = 0; i < 10; i++) {
-			_d2 = -1;
-			_inst = collision_line(_px, _py, _px + _mx, _py + _my, obj_ground, true, false) 
-			//if there is no ground between last test position and new test position
-			if (!instance_exists(_inst)) {
-				//move the test point by momentum
-				_px += _mx 
-				_py += _my
-			} else { //else there is ground to bounce off of
-				//get the direction of the line to bounce off of
-				_id = _inst.hitbox
-				for (var o = 0; o < 4; o++) {
-					if (sign((_px - _id._x[o])*(_id._y[(o+1) mod 4] - _id._y[o]) - 
-					(_py - _id._y[o])*(_id._x[(o+1) mod 4] - _id._x[o])) != _id.side[o]) { //outside line
-						if (_d2 = -1) { //angle not set yet, so just get angle of line to bounce off
-							_d2 = (point_direction(_id._x[o], _id._y[o], _id._x[(o+1) mod 4], _id._y[(o+1) mod 4]) + 90) mod 360
-						} else { //get the average angle of the walls, which should end up in a straight reverse bounce
-							_d2 = (_d2 + ((point_direction(_id._x[o], _id._y[o], _id._x[(o+1) mod 4], _id._y[(o+1) mod 4]) + 90) mod 360))/2
+		if ((obj_match_handler.state[player_number] = HIT_STUN) or (obj_match_handler.state[player_number] = TECHING)) { //check if the player will likely die from the attack
+			//define variables
+			var _px = x
+			var _py = y
+			var _col = false
+			var _mx = momentum_x
+			var _my = momentum_y
+			var _l = point_distance(0, 0, _mx, _my)
+			var _id, _d2, _d, _inst
+			//move test position by momentum 5 times
+			for (var i = 0; i < 10; i++) {
+				_d2 = -1;
+				_inst = collision_line(_px, _py, _px + _mx, _py + _my, obj_ground, true, false) 
+				//if there is no ground between last test position and new test position
+				if (!instance_exists(_inst)) {
+					//move the test point by momentum
+					_px += _mx 
+					_py += _my
+				} else { //else there is ground to bounce off of
+					//get the direction of the line to bounce off of
+					_id = _inst.hitbox
+					for (var o = 0; o < 4; o++) {
+						if (sign((_px - _id._x[o])*(_id._y[(o+1) mod 4] - _id._y[o]) - 
+						(_py - _id._y[o])*(_id._x[(o+1) mod 4] - _id._x[o])) != _id.side[o]) { //outside line
+							if (_d2 = -1) { //angle not set yet, so just get angle of line to bounce off
+								_d2 = (point_direction(_id._x[o], _id._y[o], _id._x[(o+1) mod 4], _id._y[(o+1) mod 4]) + 90) mod 360
+							} else { //get the average angle of the walls, which should end up in a straight reverse bounce
+								_d2 = (_d2 + ((point_direction(_id._x[o], _id._y[o], _id._x[(o+1) mod 4], _id._y[(o+1) mod 4]) + 90) mod 360))/2
+							}
 						}
 					}
+					//get the direction for momentum
+					_d = point_direction(_mx, _my, 0, 0)
+					_d = _d2 - _d
+					_d = _d + _d2
+					_mx = lengthdir_x(_l, _d)
+					_my = lengthdir_y(_l, _d)
+					//apply momentum to test position
+					_px += _mx
+					_py += _my
 				}
-				//get the direction for momentum
-				_d = point_direction(_mx, _my, 0, 0)
-				_d = _d2 - _d
-				_d = _d + _d2
-				_mx = lengthdir_x(_l, _d)
-				_my = lengthdir_y(_l, _d)
-				//apply momentum to test position
-				_px += _mx
-				_py += _my
+				//if outside of blastzone
+				if (!position_meeting(_px, _py, obj_blast_zone)) {
+					//set _col to true and stop loop
+					_col = true
+					i = 100
+				}
 			}
-			//if outside of blastzone
-			if (!position_meeting(_px, _py, obj_blast_zone)) {
-				//set _col to true and stop loop
-				_col = true
-				i = 100
-			}
-		}
 		
-		if (_col) { //if likely to die from attack
-			//apply effect
-			draw_set_alpha(0.75)
-			if (draw_count mod 10 < 5) {
-				draw_set_colour(c_white)
-			} else {
-				draw_set_colour(c_black)
+			if (_col) { //if likely to die from attack
+				//apply effect
+				draw_set_alpha(0.75)
+				if (draw_count mod 10 < 5) {
+					draw_set_colour(c_white)
+				} else {
+					draw_set_colour(c_black)
+				}
+				draw_line(1, 0, 1, 16)
+				draw_set_alpha(1)	
 			}
-			draw_line(1, 0, 1, 16)
-			draw_set_alpha(1)	
 		}
+
+		surface_reset_target()
 	}
-
-	surface_reset_target()
-
 
 	image_blend = img_blend
 	pal_swap_set(pal_surface, 1, true)

@@ -59,25 +59,35 @@ if (_len > 1) {
 	_input[ALT_YAXIS] /= _len
 }
 
-if (instance_exists(obj_match_handler)) {
+if (instance_exists(obj_match_handler) or (paused >= 0)) {
 	//check for pause (in match only)
 	global.paused = (paused >= 0)
 	if (_input[PAUSE]) {
 		if (!sticky_pause[argument[0]]) {
-			if (paused >= 0) {
+			sticky_pause[argument[0]] = true
+			if (paused >= 0) { //unpause
 				if (paused = argument[0]) {
 					file_delete("PAUSE_SCREEN") //delete the pause screen
 					sprite_delete(pause_sprite)
 					paused = -1
 					instance_activate_all()
-					sticky_pause[argument[0]] = true
 				}
-			} else {
-				screen_save("PAUSE_SCREEN") //crreate the pause screen
+			} else { //pause
+				if (instance_exists(obj_replay_handler) and obj_replay_handler.active) {
+					obj_replay_handler.wait = true	
+					replay = true;
+					menu_option[2] = "Take Control"
+					menu_option[5] = "End Replay"
+				} else {
+					replay = false;
+					menu_option[2] = "Input lag: 5 frame"
+					menu_option[5] = "FORFEIT"
+				}
+				screen_save("PAUSE_SCREEN") //create the pause screen
 				pause_sprite = sprite_add("PAUSE_SCREEN", 1, false, false, 0, 0)
 				paused = argument[0]
+				alarm[1] = MENU_DELAY
 				instance_deactivate_all(true)
-				sticky_pause[argument[0]] = true
 			}
 		}
 	} else {
@@ -97,5 +107,7 @@ if (global.debug) { //debug option to only allow 1 player to move at a time
 	}
 }
 
-scr_input_buffer(argument[0], _input)
+if !(instance_exists(obj_replay_handler) and obj_replay_handler.active) { //if not in a replay
+	scr_input_buffer(argument[0], _input)
+}
 

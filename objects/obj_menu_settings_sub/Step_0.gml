@@ -133,7 +133,7 @@ if (creator.alarm[0] > 0) { //if moving between states
 					}
 				}
 				sub_menu = true
-				with(instance_create(0, GUI_HEIGHT, obj_profile_menu)) {
+				with(instance_create(0, GUI_HEIGHT, obj_menu_profile)) {
 					depth = other.depth - 1 //set to be above this menu
 					state = other.state*3 //set state
 					creator = other.id

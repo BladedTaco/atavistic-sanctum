@@ -24,10 +24,4 @@ time = global.time
 player_number = 0
 active = false
 
-//reset players
-global.player_number = 0
-with (obj_input) {
-	button_const_array = []
-	button_array = []
-	scr_initialise_controller_inputs()
-}
+scr_reset_players() //reset players

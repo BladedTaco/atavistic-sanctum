@@ -109,8 +109,8 @@ if (argument[0].h = -1) { //if negative hitstun, only apply damage and no state 
 		_mag *= argument[0].d + _id.percentage	// k = k*(damage taken + percentage)
 		_mag /= _id.weight*300					// k = k/(weight*300)
 		_mag += 1								// k = k + 1
-		_mag *= power(argument[0].s + lerp((1/max(argument[0].s, 1))*3, 2, 0.5), 1.5)		// k = k * ((s+(1/s2))^1.5)
-		_mag *= 0.25							// k = k/4
+		_mag *= power(abs(argument[0].s) + lerp((1/max(abs(argument[0].s), 1))*3, 2, 0.5), 1.5)		// k = k * ((s+(1/s2))^1.5)
+		_mag *= 0.25*sign(argument[0].s)		// k = (k*sign(scaling))/4
 	}
 	_mag += argument[0].b					// k = k + base knockback
 	_mag *= _id.bracing						// k = k + state scaling
@@ -148,7 +148,7 @@ if (argument[0].h = -1) { //if negative hitstun, only apply damage and no state 
 		//handle hitbox sleeping alarm
 		if ((_mag > 3) and (argument[0].d > 3)) {//if large attack
 			//set the attacked players hitbox sleeping alarm
-			_id.alarm[4] = _mag + 5
+			_id.alarm[4] = _mag + 2
 		}
 	}
 }

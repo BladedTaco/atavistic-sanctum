@@ -2,7 +2,7 @@
 replay_buffer = 0
 save_replay = false
 saveid = 0
-
+header_string = "" //replay header string
 
 //create the replay file
 replay_file_string = string("replays/" + date_date_string(date_current_datetime()) + ".txt") //get name of file based on time
