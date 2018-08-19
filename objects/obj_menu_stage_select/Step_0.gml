@@ -12,8 +12,8 @@ if (active = 1) {
 			_back = true	
 		}
 	}
-	cursor_x = clamp(cursor_x, 0, GUI_WIDTH)
-	cursor_y = clamp(cursor_y, 0, GUI_HEIGHT)
+	cursor_x = clamp(cursor_x, GUI_WIDTH*0.1, GUI_WIDTH*0.9)
+	cursor_y = clamp(cursor_y, GUI_HEIGHT*0.1, GUI_HEIGHT*0.9)
 	if (_select) { //if selected option
 		var _xx, _yy;
 		for (var i = 0; i < array_length_1d(menu_sprite); i++) {

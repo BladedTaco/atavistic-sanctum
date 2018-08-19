@@ -73,10 +73,15 @@ if (instance_exists(obj_match_handler) or (paused >= 0)) {
 					instance_activate_all()
 					if (instance_exists(obj_replay_handler)) {
 						instance_deactivate_object(obj_menu_replay)
+						obj_input.sticky_attack		= obj_replay_handler.sticky_attack	
+						obj_input.sticky_dodge		= obj_replay_handler.sticky_dodge		
+						obj_input.sticky_jump		= obj_replay_handler.sticky_jump		
+						obj_input.sticky_special	= obj_replay_handler.sticky_special
+						scr_get_replay_input()
+						obj_input.old_axis			= obj_replay_handler.old_axis
 					} else {
 						instance_deactivate_object(obj_menu_char_select)
 					}
-					scr_get_replay_input()
 				}
 			} else { //pause
 				if (instance_exists(obj_replay_handler) and obj_replay_handler.active) {
@@ -84,6 +89,11 @@ if (instance_exists(obj_match_handler) or (paused >= 0)) {
 					replay = true;
 					menu_option[2] = "Take Control"
 					menu_option[5] = "End Replay"
+					obj_replay_handler.old_axis			= obj_input.old_axis
+					obj_replay_handler.sticky_attack	= obj_input.sticky_attack
+					obj_replay_handler.sticky_dodge		= obj_input.sticky_dodge
+					obj_replay_handler.sticky_jump		= obj_input.sticky_jump
+					obj_replay_handler.sticky_special	= obj_input.sticky_special
 				} else {
 					replay = false;
 					menu_option[2] = "Input lag: 5 frame"
@@ -96,10 +106,13 @@ if (instance_exists(obj_match_handler) or (paused >= 0)) {
 				instance_deactivate_all(true)
 			}
 		}
-	} else {
-		sticky_pause[argument[0]] = false	
 	}
 }
+
+
+	if (!_input[PAUSE]) {
+		sticky_pause[argument[0]] = false		
+	}
 
 
 if (global.debug) { //debug option to only allow 1 player to move at a time
@@ -110,6 +123,10 @@ if (global.debug) { //debug option to only allow 1 player to move at a time
 			}
 		}
 	}
+}
+
+for (var i = 0; i < array_length_1d(_input); i++) {
+	_input[i] = real(string_format(_input[i], 0, 4))	
 }
 
 if !(instance_exists(obj_replay_handler) and obj_replay_handler.active) { //if not in a replay

@@ -11,6 +11,12 @@ player_character = [] //the character of the player
 player_pallet = [] //the pallet of the player
 player_col = [] //the colour belnd of the player
 input_array = [] //the inputs of the players
+old_axis = [] //old axis
+//sticky inputs
+sticky_attack = []
+sticky_dodge = []
+sticky_jump = []
+sticky_special = []
 global.match_frame = -1000 //make sure match frame only reaches 0 when obj_match_handler is created
 active = true;
 wait = false;

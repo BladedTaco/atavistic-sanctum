@@ -53,6 +53,12 @@ if (paused >= 0) {
 						instance_activate_all()
 						if (instance_exists(obj_replay_handler)) {
 							instance_deactivate_object(obj_menu_replay)
+							obj_input.sticky_attack		= obj_replay_handler.sticky_attack	
+							obj_input.sticky_dodge		= obj_replay_handler.sticky_dodge		
+							obj_input.sticky_jump		= obj_replay_handler.sticky_jump		
+							obj_input.sticky_special	= obj_replay_handler.sticky_special
+							scr_get_replay_input()
+							obj_input.old_axis			= obj_replay_handler.old_axis
 						} else {
 							instance_deactivate_object(obj_menu_char_select)
 						}
@@ -60,7 +66,6 @@ if (paused >= 0) {
 							scr_end_game(2, paused)	
 						}
 						paused = -1
-						scr_get_replay_input()
 					break;
 					case 1: //hitboxes: shwon
 						if (global.show_hitboxes) {

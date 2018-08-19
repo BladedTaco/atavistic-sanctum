@@ -10,7 +10,7 @@ if !(global.wait) {
 				_str += string(i) + "\n" //write the player number
 				for (var o = 0; o < 10; o++) { //for each input
 					if (input_array[i, o] != 0) { //if there is an input to write
-						_str += string(o) + " " + string_format(input_array[i, o], 0, 20) + "\n" //write the input
+						_str += string(o) + " " + string_format(input_array[i, o], 0, 4) + "\n" //write the input
 					}
 				}
 				_str += "\n" //write a new line for next player
