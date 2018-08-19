@@ -14,10 +14,10 @@ if (visible and (y = 0)) { //only do code if active
 		if (obj_input.input_array[i, ATTACK] and !obj_input.sticky_attack[i]) { //if wanting to leave menu
 			obj_input.sticky_attack[i] = true
 			if (instance_exists(obj_replay_handler)) { //end of replay
-				for (var o = 0; o < array_length_1d(ready); o++) {
+				for (var o = 0; o < num; o++) {
 					if (ready[o] < 0.02) {
 						ready[o] = 0.02
-					} else if (ready[i] < 1.05) { //if not fully readied
+					} else if (ready[o] < 1.05) { //if not fully readied
 						ready[o] = 1.05 //set to be ready	
 					}
 				}
@@ -45,11 +45,11 @@ if (visible and (y = 0)) { //only do code if active
 		}
 		if (obj_input.input_array[i, PAUSE] and !obj_input.sticky_pause[i]) { //pause means exit menu for all
 			obj_input.sticky_pause[i] = true;
-			for (var i = 0; i < array_length_1d(ready); i++) {
-				if (ready[i] < 0.02) { //if not at all readied
-					ready[i] = 0.02 //make ready stage 1
-				} else if (ready[i] < 1.05) { //if not fully readied
-					ready[i] = 1.05 //set to be ready	
+			for (var o = 0; o < num; o++) {
+				if (ready[o] < 0.02) { //if not at all readied
+					ready[o] = 0.02 //make ready stage 1
+				} else if (ready[o] < 1.05) { //if not fully readied
+					ready[o] = 1.05 //set to be ready	
 				}
 			}
 		}

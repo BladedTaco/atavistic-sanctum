@@ -71,6 +71,12 @@ if (instance_exists(obj_match_handler) or (paused >= 0)) {
 					sprite_delete(pause_sprite)
 					paused = -1
 					instance_activate_all()
+					if (instance_exists(obj_replay_handler)) {
+						instance_deactivate_object(obj_menu_replay)
+					} else {
+						instance_deactivate_object(obj_menu_char_select)
+					}
+					scr_get_replay_input()
 				}
 			} else { //pause
 				if (instance_exists(obj_replay_handler) and obj_replay_handler.active) {
@@ -95,7 +101,6 @@ if (instance_exists(obj_match_handler) or (paused >= 0)) {
 	}
 }
 
-scr_handle_c_stick(argument[0], _input)
 
 if (global.debug) { //debug option to only allow 1 player to move at a time
 	if (keyboard_check(ord("Z"))) {
@@ -108,6 +113,7 @@ if (global.debug) { //debug option to only allow 1 player to move at a time
 }
 
 if !(instance_exists(obj_replay_handler) and obj_replay_handler.active) { //if not in a replay
+	scr_handle_c_stick(argument[0], _input)
 	scr_input_buffer(argument[0], _input)
 }
 

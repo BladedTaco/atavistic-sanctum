@@ -26,6 +26,11 @@ if (active = 1) {
 				break;
 			}
 		}
+		if (i = array_length_1d(menu_sprite)) { //random stage selected
+			scr_start_match(false, asset_get_index("rm_match_" + string_replace(menu_option[irandom(i-1)], " ", "_")))
+			active = 2
+			obj_menu_char_select.active = true
+		}
 	}
 	if (_back) { //if wanting to exit menu
 		//exit menu to character select

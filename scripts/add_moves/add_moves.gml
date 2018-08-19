@@ -529,7 +529,7 @@ var i = 0 //variable created now for use in loops below if hurtboxes or hitboxes
 	scr_add_hurtbox(spr_bal_smash_forward, 13, 0, CIRCLE, 15, 19, 86, -23, 0)
 	scr_add_hurtbox(spr_bal_smash_forward, 14, 0, CIRCLE, 15, 19, 88, -27, 0)
 	for (var i = 0; i < 2; i++) {
-		scr_add_move(spr_bal_smash_forward, i, 0, CIRCLE, 30, 30, -2, -28, 0, 0, IN, 0.05, 0, 0)
+		scr_add_move(spr_bal_smash_forward, i, 0, CIRCLE, 30, 30, -2, -28, 0, 0, IN, 0.01, 0, 0)
 	}
 	scr_add_move(spr_bal_smash_forward, 2, 0, CIRCLE, 29, 29, -2, -28, 0, 23, 340, 4, 9)
 	scr_add_move(spr_bal_smash_forward, 3, 0, CIRCLE, 25, 20, 14, -28, 0, 17, 340, 3, 5)
@@ -553,7 +553,7 @@ var i = 0 //variable created now for use in loops below if hurtboxes or hitboxes
 	scr_add_hurtbox(spr_bal_smash_down, 12, 0, CIRCLE, 15, 19, 0, -31, 0)
 	scr_add_hurtbox(spr_bal_smash_down, 13, 0, CIRCLE, 15, 19, 0, -27, 0)
 	for (var i = 0; i < 2; i++) {
-		scr_add_move(spr_bal_smash_down, i, 0, CIRCLE, 30, 30, -5, -30, 0, 0, IN, 0.05, 0, 0)
+		scr_add_move(spr_bal_smash_down, i, 0, CIRCLE, 30, 30, -5, -30, 0, 0, IN, 0.01, 0, 0)
 	}
 	scr_add_move(spr_bal_smash_down, 2, 0, CIRCLE, 28, 20, -5, -30, 0, 13, 200, 3, 4)
 	scr_add_move(spr_bal_smash_down, 3, 0, CIRCLE, 40, 27, 8, -25, 0, 13, 210, 3, 2)
@@ -572,7 +572,7 @@ var i = 0 //variable created now for use in loops below if hurtboxes or hitboxes
 	scr_add_hurtbox(spr_bal_smash_up, 7, 0, CIRCLE, 15, 19, 0, -33, 0)
 	scr_add_hurtbox(spr_bal_smash_up, 8, 0, CIRCLE, 15, 19, 0, -27, 0)
 	for (var i = 0; i < 4; i++) {
-		scr_add_move(spr_bal_smash_forward, i, 0, CIRCLE, 30, 30, 0, -20, 0, 0, IN, 0.05, 0, 0)
+		scr_add_move(spr_bal_smash_forward, i, 0, CIRCLE, 30, 30, 0, -20, 0, 0, IN, 0.01, 0, 0)
 	}
 	scr_add_move(spr_bal_smash_up, 4, 0, CIRCLE, 20, 30, 0, -20, 0, 18, 90, 3, 4)
 	scr_add_move(spr_bal_smash_up, 5, 0, CIRCLE, 15, 38, 0, -30, 0, 26, 90, 6, 5)
@@ -1047,7 +1047,7 @@ var i = 0 //variable created now for use in loops below if hurtboxes or hitboxes
 	scr_add_hurtbox(spr_mac_smash_down, 18, 0, RECTANGLE, 12, 16, 1, -19, 0)
 	scr_add_hurtbox(spr_mac_smash_down, 19, 0, RECTANGLE, 12, 16, 1, -19, 0)
 	for (var i = 0; i < 14; i++) {
-		scr_add_move(spr_mac_smash_down, i, 0, CIRCLE, 30, 30, 0, 0, 0, 0, IN, 0.05, 0, 0)
+		scr_add_move(spr_mac_smash_down, i, 0, CIRCLE, 30, 30, 0, 0, 0, 0, IN, 0.01, 0, 0)
 	}
 	scr_add_move(spr_mac_smash_down, 14, 0, CIRCLE, 39, 32, 0, 0, 0, 20, 90, 5, 7)
 	scr_add_move(spr_mac_smash_down, 15, 0, CIRCLE, 39, 60, 0, 0, 0, 20, 90, 5, 7)
@@ -1058,7 +1058,7 @@ var i = 0 //variable created now for use in loops below if hurtboxes or hitboxes
 		scr_add_hurtbox(spr_mac_smash_up, i, 0, RECTANGLE, 12, 16, 1, -19, 0)	
 	}
 	for (var i = 0; i < 3; i++) {
-		scr_add_move(spr_mac_smash_up, i, 0, CIRCLE, 30, 30, 28, 0, 0, 0, IN, 0.05, 0, 0)
+		scr_add_move(spr_mac_smash_up, i, 0, CIRCLE, 30, 30, 28, 0, 0, 0, IN, 0.01, 0, 0)
 	}
 	scr_add_move(spr_mac_smash_up, 3, 0, CIRCLE, 26, 30, 28, 0, 0, 25, 90, 14, 5)
 	scr_add_move(spr_mac_smash_up, 4, 0, CIRCLE, 26, 30, 28, 0, 0, 25, 90, 14, 5)
@@ -1366,7 +1366,7 @@ var i = 0 //variable created now for use in loops below if hurtboxes or hitboxes
 
 	//geo smash forward (discontinuous hitbox)
 	for (var i = 0; i < 2; i++) {
-		scr_add_move(spr_geo_smash_forward, i, 0, CIRCLE, 30, 30, 20, -18, 0, 0, IN, 0.05, 0, 0)
+		scr_add_move(spr_geo_smash_forward, i, 0, CIRCLE, 30, 30, 20, -18, 0, 0, IN, 0.01, 0, 0)
 	}
 	scr_add_move(spr_geo_smash_forward, 2, 0, RECTANGLE, 27, 15, 20, -18, 0, 29, 340, 9, 7)
 
@@ -1387,8 +1387,8 @@ var i = 0 //variable created now for use in loops below if hurtboxes or hitboxes
 	scr_add_hurtbox(spr_geo_smash_down, 19, 0, CIRCLE, 17, 11, 1, -17, 0) 
 	scr_add_hurtbox(spr_geo_smash_down, 19, 1, CIRCLE, 9, 12, 1, -8, 0)
 	for (var i = 0; i < 4; i++) {
-		scr_add_move(spr_geo_smash_down, i, 0, CIRCLE, 30, 30, -23, -10, 0, 0, IN, 0.05, 0, 0)
-		scr_add_move(spr_geo_smash_down, i, 1, CIRCLE, 30, 30, 23, -10, 0, 0, IN, 0.05, 0, 0)
+		scr_add_move(spr_geo_smash_down, i, 0, CIRCLE, 30, 30, -23, -10, 0, 0, IN, 0.01, 0, 0)
+		scr_add_move(spr_geo_smash_down, i, 1, CIRCLE, 30, 30, 23, -10, 0, 0, IN, 0.01, 0, 0)
 	}
 	for (i = 0; i < 2; i++) {
 		scr_add_move(spr_geo_smash_down, 4 + i*6, 0, CIRCLE, 28, 21, -23, -10, 0, 23, IN, 5, 8)
@@ -1402,7 +1402,7 @@ var i = 0 //variable created now for use in loops below if hurtboxes or hitboxes
 
 	//geo smash up (discontinuous hitboxes)
 	for (var i = 0; i < 3; i++) {
-		scr_add_move(spr_geo_smash_up, i, 0, CIRCLE, 30, 30, 1, -37, 0, 0, IN, 0.05, 0, 0)
+		scr_add_move(spr_geo_smash_up, i, 0, CIRCLE, 30, 30, 1, -37, 0, 0, IN, 0.01, 0, 0)
 	}
 	scr_add_move(spr_geo_smash_up, 3, 0, RECTANGLE, 27, 29, 1, -37, 0, 10, 90, 4, 12)
 	scr_add_move(spr_geo_smash_up, 4, 0, RECTANGLE, 33, 42, 1, -42, 0, 20, 90, 6, 6)
@@ -1551,7 +1551,7 @@ var i = 0 //variable created now for use in loops below if hurtboxes or hitboxes
 
 	//eth smash forward (discontinuous hitbox)
 	for (var i = 0; i < 3; i++) {
-		scr_add_move(spr_eth_smash_forward, i, 0, CIRCLE, 30, 30, 23, -25, 0, 0, IN, 0.05, 0, 0)
+		scr_add_move(spr_eth_smash_forward, i, 0, CIRCLE, 30, 30, 23, -25, 0, 0, IN, 0.01, 0, 0)
 	}
 	scr_add_move(spr_eth_smash_forward, 3, 0, CIRCLE, 22, 4, 23, -25, -30, 27, 340, 14, 6)
 	scr_add_move(spr_eth_smash_forward, 4, 0, CIRCLE, 38, 15, 33, -21, -30, 27, 340, 14, 6)
@@ -1573,8 +1573,8 @@ var i = 0 //variable created now for use in loops below if hurtboxes or hitboxes
 	scr_add_hurtbox(spr_eth_smash_down, 12, 0, RECTANGLE, 11, 21, 4, -26, 0)
 	scr_add_hurtbox(spr_eth_smash_down, 13, 0, RECTANGLE, 11, 21, 0, -28, 0)
 	for (var i = 0; i < 6; i++) {
-		scr_add_move(spr_eth_smash_down, i, 0, CIRCLE, 30, 30, -12, -13, 0, 0, IN, 0.05, 0, 0)
-		scr_add_move(spr_eth_smash_down, i, 0, CIRCLE, 30, 30, 34, -13, 0, 0, IN, 0.05, 0, 0)
+		scr_add_move(spr_eth_smash_down, i, 0, CIRCLE, 30, 30, -12, -13, 0, 0, IN, 0.01, 0, 0)
+		scr_add_move(spr_eth_smash_down, i, 0, CIRCLE, 30, 30, 34, -13, 0, 0, IN, 0.01, 0, 0)
 	}
 	scr_add_move(spr_eth_smash_down, 6, 0, CIRCLE, 22, 4, -12, -13, 30, 29, OUT, 5, 8)
 	scr_add_move(spr_eth_smash_down, 6, 1, CIRCLE, 22, 4, 34, -13, -30, 29, OUT, 5, 8)
@@ -1589,7 +1589,7 @@ var i = 0 //variable created now for use in loops below if hurtboxes or hitboxes
 	scr_add_hurtbox(spr_eth_smash_up, 2, 0, RECTANGLE, 11, 21, 0, -22, 0)
 	scr_add_hurtbox(spr_eth_smash_up, 3, 0, RECTANGLE, 11, 21, 0, -17, 0)
 	for (var i = 0; i < 4; i++) {
-		scr_add_move(spr_eth_smash_up, i, 0, CIRCLE, 30, 30, 0, 20, 0, 0, IN, 0.05, 0, 0)
+		scr_add_move(spr_eth_smash_up, i, 0, CIRCLE, 30, 30, 0, 20, 0, 0, IN, 0.01, 0, 0)
 	}
 	for (i = 4; i < 15; i++) {
 		scr_add_hurtbox(spr_eth_smash_up, i, 0, RECTANGLE, 11, 21, 0, 0 - i*5, 0)

@@ -33,4 +33,9 @@ if (active) {
 		}
 		global.match_frame += 1
 	}
+} else {
+	if (buffer_tell(replay_buffer) >= buffer_get_size(replay_buffer)) {
+		alarm[0] = GAME_SPEED
+		buffer_seek(replay_buffer, buffer_seek_relative, -1) //move before the end of the buffer, so this message doesnt reappear forever
+	}
 }

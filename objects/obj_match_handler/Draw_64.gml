@@ -137,3 +137,6 @@ if (starting > -1) {
 	draw_set_font(fnt_pixel)
 	starting -= 1/GAME_SPEED
 }
+
+draw_set_font(fnt_pixel_4)
+draw_text_outlined(GUI_WIDTH/2, GUI_HEIGHT/2, c_dkgray, c_lime, string(global.match_frame), 4)

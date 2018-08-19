@@ -208,9 +208,10 @@ if (room = rm_menu) {
 						}
 					}
 					instance_destroy();
+					scr_reset_players(); //reset players
 				}
 			}
-			if (alarm[0] <= 0) { //dont alllow startgin match if exiting menu
+			if (alarm[0] <= 0) { //dont alllow starting match if exiting menu
 				if (obj_input.input_array[i, PAUSE] and !obj_input.sticky_pause[i]) {
 					obj_input.sticky_pause[i] = true
 					for (var o = 0; o < player_number; o++) {

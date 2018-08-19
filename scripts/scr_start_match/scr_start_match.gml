@@ -55,7 +55,8 @@ if (argument[0]) {
 		_str += "\n" + "\n" //add a gap
 		header_string = _str //set the header string
 		for (var i = 0; i < global.player_number; i++) { //add obj_input varibles after header
-			_str += string(obj_input.smash_deadzone[i]) + "\n" + string(obj_input.c_stick_deadzone[i]) + "\n" +
+			_str += string(obj_input.smash[i]) + "\n" + 
+			string(obj_input.smash_deadzone[i]) + "\n" + string(obj_input.c_stick_deadzone[i]) + "\n" +
 			string (obj_input.l_stick_deadzone[i]) + "\n" + string(obj_input.l_stick_neutral[i]) + "\n"	
 		}
 		_str += "\n"

@@ -8,18 +8,6 @@ do {
 	_check_state = true //set base state of variable
 	_move_character = 0 //set base state of variable
 	_inst = player[i] //get the player object corresponding to the player number
-	/* DEPRECATED CODE THAT MAY NEED TO BE RE ADDED
-		while (!instance_exists(_inst)) {
-			if (i = global.player_number) {
-				return -1 //return an error, this should do nothing
-			}
-			for (var o = i; o < global.player_number - 1; o++) {
-				player[o] = player[o+1]
-			}
-			player[global.player_number - 1] = noone
-			global.player_number -= 1
-		}
-	*/
 	//check exit conditions in case of false input
 	if (i >= global.player_number) { exit }
 	if (!instance_exists(_inst)) { i++; continue }
