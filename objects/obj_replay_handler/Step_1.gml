@@ -12,23 +12,18 @@ if (active) {
 					}
 				}	
 				var _str = buffer_read(replay_buffer, buffer_string) //get the frames string
-				show_debug_message(_str)
-				if (real(scr_read_line(_str)) = global.match_frame) { //have read this frames inputs from buffer
-					//parse string for inputs
-					_str = scr_delete_line(_str) //skip line
-					for (var i = 0; i < player_number; i++) {
-						if (i = real(scr_read_line(_str))) { //correct player
-							_str = scr_delete_line(_str)
-							while (scr_read_line(_str) != "") { //this player has inputs to read
-								input_array[i, real(string_copy(_str, 1, 1))] = real(scr_read_line(string_delete(_str, 1, 2))) //read out the inputs into the input array
-								_str = scr_delete_line(_str) //read to next line
-							}
-							_str = scr_delete_line(_str) //read past seperator
+				//parse string for inputs
+				_str = scr_delete_line(_str) //skip line
+				for (var i = 0; i < player_number; i++) {
+					if (i = real(scr_read_line(_str))) { //correct player
+						_str = scr_delete_line(_str)
+						while (scr_read_line(_str) != "") { //this player has inputs to read
+							input_array[i, real(string_copy(_str, 1, 1))] = real(scr_read_line(string_delete(_str, 1, 2))) //read out the inputs into the input array
+							_str = scr_delete_line(_str) //read to next line
 						}
-						input_array[i, PAUSE] = 0 //dont allow pausing
+						_str = scr_delete_line(_str) //read past seperator
 					}
-				} else {
-					show_message("INCORRECT INPUT")	
+					input_array[i, PAUSE] = 0 //dont allow pausing
 				}
 			} else {
 				active = false	

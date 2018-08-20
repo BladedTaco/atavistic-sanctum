@@ -111,7 +111,7 @@ if (instance_exists(obj_match_handler) or (paused >= 0)) {
 
 
 if (!_input[PAUSE]) {
-	sticky_pause[argument[0]] = false		
+	sticky_pause[argument[0]] = max(sticky_pause[argument[0]] - 0.1, 0)	 //slowly decrement a sticky pause to false
 }
 
 

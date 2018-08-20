@@ -9,9 +9,7 @@ if (argument[2] = 3) { //if special attack
 	if (obj_input.sticky_special[argument[1]]) { return state[argument[1]] } //exit the script if attack button is held
 	obj_input.sticky_special[argument[1]] = true //set sticky attack to true
 } else { //if normal attack
-	if (obj_input.sticky_attack[argument[1]]) { 
-		show_debug_message("STICKY HELD")
-		return state[argument[1]] } //exit the script if attack button is held
+	if (obj_input.sticky_attack[argument[1]]) { return state[argument[1]] } //exit the script if attack button is held
 	obj_input.sticky_attack[argument[1]] = true //set sticky attack to true
 }
 

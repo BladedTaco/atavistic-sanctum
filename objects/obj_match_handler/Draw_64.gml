@@ -138,19 +138,14 @@ if (starting > -1) {
 	starting -= 1/GAME_SPEED
 }
 
-draw_set_font(fnt_pixel_4)
-draw_text_outlined(GUI_WIDTH/2, GUI_HEIGHT/2, c_dkgray, c_lime, string(global.match_frame), 4)
-if (!false) {
-	show_debug_message(global.match_frame + instance_exists(obj_replay_handler))
-	show_debug_message(input_array)
+if (global.debug) {
+	draw_set_font(fnt_pixel_4)
+	draw_text_outlined(GUI_WIDTH/2, GUI_HEIGHT/2, c_dkgray, c_lime, string(global.match_frame), 4)
 	for (var i = 0; i < array_length_1d(state); i++) {
 		if (instance_exists(player[i])) {
-			//draw_text_outlined(GUI_WIDTH*0.8, GUI_HEIGHT*0.1*(i+1), c_orange, c_fuchsia, string(state[i]), 4)	
-			//draw_text_outlined(GUI_WIDTH*0.865, GUI_HEIGHT*0.1*(i+1), c_orange, c_fuchsia, string(player[i].x), 4)	
-			//draw_text_outlined(GUI_WIDTH*0.93, GUI_HEIGHT*0.1*(i+1), c_orange, c_fuchsia, string(player[i].y), 4)	
-			show_debug_message(string(state[i])		)
-			show_debug_message(string(player[i].x)	)
-			show_debug_message(string(player[i].y)	+ "\n")
+			draw_text_outlined(GUI_WIDTH*0.7, GUI_HEIGHT*0.1*(i+1), c_olive, c_fuchsia, string(state[i]), 4)	
+			draw_text_outlined(GUI_WIDTH*0.8, GUI_HEIGHT*0.1*(i+1), c_olive, c_fuchsia, string(player[i].x), 4)	
+			draw_text_outlined(GUI_WIDTH*0.9, GUI_HEIGHT*0.1*(i+1), c_olive, c_fuchsia, string(player[i].y), 4)
 		}
 	}
 }
