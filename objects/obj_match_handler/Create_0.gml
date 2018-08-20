@@ -20,5 +20,4 @@ global.match_frame = 0
 
 random_set_seed(42)
 
-
 //get data from server for the match

@@ -9,7 +9,6 @@ if (instance_exists(obj_replay_handler) and obj_replay_handler.active) {
 		} else {
 			scr_input_buffer_nonlocal(i)	
 		}
-	
 	}
 }
 

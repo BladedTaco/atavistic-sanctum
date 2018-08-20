@@ -37,7 +37,3 @@ camera_set_view_size(view_camera[0], _width, _height)
 
 view_set_wport(view_camera[0], 960)
 view_set_hport(view_camera[0], 540)
-
-if (!instance_exists(obj_replay_handler)) { //dont record replay during a replay
-	scr_record_replay() //record this frames inputs to replay file
-}

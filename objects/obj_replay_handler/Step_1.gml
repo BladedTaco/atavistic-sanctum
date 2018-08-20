@@ -12,6 +12,7 @@ if (active) {
 					}
 				}	
 				var _str = buffer_read(replay_buffer, buffer_string) //get the frames string
+				show_debug_message(_str)
 				if (real(scr_read_line(_str)) = global.match_frame) { //have read this frames inputs from buffer
 					//parse string for inputs
 					_str = scr_delete_line(_str) //skip line
@@ -26,6 +27,8 @@ if (active) {
 						}
 						input_array[i, PAUSE] = 0 //dont allow pausing
 					}
+				} else {
+					show_message("INCORRECT INPUT")	
 				}
 			} else {
 				active = false	

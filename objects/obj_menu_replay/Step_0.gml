@@ -65,6 +65,7 @@ if (room = rm_menu) {
 						if (game_version[menu_index] = global.game_version) { //able to play replay
 							//play replay	
 							scr_start_replay(false)
+							sub_menu = 2;
 						}
 					break;
 				

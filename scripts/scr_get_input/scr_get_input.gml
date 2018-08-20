@@ -110,15 +110,15 @@ if (instance_exists(obj_match_handler) or (paused >= 0)) {
 }
 
 
-	if (!_input[PAUSE]) {
-		sticky_pause[argument[0]] = false		
-	}
+if (!_input[PAUSE]) {
+	sticky_pause[argument[0]] = false		
+}
 
 
 if (global.debug) { //debug option to only allow 1 player to move at a time
 	if (keyboard_check(ord("Z"))) {
 		if (!keyboard_check(ord(string(argument[0])))) {  //if this number not beign pressed
-			for (var i = 0; i < 10; i++) {
+			for (var i = 0; i < array_length_1d(_input); i++) {
 				_input[i] = 0	//remove all input
 			}
 		}

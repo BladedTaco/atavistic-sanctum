@@ -121,7 +121,7 @@ if (paused >= 0) {
 		}
 	}
 } else {
-	if (global.debug) {
+	if (global.debug and false) {
 		draw_set_font(fnt_pixel_2)
 		//draw the input array to screen
 		for (var i = 0; i <= global.player_number; i++) {

@@ -20,6 +20,11 @@ do {
 	if ((input_array[i, YAXIS] < 0.5) or (state[i] = SMASH_ATTACK) or (state[i] = SPECIAL_ATTACK) or (state[i] = TILT_ATTACK)) {
 		_inst.alarm[1] = 5 
 	} //platform drop alarm
+	if (global.match_frame = 268) {
+		var _treu = true
+		_treu += 1
+		///pinapple
+	}
 	do {
 		var _state = state[i]
 		switch (state[i]) { //perform actions based on state 
