@@ -120,19 +120,4 @@ if (paused >= 0) {
 			}
 		}
 	}
-} else {
-	if (global.debug) {
-		draw_set_font(fnt_pixel_2)
-		//draw the input array to screen
-		for (var i = 0; i <= global.player_number; i++) {
-			for (var o = 0; o < array_length_2d(input_array, i); o++) {
-				draw_text_normal(i*50 + 50, o*15 + 50, input_array[i, o])
-			}
-		}
-		//draw the xaxis positions for the first player over the input buffers length of frames
-		draw_set_colour(c_aqua)
-		for (var i = 0; i <= global.input_buffer_length; i++) {
-			draw_circle(500 + i*15, 100 + 50*input_buffer_array[i*100 + 0, XAXIS], 5, false)
-		}
-	}
 }

@@ -38,9 +38,11 @@ if (visible and (y = 0)) { //only do code if active
 			}
 		}
 		if (obj_input.input_array[i, GRAB]) {
-			if (!save_replay) {
-				obj_save_replay.visible = true
-				save_replay = true;
+			if (instance_exists(obj_save_replay)) { //if not in a replay
+				if (!save_replay) {
+					obj_save_replay.visible = true
+					save_replay = true;
+				}
 			}
 		}
 		if (obj_input.input_array[i, PAUSE] and !obj_input.sticky_pause[i]) { //pause means exit menu for all

@@ -138,14 +138,49 @@ if (starting > -1) {
 	starting -= 1/GAME_SPEED
 }
 
+
 if (global.debug) {
 	draw_set_font(fnt_pixel_4)
+	//draw player position and state data, as well as match frame
 	draw_text_outlined(GUI_WIDTH/2, GUI_HEIGHT/2, c_dkgray, c_lime, string(global.match_frame), 4)
-	for (var i = 0; i < array_length_1d(state); i++) {
-		if (instance_exists(player[i])) {
-			draw_text_outlined(GUI_WIDTH*0.7, GUI_HEIGHT*0.1*(i+1), c_olive, c_fuchsia, string(state[i]), 4)	
-			draw_text_outlined(GUI_WIDTH*0.8, GUI_HEIGHT*0.1*(i+1), c_olive, c_fuchsia, string(player[i].x), 4)	
-			draw_text_outlined(GUI_WIDTH*0.9, GUI_HEIGHT*0.1*(i+1), c_olive, c_fuchsia, string(player[i].y), 4)
+	if (false) {
+		for (var i = 0; i < array_length_1d(state); i++) {
+			if (instance_exists(player[i])) {
+				draw_text_outlined(GUI_WIDTH*0.7, GUI_HEIGHT*0.1*(i+1), c_olive, c_fuchsia, string(state[i]), 4)	
+				draw_text_outlined(GUI_WIDTH*0.8, GUI_HEIGHT*0.1*(i+1), c_olive, c_fuchsia, string(player[i].x), 4)	
+				draw_text_outlined(GUI_WIDTH*0.9, GUI_HEIGHT*0.1*(i+1), c_olive, c_fuchsia, string(player[i].y), 4)
+			}
 		}
+		draw_set_font(fnt_pixel_2)
+		//draw the input array to screen
+		for (var i = 0; i <= global.player_number; i++) {
+			for (var o = 0; o < array_length_2d(input_array, i); o++) {
+				draw_text_normal(i*50 + 50, o*15 + 50, input_array[i, o])
+			}
+		}
+	} else {
+		//draw player position and state data, as well as match frame
+		show_debug_message(string(global.match_frame))
+		if ((alarm[0] > 0) and global.show_ui) {
+			show_debug_message(_str)
+		} else {
+			show_debug_message("TIME")	
+		}
+		show_debug_message(input_array)
+		show_debug_message(old_axis)
+		for (var i = 0; i < array_length_1d(state); i++) {
+			if (instance_exists(player[i])) {
+				show_debug_message(string(i))
+				show_debug_message("state = " + string(state[i]))
+				show_debug_message("x = " + string_format(player[i].x, 0, 8))	
+				show_debug_message("y = " + string_format(player[i].y, 0, 8))
+				show_debug_message("mom_x = " + string_format(player[i].momentum_x, 0, 8))	
+				show_debug_message("mom_y = " + string_format(player[i].momentum_y, 0, 8))
+				show_debug_message("xscl = " + string(player[i].image_xscale))
+				show_debug_message("img = " + string(player[i].image_index))
+				show_debug_message("spr = " + string(player[i].sprite_index))
+			}
+		}
+		show_debug_message("")
 	}
 }

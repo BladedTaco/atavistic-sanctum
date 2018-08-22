@@ -6,7 +6,7 @@ draw_set_halign(fa_center)
 draw_set_valign(fa_top)
 
 //handle menu offset
-if (menu_index < 9) { //top 3 rows
+if ((menu_index < 9) or (menu_length < 13)) { //top 3 rows
 	menu_offset = 0	 //no offset
 } else if (menu_index > menu_length - 9) { //last 3 rows
 	menu_offset = (menu_length - 13) div 3 //offset is row - 4

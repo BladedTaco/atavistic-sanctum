@@ -3,6 +3,11 @@
 
 var i = 0 //initialise the loop counter to 0
 var _check_state, _move_character, _dir, _inst, _ex, _ey; //initialise some local variables in memory
+//check for debug
+if (global.debug) {
+	show_debug_message("m_frame = " + string(global.match_frame))
+}
+
 do {
 	_dir = point_direction(0, 0, input_array[i, XAXIS], input_array[i, YAXIS]) //get direction
 	_check_state = true //set base state of variable
@@ -18,15 +23,14 @@ do {
 	_ex = _inst.effective_x //store initial effective x difference for shorthand use
 	_ey = _inst.effective_y //store initial effective y difference for shorthand use
 	if ((input_array[i, YAXIS] < 0.5) or (state[i] = SMASH_ATTACK) or (state[i] = SPECIAL_ATTACK) or (state[i] = TILT_ATTACK)) {
-		_inst.alarm[1] = 5 
-	} //platform drop alarm
-	if (global.match_frame = 268) {
-		var _treu = true
-		_treu += 1
-		///pinapple
-	}
+		_inst.alarm[1] = 5 //platform drop alarm
+	} 
 	do {
 		var _state = state[i]
+		if (global.debug) {
+			show_debug_message("m_plyr = " + string(i))
+			show_debug_message("m_state = " + string(_state))
+		}
 		switch (state[i]) { //perform actions based on state 
 			case DEAD: with (_inst) { image_alpha = 0; image_speed = 0; x = -1000; y = -1000; spawning = true; dead = true } break;
 			case CROUCHING:

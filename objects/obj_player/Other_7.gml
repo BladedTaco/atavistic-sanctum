@@ -84,9 +84,11 @@ if (instance_exists(obj_match_handler)) { //make sure match handler exists
 			//HIT_STUN
 			//TECHING
 			case JUMP_RISE: case JUMPING: case AIRBORNE:
-				if (sprite_index = scr_get_sprite(id, "air_jump")) {
-					sprite_index = scr_get_sprite(id, "air_move")
-					image_index = 0
+				if (character != MAC) {
+					if (sprite_index = scr_get_sprite(id, "air_jump")) {
+						sprite_index = scr_get_sprite(id, "air_move")
+						image_index = 0
+					}
 				}
 				if (sprite_index = scr_get_sprite(id, "jump")) {
 					sprite_index = scr_get_sprite(id, "air_move") //set animation to air move animation

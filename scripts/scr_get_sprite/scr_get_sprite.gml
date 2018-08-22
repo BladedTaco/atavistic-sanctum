@@ -88,4 +88,9 @@ if (ret = spr_eth_smash_up) {
 		}
 	}
 }
+
+if !(sprite_exists(ret)) {
+	show_debug_message("MISSING SPRITE\n" + i + argument[1])
+	show_message_async("MISSING SPRITE\n" + i + argument[1])
+}
 return ret //return the sprite, whether it exists or not

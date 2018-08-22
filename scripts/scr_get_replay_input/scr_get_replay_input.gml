@@ -2,12 +2,6 @@
 ///@desc handles the inputs for a replay
 
 with (obj_input) {
-	if (global.match_frame > 2) { //if not the first 3 frames
-		for (var i = 0; i < global.player_number; i++) { //for each player
-			old_axis[i, 0] = input_array[i, 0] //store old xaxis
-			old_axis[i, 1] = input_array[i, 1] //store old yaxis
-		}
-	}
 	input_array = obj_replay_handler.input_array //get the new input array
 	if (global.match_frame > 1) { //if not the first two frames
 		for (var i = 0; i < global.player_number; i++) { //for each player

@@ -1,8 +1,9 @@
 /// @description parse inputs
 if (active) {
-	if (wait) {
-		wait = false
+	if (wait = 2) {
+		wait = 1
 	} else {
+		wait = 0
 		if (global.match_frame > 0) {
 			if (buffer_tell(replay_buffer) < buffer_get_size(replay_buffer)) { //there is replay left to read
 				//set the input array to base values
