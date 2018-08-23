@@ -38,3 +38,4 @@ if (active) {
 		buffer_seek(replay_buffer, buffer_seek_relative, -1) //move before the end of the buffer, so this message doesnt reappear forever
 	}
 }
+show_debug_message(object_get_name(event_object) + " " + string(event_type) + "-" + string(event_number))

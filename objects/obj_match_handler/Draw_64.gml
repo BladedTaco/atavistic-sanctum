@@ -179,8 +179,14 @@ if (global.debug) {
 				show_debug_message("xscl = " + string(player[i].image_xscale))
 				show_debug_message("img = " + string(player[i].image_index))
 				show_debug_message("spr = " + string(player[i].sprite_index))
+				show_debug_message("alarm[0] = " + string(player[i].alarm[0]))
+				show_debug_message("alarm[1] = " + string(player[i].alarm[1]))
+				show_debug_message("alarm[2] = " + string(player[i].alarm[2]))
+				show_debug_message("alarm[4] = " + string(player[i].alarm[4]))
+				show_debug_message("alarm[7] = " + string(player[i].alarm[7]))
 			}
 		}
 		show_debug_message("")
 	}
 }
+show_debug_message(object_get_name(event_object) + " " + string(event_type) + "-" + string(event_number))

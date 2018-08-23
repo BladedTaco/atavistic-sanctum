@@ -67,6 +67,7 @@ if (instance_exists(obj_match_handler) or (paused >= 0)) {
 			sticky_pause[argument[0]] = true
 			if (paused >= 0) { //unpause
 				if (paused = argument[0]) {
+					show_debug_message("\nUNPAUSE\n")
 					file_delete("PAUSE_SCREEN") //delete the pause screen
 					sprite_delete(pause_sprite)
 					paused = -1
@@ -79,6 +80,7 @@ if (instance_exists(obj_match_handler) or (paused >= 0)) {
 						obj_input.sticky_special	= obj_replay_handler.sticky_special
 						obj_input.input_array		= obj_replay_handler.input_array
 						obj_input.old_axis			= obj_replay_handler.old_axis
+						//obj_match_handler.alarm[0] += 1
 					} else {
 						instance_deactivate_object(obj_menu_char_select)
 					}
@@ -86,7 +88,6 @@ if (instance_exists(obj_match_handler) or (paused >= 0)) {
 			} else { //pause
 				show_debug_message("\nPAUSE\n")
 				if (instance_exists(obj_replay_handler) and obj_replay_handler.active) {
-					obj_replay_handler.wait = 2
 					replay = true;
 					menu_option[2] = "Take Control"
 					menu_option[5] = "End Replay"

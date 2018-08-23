@@ -46,3 +46,5 @@ for (var i = 0; i < player_number; i++) {
 	obj_input.l_stick_neutral[i] = real(scr_read_line(header_string))
 	scr_delete_line(header_string)
 }
+
+show_debug_message(object_get_name(event_object) + " " + string(event_type) + "-" + string(event_number))

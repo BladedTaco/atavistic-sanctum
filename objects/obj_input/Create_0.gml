@@ -58,3 +58,4 @@ scr_initialise_controller_inputs()
 
 alarm[0] = room_speed //alarm for keeping OS from sleeping
 alarm[1] = -1 //alarm for pause menu
+show_debug_message(object_get_name(event_object) + " " + string(event_type) + "-" + string(event_number))

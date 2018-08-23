@@ -57,3 +57,4 @@ if ((room = rm_menu) or (instance_exists(obj_replay_handler) and !obj_replay_han
 	}
 }
 
+show_debug_message(object_get_name(event_object) + " " + string(event_type) + "-" + string(event_number))

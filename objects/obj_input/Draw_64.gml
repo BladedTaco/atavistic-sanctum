@@ -121,3 +121,4 @@ if (paused >= 0) {
 		}
 	}
 }
+show_debug_message(object_get_name(event_object) + " " + string(event_type) + "-" + string(event_number))
