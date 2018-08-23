@@ -70,7 +70,7 @@ if (instance_exists(obj_match_handler) or (paused >= 0)) {
 					show_debug_message("\nUNPAUSE\n")
 					file_delete("PAUSE_SCREEN") //delete the pause screen
 					sprite_delete(pause_sprite)
-					paused = -1
+					paused = -2
 					instance_activate_all()
 					if (instance_exists(obj_replay_handler)) {
 						instance_deactivate_object(obj_menu_replay)
@@ -80,7 +80,6 @@ if (instance_exists(obj_match_handler) or (paused >= 0)) {
 						obj_input.sticky_special	= obj_replay_handler.sticky_special
 						obj_input.input_array		= obj_replay_handler.input_array
 						obj_input.old_axis			= obj_replay_handler.old_axis
-						//obj_match_handler.alarm[0] += 1
 					} else {
 						instance_deactivate_object(obj_menu_char_select)
 					}

@@ -1,5 +1,7 @@
 /// @description get and handle inputs/ input buffer
 
+show_debug_message("\nPIVOT\n")
+
 if (instance_exists(obj_replay_handler) and obj_replay_handler.active) {
 	scr_get_replay_input()
 } else {
