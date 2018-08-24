@@ -20,4 +20,4 @@ sticky_special = []
 global.match_frame = -1000 //make sure match frame only reaches 0 when obj_match_handler is created
 active = true;
 wait = false;
-show_debug_message(object_get_name(event_object) + " " + string(event_type) + "-" + string(event_number))
+if (global.debug) { show_debug_message(object_get_name(event_object) + " " + string(event_type) + "-" + string(event_number)) }

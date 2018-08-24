@@ -138,4 +138,4 @@ if (!dead and instance_exists(obj_match_handler)) {
 		draw_circle(clamp(x, 0, room_width), clamp(y, 0, room_height), 3, false)
 	}
 }
-show_debug_message(object_get_name(event_object) + " " + string(event_type) + "-" + string(event_number))
+if (global.debug) { show_debug_message(object_get_name(event_object) + " " + string(event_type) + "-" + string(event_number)) }

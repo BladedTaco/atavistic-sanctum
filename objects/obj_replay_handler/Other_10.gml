@@ -47,4 +47,4 @@ for (var i = 0; i < player_number; i++) {
 	scr_delete_line(header_string)
 }
 
-show_debug_message(object_get_name(event_object) + " " + string(event_type) + "-" + string(event_number))
+if (global.debug) { show_debug_message(object_get_name(event_object) + " " + string(event_type) + "-" + string(event_number)) }

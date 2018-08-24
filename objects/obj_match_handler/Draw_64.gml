@@ -171,6 +171,7 @@ if (global.debug) {
 		for (var i = 0; i < array_length_1d(state); i++) {
 			if (instance_exists(player[i])) {
 				show_debug_message(string(i))
+				show_debug_message(string(player[i].character))
 				show_debug_message("state = " + string(state[i]))
 				show_debug_message("x = " + string_format(player[i].x, 0, 8))	
 				show_debug_message("y = " + string_format(player[i].y, 0, 8))
@@ -189,4 +190,4 @@ if (global.debug) {
 		show_debug_message("")
 	}
 }
-show_debug_message(object_get_name(event_object) + " " + string(event_type) + "-" + string(event_number))
+if (global.debug) { show_debug_message(object_get_name(event_object) + " " + string(event_type) + "-" + string(event_number)) }

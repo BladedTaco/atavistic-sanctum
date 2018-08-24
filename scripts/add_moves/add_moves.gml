@@ -572,7 +572,7 @@ var i = 0 //variable created now for use in loops below if hurtboxes or hitboxes
 	scr_add_hurtbox(spr_bal_smash_up, 7, 0, CIRCLE, 15, 19, 0, -33, 0)
 	scr_add_hurtbox(spr_bal_smash_up, 8, 0, CIRCLE, 15, 19, 0, -27, 0)
 	for (var i = 0; i < 4; i++) {
-		scr_add_move(spr_bal_smash_forward, i, 0, CIRCLE, 30, 30, 0, -20, 0, 0, IN, 0.01, 0, 0)
+		scr_add_move(spr_bal_smash_up, i, 0, CIRCLE, 30, 30, 0, -20, 0, 0, IN, 0.01, 0, 0)
 	}
 	scr_add_move(spr_bal_smash_up, 4, 0, CIRCLE, 20, 30, 0, -20, 0, 18, 90, 3, 4)
 	scr_add_move(spr_bal_smash_up, 5, 0, CIRCLE, 15, 38, 0, -30, 0, 26, 90, 6, 5)

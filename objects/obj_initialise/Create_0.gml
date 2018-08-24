@@ -25,6 +25,7 @@ if !(instance_exists(obj_menu_char_select) or instance_exists(obj_input) or inst
 	}
 	instance_create(0, 0, obj_input)
 	scr_reset_players()//reset players
+	instance_create(0, 0, obj_pause)
 }
 
 instance_destroy();
