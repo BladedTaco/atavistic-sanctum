@@ -38,4 +38,3 @@ camera_set_view_size(view_camera[0], _width, _height)
 view_set_wport(view_camera[0], 960)
 view_set_hport(view_camera[0], 540)
 
-if (global.debug) { show_debug_message(object_get_name(event_object) + " " + string(event_type) + "-" + string(event_number)) }

@@ -139,7 +139,7 @@ if (starting > -1) {
 }
 
 
-if (global.debug) {
+if (global.debug and debug_mode) { //debug value spew
 	draw_set_font(fnt_pixel_4)
 	//draw player position and state data, as well as match frame
 	draw_text_outlined(GUI_WIDTH/2, GUI_HEIGHT/2, c_dkgray, c_lime, string(global.match_frame), 4)
@@ -179,7 +179,7 @@ if (global.debug) {
 				show_debug_message("mom_y = " + string_format(player[i].momentum_y, 0, 8))
 				show_debug_message("xscl = " + string(player[i].image_xscale))
 				show_debug_message("img = " + string(player[i].image_index))
-				show_debug_message("spr = " + string(player[i].sprite_index))
+				show_debug_message("spr = " + string(sprite_get_name(player[i].sprite_index)) + " (" + string(player[i].sprite_index) + ")")
 				show_debug_message("alarm[0] = " + string(player[i].alarm[0]))
 				show_debug_message("alarm[1] = " + string(player[i].alarm[1]))
 				show_debug_message("alarm[2] = " + string(player[i].alarm[2]))
@@ -187,7 +187,5 @@ if (global.debug) {
 				show_debug_message("alarm[7] = " + string(player[i].alarm[7]))
 			}
 		}
-		show_debug_message("")
 	}
 }
-if (global.debug) { show_debug_message(object_get_name(event_object) + " " + string(event_type) + "-" + string(event_number)) }

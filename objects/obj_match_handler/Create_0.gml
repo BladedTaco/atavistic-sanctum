@@ -21,4 +21,3 @@ global.match_frame = 0
 random_set_seed(42)
 
 //get data from server for the match
-if (global.debug) { show_debug_message(object_get_name(event_object) + " " + string(event_type) + "-" + string(event_number)) }

@@ -134,4 +134,3 @@ if (instance_exists(obj_match_handler)) { //make sure match handler exists
 		}
 	}
 }
-if (global.debug) { show_debug_message(object_get_name(event_object) + " " + string(event_type) + "-" + string(event_number)) }

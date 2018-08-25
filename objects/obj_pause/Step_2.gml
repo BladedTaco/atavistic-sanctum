@@ -5,3 +5,6 @@ if (paused != obj_input.paused) {
 		event_user(0) //pause or unpause	
 	}
 }
+obj_input.pause = id //set obj inputs pause object
+
+

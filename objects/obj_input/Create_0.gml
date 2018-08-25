@@ -50,6 +50,7 @@ menu_option[4] = "UI: SHOWN"
 menu_option[5] = "FORFEIT"
 
 replay = false;
+pause = noone //the pause object (in match only)
 //initialise input buttons and their mappings
 
 scr_initialise_controller_inputs()
@@ -57,4 +58,3 @@ scr_initialise_controller_inputs()
 
 alarm[0] = room_speed //alarm for keeping OS from sleeping
 alarm[1] = -1 //alarm for pause menu
-if (global.debug) { show_debug_message(object_get_name(event_object) + " " + string(event_type) + "-" + string(event_number)) }

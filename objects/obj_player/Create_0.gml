@@ -51,4 +51,3 @@ alarm[3] = -1 //c stick alarm
 alarm[4] = -1 //hitbox sleeping alarm
 
 
-if (global.debug) { show_debug_message(object_get_name(event_object) + " " + string(event_type) + "-" + string(event_number)) }

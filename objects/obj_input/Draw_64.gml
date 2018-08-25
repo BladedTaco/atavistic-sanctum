@@ -51,14 +51,14 @@ if (paused >= 0) {
 						file_delete("PAUSE_SCREEN") //delete the pause screen
 						sprite_delete(pause_sprite)
 						instance_activate_all()
+						obj_input.sticky_attack		= array_clone(pause.sticky_attack)	
+						obj_input.sticky_dodge		= array_clone(pause.sticky_dodge)		
+						obj_input.sticky_jump		= array_clone(pause.sticky_jump)		
+						obj_input.sticky_special	= array_clone(pause.sticky_special)
+						obj_input.input_array		= array_clone(pause.input_array)
+						obj_input.old_axis			= array_clone(pause.old_axis)
 						if (instance_exists(obj_replay_handler)) {
 							instance_deactivate_object(obj_menu_replay)
-							obj_input.sticky_attack		= obj_replay_handler.sticky_attack	
-							obj_input.sticky_dodge		= obj_replay_handler.sticky_dodge		
-							obj_input.sticky_jump		= obj_replay_handler.sticky_jump		
-							obj_input.sticky_special	= obj_replay_handler.sticky_special
-							scr_get_replay_input()
-							obj_input.old_axis			= obj_replay_handler.old_axis
 						} else {
 							instance_deactivate_object(obj_menu_char_select)
 						}
@@ -121,4 +121,3 @@ if (paused >= 0) {
 		}
 	}
 }
-if (global.debug) { show_debug_message(object_get_name(event_object) + " " + string(event_type) + "-" + string(event_number)) }

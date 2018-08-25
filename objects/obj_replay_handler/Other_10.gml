@@ -36,15 +36,14 @@ header_string = scr_delete_line(header_string)
 header_string = scr_delete_line(header_string)
 for (var i = 0; i < player_number; i++) {
 	obj_input.smash[i] = real(scr_read_line(header_string))
-	scr_delete_line(header_string)
+	header_string = scr_delete_line(header_string)
 	obj_input.smash_deadzone[i] = real(scr_read_line(header_string))
-	scr_delete_line(header_string)
+	header_string = scr_delete_line(header_string)
 	obj_input.c_stick_deadzone[i] = real(scr_read_line(header_string))
-	scr_delete_line(header_string)
+	header_string = scr_delete_line(header_string)
 	obj_input.l_stick_deadzone[i] = real(scr_read_line(header_string))
-	scr_delete_line(header_string)
+	header_string = scr_delete_line(header_string)
 	obj_input.l_stick_neutral[i] = real(scr_read_line(header_string))
-	scr_delete_line(header_string)
+	header_string = scr_delete_line(header_string)
 }
 
-if (global.debug) { show_debug_message(object_get_name(event_object) + " " + string(event_type) + "-" + string(event_number)) }
