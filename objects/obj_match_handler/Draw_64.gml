@@ -82,8 +82,8 @@ if (global.show_ui) {
 		}
 		
 		if (global.player_outside) {
-			_scl = 8 //the inverse of the scale of the blast zone indicator
-			var _bor = 30 //the border from the top left of the screen for the play area box
+			_scl = floor(obj_blast_zone.bbox_right/120) //the inverse of the scale of the blast zone indicator
+			var _bor = 30 - (obj_blast_zone.bbox_left/_scl) //the border from the top left of the screen for the play area box
 			draw_set_alpha(0.5)
 			global.player_outside = false
 			draw_set_colour(c_black)

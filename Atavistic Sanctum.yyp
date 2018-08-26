@@ -3279,6 +3279,14 @@
             }
         },
         {
+            "Key": "cac627a3-2c54-4d77-a414-129e0f65f9a6",
+            "Value": {
+                "id": "4f21520b-cc9b-4b58-aa6f-e9c06fbf1b39",
+                "resourcePath": "sprites\\spr_Training_Grounds_fore\\spr_Training_Grounds_fore.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "cb62acee-c1bb-435a-a12f-6d6b444020c9",
             "Value": {
                 "id": "c65edec6-d609-4f17-a03d-bc32e840bfb4",
@@ -3844,6 +3852,14 @@
                 "id": "3961f6c2-81a4-4d8b-8f7e-d9f41898fe2e",
                 "resourcePath": "sprites\\spr_geo_hurt_up\\spr_geo_hurt_up.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "f26b62bb-ef1f-4773-97fb-53c37600e3d2",
+            "Value": {
+                "id": "c49bf8b3-4659-4a89-8230-77cafa9966f7",
+                "resourcePath": "rooms\\rm_match_Training_Grounds\\rm_match_Training_Grounds.yy",
+                "resourceType": "GMRoom"
             }
         },
         {
