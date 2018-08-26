@@ -40,6 +40,11 @@ switch (argument[2]) {
 			argument[0].mom_x = argument[0].momentum_x //set momentum counter
 			argument[0].mom_y = argument[0].momentum_y //set momentum counter
 			var _s = scr_perform_freefall(argument[0], argument[1]) //perform freefall wtihout changing state to get animation
+			//move player to effective position
+			argument[0].x += argument[0].effective_x
+			argument[0].y += argument[0].effective_y
+			argument[0].effective_x = 0
+			argument[0].effective_y = 0
 		}
 		if (point_distance(0, 0, argument[0].mom_x, argument[0].mom_y) < 10) {  //if medium impulse left
 			if (instance_exists(argument[0].attacker)) {

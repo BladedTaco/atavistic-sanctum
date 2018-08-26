@@ -4,19 +4,17 @@ if (paused >= 0) { //pause
 		replay = true;
 		menu_option[2] = "Take Control"
 		menu_option[5] = "End Replay"
-		if (instance_exists(obj_replay_handler)) {
-			pause.input_array		= array_clone(obj_input.input_array)
-		}
-		pause.old_axis			= array_clone(obj_input.old_axis)
-		pause.sticky_attack		= array_clone(obj_input.sticky_attack)
-		pause.sticky_dodge		= array_clone(obj_input.sticky_dodge)
-		pause.sticky_jump		= array_clone(obj_input.sticky_jump)
-		pause.sticky_special	= array_clone(obj_input.sticky_special)
+		pause.input_array		= array_clone(obj_input.input_array)
 	} else {
 		replay = false;
 		menu_option[2] = "Input lag: 5 frame"
 		menu_option[5] = "FORFEIT"
 	}
+	pause.old_axis			= array_clone(obj_input.old_axis)
+	pause.sticky_attack		= array_clone(obj_input.sticky_attack)
+	pause.sticky_dodge		= array_clone(obj_input.sticky_dodge)
+	pause.sticky_jump		= array_clone(obj_input.sticky_jump)
+	pause.sticky_special	= array_clone(obj_input.sticky_special)
 	screen_save("PAUSE_SCREEN") //create the pause screen
 	pause_sprite = sprite_add("PAUSE_SCREEN", 1, false, false, 0, 0)
 	alarm[1] = MENU_DELAY

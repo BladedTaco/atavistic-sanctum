@@ -12,3 +12,6 @@ if (instance_exists(obj_save_replay)) {
 		instance_destroy(obj_save_replay)
 	}
 }
+
+//reset players and clear inputs
+scr_reset_players()

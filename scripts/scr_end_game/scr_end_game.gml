@@ -87,4 +87,3 @@ with (obj_results) {
 	visible = true
 }
 instance_destroy(obj_match_handler) //destroy the match handler
-

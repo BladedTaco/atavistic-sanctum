@@ -6,6 +6,6 @@ if (!instance_exists(obj_replay_handler)) { //dont record replay during a replay
 	scr_record_replay() //record this frames inputs to replay file
 }
 
-if (starting <= 0) {
-	scr_control_character()
+if (starting <= 0) { //if match is started
+	scr_control_character() //control the characters
 }

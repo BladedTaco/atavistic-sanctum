@@ -4,8 +4,8 @@ global.player_number = 0
 with (obj_input) {
 	button_const_array = []
 	button_array = []
-	for (var i = 0; i < 8; i++) {
-		for (var o = 0; o < 20; o++) {
+	for (var i = 0; i < array_height_2d(input_array); i++) {
+		for (var o = 0; o < array_length_2d(input_array, i); o++) {
 			input_array[i, o] = 0
 		}
 	}
