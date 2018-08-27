@@ -50,7 +50,6 @@ if (argument[0]) {
 			}
 			//write the players data to the string
 			_str += "\n" + string(i) + "\n" + string(player[i].name) + "\n" + string(player[i].character) + "\n" + string(o.pallet[i]) + "\n" + string(player[i].player_col) + "\n"
-		
 		}
 		_str += "\n" + "\n" //add a gap
 		header_string = _str //set the header string

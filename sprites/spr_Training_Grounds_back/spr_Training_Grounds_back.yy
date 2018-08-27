@@ -1,88 +1,70 @@
 {
-    "id": "d9f2591c-d8cd-4379-aaf3-861631cb6689",
+    "id": "a3d08b53-8d13-4dbe-9c33-5fb61fde17c9",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "spr_Outer_Sanctum_fore",
+    "name": "spr_Training_Grounds_back",
     "For3D": false,
     "HTile": false,
     "VTile": false,
-    "bbox_bottom": 359,
-    "bbox_left": 159,
-    "bbox_right": 480,
-    "bbox_top": 111,
+    "bbox_bottom": 719,
+    "bbox_left": 0,
+    "bbox_right": 1279,
+    "bbox_top": 0,
     "bboxmode": 0,
-    "colkind": 1,
+    "colkind": 0,
     "coltolerance": 0,
     "edgeFiltering": false,
     "frames": [
         {
-            "id": "c083dac2-eb70-4644-9a29-00c39b133e8f",
+            "id": "82af020f-e61c-4204-90d9-e5eda2d0c8bc",
             "modelName": "GMSpriteFrame",
             "mvc": "1.0",
-            "SpriteId": "d9f2591c-d8cd-4379-aaf3-861631cb6689",
+            "SpriteId": "a3d08b53-8d13-4dbe-9c33-5fb61fde17c9",
             "compositeImage": {
-                "id": "5f7dd73d-6952-4e06-b785-19bca65d031e",
+                "id": "5d03213e-417a-42d3-bc7f-df34644459a7",
                 "modelName": "GMSpriteImage",
                 "mvc": "1.0",
-                "FrameId": "c083dac2-eb70-4644-9a29-00c39b133e8f",
+                "FrameId": "82af020f-e61c-4204-90d9-e5eda2d0c8bc",
                 "LayerId": "00000000-0000-0000-0000-000000000000"
             },
             "images": [
                 {
-                    "id": "d3aaf548-42e8-48e7-8787-4ec1cf79e094",
+                    "id": "fc4a4f8c-959e-4f74-814e-d2957ef510c0",
                     "modelName": "GMSpriteImage",
                     "mvc": "1.0",
-                    "FrameId": "c083dac2-eb70-4644-9a29-00c39b133e8f",
-                    "LayerId": "2cb4ef33-0075-4d70-a4dd-4f9f624b64be"
-                },
-                {
-                    "id": "4d9cb9d0-0f09-4d71-a8f4-f1a481bd992a",
-                    "modelName": "GMSpriteImage",
-                    "mvc": "1.0",
-                    "FrameId": "c083dac2-eb70-4644-9a29-00c39b133e8f",
-                    "LayerId": "109f639b-8340-4649-8d28-efd26c54d6ac"
+                    "FrameId": "82af020f-e61c-4204-90d9-e5eda2d0c8bc",
+                    "LayerId": "d931e97f-e724-474d-8402-aff5ce4fc1db"
                 }
             ]
         }
     ],
     "gridX": 0,
     "gridY": 0,
-    "height": 360,
+    "height": 720,
     "layers": [
         {
-            "id": "109f639b-8340-4649-8d28-efd26c54d6ac",
+            "id": "d931e97f-e724-474d-8402-aff5ce4fc1db",
             "modelName": "GMImageLayer",
             "mvc": "1.0",
-            "SpriteId": "d9f2591c-d8cd-4379-aaf3-861631cb6689",
+            "SpriteId": "a3d08b53-8d13-4dbe-9c33-5fb61fde17c9",
             "blendMode": 0,
             "isLocked": false,
-            "name": "midground",
-            "opacity": 100,
-            "visible": true
-        },
-        {
-            "id": "2cb4ef33-0075-4d70-a4dd-4f9f624b64be",
-            "modelName": "GMImageLayer",
-            "mvc": "1.0",
-            "SpriteId": "d9f2591c-d8cd-4379-aaf3-861631cb6689",
-            "blendMode": 0,
-            "isLocked": false,
-            "name": "foreground",
+            "name": "background",
             "opacity": 100,
             "visible": true
         }
     ],
-    "origin": 4,
+    "origin": 0,
     "originLocked": false,
     "playbackSpeed": 15,
     "playbackSpeedType": 0,
     "premultiplyAlpha": false,
-    "sepmasks": false,
+    "sepmasks": true,
     "swatchColours": [
         4278190335,
         4278255615,
         4278255360,
-        4294967141,
+        4294967040,
         4294901760,
         4294902015,
         4294967295,
@@ -95,7 +77,7 @@
         4280556782,
         4278252287,
         4283540992,
-        4293963264,
+        4283205103,
         4287770926,
         4287365357,
         4287203721,
@@ -161,7 +143,7 @@
     "swfPrecision": 2.525,
     "textureGroupId": "1225f6b0-ac20-43bd-a82e-be73fa0b6f4f",
     "type": 0,
-    "width": 640,
-    "xorig": 320,
-    "yorig": 180
+    "width": 1280,
+    "xorig": 0,
+    "yorig": 0
 }

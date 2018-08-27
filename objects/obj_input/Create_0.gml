@@ -51,6 +51,7 @@ menu_option[5] = "FORFEIT"
 
 replay = false;
 pause = noone //the pause object (in match only)
+forfeiter = -1 // the forfeiter for a forfeit
 //initialise input buttons and their mappings
 
 scr_initialise_controller_inputs()

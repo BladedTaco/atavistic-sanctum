@@ -2055,6 +2055,14 @@
             }
         },
         {
+            "Key": "805f415a-d615-4091-a837-b8de00903527",
+            "Value": {
+                "id": "1c660c92-55c7-41ed-8f6c-141453df1083",
+                "resourcePath": "sprites\\spr_stage_Training_Grounds\\spr_stage_Training_Grounds.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "811a5345-80b2-4596-9799-7ad67863ee5b",
             "Value": {
                 "id": "d1ce45e9-02f9-40a1-a83c-a3ecc6c4fd62",
@@ -2539,6 +2547,14 @@
             "Value": {
                 "id": "f618e5fb-7e32-4185-a029-9250b6c918c1",
                 "resourcePath": "sprites\\spr_geo_aerial_up\\spr_geo_aerial_up.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "a3d08b53-8d13-4dbe-9c33-5fb61fde17c9",
+            "Value": {
+                "id": "49c11ee0-9511-4ab6-bec3-054b2fef2b0b",
+                "resourcePath": "sprites\\spr_Training_Grounds_back\\spr_Training_Grounds_back.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -3375,6 +3391,14 @@
             }
         },
         {
+            "Key": "d0651f55-fce1-4722-8230-d78a234c5869",
+            "Value": {
+                "id": "f9804e67-150d-44fb-813b-80c232177773",
+                "resourcePath": "objects\\obj_menu_training\\obj_menu_training.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "d0a63039-d2f6-4e84-9fb0-2d572a898d35",
             "Value": {
                 "id": "8306f34d-be5c-4118-9845-74de03879e34",
@@ -3476,6 +3500,14 @@
                 "id": "7b4f40e7-054f-4cd5-bf58-498906bedd0a",
                 "resourcePath": "sprites\\spr_bal_aerial_neutral\\spr_bal_aerial_neutral.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "d90d57f6-8104-4965-bba4-e92167165bbe",
+            "Value": {
+                "id": "50790e84-8201-4cbd-a836-f79bb9a6e6a8",
+                "resourcePath": "scripts\\scr_start_training\\scr_start_training.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -4144,7 +4176,8 @@
         "84ceaee5-9224-4bcb-9760-9d2aa82e0e32",
         "037f10c1-cbb1-4f79-bd0c-25f79b646928",
         "0f7ef313-9eef-4769-af92-c2e928fe9eb0",
-        "f8e05f13-0522-44b7-a568-e0a17bd76839"
+        "f8e05f13-0522-44b7-a568-e0a17bd76839",
+        "d90d57f6-8104-4965-bba4-e92167165bbe"
     ],
     "tutorial": ""
 }

@@ -64,8 +64,12 @@ if (!active) {
 				//active = false		
 			break;
 			case 4: //train
-				//active = false
+				scr_start_training(false)
 			break;
 		}
+	}
+	if (room = rm_match_Training_Grounds) { //starting training
+		scr_start_training(true)
+		active = false
 	}
 }

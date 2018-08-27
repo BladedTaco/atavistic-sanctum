@@ -48,22 +48,19 @@ if (paused >= 0) {
 					case 5: //forfeit
 						_end = true
 					case 0: //resume
-						file_delete("PAUSE_SCREEN") //delete the pause screen
-						sprite_delete(pause_sprite)
-						instance_activate_all()
+						instance_activate_object(obj_replay_handler) //activate replay object if needed
+						//get the previous state of input from before the pause
 						obj_input.sticky_attack		= array_clone(pause.sticky_attack)	
 						obj_input.sticky_dodge		= array_clone(pause.sticky_dodge)		
 						obj_input.sticky_jump		= array_clone(pause.sticky_jump)		
 						obj_input.sticky_special	= array_clone(pause.sticky_special)
-						obj_input.input_array		= array_clone(pause.input_array)
 						obj_input.old_axis			= array_clone(pause.old_axis)
 						if (instance_exists(obj_replay_handler)) {
-							instance_deactivate_object(obj_menu_replay)
-						} else {
-							instance_deactivate_object(obj_menu_char_select)
+							obj_input.input_array		= array_clone(pause.input_array)
 						}
-						if (_end) {
-							scr_end_game(2, paused)	
+						if (_end) { //forfeit
+							forfeiter = paused
+							alarm[2] = 2 //set game to end next frame	
 						}
 						paused = -1
 					break;

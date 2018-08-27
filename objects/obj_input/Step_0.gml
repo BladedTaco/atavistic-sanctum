@@ -3,11 +3,15 @@
 if (instance_exists(obj_replay_handler) and obj_replay_handler.active) {
 	scr_get_replay_input()
 } else {
-	for (var i = 0; i < global.player_number; i++) {
-		if (player_is_local[i]) {
-			scr_get_input(i, controller[i], controller_number[i])
-		} else {
-			scr_input_buffer_nonlocal(i)	
+	if (instance_exists(obj_menu_training)) { //training mode
+		scr_get_input(0, controller[0], controller_number[0])
+	} else {
+		for (var i = 0; i < global.player_number; i++) {
+			if (player_is_local[i]) {
+				scr_get_input(i, controller[i], controller_number[i])
+			} else {
+				scr_input_buffer_nonlocal(i)	
+			}
 		}
 	}
 }

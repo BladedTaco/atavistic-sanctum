@@ -60,27 +60,29 @@ if (_len > 1) {
 }
 
 if (instance_exists(obj_match_handler) or (paused >= 0)) {
-	//check for pause (in match only)
-	global.paused = (paused >= 0)
-	if (_input[PAUSE]) {
-		if (!sticky_pause[argument[0]]) {
-			sticky_pause[argument[0]] = true
-			if (paused >= 0) { //unpause
-				if (paused = argument[0]) {
-					paused = -1
-					instance_activate_object(obj_replay_handler) //activate replay object if needed
-					//get the previous state of input from before the pause
-					obj_input.sticky_attack		= array_clone(pause.sticky_attack)	
-					obj_input.sticky_dodge		= array_clone(pause.sticky_dodge)		
-					obj_input.sticky_jump		= array_clone(pause.sticky_jump)		
-					obj_input.sticky_special	= array_clone(pause.sticky_special)
-					obj_input.old_axis			= array_clone(pause.old_axis)
-					if (instance_exists(obj_replay_handler)) {
-						obj_input.input_array		= array_clone(pause.input_array)
+	if !(instance_exists(obj_menu_training)) { //not training
+		//check for pause (in match only)
+		global.paused = (paused >= 0)
+		if (_input[PAUSE]) {
+			if (!sticky_pause[argument[0]]) {
+				sticky_pause[argument[0]] = true
+				if (paused >= 0) { //unpause
+					if (paused = argument[0]) {
+						paused = -1
+						instance_activate_object(obj_replay_handler) //activate replay object if needed
+						//get the previous state of input from before the pause
+						obj_input.sticky_attack		= array_clone(pause.sticky_attack)	
+						obj_input.sticky_dodge		= array_clone(pause.sticky_dodge)		
+						obj_input.sticky_jump		= array_clone(pause.sticky_jump)		
+						obj_input.sticky_special	= array_clone(pause.sticky_special)
+						obj_input.old_axis			= array_clone(pause.old_axis)
+						if (instance_exists(obj_replay_handler)) {
+							obj_input.input_array		= array_clone(pause.input_array)
+						}
 					}
+				} else { //pause
+					paused = argument[0]
 				}
-			} else { //pause
-				paused = argument[0]
 			}
 		}
 	}

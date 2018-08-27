@@ -82,17 +82,20 @@ if (global.show_ui) {
 		}
 		
 		if (global.player_outside) {
-			_scl = floor(obj_blast_zone.bbox_right/120) //the inverse of the scale of the blast zone indicator
+			_scl = floor(obj_blast_zone.bbox_right/180) //the inverse of the scale of the blast zone indicator
 			var _bor = 30 - (obj_blast_zone.bbox_left/_scl) //the border from the top left of the screen for the play area box
 			draw_set_alpha(0.5)
 			global.player_outside = false
 			draw_set_colour(c_black)
 			draw_rectangle(_bor + obj_blast_zone.bbox_left/_scl, _bor + obj_blast_zone.bbox_top/_scl, _bor + obj_blast_zone.bbox_right/_scl, _bor + obj_blast_zone.bbox_bottom/_scl, false)
 			draw_set_colour(c_white)
-			draw_rectangle(_bor + obj_blast_zone.bbox_left/_scl, _bor + obj_blast_zone.bbox_top/_scl, _bor + obj_blast_zone.bbox_right/_scl, _bor + obj_blast_zone.bbox_bottom/_scl, true)
+			draw_rectangle(_bor - 1 + obj_blast_zone.bbox_left/_scl, _bor - 1 + obj_blast_zone.bbox_top/_scl, _bor + 1 + obj_blast_zone.bbox_right/_scl, _bor + 1 + obj_blast_zone.bbox_bottom/_scl, true)
 			draw_rectangle(_bor, _bor, _bor + room_width/_scl, _bor + room_height/_scl, true)
 			with (obj_ground) {
-				draw_line(_bor + hitbox._x[0]/_scl, _bor + hitbox._y[0]/_scl, _bor + hitbox._x[1]/_scl, _bor + hitbox._y[1]/_scl)
+				draw_line_colour(_bor + hitbox._x[0]/_scl, _bor + hitbox._y[0]/_scl, _bor + hitbox._x[1]/_scl, _bor + hitbox._y[1]/_scl, c_ltgray, c_ltgray)
+			}
+			with (obj_platform) {
+				draw_line_colour(_bor + hitbox._x[0]/_scl, _bor + hitbox._y[0]/_scl, _bor + hitbox._x[1]/_scl, _bor + hitbox._y[1]/_scl, c_aqua, c_aqua)
 			}
 			with (obj_ledge) {
 				draw_circle_colour(round(_bor + x/_scl), round(_bor + y/_scl), 1.5, c_yellow, c_yellow, true)	
@@ -130,7 +133,11 @@ if (global.show_ui) {
 if (starting > -1) {
 	draw_set_font(fnt_pixel_16)
 	if (starting <= 0) {
-		draw_text_outlined(GUI_WIDTH/2, GUI_HEIGHT/2, c_black, c_white, "FIGHT", 16)
+		if (instance_exists(obj_menu_training)) {
+			draw_text_outlined(GUI_WIDTH/2, GUI_HEIGHT/2, c_black, c_white, "TRAIN", 16)
+		} else {
+			draw_text_outlined(GUI_WIDTH/2, GUI_HEIGHT/2, c_black, c_white, "FIGHT", 16)
+		}
 	} else {
 		draw_text_outlined(GUI_WIDTH/2, GUI_HEIGHT/2, c_black, c_white, string(ceil(starting)), 16)
 	}

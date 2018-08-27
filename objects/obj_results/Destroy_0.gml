@@ -13,5 +13,7 @@ if (instance_exists(obj_save_replay)) {
 	}
 }
 
-//reset players and clear inputs
-scr_reset_players()
+if (instance_exists(obj_replay_handler)) { //if a replay
+	//reset players and clear inputs
+	scr_reset_players()
+}
