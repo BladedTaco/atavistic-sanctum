@@ -47,6 +47,7 @@ if (argument[0]) {
 				surface_reset_target() //reset the draw target
 			}
 		}
+		pal_sprite = sprite_create_from_surface(pal_surface, 0, 0, 16, 16, false, false, 0, 0)
 	}
 } else {
 	with (instance_create(0, 0, obj_replay_handler)) {

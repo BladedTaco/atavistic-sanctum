@@ -66,6 +66,8 @@ if (argument[0]) {
 			replay_buffer = buffer_create(o.time*131072*global.player_number, buffer_grow, 1) //create a buffer that is minutes*players/8 MB big
 		}
 		buffer_write(replay_buffer, buffer_string, _str) //write the data into the buffer
+		
+		pal_sprite = sprite_create_from_surface(pal_surface, 0, 0, 16, 16, false, false, 0, 0)
 	}
 } else {
 	//go to the match room

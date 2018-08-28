@@ -3,6 +3,7 @@
 alarm[0] = -1
 
 pal_surface = surface_create(16, 16)
+pal_sprite = -1
 
 //input variables and control variables initialisation
 for (var i = 0; i < 8; i++) {

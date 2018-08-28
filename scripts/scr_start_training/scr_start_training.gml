@@ -1,7 +1,6 @@
 ///@func scr_start_training(state)
 ///@param state - the type of match start false = change room; true = create players
 ///@desc starts a training match with default settings
-
 if (argument[0]) {
 	instance_create(0, 0, obj_menu_training)
 	var _inst = noone
@@ -38,8 +37,18 @@ if (argument[0]) {
 				spawning = true
 				image_alpha = 0
 				img_blend = c_white
+				
+				//create pallet swap surface
+				pal_surface = surface_create(16, 16) //colour pallet as a sprite
+				surface_set_target(pal_surface)
+				draw_clear_alpha(c_white, 1) //clear the surface
+				pal_swap_draw_palette(global.pallet[character], 0, 0, 0) //draw base colours
+				pal_swap_draw_palette(pal_bal, 0, 1, 0) //draw custom colours
+				surface_copy_part(other.pal_surface, player_number, 0, pal_surface, 1, 0, 1, 16) //copy custom colours to global pallet backup
+				surface_reset_target() //reset the draw target
 			}
 		}
+		pal_sprite = sprite_create_from_surface(pal_surface, 0, 0, 16, 16, false, false, 0, 0)
 	}
 } else { //change room
 	room_goto(rm_match_Training_Grounds)
