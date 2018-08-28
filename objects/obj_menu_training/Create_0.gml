@@ -15,5 +15,10 @@ menu_option[10] = "EXIT"					//button
 menu_sprite[0] = spr_bal_stock //player character
 menu_sprite[1] = spr_bal_stock //enemy character
 
+percentage = 0; //percentage value
+
 menu_index = 0;
+menu_length = 13;
 sub_menu = false
+
+visible = false

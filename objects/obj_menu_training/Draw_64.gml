@@ -3,35 +3,59 @@ draw_set_colour(c_teal)
 draw_set_halign(fa_center)
 draw_set_valign(fa_middle)
 draw_rectangle(-1, -1, GUI_WIDTH*0.3, GUI_HEIGHT, false) //draw backdrop 
+
+//draw selector behind current menu index
+draw_set_colour(c_fuchsia)
+var i = menu_index;
+if (i > 1) {
+	if (i > 3) {
+		if (i > 9) {
+			if (i > 11) {
+				i--
+			}
+			i--
+		}
+		i--
+	}
+	i--
+}
+switch (menu_index) {
+	case 12: case 10: //bottom right
+		draw_rectangle(GUI_WIDTH*0.19, GUI_HEIGHT*0.1*(i + 0.9), GUI_WIDTH*0.29, GUI_HEIGHT*0.1*(i + 1.6), false)
+	break;
+	case 4: case 2: //top right
+		draw_rectangle(GUI_WIDTH*0.215, GUI_HEIGHT*0.1*(i + 0.9), GUI_WIDTH*0.29, GUI_HEIGHT*0.1*(i + 1.6), false)
+	break;
+	case 11: case 9: //bottom left
+		draw_rectangle(GUI_WIDTH*0.01, GUI_HEIGHT*0.1*(i + 0.9), GUI_WIDTH*0.19, GUI_HEIGHT*0.1*(i + 1.6), false)	
+	break;
+	case 3: case 1: //top left
+		draw_rectangle(GUI_WIDTH*0.01, GUI_HEIGHT*0.1*(i + 0.9), GUI_WIDTH*0.215, GUI_HEIGHT*0.1*(i + 1.6), false)	
+	break;
+	default: //other
+		draw_rectangle(GUI_WIDTH*0.01, GUI_HEIGHT*0.1*(i + 0.9), GUI_WIDTH*0.29, GUI_HEIGHT*0.1*(i + 1.6), false)	
+	break;
+}
 draw_set_colour(c_ltgray)
 
-//draw backgrounds
-//draw percentage
-draw_healthbar(GUI_WIDTH*0.025, GUI_HEIGHT*0.1, GUI_WIDTH*0.275, GUI_HEIGHT*0.15, /*percentage*/50, c_black, c_white, $0000aa, 0, true, true)
-
-//draw profile and character selector
+//draw background rectangles and sprites
 draw_rectangle(GUI_WIDTH*0.025, GUI_HEIGHT*0.2, GUI_WIDTH*0.2, GUI_HEIGHT*0.25, false)
 draw_rectangle(GUI_WIDTH*0.225, GUI_HEIGHT*0.2, GUI_WIDTH*0.275, GUI_HEIGHT*0.25, false)
 draw_sprite_ext(menu_sprite[0], 0, GUI_WIDTH*0.25 - 1, GUI_HEIGHT*0.25 + 1, 2, 2, 0, c_white, 1)
-
-//draw enemy options
 draw_rectangle(GUI_WIDTH*0.025, GUI_HEIGHT*0.3, GUI_WIDTH*0.2, GUI_HEIGHT*0.35, false)
 draw_rectangle(GUI_WIDTH*0.225, GUI_HEIGHT*0.3, GUI_WIDTH*0.275, GUI_HEIGHT*0.35, false)
 draw_sprite_ext(menu_sprite[1], 0, GUI_WIDTH*0.25 - 1, GUI_HEIGHT*0.35 + 1, 2, 2, 0, c_white, 1)
-draw_healthbar(GUI_WIDTH*0.025, GUI_HEIGHT*0.4, GUI_WIDTH*0.275, GUI_HEIGHT*0.45, /*cpu num*/50, c_black, c_white, $0000aa, 0, true, true)
-
-//draw game modifiers
-draw_healthbar(GUI_WIDTH*0.025, GUI_HEIGHT*0.5, GUI_WIDTH*0.275, GUI_HEIGHT*0.55, /*game speed*/50, c_black, c_white, $0000aa, 0, true, true)
-draw_healthbar(GUI_WIDTH*0.025, GUI_HEIGHT*0.6, GUI_WIDTH*0.275, GUI_HEIGHT*0.65, /*input lag*/50, c_black, c_white, $0000aa, 0, true, true)
 draw_rectangle(GUI_WIDTH*0.025, GUI_HEIGHT*0.7, GUI_WIDTH*0.275, GUI_HEIGHT*0.75, false)
-
-//draw ui elements
 draw_rectangle(GUI_WIDTH*0.025, GUI_HEIGHT*0.8, GUI_WIDTH*0.175, GUI_HEIGHT*0.85, false)
 draw_rectangle(GUI_WIDTH*0.2, GUI_HEIGHT*0.8, GUI_WIDTH*0.275, GUI_HEIGHT*0.85, false)
-
-//draw meta options
 draw_rectangle(GUI_WIDTH*0.025, GUI_HEIGHT*0.9, GUI_WIDTH*0.175, GUI_HEIGHT*0.95, false)
 draw_rectangle(GUI_WIDTH*0.2, GUI_HEIGHT*0.9, GUI_WIDTH*0.275, GUI_HEIGHT*0.95, false)
+
+//draw sliders
+draw_healthbar(GUI_WIDTH*0.025, GUI_HEIGHT*0.1, GUI_WIDTH*0.275, GUI_HEIGHT*0.15, percentage/10, c_black, c_white, $0000aa, 0, true, true)
+draw_healthbar(GUI_WIDTH*0.025, GUI_HEIGHT*0.4, GUI_WIDTH*0.275, GUI_HEIGHT*0.45, (global.player_number - 2)/0.06, c_black, c_white, $0000aa, 0, true, true)
+draw_healthbar(GUI_WIDTH*0.025, GUI_HEIGHT*0.5, GUI_WIDTH*0.275, GUI_HEIGHT*0.55, room_speed/2.4, c_black, c_white, $0000aa, 0, true, true)
+draw_healthbar(GUI_WIDTH*0.025, GUI_HEIGHT*0.6, GUI_WIDTH*0.275, GUI_HEIGHT*0.65, global.input_buffer_length/0.5, c_black, c_white, $0000aa, 0, true, true)
 
 //draw title
 draw_set_font(fnt_pixel_4)
