@@ -88,8 +88,13 @@ if (instance_exists(obj_match_handler) or (paused >= 0)) {
 	} else {
 		if (_input[PAUSE] and !sticky_pause[argument[0]]) { //new pause press
 			sticky_pause[argument[0]] = true
-			obj_menu_training.visible = !(obj_menu_training.visible) //flip visibility
-			obj_menu_training.alarm[0] = global.input_buffer_length + MENU_DELAY
+			if (!instance_exists(obj_menu_training_sub)) {
+				obj_menu_training.visible = !(obj_menu_training.visible) //flip visibility
+				obj_menu_training.alarm[0] = global.input_buffer_length + MENU_DELAY
+			} else {
+				instance_destroy(obj_menu_training_sub)
+				obj_menu_training.sub_menu = false
+			}
 		}
 	}
 }

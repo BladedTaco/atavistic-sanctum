@@ -39,23 +39,23 @@ switch (menu_index) {
 draw_set_colour(c_ltgray)
 
 //draw background rectangles and sprites
-draw_rectangle(GUI_WIDTH*0.025, GUI_HEIGHT*0.2, GUI_WIDTH*0.2, GUI_HEIGHT*0.25, false)
-draw_rectangle(GUI_WIDTH*0.225, GUI_HEIGHT*0.2, GUI_WIDTH*0.275, GUI_HEIGHT*0.25, false)
+draw_rectangle(GUI_WIDTH*0.025, GUI_HEIGHT*0.2, GUI_WIDTH*0.2, GUI_HEIGHT*0.25, false) //name
+draw_rectangle(GUI_WIDTH*0.225, GUI_HEIGHT*0.2, GUI_WIDTH*0.275, GUI_HEIGHT*0.25, false) //character
 draw_sprite_ext(menu_sprite[0], 0, GUI_WIDTH*0.25 - 1, GUI_HEIGHT*0.25 + 1, 2, 2, 0, c_white, 1)
-draw_rectangle(GUI_WIDTH*0.025, GUI_HEIGHT*0.3, GUI_WIDTH*0.2, GUI_HEIGHT*0.35, false)
-draw_rectangle(GUI_WIDTH*0.225, GUI_HEIGHT*0.3, GUI_WIDTH*0.275, GUI_HEIGHT*0.35, false)
+draw_rectangle(GUI_WIDTH*0.025, GUI_HEIGHT*0.3, GUI_WIDTH*0.2, GUI_HEIGHT*0.35, false) //cpu action
+draw_rectangle(GUI_WIDTH*0.225, GUI_HEIGHT*0.3, GUI_WIDTH*0.275, GUI_HEIGHT*0.35, false) //cpu character
 draw_sprite_ext(menu_sprite[1], 0, GUI_WIDTH*0.25 - 1, GUI_HEIGHT*0.35 + 1, 2, 2, 0, c_white, 1)
-draw_rectangle(GUI_WIDTH*0.025, GUI_HEIGHT*0.7, GUI_WIDTH*0.275, GUI_HEIGHT*0.75, false)
-draw_rectangle(GUI_WIDTH*0.025, GUI_HEIGHT*0.8, GUI_WIDTH*0.175, GUI_HEIGHT*0.85, false)
-draw_rectangle(GUI_WIDTH*0.2, GUI_HEIGHT*0.8, GUI_WIDTH*0.275, GUI_HEIGHT*0.85, false)
-draw_rectangle(GUI_WIDTH*0.025, GUI_HEIGHT*0.9, GUI_WIDTH*0.175, GUI_HEIGHT*0.95, false)
-draw_rectangle(GUI_WIDTH*0.2, GUI_HEIGHT*0.9, GUI_WIDTH*0.275, GUI_HEIGHT*0.95, false)
+draw_rectangle(GUI_WIDTH*0.025, GUI_HEIGHT*0.7, GUI_WIDTH*0.275, GUI_HEIGHT*0.75, false) //stage
+draw_rectangle(GUI_WIDTH*0.025, GUI_HEIGHT*0.8, GUI_WIDTH*0.175, GUI_HEIGHT*0.85, false) //hitbox visibility
+draw_rectangle(GUI_WIDTH*0.2, GUI_HEIGHT*0.8, GUI_WIDTH*0.275, GUI_HEIGHT*0.85, false) //ui visibility
+draw_rectangle(GUI_WIDTH*0.025, GUI_HEIGHT*0.9, GUI_WIDTH*0.175, GUI_HEIGHT*0.95, false) //default settings
+draw_rectangle(GUI_WIDTH*0.2, GUI_HEIGHT*0.9, GUI_WIDTH*0.275, GUI_HEIGHT*0.95, false) //exit
 
 //draw sliders
-draw_healthbar(GUI_WIDTH*0.025, GUI_HEIGHT*0.1, GUI_WIDTH*0.275, GUI_HEIGHT*0.15, percentage/10, c_black, c_white, $0000aa, 0, true, true)
-draw_healthbar(GUI_WIDTH*0.025, GUI_HEIGHT*0.4, GUI_WIDTH*0.275, GUI_HEIGHT*0.45, (global.player_number - 2)/0.06, c_black, c_white, $0000aa, 0, true, true)
-draw_healthbar(GUI_WIDTH*0.025, GUI_HEIGHT*0.5, GUI_WIDTH*0.275, GUI_HEIGHT*0.55, room_speed/2.4, c_black, c_white, $0000aa, 0, true, true)
-draw_healthbar(GUI_WIDTH*0.025, GUI_HEIGHT*0.6, GUI_WIDTH*0.275, GUI_HEIGHT*0.65, global.input_buffer_length/0.5, c_black, c_white, $0000aa, 0, true, true)
+draw_healthbar(GUI_WIDTH*0.025, GUI_HEIGHT*0.1, GUI_WIDTH*0.275, GUI_HEIGHT*0.15, percentage/10, c_black, c_white, $000066, 0, true, true)
+draw_healthbar(GUI_WIDTH*0.025, GUI_HEIGHT*0.4, GUI_WIDTH*0.275, GUI_HEIGHT*0.45, (global.player_number - 2)/0.06, c_black, c_white, $aa00aa, 0, true, true)
+draw_healthbar(GUI_WIDTH*0.025, GUI_HEIGHT*0.5, GUI_WIDTH*0.275, GUI_HEIGHT*0.55, (room_speed-6)/2.3, c_black, c_white, $22aaff, 0, true, true)
+draw_healthbar(GUI_WIDTH*0.025, GUI_HEIGHT*0.6, GUI_WIDTH*0.275, GUI_HEIGHT*0.65, global.input_buffer_length/0.5, c_black, $3caf3a, c_maroon, 0, true, true)
 
 //draw title
 draw_set_font(fnt_pixel_4)
@@ -80,22 +80,10 @@ draw_set_font(fnt_pixel)
 draw_text_normal(GUI_WIDTH*0.25, GUI_HEIGHT*0.3 + 1, "CPU")
 draw_text_normal(GUI_WIDTH*0.25, GUI_HEIGHT*0.2 + 1, "PLAYER")
 
-
-/* things this menu needs to handle
- - percentage				- slider
- - profile name				- dropdown
- - character				- dropdown
- 
- - enemy character			- dropdown
- - no of cpus				- slider
- - CPU action				- dropdown
- 
- - game speed				- slider
- - input lag				- slider
- - stage					- dropdown
- 
- - hitbox visibility		- toggle
- - ui visibility			- toggle
-
- - default settings			- button
- - exit						- button
+if (sub_menu) { //if in a sub menu
+	//darken this menu
+	draw_set_colour(c_dkgray)
+	draw_set_alpha(0.4)
+	draw_rectangle(0, 0, GUI_WIDTH*0.3, GUI_HEIGHT, 0)	
+	draw_set_alpha(1)
+}

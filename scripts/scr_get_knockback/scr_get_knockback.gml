@@ -6,7 +6,7 @@
 
 //knockback formula in readable form
 /*
- / / /	(damage + 1)(damage + percent^2)	  \		scaling knockback mul	\				       \
+ / / /	(damage + 1)(damage + percent mul)	  \		scaling knockback mul		\				    \
 | | |	-------------------------------		+1 | * ---------------------------	| + (base knockback) | * state
  \ \ \				weight*300				  /					4				/				  /
 */
@@ -106,7 +106,7 @@ if (argument[0].h = -1) { //if negative hitstun, only apply damage and no state 
 } else {
 	if (argument[0].s != 0) { //if scaling knockback is to be applied
 		_mag =  argument[0].d + 1				// k = damage taken + 1
-		_mag *= argument[0].d + _id.percentage	// k = k*(damage taken + percentage)
+		_mag *= argument[0].d + power(_id.percentage/7, 2)	// k = k*(damage taken + percentage^2)
 		_mag /= _id.weight*300					// k = k/(weight*300)
 		_mag += 1								// k = k + 1
 		_mag *= power(abs(argument[0].s) + lerp((1/max(abs(argument[0].s), 1))*3, 2, 0.5), 1.5)		// k = k * ((s+(1/s2))^1.5)

@@ -1,4 +1,4 @@
-/// @description 
+/// @description end alarm
 if (instance_exists(obj_replay_handler)) { //replay, go to replay menu
 	if (room = rm_menu) {
 		obj_menu_replay.alarm[1] = GAME_SPEED - 1

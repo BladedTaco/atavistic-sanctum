@@ -48,6 +48,9 @@ if (argument[0]) {
 				surface_reset_target() //reset the draw target
 			}
 		}
+		for (var i = 2; i < 8; i++) { //copy the rest of the pallets
+			surface_copy_part(pal_surface, i, 0, obj_player.pal_surface, 1, 0, 1, 16) 
+		}
 		pal_sprite = sprite_create_from_surface(pal_surface, 0, 0, 16, 16, false, false, 0, 0)
 	}
 } else { //change room
