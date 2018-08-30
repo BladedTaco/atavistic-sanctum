@@ -498,6 +498,15 @@ do {
 						sprite_index = scr_get_sprite(id, "hurt_down")
 						spawning = true
 						other.state[i] = FREEFALL
+						//reset alarms
+						alarm[0] = -1
+						alarm[1] = -1
+						alarm[2] = -1
+						alarm[3] = -1
+						alarm[4] = -1
+						alarm[5] = -1
+						alarm[6] = 1
+						alarm[0] = 1
 					}
 				} else {
 					if (_inst.stocks != -1) {

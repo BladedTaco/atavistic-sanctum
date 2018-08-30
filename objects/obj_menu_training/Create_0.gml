@@ -17,6 +17,7 @@ menu_sprite[1] = spr_bal_stock //enemy character
 
 percentage = 0; //percentage value
 cpu_action = "IDLE" //action for cpus
+cpu_index = [0, 0, 0, 0, 0, 0, 0] //an index for the loop of cpu moves
 
 menu_index = 0;
 menu_length = 13;

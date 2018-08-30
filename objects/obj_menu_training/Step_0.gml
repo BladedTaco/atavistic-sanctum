@@ -131,6 +131,12 @@ if (visible) {
 						global.show_hitboxes = false
 						global.show_ui = true
 						alarm[0] = MENU_DELAY
+						with (obj_spawn_point) {
+							if (number < global.player_number) {
+								obj_match_handler.player[number].x = x
+								obj_match_handler.player[number].y = y
+							}
+						}
 					break;
 					case 12: //exit
 						with (obj_player) {
@@ -139,6 +145,7 @@ if (visible) {
 						instance_destroy(obj_match_handler)
 						alarm[1] = 1;
 						alarm[0] = GAME_SPEED
+						scr_reset_players()
 					break;
 					
 					//sliders

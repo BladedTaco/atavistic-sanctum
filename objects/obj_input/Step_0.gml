@@ -5,6 +5,9 @@ if (instance_exists(obj_replay_handler) and obj_replay_handler.active) {
 } else {
 	if (instance_exists(obj_menu_training)) { //training mode
 		scr_get_input(0, controller[0], controller_number[0])
+		if (obj_menu_training.visible = false) {
+			scr_training_cpu(obj_menu_training.cpu_action, obj_menu_training.cpu_index)
+		}
 	} else {
 		for (var i = 0; i < global.player_number; i++) {
 			if (player_is_local[i]) {

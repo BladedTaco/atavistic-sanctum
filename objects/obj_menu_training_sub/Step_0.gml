@@ -46,6 +46,7 @@ if (alarm[0] <= 0) {
 			case 3: //cpu action
 				obj_menu_training.cpu_action = menu_index
 				obj_menu_training.menu_option[2] = "ACTION: " + name
+				obj_menu_training.cpu_action = name
 			break;
 			case 4: //cpu character
 				with (obj_match_handler.player[sub_index+1]) {

@@ -2,6 +2,7 @@
 draw_set_colour(c_teal)
 draw_set_halign(fa_center)
 draw_set_valign(fa_middle)
+draw_set_alpha(1)
 draw_rectangle(-1, -1, GUI_WIDTH*0.3, GUI_HEIGHT, false) //draw backdrop 
 
 //draw selector behind current menu index

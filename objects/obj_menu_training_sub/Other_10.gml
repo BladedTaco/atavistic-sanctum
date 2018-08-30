@@ -57,8 +57,10 @@ switch (state) {
 	case 3: //cpu action
 		menu_option[0] = "IDLE"
 		menu_option[1] = "MOVE"
-		//...
-		menu_length = 2
+		menu_option[2] = "FOLLOW"
+		menu_option[3] = "MIMIC"
+		menu_option[4] = "JUMP"
+		menu_length = 5
 		for (var i = 0; i < menu_length; i++) {
 			if (name = menu_option[i]) {
 				menu_index = i
