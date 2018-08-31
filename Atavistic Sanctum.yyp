@@ -2359,6 +2359,14 @@
             }
         },
         {
+            "Key": "920ffefd-9a70-4473-990c-ef5ea115897d",
+            "Value": {
+                "id": "6677e74f-7e75-4125-a77d-241547536f75",
+                "resourcePath": "sprites\\spr_Waterfall_fore\\spr_Waterfall_fore.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "92363c16-717e-4466-9a2c-55451f2ea59f",
             "Value": {
                 "id": "c3c15b16-4876-47d2-aff2-e79bb9413153",
@@ -2442,7 +2450,7 @@
             "Key": "9b8a0d29-bc2e-4f62-9b55-77d9a7de0e77",
             "Value": {
                 "id": "6674547f-7a95-43e8-b465-22be084adfd9",
-                "resourcePath": "rooms\\rm_match_Inner_Sanctum\\rm_match_Inner_Sanctum.yy",
+                "resourcePath": "rooms\\rm_match_Waterfall\\rm_match_Waterfall.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -3987,6 +3995,14 @@
             "Value": {
                 "id": "71c36efd-0140-451e-8c8d-5ac0573614b2",
                 "resourcePath": "sprites\\spr_eth_stock\\spr_eth_stock.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "f93d60a6-465a-4e8f-80a0-9b3d321d4308",
+            "Value": {
+                "id": "a90c4811-00c2-4696-a21f-cc88003dc644",
+                "resourcePath": "sprites\\spr_Waterfall_back\\spr_Waterfall_back.yy",
                 "resourceType": "GMSprite"
             }
         },

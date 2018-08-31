@@ -57,7 +57,7 @@ if (!active) {
 				active = false		
 				instance_create(-GUI_WIDTH, 0, obj_menu_replay)
 			break;
-			case 2: //album
+			case 2: //colours
 				//active = false		
 			break;
 			case 3: //stats

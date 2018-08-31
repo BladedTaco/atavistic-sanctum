@@ -1,7 +1,7 @@
 /// @description 
 menu_option[0] = "SETTINGS"
 menu_option[1] = "REPLAYS"
-menu_option[2] = "ALBUM"
+menu_option[2] = "COMING SOON"//"COLOURS"
 menu_option[3] = "STATS"
 menu_option[4] = "TRAIN"
 menu_sprite[0] = spr_menu_cog

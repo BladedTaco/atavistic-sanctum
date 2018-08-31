@@ -7,6 +7,7 @@ var _inst = noone
 var _index = argument[1]
 var _player = obj_match_handler.player[0]
 for (var i = 1; i < global.player_number; i++) {
+	_end = false
 	old_axis[i, 0] = input_array[i, 0] //store old xaxis
 	old_axis[i, 1] = input_array[i, 1] //store old yaxis
 	_inst = obj_match_handler.player[i]
@@ -22,26 +23,26 @@ for (var i = 1; i < global.player_number; i++) {
 			}
 		break;
 		case "FOLLOW": //follow the player
-			if (point_distance(_inst.x, _inst.y, _player.x, _player.y) > 20) { //if far from player
+			if (abs(_inst.x - _player.x) > 20) { //if far from player horizontally
 				input_array[i, XAXIS] = sign(_player.x - _inst.x) //move towards player
-				if (_inst.y > _player.y + 15) { //if well below player
-					if !(sticky_jump[i]) { //if a new jump press
-						_end = true //reset index
-						input_array[i, JUMP] = 1 //jump
-					} else if (_index[i-1] < GAME_SPEED*0.65) { //jump for 0.65 seconds
-						input_array[i, JUMP] = 1 //jump	
-					} else if (_index[i-1] >= GAME_SPEED*0.75) { //release for 0.1 seconds
-						_end = true //reset index
-					} else {
-						input_array[i, JUMP] = 0 //dont jump	
-					}
-				} else if (_inst.y < _player.y - 40) { //if well above player
-					input_array[i, YAXIS] = 1
-				} else {
-					input_array[i, YAXIS] = 0	
-				}
 			} else {
 				input_array[i, XAXIS] = 0
+			}
+			if (_inst.y - _player.y > 15) { //if well below player
+				if !(sticky_jump[i]) { //if a new jump press
+					_end = true //reset index
+					input_array[i, JUMP] = 1 //jump
+				} else if (_index[i-1] < GAME_SPEED*0.65) { //jump for 0.65 seconds
+					input_array[i, JUMP] = 1 //jump	
+				} else if (_index[i-1] >= GAME_SPEED*0.75) { //release for 0.1 seconds
+					_end = true //reset index
+				} else {
+					input_array[i, JUMP] = 0 //dont jump	
+				}
+			} else if (_player.y - _inst.y > 30) { //if well above player
+				input_array[i, YAXIS] = 1
+			} else {
+				input_array[i, YAXIS] = 0	
 			}
 		break;
 		case "MIMIC": //copy the players inputs

@@ -26,8 +26,11 @@ if (alarm[0] <= 0) {
 			break;
 			case 1: //player name
 				obj_match_handler.player[0].name = name
-				//add in control config here
-				obj_menu_training.menu_option[1] = "NAME: " + name	
+				if (obj_input.controller[0]) {
+					//add in control config here
+					obj_menu_training.menu_option[1] = "NAME: " + name	
+					scr_load_name(0, name)
+				}
 			break;
 			case 2: //player character
 				with (obj_match_handler.player[0]) {

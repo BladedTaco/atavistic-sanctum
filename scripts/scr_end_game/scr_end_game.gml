@@ -71,7 +71,6 @@ with (obj_results) {
 	}
 	if (!instance_exists(obj_replay_handler)) { //if not in a replay
 		//create the replay saving object
-		buffer_save(obj_match_handler.replay_buffer, "OUTPUT.txt")
 		with (instance_create(x, y, obj_save_replay)) {	
 			replay_buffer = buffer_compress(obj_match_handler.replay_buffer, 0, buffer_tell(obj_match_handler.replay_buffer))
 			header_string = obj_match_handler.header_string

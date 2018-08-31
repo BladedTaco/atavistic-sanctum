@@ -9,3 +9,4 @@ active = false
 menu_offset = 0
 sub_index = 0
 menu_index = 0
+alarm[0] = MENU_DELAY
