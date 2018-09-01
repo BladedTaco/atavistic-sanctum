@@ -7,9 +7,9 @@
 ///@param string - the string to draw
 ///@param thickness - the thickness of the outline
 
-var xx, yy, i;									// define local variables
-xx = argument[0];  							// set xx to be the x argument
-yy = argument[1];  							// set yy to be the y argument
+var xx, yy, i;								// define local variables
+xx = round(argument[0]);  					// set xx to be the x argument
+yy = round(argument[1]);  					// set yy to be the y argument
 i = argument[5]								// set i to be the thickness of the border
 			
 //Outline  									

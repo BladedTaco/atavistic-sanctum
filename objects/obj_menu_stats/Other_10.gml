@@ -14,5 +14,4 @@ if (file_exists(_file)) {
 		i++
 	}
 	file_text_close(_file)
-	show_debug_message(sub_menu_option)
 }

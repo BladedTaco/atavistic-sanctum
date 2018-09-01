@@ -217,4 +217,3 @@ draw_set_font(fnt_pixel_2) //set font
 for (var i = spr_bal_base; i <= spr_eth_special_neutral; i++) {
 	sprite_set_speed(i, sprite_get_speed(i)/GAME_SPEED, spritespeed_framespergameframe)
 }
-
