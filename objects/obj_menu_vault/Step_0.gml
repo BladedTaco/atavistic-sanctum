@@ -61,7 +61,8 @@ if (!active) {
 				//active = false		
 			break;
 			case 3: //stats
-				//active = false		
+				active = false	
+				instance_create(-GUI_WIDTH, 0, obj_menu_stats)
 			break;
 			case 4: //train
 				scr_start_training(false)

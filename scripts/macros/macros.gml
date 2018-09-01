@@ -88,7 +88,7 @@ show_debug_overlay(debug_mode)
 #macro MAC 1
 #macro GEO 2
 #macro ETH 3
-
+#macro CHARACTER_NUMBER 4 //TODO: always make sure this is the number of the highest character + 1
 
 //hitbox constants
 #macro NULL -10

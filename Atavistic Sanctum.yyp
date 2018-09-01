@@ -1583,6 +1583,14 @@
             }
         },
         {
+            "Key": "64b41fcc-503e-4e51-b002-c5a120585b75",
+            "Value": {
+                "id": "67350ac1-2380-485b-a867-f0a1134caf38",
+                "resourcePath": "objects\\obj_menu_stats\\obj_menu_stats.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "64e3f6c5-eacf-4972-bc7b-639012ace168",
             "Value": {
                 "id": "0ef4a9a7-1696-4fe2-a72d-fa40da3c2271",
@@ -1796,6 +1804,14 @@
                 "id": "e7df4305-9bb9-4899-9a61-b0d40f7e1676",
                 "resourcePath": "sprites\\spr_eth_special_neutral\\spr_eth_special_neutral.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "725e44f2-e07c-4860-8021-90bd2e6ea2d0",
+            "Value": {
+                "id": "9b939850-ad76-4abd-ba82-778915a34b54",
+                "resourcePath": "scripts\\scr_get_sprite_simple\\scr_get_sprite_simple.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -2324,6 +2340,14 @@
                 "id": "4187257e-3095-4e86-bf02-afc7d99b562c",
                 "resourcePath": "sprites\\spr_eth_hurt_up\\spr_eth_hurt_up.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "900437a3-11f7-4288-b229-14675520de04",
+            "Value": {
+                "id": "3976b68c-9dad-4937-a7ec-b35170224a66",
+                "resourcePath": "scripts\\scr_update_stats\\scr_update_stats.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -4055,6 +4079,14 @@
             }
         },
         {
+            "Key": "feae81bf-f44c-4bdc-af1d-3091e3c78353",
+            "Value": {
+                "id": "bd20a2b4-39a2-4251-b17e-c199b6ffd5a6",
+                "resourcePath": "sprites\\spr_stage_Waterfall\\spr_stage_Waterfall.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "feb607de-c5ec-43af-b78c-81dfe2fa835d",
             "Value": {
                 "id": "8ce21f44-26c8-4975-a7b5-92a6ab7bcb71",
@@ -4170,7 +4202,9 @@
         "0f7ef313-9eef-4769-af92-c2e928fe9eb0",
         "f8e05f13-0522-44b7-a568-e0a17bd76839",
         "d90d57f6-8104-4965-bba4-e92167165bbe",
-        "ef33db64-eec8-4d65-adc6-858749ff720b"
+        "ef33db64-eec8-4d65-adc6-858749ff720b",
+        "900437a3-11f7-4288-b229-14675520de04",
+        "725e44f2-e07c-4860-8021-90bd2e6ea2d0"
     ],
     "tutorial": ""
 }

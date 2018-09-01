@@ -28,15 +28,3 @@ for (var i = 0; i < array_length_1d(menu_option); i++) {
 		draw_text_outlined(_xx + 50, _yy + 40, c_black, c_white, menu_option[i], 4)
 	}
 }
-
-_yy = y
-_xx = x
-if (old_menu_index != menu_index) {
-	if (_percent > 0.5) {
-		//draw_sprite_ext(menu_sprite[old_menu_index], 0, _xx + GUI_WIDTH*(0.75 + (1 - _percent)/2), _yy + GUI_HEIGHT/2, 2, 2, _percent*180 - 180, c_white,  2*(_percent - 0.5))	
-	} else {
-		//draw_sprite_ext(menu_sprite[menu_index], 0, _xx + GUI_WIDTH*(0.75 + _percent/2), _yy + GUI_HEIGHT/2, 2, 2, _percent*180, c_white,  2*(0.5 - _percent))	
-	}
-} else {
-	//draw_sprite_ext(menu_sprite[menu_index], 0, _xx + GUI_WIDTH*0.75, _yy + GUI_HEIGHT/2, 2, 2, 0, c_white, 1)	
-}

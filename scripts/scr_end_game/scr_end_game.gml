@@ -33,7 +33,6 @@ with (obj_player) {
 			}
 		break;
 	}
-	
 	obj_results.real_placing[player_number, 0] = player_number
 	obj_results.real_placing[player_number, 1] = placing
 	obj_results.pal_surface[player_number] = pal_surface
@@ -70,6 +69,8 @@ with (obj_results) {
 		}
 	}
 	if (!instance_exists(obj_replay_handler)) { //if not in a replay
+		//write stats to the players files
+		scr_update_stats()
 		//create the replay saving object
 		with (instance_create(x, y, obj_save_replay)) {	
 			replay_buffer = buffer_compress(obj_match_handler.replay_buffer, 0, buffer_tell(obj_match_handler.replay_buffer))
