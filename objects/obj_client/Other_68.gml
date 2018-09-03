@@ -4,6 +4,12 @@ global.wait = false
 
 if (client = event_id) { //if data is being sent to this client
 	switch (global.network_state) {
+		case NETWORK_JOIN:			
+			instance_create(-GUI_WIDTH, 0, obj_menu_char_select)
+			obj_menu_online.active = false
+			global.network_state = NETWORK_LOBBY
+		break;
+		
 	    case NETWORK_LOBBY:
 		    var buff = async_load[? "buffer"] //store incoming buffer data
 			buffer_seek(buff, buffer_seek_start, 0); //seek the start of the buffer
@@ -12,7 +18,7 @@ if (client = event_id) { //if data is being sent to this client
 			for (var i = 0; i < global.player_number; i++) { //for each player
 				var num = buffer_read(buff, buffer_s16) //read player number
 				for (var o = 0; o < 10; o++) {
-				data_array[num, o] = buffer_read(buff, buffer_string) //read data	
+					data_array[num, o] = buffer_read(buff, buffer_string) //read data	
 				}
 			}
 		break;

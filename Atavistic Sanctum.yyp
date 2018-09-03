@@ -135,6 +135,14 @@
             }
         },
         {
+            "Key": "0440443a-3589-4a83-89d5-dccd2d229316",
+            "Value": {
+                "id": "f103c984-3f4e-4e16-a638-abd20da851cf",
+                "resourcePath": "sprites\\spr_Ascent_back\\spr_Ascent_back.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "04798fff-6719-48b4-848e-f875622458e5",
             "Value": {
                 "id": "01bb6cd2-6019-4102-945e-f63f2756867c",
@@ -3727,6 +3735,14 @@
             }
         },
         {
+            "Key": "e6b779af-bdca-4731-9232-e15f7275cf19",
+            "Value": {
+                "id": "03ffcb1b-6c60-4fba-a45c-2cf7d87e5c54",
+                "resourcePath": "scripts\\scr_reset_networking\\scr_reset_networking.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "e77de5cb-1923-4b37-8dde-60bc672dcaa7",
             "Value": {
                 "id": "ab5540d8-6f32-4635-931b-d6bc17ce050d",
@@ -4063,6 +4079,14 @@
             }
         },
         {
+            "Key": "fc3e82af-64a6-44c1-92e6-78efafe46b82",
+            "Value": {
+                "id": "5216c3ec-7f68-4529-93ee-ff6c3c871fd5",
+                "resourcePath": "objects\\obj_menu_online\\obj_menu_online.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "fc3e9029-f701-479a-9b71-bf95cd2562c4",
             "Value": {
                 "id": "408ffa5a-850e-4a1f-add1-f4b78826162e",
@@ -4204,7 +4228,8 @@
         "d90d57f6-8104-4965-bba4-e92167165bbe",
         "ef33db64-eec8-4d65-adc6-858749ff720b",
         "900437a3-11f7-4288-b229-14675520de04",
-        "725e44f2-e07c-4860-8021-90bd2e6ea2d0"
+        "725e44f2-e07c-4860-8021-90bd2e6ea2d0",
+        "e6b779af-bdca-4731-9232-e15f7275cf19"
     ],
     "tutorial": ""
 }

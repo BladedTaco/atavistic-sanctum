@@ -195,10 +195,18 @@ if (room = rm_menu) {
 			if (obj_input.input_array[i, SPECIAL]) { //exiting menu
 				alarm[0] += 2
 				if (alarm[0] > GAME_SPEED) { //button held for long enough, exit menu
-					with(instance_create(-GUI_WIDTH, 0, obj_menu_main)) {
-						menu_index = 0	
-						alarm[0] = MENU_DELAY
-						alarm[1] = -1
+					if (instance_exists(obj_client)) {
+						with(instance_create(-GUI_WIDTH, 0, obj_menu_online)) {
+							menu_index = !instance_exists(obj_server)	
+							alarm[0] = MENU_DELAY
+						}
+						scr_reset_networking()
+					} else {
+						with(instance_create(-GUI_WIDTH, 0, obj_menu_main)) {
+							menu_index = 0	
+							alarm[0] = MENU_DELAY
+							alarm[1] = -1
+						}
 					}
 					alarm[0] = MENU_DELAY
 					active = false

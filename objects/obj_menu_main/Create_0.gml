@@ -1,7 +1,7 @@
 /// @description 
 menu_option[0] = "FIGHT"
 menu_option[1] = "ONLINE"
-menu_option[2] = "STORY"
+menu_option[2] = "COMING SOON" //"STORY"
 menu_option[3] = "VAULT"
 menu_option[4] = "EXIT"
 menu_sprite[0] = spr_menu_sword

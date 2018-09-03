@@ -1,6 +1,6 @@
 /// @description Initialise the client
 player_name = global.player_name
-buff = buffer_create(256, buffer_grow, 1); //create a buffer for networking
+buff = buffer_create(1024, buffer_grow, 1); //create a buffer for networking
 client = network_create_socket(global.network_protocol) //create socket
 global.client = client //used to ignore messages sent to self if this client is also a server
 player_number = 0

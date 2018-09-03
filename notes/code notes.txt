@@ -27,3 +27,36 @@ make sure every windbox has a hitstun multipleri of 0
 
 add colour swaps and flash yellow outline when alarm[2] >= 0
 
+
+
+
+
+
+
+
+
+
+one day add keyboard controls reassigning
+one day fix ground clipping issues
+one day make knockback reasonable
+
+ONLINE PLAY
+
+pokemon blue/yellow 2g1c 1:00:00, 2:18:36 on timer
+
+update Gantt Chart Weekly
+
+ATAVISTIC SANCTUM
+make a medusa map where you are stuck looking away from whichever direction the medusa is
+dash dodging tutorial
+circle dash dancing tutorial
+dash dancing tutorial
+wavedash tutorial
+tilt to smash cancelling tutorial
+reduce hitstun
+see about using shield meter for more things
+
+RESOURCE TREE
+make hitbox stage above normal hitbox
+make match handler above player
+

@@ -51,7 +51,8 @@ if (!active) {
 				instance_create(-GUI_WIDTH,  0, obj_menu_char_select)				
 			break;
 			case 1: //online
-				//active = false		
+				active = false
+				instance_create(-GUI_WIDTH,  0, obj_menu_online)		
 			break;
 			case 2: //story
 				//active = false		

@@ -2,9 +2,11 @@
 
 randomise() //randomise the seed for things such as random character select
 show_debug_overlay(debug_mode)
+window_set_caption("Atavistic Sanctum is now loading...")
 
 //macros
 
+window_set_caption("Defining Macros")
 //settings
 #macro GAME_SPEED 60 //the steps per second to maintain
 
@@ -17,6 +19,7 @@ show_debug_overlay(debug_mode)
 #macro NETWORK_LOGIN 0
 #macro NETWORK_LOBBY 1
 #macro NETWORK_PLAY 2
+#macro NETWORK_JOIN 3
 
 //input array references
 #macro	XAXIS 0			
@@ -108,6 +111,9 @@ show_debug_overlay(debug_mode)
 #macro GUI_WIDTH display_get_gui_width()
 #macro MENU_DELAY (GAME_SPEED/6)
 
+
+window_set_caption("Defining Globals")
+
 //globals
 global.network_protocol = network_socket_tcp //**note, if UDP is found to be too unreliable, switch to the more reliable, but slower TCP
 global.network_ip = "127.0.0.1"//get_string("enter ip", "127.0.0.1")
@@ -117,7 +123,7 @@ global.advance = false
 
 global.network_port = 6510
 global.player_name = "PLAYER"
-global.network_state = NETWORK_PLAY
+global.network_state = NETWORK_JOIN
 global.match_frame = 0
 global.input_buffer_length = 5
 global.max_players = 8
@@ -175,6 +181,7 @@ global.pallet[GEO] = pal_geo
 global.pallet[ETH] = pal_eth
 
 
+window_set_caption("Defining enums")
 //enums
 enum _IMPULSE { //define an impulse enumeration field (actual values are divided by 100)
 	_AIR_DODGE = 1200, //air dodge impulse (instant)
@@ -208,11 +215,14 @@ enum _IMPULSE { //define an impulse enumeration field (actual values are divided
 
 
 
+window_set_caption("Adding Moves")
 add_moves() //add all of the attacks of the characters into memory (very very intensive)
 
 pal_swap_init_system(shd_pal_swapper); //initialise pallet swap system
 
 draw_set_font(fnt_pixel_2) //set font
+
+window_set_caption("Atavistic Sanctum")
 
 for (var i = spr_bal_base; i <= spr_eth_special_neutral; i++) {
 	sprite_set_speed(i, sprite_get_speed(i)/GAME_SPEED, spritespeed_framespergameframe)

@@ -20,6 +20,8 @@ for (var i = 0; i <= _i_max; i++) {
 
 var i = 0 //variable created now for use in loops below if hurtboxes or hitboxes are constant over a large number of frames
 
+window_set_caption("Adding Hitboxes Into Memory BAL")
+
 #region BALLOONY 619 lines
 	//bal idle (no hitbox)
 	scr_add_hurtbox(spr_bal_idle, 0, 0, CIRCLE, 16, 18, 0, -27, 0)
@@ -650,6 +652,8 @@ var i = 0 //variable created now for use in loops below if hurtboxes or hitboxes
 	scr_add_move(spr_bal_special_neutral, 7, 0, RECTANGLE, 35, 10, 17, -15, 0, 0, 0, 7, 3, 0)
 #endregion BALLOONY
 
+window_set_caption("Adding Hitboxes Into Memory MAC")
+
 #region MACHINATION 451 lines
 	//mac idle (no hitboxes)
 	scr_add_hurtbox(spr_mac_idle, 0, 0, RECTANGLE, 12, 16, 1, -19, 0)
@@ -1110,6 +1114,8 @@ var i = 0 //variable created now for use in loops below if hurtboxes or hitboxes
 	scr_add_move(spr_mac_special_neutral, 12, 0, CIRCLE, 35, 53, -1, -17, 0, 1, IN, 1, 1)
 #endregion MACHINATION
 
+window_set_caption("Adding Hitboxes Into Memory GEO")
+
 #region GEOS 302 lines
 	//smash down, tilt down, ledge moves, hurt trio, crouch trio, grabbed have special case hurtboxes
 	//general hurtbox, this is overwritten when necessary
@@ -1429,6 +1435,8 @@ var i = 0 //variable created now for use in loops below if hurtboxes or hitboxes
 	//geo special neutral (no hitbox)
 #endregion GEOS
 
+window_set_caption("Adding Hitboxes Into Memory ETH")
+
 #region ETH 186 lines
 	//eth general hurtbox
 	for (i = spr_eth_idle; i <= spr_eth_special_neutral; i++) { //for the range of geo sprites
@@ -1627,6 +1635,7 @@ var i = 0 //variable created now for use in loops below if hurtboxes or hitboxes
 	//eth special neutral (hitbox object handled in other code, no new hurtbox)
 
 #endregion
+
 
 #endregion that took forever, probably create a tool for making hitboxes if any more characters are added.
 
