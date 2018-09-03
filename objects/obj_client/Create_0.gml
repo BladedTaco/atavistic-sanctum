@@ -7,7 +7,7 @@ player_number = 0
 alarm[1] = GAME_SPEED*2
 
 if (global.network_protocol = network_socket_tcp) { //if using tcp
-	if (network_connect(client, global.network_ip, 6510) < 0) { //try to connect to server
+	if (network_connect(client, global.network_ip, global.network_port) < 0) { //try to connect to server
 		//could not connect to network
 		show_message("Failed to connect to server.") //display message
 		instance_destroy(); //destroy self

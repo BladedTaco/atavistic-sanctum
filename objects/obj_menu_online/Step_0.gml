@@ -39,8 +39,8 @@ if (!active) {
 		} else if (_select) {
 			switch (menu_index) {
 				case 0: //host
-					instance_create(0, 0, obj_server)
 					global.network_ip = "127.0.0.1"
+					instance_create(0, 0, obj_server)
 					instance_create(0, 0, obj_client)
 					instance_create(-GUI_WIDTH, 0, obj_menu_char_select)
 					active = false

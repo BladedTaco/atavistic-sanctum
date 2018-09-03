@@ -198,7 +198,7 @@ if (room = rm_menu) {
 					if (instance_exists(obj_client)) {
 						with(instance_create(-GUI_WIDTH, 0, obj_menu_online)) {
 							menu_index = !instance_exists(obj_server)	
-							alarm[0] = MENU_DELAY
+							alarm[0] = MENU_DELAY*2
 						}
 						scr_reset_networking()
 					} else {
