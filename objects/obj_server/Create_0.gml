@@ -9,7 +9,7 @@ socket_array[0] = -1 //array to hold socket ids
 data_array[0, 0] = -1 //array for holding player data to be sent
 network_array[0] = -1 //array for holding all data to be sent at the next dispatch (inputs/ match frames)
 
-server = network_create_server(global.network_protocol, 6510, global.max_players) //create the server
+server = network_create_server(global.network_protocol, global.network_port, global.max_players) //create the server
 if (server < 0) { //if there is already a server running
 	//clear buffers from RAM, destroy instance
 	buffer_delete(broadcast_buffer)

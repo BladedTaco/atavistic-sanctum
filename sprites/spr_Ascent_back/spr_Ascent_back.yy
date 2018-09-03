@@ -76,6 +76,13 @@
                     "mvc": "1.0",
                     "FrameId": "36807ed3-5006-4a0f-a9ae-1be07baef2c7",
                     "LayerId": "3f7f9090-c159-46b1-bd0f-797bf81be861"
+                },
+                {
+                    "id": "e27925e5-18a9-4e99-a12d-d062823dac12",
+                    "modelName": "GMSpriteImage",
+                    "mvc": "1.0",
+                    "FrameId": "36807ed3-5006-4a0f-a9ae-1be07baef2c7",
+                    "LayerId": "7d88ec16-7c65-4dfc-a2da-f734e90ecb0a"
                 }
             ]
         }
@@ -115,6 +122,17 @@
             "isLocked": false,
             "name": "foreground texture",
             "opacity": 100,
+            "visible": true
+        },
+        {
+            "id": "7d88ec16-7c65-4dfc-a2da-f734e90ecb0a",
+            "modelName": "GMImageLayer",
+            "mvc": "1.0",
+            "SpriteId": "0440443a-3589-4a83-89d5-dccd2d229316",
+            "blendMode": 0,
+            "isLocked": false,
+            "name": "shaodw",
+            "opacity": 39,
             "visible": true
         },
         {
