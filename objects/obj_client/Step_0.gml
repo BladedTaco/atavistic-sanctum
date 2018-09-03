@@ -1,6 +1,5 @@
 /// @description send data to the server
 
-
 var j = player_number
 
 
@@ -29,5 +28,6 @@ switch (global.network_state) {
 	break;
 }
 
-
-network_send(client, buff); //send data to the server
+if (global.network_state != NETWORK_JOIN) {
+	network_send(client, buff); //send data to the server
+}

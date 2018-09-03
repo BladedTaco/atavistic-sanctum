@@ -18,10 +18,6 @@ if (server < 0) { //if there is already a server running
 }
 
 alarm[0] = GAME_SPEED //create an alarm for sending a broadcast signal
-alarm[1] = GAME_SPEED
-
-
-
 
 
 
