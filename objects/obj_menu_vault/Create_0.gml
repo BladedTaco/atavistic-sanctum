@@ -1,4 +1,4 @@
-/// @description 
+/// @description init varaibles
 menu_option[0] = "SETTINGS"
 menu_option[1] = "REPLAYS"
 menu_option[2] = "COMING SOON"//"COLOURS"

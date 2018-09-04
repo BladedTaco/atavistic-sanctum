@@ -48,24 +48,29 @@ if (!active) { //if inactive
 		menu_index = array_length_1d(menu_option) - 1	
 	}
 
-	if (_select) {
-		switch (menu_index) {
+	if (_select) { //if a selection has been made
+		switch (menu_index) { //handle selection
 			case 0: //fight
+				//go to character select menu
 				active = false
 				instance_create(-GUI_WIDTH,  0, obj_menu_char_select)				
 			break;
 			case 1: //online
+				//go to online menu
 				active = false
 				instance_create(-GUI_WIDTH,  0, obj_menu_online)		
 			break;
 			case 2: //story
+				//coming soon, code not yet implemented
 				//active = false		
 			break;
 			case 3: //vault
+				//go to vault menu
 				active = false	
 				instance_create(-GUI_WIDTH, 0, obj_menu_vault)
 			break;
 			case 4: //exit
+				//if held long enough, end game
 				alarm[1] += 2 //set exit alarm
 				alarm[0] = -1 //remove input delay alarm
 				if (alarm[1] > GAME_SPEED) {
