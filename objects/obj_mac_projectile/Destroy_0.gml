@@ -1,4 +1,4 @@
-/// @description 
+/// @description check for collsion, destroy self and handle effects
 if (instance_exists(obj_match_handler) and instance_exists(creator)) {
 	creator.hitbox_override = false
 	creator.image_speed = 1 //start animation if not already playing

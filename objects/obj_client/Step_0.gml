@@ -16,6 +16,7 @@ switch (global.network_state) {
 				buffer_write(buff, buffer_s16, obj_input.input_buffer_array[j, o]) //write data
 			}
 		}
+		network_send(client, buff); //send data to the server
 	break;
 	
 	case (NETWORK_LOBBY):
@@ -25,9 +26,6 @@ switch (global.network_state) {
 		for (var o = 0; o < 10; o++) {
 			buffer_write(buff, buffer_string, data_array[j, o]) //write data
 		}
+		network_send(client, buff); //send data to the server
 	break;
-}
-
-if (global.network_state != NETWORK_JOIN) {
-	network_send(client, buff); //send data to the server
 }

@@ -1,8 +1,8 @@
 /// @description
-if (instance_exists(obj_match_handler) and instance_exists(creator)) {
+if (instance_exists(obj_match_handler) and instance_exists(creator)) { //if in a match and creator exists
 	if ((obj_match_handler.state[creator.player_number] = HIT_STUN)
-		or (obj_match_handler.state[creator.player_number] = HELPLESS)){
-		instance_destroy();	
+		or (obj_match_handler.state[creator.player_number] = HELPLESS)){ //creator is in hitstun or helpless
+		instance_destroy();	 //destroy self and exit code execution
 		exit
 	}
 

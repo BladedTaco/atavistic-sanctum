@@ -1,4 +1,4 @@
-/// @description 
+/// @description init variables
 shape = global.bbox[0]
 _maj = global.bbox[1]
 _min = global.bbox[2]
@@ -48,6 +48,7 @@ for (var i = 0; i <= 3; i++) {
 	if (bb[3] < _y[i]) { bb[3] = _y[i] }
 }
 
+//get the points inside of the rectnagle based on side of each line
 for (var i = 0; i < 4; i++) {
 	side[i] = sign((x - _x[i])*(_y[(i+1) mod 4] - _y[i]) - (y - _y[i])*(_x[(i+1) mod 4] - _x[i]))	
 }

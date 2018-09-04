@@ -1,4 +1,4 @@
-/// @description 
+/// @description init variables and create hitbox
 image_angle = global.eth_angle
 var _height = (sprite_height)/2
 var _width = (sprite_width)/2

@@ -1,4 +1,4 @@
-/// @description 
+/// @description init variables
 creator = noone
 type = 0
 last_dir = 90

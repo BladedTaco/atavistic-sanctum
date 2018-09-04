@@ -1,4 +1,4 @@
-/// @description 
+/// @description init variables
 menu_option[0] = "FIGHT"
 menu_option[1] = "ONLINE"
 menu_option[2] = "COMING SOON" //"STORY"

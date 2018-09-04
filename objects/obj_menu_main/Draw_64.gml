@@ -1,4 +1,4 @@
-/// @description 
+/// @description DRAW GUI ELEMENTS
 var _yy = y
 var _xx = x
 var _percent = alarm[0]/MENU_DELAY

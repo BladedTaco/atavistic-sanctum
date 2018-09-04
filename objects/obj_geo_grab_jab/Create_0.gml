@@ -1,4 +1,4 @@
-/// @description 
+/// @description init variables
 creator = noone
 attacker = noone
 visible = false

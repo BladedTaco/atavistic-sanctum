@@ -7,7 +7,8 @@ if (visible and (y = 0)) { //only do code if active
 				ready[i] = clamp(ready[i] + 0.02, 0, 1)	
 			}
 			_exit = false
-		} else if (ready[i] < 4.5) {
+		} else if (ready[i] < 4.5) { //if nearly full ready
+			//increase ready towards full
 			ready[i] = clamp(ready[i] + 0.05, 1, 4.5)	
 			_exit = false
 		}
@@ -15,16 +16,16 @@ if (visible and (y = 0)) { //only do code if active
 			obj_input.sticky_attack[i] = true
 			if (instance_exists(obj_replay_handler)) { //end of replay
 				for (var o = 0; o < num; o++) {
-					if (ready[o] < 0.02) {
+					if (ready[o] < 0.02) { //increase ready state if not at all readied
 						ready[o] = 0.02
 					} else if (ready[o] < 1.05) { //if not fully readied
 						ready[o] = 1.05 //set to be ready	
 					}
 				}
 			} else { //end of match
-				if (ready[i] < 1) {
+				if (ready[i] < 1) { //if not readying
 					ready[i] = max(ready[i], 0.02) //set ready if it isnt already
-				} else if (ready[i] = 1) {
+				} else if (ready[i] = 1) { //if half readied
 					ready[i] = 1.05 //set ready to leave menu
 				}
 			}
@@ -37,11 +38,11 @@ if (visible and (y = 0)) { //only do code if active
 				ready[i] = 1 //set ready to first ready	
 			}
 		}
-		if (obj_input.input_array[i, GRAB]) {
+		if (obj_input.input_array[i, GRAB]) { //save replay
 			if (instance_exists(obj_save_replay)) { //if not in a replay
-				if (!save_replay) {
-					obj_save_replay.visible = true
-					save_replay = true;
+				if (!save_replay) { //if reaply isnt already to be saved
+					obj_save_replay.visible = true //make replay saver visible
+					save_replay = true; //flag this
 				}
 			}
 		}
@@ -58,6 +59,6 @@ if (visible and (y = 0)) { //only do code if active
 	}
 
 	if ((_exit) and (alarm[0] < 0)) { //exit when all players are ready to exit
-		alarm[0] = MENU_DELAY	
+		alarm[0] = MENU_DELAY //exit menu after one menu delay
 	}
 }

@@ -40,6 +40,7 @@ for (var i = 0; i < 8; i++) { //player number
 }
 paused = -1 //which player has paused the game
 pause_sprite = -1 //the sprite used on the pause screen
+//menu variables and options initialization
 menu_index = 0;
 menu_direction = 0;
 menu_option[0] = "RESUME"
@@ -49,13 +50,11 @@ menu_option[3] = "Game speed: 1x"
 menu_option[4] = "UI: SHOWN"
 menu_option[5] = "FORFEIT"
 
-replay = false;
+replay = false; //used to dictate whether there is a pause during a replay or not
 pause = noone //the pause object (in match only)
 forfeiter = -1 // the forfeiter for a forfeit
-//initialise input buttons and their mappings
 
-scr_initialise_controller_inputs()
-//scr_initialise_keyboard_inputs(0)
+scr_initialise_controller_inputs() //initialise base controller configurations
 
 alarm[0] = room_speed //alarm for keeping OS from sleeping
 alarm[1] = -1 //alarm for pause menu

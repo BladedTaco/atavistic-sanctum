@@ -15,10 +15,12 @@ with (obj_hitbox) {
 				case RECTANGLE:
 					switch (shape) {
 						case CIRCLE:
+							//rectangle-circle collision
 							c = scr_cir_col_rec(id, other.id)
 						break;
 						
 						case RECTANGLE:
+							//rectangle-rectangle collision
 							c = scr_rec_col_rec(id, other.id)
 						break;
 					}
@@ -27,10 +29,12 @@ with (obj_hitbox) {
 				case CIRCLE:
 					switch (shape) {
 						case RECTANGLE:
+							//rectangle-circle collision
 							c = scr_cir_col_rec(other.id, id)
 						break;
 						
 						case CIRCLE:
+							//circle-circle collision
 							c = scr_cir_col_cir(other.id, id)
 						break;
 					}
@@ -42,14 +46,15 @@ with (obj_hitbox) {
 	}
 	
 	//collide
-	if (c and instance_exists(creator)) {
+	if (c and instance_exists(creator)) { //if colliding and there is a creator for the hitbox
 		switch (creator.object_index) {
-			case obj_player:
+			case obj_player: //owned by player
 				switch (other.creator.object_index) {
-					case obj_ledge:
+					case obj_ledge: //colliding with ledge hitbox
 						switch (obj_match_handler.state[creator.player_number]) {
+							//grab onto ledge if able to
 							case AIRBORNE: case JUMP_RISE: case FREEFALL:
-								with (obj_match_handler) {
+								with (obj_match_handler) { 
 									state[other.creator.player_number] = scr_perform_ledge(other.creator, other.creator.player_number, 0)	
 								}
 							break;
@@ -62,7 +67,8 @@ with (obj_hitbox) {
 				}
 			break;
 			
-			case obj_mac_projectile:
+			case obj_mac_projectile: //projectile
+				//destroy projectile if not colliding with platform or ledge
 				if ((other.creator.object_index != obj_ledge) and (other.creator.object_index != obj_platform)) {
 					instance_destroy(creator);
 				}

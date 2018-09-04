@@ -1,4 +1,4 @@
-/// @description 
+/// @description define variables and create hitboxes
 var _height = (sprite_height)/2
 var _width = (sprite_width)/2
 hitbox = scr_check_collision_test(RECTANGLE, _width, _height, x - 1, y - 1, -image_angle) //create hitbox

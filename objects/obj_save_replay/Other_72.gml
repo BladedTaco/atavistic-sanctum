@@ -1,4 +1,4 @@
-/// @description 
+/// @description finished saving replay
 if (async_load[? "id"] = saveid) { //if replay buffer called event
 	if (async_load[? "status"]) { //if successfully saved
 		//append filename and header data to replays index

@@ -1,11 +1,12 @@
 /// @description check collisions
-if (instance_exists(creator)) { 
+if (instance_exists(creator)) { //if creator exists
 	var _id = noone
 	var c = false
-	with (obj_hitbox) {
+	with (obj_hitbox) { //with every hitbox object, check and test for collision
 		if (creator = other.creator) {
 			continue; //skip check if hitboxes are from the same creator or already been checked (this avoid double ups)
 		}
+		//do a quick false-positive only collision check, based on that, do a true collision check
 		switch (rectangle_in_rectangle(bb[0], bb[1], bb[2], bb[3], other.bb[0], other.bb[1], other.bb[2], other.bb[3])) {
 			case 0: c = false break; //not colliding at all
 		
@@ -42,11 +43,11 @@ if (instance_exists(creator)) {
 				}
 			break;
 		}
-		if (c) {
-			if (instance_exists(creator)) {
+		if (c) { //if colliding
+			if (instance_exists(creator)) { //if creator exists
 				if ((creator.object_index = obj_player) and (other.creator.object_index = obj_player)) {
-					scr_handle_collision(id, other.id)
-				} else {
+					scr_handle_collision(id, other.id) //handle player-player collision
+				} else { //handle a special type of collision
 					scr_handle_special_collision(id, other.id)
 				}	
 			}

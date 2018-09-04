@@ -1,4 +1,4 @@
-/// @description 
+/// @description init variables
 replay_buffer = 0
 save_replay = false
 saveid = 0

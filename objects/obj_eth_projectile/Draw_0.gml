@@ -1,4 +1,4 @@
-/// @description 
+/// @description draw self
 if (instance_exists(creator)) {
 	if (creator.object_index = obj_player) {
 		image_blend = creator.img_blend

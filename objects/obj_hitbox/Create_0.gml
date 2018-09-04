@@ -1,4 +1,4 @@
-/// @description 
+/// @description init variables
 creator = global.bbox[10]
 shape = global.bbox[0]
 _maj = global.bbox[1]

@@ -1,4 +1,4 @@
-/// @description 
+/// @description init variables
 
 
 creator = global.bbox[10]

@@ -1,4 +1,4 @@
-/// @description 
+/// @description init variables
 image_angle = global.eth_angle
 
 creator = global.bbox[10]

@@ -1,4 +1,4 @@
-/// @description 
+/// @description init variables
 replay_buffer = -1 //the buffer
 header_string = "" //the header string
 //the outputs from when the header string is parsed

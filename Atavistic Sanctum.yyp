@@ -487,6 +487,14 @@
             }
         },
         {
+            "Key": "1732b4f7-3e7d-45f5-bbfa-4ab8b09cc33e",
+            "Value": {
+                "id": "1d16d243-46eb-4a85-9e27-0366aeb3b46b",
+                "resourcePath": "views\\1732b4f7-3e7d-45f5-bbfa-4ab8b09cc33e.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "1928bc42-76a3-479f-80ca-5890e8c80560",
             "Value": {
                 "id": "37d835a2-6cc4-4eb9-83d0-0070f5d76c9f",
@@ -2779,6 +2787,14 @@
             "Value": {
                 "id": "f6fbbe8d-8fe1-45a9-b4fa-acc183b74819",
                 "resourcePath": "sprites\\spr_geo_tilt_forward\\spr_geo_tilt_forward.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "b0c1a3e7-1d10-4ad6-9db4-10621dc322c2",
+            "Value": {
+                "id": "fc88d875-4812-428a-9fbf-df6e791397c1",
+                "resourcePath": "sprites\\spr_Ascent_fore\\spr_Ascent_fore.yy",
                 "resourceType": "GMSprite"
             }
         },

@@ -1,4 +1,4 @@
-/// @description 
+/// @description create hitbox
 var _height = (sprite_height)/2
 var _width = (sprite_width)/2
 var _xx = -(-_height + GROUND_HEIGHT)*sin(-degtorad(image_angle)) + x - 1

@@ -1,4 +1,4 @@
-/// @description 
+/// @description free memory sponges
 //free surfaces
 for (var i = 0; i < array_length_1d(pal_surface); i++) {
 	surface_free(pal_surface[i])
