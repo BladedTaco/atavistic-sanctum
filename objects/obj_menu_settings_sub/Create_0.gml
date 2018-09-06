@@ -1,4 +1,4 @@
-/// @description 
+/// @description init variables
 menu_index = 0
 old_menu_index = 0
 draw_count = 0

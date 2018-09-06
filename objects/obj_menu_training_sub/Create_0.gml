@@ -1,4 +1,4 @@
-/// @description 
+/// @description init variables
 state = -1
 menu_option = []
 menu_length = 0

@@ -17,4 +17,4 @@ active = false
 alarm[0] = MENU_DELAY
 menu_surface = -1
 
-event_user(0)
+event_user(0) //populate menu

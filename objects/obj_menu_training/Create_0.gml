@@ -1,4 +1,4 @@
-/// @description 
+/// @description init variables
 
 menu_option[0] = "PERCENTAGE - 0%"			//slider
 menu_option[1] = "NAME: P1"					//dropdown

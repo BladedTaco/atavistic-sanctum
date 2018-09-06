@@ -8,7 +8,7 @@
     "VTile": false,
     "bbox_bottom": 15,
     "bbox_left": 0,
-    "bbox_right": 10,
+    "bbox_right": 9,
     "bbox_top": 0,
     "bboxmode": 0,
     "colkind": 1,
@@ -34,6 +34,20 @@
                     "mvc": "1.0",
                     "FrameId": "3d50763a-fe95-4133-9f39-d55547d6c79a",
                     "LayerId": "cad15112-667f-416f-8286-b832a6f654df"
+                },
+                {
+                    "id": "78b9964a-51b1-4ae7-95f0-a425e1a538f9",
+                    "modelName": "GMSpriteImage",
+                    "mvc": "1.0",
+                    "FrameId": "3d50763a-fe95-4133-9f39-d55547d6c79a",
+                    "LayerId": "bbf6c8b6-e1ae-4708-bef9-cd2d8862e667"
+                },
+                {
+                    "id": "b2e1d3d3-1c8e-4b09-9f75-3b653f2b73c6",
+                    "modelName": "GMSpriteImage",
+                    "mvc": "1.0",
+                    "FrameId": "3d50763a-fe95-4133-9f39-d55547d6c79a",
+                    "LayerId": "fbff7dd9-28b1-4d37-9612-b159449c3cbc"
                 }
             ]
         }
@@ -43,13 +57,35 @@
     "height": 16,
     "layers": [
         {
+            "id": "fbff7dd9-28b1-4d37-9612-b159449c3cbc",
+            "modelName": "GMImageLayer",
+            "mvc": "1.0",
+            "SpriteId": "712a7dc6-9775-4ab1-8898-015fbe64ba85",
+            "blendMode": 0,
+            "isLocked": false,
+            "name": "outline",
+            "opacity": 100,
+            "visible": true
+        },
+        {
+            "id": "bbf6c8b6-e1ae-4708-bef9-cd2d8862e667",
+            "modelName": "GMImageLayer",
+            "mvc": "1.0",
+            "SpriteId": "712a7dc6-9775-4ab1-8898-015fbe64ba85",
+            "blendMode": 0,
+            "isLocked": false,
+            "name": "colours",
+            "opacity": 50,
+            "visible": true
+        },
+        {
             "id": "cad15112-667f-416f-8286-b832a6f654df",
             "modelName": "GMImageLayer",
             "mvc": "1.0",
             "SpriteId": "712a7dc6-9775-4ab1-8898-015fbe64ba85",
             "blendMode": 0,
             "isLocked": false,
-            "name": "default",
+            "name": "pallet swap",
             "opacity": 100,
             "visible": true
         }
@@ -143,7 +179,7 @@
     "swfPrecision": 2.525,
     "textureGroupId": "1225f6b0-ac20-43bd-a82e-be73fa0b6f4f",
     "type": 0,
-    "width": 11,
+    "width": 10,
     "xorig": 0,
     "yorig": 0
 }

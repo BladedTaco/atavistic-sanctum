@@ -1,4 +1,4 @@
-/// @description 
+/// @description init variables
 menu_index = 0
 menu_length = 1
 menu_offset = 0;

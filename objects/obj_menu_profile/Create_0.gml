@@ -1,4 +1,4 @@
-/// @description 
+/// @description init variables
 state = -1
 name = ""
 active = 0

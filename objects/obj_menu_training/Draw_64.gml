@@ -1,4 +1,5 @@
-/// @description 
+/// @description draw menu
+//set draw options
 draw_set_colour(c_teal)
 draw_set_halign(fa_center)
 draw_set_valign(fa_middle)
@@ -7,8 +8,9 @@ draw_rectangle(-1, -1, GUI_WIDTH*0.3, GUI_HEIGHT, false) //draw backdrop
 
 //draw selector behind current menu index
 draw_set_colour(c_fuchsia)
+//get the y position of the currently selected menu index
 var i = menu_index;
-if (i > 1) {
+if (i > 1) { 
 	if (i > 3) {
 		if (i > 9) {
 			if (i > 11) {
@@ -20,7 +22,8 @@ if (i > 1) {
 	}
 	i--
 }
-switch (menu_index) {
+//draw the menu option selector
+switch (menu_index) { //based on menu index
 	case 12: case 10: //bottom right
 		draw_rectangle(GUI_WIDTH*0.19, GUI_HEIGHT*0.1*(i + 0.9), GUI_WIDTH*0.29, GUI_HEIGHT*0.1*(i + 1.6), false)
 	break;
@@ -37,7 +40,7 @@ switch (menu_index) {
 		draw_rectangle(GUI_WIDTH*0.01, GUI_HEIGHT*0.1*(i + 0.9), GUI_WIDTH*0.29, GUI_HEIGHT*0.1*(i + 1.6), false)	
 	break;
 }
-draw_set_colour(c_ltgray)
+draw_set_colour(c_ltgray) //reset draw colour
 
 //draw background rectangles and sprites
 draw_rectangle(GUI_WIDTH*0.025, GUI_HEIGHT*0.2, GUI_WIDTH*0.2, GUI_HEIGHT*0.25, false) //name

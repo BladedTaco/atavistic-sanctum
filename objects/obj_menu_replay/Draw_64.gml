@@ -1,4 +1,4 @@
-/// @description 
+/// @description draw menu
 var _yy = y
 var _xx = x
 draw_set_font(fnt_pixel_2)

@@ -7,6 +7,7 @@ if (state = 4) { //setting all controls one at a time
 	} else if (sub_menu) { //still going
 		alarm[1] = GAME_SPEED*2
 	} else { //finished
+		//set state and options
 		state = 3
 		name = gamepad_get_description(controller)
 		menu_option[10] = "MORE SETTINGS"
@@ -24,6 +25,7 @@ if (state = 4) { //setting all controls one at a time
 		menu_length = 22;
 	}	
 } else if (state = 3) { //setting an individual control
+	//define an individual control
 	sub_menu = false
 	obj_input.controls_set[player_number] = menu_index + 2 - 1*(menu_index >= 10)
 	scr_define_input(player_number);

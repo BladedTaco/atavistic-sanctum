@@ -1,4 +1,4 @@
-/// @description POPULATE MENU
+/// @description populate menu
 var _file = file_text_open_read("replays.txt")
 
 var i = 0;

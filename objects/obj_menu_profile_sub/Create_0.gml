@@ -1,4 +1,4 @@
-/// @description 
+/// @description init variables
 creator = noone
 menu_index = 0
 menu_option = []

@@ -1,4 +1,4 @@
-/// @description 
+/// @description init variables
 menu_option[0] = "NAMES/PROFILES" //name and profile creation and deletion
 menu_option[1] = "CONTROLS" //change default configurations for controllers
 menu_option[2] = "RULES" //change default match rules

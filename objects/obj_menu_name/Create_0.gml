@@ -1,4 +1,4 @@
-/// @description 
+/// @description init variables
 name = "NAMELESS" //name
 player = -1 //active player number
 player_number = 1 //total player number

@@ -1,4 +1,4 @@
-/// @description 
+/// @description handle menu
 if (!active) { //if inactive, set up menu
 	switch (state) {
 		case 0:	//default menu options

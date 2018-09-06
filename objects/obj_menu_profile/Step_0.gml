@@ -1,4 +1,4 @@
-/// @description 
+/// @description handle menu
 if (instance_exists(creator)) {
 	creator.alarm[0] = MENU_DELAY	
 }

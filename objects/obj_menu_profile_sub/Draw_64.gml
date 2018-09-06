@@ -1,4 +1,4 @@
-/// @description 
+/// @description draw menu
 var _xx = x
 var _yy = y
 var j = GUI_WIDTH*0.1
