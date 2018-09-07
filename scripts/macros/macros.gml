@@ -14,6 +14,9 @@ window_set_caption("Defining Macros")
 #macro INPUT_CMD 0
 #macro DATA_CMD 1
 #macro PING_CMD 2
+#macro PLAYER_CMD 3
+#macro CHAR_CMD 4
+#macro NAME_CMD 5
 
 //network states
 #macro NETWORK_LOGIN 0

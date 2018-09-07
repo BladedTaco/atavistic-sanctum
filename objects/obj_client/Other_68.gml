@@ -4,10 +4,21 @@ global.wait = false
 
 if (client = event_id) { //if data is being sent to this client
 	switch (global.network_state) {
-		case NETWORK_JOIN:			
-			instance_create(-GUI_WIDTH, 0, obj_menu_char_select)
-			obj_menu_online.active = false
-			global.network_state = NETWORK_LOBBY
+		case NETWORK_JOIN:		
+			if !(instance_exists(obj_server)) {
+				instance_create(-GUI_WIDTH, 0, obj_menu_char_select)
+				obj_menu_online.active = false
+				global.network_state = NETWORK_LOBBY
+			    var buff = async_load[? "buffer"] //store incoming buffer data
+				buffer_seek(buff, buffer_seek_start, 0); //seek the start of the buffer
+				if (buffer_read(buff, buffer_s16) = DATA_CMD) { //read the command identifier
+					global.player_number = buffer_read(buff, buffer_u8)
+					for (var i = 0; i < global.player_number; i++) {
+						obj_input.controller[i] = true
+						obj_input.controller_number[i] = -1
+					}
+				}
+			}
 		break;
 		
 	    case NETWORK_LOBBY:
@@ -20,6 +31,7 @@ if (client = event_id) { //if data is being sent to this client
 				for (var o = 0; o < 10; o++) {
 					data_array[num, o] = buffer_read(buff, buffer_string) //read data	
 				}
+				obj_input.player_is_local[i] = false
 			}
 		break;
 		

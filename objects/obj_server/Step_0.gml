@@ -38,11 +38,13 @@ if (count > 0) { //if there are sockets to send data to
 	
 	
 	}
-	for (var i = 0; i < count; i++) { //for each socket
-		if (global.network_state = NETWORK_LOBBY) {
-			buffer_seek(buff, buffer_seek_start, 0) //seek the start of the buffer
-			buffer_write(buff, buffer_s16, i) //write the player number to it
-		}
-		network_send(socket_array[i], player_buffer) //send the data
-	}	
+	if (global.network_state != NETWORK_JOIN) {
+		for (var i = 0; i < count; i++) { //for each socket
+			if (global.network_state = NETWORK_LOBBY) {
+				buffer_seek(buff, buffer_seek_start, 0) //seek the start of the buffer
+				buffer_write(buff, buffer_s16, i) //write the player number to it
+			}
+			network_send(socket_array[i], player_buffer) //send the data
+		}	
+	}
 }

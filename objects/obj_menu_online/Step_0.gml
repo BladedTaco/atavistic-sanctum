@@ -51,7 +51,7 @@ if (!active) { //if inactive
 				case 1: //join
 					//test for a connection with obj_client
 					sub_menu = true
-					global.network_ip = get_string("Enter the ip to connect to:\nNOTE: must be port-forwarded or on the same network", "") 
+					global.network_ip = "127.0.0.1"
 					instance_create(0, 0, obj_client)
 					alarm[0] = GAME_SPEED*3 //set a delay until it fails
 				break;

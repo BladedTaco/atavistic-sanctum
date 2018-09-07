@@ -40,6 +40,7 @@ if (active = 1) { // if active
 			//update character select menu and destroy self
 			obj_menu_char_select.sub_menu[player] = false
 			obj_menu_char_select.name[player] = name
+			scr_update_network(3, player, name)
 			instance_destroy();
 		}
 	}

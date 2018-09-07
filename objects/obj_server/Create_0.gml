@@ -28,13 +28,13 @@ alarm[0] = GAME_SPEED //create an alarm for sending a broadcast signal
 
 /*
 
-data_array[i, 0] = 0 //player name
-data_array[i, 1] = 0 //player profile name
-data_array[i, 2] = 0 //character
-data_array[i, 3] = 0 //custom color string
-data_array[i, 4] = 0 //ready status
-data_array[i, 5] = 0 //matchmaking rank
-data_array[i, 6] = 0 //player slot number
-data_array[i, 7] = 0 //team color
-data_array[i, 8] = 0 //server
-data_array[i, 9] = 0 //ping
+data_array[i, 0] = 0 //player name				n/a
+data_array[i, 1] = 0 //player profile name		*
+data_array[i, 2] = 0 //character				*
+data_array[i, 3] = 0 //custom color string		n/a
+data_array[i, 4] = 0 //ready status				n/a
+data_array[i, 5] = 0 //matchmaking rank			n/a
+data_array[i, 6] = 0 //player slot number		*
+data_array[i, 7] = 0 //team color				n/a
+data_array[i, 8] = 0 //server					?
+data_array[i, 9] = 0 //ping						n/a

@@ -4,15 +4,23 @@
 ///@desc returns a sprite based on character and string without any error checking
 
 
-var i, ret; //initialise variable
+var i //initialise variable
 
-switch (argument[0]) { //check charater
-	case BAL: i = "spr_bal_" break;
-	case GEO: i = "spr_geo_" break;
-	case ETH: i = "spr_eth_" break;
-	case MAC: i = "spr_mac_" break;
+if (argument[1] = "pal") {
+	switch (argument[0]) { //check charater
+		case BAL: i = "pal_bal" break;
+		case GEO: i = "pal_geo" break;
+		case ETH: i = "pal_eth" break;
+		case MAC: i = "pal_mac" break;
+	}
+	return asset_get_index(i) //get sprite //return the sprite, whether it exists or not
+} else {
+	switch (argument[0]) { //check charater
+		case BAL: i = "spr_bal_" break;
+		case GEO: i = "spr_geo_" break;
+		case ETH: i = "spr_eth_" break;
+		case MAC: i = "spr_mac_" break;
+	}
 }
 
-ret = asset_get_index(string(i + argument[1])) //get sprite
-
-return ret //return the sprite, whether it exists or not
+return asset_get_index(string(i + argument[1])) //get sprite //return the sprite, whether it exists or not

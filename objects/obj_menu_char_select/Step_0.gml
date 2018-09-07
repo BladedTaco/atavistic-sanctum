@@ -33,6 +33,7 @@ if (room = rm_menu) { //if in the menu room
 					}
 				}
 			}
+			scr_update_network(0)
 		}
 		player_number = global.player_number //player_number is set to the global equivalent
 		for (var i = 0; i < player_number; i++) { //for each menu user
@@ -119,6 +120,7 @@ if (room = rm_menu) { //if in the menu room
 						while (!scr_unique_pallet(i, BAL, pallet[i])) { //while pallet character combination isnt unique
 							pallet[i] = (pallet[i] + 1) mod 11 //scroll through pallets
 						}
+						scr_update_network(1, i, BAL, pallet[i])
 					break; 
 					case 5: //MAC
 						//initialise character as MAC
@@ -130,6 +132,7 @@ if (room = rm_menu) { //if in the menu room
 						while (!scr_unique_pallet(i, MAC, pallet[i])) { //while pallet character combination isnt unique
 							pallet[i] = (pallet[i] + 1) mod 11 //scroll through pallets
 						}
+						scr_update_network(1, i, MAC, pallet[i])
 					break; 
 					case 6: //GEO
 						//initialise character as GEO
@@ -141,6 +144,7 @@ if (room = rm_menu) { //if in the menu room
 						while (!scr_unique_pallet(i, GEO, pallet[i])) { //while pallet character combination isnt unique
 							pallet[i] = (pallet[i] + 1) mod 11 //scroll through pallets
 						}
+						scr_update_network(1, i, GEO, pallet[i])
 					break; 
 					case 7: //ETH
 						//initialise character as ETH
@@ -151,32 +155,18 @@ if (room = rm_menu) { //if in the menu room
 						//make sure pallet is unique
 						while (!scr_unique_pallet(i, ETH, pallet[i])) { //while pallet character combination isnt unique
 							pallet[i] = (pallet[i] + 1) mod 11 //scroll through pallets
-						}					
+						}		
+						scr_update_network(1, i, ETH, pallet[i])			
 					break; 
 					case 8: //cycle colour pallet
 						do { //cycle pallets until a unique character pallet combination is found
 							pallet[i] = (pallet[i] + 1) mod 11
 						} until (scr_unique_pallet(i, character[i], pallet[i]))
+						scr_update_network(1, i, character[i], pallet[i])
 					break;
 					case 9: //unassign player
-						player_number -= 1 //reduce player number
-						global.player_number -= 1 //reduce global player number
-						for (var o = i; o < player_number; o++) {  //for each player
-							scr_move_player(o + 1, o) //move all players down a spot
-						}
-						//with all name menus, free surfaces so they are resized and redrawn
-						if (instance_exists(obj_menu_name)) {
-							with (obj_menu_name) {
-								if (player > i) { //if above the deleted player
-									player -= 1; //shift player number down
-								}
-								player_number -= 1;
-								//free all name clip surfaces so they automatically resize
-								if (surface_exists(clip_surface)) {
-									surface_free(clip_surface)
-								}
-							}
-						}
+						scr_unassign_player(i)
+						scr_update_network(2, i)
 						i -= 1 //decrement i so that the next player executes this steps code
 						obj_input.alarm[1] = GAME_SPEED*0.25 //stop controller from reconnecting instantly
 						continue;
