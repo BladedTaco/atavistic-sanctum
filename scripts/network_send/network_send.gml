@@ -1,4 +1,4 @@
-///@func network_send(socket, buffer)
+ ///@func network_send(socket, buffer)
 ///@desc sends a network packet or udp message based on network architecture
 ///@desc returns <0 if the function fails to send the given buffer
 ///@param socket - the socket id of the recipient

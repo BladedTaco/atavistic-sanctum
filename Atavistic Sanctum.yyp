@@ -263,14 +263,6 @@
             }
         },
         {
-            "Key": "0bc7cdbb-2f97-4d01-9864-403fecad55e2",
-            "Value": {
-                "id": "04d76aec-4eb8-4af9-b614-45e5682c63da",
-                "resourcePath": "sprites\\spr_portrait_4\\spr_portrait_4.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "0cee7d11-97fd-467a-ac6d-0e14f3615a7e",
             "Value": {
                 "id": "001fe336-e1bf-44fe-875c-9e9fcea6b431",
@@ -580,14 +572,6 @@
                 "id": "36f2c913-f72f-44f1-a2ea-8987110e49b7",
                 "resourcePath": "views\\1d0dad33-9437-433c-b05f-b6ec76ac237c.yy",
                 "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "1d3d6dbe-e146-44cf-a785-2252b4a06ad5",
-            "Value": {
-                "id": "6f30755d-e91e-4df3-8fc7-be2f605a12a3",
-                "resourcePath": "sprites\\spr_portrait_3_cropped\\spr_portrait_3_cropped.yy",
-                "resourceType": "GMSprite"
             }
         },
         {
@@ -1167,14 +1151,6 @@
             }
         },
         {
-            "Key": "49280bc9-7992-4e05-9e9f-fc88b743725c",
-            "Value": {
-                "id": "d0d2c710-4196-492c-a1c7-aeb16d3829f3",
-                "resourcePath": "sprites\\spr_portrait_5_cropped\\spr_portrait_5_cropped.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "493a737f-2d38-49dc-ae54-cec8544c87bb",
             "Value": {
                 "id": "a6059fe5-fe66-497c-b2fd-efbf7c4e6d5c",
@@ -1260,14 +1236,6 @@
                 "id": "e7b3d53b-3e77-4fb4-83f4-78877a527dd1",
                 "resourcePath": "scripts\\pal_swap_index_palette\\pal_swap_index_palette.yy",
                 "resourceType": "GMScript"
-            }
-        },
-        {
-            "Key": "5236597e-30c5-4285-85ac-9952263b2ad5",
-            "Value": {
-                "id": "0a7c4fd7-2d09-4989-bd2f-eaac0a8bbdad",
-                "resourcePath": "sprites\\spr_portrait\\spr_portrait.yy",
-                "resourceType": "GMSprite"
             }
         },
         {
@@ -1467,14 +1435,6 @@
             "Value": {
                 "id": "509f9f7d-8aff-4086-8720-03b9d1e163a4",
                 "resourcePath": "sprites\\spr_bal_hurt_down\\spr_bal_hurt_down.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "5d43aba9-b275-47e9-a86f-e48c0e883e4f",
-            "Value": {
-                "id": "ab4344a9-0fe0-456c-9e79-4c740daddcb9",
-                "resourcePath": "sprites\\spr_portrait_3\\spr_portrait_3.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1892,14 +1852,6 @@
                 "id": "fc172dde-6f51-4f31-a5bb-c479d566c98d",
                 "resourcePath": "scripts\\scr_get_knockback\\scr_get_knockback.yy",
                 "resourceType": "GMScript"
-            }
-        },
-        {
-            "Key": "75363245-8743-40dc-a593-e108c8ec4314",
-            "Value": {
-                "id": "8d3ab776-2752-4ec3-ae2b-0d5c1bdfa284",
-                "resourcePath": "sprites\\spr_portrait_2\\spr_portrait_2.yy",
-                "resourceType": "GMSprite"
             }
         },
         {
@@ -2535,14 +2487,6 @@
             }
         },
         {
-            "Key": "9d165c45-ba7a-4b62-bef4-4a4adf1eb2da",
-            "Value": {
-                "id": "05890cab-354c-4c86-9b5c-07dea19b58df",
-                "resourcePath": "sprites\\spr_portrait_5\\spr_portrait_5.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "9d43b697-963b-4544-904b-4aff848569f5",
             "Value": {
                 "id": "81b8a93c-3dc9-4092-9884-d57f2ced80e5",
@@ -2692,14 +2636,6 @@
                 "id": "e4b258ce-e2de-4e55-99ea-d30ca8b4fc63",
                 "resourcePath": "options\\linux\\options_linux.yy",
                 "resourceType": "GMLinuxOptions"
-            }
-        },
-        {
-            "Key": "a938ddb5-9d4d-4be7-8a75-17e4d2336770",
-            "Value": {
-                "id": "d5c0c90d-c740-4429-afc6-a6a0b019baec",
-                "resourcePath": "sprites\\spr_portrait_cropped\\spr_portrait_cropped.yy",
-                "resourceType": "GMSprite"
             }
         },
         {
@@ -3047,14 +2983,6 @@
             }
         },
         {
-            "Key": "bbcab5ea-045c-455f-8648-f655f6edea9c",
-            "Value": {
-                "id": "d21fc69e-6b18-43cb-b81d-c0326b863323",
-                "resourcePath": "sprites\\spr_portrait_4_cropped\\spr_portrait_4_cropped.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "bc16dbd5-c262-42e8-8d53-de99c6185a82",
             "Value": {
                 "id": "9f63a3ca-1a33-47fb-90f2-bfa75823802e",
@@ -3196,14 +3124,6 @@
                 "id": "d7a2d03a-3822-4b9e-b1c3-7e4aeb04c92c",
                 "resourcePath": "notes\\attacks.yy",
                 "resourceType": "GMNotes"
-            }
-        },
-        {
-            "Key": "c3b4fa2b-ab84-4ff3-abab-dd27457c44bf",
-            "Value": {
-                "id": "16c8dfc6-de30-45fd-a6c8-5550e9c07b78",
-                "resourcePath": "sprites\\spr_portrait_2_cropped\\spr_portrait_2_cropped.yy",
-                "resourceType": "GMSprite"
             }
         },
         {
@@ -3775,14 +3695,6 @@
             }
         },
         {
-            "Key": "e77de5cb-1923-4b37-8dde-60bc672dcaa7",
-            "Value": {
-                "id": "ab5540d8-6f32-4635-931b-d6bc17ce050d",
-                "resourcePath": "views\\e77de5cb-1923-4b37-8dde-60bc672dcaa7.yy",
-                "resourceType": "GMFolder"
-            }
-        },
-        {
             "Key": "e7a8237d-6ccd-4013-b795-979c260f34c7",
             "Value": {
                 "id": "adb687b7-4997-4a63-8289-c4bc296e3a11",
@@ -3836,14 +3748,6 @@
                 "id": "b71d3262-6133-442e-9284-9f804362fae8",
                 "resourcePath": "objects\\obj_menu_vault\\obj_menu_vault.yy",
                 "resourceType": "GMObject"
-            }
-        },
-        {
-            "Key": "ec5eedbc-3e88-4127-a186-fcb819896806",
-            "Value": {
-                "id": "427746f4-c9f0-42d9-b724-451a5e76299f",
-                "resourcePath": "sprites\\spr_portrait_5_blur_crop\\spr_portrait_5_blur_crop.yy",
-                "resourceType": "GMSprite"
             }
         },
         {
