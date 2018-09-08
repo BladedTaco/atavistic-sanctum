@@ -9,7 +9,7 @@ if (active = 1) { // if active
 		}
 		if (obj_input.input_array[player, ATTACK]) { //attacking
 			if (menu_index < array_length_1d(menu_option) - 2) { //last two names are not selectable
-				if (array_length_1d(menu_option) = 3) { //no names made
+				if (array_length_1d(menu_option) = 2) { //no names made
 					active = 2 //no name change for if there are no names made
 				} else { //names are available
 					name = menu_option[menu_index] //get the name

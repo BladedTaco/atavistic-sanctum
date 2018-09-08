@@ -110,8 +110,8 @@ window_set_caption("Defining Macros")
 #macro GROUND_HEIGHT 10 //half the height from the top of the ground that is considered acceptable as on top
 #macro ATTACKER_REFRESH (GAME_SPEED*10) //the time an attacker lasts
 
-#macro GUI_HEIGHT display_get_gui_height()
-#macro GUI_WIDTH display_get_gui_width()
+#macro GUI_HEIGHT 540//display_get_gui_height()
+#macro GUI_WIDTH 960//display_get_gui_width()
 #macro MENU_DELAY (GAME_SPEED/6)
 
 

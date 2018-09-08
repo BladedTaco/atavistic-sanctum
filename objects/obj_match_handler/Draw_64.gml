@@ -8,10 +8,10 @@ if (global.show_ui) { //if ui is to be shown
 			draw_set_valign(fa_middle)
 			draw_set_font(fnt_pixel_3)
 			//get positions on the GUI based on player number
-			var _xx = round(display_get_gui_width()*((player_number + 0.5)/(global.player_number)) + 5)
-			var _yy = round(display_get_gui_height() + max((1 - (draw_count/GAME_SPEED))*50, 0))
+			var _xx = round(GUI_WIDTH*((player_number + 0.5)/(global.player_number)) + 5)
+			var _yy = round(GUI_HEIGHT + max((1 - (draw_count/GAME_SPEED))*50, 0))
 			var _xx2 = camera_get_view_x(view_camera[0]) + (camera_get_view_width(view_camera[0])*((player_number + 0.5)/(global.player_number)) + 5)
-			var _scl = camera_get_view_width(view_camera[0])/display_get_gui_width()
+			var _scl = camera_get_view_width(view_camera[0])/GUI_WIDTH
 			//if there is a player behind a gui element, set it to be drawn slightly transparent
 			if (collision_rectangle(_xx2 - 50*_scl, room_height + 100, _xx2 + 50*_scl, room_height - 45*_scl, obj_player, false, false)) {
 				draw_set_alpha(0.4)
@@ -72,7 +72,7 @@ if (global.show_ui) { //if ui is to be shown
 						with (attacker) { //with the attacker
 							//draw their stock icon with an increasing transparency
 							pal_swap_set(pal_surface, 1, true)
-							draw_sprite_ext(scr_get_sprite(id, "stock"), 0, _xx, display_get_gui_height() - 5, 3, 3, 0, img_blend, _alpha*(1 - (other.draw_count/GAME_SPEED)))
+							draw_sprite_ext(scr_get_sprite(id, "stock"), 0, _xx, GUI_HEIGHT - 5, 3, 3, 0, img_blend, _alpha*(1 - (other.draw_count/GAME_SPEED)))
 							pal_swap_reset()
 						}
 					}	
@@ -144,7 +144,7 @@ if (global.show_ui) { //if ui is to be shown
 			}
 		}
 		_str += string(((alarm[0]/GAME_SPEED) mod 60) + 0.01) //add seconds as a decimal
-		draw_text_outlined(display_get_gui_width()/2, 40, c_black, c_white, _str, 4) //draw the string
+		draw_text_outlined(GUI_WIDTH/2, 40, c_black, c_white, _str, 4) //draw the string
 	}
 }
 

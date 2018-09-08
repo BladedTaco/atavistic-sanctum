@@ -24,15 +24,20 @@ if (client = event_id) { //if data is being sent to this client
 	    case NETWORK_LOBBY:
 		    var buff = async_load[? "buffer"] //store incoming buffer data
 			buffer_seek(buff, buffer_seek_start, 0); //seek the start of the buffer
-			player_number = buffer_read(buff, buffer_s16) //get player number
-			global.player_number = buffer_read(buff, buffer_u8) //read the number of players
-			for (var i = 0; i < global.player_number; i++) { //for each player
-				var num = buffer_read(buff, buffer_s16) //read player number
-				for (var o = 0; o < 10; o++) {
-					data_array[num, o] = buffer_read(buff, buffer_string) //read data	
-				}
-				obj_input.player_is_local[i] = false
+			switch (buffer_read(buff, buffer_s16)) { //read command
+				case DATA_CMD:
+					player_number = buffer_read(buff, buffer_s16) //get player number
+					global.player_number = buffer_read(buff, buffer_u8) //read the number of players
+					for (var i = 0; i < global.player_number; i++) { //for each player
+						var num = buffer_read(buff, buffer_s16) //read player number
+						for (var o = 0; o < 10; o++) {
+							data_array[num, o] = buffer_read(buff, buffer_string) //read data	
+						}
+						obj_input.player_is_local[i] = false
+					}
+				break;
 			}
+			
 		break;
 		
 		case NETWORK_PLAY:

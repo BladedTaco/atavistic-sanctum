@@ -67,6 +67,13 @@ if ((server = event_id) and (global.network_protocol = network_socket_tcp)) { //
 			} else {
 				scr_unassign_player(i)
 			}
+			var buff = player_buffer
+			buffer_seek(buff, buffer_seek_start, 0); //seek the start of the buffer
+			buffer_write(buff, buffer_s16, PLAYER_CMD); //write the input identifer into the buffer
+			buffer_write(buff, buffer_u8, global.player_number) //write the player number
+			for (var i = 0; i < count; i++) { //for each socket
+				network_send(socket_array[i], player_buffer) //send the data
+			}	
 		break;
 		
 		case CHAR_CMD:
