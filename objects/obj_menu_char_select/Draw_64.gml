@@ -113,12 +113,15 @@ if (player_number < 8) { //if more players can be added
 var _start = true //if a game is able to start
 
 for (var i = 0; i < player_number; i++) { //for each player
-	//draw the cursor
-	draw_sprite_ext(spr_cursor, 0, _xx + cursor_x[i], _yy + cursor_y[i], 2, 2, 0, player_col[i], 1)
-	draw_text_outlined(_xx + cursor_x[i] + 18, _yy + cursor_y[i] + 14, c_black, c_white, "P" + string(i + 1), 2)
+	if (obj_input.player_is_local[i]) { //if local
+		//draw the cursor
+		draw_sprite_ext(spr_cursor, 0, _xx + cursor_x[i], _yy + cursor_y[i], 2, 2, 0, player_col[i], 1)
+		draw_text_outlined(_xx + cursor_x[i] + 18, _yy + cursor_y[i] + 14, c_black, c_white, "P" + string(i + 1), 2)
+	}
 	if (character[i] < 0) { //if character isnt selected
 		_start = false //dont allow a game to start
 	}
+	
 }
 
 if ((player_number > 1) and (_start)) { //if 2 or more players and all players have a character selected

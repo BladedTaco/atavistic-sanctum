@@ -35,4 +35,9 @@ with (obj_input) {
 	controller_number[argument[0]] = argument[1]
 
 	file_text_close(_file) //close file
+	
+	//clear out input
+	for (var o = 0; o < array_length_2d(input_array, argument[0]); o++) {
+		input_array[argument[0], o] = 0
+	}
 }

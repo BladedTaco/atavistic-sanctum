@@ -1,5 +1,6 @@
-///@func scr_start_match(state)
+///@func scr_start_match(state, *room)
 ///@param state - the type of match start false = change room; true = create players
+///@param *room - the match room, only needed if arg 1 is false
 ///@desc starts a match by handing off data from the character select menu to the match handler
 
 if (argument[0]) {
@@ -78,4 +79,5 @@ if (argument[0]) {
 		show_message("Invalid Room Number,\ngoing to Ascent")
 		room_goto(rm_match_Ascent) //go to the first match room
 	}
+	scr_update_network(4, _stage, obj_menu_char_select.stocks, obj_menu_char_select.time)
 }

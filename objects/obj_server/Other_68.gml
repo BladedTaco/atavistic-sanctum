@@ -8,23 +8,32 @@ if ((server = event_id) and (global.network_protocol = network_socket_tcp)) { //
 	var ip = async_load[? "ip"]; //get the IP of the socket
 	
 	if (type = network_type_connect) { //if connecting
-		socket_array[count] = sock //add the socket id entry to the socket array
+		socket_array[array_length_1d(socket_array)] = sock //add the socket id entry to the socket array
 		var buff = player_buffer
 		buffer_seek(buff, buffer_seek_start, 0); //seek the start of the buffer
 		buffer_write(buff, buffer_s16, DATA_CMD); //write the input identifer into the buffer
 		buffer_write(buff, buffer_u8, global.player_number) //write the player number
+		if (instance_exists(obj_menu_char_select)) {
+			for (var i = 0; i < global.player_number; i++) {
+				buffer_write(buff, buffer_u8, i)
+				buffer_write(buff, buffer_string, obj_menu_char_select.name[i])
+				buffer_write(buff, buffer_u8, obj_menu_char_select.character[i])
+				buffer_write(buff, buffer_u8, obj_menu_char_select.pallet[i])
+			}
+		}
 		network_send(sock, buff)
 	} else { //disconnecting
-		var shift = false //used to move all array entries down one
-		global.player_number -= 1; //decrease number of players by 1
-		for (var i = 0; i <	count - 1; i++) { //for each socket except the last
+		for (var i = 0; i <	count; i++) { //for each socket
 			if (socket_array[i] = sock) { //if disconnecting client
-				shift = true //set shift to true
-			} 
-			if (shift) { //if shift is true
-				//shift all array entries down one place, this also overwrites the slot being shifted to
-				socket_array[i] = socket_array[i+1]
-			}
+				global.player_number -= 1; //decrease number of players by 1
+				for (var o = i; o < array_length_1d(socket_array)-1; o++) {
+					//shift all array entries down one place, this also overwrites the slot being shifted to
+					socket_array[o] = socket_array[o+1]
+				}
+				var _array = array_clone(socket_array)
+				socket_array = []
+				array_copy(socket_array, 0, _array, 0, array_length_1d(_array)-1)
+			} 	
 		}
 	}
 } else if (event_id != global.client) { //connected client sending data that isn't itself (udp or tcp)
@@ -32,12 +41,6 @@ if ((server = event_id) and (global.network_protocol = network_socket_tcp)) { //
 	var cmd = buffer_read(buff, buffer_s16); //store type of incoming data
 	var sock = async_load[? "id"]; //get the socket id of the client
 	var ip = async_load[? "ip"]; //get the IP of the socket (for UDP usage)
-	for (var i = 0; i < count; i++) { //for each socket
-		if (socket_array[i] = sock) { //if the socket id mathces the one in the array
-			sock = i //sock is set to the player number of the client
-			break; //exit the for loop
-		}
-	}
 	switch (cmd) {
 		case INPUT_CMD: //read the input buffer sent by the client
 			var _index = array_length_1d(network_array) //get current position to fill array
@@ -52,42 +55,70 @@ if ((server = event_id) and (global.network_protocol = network_socket_tcp)) { //
 		break;
 		
 		case DATA_CMD: //read the player data sent by the client
-			var num = buffer_read(buff, buffer_string) //read player slot
-			for (var o = 0; o < 10; o++) {
-				data_array[array_height_2d(data_array), o] = buffer_read(buff, buffer_string) //read data
-			}		
 		break;
 		
-		case PLAYER_CMD:
+		case PLAYER_CMD: //adding or removing player
 			var i = buffer_read(buff, buffer_s8)
 			if (i > 0) {
 				global.player_number += 1
-				socket_array[count] = async_load[? "socket"] //add the socket id entry to the socket array
+				socket_array[array_length_1d(socket_array)] = sock //add the socket id entry to the socket array
 				obj_input.player_is_local[global.player_number - 1] = false
 			} else {
-				scr_unassign_player(i)
+				scr_unassign_player(-i)
+				count -= 1
 			}
-			var buff = player_buffer
-			buffer_seek(buff, buffer_seek_start, 0); //seek the start of the buffer
-			buffer_write(buff, buffer_s16, PLAYER_CMD); //write the input identifer into the buffer
-			buffer_write(buff, buffer_u8, global.player_number) //write the player number
-			for (var i = 0; i < count; i++) { //for each socket
-				network_send(socket_array[i], player_buffer) //send the data
+			buffer_seek(player_buffer, buffer_seek_start, 0); //seek the start of the buffer
+			buffer_write(player_buffer, buffer_s16, PLAYER_CMD); //write the input identifer into the buffer
+			buffer_write(player_buffer, buffer_s8, i) //write the identifier
+			show_debug_message(socket_array)
+			for (var i = 0; i < array_length_1d(socket_array); i++) { //for each socket
+				if (socket_array[i] != sock) {
+					network_send(socket_array[i], player_buffer) //send the data
+				}
 			}	
 		break;
 		
-		case CHAR_CMD:
+		case CHAR_CMD: //chaning character or pallet
 			var i = buffer_read(buff, buffer_u8)
-			var o = buffer_read(buff, buffer_u8)
-			obj_menu_char_select.character[i] = o
-			obj_menu_char_select.pal_sprite[i] = scr_get_sprite_simple(o, "pal")
-			obj_menu_char_select.sprite[i] = scr_get_sprite_simple(o, "stock")
-			obj_menu_char_select.pallet[i] = obj_menu_char_select.pal[BAL]
+			var _char = buffer_read(buff, buffer_u8)
+			var _pal = buffer_read(buff, buffer_u8)
+			obj_menu_char_select.character[i] = _char
+			obj_menu_char_select.pal_sprite[i] = scr_get_sprite_simple(_char, "pal")
+			obj_menu_char_select.sprite[i] = scr_get_sprite_simple(_char, "stock")
+			obj_menu_char_select.pallet[i] = _pal 
+			buffer_seek(player_buffer, buffer_seek_start, 0)
+			buffer_write(player_buffer, buffer_s16, CHAR_CMD)
+			buffer_write(player_buffer, buffer_u8, i)
+			buffer_write(player_buffer, buffer_u8, _char)
+			buffer_write(player_buffer, buffer_u8, _pal)
+			for (var i = 0; i < array_length_1d(socket_array); i++) { //for each socket
+				if (socket_array[i] != sock) {
+					network_send(socket_array[i], player_buffer) //send the data
+				}
+			}	
 		break;
 		
 		case NAME_CMD:
 			var i = buffer_read(buff, buffer_u8)
 			obj_menu_char_select.name[i] = buffer_read(buff, buffer_string)
+			buffer_seek(player_buffer, buffer_seek_start, 0)
+			buffer_write(player_buffer, buffer_s16, NAME_CMD)
+			buffer_write(player_buffer, buffer_u8, i)
+			buffer_write(player_buffer, buffer_string, obj_menu_char_select.name[i])
+			for (var i = 0; i < array_length_1d(socket_array); i++) { //for each socket
+				if (socket_array[i] != sock) {
+					network_send(socket_array[i], player_buffer) //send the data
+				}
+			}	
+		break;
+		
+		case GAME_CMD:
+			var _stage = buffer_read(buff, buffer_s8)
+			var _stocks = buffer_read(buff, buffer_u16)
+			var _time = buffer_read(buff, buffer_u16)
+			obj_menu_char_select.stocks = _stocks
+			obj_menu_char_select.time = _time
+			scr_start_match(false, _stage)
 		break;
 		
 		case PING_CMD: //ignore the data, it is used to keep the connection alive

@@ -50,8 +50,10 @@ if (!active) { //if inactive
 				
 				case 1: //join
 					//test for a connection with obj_client
+					global.network_ip = get_string("ENTER IP:\n*NOTE* must be port-forwarded", "127.0.0.1")
 					sub_menu = true
-					global.network_ip = "127.0.0.1"
+					instance_create(-GUI_WIDTH, 0, obj_menu_char_select)
+					obj_menu_online.active = false
 					instance_create(0, 0, obj_client)
 					alarm[0] = GAME_SPEED*3 //set a delay until it fails
 				break;

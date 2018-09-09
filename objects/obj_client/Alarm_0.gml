@@ -7,9 +7,8 @@ if ((network_send(client, buff) < 0) and (global.network_protocol = network_sock
 	//if failed to send
 	network_destroy(client) //destroy the socket
 	buffer_delete(buff) //delete the buffer
-	show_message("Failed to send packet.") //display message
-	instance_destroy(); //destroy self
-	exit; //exit code execution
+	show_message_async("Failed to send packet. Exiting Online mode...") //display message
+	scr_reset_networking(true)
 }
 
 

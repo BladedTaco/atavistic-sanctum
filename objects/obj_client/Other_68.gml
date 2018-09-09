@@ -6,16 +6,23 @@ if (client = event_id) { //if data is being sent to this client
 	switch (global.network_state) {
 		case NETWORK_JOIN:		
 			if !(instance_exists(obj_server)) {
-				instance_create(-GUI_WIDTH, 0, obj_menu_char_select)
-				obj_menu_online.active = false
 				global.network_state = NETWORK_LOBBY
 			    var buff = async_load[? "buffer"] //store incoming buffer data
 				buffer_seek(buff, buffer_seek_start, 0); //seek the start of the buffer
 				if (buffer_read(buff, buffer_s16) = DATA_CMD) { //read the command identifier
 					global.player_number = buffer_read(buff, buffer_u8)
 					for (var i = 0; i < global.player_number; i++) {
-						obj_input.controller[i] = true
-						obj_input.controller_number[i] = -1
+						if (i = buffer_read(buff, buffer_u8)) {
+							obj_menu_char_select.name[i] = buffer_read(buff, buffer_string)
+							var _char = buffer_read(buff, buffer_u8)
+							obj_menu_char_select.character[i] = _char
+							obj_menu_char_select.pallet[i] = buffer_read(buff, buffer_u8)	
+							obj_menu_char_select.pal_sprite[i] = scr_get_sprite_simple(_char, "pal")
+							obj_menu_char_select.sprite[i] = scr_get_sprite_simple(_char, "stock")
+							obj_input.controller[i] = true
+							obj_input.controller_number[i] = -1
+							obj_input.player_is_local[i] = false
+						}
 					}
 				}
 			}
@@ -26,15 +33,37 @@ if (client = event_id) { //if data is being sent to this client
 			buffer_seek(buff, buffer_seek_start, 0); //seek the start of the buffer
 			switch (buffer_read(buff, buffer_s16)) { //read command
 				case DATA_CMD:
-					player_number = buffer_read(buff, buffer_s16) //get player number
-					global.player_number = buffer_read(buff, buffer_u8) //read the number of players
-					for (var i = 0; i < global.player_number; i++) { //for each player
-						var num = buffer_read(buff, buffer_s16) //read player number
-						for (var o = 0; o < 10; o++) {
-							data_array[num, o] = buffer_read(buff, buffer_string) //read data	
-						}
-						obj_input.player_is_local[i] = false
+				break;
+				case PLAYER_CMD:
+					var i = buffer_read(buff, buffer_s8)
+					if (i > 0) {
+						global.player_number += 1
+						obj_input.player_is_local[global.player_number - 1] = false
+					} else {
+						scr_unassign_player(-i)
 					}
+				break;
+				case CHAR_CMD:
+					var i = buffer_read(buff, buffer_u8)
+					var _char = buffer_read(buff, buffer_u8)
+					var _pal = buffer_read(buff, buffer_u8)
+					obj_menu_char_select.character[i] = _char
+					obj_menu_char_select.pal_sprite[i] = scr_get_sprite_simple(_char, "pal")
+					obj_menu_char_select.sprite[i] = scr_get_sprite_simple(_char, "stock")
+					obj_menu_char_select.pallet[i] = _pal 
+				break;
+				case NAME_CMD:
+					var i = buffer_read(buff, buffer_u8)
+					obj_menu_char_select.name[i] = buffer_read(buff, buffer_string)
+				break;
+				case GAME_CMD:
+					global.network_state = NETWORK_PLAY
+					var _stage = buffer_read(buff, buffer_s8)
+					var _stocks = buffer_read(buff, buffer_u16)
+					var _time = buffer_read(buff, buffer_u16)
+					obj_menu_char_select.stocks = _stocks
+					obj_menu_char_select.time = _time
+					scr_start_match(false, _stage)
 				break;
 			}
 			

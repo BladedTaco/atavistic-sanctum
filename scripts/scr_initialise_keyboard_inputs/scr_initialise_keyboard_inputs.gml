@@ -34,3 +34,8 @@ controller_number[argument[0]] = -1 //the slot number of the controller the play
 player_is_local[argument[0]] = true; //if player is locally controlled
 sticky_jump[argument[0]] = false //make it only jump multiple times on multiple presses
 sticky_dodge[argument[0]] = false //make it only dodge multiple times on multiple presses
+
+//clear out input
+for (var o = 0; o < array_length_2d(input_array, argument[0]); o++) {
+	input_array[argument[0], o] = 0
+}

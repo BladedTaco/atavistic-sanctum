@@ -4,7 +4,7 @@
 ///@desc returns a sprite based on character and string without any error checking
 
 
-var i //initialise variable
+var i = ""//initialise variable
 
 if (argument[1] = "pal") {
 	switch (argument[0]) { //check charater

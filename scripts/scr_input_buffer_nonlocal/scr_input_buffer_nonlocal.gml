@@ -2,10 +2,9 @@
 ///@desc handles the input buffer of the player number given and pushes out the inputs for the frame
 ///@param player_number - the number slot of the player
 
-
 if (!global.wait) {
 	var _index = global.input_buffer_length*100 + argument[0]
-
+	
 	//push last position in input_buffer into usable input array
 	old_axis[argument[0], 0] = input_array[argument[0], 0] //store old xaxis
 	old_axis[argument[0], 1] = input_array[argument[0], 1] //store old yaxis

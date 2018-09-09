@@ -17,6 +17,7 @@ window_set_caption("Defining Macros")
 #macro PLAYER_CMD 3
 #macro CHAR_CMD 4
 #macro NAME_CMD 5
+#macro GAME_CMD 6 
 
 //network states
 #macro NETWORK_LOGIN 0

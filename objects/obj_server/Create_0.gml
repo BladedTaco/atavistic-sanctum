@@ -5,16 +5,18 @@ server_name = "SERVER" //set base server name
 //create buffers and arrays for later use
 broadcast_buffer = buffer_create(32, buffer_fixed, 1); //buffer to broadcast server
 player_buffer = buffer_create(16384, buffer_fixed, 1); //buffer to send data with
-socket_array[0] = -1 //array to hold socket ids
+socket_array = [] //array to hold socket ids
 data_array[0, 0] = -1 //array for holding player data to be sent
 network_array[0] = -1 //array for holding all data to be sent at the next dispatch (inputs/ match frames)
+
 
 server = network_create_server(global.network_protocol, global.network_port, global.max_players) //create the server
 if (server < 0) { //if there is already a server running
 	//clear buffers from RAM, destroy instance
 	buffer_delete(broadcast_buffer)
 	buffer_delete(player_buffer)
-	instance_destroy();
+	network_destroy(server)
+	scr_reset_networking(true)
 }
 
 alarm[0] = GAME_SPEED //create an alarm for sending a broadcast signal
