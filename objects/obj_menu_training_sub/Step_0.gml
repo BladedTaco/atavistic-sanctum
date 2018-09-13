@@ -28,9 +28,9 @@ if (alarm[0] <= 0) { //if no input delay
 				obj_match_handler.player[0].name = name //update player name
 				if (obj_input.controller[0]) { //if a controller
 					//add in control config here
-					obj_menu_training.menu_option[1] = "NAME: " + name	//update menu text
 					scr_load_name(0, name) //apply profile config
 				}
+				obj_menu_training.menu_option[1] = "NAME: " + name	//update menu text
 			break;
 			case 2: //player character
 				with (obj_match_handler.player[0]) { //with each player
@@ -45,6 +45,7 @@ if (alarm[0] <= 0) { //if no input delay
 					sprite_index = scr_get_sprite(id, string_delete(sprite_get_name(sprite_index), 1, 8)) //change sprite
 					//add in pallet surface here
 				}
+				obj_menu_training.menu_sprite[0] = menu_option[menu_index]
 			break;
 			case 3: //cpu action
 				obj_menu_training.cpu_action = menu_index //set cpu action

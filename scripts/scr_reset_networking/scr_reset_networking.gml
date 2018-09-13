@@ -10,16 +10,6 @@ if (instance_exists(obj_client)) {
 global.network_ip = "127.0.0.1"
 global.network_state = NETWORK_JOIN
 
-
-
-if (instance_exists(obj_server)) {
-show_debug_message("SERVER IS: " + string(instance_exists(obj_server)))
-}	
-if (instance_exists(obj_client)) {
-show_debug_message("CLIENT IS HERE")
-}
-
-
 if (argument_count > 0) {
 	if (argument[0]) {
 		if (room = rm_menu) { //in character select
