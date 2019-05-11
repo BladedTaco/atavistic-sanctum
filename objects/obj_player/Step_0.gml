@@ -23,7 +23,7 @@ if !(dead) { //if alive
 	scr_check_special_instructions(1) //check for special instructions
 
 	/*
-	//TODO, add raycasting script here
+	//TODO, add raycasting script here URGENT
 	var _ray = scr_raycast()
 	if (_ray = false) {
 		//no collision, move full amount
