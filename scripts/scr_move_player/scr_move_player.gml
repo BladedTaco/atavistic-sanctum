@@ -10,7 +10,6 @@ with (obj_menu_char_select) {
 	pallet[argument[1]]		= pallet[argument[0]]
 	sprite[argument[1]]		= sprite[argument[0]]
 	name[argument[1]]		= name[argument[0]]
-	//player_col[argument[1]]	= player_col[argument[0]]
 	col[argument[1]]		= col[argument[0]]
 	sub_menu[argument[1]]	= sub_menu[argument[0]]
 }
@@ -20,8 +19,9 @@ with (obj_input) {
 	old_axis[argument[1], 1]   				= old_axis[argument[0], 1]
 	for (var o = 0; o <= 20; o++) {													
 		input_array[argument[1], o]  		= input_array[argument[0], o]
-	}																			
-	for (var j = 0; j <= global.input_buffer_length + 50; j++) { //for each player
+	}						
+	var _max = array_height_2d(input_buffer_array)/100
+	for (var j = 0; j <= _max; j++) { //for each player
 		for (var k = 0; k < 20; k++) { //for each input							
 			input_buffer_array[j*100 + argument[1], k] = input_buffer_array[j*100 + argument[0], k]
 		}																		

@@ -2303,14 +2303,6 @@
             }
         },
         {
-            "Key": "8ef2b6c2-f872-4e39-af1b-8b249e480808",
-            "Value": {
-                "id": "3c8e9f78-50fe-4af7-926a-84699afb9830",
-                "resourcePath": "sprites\\spr_jacob\\spr_jacob.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "8ef56089-0933-4d6a-8828-59d23bf990dd",
             "Value": {
                 "id": "90025cdf-cb5f-4d19-abb2-2cad0c0a6651",
@@ -3819,14 +3811,6 @@
             "Value": {
                 "id": "59edea9b-cd99-4c9c-8b81-b7c924198315",
                 "resourcePath": "sprites\\spr_mac_air_dodge\\spr_mac_air_dodge.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "efc5ba54-1464-4bd6-8807-9ad7b7a6f742",
-            "Value": {
-                "id": "9f536852-d74d-4c9b-8499-a7dedda69b5a",
-                "resourcePath": "sprites\\spr_jacob1\\spr_jacob1.yy",
                 "resourceType": "GMSprite"
             }
         },

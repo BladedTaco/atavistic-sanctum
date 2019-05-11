@@ -42,7 +42,7 @@ if (instance_exists(obj_client)) {
 				
 				case 4: //start match
 					if (global.network_state != NETWORK_PLAY) {
-						global.network_state = NETWORK_PLAY
+						//global.network_state = NETWORK_PLAY
 						buffer_seek(buff, buffer_seek_start, 0)
 						buffer_write(buff, buffer_s16, GAME_CMD)
 						buffer_write(buff, buffer_s8, argument[1])
@@ -91,6 +91,7 @@ if (instance_exists(obj_client)) {
 				break;
 				
 				case 4: //start match
+					global.network_state = NETWORK_PLAY
 					buffer_seek(player_buffer, buffer_seek_start, 0)
 					buffer_write(player_buffer, buffer_s16, GAME_CMD)
 					buffer_write(player_buffer, buffer_s8, argument[1])
