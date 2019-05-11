@@ -22,6 +22,18 @@ if !(dead) { //if alive
 	effective_y = 0
 	scr_check_special_instructions(1) //check for special instructions
 
+	/*
+	//TODO, add raycasting script here
+	var _ray = scr_raycast()
+	if (_ray = false) {
+		//no collision, move full amount
+	} else {
+		//GET USEFUL DATA HERE
+		//now destroy
+		ds_map_destroy(_ray)
+	}
+	*/
+
 	//move
 	var l = 100 //set loop exiter to max
 	//if in a non ledge state and animating
