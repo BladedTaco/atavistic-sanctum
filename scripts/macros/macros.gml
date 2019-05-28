@@ -101,6 +101,7 @@ window_set_caption("Defining Macros")
 #macro NULL -10
 #macro RECTANGLE 1
 #macro CIRCLE 2
+#macro TRIANGLE 3
 #macro IN 361 //direction towards centre
 #macro OUT 362 //direction away from centre
 #macro DIR 363 //direction image angle
