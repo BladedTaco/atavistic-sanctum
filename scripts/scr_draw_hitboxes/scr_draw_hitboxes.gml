@@ -2,11 +2,13 @@
 ///@param draw - true to draw hitboxes, false to just create hitboxes
 ///@desc draws all hitboxes and hurtboxes to the screen and calls collision checks
 
+//TODO< TEST THIS
+
 if (argument[0]) { //draw and create hitboxes
 	
 	draw_set_alpha(0.5) //set draw alpha to 1/2
 	//define variables
-	var _x, _y, _maj, _min, i, o, _mat, _dir, _xy, _array, col_hurt, col_hit, a
+	var _x, _y, _maj, _min, i, o, _mat, _dir, _xy, _array, col_hurt, col_hit, a, frame, box;
 	_mat = matrix_build_identity()
 	col_hurt = c_lime
 	col_hit = c_blue
@@ -16,12 +18,12 @@ if (argument[0]) { //draw and create hitboxes
 		switch (draw_get_colour()) { //check draw colour
 			case col_hurt: //hurtboxes last drawn
 				draw_set_colour(col_hit) //set draw colour for hitboxes
-				_array = global.hitbox
+				_array = global.hitbox_list
 			break;
 		
 			default: //hitboxes last drawn, or first run through
 				draw_set_colour(col_hurt) //set draw colour for hurtboxes
-				_array = global.hurtbox
+				_array = global.hurtbox_list
 			break;
 		}
 
@@ -31,14 +33,17 @@ if (argument[0]) { //draw and create hitboxes
 			global.bbox[10] = id //set creator
 			i = sprite_index //get arrays first entry
 			if (sprite_exists(i)) { //if there is a sprite to draw hitboxes for
-				o = floor(image_index)*100 //get arrays second entry
-				while (_array[i, o] != NULL) { //for every hitbox
+				o = 0 //get hitbox identifier
+				box = _array[sprite_index] 
+				frame = box[floor(image_index)] //arrays third entry
+				while (box[0] != NULL) { //for every hitbox
+					box = frame[o] //get the hitbox
 					//get parameters
-					_maj = image_xscale*_array[i, o + 1]/2
-					_min = image_yscale*_array[i, o + 2]/2
-					_x = image_xscale*_array[i, o + 3]
-					_y = image_yscale*_array[i, o + 4]
-					_dir = -sign(image_xscale)*_array[i, o + 5] - image_angle
+					_maj = image_xscale*box[1]/2
+					_min = image_yscale*box[2]/2
+					_x = image_xscale*box[3]
+					_y = image_yscale*box[4]
+					_dir = -sign(image_xscale)*box[5] - image_angle
 					
 					if (image_angle != 0) {
 						var _d = degtorad(-image_angle)
@@ -51,9 +56,9 @@ if (argument[0]) { //draw and create hitboxes
 					}
 					
 					//create the hurtbox
-					if (_array = global.hitbox) {
+					if (_array = global.hitbox_list) {
 						//get the knocback direction
-						a = _array[i, o + 7]
+						a = box[7]
 						if (a <= 360) { //if angle is an absolute direction
 							if (image_xscale < 0) { 
 							 a = 180 - a //flip angle horizontally if facing left
@@ -67,11 +72,11 @@ if (argument[0]) { //draw and create hitboxes
 							_y = attacker.y
 						}
 						
-						scr_check_collision(_array[i, o], _maj, _min, _x, _y, _dir, 
-						_array[i, o + 6], a, _array[i, o + 8], 
-						_array[i, o + 9], _array[i, o + 10]) //create the hitbox
+						scr_check_collision(box[0], _maj, _min, _x, _y, _dir, 
+						box[6], a, box[8], 
+						box[9], box[10]) //create the hitbox
 					} else {
-						scr_check_collision(_array[i, o], _maj, _min, _x, _y, _dir) //create the hurtbox
+						scr_check_collision(box[0], _maj, _min, _x, _y, _dir) //create the hurtbox
 					}
 				
 					switch (_dir) { //rotate world matrix if needed
@@ -89,7 +94,7 @@ if (argument[0]) { //draw and create hitboxes
 						break;		
 					}
 		
-					switch (_array[i, o]) { //check hitbox shape and draw hitbox
+					switch (box[0]) { //check hitbox shape and draw hitbox
 						case CIRCLE: //draw hitbox as circle/ellipse
 							draw_ellipse(_x - _maj, _y - _min, _x + _maj, _y + _min, false)
 						break;
@@ -103,9 +108,9 @@ if (argument[0]) { //draw and create hitboxes
 						_mat = matrix_build_identity() //build identity matrix
 						matrix_set(matrix_world, _mat) //set the world matrix to identity
 					}
-					o += 11 //increment o to check for multiple hitboxes on a single frame
+					o++ //increment o to check for multiple hitboxes on a single frame
 				}
-				o = floor(image_index)*100 //reset o to redo loop for hitboxes
+				o = 0 //reset o to redo loop for hitboxes
 			}
 		}
 	}
@@ -113,17 +118,17 @@ if (argument[0]) { //draw and create hitboxes
 
 } else { //only create hitboxes without drawing 
 	//define variables
-	var _x, _y, _maj, _min, i, o, _mat, _dir, _xy, _array, a
-	_array = global.hitbox //set initial array
+	var _x, _y, _maj, _min, i, o, _mat, _dir, _xy, _array, a, frame, box;
+	_array = global.hitbox_list //set initial array
 	//decide between drawing hitboxes or hurtboxes 
 	repeat (2) { //repeat for hitbox and hurtbox
 		switch (_array) { //check draw colour
-			case global.hurtbox: //hurtboxes last drawn
-				_array = global.hitbox
+			case global.hurtbox_list: //hurtboxes last drawn
+				_array = global.hitbox_list
 			break;
 		
 			default: //hitboxes last drawn, or first run through
-				_array = global.hurtbox
+				_array = global.hurtbox_list
 			break;
 		}
 
@@ -133,14 +138,17 @@ if (argument[0]) { //draw and create hitboxes
 			global.bbox[10] = id //set creator
 			i = sprite_index //get arrays first entry
 			if (sprite_exists(i)) { //if there is a sprite to draw hitboxes for
-				o = floor(image_index)*100 //get arrays second entry
-				while (_array[i, o] != NULL) { //for every hitbox
+				o = 0
+				box = _array[sprite_index] 
+				frame = box[floor(image_index)] //arrays third entry
+				while (box[0] != NULL) { //for every hitbox
+					box = frame[o] //get the hitbox
 					//get parameters
-					_maj = image_xscale*_array[i, o + 1]/2
-					_min = image_yscale*_array[i, o + 2]/2
-					_x = image_xscale*_array[i, o + 3]
-					_y = image_yscale*_array[i, o + 4]
-					_dir = -sign(image_xscale)*_array[i, o + 5] - image_angle
+					_maj = image_xscale*box[1]/2
+					_min = image_yscale*box[2]/2
+					_x = image_xscale*box[3]
+					_y = image_yscale*box[4]
+					_dir = -sign(image_xscale)*box[5] - image_angle
 					
 					if (image_angle != 0) {
 						var _d = degtorad(-image_angle)
@@ -153,9 +161,9 @@ if (argument[0]) { //draw and create hitboxes
 					}
 					
 					//create the hurtbox
-					if (_array = global.hitbox) {
+					if (_array = global.hitbox_list) {
 						//get the knocback direction
-						a = _array[i, o + 7]
+						a = box[7]
 						if (a <= 360) { //if angle is an absolute direction
 							if (image_xscale < 0) { 
 							 a = 180 - a //flip angle horizontally if facing left
@@ -169,15 +177,15 @@ if (argument[0]) { //draw and create hitboxes
 							_y = attacker.y
 						}
 						
-						scr_check_collision(_array[i, o], _maj, _min, _x, _y, _dir, 
-						_array[i, o + 6], a, _array[i, o + 8], 
-						_array[i, o + 9], _array[i, o + 10]) //create the hitbox
+						scr_check_collision(box[0], _maj, _min, _x, _y, _dir, 
+						box[6], a, box[8], 
+						box[9], box[10]) //create the hitbox
 					} else {
-						scr_check_collision(_array[i, o], _maj, _min, _x, _y, _dir) //create the hurtbox
+						scr_check_collision(box[0], _maj, _min, _x, _y, _dir) //create the hurtbox
 					}
-					o += 11 //increment o to check for multiple hitboxes on a single frame
+					o++ //increment o to check for multiple hitboxes on a single frame
 				}
-				o = floor(image_index)*100 //reset o to redo loop for hitboxes
+				o = 0 //reset o to redo loop for hitboxes
 			}
 		}
 	}
