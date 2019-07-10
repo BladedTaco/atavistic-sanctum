@@ -185,6 +185,10 @@ global.pallet[MAC] = pal_mac
 global.pallet[GEO] = pal_geo
 global.pallet[ETH] = pal_eth
 
+//hitboxes
+global.hitbox_list = [];
+global.hurtbox_list = [];
+
 
 window_set_caption("Defining enums")
 //enums
