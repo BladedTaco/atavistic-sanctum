@@ -134,206 +134,6 @@ global.hurtbox_list = [
 	],
 	[ //spr_bal_special_neutral
 	],
-	[ //spr_eth_base 
-		[ //frame 0
-			[169,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10]
-		]
-	],
-	[ //spr_eth_idle
-	],
-	[ //spr_eth_stock
-	],
-	[ //spr_eth_walk
-	],
-	[ //spr_eth_run
-	],
-	[ //spr_eth_jump
-	],
-	[ //spr_eth_air_move
-	],
-	[ //spr_eth_air_dodge
-	],
-	[ //spr_eth_air_jump
-	],
-	[ //spr_eth_land
-	],
-	[ //spr_eth_shield
-	],
-	[ //spr_eth_hold_shield
-	],
-	[ //spr_eth_un_shield
-	],
-	[ //spr_eth_roll
-	],
-	[ //spr_eth_dodge
-	],
-	[ //spr_eth_shield_ball
-	],
-	[ //spr_eth_ledge
-	],
-	[ //spr_eth_ledge_hold
-	],
-	[ //spr_eth_ledge_roll
-	],
-	[ //spr_eth_ledge_jump
-	],
-	[ //spr_eth_ledge_grab
-	],
-	[ //spr_eth_ledge_attack
-	],
-	[ //spr_eth_hurt_up
-	],
-	[ //spr_eth_hurt_side
-	],
-	[ //spr_eth_hurt_down
-	],
-	[ //spr_eth_grabbed
-	],
-	[ //spr_eth_taunt
-	],
-	[ //spr_eth_platform
-	],
-	[ //spr_eth_laser
-	],
-	[ //spr_eth_grab
-	],
-	[ //spr_eth_grab_hold
-	],
-	[ //spr_eth_grab_jab
-	],
-	[ //spr_eth_throw_forward
-	],
-	[ //spr_eth_throw_up
-	],
-	[ //spr_eth_throw_down
-	],
-	[ //spr_eth_throw_back
-	],
-	[ //spr_eth_aerial_forward
-	],
-	[ //spr_eth_aerial_down
-	],
-	[ //spr_eth_aerial_up
-	],
-	[ //spr_eth_aerial_back
-	],
-	[ //spr_eth_aerial_neutral
-	],
-	[ //spr_eth_smash_forward
-	],
-	[ //spr_eth_smash_down
-	],
-	[ //spr_eth_smash_up
-	],
-	[ //spr_eth_special_forward
-	],
-	[ //spr_eth_special_down
-	],
-	[ //spr_eth_special_up
-	],
-	[ //spr_eth_special_neutral
-	],
-	[ //spr_geo_base 
-		[ //frame 0
-			[120,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10]
-		]
-	],
-	[ //spr_geo_idle
-	],
-	[ //spr_geo_stock
-	],
-	[ //spr_geo_walk
-	],
-	[ //spr_geo_run
-	],
-	[ //spr_geo_jump
-	],
-	[ //spr_geo_air_move
-	],
-	[ //spr_geo_air_jump
-	],
-	[ //spr_geo_land
-	],
-	[ //spr_geo_shield_ball
-	],
-	[ //spr_geo_ledge
-	],
-	[ //spr_geo_ledge_hold
-	],
-	[ //spr_geo_ledge_jump
-	],
-	[ //spr_geo_ledge_grab
-	],
-	[ //spr_geo_ledge_attack
-	],
-	[ //spr_geo_hurt_up
-	],
-	[ //spr_geo_hurt_side
-	],
-	[ //spr_geo_hurt_down
-	],
-	[ //spr_geo_grabbed
-	],
-	[ //spr_geo_crouch
-	],
-	[ //spr_geo_crouch_hold
-	],
-	[ //spr_geo_crouch_end
-	],
-	[ //spr_geo_taunt
-	],
-	[ //spr_geo_grab
-	],
-	[ //spr_geo_grab_hold
-	],
-	[ //spr_geo_grab_jab
-	],
-	[ //spr_geo_throw_forward
-	],
-	[ //spr_geo_throw_up
-	],
-	[ //spr_geo_throw_down
-	],
-	[ //spr_geo_throw_back
-	],
-	[ //spr_geo_tilt_forward
-	],
-	[ //spr_geo_tilt_down
-	],
-	[ //spr_geo_tilt_up
-	],
-	[ //spr_geo_flurry
-	],
-	[ //spr_geo_dash_attack
-	],
-	[ //spr_geo_aerial_forward
-	],
-	[ //spr_geo_aerial_up
-	],
-	[ //spr_geo_aerial_down
-	],
-	[ //spr_geo_aerial_back
-	],
-	[ //spr_geo_aerial_neutral
-	],
-	[ //spr_geo_smash_forward
-	],
-	[ //spr_geo_smash_down
-	],
-	[ //spr_geo_smash_up
-	],
-	[ //spr_geo_special_forward
-	],
-	[ //spr_geo_special_down_start
-	],
-	[ //spr_geo_special_down_sustain
-	],
-	[ //spr_geo_special_down_end
-	],
-	[ //spr_geo_special_up
-	],
-	[ //spr_geo_special_neutral
-	],
 	[ //spr_mac_base 
 		[ //frame 0
 			[61,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10]
@@ -454,6 +254,206 @@ global.hurtbox_list = [
 	[ //spr_mac_special_up_effect
 	],
 	[ //spr_mac_special_neutral
+	],
+	[ //spr_geo_base 
+		[ //frame 0
+			[120,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10]
+		]
+	],
+	[ //spr_geo_idle
+	],
+	[ //spr_geo_stock
+	],
+	[ //spr_geo_walk
+	],
+	[ //spr_geo_run
+	],
+	[ //spr_geo_jump
+	],
+	[ //spr_geo_air_move
+	],
+	[ //spr_geo_air_jump
+	],
+	[ //spr_geo_land
+	],
+	[ //spr_geo_shield_ball
+	],
+	[ //spr_geo_ledge
+	],
+	[ //spr_geo_ledge_hold
+	],
+	[ //spr_geo_ledge_jump
+	],
+	[ //spr_geo_ledge_grab
+	],
+	[ //spr_geo_ledge_attack
+	],
+	[ //spr_geo_hurt_up
+	],
+	[ //spr_geo_hurt_side
+	],
+	[ //spr_geo_hurt_down
+	],
+	[ //spr_geo_grabbed
+	],
+	[ //spr_geo_crouch
+	],
+	[ //spr_geo_crouch_hold
+	],
+	[ //spr_geo_crouch_end
+	],
+	[ //spr_geo_taunt
+	],
+	[ //spr_geo_grab
+	],
+	[ //spr_geo_grab_hold
+	],
+	[ //spr_geo_grab_jab
+	],
+	[ //spr_geo_throw_forward
+	],
+	[ //spr_geo_throw_up
+	],
+	[ //spr_geo_throw_down
+	],
+	[ //spr_geo_throw_back
+	],
+	[ //spr_geo_tilt_forward
+	],
+	[ //spr_geo_tilt_down
+	],
+	[ //spr_geo_tilt_up
+	],
+	[ //spr_geo_flurry
+	],
+	[ //spr_geo_dash_attack
+	],
+	[ //spr_geo_aerial_forward
+	],
+	[ //spr_geo_aerial_up
+	],
+	[ //spr_geo_aerial_down
+	],
+	[ //spr_geo_aerial_back
+	],
+	[ //spr_geo_aerial_neutral
+	],
+	[ //spr_geo_smash_forward
+	],
+	[ //spr_geo_smash_down
+	],
+	[ //spr_geo_smash_up
+	],
+	[ //spr_geo_special_forward
+	],
+	[ //spr_geo_special_down_start
+	],
+	[ //spr_geo_special_down_sustain
+	],
+	[ //spr_geo_special_down_end
+	],
+	[ //spr_geo_special_up
+	],
+	[ //spr_geo_special_neutral
+	],
+	[ //spr_eth_base 
+		[ //frame 0
+			[169,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10]
+		]
+	],
+	[ //spr_eth_idle
+	],
+	[ //spr_eth_stock
+	],
+	[ //spr_eth_walk
+	],
+	[ //spr_eth_run
+	],
+	[ //spr_eth_jump
+	],
+	[ //spr_eth_air_move
+	],
+	[ //spr_eth_air_dodge
+	],
+	[ //spr_eth_air_jump
+	],
+	[ //spr_eth_land
+	],
+	[ //spr_eth_shield
+	],
+	[ //spr_eth_hold_shield
+	],
+	[ //spr_eth_un_shield
+	],
+	[ //spr_eth_roll
+	],
+	[ //spr_eth_dodge
+	],
+	[ //spr_eth_shield_ball
+	],
+	[ //spr_eth_ledge
+	],
+	[ //spr_eth_ledge_hold
+	],
+	[ //spr_eth_ledge_roll
+	],
+	[ //spr_eth_ledge_jump
+	],
+	[ //spr_eth_ledge_grab
+	],
+	[ //spr_eth_ledge_attack
+	],
+	[ //spr_eth_hurt_up
+	],
+	[ //spr_eth_hurt_side
+	],
+	[ //spr_eth_hurt_down
+	],
+	[ //spr_eth_grabbed
+	],
+	[ //spr_eth_taunt
+	],
+	[ //spr_eth_platform
+	],
+	[ //spr_eth_laser
+	],
+	[ //spr_eth_grab
+	],
+	[ //spr_eth_grab_hold
+	],
+	[ //spr_eth_grab_jab
+	],
+	[ //spr_eth_throw_forward
+	],
+	[ //spr_eth_throw_up
+	],
+	[ //spr_eth_throw_down
+	],
+	[ //spr_eth_throw_back
+	],
+	[ //spr_eth_aerial_forward
+	],
+	[ //spr_eth_aerial_down
+	],
+	[ //spr_eth_aerial_up
+	],
+	[ //spr_eth_aerial_back
+	],
+	[ //spr_eth_aerial_neutral
+	],
+	[ //spr_eth_smash_forward
+	],
+	[ //spr_eth_smash_down
+	],
+	[ //spr_eth_smash_up
+	],
+	[ //spr_eth_special_forward
+	],
+	[ //spr_eth_special_down
+	],
+	[ //spr_eth_special_up
+	],
+	[ //spr_eth_special_neutral
 	]
 ]
 
@@ -594,206 +594,6 @@ global.hitbox_list = [
 	],
 	[ //spr_bal_special_neutral
 	],
-	[ //spr_eth_base 
-		[ //frame 0
-			[169,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10]
-		]
-	],
-	[ //spr_eth_idle
-	],
-	[ //spr_eth_stock
-	],
-	[ //spr_eth_walk
-	],
-	[ //spr_eth_run
-	],
-	[ //spr_eth_jump
-	],
-	[ //spr_eth_air_move
-	],
-	[ //spr_eth_air_dodge
-	],
-	[ //spr_eth_air_jump
-	],
-	[ //spr_eth_land
-	],
-	[ //spr_eth_shield
-	],
-	[ //spr_eth_hold_shield
-	],
-	[ //spr_eth_un_shield
-	],
-	[ //spr_eth_roll
-	],
-	[ //spr_eth_dodge
-	],
-	[ //spr_eth_shield_ball
-	],
-	[ //spr_eth_ledge
-	],
-	[ //spr_eth_ledge_hold
-	],
-	[ //spr_eth_ledge_roll
-	],
-	[ //spr_eth_ledge_jump
-	],
-	[ //spr_eth_ledge_grab
-	],
-	[ //spr_eth_ledge_attack
-	],
-	[ //spr_eth_hurt_up
-	],
-	[ //spr_eth_hurt_side
-	],
-	[ //spr_eth_hurt_down
-	],
-	[ //spr_eth_grabbed
-	],
-	[ //spr_eth_taunt
-	],
-	[ //spr_eth_platform
-	],
-	[ //spr_eth_laser
-	],
-	[ //spr_eth_grab
-	],
-	[ //spr_eth_grab_hold
-	],
-	[ //spr_eth_grab_jab
-	],
-	[ //spr_eth_throw_forward
-	],
-	[ //spr_eth_throw_up
-	],
-	[ //spr_eth_throw_down
-	],
-	[ //spr_eth_throw_back
-	],
-	[ //spr_eth_aerial_forward
-	],
-	[ //spr_eth_aerial_down
-	],
-	[ //spr_eth_aerial_up
-	],
-	[ //spr_eth_aerial_back
-	],
-	[ //spr_eth_aerial_neutral
-	],
-	[ //spr_eth_smash_forward
-	],
-	[ //spr_eth_smash_down
-	],
-	[ //spr_eth_smash_up
-	],
-	[ //spr_eth_special_forward
-	],
-	[ //spr_eth_special_down
-	],
-	[ //spr_eth_special_up
-	],
-	[ //spr_eth_special_neutral
-	],
-	[ //spr_geo_base 
-		[ //frame 0
-			[120,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10]
-		]
-	],
-	[ //spr_geo_idle
-	],
-	[ //spr_geo_stock
-	],
-	[ //spr_geo_walk
-	],
-	[ //spr_geo_run
-	],
-	[ //spr_geo_jump
-	],
-	[ //spr_geo_air_move
-	],
-	[ //spr_geo_air_jump
-	],
-	[ //spr_geo_land
-	],
-	[ //spr_geo_shield_ball
-	],
-	[ //spr_geo_ledge
-	],
-	[ //spr_geo_ledge_hold
-	],
-	[ //spr_geo_ledge_jump
-	],
-	[ //spr_geo_ledge_grab
-	],
-	[ //spr_geo_ledge_attack
-	],
-	[ //spr_geo_hurt_up
-	],
-	[ //spr_geo_hurt_side
-	],
-	[ //spr_geo_hurt_down
-	],
-	[ //spr_geo_grabbed
-	],
-	[ //spr_geo_crouch
-	],
-	[ //spr_geo_crouch_hold
-	],
-	[ //spr_geo_crouch_end
-	],
-	[ //spr_geo_taunt
-	],
-	[ //spr_geo_grab
-	],
-	[ //spr_geo_grab_hold
-	],
-	[ //spr_geo_grab_jab
-	],
-	[ //spr_geo_throw_forward
-	],
-	[ //spr_geo_throw_up
-	],
-	[ //spr_geo_throw_down
-	],
-	[ //spr_geo_throw_back
-	],
-	[ //spr_geo_tilt_forward
-	],
-	[ //spr_geo_tilt_down
-	],
-	[ //spr_geo_tilt_up
-	],
-	[ //spr_geo_flurry
-	],
-	[ //spr_geo_dash_attack
-	],
-	[ //spr_geo_aerial_forward
-	],
-	[ //spr_geo_aerial_up
-	],
-	[ //spr_geo_aerial_down
-	],
-	[ //spr_geo_aerial_back
-	],
-	[ //spr_geo_aerial_neutral
-	],
-	[ //spr_geo_smash_forward
-	],
-	[ //spr_geo_smash_down
-	],
-	[ //spr_geo_smash_up
-	],
-	[ //spr_geo_special_forward
-	],
-	[ //spr_geo_special_down_start
-	],
-	[ //spr_geo_special_down_sustain
-	],
-	[ //spr_geo_special_down_end
-	],
-	[ //spr_geo_special_up
-	],
-	[ //spr_geo_special_neutral
-	],
 	[ //spr_mac_base 
 		[ //frame 0
 			[61,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10]
@@ -914,6 +714,206 @@ global.hitbox_list = [
 	[ //spr_mac_special_up_effect
 	],
 	[ //spr_mac_special_neutral
+	],
+	[ //spr_geo_base 
+		[ //frame 0
+			[120,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10]
+		]
+	],
+	[ //spr_geo_idle
+	],
+	[ //spr_geo_stock
+	],
+	[ //spr_geo_walk
+	],
+	[ //spr_geo_run
+	],
+	[ //spr_geo_jump
+	],
+	[ //spr_geo_air_move
+	],
+	[ //spr_geo_air_jump
+	],
+	[ //spr_geo_land
+	],
+	[ //spr_geo_shield_ball
+	],
+	[ //spr_geo_ledge
+	],
+	[ //spr_geo_ledge_hold
+	],
+	[ //spr_geo_ledge_jump
+	],
+	[ //spr_geo_ledge_grab
+	],
+	[ //spr_geo_ledge_attack
+	],
+	[ //spr_geo_hurt_up
+	],
+	[ //spr_geo_hurt_side
+	],
+	[ //spr_geo_hurt_down
+	],
+	[ //spr_geo_grabbed
+	],
+	[ //spr_geo_crouch
+	],
+	[ //spr_geo_crouch_hold
+	],
+	[ //spr_geo_crouch_end
+	],
+	[ //spr_geo_taunt
+	],
+	[ //spr_geo_grab
+	],
+	[ //spr_geo_grab_hold
+	],
+	[ //spr_geo_grab_jab
+	],
+	[ //spr_geo_throw_forward
+	],
+	[ //spr_geo_throw_up
+	],
+	[ //spr_geo_throw_down
+	],
+	[ //spr_geo_throw_back
+	],
+	[ //spr_geo_tilt_forward
+	],
+	[ //spr_geo_tilt_down
+	],
+	[ //spr_geo_tilt_up
+	],
+	[ //spr_geo_flurry
+	],
+	[ //spr_geo_dash_attack
+	],
+	[ //spr_geo_aerial_forward
+	],
+	[ //spr_geo_aerial_up
+	],
+	[ //spr_geo_aerial_down
+	],
+	[ //spr_geo_aerial_back
+	],
+	[ //spr_geo_aerial_neutral
+	],
+	[ //spr_geo_smash_forward
+	],
+	[ //spr_geo_smash_down
+	],
+	[ //spr_geo_smash_up
+	],
+	[ //spr_geo_special_forward
+	],
+	[ //spr_geo_special_down_start
+	],
+	[ //spr_geo_special_down_sustain
+	],
+	[ //spr_geo_special_down_end
+	],
+	[ //spr_geo_special_up
+	],
+	[ //spr_geo_special_neutral
+	],
+	[ //spr_eth_base 
+		[ //frame 0
+			[169,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10]
+		]
+	],
+	[ //spr_eth_idle
+	],
+	[ //spr_eth_stock
+	],
+	[ //spr_eth_walk
+	],
+	[ //spr_eth_run
+	],
+	[ //spr_eth_jump
+	],
+	[ //spr_eth_air_move
+	],
+	[ //spr_eth_air_dodge
+	],
+	[ //spr_eth_air_jump
+	],
+	[ //spr_eth_land
+	],
+	[ //spr_eth_shield
+	],
+	[ //spr_eth_hold_shield
+	],
+	[ //spr_eth_un_shield
+	],
+	[ //spr_eth_roll
+	],
+	[ //spr_eth_dodge
+	],
+	[ //spr_eth_shield_ball
+	],
+	[ //spr_eth_ledge
+	],
+	[ //spr_eth_ledge_hold
+	],
+	[ //spr_eth_ledge_roll
+	],
+	[ //spr_eth_ledge_jump
+	],
+	[ //spr_eth_ledge_grab
+	],
+	[ //spr_eth_ledge_attack
+	],
+	[ //spr_eth_hurt_up
+	],
+	[ //spr_eth_hurt_side
+	],
+	[ //spr_eth_hurt_down
+	],
+	[ //spr_eth_grabbed
+	],
+	[ //spr_eth_taunt
+	],
+	[ //spr_eth_platform
+	],
+	[ //spr_eth_laser
+	],
+	[ //spr_eth_grab
+	],
+	[ //spr_eth_grab_hold
+	],
+	[ //spr_eth_grab_jab
+	],
+	[ //spr_eth_throw_forward
+	],
+	[ //spr_eth_throw_up
+	],
+	[ //spr_eth_throw_down
+	],
+	[ //spr_eth_throw_back
+	],
+	[ //spr_eth_aerial_forward
+	],
+	[ //spr_eth_aerial_down
+	],
+	[ //spr_eth_aerial_up
+	],
+	[ //spr_eth_aerial_back
+	],
+	[ //spr_eth_aerial_neutral
+	],
+	[ //spr_eth_smash_forward
+	],
+	[ //spr_eth_smash_down
+	],
+	[ //spr_eth_smash_up
+	],
+	[ //spr_eth_special_forward
+	],
+	[ //spr_eth_special_down
+	],
+	[ //spr_eth_special_up
+	],
+	[ //spr_eth_special_neutral
 	]
 ]
 
