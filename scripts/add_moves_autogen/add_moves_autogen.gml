@@ -915,6 +915,4 @@ global.hitbox_list = [
 	],
 	[ //spr_eth_special_neutral
 	]
-]
-
- 
+];
