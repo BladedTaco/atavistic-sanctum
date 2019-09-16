@@ -228,7 +228,7 @@ enum _IMPULSE { //define an impulse enumeration field (actual values are divided
 window_set_caption("Adding Moves")
 
 //add_moves() //add all of the attacks of the characters into memory (very very intensive)
-
+//scr_save_hitboxes();
 
 add_moves_autogen()
 

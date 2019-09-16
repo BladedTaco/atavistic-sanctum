@@ -967,6 +967,14 @@
             }
         },
         {
+            "Key": "3c4c83eb-9f50-4f44-9449-09b494242c58",
+            "Value": {
+                "id": "b9370923-aff7-413a-91f4-0eea22771347",
+                "resourcePath": "scripts\\scr_draw_hitboxes_new\\scr_draw_hitboxes_new.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "3da921fe-fee8-496d-8525-58d59e60d2d2",
             "Value": {
                 "id": "8e141f7d-9ce7-44e2-a08b-e6afeb448857",
@@ -2887,14 +2895,6 @@
             }
         },
         {
-            "Key": "b6b69c8c-f168-4f86-9e5f-804c7b609929",
-            "Value": {
-                "id": "3aa9eebd-29fd-4357-bfaf-55773ad22a84",
-                "resourcePath": "sprites\\spr_bal_idle_new\\spr_bal_idle_new.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "b719e712-2f4e-4b14-bf77-9745f1ad0a2f",
             "Value": {
                 "id": "96e6c714-994d-4d76-aeb1-9516bb76333f",
@@ -4133,6 +4133,7 @@
         "65131081-a43b-4f41-83e1-c549c13007b3",
         "7c25f9b7-0ccd-4ea5-93d1-c18226954384",
         "1a8c4a98-63d5-4c56-b729-0aacb9d1ee95",
+        "3c4c83eb-9f50-4f44-9449-09b494242c58",
         "ae216816-1b32-4acd-8c1e-1281abebfbb8",
         "051afcc9-fddf-4c22-8f68-d34727b6f699",
         "a4f26112-f773-4a62-8324-a4693ce442dc",
