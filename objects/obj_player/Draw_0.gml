@@ -93,8 +93,17 @@ if (!dead and instance_exists(obj_match_handler)) { //if alive and during match
 
 	if (character = ETH) { //if ETH character
 		//draw a traling image effect
-		draw_sprite_ext(sprite_index, image_index - 2, last_x2, last_y2, image_xscale, image_yscale, image_angle, c_gray, 0.25)
-		draw_sprite_ext(sprite_index, image_index - 1, last_x, last_y, image_xscale, image_yscale, image_angle, c_ltgray, 0.5)
+		draw_sprite_ext(last_sprite2, last_frame2, last_x2, last_y2, image_xscale, image_yscale, image_angle, c_gray, 0.25)
+		draw_sprite_ext(last_sprite, last_frame, last_x, last_y, image_xscale, image_yscale, image_angle, c_ltgray, 0.5)
+	
+		//get animation trail stuff
+		last_sprite2 = last_sprite
+		last_sprite = sprite_index
+		
+		if (image_index mod 1 < 0.01) {//near a frame
+			last_frame2 = last_frame
+			last_frame = image_index
+		}
 	}
 
 
