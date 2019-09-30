@@ -153,5 +153,11 @@ if (!dead and instance_exists(obj_match_handler)) { //if alive and during match
 		//draw an olive circle at position but clamped to room boundaries
 		draw_set_colour(c_olive)
 		draw_circle(clamp(x, 0, room_width), clamp(y, 0, room_height), 3, false)
+		//draw sprite name and state
+		draw_set_colour(c_black)
+		draw_set_font(fnt_pixel_2)
+		draw_text_normal(x, bbox_top - 20, sprite_get_name(sprite_index))
+		draw_text_normal(x, bbox_top - 40, scr_get_state_name(obj_match_handler.state[player_number]))
+		
 	}
 }

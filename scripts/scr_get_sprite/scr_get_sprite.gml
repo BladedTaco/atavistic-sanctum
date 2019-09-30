@@ -55,7 +55,9 @@ if (ret = -1) { //if nonexistant sprite
 			if (string_copy(argument[1], 1, 4) = "tilt") { //smash attack
 				ret = asset_get_index(i + string_replace(argument[1], "tilt", "smash"))
 			}
-			if (string_copy(argument[1], 1, 4) = "dash") {
+			if (string_copy(argument[1], 1, 11) = "dash_attack") { //dash attack
+				ret = asset_get_index(i + "smash_forward")
+			} else if (string_copy(argument[1], 1, 4) = "dash") { //other dash
 				ret = asset_get_index(i + "run")
 			}
 			if (string_copy(argument[1], 1, 5) = "speed") {
@@ -64,7 +66,9 @@ if (ret = -1) { //if nonexistant sprite
 		break;
 		case GEO:
 			if (string_copy(argument[1], 1, 4) = "dash") {
-				ret = asset_get_index(i + "run")
+				if (string_copy(argument[1], 1, 11) != "dash_attack") { //not dash attack
+					ret = asset_get_index(i + "run")
+				}
 			}
 			if (string_copy(argument[1], 1, 5) = "speed") {
 				ret = asset_get_index(i + "walk")
