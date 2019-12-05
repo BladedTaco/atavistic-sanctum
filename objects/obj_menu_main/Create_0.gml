@@ -16,5 +16,5 @@ active = false
 alarm[0] = MENU_DELAY
 alarm[1] = -1
 
-global.input_buffer_length = 6 //reset input lag
+global.input_buffer_length = 0 //reset input lag
 //hi

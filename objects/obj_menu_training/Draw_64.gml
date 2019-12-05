@@ -72,7 +72,7 @@ draw_text_outlined(GUI_WIDTH*0.1125, GUI_HEIGHT*0.225 - 1, c_black, c_white,	men
 draw_text_outlined(GUI_WIDTH*0.1125, GUI_HEIGHT*0.325 - 1, c_black, c_white,	menu_option[2], 2) //"ACTION: IDLE"
 draw_text_outlined(GUI_WIDTH*0.15, GUI_HEIGHT*0.425 - 1, c_black, c_white,		menu_option[3], 2) //"CPU NO. - 1"
 draw_text_outlined(GUI_WIDTH*0.15, GUI_HEIGHT*0.525 - 1, c_black, c_white,		menu_option[4], 2) //"GAME SPEED. - 1x"
-draw_text_outlined(GUI_WIDTH*0.15, GUI_HEIGHT*0.625 - 1, c_black, c_white,		menu_option[5], 2) //"INPUT LAG. - 6 FRAME"
+draw_text_outlined(GUI_WIDTH*0.15, GUI_HEIGHT*0.625 - 1, c_black, c_white,		menu_option[5], 2) //"INPUT LAG. - 0 FRAME"
 draw_text_outlined(GUI_WIDTH*0.15, GUI_HEIGHT*0.725 - 1, c_black, c_white,		menu_option[6], 2) //"STAGE: TRAINING GROUNDS"
 draw_text_outlined(GUI_WIDTH*0.1, GUI_HEIGHT*0.825 - 1, c_black, c_white,		menu_option[7], 2) //"HITBOXES: OFF"
 draw_text_outlined(GUI_WIDTH*0.2375, GUI_HEIGHT*0.825 - 1, c_black, c_white,	menu_option[8], 2) //"UI: ON"

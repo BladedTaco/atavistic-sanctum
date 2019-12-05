@@ -89,7 +89,7 @@ do {
 				} else {
 					//allow movement if in air
 					if (scr_check_for_ground(_inst, _ex, _ey)) {
-						_move_character = 2 //drift
+						_move_character = 2.5 //soft drift
 					} else {
 						_move_character = 4 //airborne
 					}
@@ -109,7 +109,7 @@ do {
 						}
 					}
 				}
-				_move_character = 2 //drift
+				_move_character = 2.5 //soft drift
 			break;
 			case TILT_ATTACK:
 				//allow cancelling a tilt into a smash attack
@@ -370,7 +370,7 @@ do {
 			break;
 			
 			case HOLDING:
-				_move_character = 2//drift
+				_move_character = 2.5//soft drift
 				if (_inst.sprite_index = scr_get_sprite(_inst, "grab_hold") or ((_inst.character = ETH) and (_inst.child_object.state = 1))) {
 					if (input_array[i, TILT] = SMASH_MOVE) { 
 						_inst.alarm[5] = GAME_SPEED //set grab release alarm to 1 second

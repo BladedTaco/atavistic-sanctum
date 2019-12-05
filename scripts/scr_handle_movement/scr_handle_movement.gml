@@ -9,15 +9,20 @@ var _y1 = input_array[argument[1], YAXIS]
 var _x2 = old_axis[argument[1], XAXIS]
 var _y2 = old_axis[argument[1], YAXIS]
 
-switch (argument[2]) {
+switch (floor(argument[2])) {
 	case 1: //stop
 		argument[0].momentum_x = 0 //remove momentum
 		argument[0].momentum_y = 0 //remove momentum
 	break;
 	
 	case 2: //drift
-		argument[0].momentum_x *= 0.97/argument[0].inertia //reduce momentum
-		argument[0].momentum_y *= 0.85/argument[0].inertia //reduce momentum
+		if (argument[2] = 2.5) { //soft drift
+			argument[0].momentum_x *= 0.9/argument[0].inertia //reduce momentum
+			argument[0].momentum_y *= 0.85/argument[0].inertia //reduce momentum
+		} else { //big drift
+			argument[0].momentum_x *= 0.97/argument[0].inertia //reduce momentum
+			argument[0].momentum_y *= 0.85/argument[0].inertia //reduce momentum
+		}
 		scr_apply_impulse(argument[0], argument[1], 270, round(_IMPULSE._GRAVITY)/100, false) //apply gravity
 		if (state[argument[1]] = LANDING) {
 			input_array[argument[1], XAXIS] = 0

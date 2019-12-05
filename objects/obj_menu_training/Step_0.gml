@@ -116,7 +116,7 @@ if (visible) {
 						menu_option[2] = "ACTION: IDLE"				//dropdown
 						menu_option[3] = "CPU NO. - 1"				//slider
 						menu_option[4] = "GAME SPEED. - 1x"			//slider
-						menu_option[5] = "INPUT LAG. - 6 FRAME"		//slider
+						menu_option[5] = "INPUT LAG. - 0 FRAME"		//slider
 						menu_option[7] = "HITBOXES: OFF"			//button
 						menu_option[8] = "UI: ON"					//button
 						percentage = 0 //reset percentage
@@ -133,7 +133,7 @@ if (visible) {
 						}
 						//reset game modifiers
 						room_speed = GAME_SPEED
-						global.input_buffer_length = 6
+						global.input_buffer_length = 0
 						global.show_hitboxes = false
 						global.show_ui = true
 						alarm[0] = MENU_DELAY //set input delay
@@ -182,8 +182,8 @@ if (visible) {
 						alarm[0] = MENU_DELAY //set input delay
 					break;
 					case 7: //input lag
-						global.input_buffer_length = 6 //reset input lag
-						menu_option[5] = "INPUT LAG. - 6 FRAME" //update menu text
+						global.input_buffer_length = 0 //reset input lag
+						menu_option[5] = "INPUT LAG. - 0 FRAME" //update menu text
 						alarm[0] = MENU_DELAY //set input delay
 					break;
 					

@@ -10,7 +10,7 @@ if (room = rm_menu) { //if in the menu room
 	room_goto(rm_menu) //go to the menu room
 	room_speed = GAME_SPEED //reset game speed
 	alarm[1] = 1 //set this alarm to trigger again once rooms are changed
-	global.input_buffer_length = 6 //reset input lag
+	global.input_buffer_length = 0 //reset input lag
 	global.show_ui = true //reset ui visibility
 	global.show_hitboxes = false //reset hitbox visibility
 }
