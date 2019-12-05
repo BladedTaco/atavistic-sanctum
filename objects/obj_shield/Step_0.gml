@@ -5,7 +5,7 @@ if (instance_exists(creator)) { //if there is a player to shield
 		//cause a shield break
 		//make meter negative, apply vertical force, and set into freefall
 		creator.shield_percentage = -creator.shield_max_percentage
-		scr_apply_impulse(creator, creator.player_number, 90, _IMPULSE._SHIELD_BREAK/100, false)
+		scr_apply_impulse(creator, creator.player_number, 90, round(_IMPULSE._SHIELD_BREAK)/100, false)
 		obj_match_handler.state[creator.player_number] = scr_perform_freefall(creator, creator.player_number)
 		instance_destroy(); //destroy self
 	}

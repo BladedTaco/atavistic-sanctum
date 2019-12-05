@@ -18,7 +18,7 @@ switch (argument[2]) {
 	case 2: //drift
 		argument[0].momentum_x *= 0.97/argument[0].inertia //reduce momentum
 		argument[0].momentum_y *= 0.85/argument[0].inertia //reduce momentum
-		scr_apply_impulse(argument[0], argument[1], 270, _IMPULSE._GRAVITY/100, false) //apply gravity
+		scr_apply_impulse(argument[0], argument[1], 270, round(_IMPULSE._GRAVITY)/100, false) //apply gravity
 		if (state[argument[1]] = LANDING) {
 			input_array[argument[1], XAXIS] = 0
 			input_array[argument[1], YAXIS] = 0
@@ -54,9 +54,9 @@ switch (argument[2]) {
 	break;
 	
 	case 4: //airborne
-		scr_apply_impulse(argument[0], argument[1], 270, _IMPULSE._GRAVITY/100, false) //apply gravity
+		scr_apply_impulse(argument[0], argument[1], 270, round(_IMPULSE._GRAVITY)/100, false) //apply gravity
 		if ((abs(_x1) > obj_input.l_stick_deadzone[argument[1]]) and (!argument[0].spawning)) { //if moving stick
-			scr_apply_impulse(argument[0], argument[1], point_direction(0, 0, _x1, 0), _IMPULSE._AIR_MOVE*point_distance(0, 0, _x1, 0)/100, false)
+			scr_apply_impulse(argument[0], argument[1], point_direction(0, 0, _x1, 0), round(_IMPULSE._AIR_MOVE)*point_distance(0, 0, _x1, 0)/100, false)
 		}
 		//apply friction
 		argument[0].momentum_x *= 0.8/argument[0].inertia
@@ -81,8 +81,8 @@ switch (argument[2]) {
 	break;
 		
 	case -1: //shield walking
-		scr_apply_impulse(argument[0], argument[1], 270, _IMPULSE._GRAVITY/100, false) //apply gravity
-		scr_apply_impulse(argument[0], argument[1], point_direction(0, 0, _x1, 0), _IMPULSE._WALK*point_distance(0, 0, _x1, 0)/100, false)
+		scr_apply_impulse(argument[0], argument[1], 270, round(_IMPULSE._GRAVITY)/100, false) //apply gravity
+		scr_apply_impulse(argument[0], argument[1], point_direction(0, 0, _x1, 0), round(_IMPULSE._WALK)*point_distance(0, 0, _x1, 0)/100, false)
 		argument[0].momentum_x *= 0.8/argument[0].inertia //reduce momentum
 		argument[0].momentum_y *= 0.9/argument[0].inertia //reduce momentum
 	break;

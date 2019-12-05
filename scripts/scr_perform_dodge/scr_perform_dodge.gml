@@ -14,7 +14,7 @@ if (!obj_input.sticky_dodge[argument[1]]) { //if able to dodge
 			argument[0].momentum_y *= 0.5 //halve momentum
 			argument[0].sprite_index = scr_get_sprite(argument[0], "air_dodge") //set character to airdodge animation
 			argument[0].image_index = 0 //set character to first animation frame
-			scr_apply_impulse(argument[0], argument[1], argument[3], _IMPULSE._AIR_DODGE/100, false) //apply airdodge impulse
+			scr_apply_impulse(argument[0], argument[1], argument[3], round(_IMPULSE._AIR_DODGE)/100, false) //apply airdodge impulse
 			if (lengthdir_x(1, argument[3]) > 0) {
 				argument[0].image_xscale = 1//set sprite facing
 			} else {
@@ -31,7 +31,7 @@ if (!obj_input.sticky_dodge[argument[1]]) { //if able to dodge
 				argument[0].sprite_index = scr_get_sprite(argument[0], "roll") //set character to roll animation
 				argument[0].image_index = 0 //set character to first animation frame
 				argument[0].image_xscale = sign(lengthdir_x(1, argument[3])) //set sprite facing
-				scr_apply_impulse(argument[0], argument[1], round(argument[3]/180)*180, _IMPULSE._ROLL/100, false) //apply roll impulse
+				scr_apply_impulse(argument[0], argument[1], round(argument[3]/180)*180, round(_IMPULSE._ROLL)/100, false) //apply roll impulse
 			} else {
 				argument[0].sprite_index = scr_get_sprite(argument[0], "dodge") //set character to dodge animation	
 			}

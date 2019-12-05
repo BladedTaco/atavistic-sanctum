@@ -9,14 +9,14 @@ if (argument[0].momentum_y >= 0) { //if able to jump
 		if (jumps[argument[1]] > 0) {
 			argument[0].momentum_y = 0
 			jumps[argument[1]] -= 1
-			scr_apply_impulse(argument[0], argument[1], 90, _IMPULSE._JUMP/100, false)
+			scr_apply_impulse(argument[0], argument[1], 90, round(_IMPULSE._JUMP)/100, false)
 			argument[0].sprite_index = scr_get_sprite(argument[0], "air_jump") //set animation to air jumpanimation
 			argument[0].image_index = 0 //set animation frame to the first one
 		} else {
 			return state[argument[1]] //return no change in state if unable to jump
 		}
 	} else if (!argument[2]) { //grounded jump
-		scr_apply_impulse(argument[0], argument[1], 90, _IMPULSE._JUMP/100, false)
+		scr_apply_impulse(argument[0], argument[1], 90, round(_IMPULSE._JUMP)/100, false)
 	} else {
 		return state[argument[1]] //return no change in state if unable to jump
 	}

@@ -272,7 +272,7 @@ do {
 				}
 			case AIR_ATTACK:
 				if (input_array[i, YAXIS] > obj_input.l_stick_neutral[i]) { //fastfall
-					scr_apply_impulse(_inst, i, 270, _inst.weight*_IMPULSE._FASTFALL/100, false)
+					scr_apply_impulse(_inst, i, 270, _inst.weight*round(_IMPULSE._FASTFALL)/100, false)
 				}
 				_move_character = 4 //airborne
 			break;

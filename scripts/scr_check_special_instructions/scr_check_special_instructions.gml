@@ -34,7 +34,7 @@ switch (argument[0]) {
 					case spr_bal_ledge_jump:
 						_xx = 4
 						_yy = -7
-						scr_apply_impulse(id, player_number, 90, _IMPULSE._JUMP/100, false)
+						scr_apply_impulse(id, player_number, 90, round(_IMPULSE._JUMP)/100, false)
 						obj_match_handler.state[player_number] = JUMP_RISE
 						image_index = 0
 						sprite_index = scr_get_sprite(id, "air_move")
@@ -59,7 +59,7 @@ switch (argument[0]) {
 					case spr_mac_ledge_jump:
 						_xx = -12
 						_yy = 17
-						scr_apply_impulse(id, player_number, 90, _IMPULSE._JUMP/100, false)
+						scr_apply_impulse(id, player_number, 90, round(_IMPULSE._JUMP)/100, false)
 						obj_match_handler.state[player_number] = JUMP_RISE
 						image_index = 0
 						sprite_index = scr_get_sprite(id, "air_move")
@@ -117,7 +117,7 @@ switch (argument[0]) {
 					case spr_geo_ledge_jump:
 						_xx = -22
 						_yy = 16
-						scr_apply_impulse(id, player_number, 90, _IMPULSE._JUMP/100, false)
+						scr_apply_impulse(id, player_number, 90, round(_IMPULSE._JUMP)/100, false)
 						obj_match_handler.state[player_number] = JUMP_RISE
 						image_index = 0
 						sprite_index = scr_get_sprite(id, "air_move")
@@ -157,7 +157,7 @@ switch (argument[0]) {
 					case spr_eth_ledge_jump:
 						_xx = -19
 						_yy = 16
-						scr_apply_impulse(id, player_number, 90, _IMPULSE._JUMP/100, false)
+						scr_apply_impulse(id, player_number, 90, round(_IMPULSE._JUMP)/100, false)
 						obj_match_handler.state[player_number] = JUMP_RISE
 						image_index = 0
 						sprite_index = scr_get_sprite(id, "air_move")
@@ -189,7 +189,7 @@ switch (argument[0]) {
 				switch (sprite_index) {
 					case spr_bal_special_up:
 						if (!recovered) { //if able to recover
-							scr_apply_impulse(id, player_number, 90, _IMPULSE._BAL_U_SPEC/100, false)
+							scr_apply_impulse(id, player_number, 90, round(_IMPULSE._BAL_U_SPEC)/100, false)
 						}
 					break;
 					case spr_bal_smash_forward:
@@ -262,11 +262,11 @@ switch (argument[0]) {
 			case MAC:
 				switch (sprite_index) {
 					case spr_mac_tilt_forward: case spr_mac_special_forward:
-						scr_apply_impulse(id, player_number, point_direction(0, 0, image_xscale, 0), _IMPULSE._MAC_SLIDE/100, false)
+						scr_apply_impulse(id, player_number, point_direction(0, 0, image_xscale, 0), round(_IMPULSE._MAC_SLIDE)/100, false)
 					break;
 					
 					case spr_mac_tilt_down: 
-						scr_apply_impulse(id, player_number, point_direction(0, 0, image_xscale, 0), _IMPULSE._MAC_SLIDE_SMALL/100, false)
+						scr_apply_impulse(id, player_number, point_direction(0, 0, image_xscale, 0), round(_IMPULSE._MAC_SLIDE_SMALL)/100, false)
 					break;
 					
 					case spr_mac_special_up:
@@ -293,7 +293,7 @@ switch (argument[0]) {
 					
 					case spr_mac_throw_up:
 						_xs = -1; _gx = 4; _gy = -35; //set grab
-						scr_apply_impulse(id, player_number, 90, _IMPULSE._MAC_U_THROW/100, false) //apply impulse
+						scr_apply_impulse(id, player_number, 90, round(_IMPULSE._MAC_U_THROW)/100, false) //apply impulse
 					break;
 					
 					case spr_mac_throw_down:
@@ -307,7 +307,7 @@ switch (argument[0]) {
 								if (!scr_check_for_ground()) {
 									image_index = 4
 									alarm[5] = GAME_SPEED
-									scr_apply_impulse(id, player_number, 270, _IMPULSE._MAC_D_THROW/100, false) //apply impulse
+									scr_apply_impulse(id, player_number, 270, round(_IMPULSE._MAC_D_THROW)/100, false) //apply impulse
 								}
 							break;
 							case 5: _gx = -20; _gy = 0; break;
@@ -334,13 +334,13 @@ switch (argument[0]) {
 				switch(sprite_index) {
 					case spr_geo_special_up:
 						if (!recovered) {
-							scr_apply_impulse(id, player_number, 90, _IMPULSE._GEO_U_SPEC/100, false)
+							scr_apply_impulse(id, player_number, 90, round(_IMPULSE._GEO_U_SPEC)/100, false)
 						}
 					break;
 					
 					case spr_geo_special_down_sustain:
 						if (obj_match_handler.jumps[player_number] >= 0) {
-							scr_apply_impulse(id, player_number, 90, _IMPULSE._GEO_D_SPEC/100, false)
+							scr_apply_impulse(id, player_number, 90, round(_IMPULSE._GEO_D_SPEC)/100, false)
 						}
 					break;
 					
@@ -371,7 +371,7 @@ switch (argument[0]) {
 					break;
 					case spr_eth_special_up:
 						if (!recovered) {
-							scr_apply_impulse(id, player_number, 90, _IMPULSE._GEO_U_SPEC/100, false)
+							scr_apply_impulse(id, player_number, 90, round(_IMPULSE._GEO_U_SPEC)/100, false)
 						}
 					break;
 					
